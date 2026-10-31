@@ -37,3 +37,7 @@
 ## 校验
 
 原始文件的字节数和 SHA-256 在 [manifest.json](manifest.json)，可检查复制是否完整。
+
+## 2026-10-31 归属核查
+
+小组作业三份源文件已归位至 `source_materials/INFS3701/03_assessments/group_assessment/`。13 份共享资料逐份与源文件核对 SHA-256：10 份为 INFS3701 课程资料，3 份为 INFS3701 小组作业材料；没有纳入 INFS3822 课程课件。仓库内 `original/assignment/` 副本内容不变。

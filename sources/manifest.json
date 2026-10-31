@@ -94,7 +94,7 @@
     "name": "Group Assignment Cover Sheet.pdf",
     "original_path": "sources/original/assignment/Group Assignment Cover Sheet.pdf",
     "text_path": "sources/text/S11-Group Assignment Cover Sheet.md",
-    "source_origin": "source_materials/INFS3822/04_assessments/group_assessment/Group Assignment Cover Sheet.pdf",
+    "source_origin": "source_materials/INFS3701/03_assessments/group_assessment/Group Assignment Cover Sheet.pdf",
     "sha256": "28f691fc420040c5c42c91f61af18f066ca5e56f24b30c6f3903c60dcd8501a8",
     "bytes": 219001
   },
@@ -103,7 +103,7 @@
     "name": "INFS3701_Group_Assignment.pdf",
     "original_path": "sources/original/assignment/INFS3701_Group_Assignment.pdf",
     "text_path": "sources/text/S12-INFS3701_Group_Assignment.md",
-    "source_origin": "source_materials/INFS3822/04_assessments/group_assessment/INFS3701_Group_Assignment.pdf",
+    "source_origin": "source_materials/INFS3701/03_assessments/group_assessment/INFS3701_Group_Assignment.pdf",
     "sha256": "69f0713dd90a82d646424246c9c62ccd7a36face401c773c6ff7716dfdcfa542",
     "bytes": 203579
   },
@@ -112,7 +112,7 @@
     "name": "INFS3701_Group_Assignment_Marking_Scheme.pdf",
     "original_path": "sources/original/assignment/INFS3701_Group_Assignment_Marking_Scheme.pdf",
     "text_path": "sources/text/S13-INFS3701_Group_Assignment_Marking_Scheme.md",
-    "source_origin": "source_materials/INFS3822/04_assessments/group_assessment/INFS3701_Group_Assignment_Marking_Scheme.pdf",
+    "source_origin": "source_materials/INFS3701/03_assessments/group_assessment/INFS3701_Group_Assignment_Marking_Scheme.pdf",
     "sha256": "775378eef4b41de8d4be3d93f3db48e1c31462e04c05d1b6f3ec3866d1cee228",
     "bytes": 83058
   }

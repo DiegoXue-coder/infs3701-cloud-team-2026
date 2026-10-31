@@ -4,7 +4,7 @@ INFS3701 云架构与 AWS 实践 | 制定于 2026-10-31 | 所有日期均为悉�
 
 这份是可以拿到今晚会议上分工的执行草案。先按升级 Reading Tracker 安排，尚未决定的选题、人员姓名、数据库和权限要在首次会议确认。AWS 项目尚未实际部署；GitHub 私有协作中心和任务卡已建立，当前运行方式见 README 与 docs/system-status.md。Reading Tracker 仍需 T01 小组确认。
 
-正式 brief 截止为 **2026-11-17 16:00**；以下 11/3、11/6 等日期都是建议内部节点。目标是 11/16 完成可提交版本。官方证据为放在 INFS3822/group_assessment 文件夹里的 INFS3701 作业说明和评分表；此前会议提纲已逐项梳理。
+正式 brief 截止为 **2026-11-17 16:00**；以下 11/3、11/6 等日期都是建议内部节点。目标是 11/16 完成可提交版本。官方证据为 `source_materials/INFS3701/03_assessments/group_assessment/` 中的 INFS3701 作业说明和评分表；此前会议提纲已逐项梳理。
 
 ## 1. 我们最终做出什么
 
@@ -169,7 +169,7 @@ Design document 正文严格少于 4,000 词且少于 8 页；架构图及成本
 
 ## 8. 参考与适用范围
 
-- 本课程源文件路径：`source_materials/INFS3822/04_assessments/group_assessment/`；正文为 INFS3701。要求冲突和 Moodle 更新仍待确认。
+- 本课程源文件路径：`source_materials/INFS3701/03_assessments/group_assessment/`；正文为 INFS3701。要求冲突和 Moodle 更新仍待确认。
 - [GitHub Projects 官方说明](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)：任务、看板、表格和时间轴能力。
 - [EC2 应用使用 IAM 角色的 AWS 官方说明](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html)：避免向实例分发长期凭证；Lab 仍受课程权限约束。
 - [DynamoDB 入门官方文档](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStartedDynamoDB.html)：建表和读写的后续操作参考。

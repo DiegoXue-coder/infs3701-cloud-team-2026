@@ -1,6 +1,6 @@
 # 作业要求：AI 与组员都先读
 
-INFS3701 云架构与 AWS 实践，Term 3, 2026。原始三份文件来自学习库 INFS3822/group_assessment 目录，但正文明确是 INFS3701；此仓库按正文分类保留副本，原学习库未移动。
+INFS3701 云架构与 AWS 实践，Term 3, 2026。原始三份文件已于 2026-10-31 归位至学习库 `source_materials/INFS3701/03_assessments/group_assessment/`。此前误放在 INFS3822 目录，现已纠正；本仓库的原件副本始终按 INFS3701 分类，未混入 INFS3822 课件。
 
 ## 必须实现
 
