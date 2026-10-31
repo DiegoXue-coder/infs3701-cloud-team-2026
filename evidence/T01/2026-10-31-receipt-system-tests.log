@@ -1,0 +1,57 @@
+Task: T01
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-10-31T08:58:47+00:00
+Finished UTC: 2026-10-31T08:58:48+00:00
+Exit code: 0
+Command: C:/Users/xuesh/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe -m unittest discover -s tests -v
+
+STDOUT
+{"tasks": 1, "new_commands": 0, "snapshot": "2026-10-31T08:58:48+00:00"}
+{"tasks": 1, "new_commands": 0, "snapshot": "2026-10-31T08:58:48+00:00"}
+
+STDERR
+test_changed_lock_is_not_deleted (test_chat_sync.LockRules.test_changed_lock_is_not_deleted) ... ok
+test_lock_is_released_after_failure (test_chat_sync.LockRules.test_lock_is_released_after_failure) ... ok
+test_lock_is_released_after_success (test_chat_sync.LockRules.test_lock_is_released_after_success) ... ok
+test_other_sync_cannot_steal_lock (test_chat_sync.LockRules.test_other_sync_cannot_steal_lock) ... ok
+test_all_archived_sources_match_manifest (test_chat_sync.ReadOnlyDiagnosis.test_all_archived_sources_match_manifest) ... ok
+test_diagnosis_never_mutates_progress (test_chat_sync.ReadOnlyDiagnosis.test_diagnosis_never_mutates_progress) ... ok
+test_interrupt_after_state_write_recovers_exactly_one_receipt (test_receipts.ReceiptRules.test_interrupt_after_state_write_recovers_exactly_one_receipt) ... ok
+test_old_receipts_are_kept_without_inventing_previous_state (test_receipts.ReceiptRules.test_old_receipts_are_kept_without_inventing_previous_state) ... ok
+test_sensitive_assignment_line_is_redacted (test_receipts.ReceiptRules.test_sensitive_assignment_line_is_redacted) ... ok
+test_actual_final_upload_task_still_requires_frozen_version (test_team_sync.Rules.test_actual_final_upload_task_still_requires_frozen_version) ... ok
+test_block_resume (test_team_sync.Rules.test_block_resume) ... ok
+test_cannot_approve_self (test_team_sync.Rules.test_cannot_approve_self) ... ok
+test_cannot_approve_without_submission (test_team_sync.Rules.test_cannot_approve_without_submission) ... ok
+test_changed_delivery_needs_resubmit (test_team_sync.Rules.test_changed_delivery_needs_resubmit) ... ok
+test_changes_reopens_done (test_team_sync.Rules.test_changes_reopens_done) ... ok
+test_config_rejects_duplicate_identities (test_team_sync.Rules.test_config_rejects_duplicate_identities) ... ok
+test_each_role_can_prepare_with_no_other_task_completed (test_team_sync.Rules.test_each_role_can_prepare_with_no_other_task_completed) ... ok
+test_evidence_must_exist (test_team_sync.Rules.test_evidence_must_exist) ... ok
+test_failed_test_cannot_be_approved (test_team_sync.Rules.test_failed_test_cannot_be_approved) ... ok
+test_independent_review_completes (test_team_sync.Rules.test_independent_review_completes) ... ok
+test_json_state_round_trip (test_team_sync.Rules.test_json_state_round_trip) ... ok
+test_manifest_actor_must_match (test_team_sync.Rules.test_manifest_actor_must_match) ... ok
+test_no_claim_before_dependency (test_team_sync.Rules.test_no_claim_before_dependency) ... ok
+test_parallel_preparation_can_start_before_completion_dependency (test_team_sync.Rules.test_parallel_preparation_can_start_before_completion_dependency) ... ok
+test_partial_report_works_before_final_dependencies (test_team_sync.Rules.test_partial_report_works_before_final_dependencies) ... ok
+test_partial_test_cannot_be_approved (test_team_sync.Rules.test_partial_test_cannot_be_approved) ... ok
+test_paths_reject_external_or_traversal (test_team_sync.Rules.test_paths_reject_external_or_traversal) ... ok
+test_plan_has_no_cycle (test_team_sync.Rules.test_plan_has_no_cycle) ... ok
+test_progress_does_not_complete (test_team_sync.Rules.test_progress_does_not_complete) ... ok
+test_resume_preparation_does_not_wait_for_final_integration (test_team_sync.Rules.test_resume_preparation_does_not_wait_for_final_integration) ... ok
+test_role_cannot_be_impersonated (test_team_sync.Rules.test_role_cannot_be_impersonated) ... ok
+test_run_record_is_required (test_team_sync.Rules.test_run_record_is_required) ... ok
+test_skipped_optional_is_not_completed (test_team_sync.Rules.test_skipped_optional_is_not_completed) ... ok
+test_status_does_not_claim (test_team_sync.Rules.test_status_does_not_claim) ... ok
+test_submit_only_enters_review (test_team_sync.Rules.test_submit_only_enters_review) ... ok
+test_submit_requires_real_manifest (test_team_sync.Rules.test_submit_requires_real_manifest) ... ok
+test_task_materials_are_linked_to_the_private_repo (test_team_sync.Rules.test_task_materials_are_linked_to_the_private_repo) ... ok
+test_two_people_cannot_claim_same_task (test_team_sync.Rules.test_two_people_cannot_claim_same_task) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.058s
+
+OK
+

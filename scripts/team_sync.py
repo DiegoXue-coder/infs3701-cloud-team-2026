@@ -16,6 +16,7 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE_RE = re.compile(r'<!-- team-state\s*\n(.*?)\n-->', re.S)
+RECEIPT_RE = re.compile(r'<!-- team-receipt-data\s*\n(.*?)\n-->', re.S)
 STATUS = {'todo':'未开始','in_progress':'进行中','blocked':'被卡住','review':'等检查','done':'已完成','skipped':'未启用（可选）'}
 COLORS = {'todo':'d9e1e8','in_progress':'0969da','blocked':'cf222e','review':'bf8700','done':'1a7f37','skipped':'8250df'}
 
@@ -36,6 +37,10 @@ def initial_state(task, config):
 
 def parse_state(body):
     match = STATE_RE.search(body or '')
+    return json.loads(match.group(1)) if match else None
+
+def parse_receipt(body):
+    match=RECEIPT_RE.search(body or '')
     return json.loads(match.group(1)) if match else None
 
 def required_dependencies(task, config):
@@ -79,13 +84,20 @@ def issue_body(task, state, config):
         f"完成后提交真实 JSON 交付文件，再评论 `/team submit deliveries/{task['id']}/日期-用户名.json`。",
         '另一位成员实际检查后评论 `/team approve 检查说明`；有问题用 `/team changes 需要修改什么`。',
         '更新 `/team progress 实际进度`；遇阻 `/team block 问题与需要谁协助`。',
+        f"部分成果或失败测试也应上报：`/team report deliveries/{task['id']}/日期-用户名.json`，不会因此标完成。",
         '', f"[完整规则](https://github.com/{config['repository']}/blob/main/docs/team-protocol.md) · [操作手册](https://github.com/{config['repository']}/blob/main/docs/execution-guide.md)",
         '', '## 同步状态（系统维护）','',
         f"- 状态：**{STATUS[state['status']]}**",
         '- 负责人：'+text_cell(state.get('owner')),
         '- 最近记录：'+text_cell(state.get('last_note')),
         '- 时间：'+text_cell(state.get('last_update')),
-        '', '<!-- team-state',json.dumps(state,ensure_ascii=False,separators=(',',':')),'-->']
+        '- 最近回执：'+text_cell((state.get('last_receipt') or {}).get('receipt_id'))]
+    latest=state.get('submission') or state.get('last_report')
+    if latest:
+        url=f"https://github.com/{config['repository']}/blob/{latest['commit']}/"
+        lines += ['- 实际上报结果：'+text_cell(latest.get('verification_result')),
+            f"- [交付记录]({url+urllib.parse.quote(latest['path'],safe='/')}) · [执行记录]({url+urllib.parse.quote(latest['run_log'],safe='/')})"]
+    lines += ['', '<!-- team-state',json.dumps(state,ensure_ascii=False,separators=(',',':')),'-->']
     return '\n'.join(lines)+'\n'
 
 class GitHub:
@@ -155,6 +167,8 @@ def validate_delivery(api, task, actor, path, timestamp=None):
     if file.get('type')!='file' or not 50<file.get('size',0)<100_000:
         raise ValueError('交付文件缺失、为空或过大。')
     delivery=json.loads(base64.b64decode(file['content']).decode('utf-8'))
+    if delivery.get('schema_version')!=2:
+        raise ValueError('请使用 templates/delivery.json 的第 2 版格式，包含实际执行记录和测试结果。')
     if delivery.get('task_id')!=task['id'] or str(delivery.get('actor','')).casefold()!=actor.casefold():
         raise ValueError('交付中的任务号和操作者必须与本次任务及评论人一致。')
     for field in ['environment','summary','limitations','next_step','ai_use']:
@@ -165,11 +179,17 @@ def validate_delivery(api, task, actor, path, timestamp=None):
     if tested.tzinfo is None or tested.astimezone(timezone.utc).timestamp()>datetime.now(timezone.utc).timestamp()+300:
         raise ValueError('测试时间必须含时区，且不能是未来时间。')
     tests=delivery.get('tests')
-    if not isinstance(tests,list) or not tests or not all(isinstance(t,dict) and all(isinstance(t.get(k),str) and t[k].strip() for k in ['action','expected','actual']) for t in tests):
+    if not isinstance(tests,list) or not 1<=len(tests)<=20 or not all(isinstance(t,dict) and all(isinstance(t.get(k),str) and t[k].strip() for k in ['action','expected','actual']) for t in tests):
         raise ValueError('请记录实际测试/核对的步骤、期望及实际结果。')
     evidence=delivery.get('evidence')
-    if not isinstance(evidence,list) or not evidence or not all(isinstance(p,str) for p in evidence):
+    if not isinstance(evidence,list) or not 1<=len(evidence)<=20 or not all(isinstance(p,str) and len(p)<=300 for p in evidence):
         raise ValueError('至少引用一个真实证据文件。')
+    verification=delivery.get('verification_result')
+    if verification not in {'pass','fail','partial'}:
+        raise ValueError('verification_result 必须是 pass、fail 或 partial；不能把部分完成写成通过。')
+    run_log=delivery.get('run_log')
+    if not isinstance(run_log,str) or run_log not in evidence:
+        raise ValueError('必须提供实际执行/核对记录 run_log，且它应包含在 evidence 列表中。')
     evidence_shas={}
     for item in evidence:
         validate_path(item)
@@ -180,9 +200,13 @@ def validate_delivery(api, task, actor, path, timestamp=None):
             raise ValueError(f'证据文件不存在或为空：{item}')
         evidence_shas[item]=evidence_file['sha']
     return {'path':path,'commit':ref,'manifest_sha':file['sha'],'evidence_shas':evidence_shas,
-        'summary':delivery['summary'][:1000],'tested_at':delivery['tested_at'],'submitted_by':actor}
+        'summary':delivery['summary'][:1000],'tested_at':delivery['tested_at'],'submitted_by':actor,
+        'environment':delivery['environment'][:1000],'verification_result':verification,'run_log':run_log,
+        'test_count':len(tests),'test_summary':[{key:test[key][:200] for key in ['action','expected','actual']} for test in tests[:5]]}
 
 def validate_review(api, submission):
+    if submission.get('verification_result')!='pass':
+        raise ValueError('测试结果仍为失败或部分完成，不能批准完成；请修复后重新提交真实通过的结果。')
     if api.get_file(submission['path'])['sha']!=submission['manifest_sha']:
         raise ValueError('交付文件在提交后已修改，请重新 submit 后再复核。')
     for path,sha in submission['evidence_shas'].items():
@@ -210,7 +234,7 @@ def apply_command(api, task, state, states, config, actor, command, args, timest
         if waiting: raise ValueError('开始条件还未完成：'+', '.join(waiting))
         if is_owner: return result,'已由你认领，保留当前状态。'
         result.update(status='in_progress',owner=actor,owner_role=role,last_note='已认领'+('（管理员接替未绑定角色）' if maintainer and str(assigned or '').casefold()!=actor.casefold() else ''))
-    elif command in {'progress','block','resume','submit'}:
+    elif command in {'progress','block','resume','submit','report'}:
         if not is_owner: raise ValueError('只有实际认领人可以更新或提交此任务。')
         if state['status'] in {'done','skipped'}: raise ValueError('该状态不能直接更新，请先安排返工或启用任务。')
         if command in {'progress','block'}:
@@ -223,11 +247,16 @@ def apply_command(api, task, state, states, config, actor, command, args, timest
             result.update(status='in_progress',last_note=args.strip() or '恢复工作')
         else:
             paths=shlex.split(args)
-            if len(paths)!=1: raise ValueError('submit 后只填写一个交付 JSON 路径。')
-            waiting=unmet_dependencies(task,states,config)
+            if len(paths)!=1: raise ValueError('report/submit 后只填写一个交付 JSON 路径。')
+            waiting=unmet_dependencies(task,states,config) if command=='submit' else []
             if waiting: raise ValueError('前置条件尚未完成：'+', '.join(waiting))
             submission=validate_delivery(api,task,actor,paths[0],timestamp)
-            result.update(status='review',submission=submission,reviewer=None,last_note='已提交真实文件，等待另一成员检查：'+submission['summary'])
+            if command=='report':
+                result.update(status='blocked' if state['status']=='blocked' else 'in_progress',
+                    last_report=submission,submission=None,reviewer=None,
+                    last_note=f"实际上报（{submission['verification_result']}，尚未完成）："+submission['summary'])
+            else:
+                result.update(status='review',submission=submission,reviewer=None,last_note='已提交真实文件，等待另一成员检查：'+submission['summary'])
     elif command in {'approve','changes'}:
         if not state.get('owner') or is_owner: raise ValueError('必须由另一 GitHub 用户复核，不能自己批准或假装他人检查。')
         if not args.strip(): raise ValueError('请写清实际检查了什么或需要修改什么。')
@@ -241,9 +270,72 @@ def apply_command(api, task, state, states, config, actor, command, args, timest
             if state['status'] not in {'review','done'}: raise ValueError('只有待检查或已完成任务可以提出返工。')
             result.update(status='in_progress',reviewer=actor,last_note='需要修改：'+args.strip()[:1900])
     else:
-        raise ValueError('未知命令；支持 claim / progress / block / resume / submit / approve / changes / status。')
+        raise ValueError('未知命令；支持 claim / progress / block / resume / report / submit / approve / changes / status。')
     result['last_update']=timestamp
     return result,f"{task['id']} 已更新为「{STATUS[result['status']]}」。{result['last_note']}"
+
+def make_receipt(task_id, comment, command, accepted, before, after, message):
+    submission=after.get('submission') if command in {'submit','approve','changes'} else after.get('last_report') if command=='report' else None
+    reference=None
+    if submission:
+        reference={key:submission.get(key) for key in ['path','commit','manifest_sha','run_log','verification_result','tested_at','test_count']}
+        reference['evidence_count']=len(submission['evidence_shas'])
+        reference['evidence_preview']=list(submission['evidence_shas'])[:3]
+    return {'schema_version':1,'receipt_id':f"R-{task_id}-{comment['id']}",'task_id':task_id,
+        'request_comment_id':comment['id'],'actor':comment['user']['login'],'command':command,
+        'requested_at':comment['created_at'],'processed_at':now(),
+        'outcome':'accepted' if accepted else 'rejected','status_before':before['status'],'status_after':after['status'],
+        'summary':message[:2000],'request_url':comment.get('html_url'),'submission':reference}
+
+def receipt_body(receipt,config):
+    lines=[f"**任务同步回执 `{receipt['receipt_id']}`**",'',
+        f"任务：{receipt['task_id']} · 操作者：@{receipt['actor']} · 操作：{receipt['command']}",
+        f"处理：{receipt['outcome']} · 状态：{STATUS[receipt['status_before']]} → {STATUS[receipt['status_after']]}",
+        '时间：'+receipt['processed_at'],'',receipt['summary']]
+    reference=receipt.get('submission')
+    if reference:
+        url=f"https://github.com/{config['repository']}/blob/{reference['commit']}/"
+        lines += ['',f"结果：**{reference['verification_result']}** · 测试/核对 {reference['test_count']} 项 · 证据 {reference['evidence_count']} 份",
+            f"[完整交付记录]({url+urllib.parse.quote(reference['path'],safe='/')}) · [实际执行记录]({url+urllib.parse.quote(reference['run_log'],safe='/')})",
+            '对应版本：`'+reference['commit']+'`']
+        lines += [f"- [证据：{path}]({url+urllib.parse.quote(path,safe='/')})" for path in reference['evidence_preview']]
+    lines += ['', '回执确认本次上报和文件版本；它不是 AWS 实时健康证明。', '',
+        f"<!-- team-receipt:{receipt['request_comment_id']} -->", '<!-- team-receipt-data',
+        json.dumps(receipt,ensure_ascii=False,separators=(',',':')), '-->']
+    return '\n'.join(lines)
+
+def flush_receipt(api,issue,state,comments,config):
+    """Durable outbox: repair an interrupted acknowledgment without applying twice."""
+    pending=state.get('pending_receipt')
+    if not pending:return
+    marker=f"<!-- team-receipt:{pending['request_comment_id']} -->"
+    existing=next((comment for comment in comments if marker in (comment.get('body') or '')),None)
+    if existing is None:
+        existing=api.request('POST',api.path(f"/issues/{issue['number']}/comments"),{'body':receipt_body(pending,config)})
+        comments.append(existing)
+    url=existing.get('html_url') or f"{issue['html_url']}#issuecomment-{existing['id']}"
+    state['last_receipt']={key:pending[key] for key in ['receipt_id','command','outcome','status_after','processed_at']}
+    state['last_receipt']['url']=url
+    state.pop('pending_receipt',None)
+
+def collect_receipts(task_id,comments):
+    requests={comment['id']:comment for comment in comments}
+    result=[]
+    for comment in comments:
+        body=comment.get('body') or ''
+        record=parse_receipt(body)
+        if record:
+            record['receipt_url']=comment.get('html_url')
+            result.append(record)
+        else:
+            match=re.search(r'<!-- team-receipt:(\d+) -->',body)
+            if not match:continue
+            original=requests.get(int(match.group(1)),{})
+            result.append({'receipt_id':f'R-{task_id}-{match.group(1)}','task_id':task_id,'legacy':True,
+                'actor':original.get('user',{}).get('login'),'command':(original.get('body') or '').split(maxsplit=2)[1] if len((original.get('body') or '').split(maxsplit=2))>1 else None,
+                'processed_at':comment.get('created_at'),'outcome':'legacy','status_before':None,'status_after':None,
+                'summary':'历史回执保留；不补造当时未保存的结构化状态。','receipt_url':comment.get('html_url'),'submission':None})
+    return result
 
 def bootstrap(api, tasks, config):
     repository=api.request('GET',api.path(''))
@@ -289,7 +381,7 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
     for key,issue in list(issues.items()):
         issues[key]=api.request('GET',api.path(f"/issues/{issue['number']}"))
     states={key:parse_state(issue['body']) for key,issue in issues.items()}
-    events=[]
+    events=[];comment_cache={}
     for key,issue in issues.items():
         task=by_id[key];state=states[key]
         if task['optional']:
@@ -300,6 +392,8 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
         comments=api.comments(issue['number'])
         seen={comment['id'] for comment in comments}
         comments += [comment for comment in (comment_seed or {}).get(key,[]) if comment['id'] not in seen]
+        comment_cache[key]=comments
+        flush_receipt(api,issue,state,comments,config)
         for comment in comments:
             first=(comment.get('body') or '').strip().split('\n',1)[0]
             if first.startswith('/team ') and comment['id'] not in state.get('processed_comments',[]):
@@ -307,6 +401,7 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
     permissions={}
     for comment_id,key,comment,line in sorted(events):
         state=states[key]; actor=comment['user']['login']
+        command='invalid';accepted=True
         try:
             if actor not in permissions: permissions[actor]=api.permission(actor)
             if permissions[actor] not in {'write','maintain','admin'}:
@@ -316,8 +411,9 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
             command=parts[1].lower();args=parts[2] if len(parts)>2 else ''
             next_state,message=apply_command(api,by_id[key],state,states,config,actor,command,args,comment['created_at'])
         except (ValueError,KeyError,TypeError,json.JSONDecodeError,RuntimeError) as error:
-            next_state=json.loads(json.dumps(state));message='未更新：'+str(error)
+            accepted=False;next_state=json.loads(json.dumps(state));message='未更新：'+str(error)
         next_state.setdefault('processed_comments',[]).append(comment_id)
+        next_state['pending_receipt']=make_receipt(key,comment,command,accepted,state,next_state,message)
         states[key]=next_state
         # Persist before acknowledgment; a retry will not apply the command twice.
         body=issue_body(by_id[key],next_state,config)
@@ -325,7 +421,7 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
             'assignees':[next_state['owner']] if next_state.get('owner') else [],
             'labels':['task',f"role:{by_id[key]['role']}",f"status:{next_state['status']}"]})
         issues[key]['body']=body
-        api.request('POST',api.path(f"/issues/{issues[key]['number']}/comments"),{'body':f'**任务同步回执** · @{actor}\n\n{message}\n\n<!-- team-receipt:{comment_id} -->'})
+        flush_receipt(api,issues[key],next_state,comment_cache[key],config)
     # Reconcile configuration and label/close changes even when no new command arrived.
     for key,issue in issues.items():
         state=states[key];body=issue_body(by_id[key],state,config)
@@ -334,14 +430,17 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
         if body!=issue.get('body') or labels!=expected or issue['state']!=('closed' if state['status']=='done' else 'open'):
             api.request('PATCH',api.path(f"/issues/{issue['number']}"),{'body':body,'state':'closed' if state['status']=='done' else 'open',
                 'labels':sorted(expected),'assignees':[state['owner']] if state.get('owner') else []})
+    receipts=sorted([receipt for key,comments in comment_cache.items() for receipt in collect_receipts(key,comments)],key=lambda receipt:receipt.get('processed_at') or '')
     snapshot={'schema_version':1,'generated_at':now(),'repository':config['repository'],'timezone':config['timezone'],
         'members':config['members'],'service':config['service'],'aws_state':'Not polled; evidence is time/environment-specific.',
+        'recent_receipts':receipts[-10:],
         'tasks':[{**task,**states[task['id']], 'issue_number':issues[task['id']]['number'],
             'issue_url':issues[task['id']]['html_url'],
             'waiting_for':unmet_dependencies(task,states,config),
             'start_waiting_for':unmet_start_dependencies(task,states)} for task in tasks]}
     (root/'data').mkdir(exist_ok=True)
     (root/'data/snapshot.json').write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (root/'data/receipts.json').write_text(json.dumps({'schema_version':1,'generated_at':snapshot['generated_at'],'receipts':receipts},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     render_dashboard(snapshot,root)
     print(json.dumps({'tasks':len(tasks),'new_commands':len(events),'snapshot':snapshot['generated_at']},ensure_ascii=False))
 
@@ -361,6 +460,17 @@ def render_dashboard(snapshot, root=ROOT):
         ready=[t for t in tasks if t['role']==role and t['status']=='todo' and not t.get('start_waiting_for',t['waiting_for'])][:3]
         links=lambda items:'；'.join(f"[{t['id']} {t['title']}]({t['issue_url']})" for t in items) or '无'
         lines.append(f"| {role} / {snapshot['members'].get(role) or '待加入'} | {links(current)} | {links(ready)} |")
+    lines += ['', '## 最近上报与回执','',
+        '[完整机器可读回执](data/receipts.json) · [上报方法](docs/reporting.md)','',
+        '| 任务 / 操作 | 操作者 | 处理与状态 | 证据与回执 |','| --- | --- | --- | --- |']
+    for receipt in reversed(snapshot.get('recent_receipts',[])):
+        reference=receipt.get('submission');evidence='—'
+        if reference:
+            prefix=f"https://github.com/{snapshot['repository']}/blob/{reference['commit']}/"
+            evidence=f"[{reference['verification_result']} · 执行记录]({prefix+urllib.parse.quote(reference['run_log'],safe='/')})"
+        url=receipt.get('receipt_url');ack=f'[回执]({url})' if url else '历史回执'
+        lines.append(f"| {receipt['task_id']} / {text_cell(receipt.get('command'))} | {text_cell(receipt.get('actor'))} | {receipt['outcome']} / {STATUS.get(receipt.get('status_after'),'历史记录')} | {evidence} · {ack} |")
+    if not snapshot.get('recent_receipts'):lines.append('| 暂无上报 | — | — | — |')
     for status in ['in_progress','blocked','review','todo','done','skipped']:
         group=[t for t in tasks if t['status']==status]
         lines += ['',f'## {STATUS[status]} · {len(group)}','', '| 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |','| --- | --- | --- | --- |']

@@ -12,9 +12,13 @@
     }
   ],
   "evidence": [
-    "docs/REPLACE_WITH_REAL_EVIDENCE.md"
+    "docs/REPLACE_WITH_REAL_EVIDENCE.md",
+    "evidence/T07/REPLACE_WITH_REAL_EXECUTION_RECORD.log"
   ],
   "limitations": "Actual limits and unfinished items.",
   "next_step": "Who can do what next.",
-  "ai_use": "Actual AI tool/use and human verification."
+  "ai_use": "Actual AI tool/use and human verification.",
+  "schema_version": 2,
+  "verification_result": "partial",
+  "run_log": "evidence/T07/REPLACE_WITH_REAL_EXECUTION_RECORD.log"
 }

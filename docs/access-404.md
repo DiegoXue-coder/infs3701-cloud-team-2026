@@ -1,5 +1,7 @@
 # 三个链接都是 404 时先检查什么
 
+2026-10-31：用户已确认页面可以完整打开。以下保留为未来成员加入时的排查方法。
+
 已通过获准的 GitHub API 核对：仓库 `DiegoXue-coder/infs3701-cloud-team-2026` 存在且为 private；默认分支 main 上的 LIVE_BOARD.md、DASHBOARD.md、sources/INDEX.md 均存在。当前只有 DiegoXue-coder 是协作者。
 
 未登录 GitHub 或使用没有权限的账号时，私有资源会显示 404。它不一定是文件不存在。Git/AI 工具里已经登录，不会自动让浏览器也登录。

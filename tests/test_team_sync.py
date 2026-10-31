@@ -11,10 +11,11 @@ module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 
 class Files:
     def __init__(self,manifest=None):
-        self.manifest=manifest or {'task_id':'T01','actor':'alice','tested_at':datetime.now(timezone.utc).isoformat(),
+        self.manifest=manifest or {'schema_version':2,'task_id':'T01','actor':'alice','tested_at':datetime.now(timezone.utc).isoformat(),
             'environment':'repository; no AWS test','summary':'Documented actual team decision',
             'tests':[{'action':'read decision','expected':'fields present','actual':'verified'}],
-            'evidence':['docs/decision-result.md'],'limitations':'No cloud test','next_step':'network','ai_use':'assisted, human checked'}
+            'evidence':['docs/decision-result.md','evidence/T01/run.log'],'run_log':'evidence/T01/run.log',
+            'verification_result':'pass','limitations':'No cloud test','next_step':'network','ai_use':'assisted, human checked'}
         self.changed=False
     def head(self):return 'commit1'
     def get_file(self,path,ref='main'):
@@ -22,6 +23,7 @@ class Files:
             raw=json.dumps(self.manifest).encode()
             return {'type':'file','size':len(raw),'content':base64.b64encode(raw).decode(),'sha':'changed' if self.changed else 'manifest1'}
         if path=='docs/decision-result.md':return {'type':'file','size':100,'sha':'evidence1'}
+        if path=='evidence/T01/run.log':return {'type':'file','size':100,'sha':'log1'}
         raise RuntimeError('GitHub HTTP 404: Not Found')
 
 class Rules(unittest.TestCase):
@@ -74,7 +76,7 @@ class Rules(unittest.TestCase):
         self.api.manifest['actor']='bob'
         with self.assertRaises(ValueError):self.submitted()
     def test_evidence_must_exist(self):
-        self.api.manifest['evidence']=['docs/missing.md']
+        self.api.manifest['evidence']=['docs/missing.md','evidence/T01/run.log']
         with self.assertRaises(RuntimeError):self.submitted()
     def test_progress_does_not_complete(self):
         state=self.command('alice','progress','actually tested read/write',self.claimed())
@@ -88,6 +90,25 @@ class Rules(unittest.TestCase):
     def test_changed_delivery_needs_resubmit(self):
         state=self.submitted();self.api.changed=True
         with self.assertRaises(ValueError):self.command('bob','approve','checked',state)
+    def test_run_record_is_required(self):
+        self.api.manifest.pop('run_log')
+        with self.assertRaises(ValueError):self.submitted()
+    def test_partial_test_cannot_be_approved(self):
+        self.api.manifest['verification_result']='partial'
+        state=self.submitted()
+        with self.assertRaises(ValueError):self.command('bob','approve','checked',state)
+    def test_failed_test_cannot_be_approved(self):
+        self.api.manifest['verification_result']='fail'
+        state=self.submitted()
+        with self.assertRaises(ValueError):self.command('bob','approve','checked',state)
+    def test_partial_report_works_before_final_dependencies(self):
+        self.task.update(depends_on=['T00'],start_after=[])
+        self.states['T00']={'status':'todo'}
+        self.api.manifest['verification_result']='partial'
+        state=self.command('alice','report','deliveries/T01/actual.json',self.claimed())
+        self.assertEqual(state['status'],'in_progress')
+        self.assertIsNone(state['submission'])
+        self.assertEqual(state['last_report']['verification_result'],'partial')
     def test_changes_reopens_done(self):
         done=self.command('bob','approve','checked',self.submitted())
         self.assertEqual(self.command('carol','changes','missing actual evidence',done)['status'],'in_progress')

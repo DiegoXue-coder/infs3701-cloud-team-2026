@@ -15,7 +15,7 @@
 1. AI 读取最新 Issue，按前置任务和本人角色推荐工作。
 2. 在任务卡评论 `/team claim B`，等待系统确认认领。
 3. 配置 AWS、编写代码或制作材料，保留真实证据。
-4. 提交交付文件到默认分支，评论 `/team submit 文件路径`，进入“等检查”。
+4. 提交带执行记录的交付到默认分支；部分成果用 `/team report 文件路径`，完整交付用 `/team submit 文件路径` 进入“等检查”。两者都有编号回执。
 5. 另一位成员检查后评论 `/team approve 检查说明`，才进入“已完成”。
 6. AI 运行仓库同步助手，刷新 [看板](DASHBOARD.md) 和 AI 可读的 [状态快照](data/snapshot.json)。
 
@@ -58,6 +58,7 @@ GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度�
 - [三人操作手册](docs/execution-guide.md)：做什么、怎么做、先后顺序和联合检查节点。
 - [任务定义](project/tasks.json)：计划和验收；实时状态在对应 Issue，不手改快照。
 - [交付模板](templates/delivery.json)、[会议决定](docs/decisions.md)、[环境记录](docs/environment.md)。
+- [工作结束怎样上报](docs/reporting.md)：实际截图/日志、测试结果、回执、复核；看板显示最近记录，完整回执在 data/receipts.json。
 - [协议](docs/team-protocol.md)：认领、进度、阻塞、提交、复核及恢复。
 
 ## 当前边界

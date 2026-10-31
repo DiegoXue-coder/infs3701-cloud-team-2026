@@ -56,7 +56,7 @@ def repository_lock(api, actor):
 
 def publish(api, directory):
     entries=[{'path':path,'mode':'100644','type':'blob','content':(directory/path).read_text(encoding='utf-8')}
-        for path in ['DASHBOARD.md','data/snapshot.json']]
+        for path in ['DASHBOARD.md','data/snapshot.json','data/receipts.json']]
     for attempt in range(3):
         head=api.head()
         parent=api.request('GET',api.path('/git/commits/'+head))
