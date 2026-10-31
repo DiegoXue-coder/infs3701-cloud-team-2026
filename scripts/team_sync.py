@@ -57,6 +57,12 @@ def issue_body(task, state, config):
         '前置任务：'+('、'.join(required_dependencies(task,config)) or '无'),'',
         '## 具体做法','']
     lines += [f'{i}. {step}' for i,step in enumerate(task['steps'],1)]
+    if task.get('materials'):
+        lines += ['', '## 相关课件与示例','']
+        for item in task['materials']:
+            url=f"https://github.com/{config['repository']}/blob/main/"+urllib.parse.quote(item['path'],safe='/')
+            lines.append(f"- [{item['source_id']} · {item['title']}]({url})")
+        lines.append('课堂示例仅用于理解与改造，不能直接作为本组最终服务。')
     lines += ['', '## 验收标准','']+[f'- {item}' for item in task['acceptance']]
     lines += ['', '## 怎样更新','',
         f"评论 `/team claim {task['role']}` 认领；等系统确认再操作。",
@@ -333,7 +339,7 @@ def render_dashboard(snapshot, root=ROOT):
         local=datetime.fromisoformat(snapshot['generated_at']).astimezone(ZoneInfo('Australia/Sydney')).strftime('%Y-%m-%d %H:%M %Z')
     except ZoneInfoNotFoundError:
         raise RuntimeError('当前 Python 缺少时区数据；Windows 环境先由 AI 安装 tzdata，再重新同步。') from None
-    lines=['# 三人项目进度看板','',f"最后同步：**{local}** · [同步运行记录](https://github.com/{snapshot['repository']}/actions)",'',
+    lines=['# 三人项目进度看板','',f"最后同步：**{local}** · [在线任务入口](LIVE_BOARD.md) · [系统运行方式](docs/system-status.md)",'',
         f'已完成并复核 **{len(done)} / {len(active)}** 项；等检查 **{sum(t["status"]=="review" for t in tasks)}** 项；被卡住 **{sum(t["status"]=="blocked" for t in tasks)}** 项。',
         '', '**当前同步：每次聊天由 AI 运行同步助手；后台 Actions 暂停。** [系统状态](docs/system-status.md)。', '', '**这是任务同步快照，不是 AWS 实时监控。** 点击任务读取最新正文和评论；没有同步回执的认领/提交仍在处理中。所有项目任务未完成前，不把协作系统搭建计作云服务完成。',
         '', '## 每个人现在可以做什么','', '| 角色 / 成员 | 当前工作 | 前置条件满足的下一项 |','| --- | --- | --- |']

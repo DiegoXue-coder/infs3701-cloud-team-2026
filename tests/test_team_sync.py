@@ -84,5 +84,9 @@ class Rules(unittest.TestCase):
     def test_config_rejects_duplicate_identities(self):
         config=module.load_config();config['members']={'A':'same','B':'same','C':None}
         with self.assertRaises(ValueError):module.validate_plan(module.load_tasks(),config)
+    def test_task_materials_are_linked_to_the_private_repo(self):
+        self.task['materials']=[{'source_id':'S14','title':'lecture.pdf','path':'sources/original/course/week_05/lecture.pdf'}]
+        body=module.issue_body(self.task,self.state,self.config)
+        self.assertIn('https://github.com/test/repo/blob/main/sources/original/course/week_05/lecture.pdf',body)
 
 if __name__=='__main__':unittest.main()

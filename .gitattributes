@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# Course originals are evidence: preserve every byte, including TXT line endings.
+sources/original/** -text

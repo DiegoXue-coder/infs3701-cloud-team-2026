@@ -2,7 +2,7 @@
 
 **来这里看进度、领任务、交证据，再和你自己的 AI 一起做。** 云服务在 AWS 运行，本仓库负责把三个人的工作接起来。
 
-→ [进度看板](DASHBOARD.md) · [全部任务](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) · [每天开始的开场语](prompts/START.md) · [首次加入](docs/onboarding.md)
+→ [在线任务入口](LIVE_BOARD.md) · [进度看板](DASHBOARD.md) · [全部任务](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) · [每天开始的开场语](prompts/START.md) · [首次加入](docs/onboarding.md)
 
 ## 每天只需对 AI 说
 
@@ -32,6 +32,20 @@ GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度�
 | C | 监控、测试、证据、成本、视频整合 | 待加入 |
 
 每个任务有主责、协作者、检查标准和前置任务。不是一个人做云端、另外两人只写报告。角色可调整，成员加入后更新配置；每人使用自己的 GitHub 身份。
+
+## 分类方式
+
+| 内容 | 在哪里 |
+| --- | --- |
+| 按周分好的原始课件与示例 | sources/original/course/02_weekly_materials/week_XX/ |
+| 三份小组作业原件 | sources/original/assignment/ |
+| AI 检索文本与文件校验 | sources/text/、sources/manifest.json |
+| 实时任务卡和角色 | GitHub Issues；project/config.json 绑定 A/B/C |
+| 真实交付、测试、截图和日志 | deliveries/ 与各任务所引用的证据文件 |
+| AI 工作规则与操作手册 | AGENTS.md、CLAUDE.md、prompts/、docs/ |
+| 在线访问和进度摘要 | LIVE_BOARD.md（筛选入口）、DASHBOARD.md（同步快照） |
+
+[如何做连接测试](docs/connection-test.md) · [在线与自动刷新的区别](docs/online-board.md)
 
 ## 资料与记录
 

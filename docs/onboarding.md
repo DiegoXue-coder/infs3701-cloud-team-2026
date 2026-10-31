@@ -22,3 +22,7 @@ AI 可以解释任务，但不能自动同步。由本人把命令复制到任�
 ## 当前尚未完成的加入事项
 
 A/C 用户名待提供；尚未邀请任何新成员。起始服务与最终 Lab 持有人待 T01 决定。课件缺失项见资料索引。
+
+## 不改进度的连接自检
+
+让 AI 在本地克隆运行 `python scripts/team.py --user 本人用户名 doctor`。它只读身份、资料和任务，不认领或完成任务。完整方法见 [connection-test.md](connection-test.md)，在线角色入口见 [LIVE_BOARD.md](../LIVE_BOARD.md)。

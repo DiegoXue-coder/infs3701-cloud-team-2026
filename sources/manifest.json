@@ -29,36 +29,36 @@
   {
     "id": "S04",
     "name": "INFS3701_Tutorial_03_Storage.pdf",
-    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Tutorial_03_Storage.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_03/INFS3701_Tutorial_03_Storage.pdf",
     "text_path": "sources/text/S04-INFS3701_Tutorial_03_Storage.md",
-    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Tutorial_03_Storage.pdf",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_03/INFS3701_Tutorial_03_Storage.pdf",
     "sha256": "3947ba62074114e57ad3a4198ab40f6ed61c7062aabae3d3db157ad0bfd0cfd7",
     "bytes": 598616
   },
   {
     "id": "S05",
     "name": "INFS3701_Tutorial_04_Cloud_Economics.pdf",
-    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Tutorial_04_Cloud_Economics.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_04/INFS3701_Tutorial_04_Cloud_Economics.pdf",
     "text_path": "sources/text/S05-INFS3701_Tutorial_04_Cloud_Economics.md",
-    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Tutorial_04_Cloud_Economics.pdf",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_04/INFS3701_Tutorial_04_Cloud_Economics.pdf",
     "sha256": "18d6110c581f2b402a133448f985dead88d4721943bb28a55d68ddc439ef9d03",
     "bytes": 624700
   },
   {
     "id": "S06",
     "name": "INFS3701_Week03_Storage.pdf",
-    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Week03_Storage.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_03/INFS3701_Week03_Storage.pdf",
     "text_path": "sources/text/S06-INFS3701_Week03_Storage.md",
-    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Week03_Storage.pdf",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_03/INFS3701_Week03_Storage.pdf",
     "sha256": "b74cea72346d5d78dc4e6240a8271f903a7385d517ad5835eb693f353f8e5c14",
     "bytes": 838217
   },
   {
     "id": "S07",
     "name": "INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
-    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_04/INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
     "text_path": "sources/text/S07-INFS3701_Week04_Cloud_Economics_and_Security_Foundations.md",
-    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_04/INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
     "sha256": "3c900efeec4c851f0ac0e1b4446243e9d8a76d487f402173a0c47a3efeb0adad",
     "bytes": 872689
   },
@@ -115,5 +115,103 @@
     "source_origin": "source_materials/INFS3701/03_assessments/group_assessment/INFS3701_Group_Assignment_Marking_Scheme.pdf",
     "sha256": "775378eef4b41de8d4be3d93f3db48e1c31462e04c05d1b6f3ec3866d1cee228",
     "bytes": 83058
+  },
+  {
+    "id": "S14",
+    "name": "week5 codes demo.txt",
+    "original_path": "sources/original/course/02_weekly_materials/week_05/demos/week5 codes demo.txt",
+    "text_path": "sources/text/S14-week5 codes demo.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_05/demos/week5 codes demo.txt",
+    "sha256": "8313fd581547f10a156ef2f39aa86bcd9bdfdc6918298784ab211e8b6983da1e",
+    "bytes": 11119,
+    "week": 5,
+    "kind": "demo",
+    "usage": "Classroom reference only; not executed and not a final assignment service.",
+    "json_parse": "raw classroom fragment, not valid complete JSON as uploaded"
+  },
+  {
+    "id": "S15",
+    "name": "INFS3701_Tutorial_05_Securing_User_Access_and_Data.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Tutorial_05_Securing_User_Access_and_Data.pdf",
+    "text_path": "sources/text/S15-INFS3701_Tutorial_05_Securing_User_Access_and_Data.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_05/INFS3701_Tutorial_05_Securing_User_Access_and_Data.pdf",
+    "sha256": "7506cced155bcf5e6b84c31ce7472dcf454f71ef0bcb9770dc1403a273926706",
+    "bytes": 669321,
+    "week": 5,
+    "kind": "tutorial",
+    "pages": 18
+  },
+  {
+    "id": "S16",
+    "name": "INFS3701_Week05_Securing_User_Access_and_Data.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pdf",
+    "text_path": "sources/text/S16-INFS3701_Week05_Securing_User_Access_and_Data.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pdf",
+    "sha256": "2a24de63dde7d7f7392c89f6b30ec568f84d9fc7942463dc4cdbb0ea294ec715",
+    "bytes": 678072,
+    "week": 5,
+    "kind": "lecture",
+    "pages": 16
+  },
+  {
+    "id": "S17",
+    "name": "INFS3701_Week05_Securing_User_Access_and_Data.pptx",
+    "original_path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pptx",
+    "text_path": "sources/text/S17-INFS3701_Week05_Securing_User_Access_and_Data.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pptx",
+    "sha256": "1003640202cfdb7f038ad5d7e77f64cf5fa7580176c840d715ddb6693003f042",
+    "bytes": 301229,
+    "week": 5,
+    "kind": "lecture",
+    "slides": 17
+  },
+  {
+    "id": "S18",
+    "name": "week7 cafe sever.txt",
+    "original_path": "sources/original/course/02_weekly_materials/week_07/demos/week7 cafe sever.txt",
+    "text_path": "sources/text/S18-week7 cafe sever.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_07/demos/week7 cafe sever.txt",
+    "sha256": "64b9af371d49ac94cad286aca652d9a56ca6c91758c35ecb9fcfd4f155e93a5f",
+    "bytes": 28917,
+    "week": 7,
+    "kind": "demo",
+    "usage": "Classroom reference only; not executed and not a final assignment service.",
+    "json_parse": "valid JSON; deployment not tested"
+  },
+  {
+    "id": "S19",
+    "name": "INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+    "text_path": "sources/text/S19-INFS3701_Tutorial_07_Networking_and_Content_Delivery.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_07/INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+    "sha256": "5859d3ee5d7e1f9a3dcdbdf6cc57766f04eda7f9f5a3da9d974ac8818b85f7dd",
+    "bytes": 622740,
+    "week": 7,
+    "kind": "tutorial",
+    "pages": 15
+  },
+  {
+    "id": "S20",
+    "name": "INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+    "text_path": "sources/text/S20-INFS3701_Week07_Networking_and_Content_Delivery.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+    "sha256": "aa9b6a660675d19c9a18cb3464d696bf0357d4efebe5247ce62a9797f849aa4a",
+    "bytes": 843487,
+    "week": 7,
+    "kind": "lecture",
+    "pages": 21
+  },
+  {
+    "id": "S21",
+    "name": "INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+    "original_path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+    "text_path": "sources/text/S21-INFS3701_Week07_Networking_and_Content_Delivery.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+    "sha256": "a7e8760e4584da940c4fbfaa9390d57c31ea00a0e28c2ee59230181650b96168",
+    "bytes": 523887,
+    "week": 7,
+    "kind": "lecture",
+    "slides": 22
   }
 ]

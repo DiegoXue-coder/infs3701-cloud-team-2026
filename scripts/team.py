@@ -81,11 +81,31 @@ def report(snapshot,user):
         'needs_review':[{'id':t['id'],'title':t['title'],'owner':t.get('owner'),'url':t['issue_url']}
             for t in snapshot['tasks'] if t['status']=='review' and str(t.get('owner') or '').casefold()!=user.casefold()]},ensure_ascii=False,indent=2))
 
+def diagnose(api, user):
+    """Read-only connection check; never claim work, process comments or commit."""
+    config=decode_json(api.get_file('project/config.json'))
+    manifest=decode_json(api.get_file('sources/manifest.json'))
+    snapshot=decode_json(api.get_file('data/snapshot.json'))
+    readme=api.get_file('README.md')
+    index=api.get_file('sources/INDEX.md')
+    board=api.get_file('LIVE_BOARD.md')
+    issues=api.issue_list()
+    cards=[row for row in issues if core.parse_state(row.get('body'))]
+    workflow=api.request('GET',api.path('/actions/workflows/team-sync.yml'))
+    role=next((key for key,login in config['members'].items() if login and login.casefold()==user.casefold()),None)
+    return {'checked_at':core.now(),'mode':'read_only_no_progress_changed','repository':config['repository'],
+        'authenticated_user':user,'role':role,'readme_readable':readme.get('type')=='file',
+        'source_index_readable':index.get('type')=='file','online_entry_readable':board.get('type')=='file',
+        'source_files':len(manifest),'courses':sorted({'INFS3701' if item['source_origin'].startswith('source_materials/INFS3701/') else 'UNEXPECTED' for item in manifest}),
+        'task_cards':len(cards),'snapshot_generated_at':snapshot['generated_at'],
+        'hosted_workflow_state':workflow.get('state'),'connector_access':'not tested by this helper; Git/REST authentication only',
+        'online_entry':f"https://github.com/{config['repository']}/blob/main/LIVE_BOARD.md"}
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--user',required=True,help='Your own GitHub username')
     sub=parser.add_subparsers(dest='command',required=True)
-    sub.add_parser('start');sub.add_parser('sync')
+    sub.add_parser('start');sub.add_parser('sync');sub.add_parser('doctor')
     cmd=sub.add_parser('command');cmd.add_argument('task');cmd.add_argument('--body-file',required=True)
     args=parser.parse_args()
     local=core.load_config()
@@ -95,6 +115,9 @@ def main():
     if identity.casefold()!=args.user.casefold():raise RuntimeError('当前授权账号与指定本人不一致，停止操作。')
     if api.permission(identity) not in {'write','maintain','admin'}:raise RuntimeError('当前账号没有本仓库的写权限。')
     if not api.request('GET',api.path(''))['private']:raise RuntimeError('课程协作仓库必须保持私有。')
+    if args.command=='doctor':
+        print(json.dumps(diagnose(api,identity),ensure_ascii=False,indent=2))
+        return
     with repository_lock(api,identity):
         config=decode_json(api.get_file('project/config.json'))
         if config['repository']!=local['repository']:raise RuntimeError('远程仓库配置与本地目标不一致。')
