@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T09:00:57+00:00",
+  "generated_at": "2026-10-31T09:27:53+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -9,9 +9,16 @@
     "C": null
   },
   "service": {
-    "status": "pending_team_decision",
-    "candidate": "Reading Tracker",
-    "final_choice": null
+    "status": "selected",
+    "route": "Option A",
+    "final_choice": "Reading Tracker",
+    "original_author": "DiegoXue-coder",
+    "source_code": "app/reading_tracker.py",
+    "baseline_archive": "reference/reading_tracker_candidate.py",
+    "baseline_commit": "01d1cc3f1a481445c771f9e3814486389a680ca6",
+    "baseline_sha256": "f50fea5190314216ffcffb4c175d0a0dcf9dd5c57c2c69449e4ef73cb0856947",
+    "decision_date": "2026-10-31",
+    "decision_source": "User confirmed in this chat; no group meeting attendance inferred."
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
@@ -101,12 +108,43 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541438916"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T01-6541686849",
+      "task_id": "T01",
+      "request_comment_id": 6541686849,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-10-31T09:27:28Z",
+      "processed_at": "2026-10-31T09:27:49+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T01 已更新为「进行中」。实际上报（partial，尚未完成）：用户已确认升级本人 Reading Tracker（Option A）；代码已找回并建立 app/reading_tracker.py 升级入口，离线语法和原统计函数检查通过。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541686849",
+      "submission": {
+        "path": "deliveries/T01/2026-10-31-reading-baseline.json",
+        "commit": "06106010bf2fd68d7b4b26da175cca99414e439a",
+        "manifest_sha": "6139bcfbddc534c487d2a8e4dd8148b94bfe2cb9",
+        "run_log": "evidence/T01/2026-10-31-reading-baseline-check.log",
+        "verification_result": "partial",
+        "tested_at": "2026-10-31T09:26:31+00:00",
+        "test_count": 2,
+        "evidence_count": 4,
+        "evidence_preview": [
+          "evidence/T01/2026-10-31-reading-baseline-check.log",
+          "app/reading_tracker.py",
+          "docs/shared-aws.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541690219"
     }
   ],
   "tasks": [
     {
       "id": "T01",
-      "title": "定题、需求、人员、Lab 环境",
+      "title": "确认 Reading Tracker 升级方案、人员与 Lab",
       "role": "B",
       "reviewer_role": "C",
       "start": "2026-10-31",
@@ -114,7 +152,7 @@
       "depends_on": [],
       "optional": false,
       "steps": [
-        "比较三人的个人服务，确定升级或新建路线，记录理由。",
+        "按用户已确认的 Option A 登记 Reading Tracker 个人作业起点，盘点代码与需要升级的架构。",
         "确认 A/B/C 姓名、各自空闲时间、最终 Lab 持有人与剩余额度。",
         "记录数据库方向、第一次联合检查时间及尚待确认事项。"
       ],
@@ -124,7 +162,7 @@
       "guide": "docs/execution-guide.md",
       "start_after": [],
       "early_steps": [
-        "整理候选服务、成员空闲时间和待决定事项，安排一次短会。",
+        "起始服务已确定为 Reading Tracker；继续整理成员空闲时间、Lab 和待决定的部署参数。",
         "给 A/B/C 发对接约定草稿；不把本卡复核当所有准备工作的入口锁。"
       ],
       "task_id": "T01",
@@ -133,52 +171,53 @@
       "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-10-31T09:00:10Z",
-      "last_note": "实际上报（partial，尚未完成）：已实现并测试结构化上报、执行记录、编号回执、另一账号复核和回执中断补发；T01 的小组选题、A/C 成员与最终 Lab 尚未确认。",
+      "last_update": "2026-10-31T09:27:28Z",
+      "last_note": "实际上报（partial，尚未完成）：用户已确认升级本人 Reading Tracker（Option A）；代码已找回并建立 app/reading_tracker.py 升级入口，离线语法和原统计函数检查通过。",
       "processed_comments": [
         6540933788,
         6540956246,
         6540964597,
         6541195191,
-        6541435522
+        6541435522,
+        6541686849
       ],
       "last_report": {
-        "path": "deliveries/T01/2026-10-31-collaboration-receipt.json",
-        "commit": "bf60d06fb23854dfd6757bfa14d25d0f5fd17980",
-        "manifest_sha": "478c2c06a7fa610664b64569867f52737db8e7d3",
+        "path": "deliveries/T01/2026-10-31-reading-baseline.json",
+        "commit": "06106010bf2fd68d7b4b26da175cca99414e439a",
+        "manifest_sha": "6139bcfbddc534c487d2a8e4dd8148b94bfe2cb9",
         "evidence_shas": {
-          "evidence/T01/2026-10-31-receipt-system-tests.log": "aa922e78cddc970405287d8d7dfb8611f631a5cc",
-          "docs/reporting.md": "a3e9c25f104038e14519605e2dcaed2ccc988426",
-          "docs/parallel-plan.md": "fe5a4e4668641a44bad0c06ce5d14b4a80e42aef",
-          "project/config.json": "f4a13745a468ecfc552e93f651ce69ff877d93ac"
+          "evidence/T01/2026-10-31-reading-baseline-check.log": "45f2c246ad572e4891790adc914899044cfafb60",
+          "app/reading_tracker.py": "bd69aae0612be8d38feaa714e0c09acd996eb3ff",
+          "docs/shared-aws.md": "e9e7ceea49bffba648dfba02e51bb9f86437b15a",
+          "docs/decisions.md": "d0398d4acf1da723a2e810ce8ce5ac897c2dd090"
         },
-        "summary": "已实现并测试结构化上报、执行记录、编号回执、另一账号复核和回执中断补发；T01 的小组选题、A/C 成员与最终 Lab 尚未确认。",
-        "tested_at": "2026-10-31T08:58:48+00:00",
+        "summary": "用户已确认升级本人 Reading Tracker（Option A）；代码已找回并建立 app/reading_tracker.py 升级入口，离线语法和原统计函数检查通过。",
+        "tested_at": "2026-10-31T09:26:31+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "本机课程协作仓库；测试为同步规则与文件完整性检查，没有部署或验证实际 AWS 云服务。",
+        "environment": "本地仓库离线检查；未导入完整 Flask/boto3 运行环境，未访问 AWS。",
         "verification_result": "partial",
-        "run_log": "evidence/T01/2026-10-31-receipt-system-tests.log",
+        "run_log": "evidence/T01/2026-10-31-reading-baseline-check.log",
         "test_count": 2,
         "test_summary": [
           {
-            "action": "运行本仓库 unittest 测试套件",
-            "expected": "所有规则测试通过，部分成果不会标完成，自批/失败结果不能完成，回执中断后不重复执行",
-            "actual": "实际运行 38 项测试，退出码 0，全部通过；网络中断恢复为模拟测试。"
+            "action": "解析找回的 Python 基线并独立运行原统计函数",
+            "expected": "语法有效，普通书籍列表和空列表的统计结果正确",
+            "actual": "离线检查通过；完整网页和实际数据库读写仍未验证。"
           },
           {
-            "action": "测试归档原件与 manifest 校验值",
-            "expected": "所有共享原件保持一致且均属于 INFS3701",
-            "actual": "测试套件内逐份核对 21 份归档原件，校验通过。"
+            "action": "确认原基线和新升级入口",
+            "expected": "保留原基线，后续修改有统一入口，明确选题",
+            "actual": "已保留 reference 基线，复制为 app/reading_tracker.py；project/config.json 已选择 Reading Tracker Option A。"
           }
         ]
       },
       "last_receipt": {
-        "receipt_id": "R-T01-6541435522",
+        "receipt_id": "R-T01-6541686849",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-10-31T09:00:32+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541438916"
+        "processed_at": "2026-10-31T09:27:49+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541690219"
       },
       "issue_number": 1,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1",
@@ -196,11 +235,11 @@
       "optional": false,
       "steps": [
         "核对私有仓库、原始资料、AI 入口、任务流程可以打开。",
-        "清理候选代码中的密钥/固定环境配置，保留可复现版本。",
+        "清理Reading Tracker 基线代码中的密钥/固定环境配置，保留可复现版本。",
         "未来两位成员加入并登记身份后，各自验证读取和评论权限。"
       ],
       "acceptance": [
-        "三人各自账号可访问，候选代码和资料归类清楚；无密钥或未经授权资料"
+        "三人各自账号可访问，Reading Tracker 基线代码和资料归类清楚；无密钥或未经授权资料"
       ],
       "guide": "docs/execution-guide.md",
       "start_after": [],
@@ -279,7 +318,7 @@
       "guide": "docs/execution-guide.md",
       "start_after": [],
       "early_steps": [
-        "用候选项目拟定记录字段、端口、健康接口、启动方式与配置变量。",
+        "按 Reading Tracker 拟定记录字段、端口、健康接口、启动方式与配置变量。",
         "先提交标为草稿的对接约定，约 A/C 用短时间确认，不等整套环境。"
       ],
       "task_id": "T04",

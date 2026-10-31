@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T09:00:57+00:00",
+  "generated_at": "2026-10-31T09:27:53+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -88,6 +88,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541438916"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T01-6541686849",
+      "task_id": "T01",
+      "request_comment_id": 6541686849,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-10-31T09:27:28Z",
+      "processed_at": "2026-10-31T09:27:49+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T01 已更新为「进行中」。实际上报（partial，尚未完成）：用户已确认升级本人 Reading Tracker（Option A）；代码已找回并建立 app/reading_tracker.py 升级入口，离线语法和原统计函数检查通过。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541686849",
+      "submission": {
+        "path": "deliveries/T01/2026-10-31-reading-baseline.json",
+        "commit": "06106010bf2fd68d7b4b26da175cca99414e439a",
+        "manifest_sha": "6139bcfbddc534c487d2a8e4dd8148b94bfe2cb9",
+        "run_log": "evidence/T01/2026-10-31-reading-baseline-check.log",
+        "verification_result": "partial",
+        "tested_at": "2026-10-31T09:26:31+00:00",
+        "test_count": 2,
+        "evidence_count": 4,
+        "evidence_preview": [
+          "evidence/T01/2026-10-31-reading-baseline-check.log",
+          "app/reading_tracker.py",
+          "docs/shared-aws.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541690219"
     }
   ]
 }
