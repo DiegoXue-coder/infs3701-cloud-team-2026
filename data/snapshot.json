@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T10:10:01+00:00",
+  "generated_at": "2026-10-31T10:22:20+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -156,6 +156,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541822610",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541825416"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T01-6542173190",
+      "task_id": "T01",
+      "request_comment_id": 6542173190,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-10-31T10:21:53Z",
+      "processed_at": "2026-10-31T10:22:15+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T01 已更新为「进行中」。实际上报（partial，尚未完成）：Built shared self-service onboarding, member-selected vacant B/C roles, authenticated enrollment command, setup script, role-specific first tasks, and machine-readable handoff defaults.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6542173190",
+      "submission": {
+        "path": "deliveries/T01/2026-10-31-self-service.json",
+        "commit": "fcc4fb25eafbf7f118c42564c3a2dee98be49ab8",
+        "manifest_sha": "a5bffa08a0b35144bd6485298bdaeec32fcbe224",
+        "run_log": "evidence/T01/2026-10-31-self-service-tests.log",
+        "verification_result": "partial",
+        "tested_at": "2026-10-31T10:21:39+00:00",
+        "test_count": 2,
+        "evidence_count": 9,
+        "evidence_preview": [
+          "docs/self-service.md",
+          "docs/member-B.md",
+          "docs/member-C.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6542176705"
     }
   ],
   "tasks": [
@@ -188,8 +219,8 @@
       "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-10-31T09:42:33Z",
-      "last_note": "已登录检查当前 Learner Lab Readme，IAM 段明确禁止创建用户或组；通过 Lab AWS 按钮进入 us-east-1 控制台。检查记录 docs/aws-access-audit.md（ae2e263），界面已用 $1.20/$50，非实测架构成本。未创建账号/修改权限/部署，T05 仍需资源、TLS、权限与预算检查；另行多人入口待真人向 tutor 确认。三人继续并行准备，由获准持有人集成部署。",
+      "last_update": "2026-10-31T10:21:53Z",
+      "last_note": "实际上报（partial，尚未完成）：Built shared self-service onboarding, member-selected vacant B/C roles, authenticated enrollment command, setup script, role-specific first tasks, and machine-readable handoff defaults.",
       "processed_comments": [
         6540933788,
         6540956246,
@@ -197,45 +228,51 @@
         6541195191,
         6541435522,
         6541686849,
-        6541822610
+        6541822610,
+        6542173190
       ],
       "last_report": {
-        "path": "deliveries/T01/2026-10-31-reading-baseline.json",
-        "commit": "06106010bf2fd68d7b4b26da175cca99414e439a",
-        "manifest_sha": "6139bcfbddc534c487d2a8e4dd8148b94bfe2cb9",
+        "path": "deliveries/T01/2026-10-31-self-service.json",
+        "commit": "fcc4fb25eafbf7f118c42564c3a2dee98be49ab8",
+        "manifest_sha": "a5bffa08a0b35144bd6485298bdaeec32fcbe224",
         "evidence_shas": {
-          "evidence/T01/2026-10-31-reading-baseline-check.log": "45f2c246ad572e4891790adc914899044cfafb60",
-          "app/reading_tracker.py": "bd69aae0612be8d38feaa714e0c09acd996eb3ff",
-          "docs/shared-aws.md": "e9e7ceea49bffba648dfba02e51bb9f86437b15a",
-          "docs/decisions.md": "d0398d4acf1da723a2e810ce8ce5ac897c2dd090"
+          "docs/self-service.md": "f4b35df99e8062f9ab8676fe0a8a0eda63c8e7be",
+          "docs/member-B.md": "7b66d18ec2fa23dbd0e2fc491dc1a55fafa2420d",
+          "docs/member-C.md": "ec1c100e654f6f54a37eb3c60f3554ed72dd6640",
+          "project/handoffs.json": "e8f54119d0da8a799ad823db2136d7952b980727",
+          "scripts/setup_member.py": "80495ae2e7a7f221f1cf11d22ecfc77791b34a53",
+          "scripts/team.py": "8586c76dfb4c630841cdac0121f3d9220e7adbef",
+          "tests/test_enrollment.py": "3dbe8c354ce08807b6035403ae627e068312961f",
+          "evidence/T01/2026-10-31-self-service-tests.log": "8c900f0ddde783731ae42894f97a7b92ceaaf00c",
+          "evidence/T01/2026-10-31-self-service-setup.log": "4d0c1507a48b909deb0333c3bddd52a8109e00b5"
         },
-        "summary": "用户已确认升级本人 Reading Tracker（Option A）；代码已找回并建立 app/reading_tracker.py 升级入口，离线语法和原统计函数检查通过。",
-        "tested_at": "2026-10-31T09:26:31+00:00",
+        "summary": "Built shared self-service onboarding, member-selected vacant B/C roles, authenticated enrollment command, setup script, role-specific first tasks, and machine-readable handoff defaults.",
+        "tested_at": "2026-10-31T10:21:39+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "本地仓库离线检查；未导入完整 Flask/boto3 运行环境，未访问 AWS。",
+        "environment": "Local Windows repository; no AWS access or member login performed. Python venv installed from app requirements. Enrollment tested using mocked GitHub API; real B/C enrollment not attempted.",
         "verification_result": "partial",
-        "run_log": "evidence/T01/2026-10-31-reading-baseline-check.log",
+        "run_log": "evidence/T01/2026-10-31-self-service-tests.log",
         "test_count": 2,
         "test_summary": [
           {
-            "action": "解析找回的 Python 基线并独立运行原统计函数",
-            "expected": "语法有效，普通书籍列表和空列表的统计结果正确",
-            "actual": "离线检查通过；完整网页和实际数据库读写仍未验证。"
+            "action": "Run unittest discovery",
+            "expected": "Existing task/receipt rules and enrollment protection pass",
+            "actual": "44 tests passed; occupied roles, double roles, operator-role takeover and repeated joins covered."
           },
           {
-            "action": "确认原基线和新升级入口",
-            "expected": "保留原基线，后续修改有统一入口，明确选题",
-            "actual": "已保留 reference 基线，复制为 app/reading_tracker.py；project/config.json 已选择 Reading Tracker Option A。"
+            "action": "Run setup_member.py --role B --install locally",
+            "expected": "Isolated dependencies and baseline syntax/statistics check",
+            "actual": "Exit 0; venv created and dependencies installed; baseline checks passed. Local role argument did not enroll or claim as B."
           }
         ]
       },
       "last_receipt": {
-        "receipt_id": "R-T01-6541822610",
-        "command": "progress",
+        "receipt_id": "R-T01-6542173190",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-10-31T09:42:52+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541825416"
+        "processed_at": "2026-10-31T10:22:15+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6542176705"
       },
       "issue_number": 1,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1",
@@ -336,6 +373,7 @@
       "guide": "docs/execution-guide.md",
       "start_after": [],
       "early_steps": [
+        "首次加入按 docs/self-service.md 完成本人连接、选岗与 setup，读取本人 member 指南和 project/handoffs.json，按既定参数直接开工，不等负责人私聊。",
         "B 读取 app/reading_tracker.py，提出数据字段、启动、端口和健康检查的小约定；A 核对 Lab 可用数据库和身份，C 核对可测性。",
         "先固定本地测试数据格式；不等真实数据库创建才开始开发。"
       ],
@@ -541,6 +579,7 @@
       "guide": "docs/execution-guide.md",
       "start_after": [],
       "early_steps": [
+        "首次加入按 docs/self-service.md 完成本人连接、选岗与 setup，读取本人 member 指南和 project/handoffs.json，按既定参数直接开工，不等负责人私聊。",
         "C 从现有代码准备至少三组虚构测试记录和预期统计结果，独立编写可执行的统计函数测试；不得只交空白清单。",
         "C 编写从 BASE_URL 读取地址的请求日志脚本，并在本地测试目标上运行；先保留返回码、耗时与时间。",
         "C 整理 CloudWatch 指标、阈值、告警触发和恢复方案，以及成本计算器的服务/用量假设。"

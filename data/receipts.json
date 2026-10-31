@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T10:10:01+00:00",
+  "generated_at": "2026-10-31T10:22:20+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -136,6 +136,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541822610",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541825416"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T01-6542173190",
+      "task_id": "T01",
+      "request_comment_id": 6542173190,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-10-31T10:21:53Z",
+      "processed_at": "2026-10-31T10:22:15+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T01 已更新为「进行中」。实际上报（partial，尚未完成）：Built shared self-service onboarding, member-selected vacant B/C roles, authenticated enrollment command, setup script, role-specific first tasks, and machine-readable handoff defaults.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6542173190",
+      "submission": {
+        "path": "deliveries/T01/2026-10-31-self-service.json",
+        "commit": "fcc4fb25eafbf7f118c42564c3a2dee98be49ab8",
+        "manifest_sha": "a5bffa08a0b35144bd6485298bdaeec32fcbe224",
+        "run_log": "evidence/T01/2026-10-31-self-service-tests.log",
+        "verification_result": "partial",
+        "tested_at": "2026-10-31T10:21:39+00:00",
+        "test_count": 2,
+        "evidence_count": 9,
+        "evidence_preview": [
+          "docs/self-service.md",
+          "docs/member-B.md",
+          "docs/member-C.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6542176705"
     }
   ]
 }
