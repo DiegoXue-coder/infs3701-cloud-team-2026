@@ -11,7 +11,7 @@
 
 1. 用自己的 GitHub 账号接受仓库邀请，确认能打开 README 和 Issues。
 2. 推荐让有终端能力的 AI 打开本仓库的本地克隆，确认 Python 3.9+ 可运行，并使用本人已有的 Git/gh 授权。同步助手会依次使用当前进程 GH_TOKEN、本人 gh 登录或 Git 凭证，不保存秘密。无需向本仓库提交任何 AI API key。若使用连接器，需本人确保其能访问这个新 private 仓库；目前 Codex 中既有连接未包含新仓库。
-3. 把 `prompts/START.md` 的首次开场语给 AI，填写自己的 GitHub 用户名。AI 应报告从配置读到的角色。
+3. 把 `prompts/START.md` 的首次开场语给 AI，填写自己的 GitHub 用户名。AI 应报告从配置读到的角色。若 Windows Python 提示缺少时区数据，让 AI 在该环境安装 `tzdata` 后重试，不能把悉尼时间猜成电脑本地时间。
 4. 让 AI 运行 `python scripts/team.py --user 本人用户名 start`，再用 command 功能认领；看到系统回执再开始。若无法访问，先解决连接权限，不让别人代签。
 5. 有 AWS 访问权限才实际操作；否则与最终环境持有人约共享屏幕，提交步骤并共同验证。
 

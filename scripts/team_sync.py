@@ -12,7 +12,7 @@ import shlex
 import urllib.error
 import urllib.parse
 import urllib.request
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE_RE = re.compile(r'<!-- team-state\s*\n(.*?)\n-->', re.S)
@@ -329,10 +329,13 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
 
 def render_dashboard(snapshot, root=ROOT):
     tasks=snapshot['tasks']; active=[t for t in tasks if t['status']!='skipped'];done=[t for t in active if t['status']=='done']
-    local=datetime.fromisoformat(snapshot['generated_at']).astimezone(ZoneInfo('Australia/Sydney')).strftime('%Y-%m-%d %H:%M %Z')
+    try:
+        local=datetime.fromisoformat(snapshot['generated_at']).astimezone(ZoneInfo('Australia/Sydney')).strftime('%Y-%m-%d %H:%M %Z')
+    except ZoneInfoNotFoundError:
+        raise RuntimeError('当前 Python 缺少时区数据；Windows 环境先由 AI 安装 tzdata，再重新同步。') from None
     lines=['# 三人项目进度看板','',f"最后同步：**{local}** · [同步运行记录](https://github.com/{snapshot['repository']}/actions)",'',
         f'已完成并复核 **{len(done)} / {len(active)}** 项；等检查 **{sum(t["status"]=="review" for t in tasks)}** 项；被卡住 **{sum(t["status"]=="blocked" for t in tasks)}** 项。',
-        '', '**这是任务同步快照，不是 AWS 实时监控。** 点击任务读取最新正文和评论；没有同步回执的认领/提交仍在处理中。所有项目任务未完成前，不把协作系统搭建计作云服务完成。',
+        '', '**当前同步：每次聊天由 AI 运行同步助手；后台 Actions 暂停。** [系统状态](docs/system-status.md)。', '', '**这是任务同步快照，不是 AWS 实时监控。** 点击任务读取最新正文和评论；没有同步回执的认领/提交仍在处理中。所有项目任务未完成前，不把协作系统搭建计作云服务完成。',
         '', '## 每个人现在可以做什么','', '| 角色 / 成员 | 当前工作 | 前置条件满足的下一项 |','| --- | --- | --- |']
     for role in 'ABC':
         current=[t for t in tasks if t['role']==role and t['status'] in {'in_progress','blocked','review'}]
