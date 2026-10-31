@@ -2,6 +2,8 @@
 
 ## 首次连接
 
+第一次加入或尚未分工，先使用 [自助开工入口](../docs/self-service.md) 的整段开场语。AI 读取 `project/handoffs.json`、空缺角色和对应 member 指南，协助本人选 B/C 并自助 join，不等待负责人手改配置。
+
 > 我是 GitHub 用户 ___，这是我们课程小组的私有仓库。请确认你能读取这个仓库和 Issues，先读 AGENTS.md、README.md、project/config.json、DASHBOARD.md、sources/INDEX.md，再从 GitHub 读取我的任务和最新评论。用中文告诉我：项目整体进度、我负责什么、今天先做哪一项及原因。协助我按任务卡一步步做，结束时保存真实交付、测试和证据，再通过任务评论同步。不能访问 GitHub/AWS 时明确说，不把口头计划当作完成。
 
 仓库地址：`https://github.com/DiegoXue-coder/infs3701-cloud-team-2026`

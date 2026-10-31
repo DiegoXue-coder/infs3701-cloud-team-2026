@@ -2,6 +2,8 @@
 
 **来这里看进度、领任务、交证据，再和你自己的 AI 一起做。** 云服务在 AWS 运行，本仓库负责把三个人的工作接起来。
 
+→ **[新成员自助开工：两位都用这个入口](docs/self-service.md)**
+
 → [在线任务入口](LIVE_BOARD.md) · [进度看板](DASHBOARD.md) · [全部任务](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) · [每天开始的开场语](prompts/START.md) · [首次加入](docs/onboarding.md)
 
 ## 每天只需对 AI 说

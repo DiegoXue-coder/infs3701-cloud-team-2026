@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "task_id": "T01",
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-10-31T10:21:39+00:00",
+  "environment": "Local Windows repository; no AWS access or member login performed. Python venv installed from app requirements. Enrollment tested using mocked GitHub API; real B/C enrollment not attempted.",
+  "summary": "Built shared self-service onboarding, member-selected vacant B/C roles, authenticated enrollment command, setup script, role-specific first tasks, and machine-readable handoff defaults.",
+  "tests": [
+    {
+      "action": "Run unittest discovery",
+      "expected": "Existing task/receipt rules and enrollment protection pass",
+      "actual": "44 tests passed; occupied roles, double roles, operator-role takeover and repeated joins covered."
+    },
+    {
+      "action": "Run setup_member.py --role B --install locally",
+      "expected": "Isolated dependencies and baseline syntax/statistics check",
+      "actual": "Exit 0; venv created and dependencies installed; baseline checks passed. Local role argument did not enroll or claim as B."
+    }
+  ],
+  "evidence": [
+    "docs/self-service.md",
+    "docs/member-B.md",
+    "docs/member-C.md",
+    "project/handoffs.json",
+    "scripts/setup_member.py",
+    "scripts/team.py",
+    "tests/test_enrollment.py",
+    "evidence/T01/2026-10-31-self-service-tests.log",
+    "evidence/T01/2026-10-31-self-service-setup.log"
+  ],
+  "run_log": "evidence/T01/2026-10-31-self-service-tests.log",
+  "verification_result": "partial",
+  "limitations": "Other two usernames unknown; no invitations sent and no real member onboarding verified. Requires each member own GitHub acceptance/authentication and AI terminal access. Full web runtime and AWS deployment not tested; no unattended backend or auto AWS executor.",
+  "next_step": "When usernames are available invite authorized course members; they accept, select vacant B/C themselves, run setup/doctor/join, claim first task and report real results.",
+  "ai_use": "Codex authored scripts/docs and executed local tests/setup. No fabricated member contributions or independent approval."
+}

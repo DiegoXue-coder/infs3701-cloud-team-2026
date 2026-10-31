@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "updated_on": "2026-10-31",
+  "purpose": "Shared operational defaults and handoff state; not proof of implementation or live AWS health.",
+  "operator": "DiegoXue-coder",
+  "roles": {
+    "B": {
+      "guide": "docs/member-B.md",
+      "first_task": "T04",
+      "next_task": "T07"
+    },
+    "C": {
+      "guide": "docs/member-C.md",
+      "first_task": "T08",
+      "next_task": "T12"
+    }
+  },
+  "implementation_contract": {
+    "status": "assigned_defaults_not_yet_implemented",
+    "app_port": 8000,
+    "app_port_env": "APP_PORT",
+    "health_path": "/health",
+    "instance_header": "X-App-Instance",
+    "instance_env": "APP_INSTANCE",
+    "test_url_env": "BASE_URL",
+    "local_test_url": "http://127.0.0.1:8000",
+    "fields": [
+      "record_id",
+      "title",
+      "status",
+      "pages_read",
+      "total_pages",
+      "rating",
+      "note",
+      "created_at"
+    ],
+    "local_data_mode": "development_only_no_AWS_credentials",
+    "secrets": "Never share or commit AWS credentials; local mode must not contact AWS."
+  },
+  "cloud": {
+    "status": "not_deployed_or_inventory_verified",
+    "base_url": null,
+    "database_engine": null,
+    "database_region": null,
+    "database_resource_name": null,
+    "deployed_commit": null,
+    "resource_inventory": "docs/environment.md",
+    "missing_values_action": "Continue local-mode work. Prepare exact configuration/validation request in the relevant Issue; operator executes on next authorized window."
+  },
+  "ready_handoff_rules": {
+    "B_to_A": [
+      "commit",
+      "dependency file",
+      "startup command",
+      "environment variable names",
+      "schema/create-resource instructions",
+      "tests and known limits"
+    ],
+    "A_to_BC": [
+      "commit",
+      "base_url",
+      "non-secret region/resource names",
+      "supported features and limitations"
+    ],
+    "C_to_A": [
+      "metric and dimensions",
+      "threshold and rationale",
+      "exact configuration steps",
+      "trigger/recovery steps",
+      "expected observations"
+    ]
+  },
+  "automation_limits": [
+    "Private-repo invitation must be accepted by each member.",
+    "Member must authenticate their own GitHub and use an AI with local terminal/GitHub tools.",
+    "Commands run when the member or their AI executes them; no unattended backend is active.",
+    "Only authorized operator changes AWS; missing cloud parameters are never guessed.",
+    "Human review and genuine evidence remain required."
+  ]
+}

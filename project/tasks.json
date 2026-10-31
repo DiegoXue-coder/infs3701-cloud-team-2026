@@ -91,6 +91,7 @@
     "guide": "docs/execution-guide.md",
     "start_after": [],
     "early_steps": [
+      "首次加入按 docs/self-service.md 完成本人连接、选岗与 setup，读取本人 member 指南和 project/handoffs.json，按既定参数直接开工，不等负责人私聊。",
       "B 读取 app/reading_tracker.py，提出数据字段、启动、端口和健康检查的小约定；A 核对 Lab 可用数据库和身份，C 核对可测性。",
       "先固定本地测试数据格式；不等真实数据库创建才开始开发。"
     ]
@@ -239,6 +240,7 @@
     "guide": "docs/execution-guide.md",
     "start_after": [],
     "early_steps": [
+      "首次加入按 docs/self-service.md 完成本人连接、选岗与 setup，读取本人 member 指南和 project/handoffs.json，按既定参数直接开工，不等负责人私聊。",
       "C 从现有代码准备至少三组虚构测试记录和预期统计结果，独立编写可执行的统计函数测试；不得只交空白清单。",
       "C 编写从 BASE_URL 读取地址的请求日志脚本，并在本地测试目标上运行；先保留返回码、耗时与时间。",
       "C 整理 CloudWatch 指标、阈值、告警触发和恢复方案，以及成本计算器的服务/用量假设。"

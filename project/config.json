@@ -49,5 +49,18 @@
     "B": "成员二：应用、数据访问代码与运行说明",
     "C": "成员三：测试工具、监控方案、成本与证据"
   },
-  "collaboration_mode": "single_authorized_aws_operator_parallel_local_work"
+  "collaboration_mode": "single_authorized_aws_operator_parallel_local_work",
+  "self_service": {
+    "guide": "docs/self-service.md",
+    "handoffs": "project/handoffs.json",
+    "eligible_roles": [
+      "B",
+      "C"
+    ],
+    "enrollment": "authenticated_existing_write_collaborators_only",
+    "first_tasks": {
+      "B": "T04",
+      "C": "T08"
+    }
+  }
 }
