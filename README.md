@@ -17,9 +17,11 @@
 3. 配置 AWS、编写代码或制作材料，保留真实证据。
 4. 提交交付文件到默认分支，评论 `/team submit 文件路径`，进入“等检查”。
 5. 另一位成员检查后评论 `/team approve 检查说明`，才进入“已完成”。
-6. GitHub Actions 自动刷新 [看板](DASHBOARD.md) 和 AI 可读的 [状态快照](data/snapshot.json)。
+6. AI 运行仓库同步助手，刷新 [看板](DASHBOARD.md) 和 AI 可读的 [状态快照](data/snapshot.json)。
 
-所有自动化都是按事件运行的普通脚本，不调用收费 AI API，不控制 AWS，也不会在你未聊天时主动生成个人贡献。读任务、计划和检查仍由每个人自己的 AI 协助。
+当前采用**聊天时同步**：每次开始时 AI 运行 `python scripts/team.py --user 本人用户名 start`；更新任务时运行同一助手的 command 功能。它读取本人已有的 GitHub 授权，不调用收费 AI API、不控制 AWS。读任务、计划和检查由每个人自己的 AI 协助。
+
+GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度限制无法启动运行，已暂停以免反复失败；没有修改账单或提高限额。此时仅在网页发评论不会自动刷新，需要任一有写权限成员的 AI 运行同步助手。详情见 [当前系统状态](docs/system-status.md)。
 
 ## 三个角色
 

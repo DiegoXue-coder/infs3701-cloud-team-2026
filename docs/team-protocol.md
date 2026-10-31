@@ -34,9 +34,23 @@ claim、submit、approve 都会检查前置任务是否已完成。没有前置�
 
 T16 是可选增强，默认未启用并从完成分母排除；这不是“增强已做完”。全组决定启用后把 `project/config.json` 的 `enhancements_enabled` 改成 true；它会变成待办，并成为相关最终交付的前置任务。
 
-## 自动刷新怎样工作
+## 当前：聊天驱动同步
 
-- 有人发任务命令、修改任务或向 main 上传文件时，GitHub Actions 检查全部尚未处理的命令，按顺序处理，然后生成看板和快照。
+GitHub 托管 Actions 因账号付款/额度限制无法启动，已暂停。当前可用流程由本人 AI 在本地克隆里运行：
+
+```text
+python scripts/team.py --user 本人GitHub用户名 start
+python scripts/team.py --user 本人GitHub用户名 command T07 --body-file 临时命令.txt
+python scripts/team.py --user 本人GitHub用户名 sync
+```
+
+临时命令文本内容是一条 `/team ...` 命令，避免在 shell 拼接复杂文本。助手验证当前授权账号，读取远程最新计划，取得仓库同步锁，按顺序处理请求，并以非强制更新保存看板；不会把别人的代码覆盖。同步锁会在结束时释放；若显示另一人正在同步，稍后重试，不抢占。临时锁分支只有本次同步用途，没有新密钥或持久授权。
+
+使用自己的现有 GitHub 身份，不让同学提供自己的 token。脚本支持本人 gh/Git 凭证；没有授权时停止，不自动弹登录或创建 key。只在网页发评论时，需再由某位有写权限成员的 AI 运行 sync。
+
+## 保留的后台自动刷新配置
+
+- 账号限制解除且负责人重新启用工作流后，有人发任务命令、修改任务或向 main 上传文件时，GitHub Actions 可以检查未处理命令并生成看板和快照。当前不声称这条后台路径可用。
 - 同步流程串行运行；每条命令有处理记录，重复刷新不会重复认领或重复完成。即使某个待运行事件被 GitHub 合并，下一次仍会扫描未处理评论。
 - 流程以 GitHub 临时工作令牌执行，不存 AI key 或 AWS key；不需要购买模型 API。
 - 看板显示最近同步时间。没有回执、Actions 红色或快照旧时，AI 应报告待同步，不能自行假定成功。可到 Actions → Team task sync → Run workflow 请求重新同步。

@@ -252,7 +252,7 @@ def bootstrap(api, tasks, config):
         existing[task['id']]=issue
     return existing
 
-def synchronize(api, tasks, config, root=ROOT, issue_seed=None):
+def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=None):
     by_id={task['id']:task for task in tasks}
     issues={}
     for issue in api.issue_list():
@@ -268,6 +268,9 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None):
             issues[key]=issue
     missing=set(by_id)-set(issues)
     if missing: raise RuntimeError('缺少任务卡，先运行 bootstrap：'+', '.join(sorted(missing)))
+    # Read each authoritative card directly; recently mutated list responses can lag.
+    for key,issue in list(issues.items()):
+        issues[key]=api.request('GET',api.path(f"/issues/{issue['number']}"))
     states={key:parse_state(issue['body']) for key,issue in issues.items()}
     events=[]
     for key,issue in issues.items():
@@ -277,7 +280,10 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None):
                 state.update(status='skipped',last_note='小组尚未启用可选增强')
             elif config['enhancements_enabled'] and state['status']=='skipped':
                 state.update(status='todo',last_note='已启用增强，待认领')
-        for comment in api.comments(issue['number']):
+        comments=api.comments(issue['number'])
+        seen={comment['id'] for comment in comments}
+        comments += [comment for comment in (comment_seed or {}).get(key,[]) if comment['id'] not in seen]
+        for comment in comments:
             first=(comment.get('body') or '').strip().split('\n',1)[0]
             if first.startswith('/team ') and comment['id'] not in state.get('processed_comments',[]):
                 events.append((comment['id'],key,comment,first))
@@ -355,8 +361,11 @@ def main():
     if args.command=='validate':
         validate_plan(tasks,config);print('Plan and role configuration valid.');return
     api=GitHub(config)
-    seed=bootstrap(api,tasks,config) if args.command=='bootstrap' else None
-    synchronize(api,tasks,config,issue_seed=seed)
+    # Hosted and chat-driven execution use the same atomic repository lock.
+    from team import repository_lock
+    with repository_lock(api,'github-actions'):
+        seed=bootstrap(api,tasks,config) if args.command=='bootstrap' else None
+        synchronize(api,tasks,config,issue_seed=seed)
 
 def validate_plan(tasks,config):
     ids={t['id'] for t in tasks}
