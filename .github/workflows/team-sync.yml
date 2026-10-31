@@ -1,0 +1,51 @@
+name: Team task sync
+
+on:
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened, edited, closed, reopened, labeled, unlabeled, assigned, unassigned]
+  push:
+    branches: [main]
+    paths-ignore:
+      - DASHBOARD.md
+      - data/snapshot.json
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: team-task-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.event_name != 'issue_comment' || startsWith(github.event.comment.body, '/team ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - name: Check rules and transitions
+        run: |
+          python3 scripts/team_sync.py validate
+          python3 -m unittest discover -s tests -v
+      - name: Process pending task commands and render board
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/team_sync.py bootstrap
+      - name: Save generated snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add DASHBOARD.md data/snapshot.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Update task dashboard and AI snapshot"
+          git pull --rebase origin main
+          git push origin HEAD:main

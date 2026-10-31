@@ -1,0 +1,20 @@
+{
+  "task_id": "T07",
+  "actor": "REPLACE_WITH_YOUR_GITHUB_USERNAME",
+  "tested_at": "2026-11-03T18:00:00+11:00",
+  "environment": "Describe the real environment; for document-only work say no AWS test was performed.",
+  "summary": "Replace with what was actually delivered.",
+  "tests": [
+    {
+      "action": "Actual operation",
+      "expected": "Expected result",
+      "actual": "Observed result"
+    }
+  ],
+  "evidence": [
+    "docs/REPLACE_WITH_REAL_EVIDENCE.md"
+  ],
+  "limitations": "Actual limits and unfinished items.",
+  "next_step": "Who can do what next.",
+  "ai_use": "Actual AI tool/use and human verification."
+}

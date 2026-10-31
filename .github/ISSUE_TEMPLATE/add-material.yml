@@ -1,0 +1,24 @@
+name: 补充课程资料或澄清要求
+description: 记录新课件、Moodle 公告或 tutor 真实答复
+title: '[资料] '
+body:
+  - type: textarea
+    id: source
+    attributes:
+      label: 来源和日期
+      description: 上传到 sources 的实际路径、Moodle 公告时间或 tutor 回复来源
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: 对任务和要求有什么影响
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 核对
+      options:
+        - label: 资料属于课程授权范围，未包含密码、个人签名或敏感信息
+        - label: 原文件、提取文本和 sources/INDEX.md / manifest 已更新或明确待补

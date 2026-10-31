@@ -1,0 +1,119 @@
+[
+  {
+    "id": "S01",
+    "name": "INFS3701_course_outline_2026T3.txt",
+    "original_path": "sources/original/course/00_course_outline/INFS3701_course_outline_2026T3.txt",
+    "text_path": "sources/text/S01-INFS3701_course_outline_2026T3.md",
+    "source_origin": "source_materials/INFS3701/00_course_outline/INFS3701_course_outline_2026T3.txt",
+    "sha256": "b4dddc5ff2b35f1849b04bd464ec683c46fdda55a2b50637cbae78455c6e3ef9",
+    "bytes": 28116
+  },
+  {
+    "id": "S02",
+    "name": "INFS3701_course_overview_and_schedule.pdf",
+    "original_path": "sources/original/course/00_course_outline/INFS3701_course_overview_and_schedule.pdf",
+    "text_path": "sources/text/S02-INFS3701_course_overview_and_schedule.md",
+    "source_origin": "source_materials/INFS3701/00_course_outline/INFS3701_course_overview_and_schedule.pdf",
+    "sha256": "b1e7923f28e46f774ca1e5fb3b479bfd406168430341e1089571247e5868774f",
+    "bytes": 548157
+  },
+  {
+    "id": "S03",
+    "name": "INFS3701_welcome_announcement_2026-09-10.txt",
+    "original_path": "sources/original/course/01_announcements/INFS3701_welcome_announcement_2026-09-10.txt",
+    "text_path": "sources/text/S03-INFS3701_welcome_announcement_2026-09-10.md",
+    "source_origin": "source_materials/INFS3701/01_announcements/INFS3701_welcome_announcement_2026-09-10.txt",
+    "sha256": "f293eb56b00e3463383ddcc38b152a08445e3a006b9e8367f1f794b343deb30f",
+    "bytes": 2505
+  },
+  {
+    "id": "S04",
+    "name": "INFS3701_Tutorial_03_Storage.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Tutorial_03_Storage.pdf",
+    "text_path": "sources/text/S04-INFS3701_Tutorial_03_Storage.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Tutorial_03_Storage.pdf",
+    "sha256": "3947ba62074114e57ad3a4198ab40f6ed61c7062aabae3d3db157ad0bfd0cfd7",
+    "bytes": 598616
+  },
+  {
+    "id": "S05",
+    "name": "INFS3701_Tutorial_04_Cloud_Economics.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Tutorial_04_Cloud_Economics.pdf",
+    "text_path": "sources/text/S05-INFS3701_Tutorial_04_Cloud_Economics.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Tutorial_04_Cloud_Economics.pdf",
+    "sha256": "18d6110c581f2b402a133448f985dead88d4721943bb28a55d68ddc439ef9d03",
+    "bytes": 624700
+  },
+  {
+    "id": "S06",
+    "name": "INFS3701_Week03_Storage.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Week03_Storage.pdf",
+    "text_path": "sources/text/S06-INFS3701_Week03_Storage.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Week03_Storage.pdf",
+    "sha256": "b74cea72346d5d78dc4e6240a8271f903a7385d517ad5835eb693f353f8e5c14",
+    "bytes": 838217
+  },
+  {
+    "id": "S07",
+    "name": "INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
+    "text_path": "sources/text/S07-INFS3701_Week04_Cloud_Economics_and_Security_Foundations.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/INFS3701_Week04_Cloud_Economics_and_Security_Foundations.pdf",
+    "sha256": "3c900efeec4c851f0ac0e1b4446243e9d8a76d487f402173a0c47a3efeb0adad",
+    "bytes": 872689
+  },
+  {
+    "id": "S08",
+    "name": "INFS3701_week_01_cloud_foundations_lecture.pptx",
+    "original_path": "sources/original/course/02_weekly_materials/week_01/INFS3701_week_01_cloud_foundations_lecture.pptx",
+    "text_path": "sources/text/S08-INFS3701_week_01_cloud_foundations_lecture.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_01/INFS3701_week_01_cloud_foundations_lecture.pptx",
+    "sha256": "cbc1849ba5b49b00be879f7f849c5b1d940269480791fb7122f4ead6d6c86536",
+    "bytes": 602425
+  },
+  {
+    "id": "S09",
+    "name": "INFS3701_week_01_cloud_foundations_tutorial.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_01/INFS3701_week_01_cloud_foundations_tutorial.pdf",
+    "text_path": "sources/text/S09-INFS3701_week_01_cloud_foundations_tutorial.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_01/INFS3701_week_01_cloud_foundations_tutorial.pdf",
+    "sha256": "c8d0983376cbe4f30b8a66996eb14a8f4345b4b6b6bea63b22c99ab90e2f9b2c",
+    "bytes": 554319
+  },
+  {
+    "id": "S10",
+    "name": "INFS3701_week_02_compute_tutorial.pdf",
+    "original_path": "sources/original/course/02_weekly_materials/week_02/INFS3701_week_02_compute_tutorial.pdf",
+    "text_path": "sources/text/S10-INFS3701_week_02_compute_tutorial.md",
+    "source_origin": "source_materials/INFS3701/02_weekly_materials/week_02/INFS3701_week_02_compute_tutorial.pdf",
+    "sha256": "36871ad653221e2786ae46647068ae1eddc48eb788fbba9b7486f9a13709fc40",
+    "bytes": 532120
+  },
+  {
+    "id": "S11",
+    "name": "Group Assignment Cover Sheet.pdf",
+    "original_path": "sources/original/assignment/Group Assignment Cover Sheet.pdf",
+    "text_path": "sources/text/S11-Group Assignment Cover Sheet.md",
+    "source_origin": "source_materials/INFS3822/04_assessments/group_assessment/Group Assignment Cover Sheet.pdf",
+    "sha256": "28f691fc420040c5c42c91f61af18f066ca5e56f24b30c6f3903c60dcd8501a8",
+    "bytes": 219001
+  },
+  {
+    "id": "S12",
+    "name": "INFS3701_Group_Assignment.pdf",
+    "original_path": "sources/original/assignment/INFS3701_Group_Assignment.pdf",
+    "text_path": "sources/text/S12-INFS3701_Group_Assignment.md",
+    "source_origin": "source_materials/INFS3822/04_assessments/group_assessment/INFS3701_Group_Assignment.pdf",
+    "sha256": "69f0713dd90a82d646424246c9c62ccd7a36face401c773c6ff7716dfdcfa542",
+    "bytes": 203579
+  },
+  {
+    "id": "S13",
+    "name": "INFS3701_Group_Assignment_Marking_Scheme.pdf",
+    "original_path": "sources/original/assignment/INFS3701_Group_Assignment_Marking_Scheme.pdf",
+    "text_path": "sources/text/S13-INFS3701_Group_Assignment_Marking_Scheme.md",
+    "source_origin": "source_materials/INFS3822/04_assessments/group_assessment/INFS3701_Group_Assignment_Marking_Scheme.pdf",
+    "sha256": "775378eef4b41de8d4be3d93f3db48e1c31462e04c05d1b6f3ec3866d1cee228",
+    "bytes": 83058
+  }
+]

@@ -1,0 +1,294 @@
+# INFS3701_course_outline_2026T3.txt
+
+Extracted text for search; diagrams/layout must be checked in the original.
+
+# INFS3701 Enterprise Architecture for Scalable Cloud Solutions‑2026
+Published on the 30 Aug 2026
+
+## General Course Information
+Course Code : INFS3701
+Year : 2026
+Term : Term 3
+Teaching Period : T3
+Is a multi‑term course? : No
+Faculty : UNSW Business School
+Academic Unit : School of Information Systems and Technology Management
+Delivery Mode : In Person
+Delivery Format : Standard
+Delivery Location : Kensington
+Campus : Sydney
+Study Level : Undergraduate
+Units of Credit : 6
+
+Useful Links
+Handbook Class Timetable
+
+## Course Details & Outcomes
+### Course Description
+INFS3701 is a Level 3 Information Systems (IS) course that extends your knowledge of IS networking infrastructure, cybersecurity, and governance, with a focus on enterprise‑level cloud solution architecture. Building on concepts from INFS1701 (Networking and Cybersecurity) and INFS2701 (Cybersecurity Management and Governance), this course explores how modern organisations architect and manage scalable, secure cloud systems.
+
+The course is structured around three key areas of learning:
+1. **Architecting Scalable Cloud Infrastructure**: Learn how to deploy and scale cloud‑based systems using various architectural models, including Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
+2. **Cloud Security and Governance Guardrails**: Explore how to secure cloud environments through proactive governance practices and automated guardrails. This includes identity and access management (IAM), policy enforcement, compliance monitoring, and incident response planning to ensure cloud systems remain resilient, secure, and aligned with organisational policies.
+3. **Service Delivery of Enterprise Cloud**: Examine the organisational and operational aspects of delivering enterprise cloud services. Topics include Quality Assurance (QA), Incident Management (IM), and Service Level Agreements (SLAs), with emphasis on IT governance and service management.
+
+By the end of the course, you will be equipped to architect, implement, and manage enterprise‑level cloud solutions aligned with security, scalability, and governance best practices.
+
+### Course Aims
+This course aims to deepen students' expertise in Information Systems by focusing on the design, deployment, and governance of scalable enterprise cloud solutions. Building on foundational knowledge from prior courses, INFS3701 equips students with a comprehensive understanding of cloud infrastructure architecture, security and governance guardrails, and enterprise‑grade service delivery. While Amazon Web Services (AWS) is used as a primary platform for practical exploration, the course emphasises transferable concepts and practices relevant across cloud environments. The ultimate goal is to provide students with the knowledge and applied skills needed to design and manage secure, scalable, and compliant cloud solutions in modern IT organisations.
+
+### Relationship to Other Courses
+This is a Level 3 Information Systems (IS) course that continues your study of IS by furthering your knowledge and skills in relation to IS networking infrastructure, cybersecurity and governance. Successful completion of INFS2701, Cyber Security Management and Governance, is a prerequisite for enrolling in this course.
+
+### Course Learning Outcomes
+| ID | Outcome |
+| --- | --- |
+| CLO1 | Explain and apply enterprise solution architecture principles in developing solutions for cloud‑based business applications. • PLO1 : Business Knowledge • PLO2 : Problem Solving • PLO3 : Business Communication |
+| CLO2 | Design, write and evaluate cloud‑based enterprise solution architecture plans for small to medium scale business problems. • PLO1 : Business Knowledge • PLO2 : Problem Solving • PLO5 : Responsible Business Practice |
+| CLO3 | Interpret, review share, and collaborate on programming code and technical information relating to cloud‑based business applications. • PLO1 : Business Knowledge • PLO2 : Problem Solving • PLO3 : Business Communication • PLO4 : Teamwork • PLO5 : Responsible Business Practice |
+| CLO4 | Design, write and evaluate client‑server designs for business applications. • PLO1 : Business Knowledge • PLO2 : Problem Solving |
+| CLO5 | Design, write and evaluate containerised application architectures for scalable and continuous deployment. • PLO1 : Business Knowledge • PLO2 : Problem Solving |
+
+#### Course Learning Outcomes Assessment Item Mapping
+- **CLO1**: Preparation and Participation • Assignment 2 • Final Exam
+- **CLO2**: Preparation and Participation • Assignment 2 • Final Exam
+- **CLO3**: Preparation and Participation • Final Exam
+- **CLO4**: Preparation and Participation • Assignment 1 • Final Exam
+- **CLO5**: Preparation and Participation • Assignment 1 • Final Exam
+
+### Learning and Teaching Technologies
+Moodle ‑ Learning Management System | Microsoft Teams
+
+### Learning and Teaching in this course
+The learning and teaching approach for this course involves a combination of theoretical concepts and practical hands‑on experiences. Students will learn architecting solutions in the cloud. The course instructors will utilise various teaching techniques such as lectures, hands‑on workshops, quizzes, and peer‑to‑peer learning to enhance students' understanding of the course material. Students will also be encouraged to explore and experiment with Amazon Web Services (AWS) platform.
+
+Additional Course Information
+Refer to the course Moodle site
+
+## Assessments
+### Assessment Structure
+| Assessment Item | Weight | Relevant Dates | Program learning outcomes |
+| --- | --- | --- | --- |
+| Preparation and Participation<br>Assessment Format: Individual | 20% | Due Date: Weekly | • PLO1 : Business Knowledge • PLO2 : Problem Solving • PLO3 : Business Communication • PLO5 : Responsible Business Practice |
+| Assignment 1<br>Assessment Format: Individual | 15% | Due Date: Week 5: 12 October ‑ 18 October | • PLO1 : Business Knowledge • PLO2 : Problem Solving • PLO3 : Business Communication • PLO5 : Responsible Business Practice |
+| Assignment 2<br>Assessment Format: Group | 25% | Due Date: Week 10: 16 November ‑ 22 November | • PLO1 : Business Knowledge • PLO2 : Problem Solving • PLO3 : Business Communication • PLO5 : Responsible Business Practice • PLO4 : Teamwork |
+| Final Exam<br>Assessment Format: Individual | 40% | Start Date: University exams period<br>Due Date: University exams period | • PLO1 : Business Knowledge • PLO2 : Problem Solving • PLO3 : Business Communication • PLO5 : Responsible Business Practice |
+
+### Assessment Details
+#### Preparation and Participation
+**Assessment Overview**
+Weekly tutorial preparation and participation.
+
+**Course Learning Outcomes**
+CLO1 : Explain and apply enterprise solution architecture principles in developing solutions for cloud‑based business applications.
+CLO2 : Design, write and evaluate cloud‑based enterprise solution architecture plans for small to medium scale business problems.
+CLO3 : Interpret, review share, and collaborate on programming code and technical information relating to cloud‑based business applications.
+CLO4 : Design, write and evaluate client‑server designs for business applications.
+CLO5 : Design, write and evaluate containerised application architectures for scalable and continuous deployment.
+
+**Detailed Assessment Description**
+The course involves active engagement through the accomplishment of weekly tutorial objectives.
+Students will be actively involved in labs that offer hands‑on practice to reinforce concepts covered in lectures and recommended resources. Prior to each lab, detailed instructions on objectives, requirements, deliverables, and necessary software/tools will be provided. To ensure preparedness, attendance in lecture sessions is encouraged for clarifications. Tutors will be available during labs to guide and assist students as they work through assigned tasks. Participation in labs is mandatory, evaluating students on task completion.
+
+Submission notes
+Refer to the course Moodle site
+
+Assignment submission Turnitin type
+Not Applicable
+
+#### Assignment 1
+**Assessment Overview**
+Hosting a Static Website
+
+**Course Learning Outcomes**
+CLO4 : Design, write and evaluate client‑server designs for business applications.
+CLO5 : Design, write and evaluate containerised application architectures for scalable and continuous deployment.
+
+**Detailed Assessment Description**
+Refer to the course Moodle site
+
+Submission notes
+Refer to the course Moodle site
+
+Assignment submission Turnitin type
+Not Applicable
+
+#### Assignment 2
+**Assessment Overview**
+Architecting a Cloud Solution
+
+**Course Learning Outcomes**
+CLO1 : Explain and apply enterprise solution architecture principles in developing solutions for cloud‑based business applications.
+CLO2 : Design, write and evaluate cloud‑based enterprise solution architecture plans for small to medium scale business problems.
+
+**Detailed Assessment Description**
+Refer to the course Moodle site
+
+Assessment Length
+Refer to the course Moodle site
+
+Submission notes
+Refer to the course Moodle site
+
+Assignment submission Turnitin type
+Not Applicable
+
+#### Final Exam
+**Assessment Overview**
+Final Exam
+
+**Course Learning Outcomes**
+CLO1 : Explain and apply enterprise solution architecture principles in developing solutions for cloud‑based business applications.
+CLO2 : Design, write and evaluate cloud‑based enterprise solution architecture plans for small to medium scale business problems.
+CLO3 : Interpret, review share, and collaborate on programming code and technical information relating to cloud‑based business applications.
+CLO4 : Design, write and evaluate client‑server designs for business applications.
+CLO5 : Design, write and evaluate containerised application architectures for scalable and continuous deployment.
+
+**Detailed Assessment Description**
+The final exam is designed to assess the students' knowledge, understanding, and practical skills in cloud architecting. The exam will cover all the topics discussed throughout the course and will consist of both theoretical and practical questions. The students will be expected to demonstrate their ability to apply the concepts and principles learned in class to real‑world cloud scenarios. To prepare for the final exam, students are encouraged to review their notes, complete all assignments and lab work, and practice the lab activities regularly.
+
+Assessment Length
+Refer to the course Moodle site
+
+Submission notes
+Refer to the course Moodle site
+
+Assignment submission Turnitin type
+Not Applicable
+
+### General Assessment Information
+As a student at UNSW you are expected to display academic integrity in your work and interactions. Where a student breaches the UNSW Student Code with respect to academic integrity, the University may take disciplinary action under the Student Misconduct Procedure. To assure academic integrity, you may be required to demonstrate reasoning, research and the process of constructing work submitted for assessment.
+
+Students are expected to engage actively in course learning activities. Failure to engage in assessment tasks that are integrated into learning activities (e.g. class discussion, presentations) will be reflected in the marks for these assessable activities. Failure to meet the specified attendance requirements for the course may result in course failure.
+
+Students are expected to attempt all assessment requirements in a course. Failure to attempt an assessment task will impact the overall course outcome in proportion to the weighting of that task. Exceptions to this procedure are tasks that assess learning outcomes that must be mastered in a course including competencies stipulated by accreditation bodies and Work Health Safety requirements. Failure to attempt these tasks may result in course failure.
+
+#### Supplementary Exam Policy
+Where a first supplementary examination has been offered and the student is unable to undertake the exam, one final opportunity to undertake a second supplementary examination may be offered if the second special consideration application is approved.
+If the student is still unable to undertake the second supplementary examination because of a documented medical condition or for other exceptional documented reasons but has completed all other assessment tasks for the course, the student may be permitted, if the third special consideration application is approved, to enrol in the course at the next opportunity on an auditing basis, as the final opportunity. In such a case, the student will be permitted to undertake the final examination, and this mark will be added to the marks already achieved for the course. The final mark and grade will appear on the academic transcript for the first attempt at the course, and the second attempt at the course will also appear on the transcript with a grade of AS.
+
+#### Grading Basis
+Standard UNSW Grades
+
+##### Requirements to pass course
+To pass this course, students must:
+- Achieve a composite mark of at least 50 out of 100.
+- Attempt all assessment requirements and actively engage in course learning activities.
+- Attain all course learning outcomes.
+- Meet any additional requirements specified in the assessment details.
+- Fulfill the specified course attendance requirements.
+
+## Course Schedule
+| Teaching Week/Module | Activity Type | Content |
+| --- | --- | --- |
+| Week 1 : 14 September ‑ 20 September | Lecture<br>Tutorial<br>Assessment | Cloud Foundations<br>Introduction to AWS Platform<br>Class Preparation and Participation |
+| Week 2 : 21 September ‑ 27 September | Lecture<br>Tutorial<br>Assessment | Cloud Architecting ‑ Compute<br>Introduction to AWS EC2<br>Class Preparation and Participation |
+| Week 3 : 28 September ‑ 4 October | Lecture<br>Tutorial<br>Assessment | Cloud Architecting ‑ Storage<br>Adding a storage layer<br>Class Preparation and Participation |
+| Week 4 : 5 October ‑ 11 October | Lecture<br>Tutorial<br>Assessment | Cloud Economics ‑ Security Foundations<br>Drawing the Architecture ‑ Using the AWS Pricing Calculator<br>Class Preparation and Participation |
+| Week 5 : 12 October ‑ 18 October | Lecture<br>Tutorial<br>Assessment | Securing User Access & Data ‑ IAM & encryption<br>Secure access ‑ Securing resources in AWS<br>• Class Preparation and Participation • Individual assignment |
+| Week 6 : 19 October ‑ 25 October | Other | Flexibility Week (No class) |
+| Week 7 : 26 October ‑ 1 November | Lecture<br>Tutorial<br>Assessment | Networking<br>Networking & VPC<br>• Class Preparation and Participation |
+| Week 8 : 2 November ‑ 8 November | Lecture<br>Tutorial<br>Assessment | Databases<br>Setting up RDS in a private subnet<br>• Class Preparation and Participation |
+| Week 9 : 9 November ‑ 15 November | Lecture<br>Tutorial<br>Assessment | Logging, monitoring, and managing incidents<br>Monitoring and alerting with AWS CloudTrail and CloudWatch<br>• Class Preparation and Participation |
+| Week 10 : 16 November ‑ 22 November | Lecture<br>Tutorial<br>Assessment | Auto scaling<br>Auto scaling and load balancing in AWS<br>• Class Preparation and Participation • Group assignment |
+
+### Attendance Requirements
+Students are strongly encouraged to attend all classes and review lecture recordings.
+
+### Course Resources
+#### Prescribed Resources
+This course requires students to use a range of prescribed resources to enhance their learning experience. These resources include online articles, video tutorials, and sample solutions in the Cloud. The course instructors will provide students with a list of recommended resources at the beginning of each week, which will cover essential topics such as creating compute services in the Cloud, making data secure, and following best practices for architecting in the Cloud.
+
+Shrivastava, Saurabh, *Architecture for Migrating to, Building, Scaling, and Succeeding in the Cloud* (Packt Publishing Ltd, Second edition., 2023) 1 online resource (693 pages)
+
+#### Recommended Resources
+For students embarking on this course, a diverse mix of resources will empower them to grasp the intricate landscape of scalable cloud solutions effectively. Online platforms such as Linkedin Learning, Coursera, and Udemy offer specialised courses and tutorials on cloud architecture and solutions. Exploring cloud‑related documentations and tutorials from reputable sources like AWS, Microsoft Azure, and Google Cloud can provide real‑world insights.
+
+https://learning.linkedin.com
+https://www.coursera.org
+https://www.udemy.com
+https://docs.aws.amazon.com
+https://cloud.google.com/docs
+
+### Course Evaluation and Development
+Feedback is regularly sought from students and continual improvements are made based on this feedback. At the end of this course, you will be asked to complete the myExperience survey, which provides a key source of student evaluative feedback. Your input into this quality enhancement process is extremely valuable in assisting us to meet the needs of our students and provide an effective and enriching learning experience. The results of all surveys are carefully considered and do lead to action towards enhancing educational quality.
+
+In this course, we will seek your feedback through end of term myExperience responses. Feedback will also be encouraged throughout the term via the Moodle forum and in‑class discussions. This feedback will be taken into consideration and applied where appropriate. For example, the discussion forum was introduced as a result of feedback highlighting the need for a general platform for student discussions.
+
+Feedback from recent terms identified several recurring themes: that the lectures, tutorials and AWS Academy modules overlapped and the course could feel like an AWS certification that students could complete on their own; that assessment briefs and marking criteria were unclear; that some assessed skills were required before they had been taught; and that students wanted clearer exam preparation and more support given that many do not come from a coding background. Based on this feedback, the following changes have been made for this term:
+- AWS modules are now take‑home participation, not the focus of class. The AWS Academy modules and labs are completed at home as preparation that contributes to the participation mark. Completing every module and earning the AWS certification is not required.
+- The three components now have distinct, complementary roles, removing the previous repetition. Lectures focus on concepts, business context and real‑world case studies (the "why" behind the services); the take‑home AWS modules build hands‑on familiarity; and tutorials apply both relevant directly to the assessments.
+- Tutorials are built around the assessments. Each tutorial now presents worked examples that directly help students develop the solutions for their individual and group assessments, and every tutorial includes dedicated time for students to progress their own assessment in class with support from the teaching team.
+- Assessments rubrics have been rewritten with explicit, dot‑point deliverables and clear marking criteria, replacing the previous vague "above and beyond" wording with concrete "Going Beyond" expectations.
+- The course has been resequenced so the topics each assessment requires are taught before its deadline. For example, Storage now appears in Week 3, ahead of the Week 5 individual assignment that depends on it.
+- Broader cloud context has been added, with brief comparisons across the major providers (AWS, Azure and Google Cloud) in most lectures, in response to feedback that the course was too narrowly AWS‑focused.
+
+The teaching team will continue to monitor myExperience and in‑class feedback throughout the term and refine the course in response.
+
+### Staff Details
+| Position | Name | Email | Location | Phone | Availability | Equitable Learning Services Contact | Primary Contact |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Convenor | Tomas Lagos |  |  |  |  | Yes | Yes |
+
+## Other Useful Information
+### Academic Information
+#### COURSE POLICIES AND SUPPORT
+The Business School expects that you are familiar with the contents of this course outline and the UNSW and Business School learning expectations, rules, policies and support services as listed below:
+- Program Learning Outcomes
+- Academic Integrity and Plagiarism
+- Student Responsibilities and Conduct
+- Special Consideration
+- Protocol for Viewing Final Exam Scripts
+- Student Learning Support Services
+
+Further information is provided on the key policies and guidelines page.
+
+Students may not circulate or post online any course materials such as handouts, exams, syllabi or similar resources from their courses without the written permission of their instructor.
+
+#### STUDENT LEARNING OUTCOMES
+The Course Learning Outcomes (CLOs) – under the Outcomes tab – are what you should be able to demonstrate by the end of this course, if you participate fully in learning activities and successfully complete the assessment items.
+CLOs also contribute to your achievement of the Program Learning Outcomes (PLOs), which are developed across the duration of a program. PLOs are, in turn, directly linked to UNSW graduate capabilities. More information on Coursework PLOs is available on the key policies and guidelines page. For PG Research PLOs including MPDBS, please refer to UNSW HDR learning outcomes.
+
+#### Academic Honesty and Plagarism
+As a student at UNSW you are expected to display academic integrity in your work and interactions. Where a student breaches the UNSW Code of Conduct with respect to academic integrity, the University may take disciplinary action. To assure academic integrity, you may be required to demonstrate reasoning, research, and the process of constructing work submitted for assessment.
+
+To assist you in understanding what academic integrity means, and how to ensure that you do comply with the UNSW Code of Conduct, it is strongly recommended that you complete the Working with Academic Integrity module before submitting your first assessment task. It is a free, online self‑paced Moodle module that should take about one hour to complete.
+
+#### Submission of Assessment Tasks
+##### SHORT EXTENSIONS
+Short Extension is a new process that allows you to apply for an extended deadline on your assessment without the need to provide supporting documentation, offering immediate approval during brief, life‑disrupting events. Requests are automatically approved once submitted.
+
+Short extensions are ONLY available for some assessments. Check your course outline or Moodle to see if this is offered for your assessments. Where a short extension exists, all students enrolled in that course in that term are eligible to apply. Further details are available the UNSW Current Students page.
+
+##### SPECIAL CONSIDERATION
+You can apply for special consideration when illness or other circumstances beyond your control interfere with your performance in a specific assessment task or tasks, including online exams. Special consideration is primarily intended to provide you with an extra opportunity to demonstrate the level of performance of which you are capable. For further information, and to apply, see Special Consideration on the UNSW Current Students page.
+
+Applications can only be made online and will NOT be accepted by teaching staff. Applications will be assessed centrally by the Case Review Team, who will update the online application with the outcome and add any relevant comments. The change to the status of the application immediately sends an email to the student and to the assessor with the outcome. The majority of applications will be processed within 3‑5 working days.
+
+##### LATE SUBMISSION PENALTIES
+For assessments other than examinations, late submission will incur a penalty of 5% per day or part thereof (including weekends) from the due date and time. An assessment will not be accepted after 5 days (120 hours) of the original deadline unless special consideration has been approved. In the case of an approved Equitable Learning Plan (ELP) provision, special consideration or short extension, the late penalty applies from the date of approved time extension. After five days from the extended deadline, the assessment cannot be submitted.
+
+An assessment is considered late if the requested format, such as hard copy or electronic copy, has not been submitted on time or where the ‘wrong’ assessment has been submitted.
+
+For assessments which account for 10% or less of the overall course grade, and where answers are immediately discussed or debriefed, the LIC may stipulate a different penalty. Details of such late penalties will be available on the course Moodle page.
+
+##### FEEDBACK ON YOUR ASSESSMENT TASK PERFORMANCE
+Feedback on student performance from formative and summative assessment tasks will be provided to students in a timely manner. Assessment tasks completed within the teaching period of a course, other than a final assessment, will be assessed and students provided with feedback, with or without a provisional result, within 10 working days of submission, under normal circumstances. Feedback on continuous assessment tasks (e.g. laboratory and studio‑based, workplace‑based, weekly quizzes) will be provided prior to the midpoint of the course.
+
+### Faculty‑specific Information
+#### PROTOCOL FOR VIEWING FINAL EXAM SCRIPTS
+UNSW students have the right to view their final exam scripts, subject to a small number of very specific exemptions. The UNSW Business School has set a protocol under which students may view their final exam script. Individual schools within the Faculty may also set up additional local processes for viewing final exam scripts, so it is important that you check with your School.
+
+If you are completing courses from the following schools, please note the additional school‑specific information:
+- Students in the School of Accounting, Auditing & Taxation who wish to view their final examination script should also refer to this page.
+- Students in the School of Banking & Finance should also refer to this page.
+- Students in the School of Information Systems & Technology Management should also refer to this page.
+
+#### COURSE EVALUATION AND DEVELOPMENT
+Feedback is regularly sought from students and continual improvements are made based on this feedback. At the end of this course, you will be asked to complete the myExperience survey, which provides a key source of student evaluative feedback. Your input into this quality enhancement process is extremely valuable in assisting us to meet the needs of our students and provide an effective and enriching learning experience. The results of all surveys are carefully considered and do lead to action towards enhancing educational quality.
+
+#### QUALITY ASSURANCE
+The Business School is actively monitoring student learning and quality of the student experience in all its programs. A random selection of completed assessment tasks may be used for quality assurance, such as to determine the extent to which program learning goals are being achieved. The information is required for accreditation purposes, and aggregated findings will be used to inform changes aimed at improving the quality of Business School programs. All material used for such processes will be treated as confidential.
+
+#### TEACHING TIMES AND LOCATIONS
+Please note that teaching times and locations are subject to change. Students are strongly advised to refer to the Class Timetable website for the most up‑to‑date teaching times and locations.
