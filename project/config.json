@@ -33,9 +33,15 @@
   ],
   "planning_mode": "parallel_preparation_separate_completion_gates",
   "aws_collaboration_audit": {
-    "status": "awaiting_authenticated_console",
-    "multi_user_access": "unknown",
+    "status": "lab_documentation_checked",
+    "multi_user_access": "iam_user_creation_prohibited_by_current_lab",
     "accounts_created": false,
-    "audit_guide": "docs/aws-access-audit.md"
+    "audit_guide": "docs/aws-access-audit.md",
+    "checked_on": "2026-10-31",
+    "source": "Authenticated Learner Lab Readme: AWS IAM section",
+    "console_region": "us-east-1",
+    "displayed_credit_used_usd": 1.2,
+    "displayed_credit_budget_usd": 50,
+    "alternate_course_access": "awaiting_tutor_confirmation"
   }
 }

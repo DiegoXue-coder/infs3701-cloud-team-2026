@@ -17,6 +17,8 @@
 4. A/C 成员未提供，未发邀请；B 暂绑定 DiegoXue-coder。起始服务已确定为 Reading Tracker；最终 Lab 持有人和若干课程冲突仍待 T01/T03 确认。
 5. Week 5 和 Week 7 的 8 个新文件已归档并共享；Week 8/9 正式课件仍待收到，不能宣称全学期资料已齐。
 
+6. 当前 Learner Lab Readme 明确禁止创建用户或组；不能为另两位成员创建独立 IAM 登录账号。已进入 us-east-1 控制台，只读检查，没有更改权限。另行提供的小组访问方式待 tutor 确认，见 `docs/aws-access-audit.md`。
+
 ## 恢复后台模式时
 
 由账号持有人自行处理 GitHub 账单/额度问题后，负责人可重新启用 `.github/workflows/team-sync.yml` 并手动运行验证；成功前仍使用聊天同步。GitHub Projects 和 AI 连接器授权若需要扩大，另由本人处理，不在初始化中擅自扩大权限。

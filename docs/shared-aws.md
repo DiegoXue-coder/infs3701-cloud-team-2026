@@ -1,5 +1,7 @@
 # 三个人怎样共同开发一套 AWS 服务
 
+当前权限检查：2026-10-31 已确认本 Lab Readme 禁止创建用户或组，不能新建两位组员 IAM 账号。课程另行提供的入口待 tutor 回复。详见 [检查记录](aws-access-audit.md)。暂按下文由获准环境持有人执行的流程协作。
+
 ## 已经确定与尚未确定
 
 - 已确定应用：升级成员本人个人作业 Reading Tracker（Option A）。代码入口为 `app/reading_tracker.py`。
