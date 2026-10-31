@@ -4,7 +4,7 @@
 
 1. 保持仓库 Private，不启用公开 Pages。确认要加入的是有权访问课程资料的真实组员。
 2. 获得组员 GitHub 用户名后，通过仓库 Settings → Collaborators 发邀请，组员自己接受。不要共享账号。
-3. 在 `project/config.json` 的 `members` 中将 A/C 的 null 换成各自用户名；每个用户名只绑定一个角色。可通过代码变更流程记录调整。
+3. 在 `project/config.json` 的 `members` 中将 B/C 的 null 换成各自用户名；每个用户名只绑定一个角色。可通过代码变更流程记录调整。
 4. 若改变起始服务或数据库，将理由记入 `docs/decisions.md` 并更新配置；不要让各人的 AI 自行选不同方案。
 
 ## 每位组员
@@ -21,7 +21,7 @@ AI 可以解释任务，但不能自动同步。由本人把命令复制到任�
 
 ## 当前尚未完成的加入事项
 
-A/C 用户名待提供；尚未邀请任何新成员。起始服务已确定为 Reading Tracker，最终 Lab 持有人仍待 T01 确认。课件缺失项见资料索引。
+B/C 用户名待提供；尚未邀请任何新成员。起始服务已确定为 Reading Tracker，Lab 持有人已指定为 DiegoXue-coder。课件缺失项见资料索引。
 
 ## 不改进度的连接自检
 

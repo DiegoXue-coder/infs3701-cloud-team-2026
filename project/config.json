@@ -4,8 +4,8 @@
   "timezone": "Australia/Sydney",
   "due_at": "2026-11-17T16:00:00+11:00",
   "members": {
-    "A": null,
-    "B": "DiegoXue-coder",
+    "A": "DiegoXue-coder",
+    "B": null,
     "C": null
   },
   "maintainers": [
@@ -24,7 +24,7 @@
     "decision_source": "User confirmed in this chat; no group meeting attendance inferred."
   },
   "enhancements_enabled": false,
-  "aws_environment_owner": null,
+  "aws_environment_owner": "DiegoXue-coder",
   "questions_to_tutor": [
     "video_one_or_two_minutes",
     "is_auto_scaling_core",
@@ -43,5 +43,11 @@
     "displayed_credit_used_usd": 1.2,
     "displayed_credit_budget_usd": 50,
     "alternate_course_access": "awaiting_tutor_confirmation"
-  }
+  },
+  "role_descriptions": {
+    "A": "你：AWS 配置、部署与架构",
+    "B": "成员二：应用、数据访问代码与运行说明",
+    "C": "成员三：测试工具、监控方案、成本与证据"
+  },
+  "collaboration_mode": "single_authorized_aws_operator_parallel_local_work"
 }
