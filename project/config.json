@@ -31,5 +31,11 @@
     "resource_retention_for_marking",
     "permitted_lab_collaboration"
   ],
-  "planning_mode": "parallel_preparation_separate_completion_gates"
+  "planning_mode": "parallel_preparation_separate_completion_gates",
+  "aws_collaboration_audit": {
+    "status": "awaiting_authenticated_console",
+    "multi_user_access": "unknown",
+    "accounts_created": false,
+    "audit_guide": "docs/aws-access-audit.md"
+  }
 }
