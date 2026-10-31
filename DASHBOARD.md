@@ -1,6 +1,6 @@
 # 三人项目进度看板
 
-最后同步：**2026-10-31 19:50 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
+最后同步：**2026-10-31 20:00 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
 
 已完成并复核 **0 / 23** 项；等检查 **0** 项；被卡住 **0** 项。
 
@@ -18,11 +18,23 @@
 | B / DiegoXue-coder | [T01 定题、需求、人员、Lab 环境](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | [T04 确定数据库及对接约定](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4)；[T07 旧应用接入托管数据库](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7)；[T11 验证共享数据与无状态](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11) |
 | C / 待加入 | 无 | [T03 建任务板、询问冲突要求](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/3)；[T08 写测试清单、报告框架、成本假设](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8)；[T12 分流测试和监控页面](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12) |
 
+## 最近上报与回执
+
+[完整机器可读回执](data/receipts.json) · [上报方法](docs/reporting.md)
+
+| 任务 / 操作 | 操作者 | 处理与状态 | 证据与回执 |
+| --- | --- | --- | --- |
+| T01 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/bf60d06fb23854dfd6757bfa14d25d0f5fd17980/evidence/T01/2026-10-31-receipt-system-tests.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541438916) |
+| T01 / status | DiegoXue-coder | legacy / 历史记录 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541198017) |
+| T01 / progress | DiegoXue-coder | legacy / 历史记录 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540967392) |
+| T01 / claim | DiegoXue-coder | legacy / 历史记录 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540959225) |
+| T01 / status | DiegoXue-coder | legacy / 历史记录 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540936696) |
+
 ## 进行中 · 1
 
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
-| [T01 定题、需求、人员、Lab 环境](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / B | 2026-10-31 | 协作仓库、资料索引、任务卡、AI 规则及聊天同步已搭建并测试。起始服务、A/C 成员和最终 Lab 尚待小组会确认；T01 未完成。 |
+| [T01 定题、需求、人员、Lab 环境](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / B | 2026-10-31 | 实际上报（partial，尚未完成）：已实现并测试结构化上报、执行记录、编号回执、另一账号复核和回执中断补发；T01 的小组选题、A/C 成员与最终 Lab 尚未确认。 |
 
 ## 被卡住 · 0
 

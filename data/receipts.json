@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-31T09:00:57+00:00",
+  "receipts": [
+    {
+      "receipt_id": "R-T01-6540933788",
+      "task_id": "T01",
+      "legacy": true,
+      "actor": "DiegoXue-coder",
+      "command": "status",
+      "processed_at": "2026-10-31T08:04:18Z",
+      "outcome": "legacy",
+      "status_before": null,
+      "status_after": null,
+      "summary": "历史回执保留；不补造当时未保存的结构化状态。",
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540936696",
+      "submission": null
+    },
+    {
+      "receipt_id": "R-T01-6540956246",
+      "task_id": "T01",
+      "legacy": true,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "processed_at": "2026-10-31T08:06:50Z",
+      "outcome": "legacy",
+      "status_before": null,
+      "status_after": null,
+      "summary": "历史回执保留；不补造当时未保存的结构化状态。",
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540959225",
+      "submission": null
+    },
+    {
+      "receipt_id": "R-T01-6540964597",
+      "task_id": "T01",
+      "legacy": true,
+      "actor": "DiegoXue-coder",
+      "command": "progress",
+      "processed_at": "2026-10-31T08:07:45Z",
+      "outcome": "legacy",
+      "status_before": null,
+      "status_after": null,
+      "summary": "历史回执保留；不补造当时未保存的结构化状态。",
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540967392",
+      "submission": null
+    },
+    {
+      "receipt_id": "R-T01-6541195191",
+      "task_id": "T01",
+      "legacy": true,
+      "actor": "DiegoXue-coder",
+      "command": "status",
+      "processed_at": "2026-10-31T08:33:37Z",
+      "outcome": "legacy",
+      "status_before": null,
+      "status_after": null,
+      "summary": "历史回执保留；不补造当时未保存的结构化状态。",
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541198017",
+      "submission": null
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T01-6541435522",
+      "task_id": "T01",
+      "request_comment_id": 6541435522,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-10-31T09:00:10Z",
+      "processed_at": "2026-10-31T09:00:32+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T01 已更新为「进行中」。实际上报（partial，尚未完成）：已实现并测试结构化上报、执行记录、编号回执、另一账号复核和回执中断补发；T01 的小组选题、A/C 成员与最终 Lab 尚未确认。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541435522",
+      "submission": {
+        "path": "deliveries/T01/2026-10-31-collaboration-receipt.json",
+        "commit": "bf60d06fb23854dfd6757bfa14d25d0f5fd17980",
+        "manifest_sha": "478c2c06a7fa610664b64569867f52737db8e7d3",
+        "run_log": "evidence/T01/2026-10-31-receipt-system-tests.log",
+        "verification_result": "partial",
+        "tested_at": "2026-10-31T08:58:48+00:00",
+        "test_count": 2,
+        "evidence_count": 4,
+        "evidence_preview": [
+          "evidence/T01/2026-10-31-receipt-system-tests.log",
+          "docs/reporting.md",
+          "docs/parallel-plan.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541438916"
+    }
+  ]
+}
