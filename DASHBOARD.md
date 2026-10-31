@@ -1,6 +1,6 @@
 # 三人项目进度看板
 
-最后同步：**2026-10-31 20:42 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
+最后同步：**2026-10-31 21:10 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
 
 已完成并复核 **0 / 23** 项；等检查 **0** 项；被卡住 **0** 项。
 
@@ -14,8 +14,8 @@
 
 | 角色 / 成员 | 当前工作 | 推荐先独立开展（最多三项） |
 | --- | --- | --- |
-| A / 待加入 | 无 | [T02 建私有代码库与协作目录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2)；[T05 优先核查多人登录权限、Lab 限制与预算](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5)；[T06 设计并准备双 AZ 网络](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6) |
-| B / DiegoXue-coder | [T01 确认 Reading Tracker 升级方案、人员与 Lab](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | [T04 确定数据库及对接约定](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4)；[T07 旧应用接入托管数据库](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7)；[T11 验证共享数据与无状态](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11) |
+| A / DiegoXue-coder | [T01 确认 Reading Tracker 升级方案、人员与 Lab](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | [T02 建私有代码库与协作目录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2)；[T05 优先核查多人登录权限、Lab 限制与预算](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5)；[T06 设计并准备双 AZ 网络](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6) |
+| B / 待加入 | 无 | [T04 确定数据库及对接约定](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4)；[T07 旧应用接入托管数据库](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7)；[T11 验证共享数据与无状态](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11) |
 | C / 待加入 | 无 | [T03 建任务板、询问冲突要求](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/3)；[T08 写测试清单、报告框架、成本假设](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8)；[T12 分流测试和监控页面](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12) |
 
 ## 最近上报与回执
@@ -36,7 +36,7 @@
 
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
-| [T01 确认 Reading Tracker 升级方案、人员与 Lab](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / B | 2026-10-31 | 已登录检查当前 Learner Lab Readme，IAM 段明确禁止创建用户或组；通过 Lab AWS 按钮进入 us-east-1 控制台。检查记录 docs/aws-access-audit.md（ae2e263），界面已用 $1.20/$50，非实测架构成本。未创建账号/修改权限/部署，T05 仍需资源、TLS、权限与预算检查；另行多人入口待真人向 tutor 确认。三人继续并行准备，由获准持有人集成部署。 |
+| [T01 确认 Reading Tracker 升级方案、人员与 Lab](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / A | 2026-10-31 | 已登录检查当前 Learner Lab Readme，IAM 段明确禁止创建用户或组；通过 Lab AWS 按钮进入 us-east-1 控制台。检查记录 docs/aws-access-audit.md（ae2e263），界面已用 $1.20/$50，非实测架构成本。未创建账号/修改权限/部署，T05 仍需资源、TLS、权限与预算检查；另行多人入口待真人向 tutor 确认。三人继续并行准备，由获准持有人集成部署。 |
 
 ## 被卡住 · 0
 
@@ -73,9 +73,9 @@
 | [T19 合并报告并复现部署步骤](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19) | 未认领 / B | 2026-11-13 | 完成前需 T13,T14,T15；尚未认领 |
 | [T20 联合录真实操作并剪 60 秒视频](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/20) | 未认领 / C | 2026-11-13 | 完成前需 T10,T11,T12；尚未认领 |
 | [T21 个人贡献、AI 记录与签名](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/21) | 未认领 / C | 2026-11-14 | 尚未认领 |
-| [T22 五项交付交叉检查](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/22) | 未认领 / B | 2026-11-15 | 完成前需 T17,T18,T19,T20,T21；尚未认领 |
-| [T23 修复、冻结版本、准备上传](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/23) | 未认领 / B | 2026-11-16 | 完成前需 T22；尚未认领 |
-| [T24 提交、核对回执、按约定清理](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/24) | 未认领 / B | 2026-11-17 | 完成前需 T23；尚未认领 |
+| [T22 五项交付交叉检查](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/22) | 未认领 / A | 2026-11-15 | 完成前需 T17,T18,T19,T20,T21；尚未认领 |
+| [T23 修复、冻结版本、准备上传](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/23) | 未认领 / A | 2026-11-16 | 完成前需 T22；尚未认领 |
+| [T24 提交、核对回执、按约定清理](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/24) | 未认领 / A | 2026-11-17 | 完成前需 T23；尚未认领 |
 
 ## 已完成 · 0
 
