@@ -1,8 +1,10 @@
 # 三人项目进度看板
 
-最后同步：**2026-10-31 19:04 AEDT** · [同步运行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/actions)
+最后同步：**2026-10-31 19:06 AEDT** · [同步运行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/actions)
 
 已完成并复核 **0 / 23** 项；等检查 **0** 项；被卡住 **0** 项。
+
+**当前同步：每次聊天由 AI 运行同步助手；后台 Actions 暂停。** [系统状态](docs/system-status.md)。
 
 **这是任务同步快照，不是 AWS 实时监控。** 点击任务读取最新正文和评论；没有同步回执的认领/提交仍在处理中。所有项目任务未完成前，不把协作系统搭建计作云服务完成。
 
@@ -11,14 +13,14 @@
 | 角色 / 成员 | 当前工作 | 前置条件满足的下一项 |
 | --- | --- | --- |
 | A / 待加入 | 无 | 无 |
-| B / DiegoXue-coder | 无 | [T01 定题、需求、人员、Lab 环境](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) |
+| B / DiegoXue-coder | [T01 定题、需求、人员、Lab 环境](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | 无 |
 | C / 待加入 | 无 | [T21 个人贡献、AI 记录与签名](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/21) |
 
-## 进行中 · 0
+## 进行中 · 1
 
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
-| — | — | — | — |
+| [T01 定题、需求、人员、Lab 环境](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / B | 2026-10-31 | 已认领 |
 
 ## 被卡住 · 0
 
@@ -32,11 +34,10 @@
 | --- | --- | --- | --- |
 | — | — | — | — |
 
-## 未开始 · 23
+## 未开始 · 22
 
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
-| [T01 定题、需求、人员、Lab 环境](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | 未认领 / B | 2026-10-31 | 尚未认领 |
 | [T02 建私有代码库与协作目录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2) | 未认领 / A | 2026-11-01 | 先等 T01；尚未认领 |
 | [T03 建任务板、询问冲突要求](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/3) | 未认领 / C | 2026-11-01 | 先等 T01；尚未认领 |
 | [T04 确定数据库及对接约定](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4) | 未认领 / B | 2026-11-01 | 先等 T01；尚未认领 |

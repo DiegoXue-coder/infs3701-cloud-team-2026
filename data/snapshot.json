@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T08:04:19+00:00",
+  "generated_at": "2026-10-31T08:06:52+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -34,15 +34,16 @@
       ],
       "guide": "docs/execution-guide.md",
       "task_id": "T01",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
+      "last_update": "2026-10-31T08:06:30Z",
+      "last_note": "已认领",
       "processed_comments": [
-        6540933788
+        6540933788,
+        6540956246
       ],
       "issue_number": 1,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1",
