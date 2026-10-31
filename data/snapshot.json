@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T08:07:46+00:00",
+  "generated_at": "2026-10-31T08:33:46+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -44,7 +44,8 @@
       "processed_comments": [
         6540933788,
         6540956246,
-        6540964597
+        6540964597,
+        6541195191
       ],
       "issue_number": 1,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1",
@@ -175,6 +176,28 @@
         "允许的服务/角色、剩余额度、TLS 可行性、限制及问题记录"
       ],
       "guide": "docs/execution-guide.md",
+      "materials": [
+        {
+          "title": "week5 codes demo.txt",
+          "path": "sources/original/course/02_weekly_materials/week_05/demos/week5 codes demo.txt",
+          "source_id": "S14"
+        },
+        {
+          "title": "INFS3701_Tutorial_05_Securing_User_Access_and_Data.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Tutorial_05_Securing_User_Access_and_Data.pdf",
+          "source_id": "S15"
+        },
+        {
+          "title": "INFS3701_Week05_Securing_User_Access_and_Data.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pdf",
+          "source_id": "S16"
+        },
+        {
+          "title": "INFS3701_Week05_Securing_User_Access_and_Data.pptx",
+          "path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pptx",
+          "source_id": "S17"
+        }
+      ],
       "task_id": "T05",
       "status": "todo",
       "owner": null,
@@ -211,6 +234,28 @@
         "VPC/子网/路由/安全组草图与最小验证；应用出口/数据访问路径明确"
       ],
       "guide": "docs/execution-guide.md",
+      "materials": [
+        {
+          "title": "week7 cafe sever.txt",
+          "path": "sources/original/course/02_weekly_materials/week_07/demos/week7 cafe sever.txt",
+          "source_id": "S18"
+        },
+        {
+          "title": "INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S19"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S20"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "source_id": "S21"
+        }
+      ],
       "task_id": "T06",
       "status": "todo",
       "owner": null,
@@ -324,6 +369,28 @@
         "云端实例角色/配置、健康接口、浏览器真实读写及步骤记录"
       ],
       "guide": "docs/execution-guide.md",
+      "materials": [
+        {
+          "title": "week7 cafe sever.txt",
+          "path": "sources/original/course/02_weekly_materials/week_07/demos/week7 cafe sever.txt",
+          "source_id": "S18"
+        },
+        {
+          "title": "INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S19"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S20"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "source_id": "S21"
+        }
+      ],
       "task_id": "T09",
       "status": "todo",
       "owner": null,
@@ -360,6 +427,28 @@
         "两 AZ、两健康目标、统一 URL；相同代码提交版本"
       ],
       "guide": "docs/execution-guide.md",
+      "materials": [
+        {
+          "title": "week7 cafe sever.txt",
+          "path": "sources/original/course/02_weekly_materials/week_07/demos/week7 cafe sever.txt",
+          "source_id": "S18"
+        },
+        {
+          "title": "INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S19"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S20"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "source_id": "S21"
+        }
+      ],
       "task_id": "T10",
       "status": "todo",
       "owner": null,
@@ -501,6 +590,28 @@
         "持续请求、停止一台、失败数/恢复时间、功能验证、恢复环境记录"
       ],
       "guide": "docs/execution-guide.md",
+      "materials": [
+        {
+          "title": "week7 cafe sever.txt",
+          "path": "sources/original/course/02_weekly_materials/week_07/demos/week7 cafe sever.txt",
+          "source_id": "S18"
+        },
+        {
+          "title": "INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S19"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S20"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "source_id": "S21"
+        }
+      ],
       "task_id": "T14",
       "status": "todo",
       "owner": null,
@@ -538,6 +649,28 @@
         "实际协议/安全组/身份/数据加密与图一致，未解决限制公开记录"
       ],
       "guide": "docs/execution-guide.md",
+      "materials": [
+        {
+          "title": "week5 codes demo.txt",
+          "path": "sources/original/course/02_weekly_materials/week_05/demos/week5 codes demo.txt",
+          "source_id": "S14"
+        },
+        {
+          "title": "INFS3701_Tutorial_05_Securing_User_Access_and_Data.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Tutorial_05_Securing_User_Access_and_Data.pdf",
+          "source_id": "S15"
+        },
+        {
+          "title": "INFS3701_Week05_Securing_User_Access_and_Data.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pdf",
+          "source_id": "S16"
+        },
+        {
+          "title": "INFS3701_Week05_Securing_User_Access_and_Data.pptx",
+          "path": "sources/original/course/02_weekly_materials/week_05/INFS3701_Week05_Securing_User_Access_and_Data.pptx",
+          "source_id": "S17"
+        }
+      ],
       "task_id": "T15",
       "status": "todo",
       "owner": null,
@@ -612,6 +745,28 @@
         "真实资源对应的图、AWS 符号、AZ/子网/卷/协议/请求流完整"
       ],
       "guide": "docs/execution-guide.md",
+      "materials": [
+        {
+          "title": "week7 cafe sever.txt",
+          "path": "sources/original/course/02_weekly_materials/week_07/demos/week7 cafe sever.txt",
+          "source_id": "S18"
+        },
+        {
+          "title": "INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Tutorial_07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S19"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pdf",
+          "source_id": "S20"
+        },
+        {
+          "title": "INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "path": "sources/original/course/02_weekly_materials/week_07/INFS3701_Week07_Networking_and_Content_Delivery.pptx",
+          "source_id": "S21"
+        }
+      ],
       "task_id": "T17",
       "status": "todo",
       "owner": null,
