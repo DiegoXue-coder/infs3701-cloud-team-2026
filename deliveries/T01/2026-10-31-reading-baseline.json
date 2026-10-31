@@ -1,0 +1,31 @@
+{
+  "schema_version": 2,
+  "task_id": "T01",
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-10-31T09:26:31+00:00",
+  "environment": "本地仓库离线检查；未导入完整 Flask/boto3 运行环境，未访问 AWS。",
+  "summary": "用户已确认升级本人 Reading Tracker（Option A）；代码已找回并建立 app/reading_tracker.py 升级入口，离线语法和原统计函数检查通过。",
+  "verification_result": "partial",
+  "run_log": "evidence/T01/2026-10-31-reading-baseline-check.log",
+  "tests": [
+    {
+      "action": "解析找回的 Python 基线并独立运行原统计函数",
+      "expected": "语法有效，普通书籍列表和空列表的统计结果正确",
+      "actual": "离线检查通过；完整网页和实际数据库读写仍未验证。"
+    },
+    {
+      "action": "确认原基线和新升级入口",
+      "expected": "保留原基线，后续修改有统一入口，明确选题",
+      "actual": "已保留 reference 基线，复制为 app/reading_tracker.py；project/config.json 已选择 Reading Tracker Option A。"
+    }
+  ],
+  "evidence": [
+    "evidence/T01/2026-10-31-reading-baseline-check.log",
+    "app/reading_tracker.py",
+    "docs/shared-aws.md",
+    "docs/decisions.md"
+  ],
+  "limitations": "最终 Lab 持有人、权限、余额与数据库方案尚未决定；A/C 尚未加入；没有测试完整网页，没有重新部署或删除旧 AWS 资源。",
+  "next_step": "B 做完整本地运行及数据层改造；A 盘点候选 Lab 并准备网络配置；C 独立准备测试与监控。",
+  "ai_use": "Codex 在本人授权下找回、整理原代码和决定记录，并执行离线检查；未伪造他人复核或 AWS 运行结果。"
+}

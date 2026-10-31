@@ -12,9 +12,16 @@
     "DiegoXue-coder"
   ],
   "service": {
-    "status": "pending_team_decision",
-    "candidate": "Reading Tracker",
-    "final_choice": null
+    "status": "selected",
+    "route": "Option A",
+    "final_choice": "Reading Tracker",
+    "original_author": "DiegoXue-coder",
+    "source_code": "app/reading_tracker.py",
+    "baseline_archive": "reference/reading_tracker_candidate.py",
+    "baseline_commit": "01d1cc3f1a481445c771f9e3814486389a680ca6",
+    "baseline_sha256": "f50fea5190314216ffcffb4c175d0a0dcf9dd5c57c2c69449e4ef73cb0856947",
+    "decision_date": "2026-10-31",
+    "decision_source": "User confirmed in this chat; no group meeting attendance inferred."
   },
   "enhancements_enabled": false,
   "aws_environment_owner": null,

@@ -1,7 +1,7 @@
 [
   {
     "id": "T01",
-    "title": "定题、需求、人员、Lab 环境",
+    "title": "确认 Reading Tracker 升级方案、人员与 Lab",
     "role": "B",
     "reviewer_role": "C",
     "start": "2026-10-31",
@@ -9,7 +9,7 @@
     "depends_on": [],
     "optional": false,
     "steps": [
-      "比较三人的个人服务，确定升级或新建路线，记录理由。",
+      "按用户已确认的 Option A 登记 Reading Tracker 个人作业起点，盘点代码与需要升级的架构。",
       "确认 A/B/C 姓名、各自空闲时间、最终 Lab 持有人与剩余额度。",
       "记录数据库方向、第一次联合检查时间及尚待确认事项。"
     ],
@@ -19,7 +19,7 @@
     "guide": "docs/execution-guide.md",
     "start_after": [],
     "early_steps": [
-      "整理候选服务、成员空闲时间和待决定事项，安排一次短会。",
+      "起始服务已确定为 Reading Tracker；继续整理成员空闲时间、Lab 和待决定的部署参数。",
       "给 A/B/C 发对接约定草稿；不把本卡复核当所有准备工作的入口锁。"
     ]
   },
@@ -34,11 +34,11 @@
     "optional": false,
     "steps": [
       "核对私有仓库、原始资料、AI 入口、任务流程可以打开。",
-      "清理候选代码中的密钥/固定环境配置，保留可复现版本。",
+      "清理Reading Tracker 基线代码中的密钥/固定环境配置，保留可复现版本。",
       "未来两位成员加入并登记身份后，各自验证读取和评论权限。"
     ],
     "acceptance": [
-      "三人各自账号可访问，候选代码和资料归类清楚；无密钥或未经授权资料"
+      "三人各自账号可访问，Reading Tracker 基线代码和资料归类清楚；无密钥或未经授权资料"
     ],
     "guide": "docs/execution-guide.md",
     "start_after": [],
@@ -91,7 +91,7 @@
     "guide": "docs/execution-guide.md",
     "start_after": [],
     "early_steps": [
-      "用候选项目拟定记录字段、端口、健康接口、启动方式与配置变量。",
+      "按 Reading Tracker 拟定记录字段、端口、健康接口、启动方式与配置变量。",
       "先提交标为草稿的对接约定，约 A/C 用短时间确认，不等整套环境。"
     ]
   },

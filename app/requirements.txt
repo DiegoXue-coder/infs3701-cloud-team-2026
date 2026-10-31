@@ -1,0 +1,3 @@
+# Baseline imports; pin versions after the first verified local run.
+Flask
+boto3
