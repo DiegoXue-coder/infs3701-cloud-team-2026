@@ -1,6 +1,6 @@
 # 三人项目进度看板
 
-最后同步：**2026-10-31 20:34 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
+最后同步：**2026-10-31 20:42 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
 
 已完成并复核 **0 / 23** 项；等检查 **0** 项；被卡住 **0** 项。
 
@@ -24,6 +24,7 @@
 
 | 任务 / 操作 | 操作者 | 处理与状态 | 证据与回执 |
 | --- | --- | --- | --- |
+| T01 / progress | DiegoXue-coder | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541825416) |
 | T01 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/06106010bf2fd68d7b4b26da175cca99414e439a/evidence/T01/2026-10-31-reading-baseline-check.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541690219) |
 | T01 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/bf60d06fb23854dfd6757bfa14d25d0f5fd17980/evidence/T01/2026-10-31-receipt-system-tests.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541438916) |
 | T01 / status | DiegoXue-coder | legacy / 历史记录 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541198017) |
@@ -35,7 +36,7 @@
 
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
-| [T01 确认 Reading Tracker 升级方案、人员与 Lab](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / B | 2026-10-31 | 实际上报（partial，尚未完成）：用户已确认升级本人 Reading Tracker（Option A）；代码已找回并建立 app/reading_tracker.py 升级入口，离线语法和原统计函数检查通过。 |
+| [T01 确认 Reading Tracker 升级方案、人员与 Lab](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / B | 2026-10-31 | 已登录检查当前 Learner Lab Readme，IAM 段明确禁止创建用户或组；通过 Lab AWS 按钮进入 us-east-1 控制台。检查记录 docs/aws-access-audit.md（ae2e263），界面已用 $1.20/$50，非实测架构成本。未创建账号/修改权限/部署，T05 仍需资源、TLS、权限与预算检查；另行多人入口待真人向 tutor 确认。三人继续并行准备，由获准持有人集成部署。 |
 
 ## 被卡住 · 0
 

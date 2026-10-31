@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T09:34:51+00:00",
+  "generated_at": "2026-10-31T09:42:55+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -119,6 +119,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541690219"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T01-6541822610",
+      "task_id": "T01",
+      "request_comment_id": 6541822610,
+      "actor": "DiegoXue-coder",
+      "command": "progress",
+      "requested_at": "2026-10-31T09:42:33Z",
+      "processed_at": "2026-10-31T09:42:52+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T01 已更新为「进行中」。已登录检查当前 Learner Lab Readme，IAM 段明确禁止创建用户或组；通过 Lab AWS 按钮进入 us-east-1 控制台。检查记录 docs/aws-access-audit.md（ae2e263），界面已用 $1.20/$50，非实测架构成本。未创建账号/修改权限/部署，T05 仍需资源、TLS、权限与预算检查；另行多人入口待真人向 tutor 确认。三人继续并行准备，由获准持有人集成部署。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541822610",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541825416"
     }
   ]
 }
