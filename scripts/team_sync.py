@@ -47,6 +47,13 @@ def required_dependencies(task, config):
 def unmet_dependencies(task, states, config):
     return [key for key in required_dependencies(task,config) if states.get(key,{}).get('status') != 'done']
 
+def start_dependencies(task):
+    # Old task definitions retain their original behavior until explicitly migrated.
+    return list(task.get('start_after',task['depends_on']))
+
+def unmet_start_dependencies(task, states):
+    return [key for key in start_dependencies(task) if states.get(key,{}).get('status') != 'done']
+
 def text_cell(value):
     return str(value or '—').replace('|','／').replace('\n',' ')[:250]
 
@@ -54,8 +61,11 @@ def issue_body(task, state, config):
     lines=[f"<!-- team-task:{task['id']} -->",f"# {task['id']} · {task['title']}",'',
         f"主责角色：**{task['role']}**；建议检查角色：{task['reviewer_role']}（必须不同 GitHub 用户）",
         f"内部计划：{task['start']} → {task['due']}（悉尼日期；不是课程新增截止）",
-        '前置任务：'+('、'.join(required_dependencies(task,config)) or '无'),'',
-        '## 具体做法','']
+        '开始准备前需完成：'+('、'.join(start_dependencies(task)) or '**无，可以独立开始**'),
+        '提交完整成果前需完成：'+('、'.join(required_dependencies(task,config)) or '无'),'',
+        '## 现在就能做（不等别人）','']
+    lines += [f'- {step}' for step in task.get('early_steps',task['steps'])]
+    lines += ['', '## 联合实施与最终验证','']
     lines += [f'{i}. {step}' for i,step in enumerate(task['steps'],1)]
     if task.get('materials'):
         lines += ['', '## 相关课件与示例','']
@@ -187,7 +197,8 @@ def apply_command(api, task, state, states, config, actor, command, args, timest
     is_owner=str(state.get('owner') or '').casefold()==actor.casefold()
     if command=='status':
         waiting=unmet_dependencies(task,states,config)
-        return result,f"{task['id']}：{STATUS[state['status']]}；负责人 {state.get('owner') or '未认领'}；前置未完成 {', '.join(waiting) or '无'}。"
+        start_waiting=unmet_start_dependencies(task,states)
+        return result,f"{task['id']}：{STATUS[state['status']]}；负责人 {state.get('owner') or '未认领'}；开始准备需等 {', '.join(start_waiting) or '无'}；最终完成需等 {', '.join(waiting) or '无'}。"
     if command=='claim':
         role=args.strip().upper()
         if role!=task['role'] or (not maintainer and str(assigned or '').casefold()!=actor.casefold()):
@@ -195,8 +206,8 @@ def apply_command(api, task, state, states, config, actor, command, args, timest
         if state['status']=='skipped': raise ValueError('可选增强尚未启用；需小组决定并更新配置。')
         if state['status']=='done': raise ValueError('任务已完成；如需返工先由他人提出 changes。')
         if state.get('owner') and not is_owner: raise ValueError('任务已由其他成员认领，请协调交接，不能覆盖。')
-        waiting=unmet_dependencies(task,states,config)
-        if waiting: raise ValueError('前置任务还未完成：'+', '.join(waiting))
+        waiting=unmet_start_dependencies(task,states)
+        if waiting: raise ValueError('开始条件还未完成：'+', '.join(waiting))
         if is_owner: return result,'已由你认领，保留当前状态。'
         result.update(status='in_progress',owner=actor,owner_role=role,last_note='已认领'+('（管理员接替未绑定角色）' if maintainer and str(assigned or '').casefold()!=actor.casefold() else ''))
     elif command in {'progress','block','resume','submit'}:
@@ -207,8 +218,8 @@ def apply_command(api, task, state, states, config, actor, command, args, timest
             result['last_note']=args.strip()[:2000]
             if command=='block': result['status']='blocked'
         elif command=='resume':
-            waiting=unmet_dependencies(task,states,config)
-            if waiting: raise ValueError('前置条件仍未满足：'+', '.join(waiting))
+            waiting=unmet_start_dependencies(task,states)
+            if waiting: raise ValueError('开始条件仍未满足：'+', '.join(waiting))
             result.update(status='in_progress',last_note=args.strip() or '恢复工作')
         else:
             paths=shlex.split(args)
@@ -327,7 +338,8 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
         'members':config['members'],'service':config['service'],'aws_state':'Not polled; evidence is time/environment-specific.',
         'tasks':[{**task,**states[task['id']], 'issue_number':issues[task['id']]['number'],
             'issue_url':issues[task['id']]['html_url'],
-            'waiting_for':unmet_dependencies(task,states,config)} for task in tasks]}
+            'waiting_for':unmet_dependencies(task,states,config),
+            'start_waiting_for':unmet_start_dependencies(task,states)} for task in tasks]}
     (root/'data').mkdir(exist_ok=True)
     (root/'data/snapshot.json').write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     render_dashboard(snapshot,root)
@@ -339,20 +351,21 @@ def render_dashboard(snapshot, root=ROOT):
         local=datetime.fromisoformat(snapshot['generated_at']).astimezone(ZoneInfo('Australia/Sydney')).strftime('%Y-%m-%d %H:%M %Z')
     except ZoneInfoNotFoundError:
         raise RuntimeError('当前 Python 缺少时区数据；Windows 环境先由 AI 安装 tzdata，再重新同步。') from None
-    lines=['# 三人项目进度看板','',f"最后同步：**{local}** · [在线任务入口](LIVE_BOARD.md) · [系统运行方式](docs/system-status.md)",'',
+    lines=['# 三人项目进度看板','',f"最后同步：**{local}** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)",'',
         f'已完成并复核 **{len(done)} / {len(active)}** 项；等检查 **{sum(t["status"]=="review" for t in tasks)}** 项；被卡住 **{sum(t["status"]=="blocked" for t in tasks)}** 项。',
         '', '**当前同步：每次聊天由 AI 运行同步助手；后台 Actions 暂停。** [系统状态](docs/system-status.md)。', '', '**这是任务同步快照，不是 AWS 实时监控。** 点击任务读取最新正文和评论；没有同步回执的认领/提交仍在处理中。所有项目任务未完成前，不把协作系统搭建计作云服务完成。',
-        '', '## 每个人现在可以做什么','', '| 角色 / 成员 | 当前工作 | 前置条件满足的下一项 |','| --- | --- | --- |']
+        '', '**可以先独立准备，最后再联合验收。** 卡片区分开始条件和完成条件；不要等别人整张卡复核完才写代码、配置草稿或测试。',
+        '', '## 每个人现在可以做什么','', '| 角色 / 成员 | 当前工作 | 推荐先独立开展（最多三项） |','| --- | --- | --- |']
     for role in 'ABC':
         current=[t for t in tasks if t['role']==role and t['status'] in {'in_progress','blocked','review'}]
-        ready=[t for t in tasks if t['role']==role and t['status']=='todo' and not t['waiting_for']]
+        ready=[t for t in tasks if t['role']==role and t['status']=='todo' and not t.get('start_waiting_for',t['waiting_for'])][:3]
         links=lambda items:'；'.join(f"[{t['id']} {t['title']}]({t['issue_url']})" for t in items) or '无'
         lines.append(f"| {role} / {snapshot['members'].get(role) or '待加入'} | {links(current)} | {links(ready)} |")
     for status in ['in_progress','blocked','review','todo','done','skipped']:
         group=[t for t in tasks if t['status']==status]
         lines += ['',f'## {STATUS[status]} · {len(group)}','', '| 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |','| --- | --- | --- | --- |']
         for task in group:
-            note=('先等 '+','.join(task['waiting_for'])+'；' if task['waiting_for'] else '')+task['last_note']
+            note=('完成前需 '+','.join(task['waiting_for'])+'；' if task['waiting_for'] else '')+task['last_note']
             lines.append(f"| [{task['id']} {text_cell(task['title'])}]({task['issue_url']}) | {task.get('owner') or '未认领'} / {task['role']} | {task['due']} | {text_cell(note)} |")
         if not group: lines.append('| — | — | — | — |')
     lines += ['', '## 建议时间安排','', '```mermaid','gantt','    title 三人共同推进（内部建议）','    dateFormat YYYY-MM-DD',
@@ -386,7 +399,7 @@ def validate_plan(tasks,config):
         if key in visiting:raise ValueError('Cyclic task dependencies')
         if key in visited:return
         visiting.add(key)
-        for dep in required_dependencies(by_id[key],config):
+        for dep in set(required_dependencies(by_id[key],config)+start_dependencies(by_id[key])):
             if dep not in ids:raise ValueError('Unknown dependency '+dep)
             visit(dep)
         visiting.remove(key);visited.add(key)

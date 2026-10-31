@@ -41,6 +41,31 @@ class Rules(unittest.TestCase):
     def test_no_claim_before_dependency(self):
         self.task['depends_on']=['T00'];self.states['T00']={'status':'todo'}
         with self.assertRaises(ValueError):self.claimed()
+    def test_parallel_preparation_can_start_before_completion_dependency(self):
+        self.task.update(depends_on=['T00'],start_after=[])
+        self.states['T00']={'status':'todo'}
+        state=self.claimed()
+        self.assertEqual(state['status'],'in_progress')
+        with self.assertRaises(ValueError):
+            self.command('alice','submit','deliveries/T01/actual.json',state)
+    def test_resume_preparation_does_not_wait_for_final_integration(self):
+        self.task.update(depends_on=['T00'],start_after=[])
+        self.states['T00']={'status':'todo'}
+        blocked=self.command('alice','block','waiting for real environment; draft can continue',self.claimed())
+        self.assertEqual(self.command('alice','resume','continue local script',blocked)['status'],'in_progress')
+    def test_each_role_can_prepare_with_no_other_task_completed(self):
+        tasks=module.load_tasks()
+        states={task['id']:module.initial_state(task,self.config) for task in tasks}
+        for task_id,actor,role in [('T02','alice','A'),('T07','bob','B'),('T08','carol','C')]:
+            task=next(task for task in tasks if task['id']==task_id)
+            state,_=module.apply_command(self.api,task,states[task_id],states,self.config,actor,'claim',role,'2026-10-31T12:00:00Z')
+            self.assertEqual(state['status'],'in_progress')
+        self.assertTrue(all(state['status']!='done' for state in states.values()))
+    def test_actual_final_upload_task_still_requires_frozen_version(self):
+        tasks=module.load_tasks();states={task['id']:module.initial_state(task,self.config) for task in tasks}
+        task=next(task for task in tasks if task['id']=='T24')
+        with self.assertRaises(ValueError):
+            module.apply_command(self.api,task,states['T24'],states,self.config,'bob','claim','B','2026-10-31T12:00:00Z')
     def test_two_people_cannot_claim_same_task(self):
         with self.assertRaises(ValueError):self.command('admin','claim','A',self.claimed())
     def test_submit_requires_real_manifest(self):

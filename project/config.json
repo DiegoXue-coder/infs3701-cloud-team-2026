@@ -23,5 +23,6 @@
     "is_auto_scaling_core",
     "resource_retention_for_marking",
     "permitted_lab_collaboration"
-  ]
+  ],
+  "planning_mode": "parallel_preparation_separate_completion_gates"
 }

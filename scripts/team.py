@@ -74,10 +74,12 @@ def report(snapshot,user):
     role=next((role for role,login in snapshot['members'].items() if login and login.casefold()==user.casefold()),None)
     print(json.dumps({'user':user,'role':role,'synced_at':snapshot['generated_at'],
         'dashboard':f"https://github.com/{snapshot['repository']}/blob/main/DASHBOARD.md",
-        'current':[{'id':t['id'],'title':t['title'],'status':t['status'],'waiting_for':t['waiting_for'],'url':t['issue_url']}
+        'current':[{'id':t['id'],'title':t['title'],'status':t['status'],'completion_waiting_for':t['waiting_for'],
+            'start_waiting_for':t.get('start_waiting_for',t['waiting_for']),'early_steps':t.get('early_steps',[]),'url':t['issue_url']}
             for t in snapshot['tasks'] if str(t.get('owner') or '').casefold()==user.casefold() and t['status'] not in {'done','skipped'}],
-        'ready':[{'id':t['id'],'title':t['title'],'url':t['issue_url']}
-            for t in snapshot['tasks'] if t['role']==role and t['status']=='todo' and not t['waiting_for']],
+        'ready':[{'id':t['id'],'title':t['title'],'completion_waiting_for':t['waiting_for'],
+            'early_steps':t.get('early_steps',[]),'url':t['issue_url']}
+            for t in snapshot['tasks'] if t['role']==role and t['status']=='todo' and not t.get('start_waiting_for',t['waiting_for'])],
         'needs_review':[{'id':t['id'],'title':t['title'],'owner':t.get('owner'),'url':t['issue_url']}
             for t in snapshot['tasks'] if t['status']=='review' and str(t.get('owner') or '').casefold()!=user.casefold()]},ensure_ascii=False,indent=2))
 

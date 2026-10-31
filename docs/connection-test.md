@@ -2,6 +2,8 @@
 
 ## 先测本人能不能打开
 
+如果三个链接都返回 404，先按 [access-404.md](access-404.md) 在同一浏览器登录 DiegoXue-coder；Git 工具的登录状态不等于浏览器登录状态。
+
 用本人 GitHub 账号登录，打开 [仓库首页](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026)、[资料索引](../sources/INDEX.md)、[在线任务入口](../LIVE_BOARD.md) 和 [T01](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1)。能打开说明网页读取正常；其他组员需先接受仓库邀请。
 
 ## 再测自己的 AI

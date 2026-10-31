@@ -5,6 +5,8 @@
 
 [进度摘要与时间表](DASHBOARD.md) · [课程资料](sources/INDEX.md) · [连接测试](docs/connection-test.md) · [在线更新说明](docs/online-board.md)
 
+[三个人怎样同时开工](docs/parallel-plan.md)：卡片区分“现在就能做”和“完成前需等”。
+
 ## 按角色与状态查看
 
 | 角色 | 全部任务 | 未开始 | 进行中 | 被卡住 | 等检查 | 已完成 |
