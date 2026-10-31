@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T09:27:53+00:00",
+  "generated_at": "2026-10-31T09:34:51+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -337,7 +337,7 @@
     },
     {
       "id": "T05",
-      "title": "核对 Lab 权限、HTTPS 与预算",
+      "title": "优先核查多人登录权限、Lab 限制与预算",
       "role": "A",
       "reviewer_role": "B",
       "start": "2026-10-31",
@@ -345,12 +345,14 @@
       "depends_on": [],
       "optional": false,
       "steps": [
+        "按 docs/aws-access-audit.md 先确认课程规则及实际身份权限，判断三人能否各自登录同一 Lab；未确认前不创建账号或扩大权限。",
         "检查实际 Learner Lab 角色、可用服务、剩余额度及两个 AZ。",
         "验证 HTTPS 的域名/证书/权限可行性，记录受限操作及报错。",
         "确认不复制会话密钥到服务器，明确可用的角色机制。"
       ],
       "acceptance": [
-        "允许的服务/角色、剩余额度、TLS 可行性、限制及问题记录"
+        "允许的服务/角色、剩余额度、TLS 可行性、限制及问题记录",
+        "多人独立登录能力有实际依据；未能核实的标为待确认；账号和密码未进入共享材料。"
       ],
       "guide": "docs/execution-guide.md",
       "materials": [
@@ -377,6 +379,7 @@
       ],
       "start_after": [],
       "early_steps": [
+        "优先读取 Lab 规则和当前身份的实际权限，区分应用实例角色与组员登录身份。",
         "在本人获准环境核对区域、额度、角色、可用服务和两个 AZ。",
         "独立研究和验证 TLS/域名可行性，记录限制，不等待 B 的程序。"
       ],
