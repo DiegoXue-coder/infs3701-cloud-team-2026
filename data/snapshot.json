@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-31T08:33:46+00:00",
+  "generated_at": "2026-10-31T08:50:58+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -33,6 +33,11 @@
         "一句话需求、Option A/B、姓名、环境持有人、首次集成时间"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "整理候选服务、成员空闲时间和待决定事项，安排一次短会。",
+        "给 A/B/C 发对接约定草稿；不把本卡复核当所有准备工作的入口锁。"
+      ],
       "task_id": "T01",
       "status": "in_progress",
       "owner": "DiegoXue-coder",
@@ -49,7 +54,8 @@
       ],
       "issue_number": 1,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1",
-      "waiting_for": []
+      "waiting_for": [],
+      "start_waiting_for": []
     },
     {
       "id": "T02",
@@ -58,9 +64,7 @@
       "reviewer_role": "B",
       "start": "2026-10-31",
       "due": "2026-11-01",
-      "depends_on": [
-        "T01"
-      ],
+      "depends_on": [],
       "optional": false,
       "steps": [
         "核对私有仓库、原始资料、AI 入口、任务流程可以打开。",
@@ -68,9 +72,14 @@
         "未来两位成员加入并登记身份后，各自验证读取和评论权限。"
       ],
       "acceptance": [
-        "三人各自账号可访问，旧代码清理后入库；无密钥和原课程资料"
+        "三人各自账号可访问，候选代码和资料归类清楚；无密钥或未经授权资料"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "检查仓库目录、依赖说明、源资料与密钥清理规则，不等定题完成。",
+        "准备新成员加入说明和访问测试；得到用户名后再邀请。"
+      ],
       "task_id": "T02",
       "status": "todo",
       "owner": null,
@@ -82,9 +91,8 @@
       "processed_comments": [],
       "issue_number": 2,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2",
-      "waiting_for": [
-        "T01"
-      ]
+      "waiting_for": [],
+      "start_waiting_for": []
     },
     {
       "id": "T03",
@@ -93,9 +101,7 @@
       "reviewer_role": "A",
       "start": "2026-10-31",
       "due": "2026-11-01",
-      "depends_on": [
-        "T01"
-      ],
+      "depends_on": [],
       "optional": false,
       "steps": [
         "核对 24 张任务卡、前后关系和日期，调整实际姓名与时间。",
@@ -106,6 +112,11 @@
         "T01–T24 已录入共享板；视频/扩容/验收/协作权限问题已记录并由真人询问"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "独立阅读作业要求并列出 tutor 问题，检查任务卡和角色计划。",
+        "准备询问文本、记录答复位置和测试/证据规则，不等技术搭建。"
+      ],
       "task_id": "T03",
       "status": "todo",
       "owner": null,
@@ -117,9 +128,8 @@
       "processed_comments": [],
       "issue_number": 3,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/3",
-      "waiting_for": [
-        "T01"
-      ]
+      "waiting_for": [],
+      "start_waiting_for": []
     },
     {
       "id": "T04",
@@ -128,9 +138,7 @@
       "reviewer_role": "C",
       "start": "2026-11-01",
       "due": "2026-11-01",
-      "depends_on": [
-        "T01"
-      ],
+      "depends_on": [],
       "optional": false,
       "steps": [
         "确定数据库及书籍字段、唯一 ID 和测试数据。",
@@ -141,6 +149,11 @@
         "字段、配置、端口、启动、健康检查、实例标签约定；数据库选择理由"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "用候选项目拟定记录字段、端口、健康接口、启动方式与配置变量。",
+        "先提交标为草稿的对接约定，约 A/C 用短时间确认，不等整套环境。"
+      ],
       "task_id": "T04",
       "status": "todo",
       "owner": null,
@@ -152,20 +165,17 @@
       "processed_comments": [],
       "issue_number": 4,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4",
-      "waiting_for": [
-        "T01"
-      ]
+      "waiting_for": [],
+      "start_waiting_for": []
     },
     {
       "id": "T05",
       "title": "核对 Lab 权限、HTTPS 与预算",
       "role": "A",
       "reviewer_role": "B",
-      "start": "2026-11-01",
+      "start": "2026-10-31",
       "due": "2026-11-02",
-      "depends_on": [
-        "T01"
-      ],
+      "depends_on": [],
       "optional": false,
       "steps": [
         "检查实际 Learner Lab 角色、可用服务、剩余额度及两个 AZ。",
@@ -198,6 +208,11 @@
           "source_id": "S17"
         }
       ],
+      "start_after": [],
+      "early_steps": [
+        "在本人获准环境核对区域、额度、角色、可用服务和两个 AZ。",
+        "独立研究和验证 TLS/域名可行性，记录限制，不等待 B 的程序。"
+      ],
       "task_id": "T05",
       "status": "todo",
       "owner": null,
@@ -209,16 +224,15 @@
       "processed_comments": [],
       "issue_number": 5,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5",
-      "waiting_for": [
-        "T01"
-      ]
+      "waiting_for": [],
+      "start_waiting_for": []
     },
     {
       "id": "T06",
       "title": "设计并准备双 AZ 网络",
       "role": "A",
       "reviewer_role": "B",
-      "start": "2026-11-02",
+      "start": "2026-10-31",
       "due": "2026-11-03",
       "depends_on": [
         "T04",
@@ -256,6 +270,11 @@
           "source_id": "S21"
         }
       ],
+      "start_after": [],
+      "early_steps": [
+        "按已标明的假设画网络图，整理子网、路由、安全组和访问路径。",
+        "用简单健康检查服务准备可替换的部署脚本；接口约定确认后替换参数。"
+      ],
       "task_id": "T06",
       "status": "todo",
       "owner": null,
@@ -270,19 +289,18 @@
       "waiting_for": [
         "T04",
         "T05"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T07",
       "title": "旧应用接入托管数据库",
       "role": "B",
       "reviewer_role": "C",
-      "start": "2026-11-01",
+      "start": "2026-10-31",
       "due": "2026-11-03",
       "depends_on": [
-        "T02",
-        "T04",
-        "T05"
+        "T04"
       ],
       "optional": false,
       "steps": [
@@ -294,6 +312,11 @@
         "代码、依赖、创建数据层步骤；能写入/查回，重启后仍有数据"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "先本地运行旧应用，抽出数据读写接口，用本地替代数据层验证逻辑。",
+        "准备数据库字段、测试数据和创建步骤；有本人授权时独立验证托管数据库，明确环境，不能用本地结果冒充云端测试。"
+      ],
       "task_id": "T07",
       "status": "todo",
       "owner": null,
@@ -306,22 +329,18 @@
       "issue_number": 7,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7",
       "waiting_for": [
-        "T02",
-        "T04",
-        "T05"
-      ]
+        "T04"
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T08",
       "title": "写测试清单、报告框架、成本假设",
       "role": "C",
       "reviewer_role": "A",
-      "start": "2026-11-01",
+      "start": "2026-10-31",
       "due": "2026-11-03",
-      "depends_on": [
-        "T01",
-        "T04"
-      ],
+      "depends_on": [],
       "optional": false,
       "steps": [
         "为每个 core 列出操作、期望结果、证据和检查人。",
@@ -332,6 +351,11 @@
         "每个 core 如何测、要存什么；报告标题和估算假设草稿"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "从作业要求直接编写验收清单、请求记录格式和报告标题。",
+        "先写 BASE_URL 可配置的测试脚本和测试数据，用本地假服务试跑；成本用明确假设起草。"
+      ],
       "task_id": "T08",
       "status": "todo",
       "owner": null,
@@ -343,10 +367,8 @@
       "processed_comments": [],
       "issue_number": 8,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8",
-      "waiting_for": [
-        "T01",
-        "T04"
-      ]
+      "waiting_for": [],
+      "start_waiting_for": []
     },
     {
       "id": "T09",
@@ -391,6 +413,11 @@
           "source_id": "S21"
         }
       ],
+      "start_after": [],
+      "early_steps": [
+        "准备实例初始化、依赖安装、配置变量和应用启动脚本。",
+        "先用简单 /health 服务验证部署路径；最终业务读写留到网络与数据层会合。"
+      ],
       "task_id": "T09",
       "status": "todo",
       "owner": null,
@@ -405,7 +432,8 @@
       "waiting_for": [
         "T06",
         "T07"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T10",
@@ -449,6 +477,11 @@
           "source_id": "S21"
         }
       ],
+      "start_after": [],
+      "early_steps": [
+        "准备负载均衡、目标组、两 AZ 实例的配置和部署清单。",
+        "可以先接健康检查假服务测试入口；不把假服务当最终业务系统完成。"
+      ],
       "task_id": "T10",
       "status": "todo",
       "owner": null,
@@ -462,7 +495,8 @@
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10",
       "waiting_for": [
         "T09"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T11",
@@ -484,6 +518,11 @@
         "跨实例读回同一记录，实例重启不丢持久记录；无本地状态依赖"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "先编写跨实例读写、重启和数据保留的测试步骤与数据。",
+        "检查代码是否依赖本地文件或内存状态，提前修复；真实双实例验收待入口可用。"
+      ],
       "task_id": "T11",
       "status": "todo",
       "owner": null,
@@ -497,14 +536,15 @@
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11",
       "waiting_for": [
         "T10"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T12",
       "title": "分流测试和监控页面",
       "role": "C",
       "reviewer_role": "A",
-      "start": "2026-11-05",
+      "start": "2026-10-31",
       "due": "2026-11-06",
       "depends_on": [
         "T10"
@@ -519,6 +559,11 @@
         "两实例服务请求的日志、dashboard、时间与请求量记录"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "先写请求采集脚本、实例标签解析、dashboard 指标清单和配置模板。",
+        "用本地假服务验证日志格式；拿到真实资源 ID 后替换并实测。"
+      ],
       "task_id": "T12",
       "status": "todo",
       "owner": null,
@@ -532,7 +577,8 @@
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12",
       "waiting_for": [
         "T10"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T13",
@@ -554,6 +600,11 @@
         "指标/阈值理由、ALARM 触发及恢复证据；不是仅有创建截图"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "先确定有意义的告警指标、阈值和触发/恢复测试方法。",
+        "准备 alarm 配置与证据表；真实触发必须等对应指标和资源可用。"
+      ],
       "task_id": "T13",
       "status": "todo",
       "owner": null,
@@ -567,7 +618,8 @@
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/13",
       "waiting_for": [
         "T12"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T14",
@@ -612,6 +664,11 @@
           "source_id": "S21"
         }
       ],
+      "start_after": [],
+      "early_steps": [
+        "先写持续请求与故障记录脚本，约定谁操作、谁观察及恢复步骤。",
+        "故障演练前必须确认 T11/T12 的真实环境条件；未满足时只准备，不能停实例。"
+      ],
       "task_id": "T14",
       "status": "todo",
       "owner": null,
@@ -626,7 +683,8 @@
       "waiting_for": [
         "T11",
         "T12"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T15",
@@ -636,8 +694,8 @@
       "start": "2026-11-07",
       "due": "2026-11-09",
       "depends_on": [
-        "T10",
-        "T11"
+        "T09",
+        "T10"
       ],
       "optional": false,
       "steps": [
@@ -671,6 +729,11 @@
           "source_id": "S17"
         }
       ],
+      "start_after": [],
+      "early_steps": [
+        "先列网络、身份、权限、加密及凭证管理核对表。",
+        "对已完成组件滚动核查，未部署项标待验证，不等所有功能完成才检查。"
+      ],
       "task_id": "T15",
       "status": "todo",
       "owner": null,
@@ -683,9 +746,10 @@
       "issue_number": 15,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15",
       "waiting_for": [
-        "T10",
-        "T11"
-      ]
+        "T09",
+        "T10"
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T16",
@@ -708,6 +772,11 @@
         "自动扩容或合规的三个额外主题有实际证据；未选时注明不做，不能空口算分"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "先比较加分路线、所需权限、成本和证据，向小组提出选择。",
+        "选定并启用后准备配置与测试方法；不要为了加分改变已稳定的核心而不记录。"
+      ],
       "task_id": "T16",
       "status": "skipped",
       "owner": null,
@@ -722,17 +791,17 @@
       "waiting_for": [
         "T11",
         "T12"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T17",
       "title": "架构图与网络章节定稿",
       "role": "A",
       "reviewer_role": "B",
-      "start": "2026-11-10",
+      "start": "2026-10-31",
       "due": "2026-11-12",
       "depends_on": [
-        "T14",
         "T15"
       ],
       "optional": false,
@@ -767,6 +836,11 @@
           "source_id": "S21"
         }
       ],
+      "start_after": [],
+      "early_steps": [
+        "从第一天维护标为草稿的架构图，每新增真实组件就更新。",
+        "提前准备 AWS 图例和章节；最终对照实际配置定稿。"
+      ],
       "task_id": "T17",
       "status": "todo",
       "owner": null,
@@ -779,20 +853,19 @@
       "issue_number": 17,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17",
       "waiting_for": [
-        "T14",
         "T15"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T18",
       "title": "12 个月成本估算定稿",
       "role": "C",
       "reviewer_role": "A",
-      "start": "2026-11-10",
+      "start": "2026-10-31",
       "due": "2026-11-12",
       "depends_on": [
-        "T10",
-        "T15"
+        "T10"
       ],
       "optional": false,
       "steps": [
@@ -804,6 +877,11 @@
         "us-east-1 计算器结果、12 月假设、重要服务；Lab 用量单独记录"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "先按明确假设建立计算器草稿、列全部预计收费项。",
+        "收到一个真实规格就替换一项；不必等安全检查或故障测试整张卡完成。"
+      ],
       "task_id": "T18",
       "status": "todo",
       "owner": null,
@@ -816,16 +894,16 @@
       "issue_number": 18,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/18",
       "waiting_for": [
-        "T10",
-        "T15"
-      ]
+        "T10"
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T19",
       "title": "合并报告并复现部署步骤",
       "role": "B",
       "reviewer_role": "C",
-      "start": "2026-11-10",
+      "start": "2026-10-31",
       "due": "2026-11-13",
       "depends_on": [
         "T13",
@@ -842,6 +920,11 @@
         "各人章节/取舍/限制/引用/AI 证据；另一人按步骤复核"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "立即创建报告结构，各人滚动补自己部分的需求、选择和操作。",
+        "先检查可复现步骤、引用和 AI 记录；最终结论与证据齐后才定稿。"
+      ],
       "task_id": "T19",
       "status": "todo",
       "owner": null,
@@ -857,7 +940,8 @@
         "T13",
         "T14",
         "T15"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T20",
@@ -867,9 +951,9 @@
       "start": "2026-11-11",
       "due": "2026-11-13",
       "depends_on": [
-        "T13",
-        "T14",
-        "T15"
+        "T10",
+        "T11",
+        "T12"
       ],
       "optional": false,
       "steps": [
@@ -881,6 +965,11 @@
         "现场操作、分流/故障证据、请求流、关键决策；可听清看清"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "先完成 60 秒脚本、分镜与录屏方案，录可复用的真实界面片段。",
+        "最终版本等待实际业务和分流/可用性证据；未测的内容不编造。"
+      ],
       "task_id": "T20",
       "status": "todo",
       "owner": null,
@@ -893,17 +982,18 @@
       "issue_number": 20,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/20",
       "waiting_for": [
-        "T13",
-        "T14",
-        "T15"
-      ]
+        "T10",
+        "T11",
+        "T12"
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T21",
       "title": "个人贡献、AI 记录与签名",
       "role": "C",
       "reviewer_role": "A",
-      "start": "2026-11-11",
+      "start": "2026-10-31",
       "due": "2026-11-14",
       "depends_on": [],
       "optional": false,
@@ -916,6 +1006,11 @@
         "每人实际贡献声明、AI 使用和过程证据、真实签名封面"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "每人从第一次工作起记录本人贡献与 AI 使用，C 只负责汇总。",
+        "准备签认流程和封面填写说明，签名与最终份额由本人确认。"
+      ],
       "task_id": "T21",
       "status": "todo",
       "owner": null,
@@ -927,7 +1022,8 @@
       "processed_comments": [],
       "issue_number": 21,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/21",
-      "waiting_for": []
+      "waiting_for": [],
+      "start_waiting_for": []
     },
     {
       "id": "T22",
@@ -953,6 +1049,11 @@
         "内容/格式/页数/字数/视频时长/源码/引用均核对，问题写回任务卡"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "有一份实际产物就开始交叉检查并记录问题。",
+        "允许分批检查，不等五份全部完成才看第一份；总验收仍需全部齐。"
+      ],
       "task_id": "T22",
       "status": "todo",
       "owner": null,
@@ -970,7 +1071,8 @@
         "T19",
         "T20",
         "T21"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T23",
@@ -992,6 +1094,11 @@
         "最终文件夹和代码提交编号、文件打开检查、备份、上传人及复核人"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [],
+      "early_steps": [
+        "提前准备提交目录、文件命名、备份、源码打包和上传检查表。",
+        "滚动修复已发现的问题；正式冻结版本等整体检查通过。"
+      ],
       "task_id": "T23",
       "status": "todo",
       "owner": null,
@@ -1005,7 +1112,8 @@
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/23",
       "waiting_for": [
         "T22"
-      ]
+      ],
+      "start_waiting_for": []
     },
     {
       "id": "T24",
@@ -1027,6 +1135,13 @@
         "Moodle 提交完成证据；按 tutor 确认保留/清理资源，不提前拆除"
       ],
       "guide": "docs/execution-guide.md",
+      "start_after": [
+        "T23"
+      ],
+      "early_steps": [
+        "正式提交仅在 T23 完成后开始；此前可阅读 Moodle 上传要求。",
+        "预先明确上传人和复核人，不在环境未取证时清理资源。"
+      ],
       "task_id": "T24",
       "status": "todo",
       "owner": null,
@@ -1039,6 +1154,9 @@
       "issue_number": 24,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/24",
       "waiting_for": [
+        "T23"
+      ],
+      "start_waiting_for": [
         "T23"
       ]
     }
