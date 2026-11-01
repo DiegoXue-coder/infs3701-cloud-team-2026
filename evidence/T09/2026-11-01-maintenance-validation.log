@@ -1,0 +1,146 @@
+Actual CloudShell UI output; captured 2026-11-01T05:52:24.528Z
+HOST_STATE={"id": "i-00572a14ca8b71156", "state": "running"}
+STOP_REQUESTED=i-00572a14ca8b71156
+
+Captured 2026-11-01T05:52:46.317Z
+HOST_STATE={"id": "i-00572a14ca8b71156", "state": "running"}
+STOP_REQUESTED=i-00572a14ca8b71156
+HOST_STATE={"id": "i-00572a14ca8b71156", "state": "stopped"}
+TARGET_HEALTH=[{"Target": {"Id": "i-0081259c52a32e051", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently act
+BOOT_DIAGNOSTICS=[]
+ROOT_VOLUMES=[{"VolumeId": "vol-0befb64658670f366", "Encrypted": true, "Size": 8, "VolumeType": "gp3"}]
+ALARM=[{"AlarmName": "infs3701-team-healthy-targets-below-two", "StateValue": "OK", "StateUpdatedTimestamp": "2026-11-01 05:44:06.376000+00:00", "AlarmActions": []}]
+
+SINGLE-HOST HTTP SAMPLE 2026-11-01T05:53:14.142Z
+REQUEST={"n": 1, "utc": "2026-11-01T05:52:56.782928+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 15}
+REQUEST={"n": 2, "utc": "2026-11-01T05:52:57.290254+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 7}
+REQUEST={"n": 3, "utc": "2026-11-01T05:52:57.795852+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 5}
+REQUEST={"n": 4, "utc": "2026-11-01T05:52:58.302146+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 6}
+REQUEST={"n": 5, "utc": "2026-11-01T05:52:58.807048+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 5}
+REQUEST={"n": 6, "utc": "2026-11-01T05:52:59.312634+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 5}
+ROUTING_SUMMARY={"requests": 12, "failures": 0, "instances": {"az-b": 6}, "business_app_tested": false}
+
+Captured 2026-11-01T05:53:19.034Z
+~ $ python3 maintain-foundation.py --instance a --phase inspect
+HOST_STATE={"id": "i-00572a14ca8b71156", "state": "stopped"}
+TARGET_HEALTH=[{"Target": {"Id": "i-0081259c52a32e051", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently act
+ive on target"}}, {"Target": {"Id": "i-00572a14ca8b71156", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "unused", "Reason": "Target.InvalidState", "Description": "Target is in the stopped state"}, "AdministrativeOverride": {"State": "no_override", "Reason
+": "AdministrativeOverride.NoOverride", "Description": "No override is currently active on target"}}]
+BOOT_DIAGNOSTICS=[]
+ROOT_VOLUMES=[{"VolumeId": "vol-0befb64658670f366", "Encrypted": true, "Size": 8, "VolumeType": "gp3"}]
+ALARM=[{"AlarmName": "infs3701-team-healthy-targets-below-two", "StateValue": "OK", "StateUpdatedTimestamp": "2026-11-01 05:44:06.376000+00:00", "AlarmActions": []}]
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+CONTINUOUS REQUESTS 2026-11-01T05:56:39.744Z
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:15.120577+00:00", "n": 1, "instance": "az-b", "status": 200}
+ACTUAL_ALARM={"state": "OK", "reason": "Threshold Crossed: 2 out of the last 2 datapoints [2.0 (01/11/26 05:41:00), 2.0 (01/11/26 05:40:00)] were not less than the threshold (2.0) (minimum 1 datapoint for ALARM -> OK transition)."}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:20.192453+00:00", "n": 2, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:25.197811+00:00", "n": 3, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:30.203749+00:00", "n": 4, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:35.211109+00:00", "n": 5, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:40.218755+00:00", "n": 6, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:45.224060+00:00", "n": 7, "instance": "az-b", "status": 200}
+ACTUAL_ALARM={"state": "OK", "reason": "Threshold Crossed: 2 out of the last 2 datapoints [2.0 (01/11/26 05:41:00), 2.0 (01/11/26 05:40:00)] were not less than the threshold (2.0) (minimum 1 datapoint for ALARM -> OK transition)."}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:50.303082+00:00", "n": 8, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:54:55.308644+00:00", "n": 9, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:00.315539+00:00", "n": 10, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:05.320824+00:00", "n": 11, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:10.326676+00:00", "n": 12, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:15.333124+00:00", "n": 13, "instance": "az-b", "status": 200}
+ACTUAL_ALARM={"state": "OK", "reason": "Threshold Crossed: 2 out of the last 2 datapoints [2.0 (01/11/26 05:41:00), 2.0 (01/11/26 05:40:00)] were not less than the threshold (2.0) (minimum 1 datapoint for ALARM -> OK transition)."}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:20.402215+00:00", "n": 14, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:25.407203+00:00", "n": 15, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:30.413237+00:00", "n": 16, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:35.418176+00:00", "n": 17, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:40.425154+00:00", "n": 18, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:45.431186+00:00", "n": 19, "instance": "az-b", "status": 200}
+ACTUAL_ALARM={"state": "OK", "reason": "Threshold Crossed: 2 out of the last 2 datapoints [2.0 (01/11/26 05:41:00), 2.0 (01/11/26 05:40:00)] were not less than the threshold (2.0) (minimum 1 datapoint for ALARM -> OK transition)."}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:50.498854+00:00", "n": 20, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:55:55.503739+00:00", "n": 21, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:56:00.509821+00:00", "n": 22, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:56:05.515279+00:00", "n": 23, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:56:10.521161+00:00", "n": 24, "instance": "az-b", "status": 200}
+SINGLE_HOST_REQUEST={"utc": "2026-11-01T05:56:15.526576+00:00", "n": 25, "instance": "az-b", "status": 200}
+ACTUAL_ALARM={"state": "ALARM", "reason": "Threshold Crossed: 2 out of the last 2 datapoints [1.0 (01/11/26 05:53:00), 1.0 (01/11/26 05:52:00)] were less than the threshold (2.0) (minimum 2 datapoints for OK -> ALARM transition)."}
+
+Captured 2026-11-01T05:57:17.627Z
+~ $ python3 maintain-foundation.py --instance a --phase start
+HOST_STATE={"id": "i-00572a14ca8b71156", "state": "stopped"}
+START_REQUESTED={"id": "i-00572a14ca8b71156", "phase": "start"}
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+Captured 2026-11-01T05:57:25.401Z
+~ $ python3 maintain-foundation.py --instance a --phase inspect
+HOST_STATE={"id": "i-00572a14ca8b71156", "state": "running"}
+TARGET_HEALTH=[{"Target": {"Id": "i-0081259c52a32e051", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently act
+ive on target"}}, {"Target": {"Id": "i-00572a14ca8b71156", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "initial", "Reason": "Elb.RegistrationInProgress", "Description": "Target registration is in progress"}, "AdministrativeOverride": {"State": "no_overri
+de", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently active on target"}}]
+BOOT_DIAGNOSTICS=[]
+ROOT_VOLUMES=[{"VolumeId": "vol-0befb64658670f366", "Encrypted": true, "Size": 8, "VolumeType": "gp3"}]
+ALARM=[{"AlarmName": "infs3701-team-healthy-targets-below-two", "StateValue": "ALARM", "StateUpdatedTimestamp": "2026-11-01 05:56:06.375000+00:00", "AlarmActions": []}]
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+Captured 2026-11-01T05:57:58.921Z
+~ $ python3 maintain-foundation.py --instance a --phase inspect
+HOST_STATE={"id": "i-00572a14ca8b71156", "state": "running"}
+TARGET_HEALTH=[{"Target": {"Id": "i-0081259c52a32e051", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently act
+ive on target"}}, {"Target": {"Id": "i-00572a14ca8b71156", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently
+active on target"}}]
+BOOT_DIAGNOSTICS=["INFS3701_BOOT_CHECK_BEGIN", "[    6.487171] cloud-init[1926]: INFS3701_BOOT_CHECK_BEGIN", "INFS3701_BOOT_CHECK_OK={\"instance\": \"az-a\", \"credential_source\": \"iam-role\", \"table_status\": \"ACTIVE\", \"visible_records\": 0, \"artifact_sha256\": \"d62182
+089dfb9eaede166463362157edb9f3f5f15f6ac0dc46d1097fca642db7\", \"local_health\": {\"instance\": \"az-a\", \"stage\": \"infrastructure-only\", \"status\": \"ok\"}}", "[    7.450150] cloud-init[1926]: INFS3701_BOOT_CHECK_OK={\"instance\": \"az-a\", \"credential_source\": \"iam-rol
+e\", \"table_status\": \"ACTIVE\", \"visible_records\": 0, \"artifact_sha256\": \"d62182089dfb9eaede166463362157edb9f3f5f15f6ac0dc46d1097fca642db7\", \"local_health\": {\"instance\": \"az-a\", \"stage\": \"infrastructure-only\", \"status\": \"ok\"}}", "INFS3701_BOOT_CHECK_END",
+ "[    7.539563] cloud-init[1926]: INFS3701_BOOT_CHECK_END"]
+ROOT_VOLUMES=[{"VolumeId": "vol-0befb64658670f366", "Encrypted": true, "Size": 8, "VolumeType": "gp3"}]
+ALARM=[{"AlarmName": "infs3701-team-healthy-targets-below-two", "StateValue": "ALARM", "StateUpdatedTimestamp": "2026-11-01 05:56:06.375000+00:00", "AlarmActions": []}]
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+Captured 2026-11-01T05:58:56.722Z
+~ $ python3 maintain-foundation.py --instance b --phase prepare
+HOST_STATE={"id": "i-0081259c52a32e051", "state": "running"}
+STOP_REQUESTED=i-0081259c52a32e051
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+Captured 2026-11-01T05:59:37.108Z
+~ $ python3 maintain-foundation.py --instance b --phase start
+HOST_STATE={"id": "i-0081259c52a32e051", "state": "stopped"}
+START_REQUESTED={"id": "i-0081259c52a32e051", "phase": "start"}
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+Captured 2026-11-01T05:59:43.390Z
+~ $ python3 maintain-foundation.py --instance b --phase inspect
+HOST_STATE={"id": "i-0081259c52a32e051", "state": "running"}
+TARGET_HEALTH=[{"Target": {"Id": "i-0081259c52a32e051", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently act
+ive on target"}}, {"Target": {"Id": "i-00572a14ca8b71156", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently
+active on target"}}]
+BOOT_DIAGNOSTICS=["INFS3701_BOOT_CHECK_BEGIN", "[    6.679136] cloud-init[1931]: INFS3701_BOOT_CHECK_BEGIN", "INFS3701_BOOT_CHECK_OK={\"instance\": \"az-b\", \"credential_source\": \"iam-role\", \"table_status\": \"ACTIVE\", \"visible_records\": 0, \"artifact_sha256\": \"d62182
+089dfb9eaede166463362157edb9f3f5f15f6ac0dc46d1097fca642db7\", \"local_health\": {\"instance\": \"az-b\", \"stage\": \"infrastructure-only\", \"status\": \"ok\"}}", "[    7.663668] cloud-init[1931]: INFS3701_BOOT_CHECK_OK={\"instance\": \"az-b\", \"credential_source\": \"iam-rol
+e\", \"table_status\": \"ACTIVE\", \"visible_records\": 0, \"artifact_sha256\": \"d62182089dfb9eaede166463362157edb9f3f5f15f6ac0dc46d1097fca642db7\", \"local_health\": {\"instance\": \"az-b\", \"stage\": \"infrastructure-only\", \"status\": \"ok\"}}", "INFS3701_BOOT_CHECK_END",
+ "[    7.765182] cloud-init[1931]: INFS3701_BOOT_CHECK_END"]
+ROOT_VOLUMES=[{"VolumeId": "vol-0627d63a4f014f2b4", "Encrypted": true, "Size": 8, "VolumeType": "gp3"}]
+ALARM=[{"AlarmName": "infs3701-team-healthy-targets-below-two", "StateValue": "ALARM", "StateUpdatedTimestamp": "2026-11-01 05:56:06.375000+00:00", "AlarmActions": []}]
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+RECOVERY OBSERVATIONS 2026-11-01T06:01:02.166Z
+RECOVERY_REQUEST={"utc": "2026-11-01T06:00:11.997605+00:00", "n": 1, "instance": "az-b", "status": 200}
+ACTUAL_ALARM={"state": "OK", "reason": "Threshold Crossed: 1 out of the last 2 datapoints [2.0 (01/11/26 05:57:00)] was not less than the threshold (2.0) (minimum 1 datapoint for ALARM -> OK transition)."}

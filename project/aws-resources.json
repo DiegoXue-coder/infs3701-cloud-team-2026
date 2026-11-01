@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-01T05:29:23+00:00",
+  "checked_at": "2026-11-01T06:01:13.014386+00:00",
   "region": "us-east-1",
   "operator": "DiegoXue-coder",
   "vpc": {
-    "status": "created_routes_verified_connectivity_pending",
+    "status": "actual_gateway_routes_and_both_private_host_read_connectivity_verified",
     "region": "us-east-1",
     "name_prefix": "infs3701-team",
     "vpc_cidr": "10.37.0.0/16",
@@ -39,14 +39,17 @@
       }
     ],
     "nat_gateway": "None",
-    "vpc_endpoints": "None",
+    "vpc_endpoints": [
+      "vpce-0edea5c7a05bc729d",
+      "vpce-028353eb0e050df0a"
+    ],
     "ipv6": "None",
     "dns_hostnames": true,
     "dns_resolution": true,
     "tenancy": "Default",
     "optional_paid_vpc_encryption_control": "None",
-    "public_route_intent": "Internet Gateway; verify actual routes after creation",
-    "private_route_intent": "No internet default route; deployment and management connectivity still to be designed",
+    "public_route_intent": "Actual public default route through IGW verified",
+    "private_route_intent": "Actual local + scoped S3/DynamoDB gateway routes only; no internet default",
     "resources_created": true,
     "checked_at": "2026-11-01T05:18:29+00:00",
     "existing_network_unchanged": true,
@@ -70,7 +73,7 @@
     "max_read_request_units": 10,
     "max_write_request_units": 10,
     "data_items_at_read_test": 0,
-    "instance_role_read_test": "passed on existing public EC2 via SSM, NOT on new private instances",
+    "instance_role_read_test": "Passed independently on each new private host via per-boot diagnostics; DescribeTable and Scan, zero records. No business writes tested.",
     "business_app_connected": false
   },
   "artifacts": {
@@ -78,7 +81,12 @@
     "public_access_block_all": true,
     "encryption": "AES256",
     "deny_http_policy": true,
-    "packages_uploaded": false
+    "packages_uploaded": false,
+    "connectivity_probe": {
+      "key": "releases/infrastructure/2026-11-01/probe.txt",
+      "sha256": "d62182089dfb9eaede166463362157edb9f3f5f15f6ac0dc46d1097fca642db7",
+      "business_data": false
+    }
   },
   "runtime": {
     "base_ami": "ami-0c230065b91270bc6",
@@ -106,11 +114,8 @@
     "status": "unresolved; needs course-approved certificate/domain approach"
   },
   "not_yet_created": [
-    "private application instances",
-    "application load balancer",
-    "EC2 Instance Connect endpoint",
-    "S3/DynamoDB gateway endpoints",
-    "monitoring dashboard and tested alarm"
+    "HTTPS listener/certificate",
+    "business release and independent acceptance evidence"
   ],
   "permission_preflight": {
     "mode": "EC2 DryRun=True; no resources created by preflight",
@@ -118,5 +123,91 @@
     "dynamodb_gateway": "DryRunOperation",
     "maintenance_endpoint": "DryRunOperation",
     "limits": "Uses existing builder SG as permission-check stand-in; does not validate final SG rules, actual endpoint policy, capacity or end-to-end connectivity."
+  },
+  "compute": [
+    {
+      "id": "i-00572a14ca8b71156",
+      "az": "us-east-1a",
+      "private_ip": "10.37.10.88",
+      "root_volume": "vol-0befb64658670f366",
+      "type": "t3.micro",
+      "public_ip": null,
+      "instance_profile": "LabInstanceProfile",
+      "metadata_tokens": "required",
+      "business_app": false,
+      "boot_diagnostics": "BOOT_CHECK_OK; iam-role; DynamoDB ACTIVE/Scan count0; S3 probe SHA matched; local health ok",
+      "state": "running; target healthy verified",
+      "root_size_gib": 8,
+      "root_type": "gp3",
+      "root_encrypted": true
+    },
+    {
+      "id": "i-0081259c52a32e051",
+      "az": "us-east-1b",
+      "private_ip": "10.37.11.110",
+      "root_volume": "vol-0627d63a4f014f2b4",
+      "type": "t3.micro",
+      "public_ip": null,
+      "instance_profile": "LabInstanceProfile",
+      "metadata_tokens": "required",
+      "business_app": false,
+      "boot_diagnostics": "BOOT_CHECK_OK; iam-role; DynamoDB ACTIVE/Scan count0; S3 probe SHA matched; local health ok",
+      "state": "running; target healthy verified",
+      "root_size_gib": 8,
+      "root_type": "gp3",
+      "root_encrypted": true
+    }
+  ],
+  "security_groups": {
+    "alb": "sg-00ebc11a2282074f6",
+    "app": "sg-0a3ae03837c952009",
+    "eic": "sg-02f5195143dca6ea5"
+  },
+  "gateways": {
+    "s3": "vpce-0edea5c7a05bc729d",
+    "dynamodb": "vpce-028353eb0e050df0a",
+    "status": "available; scoped role/resource/HTTPS policies read back"
+  },
+  "load_balancer": {
+    "name": "infs3701-team-alb",
+    "arn": "arn:aws:elasticloadbalancing:us-east-1:214018170594:loadbalancer/app/infs3701-team-alb/cdc408a1dfd1268c",
+    "url": "http://infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com",
+    "target_group": "arn:aws:elasticloadbalancing:us-east-1:214018170594:targetgroup/infs3701-team-tg/9597ed4011467b27",
+    "listener": "HTTP:80 only",
+    "target_port": 8000,
+    "stage": "infrastructure-only",
+    "initial_sample": {
+      "requests": 12,
+      "failures": 0,
+      "az_a": 6,
+      "az_b": 6
+    }
+  },
+  "maintenance": {
+    "endpoint": "eice-000604a621ad5943a",
+    "state": "created but OpenTunnel permission denied to student identity; unusable",
+    "alternative": "Verified on each new private host: existing EC2 control-plane stop/update MIME per-boot user-data/start, console-output diagnostics and target health. Does not deploy business bundle.",
+    "iam_permissions_changed": false,
+    "paid_ssm_interface_endpoints_created": false,
+    "ssh_paths": "Removed app TCP22 ingress and EIC TCP22 egress after successful alternative checks; endpoint retained unused."
+  },
+  "monitoring": {
+    "dashboard": "infs3701-team-dashboard",
+    "widget_count": 6,
+    "alarm": "infs3701-team-healthy-targets-below-two",
+    "metric": "HealthyHostCount Minimum, ALB+TG dimensions",
+    "condition": "below 2 for two 60-second periods; missing notBreaching",
+    "trigger": "Actual OK -> ALARM at 2026-11-01T05:56:06.375Z; evaluated healthy-count1 at 05:52/05:53UTC.",
+    "recovery": "Actual ALARM -> OK at 2026-11-01T06:00:06.376Z; based on a genuine healthy-count2 datapoint, not manual state override.",
+    "notifications": [],
+    "actor": "DiegoXue-coder",
+    "independently_reviewed": false
+  },
+  "budget_observation": {
+    "used_usd": 1.3,
+    "budget_usd": 50,
+    "observed_on": "2026-11-01",
+    "update_delay": "Lab states 8-12 hours",
+    "not_actual_session_cost": true
   }
 }

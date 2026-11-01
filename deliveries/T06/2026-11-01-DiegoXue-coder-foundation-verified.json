@@ -1,0 +1,48 @@
+{
+  "schema_version": 2,
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-01T06:01:13.014386+00:00",
+  "environment": "Actual authorized AWS Academy account, us-east-1; CloudShell SDK and browser UI. New private staged runtime only, not Reading Tracker business deployment.",
+  "verification_result": "partial",
+  "limitations": "Business package/real database writes/TLS/auto-scaling are not complete. Broad LabRole remains; EIC OpenTunnel denied and unused SSH paths closed. No SNS notification recipient or independent member review. Single-host samples do not prove an AZ outage or zero downtime. Lab credits delayed, not measured session cost.",
+  "next_step": "B independently joins role and develops exact runnable business release; C independently joins and supplies executable tests and monitoring review; A later deploys that reviewed version and performs joint tests. Confirm course HTTPS approach; no password/key sharing.",
+  "ai_use": "Codex assisted DiegoXue-coder with authorized AWS operations, authored scripts and documented actual outputs. No B/C contribution, acceptance or independent review invented.",
+  "task_id": "T06",
+  "summary": "Created and read back actual two-AZ ALB/private-host/gateway/route/security-group foundation; scoped HTTPS service paths passed from both private hosts; unused SSH paths closed.",
+  "tests": [
+    {
+      "action": "Actual SDK readback and per-host boot diagnostics",
+      "expected": "Two private encrypted role-bound hosts; scoped paths and runtime healthy",
+      "actual": "Both BOOT_CHECK_OK, iam-role; DynamoDB ACTIVE/count0; S3 SHA matched; both target healthy; root volumes encrypted8GiB gp3."
+    },
+    {
+      "action": "Low-frequency infrastructure requests and real alarm lifecycle",
+      "expected": "Both instances route; one remaining host responds; true alarm trigger and recovery",
+      "actual": "Initial12 HTTP200, six each; single-host short6 HTTP200 plus continuous25 HTTP200. True ALARM05:56:06Z -> OK06:00:06Z. Short sample summary count bug preserved and explained in verification guide."
+    },
+    {
+      "action": "Separate code checks from AWS acceptance",
+      "expected": "Offline tests pass without implying business release works",
+      "actual": "48 offline tests passed; business writes/TLS and independent final acceptance remain pending."
+    }
+  ],
+  "evidence": [
+    "project/aws-resources.json",
+    "project/handoffs.json",
+    "project/next-deployment.json",
+    "docs/2026-11-01-foundation-verification.md",
+    "deployment/maintain-foundation.py",
+    "deployment/verify-foundation.py",
+    "deployment/tighten-unused-maintenance.py",
+    "deployment/configure-monitoring-baseline.py",
+    "evidence/T09/2026-11-01-final-readback.log",
+    "evidence/T09/2026-11-01-maintenance-validation.log",
+    "evidence/T09/2026-11-01-live-routing.log",
+    "evidence/T09/2026-11-01-cloudwatch-dashboard.png",
+    "evidence/T09/2026-11-01-real-alarm-trigger.png",
+    "evidence/T09/2026-11-01-private-role-check.png",
+    "evidence/T09/2026-11-01-foundation-live-page.png",
+    "evidence/T09/2026-11-01-foundation-maintenance-offline-tests.log"
+  ],
+  "run_log": "evidence/T09/2026-11-01-final-readback.log"
+}

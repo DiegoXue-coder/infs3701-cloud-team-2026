@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "prepared_awaiting_action_time_security_confirmation",
+  "status": "applied_foundation_verified_business_tls_pending",
   "region": "us-east-1",
   "vpc_id": "vpc-0836d003a70f93405",
   "runtime_ami": "ami-03616f6b53c85f036",
@@ -9,12 +9,14 @@
     {
       "name": "infs3701-team-app-a",
       "subnet": "subnet-026f2c6afbe3692e8",
-      "label": "az-a"
+      "label": "az-a",
+      "instance_id": "i-00572a14ca8b71156"
     },
     {
       "name": "infs3701-team-app-b",
       "subnet": "subnet-00fc1e9a647c3530e",
-      "label": "az-b"
+      "label": "az-b",
+      "instance_id": "i-0081259c52a32e051"
     }
   ],
   "instance_type": "t3.micro",
@@ -54,10 +56,6 @@
         {
           "tcp_port": 8000,
           "source": "alb-security-group"
-        },
-        {
-          "tcp_port": 22,
-          "source": "eic-endpoint-security-group"
         }
       ],
       "egress": [
@@ -76,12 +74,7 @@
     "eic_endpoint": {
       "name": "infs3701-team-eic-sg",
       "ingress": [],
-      "egress": [
-        {
-          "tcp_port": 22,
-          "destination": "app-security-group"
-        }
-      ]
+      "egress": []
     }
   },
   "load_balancer": {
@@ -97,13 +90,17 @@
     "health_interval_seconds": 15,
     "healthy_threshold": 2,
     "unhealthy_threshold": 2,
-    "tls": "not configured until certificate/domain resolved"
+    "tls": "not configured until certificate/domain resolved",
+    "test_url": "http://infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com"
   },
   "maintenance": {
-    "type": "EC2 Instance Connect Endpoint",
+    "type": "Existing EC2 control-plane boot maintenance",
     "subnet": "subnet-026f2c6afbe3692e8",
     "preserve_client_ip": false,
-    "restriction": "only authenticated authorized AWS identity, no public SSH rule"
+    "restriction": "only authenticated authorized AWS identity, no public SSH rule",
+    "actual_result": "Verified on each new private host: existing EC2 control-plane stop/update MIME per-boot user-data/start, console-output diagnostics and target health. Does not deploy business bundle.",
+    "unused_eic_endpoint": "eice-000604a621ad5943a",
+    "ssh_paths_closed": true
   },
   "gateway_endpoints": {
     "route_tables": [
@@ -128,5 +125,26 @@
     "sharing credentials",
     "public buckets",
     "permanent deletion"
-  ]
+  ],
+  "security_approval": {
+    "received_on": "2026-11-01",
+    "source": "direct human response in this chat",
+    "answer": "同意，按这些边界继续",
+    "scope": "Two private t3.micro hosts with LabRole; encrypted roots; restricted EIC and scoped service gateway paths; public ALB HTTP80 infrastructure-only page; no HTTPS/other user grants/deletion."
+  },
+  "applied_at_recorded": "2026-11-01T05:39:42+00:00",
+  "applied_resources": "project/aws-resources.json",
+  "verified_at": "2026-11-01T06:01:13.014386+00:00",
+  "monitoring": {
+    "dashboard": "infs3701-team-dashboard",
+    "widget_count": 6,
+    "alarm": "infs3701-team-healthy-targets-below-two",
+    "metric": "HealthyHostCount Minimum, ALB+TG dimensions",
+    "condition": "below 2 for two 60-second periods; missing notBreaching",
+    "trigger": "Actual OK -> ALARM at 2026-11-01T05:56:06.375Z; evaluated healthy-count1 at 05:52/05:53UTC.",
+    "recovery": "Actual ALARM -> OK at 2026-11-01T06:00:06.376Z; based on a genuine healthy-count2 datapoint, not manual state override.",
+    "notifications": [],
+    "actor": "DiegoXue-coder",
+    "independently_reviewed": false
+  }
 }

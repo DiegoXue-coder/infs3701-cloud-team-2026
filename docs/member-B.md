@@ -1,5 +1,8 @@
 # 成员二：应用开发，拿到仓库即可开始
 
+> 最新入口与实际限制：[本轮验证与三人交接](2026-11-01-foundation-verification.md)。新 ALB 已可做基础检查，业务应用尚未发布；不要把下面较早的“入口未创建”记录当最新状态。
+
+
 先按 [自助入口](self-service.md) 配好自己的 AI/GitHub/Python，join B。只需要仓库访问权，不需要负责人 AWS 凭证。当前旧代码位于 `app/reading_tracker.py`，原始归档在 `reference/reading_tracker_candidate.py`。
 
 2026-11-01 交接更新：A 已创建 DynamoDB 表 infs3701-team-books（us-east-1），主键 record_id:String，READING_TABLE 与 AWS_DEFAULT_REGION 作为配置。目标运行环境 Python3.11；读取 docs/aws-owner-handoff.md，不必再等待数据库重新选型，也不要索取 A 的 AWS 凭证。业务代码尚未接通，仍需本人真实实现和测试。
@@ -17,7 +20,7 @@
 
 - 先增加明确标为 local/development 的测试数据模式，保证这一路径不调用 boto3、不需要任何 AWS 身份；仅绑定本地地址作为开发用途。
 - 增加健康路径与非敏感实例标识、输入处理；保留原功能，提供一条可复制的启动命令。需要新依赖时写入 requirements。
-- 准备托管数据库适配代码和建表/权限要求。数据库类型/资源参数未定时先分离数据读写接口，并在任务卡给 A 具体选型/资源请求，不暂停本地版本。
+- 按已建 DynamoDB 表和 handoffs.json 实现适配代码，先分离数据读写接口；若实际功能缺少权限，在任务卡向 A 交具体操作/资源请求。不要自行换库或等待重新选型，不暂停本地版本。
 - 用虚构数据证明新增/查询和统计的实际结果；本地数据不是最终托管数据库证据。
 
 ## 交给 A/C 的包

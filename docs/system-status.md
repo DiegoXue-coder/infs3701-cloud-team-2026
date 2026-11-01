@@ -1,5 +1,8 @@
 # 当前系统状态
 
+> 最新实际进展（2026-11-01）：新双机 ALB 基础已创建，业务程序与 HTTPS 尚未完成；以下旧记录按日期保留。优先读 [本轮验证与三人交接](2026-11-01-foundation-verification.md) 和 project/aws-resources.json。
+
+
 建立于 2026-10-31，Australia/Sydney。
 
 ## 已可使用

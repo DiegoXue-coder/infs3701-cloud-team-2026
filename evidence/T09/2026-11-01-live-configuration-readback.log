@@ -1,0 +1,42 @@
+Actual read-only AWS API output from CloudShell UI, captured 2026-11-01T05:53:59.858Z
+CHECKED_AT="2026-11-01T05:53:49.445978+00:00"
+SECURITY_GROUP={"GroupId":"sg-00ebc11a2282074f6","IpPermissions":[{"IpProtocol":"tcp","FromPort":80,"ToPort":80,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"Ipv6Ranges":[],"PrefixListIds":[]}],"IpPermissionsEgress":[{"IpProtocol":"tcp","FromPort":8000,"ToPort":800
+0,"UserIdGroupPairs":[{"UserId":"214018170594","GroupId":"sg-0a3ae03837c952009"}],"IpRanges":[],"Ipv6Ranges":[],"PrefixListIds":[]}]}
+SECURITY_GROUP={"GroupId":"sg-02f5195143dca6ea5","IpPermissions":[],"IpPermissionsEgress":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[{"UserId":"214018170594","GroupId":"sg-0a3ae03837c952009"}],"IpRanges":[],"Ipv6Ranges":[],"PrefixListIds":[]}]}
+SECURITY_GROUP={"GroupId":"sg-0a3ae03837c952009","IpPermissions":[{"IpProtocol":"tcp","FromPort":22,"ToPort":22,"UserIdGroupPairs":[{"UserId":"214018170594","GroupId":"sg-02f5195143dca6ea5"}],"IpRanges":[],"Ipv6Ranges":[],"PrefixListIds":[]},{"IpProtocol":"tcp","FromPort":8000,
+"ToPort":8000,"UserIdGroupPairs":[{"UserId":"214018170594","GroupId":"sg-00ebc11a2282074f6"}],"IpRanges":[],"Ipv6Ranges":[],"PrefixListIds":[]}],"IpPermissionsEgress":[{"IpProtocol":"tcp","FromPort":443,"ToPort":443,"UserIdGroupPairs":[],"IpRanges":[],"Ipv6Ranges":[],"PrefixLis
+tIds":[{"PrefixListId":"pl-63a5400a"},{"PrefixListId":"pl-02cd2c6b"}]}]}
+GATEWAY={"VpcEndpointId":"vpce-0edea5c7a05bc729d","State":"available","RouteTableIds":["rtb-03e1a36c6b2440ed7","rtb-02f19dad4efe80bd3"],"PolicyDocument":"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:GetObject\",\"Resource\
+":\"arn:aws:s3:::infs3701-team-artifacts-214018170594/releases/*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"true\"},\"ArnEquals\":{\"aws:PrincipalArn\":\"arn:aws:iam::214018170594:role/LabRole\"}}}]}"}
+GATEWAY={"VpcEndpointId":"vpce-028353eb0e050df0a","State":"available","RouteTableIds":["rtb-03e1a36c6b2440ed7","rtb-02f19dad4efe80bd3"],"PolicyDocument":"{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":[\"dynamodb:GetItem\",\"dyna
+modb:PutItem\",\"dynamodb:Scan\",\"dynamodb:DescribeTable\"],\"Resource\":\"arn:aws:dynamodb:us-east-1:214018170594:table/infs3701-team-books\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"true\"},\"ArnEquals\":{\"aws:PrincipalArn\":\"arn:aws:iam::214018170594:role/LabRol
+e\"}}}]}"}
+PRIVATE_ROUTES={"RouteTableId":"rtb-03e1a36c6b2440ed7","Routes":[{"DestinationCidrBlock":"10.37.0.0/16","GatewayId":"local","Origin":"CreateRouteTable","State":"active"},{"DestinationPrefixListId":"pl-02cd2c6b","GatewayId":"vpce-028353eb0e050df0a","Origin":"CreateRoute","State"
+:"active"},{"DestinationPrefixListId":"pl-63a5400a","GatewayId":"vpce-0edea5c7a05bc729d","Origin":"CreateRoute","State":"active"}]}
+PRIVATE_ROUTES={"RouteTableId":"rtb-02f19dad4efe80bd3","Routes":[{"DestinationCidrBlock":"10.37.0.0/16","GatewayId":"local","Origin":"CreateRouteTable","State":"active"},{"DestinationPrefixListId":"pl-02cd2c6b","GatewayId":"vpce-028353eb0e050df0a","Origin":"CreateRoute","State"
+:"active"},{"DestinationPrefixListId":"pl-63a5400a","GatewayId":"vpce-0edea5c7a05bc729d","Origin":"CreateRoute","State":"active"}]}
+INSTANCE={"InstanceId":"i-030acdefe159caa87","State":{"Code":80,"Name":"stopped"},"PrivateIpAddress":"10.37.0.34","PublicIpAddress":null,"IamInstanceProfile":null,"MetadataOptions":{"State":"applied","HttpTokens":"required","HttpPutResponseHopLimit":2,"HttpEndpoint":"enabled","
+HttpProtocolIpv6":"disabled","InstanceMetadataTags":"disabled"}}
+INSTANCE={"InstanceId":"i-00572a14ca8b71156","State":{"Code":80,"Name":"stopped"},"PrivateIpAddress":"10.37.10.88","PublicIpAddress":null,"IamInstanceProfile":{"Arn":"arn:aws:iam::214018170594:instance-profile/LabInstanceProfile","Id":"AIPATDVD2D3RMABJ4NMYI"},"MetadataOptions":
+{"State":"applied","HttpTokens":"required","HttpPutResponseHopLimit":2,"HttpEndpoint":"enabled","HttpProtocolIpv6":"disabled","InstanceMetadataTags":"disabled"}}
+INSTANCE={"InstanceId":"i-0081259c52a32e051","State":{"Code":16,"Name":"running"},"PrivateIpAddress":"10.37.11.110","PublicIpAddress":null,"IamInstanceProfile":{"Arn":"arn:aws:iam::214018170594:instance-profile/LabInstanceProfile","Id":"AIPATDVD2D3RMABJ4NMYI"},"MetadataOptions"
+:{"State":"applied","HttpTokens":"required","HttpPutResponseHopLimit":2,"HttpEndpoint":"enabled","HttpProtocolIpv6":"disabled","InstanceMetadataTags":"disabled"}}
+ALB={"LoadBalancerArn":"arn:aws:elasticloadbalancing:us-east-1:214018170594:loadbalancer/app/infs3701-team-alb/cdc408a1dfd1268c","DNSName":"infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com","State":{"Code":"active"},"Scheme":"internet-facing","AvailabilityZones":[{"ZoneN
+ame":"us-east-1b","SubnetId":"subnet-0358770cf9d551064","LoadBalancerAddresses":[]},{"ZoneName":"us-east-1a","SubnetId":"subnet-0567427f846712996","LoadBalancerAddresses":[]}]}
+LISTENERS=[{"Port":80,"Protocol":"HTTP"}]
+ALARM_HISTORY=[{"Timestamp":"2026-11-01 05:44:06.376000+00:00","HistorySummary":"Alarm updated from INSUFFICIENT_DATA to OK","HistoryData":"{\"version\":\"1.0\",\"oldState\":{\"stateValue\":\"INSUFFICIENT_DATA\",\"stateReason\":\"Unchecked: Initial alarm creation\"},\"newState\
+":{\"stateValue\":\"OK\",\"stateReason\":\"Threshold Crossed: 2 out of the last 2 datapoints [2.0 (01/11/26 05:41:00), 2.0 (01/11/26 05:40:00)] were not less than the threshold (2.0) (minimum 1 datapoint for ALARM -> OK transition).\",\"stateReasonData\":{\"version\":\"1.0\",\"
+queryDate\":\"2026-11-01T05:44:06.373+0000\",\"startDate\":\"2026-11-01T05:40:00.000+0000\",\"statistic\":\"Minimum\",\"period\":60,\"recentDatapoints\":[2.0,2.0],\"threshold\":2.0,\"evaluatedDatapoints\":[{\"timestamp\":\"2026-11-01T05:41:00.000+0000\",\"sampleCount\":2.0,\"va
+lue\":2.0}]}}}"}]
+DASHBOARD={"name":"infs3701-team-dashboard","widget_count":6}
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $
+
+SSH path tightened 2026-11-01T06:00:09.669Z
+TIGHTENED_GROUP={"id": "sg-02f5195143dca6ea5", "ingress": [], "egress": []}
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.
+entry area (settable) CloudShell terminal input, ID: b7301c2f-25ae-4548-be33-c90a837fd79f, Value: ~ $

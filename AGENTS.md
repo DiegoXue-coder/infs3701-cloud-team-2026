@@ -40,6 +40,6 @@
 - 使用本人自己的 AI 与 GitHub 连接；本系统不需要在 GitHub 存放 AI API key，也不保证所有聊天工具自动读取本文件。不能自动读取时，使用 `prompts/START.md` 的开场语明确让 AI 读取仓库。
 - 当前 GitHub Actions 受账号付款/额度限制，不能只发评论后假设它自动执行。优先用 `scripts/team.py` 一次完成本人评论与同步；若使用连接器/网页评论，随后运行该助手的 sync。不能运行脚本时说明请求待处理。现有 Codex GitHub 连接尚未获准读取这个新仓库；可用本人现有 Git 授权/本地克隆访问，未来需要时由本人调整连接器仓库范围。
 - 证据只能证明对应环境及测试时刻；单实例停机测试不能直接声称整个 AZ 故障已实测。AI 结构检查不能替代人工/真实系统验收。
-- 官方截止为 2026-11-17 16:00 Australia/Sydney；视频时长、自动扩容 core 冲突、资源保留要求待 tutor 确认。用户已确认采用自己的 Reading Tracker（Option A），升级入口 app/reading_tracker.py；不要再让成员重新选题。数据库和另两位人员仍需确认；你已选择自己负责 AWS。
+- 官方截止为 2026-11-17 16:00 Australia/Sydney；视频时长、自动扩容 core 冲突、资源保留要求及无域名时的 HTTPS 方式待 tutor 确认。用户已确认 Reading Tracker（Option A），升级入口 app/reading_tracker.py。DynamoDB 表已建，契约见 handoffs.json，不再重新选题或数据库；B/C 角色仍由成员本人认领。最新实际云端交接读 docs/2026-11-01-foundation-verification.md，基础测试页不是业务部署成功。
 - 原课程资料只用于获准的私有课程小组；仓库保持 private，禁止 GitHub Pages 公布课程材料。尚未收到的 W8/W9 资料在索引中标缺，不自行补造课件。
 - 所有计划、模板和 AI 建议都不是实际贡献或实验结果。提交前清除占位文字，保留真实 AI 使用及个人贡献记录。

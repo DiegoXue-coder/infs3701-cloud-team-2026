@@ -1,8 +1,11 @@
 # 成员三：测试与监控准备，不等部署即可开工
 
+> 最新入口与实际限制：[本轮验证与三人交接](2026-11-01-foundation-verification.md)。新 ALB 已可做基础检查，业务应用尚未发布；不要把下面较早的“入口未创建”记录当最新状态。
+
+
 先按 [自助入口](self-service.md) 配好本人环境，join C。读取旧代码 `app/reading_tracker.py`、评分要求和 `project/handoffs.json`。首项 T08，随后 T12/T13 等卡的准备工作；真实最终测试条件仍遵守任务卡。
 
-2026-11-01 交接更新：读取 docs/aws-owner-handoff.md 和 project/aws-resources.json。网络与表已创建不等于应用通过；新 ALB 地址尚缺，继续可执行本地测试和具体监控配置，等真实部署后再最终验收。
+2026-11-01 交接更新：读取本轮验证与三人交接及 project/aws-resources.json。新 ALB 已有明确标记的基础测试页，可验证访问工具；Reading Tracker 业务尚未发布。继续本地数据/功能测试，并独立复核已有监控基线，等业务发布后再最终验收。
 
 ## 第一轮要交能运行的东西
 

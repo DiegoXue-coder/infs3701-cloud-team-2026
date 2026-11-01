@@ -1,5 +1,6 @@
 """Offline boundaries only; these tests do not prove private AWS connectivity."""
 import contextlib
+import email
 import importlib.util
 import io
 import os
@@ -20,6 +21,21 @@ def load_launcher():
 
 
 class FoundationPreparation(unittest.TestCase):
+    def test_boot_diagnostics_are_per_boot_and_contain_no_business_write(self):
+        spec = importlib.util.spec_from_file_location("maintenance", ROOT / "deployment/maintain-foundation.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        for label in ("a", "b"):
+            message = email.message_from_string(module.user_data(label))
+            part = message.get_payload()[0]
+            self.assertEqual(part.get_content_type(), "text/x-shellscript-per-boot")
+            script = part.get_payload(decode=True).decode()
+            self.assertIn("APP_INSTANCE=az-" + label, script)
+            self.assertNotIn("put_item", script)
+            self.assertNotIn("delete_item", script)
+            self.assertNotIn("AWS_ACCESS_KEY_ID", script)
+            self.assertIn("INFS3701_BOOT_CHECK_OK=", script)
+
     def test_default_command_cannot_connect_to_aws(self):
         module = load_launcher()
         output = io.StringIO()

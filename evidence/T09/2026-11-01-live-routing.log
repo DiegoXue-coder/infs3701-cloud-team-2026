@@ -1,0 +1,13 @@
+REQUEST={"n": 1, "utc": "2026-11-01T05:40:08.576397+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 18}
+REQUEST={"n": 2, "utc": "2026-11-01T05:40:09.081431+00:00", "status": 200, "instance": "az-a", "stage": "infrastructure-only", "ms": 5}
+REQUEST={"n": 3, "utc": "2026-11-01T05:40:09.588312+00:00", "status": 200, "instance": "az-a", "stage": "infrastructure-only", "ms": 7}
+REQUEST={"n": 4, "utc": "2026-11-01T05:40:10.094273+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 6}
+REQUEST={"n": 5, "utc": "2026-11-01T05:40:10.601118+00:00", "status": 200, "instance": "az-a", "stage": "infrastructure-only", "ms": 7}
+REQUEST={"n": 6, "utc": "2026-11-01T05:40:11.105842+00:00", "status": 200, "instance": "az-a", "stage": "infrastructure-only", "ms": 5}
+REQUEST={"n": 7, "utc": "2026-11-01T05:40:11.611137+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 5}
+REQUEST={"n": 8, "utc": "2026-11-01T05:40:12.117130+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 6}
+REQUEST={"n": 9, "utc": "2026-11-01T05:40:12.622131+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 5}
+REQUEST={"n": 10, "utc": "2026-11-01T05:40:13.126791+00:00", "status": 200, "instance": "az-a", "stage": "infrastructure-only", "ms": 5}
+REQUEST={"n": 11, "utc": "2026-11-01T05:40:13.632760+00:00", "status": 200, "instance": "az-a", "stage": "infrastructure-only", "ms": 6}
+REQUEST={"n": 12, "utc": "2026-11-01T05:40:14.139240+00:00", "status": 200, "instance": "az-b", "stage": "infrastructure-only", "ms": 6}
+ROUTING_SUMMARY={"requests": 12, "failures": 0, "instances": {"az-b": 6, "az-a": 6}, "business_app_tested": false}

@@ -1,5 +1,8 @@
 # 你先完成 AWS 基础，组员怎样接手
 
+> 最新实际进展（2026-11-01）：新双机 ALB 基础已创建，业务程序与 HTTPS 尚未完成；以下旧记录按日期保留。优先读 [本轮验证与三人交接](2026-11-01-foundation-verification.md) 和 project/aws-resources.json。
+
+
 2026-11-01，A=DiegoXue-coder。实时资源清单见 project/aws-resources.json；下一批尚未执行的部署方案见 project/next-deployment.json。下面严格区分已创建和计划，不能把占位健康页面当 Reading Tracker。
 
 ## 已经实际完成
