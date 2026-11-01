@@ -1,6 +1,6 @@
 # 三人项目进度看板
 
-最后同步：**2026-11-01 13:55 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
+最后同步：**2026-11-01 14:01 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
 
 已完成并复核 **0 / 23** 项；等检查 **0** 项；被卡住 **0** 项。
 
@@ -24,6 +24,7 @@
 
 | 任务 / 操作 | 操作者 | 处理与状态 | 证据与回执 |
 | --- | --- | --- | --- |
+| T05 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/76c5164fcaca52a875b626f660ddeff08d9579d7/evidence/T05/2026-11-01-browser-audit.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552631601) |
 | T05 / claim | DiegoXue-coder | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552579838) |
 | T01 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/fcc4fb25eafbf7f118c42564c3a2dee98be49ab8/evidence/T01/2026-10-31-self-service-tests.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6542176705) |
 | T01 / progress | DiegoXue-coder | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541825416) |
@@ -39,7 +40,7 @@
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
 | [T01 确认 Reading Tracker 升级方案、人员与 Lab](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1) | DiegoXue-coder / A | 2026-10-31 | 实际上报（partial，尚未完成）：Built shared self-service onboarding, member-selected vacant B/C roles, authenticated enrollment command, setup script, role-specific first tasks, and machine-readable handoff defaults. |
-| [T05 优先核查多人登录权限、Lab 限制与预算](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5) | DiegoXue-coder / A | 2026-11-02 | 已认领 |
+| [T05 优先核查多人登录权限、Lab 限制与预算](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5) | DiegoXue-coder / A | 2026-11-02 | 实际上报（partial，尚未完成）：Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet. |
 
 ## 被卡住 · 0
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T02:55:56+00:00",
+  "generated_at": "2026-11-01T03:01:35+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -204,6 +204,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552576828",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552579838"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T05-6552628215",
+      "task_id": "T05",
+      "request_comment_id": 6552628215,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T03:01:11Z",
+      "processed_at": "2026-11-01T03:01:33+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552628215",
+      "submission": {
+        "path": "deliveries/T05/2026-11-01-initial-inventory.json",
+        "commit": "76c5164fcaca52a875b626f660ddeff08d9579d7",
+        "manifest_sha": "a0049e198579a40ee7f64165a4970426bc0eb560",
+        "run_log": "evidence/T05/2026-11-01-browser-audit.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T03:00:45+00:00",
+        "test_count": 3,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "docs/2026-11-01-aws-inventory.md",
+          "evidence/T05/2026-11-01-browser-audit.log",
+          "evidence/T05/2026-11-01-instance-storage.png"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552631601"
     }
   ],
   "tasks": [
@@ -462,18 +493,56 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-01T02:55:34Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-01T03:01:11Z",
+      "last_note": "实际上报（partial，尚未完成）：Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet.",
       "processed_comments": [
-        6552576828
+        6552576828,
+        6552628215
       ],
       "last_receipt": {
-        "receipt_id": "R-T05-6552576828",
-        "command": "claim",
+        "receipt_id": "R-T05-6552628215",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-01T02:55:53+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552579838"
+        "processed_at": "2026-11-01T03:01:33+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552631601"
+      },
+      "last_report": {
+        "path": "deliveries/T05/2026-11-01-initial-inventory.json",
+        "commit": "76c5164fcaca52a875b626f660ddeff08d9579d7",
+        "manifest_sha": "a0049e198579a40ee7f64165a4970426bc0eb560",
+        "evidence_shas": {
+          "docs/2026-11-01-aws-inventory.md": "57353ac28b5ff1e5dacb944fac3f33e7221fe5ee",
+          "evidence/T05/2026-11-01-browser-audit.log": "8f863791d81bc44c504529fa51e8764dd47536df",
+          "evidence/T05/2026-11-01-instance-storage.png": "a508e07163c529ab10e6cf4c814ab07a7dd03593",
+          "evidence/T05/2026-11-01-lab-ready.png": "3bc889044f0e7946c3ebce45244fb397294f995f",
+          "evidence/T05/2026-11-01-s3-bucket.png": "8e53e576e3454fadcadfdfe03ebab82cfedb3f95",
+          "evidence/T05/2026-11-01-s3-root.png": "d68da36e5f6bca73356c267c08d6e24aafd683a1"
+        },
+        "summary": "Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet.",
+        "tested_at": "2026-11-01T03:00:45+00:00",
+        "submitted_by": "DiegoXue-coder",
+        "environment": "Authenticated AWS Academy Learner Lab in us-east-1; browser console UI; session started for audit.",
+        "verification_result": "partial",
+        "run_log": "evidence/T05/2026-11-01-browser-audit.log",
+        "test_count": 3,
+        "test_summary": [
+          {
+            "action": "Start lab and inspect EC2/S3 console metadata",
+            "expected": "Identify actual existing environment without modifying application data",
+            "actual": "Lab Ready; 1 EC2, 1 EBS, 0 load balancers; existing S3 bucket and books prefix observed."
+          },
+          {
+            "action": "Inspect IAM role, security rules and storage",
+            "expected": "Record actual configuration and gaps",
+            "actual": "No instance role; TCP22 and TCP80 open to all IPv4; root EBS 8 GiB Encrypted No."
+          },
+          {
+            "action": "Open old instance HTTP address",
+            "expected": "Determine whether old UI currently responds",
+            "actual": "ERR_CONNECTION_REFUSED; no functional group deployment claimed."
+          }
+        ]
       },
       "issue_number": 5,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5",

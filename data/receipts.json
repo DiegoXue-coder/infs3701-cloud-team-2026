@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T02:55:56+00:00",
+  "generated_at": "2026-11-01T03:01:35+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -184,6 +184,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552576828",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552579838"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T05-6552628215",
+      "task_id": "T05",
+      "request_comment_id": 6552628215,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T03:01:11Z",
+      "processed_at": "2026-11-01T03:01:33+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552628215",
+      "submission": {
+        "path": "deliveries/T05/2026-11-01-initial-inventory.json",
+        "commit": "76c5164fcaca52a875b626f660ddeff08d9579d7",
+        "manifest_sha": "a0049e198579a40ee7f64165a4970426bc0eb560",
+        "run_log": "evidence/T05/2026-11-01-browser-audit.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T03:00:45+00:00",
+        "test_count": 3,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "docs/2026-11-01-aws-inventory.md",
+          "evidence/T05/2026-11-01-browser-audit.log",
+          "evidence/T05/2026-11-01-instance-storage.png"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552631601"
     }
   ]
 }
