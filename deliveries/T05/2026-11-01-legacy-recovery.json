@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "task_id": "T05",
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-01T04:18:39+00:00",
+  "environment": "Existing us-east-1 EC2 i-0bdbde44eb450f334; human operated SSH, AI inspected browser and live terminal.",
+  "summary": "Recovered legacy Reading Tracker using instance-role credentials; verified main page renders three existing S3 records.",
+  "tests": [
+    {
+      "action": "Verify credential source while excluding static file/environment credentials",
+      "expected": "iam-role",
+      "actual": "credential_source: iam-role reported by user and observed in terminal."
+    },
+    {
+      "action": "Launch old app with existing virtualenv and static credentials excluded",
+      "expected": "HTTP listener on port80",
+      "actual": "Flask running on 0.0.0.0:80, debug off; foreground development server."
+    },
+    {
+      "action": "Independently open main page in browser",
+      "expected": "Reading Tracker with actual existing records",
+      "actual": "Main page rendered three records; terminal GET / 200. No writes performed."
+    }
+  ],
+  "evidence": [
+    "evidence/T05/2026-11-01-legacy-recovery.log",
+    "evidence/T05/2026-11-01-reading-tracker-restored.png"
+  ],
+  "run_log": "evidence/T05/2026-11-01-legacy-recovery.log",
+  "verification_result": "partial",
+  "limitations": "Only old EC2+S3 baseline restored. No managed database, second instance/AZ, load balancer, TLS, durable WSGI service or alarm verification. S3 write access not tested and server code not hashed against repo.",
+  "next_step": "A proceeds with actual network/database/TLS feasibility and deployment preparation. B/C continue local code/tests; legacy URL is optional temporary baseline, not stable final service.",
+  "ai_use": "AI supplied guidance and independently inspected live terminal/main page; user executed server commands. No other member review or cloud write test fabricated."
+}

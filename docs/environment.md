@@ -26,3 +26,7 @@ HTTPS/证书方案及验证：待确认
 ### 角色绑定进展
 
 2026-11-01 用户本人完成 LabInstanceProfile 绑定，AI 在实例详情实际核对 IAM role=LabRole，并保存 role-bound 截图。仅证明绑定完成，不证明数据库可访问。Session Manager 暂显示 Not connected；显示的凭证错误时间早于本次绑定，不能据此认定绑定失败。已准备 EC2 Instance Connect 浏览器连接页，尚未验证登录、运行命令或修复旧网页。
+
+### 旧网站恢复成功（后续状态）
+
+2026-11-01 用户在 EC2 Instance Connect 中验证角色凭证来源 iam-role，并以排除静态凭证文件/变量的方式手动启动旧 app.py。AI 独立访问旧公网 HTTP 地址，页面显示已有 3 条记录；终端 GET / 返回 200。原先“连接被拒绝”已被本次成功访问更新，历史盘点保留。当前只是前台 Flask+S3 单实例基线，未验证写入、重启保活或最终架构，不能当成小组最终服务。证据：evidence/T05/2026-11-01-legacy-recovery.log。

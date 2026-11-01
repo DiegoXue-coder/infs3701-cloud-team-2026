@@ -45,7 +45,7 @@
     "database_resource_name": null,
     "deployed_commit": null,
     "resource_inventory": "docs/environment.md",
-    "missing_values_action": "Continue local work: no functioning cloud BASE_URL yet. Existing instance HTTP attempt failed; do not assume it is the new service.",
+    "missing_values_action": "Continue local development and tests. Legacy URL is optional short-lived baseline, not final BASE_URL; coordinate with operator before live tests. Managed database and group deployment values remain unset.",
     "audit": "docs/2026-11-01-aws-inventory.md",
     "existing_instance": {
       "id": "i-0bdbde44eb450f334",
@@ -53,13 +53,17 @@
       "az": "us-east-1a",
       "type": "t3.micro",
       "iam_role_attached": true,
-      "web_test": "prior_attempt_connection_refused_not_retested",
+      "web_test": "GET main page succeeded; existing records rendered",
       "production_ready": false,
       "iam_role": "LabRole",
       "role_verified_at": "2026-11-01T03:10:15+00:00",
-      "ssm_status": "not_yet_connected_after_manual_role_attachment"
+      "ssm_status": "not_yet_connected_after_manual_role_attachment",
+      "web_verified_at": "2026-11-01T04:18:39+00:00",
+      "credential_source_verified": "iam-role"
     },
-    "existing_s3_bucket": "infs3701-reading-notes-inbox"
+    "existing_s3_bucket": "infs3701-reading-notes-inbox",
+    "legacy_test_url": "http://54.167.6.20/",
+    "legacy_test_limitations": "Old EC2+S3 baseline only; foreground Flask process, no stable availability promise. No new managed database or final group endpoint. GET verified, writes untested."
   },
   "ready_handoff_rules": {
     "B_to_A": [

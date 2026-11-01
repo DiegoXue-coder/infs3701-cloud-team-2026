@@ -1,0 +1,9 @@
+T05 legacy application recovery verification
+Recorded UTC: 2026-11-01T04:18:39+00:00
+Actual server operator: DiegoXue-coder (human). AI guided commands, inspected live terminal and independently opened the web page.
+User-reported earlier outputs: whoami=ec2-user; ss -lntp initially only SSH22; /home/ec2-user/app.py found; py_compile succeeded; Flask 3.1.3 and boto3 1.42.97 installed.
+Credential source test, with static environment/file credentials excluded: credential_source: iam-role (user output; also observed in live terminal).
+Live SSH terminal observed by AI: BUCKET=infs3701-reading-notes-inbox; PREFIX=books/; app.run on 0.0.0.0 port80. Flask running, debug off, development-server warning. Startup command excludes static environment/file credentials; no credentials printed or copied. GET / 200 logged; favicon 404 is separate from main-page success. Client IPs omitted from this record.
+Independent browser GET http://54.167.6.20/ succeeded, title Reading Tracker. Three existing records rendered; totals displayed 3 logged, 3 reading, 157 pages. No POST, new record, edit, deletion or database migration performed.
+Evidence screenshot: evidence/T05/2026-11-01-reading-tracker-restored.png.
+Remaining: existing S3 single-instance baseline only; foreground Flask requires session to remain running. No systemd/WSGI durability, managed database, load balancer, second AZ deployment, TLS or tested alarm. EC2-source code hash has not been matched to repo commit. Python3.9 deprecation warning observed; record as upgrade consideration, not a completed change.
