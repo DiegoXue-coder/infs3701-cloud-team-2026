@@ -1,0 +1,21 @@
+T05 — Actual browser audit record
+Recorded UTC: 2026-11-01T03:00:45+00:00
+Actor: DiegoXue-coder; AI-assisted browser operations after user requested today's work.
+Environment: authenticated AWS Academy Learner Lab, us-east-1.
+
+Actions and observations:
+1. Synchronized GitHub start and claimed T05 as role A; remote helper confirmed in_progress.
+2. Existing AWS console session had expired. Clicked Start Lab in existing authenticated Academy page, observed Initializing / In Creation then Ready; timer 04:00. Starting Lab resumed its existing EC2 instance; no new instance was created.
+3. Lab budget display: Used $1.3 of $50 (delayed display; approximate remainder $48.70).
+4. Entered AWS using Lab AWS button. EC2 dashboard showed 1 instance, 1 running, 1 volume, 2 security groups, 0 load balancers, 0 Auto Scaling Groups, 0 Elastic IPs, 0 snapshots. Capacity Reservations alone showed insufficient permissions; not a conclusion about other services.
+5. EC2 list/details: INFS3701-Week2-EC2, i-0bdbde44eb450f334, t3.micro, us-east-1a; running, status initially Initializing. VPC vpc-0524ecd6aeeb47b61, subnet subnet-08fdfb8bd68d62433. IAM role displayed a dash (none); IMDSv2 Required.
+6. Security tab: sg-0a2612289ccca5dce / INFS3701-Week2-web-sg: inbound TCP22 and TCP80 from 0.0.0.0/0; outbound All to 0.0.0.0/0. No changes made.
+7. Storage tab: EBS vol-0b3fe0452d4345c18, /dev/xvda, 8 GiB, Attached/In-use, Encrypted No. Delete-on-termination value not recorded.
+8. Opened HTTP public address observed from instance, http://54.167.6.20/: browser reported ERR_CONNECTION_REFUSED. This proves failure for this attempt, not its root cause. No POST/write attempted.
+9. S3 bucket list: one general-purpose bucket infs3701-reading-notes-inbox, us-east-1. Top-level list contains books/, notes/, version-test.txt. No object content was opened, exported, altered or deleted.
+10. Current Lab Readme lists DynamoDB with LabRole, and RDS with supported engines/small burstable classes and restrictions. This is documentation only: no database creation/read-write or policy simulation was tested. ACM heading exists but no certificate issuance/domain ownership verified.
+
+Limits:
+An EC2 describe command was typed into the embedded terminal, but keyboard submission failed. It was NOT executed and is NOT used as CLI evidence. Audit findings came from console UI.
+No new infrastructure, IAM changes, security rule changes, data writes, deletion, Reset or End Lab. Session remains open for next authorized step.
+Database inventory, actual role attachment/permissions, full network routes, TLS/domain feasibility and cost model remain outstanding. T05 is partial, not complete.

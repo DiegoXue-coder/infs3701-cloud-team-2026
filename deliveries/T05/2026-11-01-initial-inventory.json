@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "task_id": "T05",
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-01T03:00:45+00:00",
+  "environment": "Authenticated AWS Academy Learner Lab in us-east-1; browser console UI; session started for audit.",
+  "summary": "Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet.",
+  "tests": [
+    {
+      "action": "Start lab and inspect EC2/S3 console metadata",
+      "expected": "Identify actual existing environment without modifying application data",
+      "actual": "Lab Ready; 1 EC2, 1 EBS, 0 load balancers; existing S3 bucket and books prefix observed."
+    },
+    {
+      "action": "Inspect IAM role, security rules and storage",
+      "expected": "Record actual configuration and gaps",
+      "actual": "No instance role; TCP22 and TCP80 open to all IPv4; root EBS 8 GiB Encrypted No."
+    },
+    {
+      "action": "Open old instance HTTP address",
+      "expected": "Determine whether old UI currently responds",
+      "actual": "ERR_CONNECTION_REFUSED; no functional group deployment claimed."
+    }
+  ],
+  "evidence": [
+    "docs/2026-11-01-aws-inventory.md",
+    "evidence/T05/2026-11-01-browser-audit.log",
+    "evidence/T05/2026-11-01-instance-storage.png",
+    "evidence/T05/2026-11-01-lab-ready.png",
+    "evidence/T05/2026-11-01-s3-bucket.png",
+    "evidence/T05/2026-11-01-s3-root.png"
+  ],
+  "run_log": "evidence/T05/2026-11-01-browser-audit.log",
+  "verification_result": "partial",
+  "limitations": "TLS/domain, managed database resources and permissions, full network routes and final costs not validated. No cloud infrastructure created, fixed, deleted or reset. Typed CLI command not submitted; no CLI execution evidence claimed.",
+  "next_step": "A checks actual instance profile, network and database/TLS feasibility. B/C independently prepare local application and tests using handoffs; preserve old data and require real verification before completion.",
+  "ai_use": "Codex assisted browser navigation, screenshot capture and record preparation; no other member approval or contribution fabricated."
+}

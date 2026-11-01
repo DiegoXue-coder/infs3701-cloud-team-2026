@@ -14,7 +14,7 @@
 1. **GitHub Actions 不能启动。** 首次运行回报：`The job was not started because recent account payments have failed or your spending limit needs to be increased.` [原始运行](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/actions/runs/41182740718)。未修改付款信息或限额；工作流保留但暂停，避免反复红灯。当前使用聊天驱动同步。
 2. **没有 GitHub Projects scope。** 当前已有 Git 授权可管理仓库和 Issues，不能创建 Projects v2。因此看板是仓库内自动生成、带任务链接及时间表的 `DASHBOARD.md`，不是原生拖动式 Projects。
 3. **Codex 的现有 GitHub 连接器尚未包含新仓库。** 接口读取返回 404，现有本机 Git 授权可以正常读写。使用本地克隆和同步助手不受该连接器范围影响；未来每位成员需给自己的工具配置访问，不会因为被邀请就自动连接所有 AI。
-4. B/C 成员未提供，未发邀请；A 已绑定 DiegoXue-coder（AWS 负责人）。起始服务已确定为 Reading Tracker；Lab 持有人为 DiegoXue-coder；若干课程冲突仍待 T03 确认。
+4. Marina057 与 Alex4325Li 已接受仓库邀请并有写权限，但尚未自选 B/C；A 已绑定 DiegoXue-coder（AWS 负责人）。起始服务已确定为 Reading Tracker；Lab 持有人为 DiegoXue-coder；若干课程冲突仍待 T03 确认。
 5. Week 5 和 Week 7 的 8 个新文件已归档并共享；Week 8/9 正式课件仍待收到，不能宣称全学期资料已齐。
 
 6. 当前 Learner Lab Readme 明确禁止创建用户或组；不能为另两位成员创建独立 IAM 登录账号。已进入 us-east-1 控制台，只读检查，没有更改权限。另行提供的小组访问方式待 tutor 确认，见 `docs/aws-access-audit.md`。
@@ -30,3 +30,7 @@
 ## 自助开工入口（2026-10-31）
 
 已提供 docs/self-service.md、B/C 角色指南、project/handoffs.json、setup_member.py 及 team.py join。44 项测试通过，本机隔离依赖安装和离线基线检查通过；尚未有另两位真实账号验收。需先邀请并由本人接受 private 仓库访问，两人可各自选择空缺角色，不必预先分工；角色绑定不是新增 AWS 授权。
+
+## 2026-11-01 实际开工
+
+T05 已由 DiegoXue-coder 认领。今日 Lab 已启动并只读盘点旧 EC2/S3，尚无新的可用云服务。详见 docs/2026-11-01-aws-inventory.md；实际缺陷与未测项均保留，不能报为已修复。
