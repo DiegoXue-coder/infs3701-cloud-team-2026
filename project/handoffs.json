@@ -52,9 +52,12 @@
       "name": "INFS3701-Week2-EC2",
       "az": "us-east-1a",
       "type": "t3.micro",
-      "iam_role_attached": false,
-      "web_test": "connection_refused",
-      "production_ready": false
+      "iam_role_attached": true,
+      "web_test": "prior_attempt_connection_refused_not_retested",
+      "production_ready": false,
+      "iam_role": "LabRole",
+      "role_verified_at": "2026-11-01T03:10:15+00:00",
+      "ssm_status": "not_yet_connected_after_manual_role_attachment"
     },
     "existing_s3_bucket": "infs3701-reading-notes-inbox"
   },

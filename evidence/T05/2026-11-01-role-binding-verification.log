@@ -1,0 +1,6 @@
+Verified UTC: 2026-11-01T03:10:15+00:00
+Task T05; actor DiegoXue-coder.
+User performed the role attachment manually. AI browser inspection confirmed instance i-0bdbde44eb450f334 now shows IAM role LabRole in summary and Security tab.
+Screenshot: 2026-11-01-role-bound.png.
+SSM connection selection showed Not connected; latest displayed error 2026/11/01 02:55:58Z predates attachment. No conclusion that new role is invalid.
+Browser EC2 Instance Connect option selected; Connect link observed for ec2-user. No session login or server commands yet. No security-group changes, database operations or application repair performed.
