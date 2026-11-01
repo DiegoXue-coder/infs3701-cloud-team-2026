@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T03:10:54+00:00",
+  "generated_at": "2026-11-01T04:19:15+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -232,6 +232,36 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552715455",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552718692"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T05-6553324901",
+      "task_id": "T05",
+      "request_comment_id": 6553324901,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T04:18:51Z",
+      "processed_at": "2026-11-01T04:19:12+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Recovered legacy Reading Tracker using instance-role credentials; verified main page renders three existing S3 records.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553324901",
+      "submission": {
+        "path": "deliveries/T05/2026-11-01-legacy-recovery.json",
+        "commit": "b410df15e536f80503ca5e548657585baff53047",
+        "manifest_sha": "f1e977baf84fb32495de32730ceb053bcd94805c",
+        "run_log": "evidence/T05/2026-11-01-legacy-recovery.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T04:18:39+00:00",
+        "test_count": 3,
+        "evidence_count": 2,
+        "evidence_preview": [
+          "evidence/T05/2026-11-01-legacy-recovery.log",
+          "evidence/T05/2026-11-01-reading-tracker-restored.png"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553328063"
     }
   ]
 }
