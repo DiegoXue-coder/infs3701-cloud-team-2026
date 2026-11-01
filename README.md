@@ -55,6 +55,7 @@ GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度�
 
 ## 资料与记录
 
+- [报告取材入口](docs/report-evidence-index.md)：按章节查找实际截图、日志、配置与回执，以及图片下载/嵌入报告的方法。
 - [资料索引](sources/INDEX.md)：原始作业文件、现有相关课件、AI 可检索文本、缺失清单及校验值。
 - [作业要求与冲突](docs/assignment-requirements.md)：不能遗漏的核心要求、交付和待确认问题。
 - [三人操作手册](docs/execution-guide.md)：做什么、怎么做、先后顺序和联合检查节点。
