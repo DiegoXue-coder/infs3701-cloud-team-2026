@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T03:01:35+00:00",
+  "generated_at": "2026-11-01T03:10:54+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -22,20 +22,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "receipt_id": "R-T01-6540933788",
-      "task_id": "T01",
-      "legacy": true,
-      "actor": "DiegoXue-coder",
-      "command": "status",
-      "processed_at": "2026-10-31T08:04:18Z",
-      "outcome": "legacy",
-      "status_before": null,
-      "status_after": null,
-      "summary": "历史回执保留；不补造当时未保存的结构化状态。",
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540936696",
-      "submission": null
-    },
     {
       "receipt_id": "R-T01-6540956246",
       "task_id": "T01",
@@ -235,6 +221,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552631601"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T05-6552715455",
+      "task_id": "T05",
+      "request_comment_id": 6552715455,
+      "actor": "DiegoXue-coder",
+      "command": "progress",
+      "requested_at": "2026-11-01T03:10:32Z",
+      "processed_at": "2026-11-01T03:10:51+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T05 已更新为「进行中」。用户本人已完成 LabInstanceProfile 绑定，实例详情和 Security 实际显示 LabRole；证据 evidence/T05/2026-11-01-role-binding-verification.log，commit 03f00c4。SSM 尚未在线，页面旧错误早于角色绑定；正准备浏览器 EC2 Instance Connect 登录。尚未执行服务器命令、修复网页或验证数据库权限。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552715455",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552718692"
     }
   ],
   "tasks": [
@@ -493,19 +496,20 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-01T03:01:11Z",
-      "last_note": "实际上报（partial，尚未完成）：Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet.",
+      "last_update": "2026-11-01T03:10:32Z",
+      "last_note": "用户本人已完成 LabInstanceProfile 绑定，实例详情和 Security 实际显示 LabRole；证据 evidence/T05/2026-11-01-role-binding-verification.log，commit 03f00c4。SSM 尚未在线，页面旧错误早于角色绑定；正准备浏览器 EC2 Instance Connect 登录。尚未执行服务器命令、修复网页或验证数据库权限。",
       "processed_comments": [
         6552576828,
-        6552628215
+        6552628215,
+        6552715455
       ],
       "last_receipt": {
-        "receipt_id": "R-T05-6552628215",
-        "command": "report",
+        "receipt_id": "R-T05-6552715455",
+        "command": "progress",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-01T03:01:33+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552631601"
+        "processed_at": "2026-11-01T03:10:51+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552718692"
       },
       "last_report": {
         "path": "deliveries/T05/2026-11-01-initial-inventory.json",
