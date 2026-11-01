@@ -11,8 +11,10 @@
 | 测试地址 | BASE_URL，不把某台地址写死 | C |
 | 数据字段 | record_id、title、status、pages_read、total_pages、rating、note、created_at | B 补类型/约束，C 写预期 |
 | 本地数据 | 明确开发模式，无 AWS 凭证且不发起 AWS 请求 | B |
-| 云端数据库 | 类型与资源值暂缺；先分离读写接口，不影响本地工作 | A/B 核查后写入 handoffs |
+| 云端数据库 | DynamoDB，us-east-1，表 infs3701-team-books，record_id:String；READING_TABLE/AWS_DEFAULT_REGION；代码尚待接入 | A/B 核查后写入 handoffs |
 | 启动方式 | B 交依赖和可复现命令；旧文件 port 80 不是新默认 | B |
 | 部署版本 | 两实例同一 commit，配置另记 | A |
 
 旧代码尚未实现上述新增接口；当前基线验证只检查语法与统计函数。实际云端 URL、数据库和部署版本仍为空，不编造值。参数变动通过 GitHub 文件与任务记录交接，不能只在私聊里通知。
+
+目标云端运行环境：Python3.11，Gunicorn WSGI 入口 app:app；发布包与额外依赖规则见 docs/aws-owner-handoff.md。

@@ -21,7 +21,16 @@
     "baseline_commit": "01d1cc3f1a481445c771f9e3814486389a680ca6",
     "baseline_sha256": "f50fea5190314216ffcffb4c175d0a0dcf9dd5c57c2c69449e4ef73cb0856947",
     "decision_date": "2026-10-31",
-    "decision_source": "User confirmed in this chat; no group meeting attendance inferred."
+    "decision_source": "User confirmed in this chat; no group meeting attendance inferred.",
+    "database": {
+      "engine": "DynamoDB",
+      "table": "infs3701-team-books",
+      "region": "us-east-1",
+      "key": "record_id:String",
+      "status": "table_active_application_integration_pending",
+      "decision_by": "DiegoXue-coder project operator",
+      "rationale": "Independent document records without relational joins; small irregular lab workload; managed resilience and pay-per-request mode. Application must avoid unbounded scans for larger workloads."
+    }
   },
   "enhancements_enabled": false,
   "aws_environment_owner": "DiegoXue-coder",

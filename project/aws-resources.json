@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-01T05:29:23+00:00",
+  "region": "us-east-1",
+  "operator": "DiegoXue-coder",
+  "vpc": {
+    "status": "created_routes_verified_connectivity_pending",
+    "region": "us-east-1",
+    "name_prefix": "infs3701-team",
+    "vpc_cidr": "10.37.0.0/16",
+    "subnets": [
+      {
+        "az": "us-east-1a",
+        "type": "public",
+        "cidr": "10.37.0.0/24",
+        "id": "subnet-0567427f846712996",
+        "auto_public_ip": false
+      },
+      {
+        "az": "us-east-1b",
+        "type": "public",
+        "cidr": "10.37.1.0/24",
+        "id": "subnet-0358770cf9d551064",
+        "auto_public_ip": false
+      },
+      {
+        "az": "us-east-1a",
+        "type": "private",
+        "cidr": "10.37.10.0/24",
+        "id": "subnet-026f2c6afbe3692e8",
+        "auto_public_ip": false
+      },
+      {
+        "az": "us-east-1b",
+        "type": "private",
+        "cidr": "10.37.11.0/24",
+        "id": "subnet-00fc1e9a647c3530e",
+        "auto_public_ip": false
+      }
+    ],
+    "nat_gateway": "None",
+    "vpc_endpoints": "None",
+    "ipv6": "None",
+    "dns_hostnames": true,
+    "dns_resolution": true,
+    "tenancy": "Default",
+    "optional_paid_vpc_encryption_control": "None",
+    "public_route_intent": "Internet Gateway; verify actual routes after creation",
+    "private_route_intent": "No internet default route; deployment and management connectivity still to be designed",
+    "resources_created": true,
+    "checked_at": "2026-11-01T05:18:29+00:00",
+    "existing_network_unchanged": true,
+    "vpc_id": "vpc-0836d003a70f93405",
+    "internet_gateway_id": "igw-0a4f8f537ed7f4663",
+    "main_route_table": "rtb-08c89586fc33f4fdf",
+    "public_route_table": "rtb-07b89b18b5054c3a6",
+    "private_route_tables": [
+      "rtb-03e1a36c6b2440ed7",
+      "rtb-02f19dad4efe80bd3"
+    ],
+    "actual_route_table_count": 4
+  },
+  "database": {
+    "engine": "DynamoDB",
+    "table": "infs3701-team-books",
+    "status": "ACTIVE",
+    "partition_key": "record_id",
+    "partition_key_type": "String",
+    "billing": "PAY_PER_REQUEST",
+    "max_read_request_units": 10,
+    "max_write_request_units": 10,
+    "data_items_at_read_test": 0,
+    "instance_role_read_test": "passed on existing public EC2 via SSM, NOT on new private instances",
+    "business_app_connected": false
+  },
+  "artifacts": {
+    "bucket": "infs3701-team-artifacts-214018170594",
+    "public_access_block_all": true,
+    "encryption": "AES256",
+    "deny_http_policy": true,
+    "packages_uploaded": false
+  },
+  "runtime": {
+    "base_ami": "ami-0c230065b91270bc6",
+    "builder_instance": "i-030acdefe159caa87",
+    "builder_security_group": "sg-013228415d94c19e2",
+    "builder_root_volume": "vol-0fa7a520177b09e16",
+    "builder_iam_profile": null,
+    "builder_ingress": [],
+    "builder_root_encrypted": true,
+    "python_target": "3.11",
+    "build_marker": "INFS3701_RUNTIME_READY observed",
+    "image": "ami-03616f6b53c85f036",
+    "image_last_observed_state": "available",
+    "image_encrypted": true,
+    "builder_stop": "stopped verified",
+    "business_app_in_image": false,
+    "python_observed": "3.11.18",
+    "dependency_lock": "deployment/runtime-requirements.lock"
+  },
+  "tls": {
+    "acm_us_east_1_certificates": [],
+    "route53_hosted_zones": [],
+    "domain_owner_status": "user unsure; no domain purchase authorized",
+    "assignment": "requires encryption in transit, supplies no domain or instruction to buy one",
+    "status": "unresolved; needs course-approved certificate/domain approach"
+  },
+  "not_yet_created": [
+    "private application instances",
+    "application load balancer",
+    "EC2 Instance Connect endpoint",
+    "S3/DynamoDB gateway endpoints",
+    "monitoring dashboard and tested alarm"
+  ],
+  "permission_preflight": {
+    "mode": "EC2 DryRun=True; no resources created by preflight",
+    "private_instance_with_profile": "DryRunOperation",
+    "dynamodb_gateway": "DryRunOperation",
+    "maintenance_endpoint": "DryRunOperation",
+    "limits": "Uses existing builder SG as permission-check stand-in; does not validate final SG rules, actual endpoint policy, capacity or end-to-end connectivity."
+  }
+}

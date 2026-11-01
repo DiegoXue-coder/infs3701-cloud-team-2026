@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "status": "prepared_awaiting_action_time_security_confirmation",
+  "region": "us-east-1",
+  "vpc_id": "vpc-0836d003a70f93405",
+  "runtime_ami": "ami-03616f6b53c85f036",
+  "require_ami_available": true,
+  "private_instances": [
+    {
+      "name": "infs3701-team-app-a",
+      "subnet": "subnet-026f2c6afbe3692e8",
+      "label": "az-a"
+    },
+    {
+      "name": "infs3701-team-app-b",
+      "subnet": "subnet-00fc1e9a647c3530e",
+      "label": "az-b"
+    }
+  ],
+  "instance_type": "t3.micro",
+  "root_volume": {
+    "size_gib": 8,
+    "type": "gp3",
+    "encrypted": true
+  },
+  "public_ip_on_app_instances": false,
+  "instance_profile": "LabInstanceProfile",
+  "role": "LabRole",
+  "role_limit": "LabRole is broader than app needs; lab does not allow custom IAM roles/policies. Do not claim least-privilege IAM is fully enforced.",
+  "metadata_tokens": "required",
+  "cpu_credits": "standard",
+  "application_port": 8000,
+  "health_path": "/health",
+  "initial_app": "clearly labelled infrastructure-only placeholder; not Reading Tracker",
+  "security_groups": {
+    "alb": {
+      "name": "infs3701-team-alb-sg",
+      "ingress": [
+        {
+          "tcp_port": 80,
+          "source": "0.0.0.0/0"
+        }
+      ],
+      "egress": [
+        {
+          "tcp_port": 8000,
+          "destination": "app-security-group"
+        }
+      ]
+    },
+    "app": {
+      "name": "infs3701-team-app-sg",
+      "ingress": [
+        {
+          "tcp_port": 8000,
+          "source": "alb-security-group"
+        },
+        {
+          "tcp_port": 22,
+          "source": "eic-endpoint-security-group"
+        }
+      ],
+      "egress": [
+        {
+          "tcp_port": 443,
+          "prefix_list": "pl-63a5400a",
+          "service": "S3"
+        },
+        {
+          "tcp_port": 443,
+          "prefix_list": "pl-02cd2c6b",
+          "service": "DynamoDB"
+        }
+      ]
+    },
+    "eic_endpoint": {
+      "name": "infs3701-team-eic-sg",
+      "ingress": [],
+      "egress": [
+        {
+          "tcp_port": 22,
+          "destination": "app-security-group"
+        }
+      ]
+    }
+  },
+  "load_balancer": {
+    "name": "infs3701-team-alb",
+    "public_subnets": [
+      "subnet-0567427f846712996",
+      "subnet-0358770cf9d551064"
+    ],
+    "scheme": "internet-facing",
+    "listener": 80,
+    "target_group": "infs3701-team-tg",
+    "target_port": 8000,
+    "health_interval_seconds": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "tls": "not configured until certificate/domain resolved"
+  },
+  "maintenance": {
+    "type": "EC2 Instance Connect Endpoint",
+    "subnet": "subnet-026f2c6afbe3692e8",
+    "preserve_client_ip": false,
+    "restriction": "only authenticated authorized AWS identity, no public SSH rule"
+  },
+  "gateway_endpoints": {
+    "route_tables": [
+      "rtb-03e1a36c6b2440ed7",
+      "rtb-02f19dad4efe80bd3"
+    ],
+    "services": [
+      "com.amazonaws.us-east-1.s3",
+      "com.amazonaws.us-east-1.dynamodb"
+    ],
+    "policies": [
+      "deployment/policies/s3-gateway.json",
+      "deployment/policies/dynamodb-gateway.json"
+    ]
+  },
+  "nat_gateways": 0,
+  "old_environment_changes": "none",
+  "resource_lifetime": "test window; stop test instances when no longer needed, check ongoing ALB/EBS/image costs; no automatic irreversible deletion",
+  "future_approvals_not_included": [
+    "opening 443 with a new certificate",
+    "changing existing user access",
+    "sharing credentials",
+    "public buckets",
+    "permanent deletion"
+  ]
+}

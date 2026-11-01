@@ -2,6 +2,8 @@
 
 先按 [自助入口](self-service.md) 配好自己的 AI/GitHub/Python，join B。只需要仓库访问权，不需要负责人 AWS 凭证。当前旧代码位于 `app/reading_tracker.py`，原始归档在 `reference/reading_tracker_candidate.py`。
 
+2026-11-01 交接更新：A 已创建 DynamoDB 表 infs3701-team-books（us-east-1），主键 record_id:String，READING_TABLE 与 AWS_DEFAULT_REGION 作为配置。目标运行环境 Python3.11；读取 docs/aws-owner-handoff.md，不必再等待数据库重新选型，也不要索取 A 的 AWS 凭证。业务代码尚未接通，仍需本人真实实现和测试。
+
 ## 首项 T04：给所有人同一份运行约定
 
 读取 `project/handoffs.json`。开发目标已指定：端口 8000（APP_PORT）、`/health`、实例响应头 X-App-Instance、配置 APP_INSTANCE、测试端 BASE_URL。它们是待实现要求，旧代码还未具备，不能直接声称已运行。

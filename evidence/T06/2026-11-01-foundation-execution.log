@@ -1,0 +1,21 @@
+AWS foundation actual execution record
+Recorded UTC: 2026-11-01T05:29:23+00:00
+Actor/operator: DiegoXue-coder; AI operated authenticated AWS browser/CloudShell under user continuation request.
+No AWS credentials exported or stored in repository.
+
+1. Create VPC wizard completed Success: vpc-0836d003a70f93405, infs3701-team-vpc, 10.37.0.0/16. Four subnets IDs and maps recorded in project/network-plan.json.
+2. Actual describe_subnets confirmed four requested /24 blocks in us-east-1a/b, automatic public IPv4 assignment false. Actual describe_route_tables found four tables including main. Public rtb-07b89b18b5054c3a6 has 0.0.0.0/0 -> igw-0a4f8f537ed7f4663 and both public subnet associations. Each private table has only local route and its matching private association.
+3. Read preflight: us-east-1 ACM certificates [], Route53 hosted zones [], initial DynamoDB tables [], RDS instances []; LabInstanceProfile contains LabRole. No domain supplied/purchased. Brief requires encryption in transit, provides no domain.
+4. Created infs3701-team-books: record_id String HASH, PAY_PER_REQUEST, MaxReadRequestUnits=10, MaxWriteRequestUnits=10. DescribeTable confirmed ACTIVE and correct keys/caps. No items inserted or old data migrated.
+5. A first display-only JSON serialization of BillingModeSummary failed on datetime; corrected query verified fields successfully, without recreating table.
+6. Existing instance SSM now Online. Sent read-only command 1c328645-7df7-40f3-9f51-8bd10a39b83e with static environment/file credentials excluded. Invocation Success, exit0, stdout credential_source iam-role / table_status ACTIVE / visible_records 0. This verifies old public instance role reads, NOT new private instances or writes.
+7. Created private artifact bucket infs3701-team-artifacts-214018170594. get_public_access_block confirmed all four true; get_bucket_encryption confirmed AES256. Creation script applied deny-insecure-transport policy; no files uploaded, no public grant.
+8. Created temporary builder i-030acdefe159caa87, SG sg-013228415d94c19e2 with no inbound, no instance profile/key pair; public address only for dependency installation. EBS vol-0fa7a520177b09e16 confirmed encrypted. Existing app/old network unchanged.
+9. User data installed Python3.11, Flask/boto3/Gunicorn and a labelled infrastructure-only Flask placeholder plus a systemd unit. EC2 console log showed RUNTIME_IMPORTS_OK 3.11.18 and INFS3701_RUNTIME_READY; build imports passed and lock versions captured. No business data or old credential files copied.
+10. Created image ami-03616f6b53c85f036. Actual describe_images confirmed available, encrypted; stopped builder and independently observed stopped. AMI/EBS retained, not deleted.
+11. describe_prefix_lists observed S3 pl-63a5400a and DynamoDB pl-02cd2c6b. Prepared scoped gateway policies but DID NOT apply them.
+12. EC2 DryRun checks returned DryRunOperation for private instance+LabInstanceProfile, DynamoDB gateway endpoint and EIC endpoint. They created nothing; existing builder SG was a stand-in. Final rules, endpoint policies, capacity and connections are NOT proven.
+13. Prepared deployment/launch-foundation.py; --apply NOT executed. New private application instances, ALB/listener, maintenance endpoint and gateway endpoints NOT created. No new instance LabRole grant or public ALB access yet.
+14. Offline script syntax parsed. Separate offline tests check default plan never touches AWS, labelled placeholder HTTP/instance identity, and scoped policy helper. Results in evidence/T09/2026-11-01-foundation-offline-tests.log; they are not cloud deployment tests.
+
+Still pending: action-time security confirmation for actual private-instance role grants/new public entry and scoped access paths; real foundation connectivity checks after that; B application integration; C monitoring/test delivery; course-approved HTTPS/domain approach; final costs and review.

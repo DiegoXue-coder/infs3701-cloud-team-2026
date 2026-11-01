@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "task_id": "T09",
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-01T05:29:23+00:00",
+  "environment": "Authenticated AWS Academy Learner Lab, us-east-1; browser CloudShell actual SDK/API calls; separate offline tests labelled.",
+  "summary": "Built clean encrypted Python3.11.18 runtime image, stopped builder, prepared offline-tested launch script; no business/private compute deployment yet.",
+  "tests": [
+    {
+      "action": "Actual AWS creation and read-back verification",
+      "expected": "Record real created resources and permission boundaries",
+      "actual": "Built clean encrypted Python3.11.18 runtime image, stopped builder, prepared offline-tested launch script; no business/private compute deployment yet."
+    },
+    {
+      "action": "Check next-stage readiness without granting access",
+      "expected": "Prepare reviewed deployment plan; do not claim private connectivity or business app deployed",
+      "actual": "Runtime image available/encrypted, builder stopped; EC2 DryRun preflight passed. launch-foundation.py --apply not run."
+    }
+  ],
+  "evidence": [
+    "evidence/T06/2026-11-01-foundation-execution.log",
+    "deployment/runtime-builder.sh",
+    "deployment/create-runtime-builder.py",
+    "deployment/create-runtime-image.py",
+    "deployment/launch-foundation.py",
+    "deployment/runtime-requirements.lock",
+    "evidence/T09/2026-11-01-runtime-build.png",
+    "evidence/T09/2026-11-01-foundation-offline-tests.log",
+    "evidence/T09/2026-11-01-foundation-offline-plan.log"
+  ],
+  "run_log": "evidence/T06/2026-11-01-foundation-execution.log",
+  "verification_result": "partial",
+  "limitations": "No final private instances/ALB/endpoints; no new business app or write test; TLS has no domain/certificate solution yet. Recommended IAM policy NOT attached; LabRole remains broad. Offline tests and DryRun do not prove actual deployment.",
+  "next_step": "Obtain action-time confirmation for proposed instance role grants/public ALB and scoped endpoints, execute prepared stage, then real checks. B develops app integration; C prepares tests/monitoring and each reviews actual evidence.",
+  "ai_use": "Codex operated existing authorized browser identity, authored scripts, recorded exact operations and ran offline checks. No other member contribution/approval fabricated."
+}

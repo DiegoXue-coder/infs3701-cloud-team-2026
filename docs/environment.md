@@ -30,3 +30,7 @@ HTTPS/证书方案及验证：待确认
 ### 旧网站恢复成功（后续状态）
 
 2026-11-01 用户在 EC2 Instance Connect 中验证角色凭证来源 iam-role，并以排除静态凭证文件/变量的方式手动启动旧 app.py。AI 独立访问旧公网 HTTP 地址，页面显示已有 3 条记录；终端 GET / 返回 200。原先“连接被拒绝”已被本次成功访问更新，历史盘点保留。当前只是前台 Flask+S3 单实例基线，未验证写入、重启保活或最终架构，不能当成小组最终服务。证据：evidence/T05/2026-11-01-legacy-recovery.log。
+
+## 新基础资源已创建
+
+2026-11-01 新 VPC 与四子网、DynamoDB ACTIVE 表、私有加密部署桶已实际建立；精确资源与验证边界见 project/aws-resources.json 和 docs/aws-owner-handoff.md。新私有实例/负载均衡尚未创建；正式 BASE_URL 仍未提供。旧实例 SSM 现已 Online，其 LabRole 读取新表测试通过，不能把它写成新私有子网连接已通过。

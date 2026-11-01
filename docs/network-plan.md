@@ -16,3 +16,7 @@ NAT=None；VPC endpoints=None；DNS hostnames/resolution 开启；无 IPv6；Def
 浏览器预览为四子网、三条显示的路由表和一个互联网网关连接；创建后逐项检查实际路由与关联，以及隐含的主路由表。没有创建成功页、资源 ID 或连通测试，因此不能标为已建成网络。
 
 本次真实记录：evidence/T06/2026-11-01-vpc-form.log；截图同目录。Create VPC 尚未点击。
+
+## 后续实际创建结果
+
+2026-11-01 已执行 Create VPC 成功。VPC vpc-0836d003a70f93405，四子网及 IGW 均已存在；实际 describe_route_tables 核对总共四张（含隐含主路由表），公有默认路由到 IGW，私有仅本地路由。上文“未创建”保留为当时草案阶段说明，当前状态以 project/network-plan.json 和 project/aws-resources.json 为准。最终业务/维护/数据库私有路径仍待实施验证。

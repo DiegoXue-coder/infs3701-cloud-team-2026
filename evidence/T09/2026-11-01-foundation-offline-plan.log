@@ -1,0 +1,13 @@
+Task: T09
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-01T05:27:10+00:00
+Finished UTC: 2026-11-01T05:27:11+00:00
+Exit code: 0
+Command: .venv/Scripts/python.exe deployment/launch-foundation.py
+
+STDOUT
+OFFLINE_PLAN={"region": "us-east-1", "vpc": "vpc-0836d003a70f93405", "image": "ami-03616f6b53c85f036", "private_subnets": ["subnet-026f2c6afbe3692e8", "subnet-00fc1e9a647c3530e"], "instance_profile": "LabInstanceProfile", "public_listener": 80, "approval_required": true, "details": "project/next-deployment.json"}
+
+STDERR
+

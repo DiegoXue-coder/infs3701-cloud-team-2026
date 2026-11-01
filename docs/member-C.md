@@ -2,6 +2,8 @@
 
 先按 [自助入口](self-service.md) 配好本人环境，join C。读取旧代码 `app/reading_tracker.py`、评分要求和 `project/handoffs.json`。首项 T08，随后 T12/T13 等卡的准备工作；真实最终测试条件仍遵守任务卡。
 
+2026-11-01 交接更新：读取 docs/aws-owner-handoff.md 和 project/aws-resources.json。网络与表已创建不等于应用通过；新 ALB 地址尚缺，继续可执行本地测试和具体监控配置，等真实部署后再最终验收。
+
 ## 第一轮要交能运行的东西
 
 1. 建立虚构读书记录数据：空记录集、正常混合状态记录集、边界输入集；各自写明确预期数量/页数/评分。不要用私人数据。

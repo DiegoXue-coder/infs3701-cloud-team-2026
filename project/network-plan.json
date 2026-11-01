@@ -1,5 +1,5 @@
 {
-  "status": "browser_form_prepared_not_created",
+  "status": "created_routes_verified_connectivity_pending",
   "region": "us-east-1",
   "name_prefix": "infs3701-team",
   "vpc_cidr": "10.37.0.0/16",
@@ -7,22 +7,30 @@
     {
       "az": "us-east-1a",
       "type": "public",
-      "cidr": "10.37.0.0/24"
+      "cidr": "10.37.0.0/24",
+      "id": "subnet-0567427f846712996",
+      "auto_public_ip": false
     },
     {
       "az": "us-east-1b",
       "type": "public",
-      "cidr": "10.37.1.0/24"
+      "cidr": "10.37.1.0/24",
+      "id": "subnet-0358770cf9d551064",
+      "auto_public_ip": false
     },
     {
       "az": "us-east-1a",
       "type": "private",
-      "cidr": "10.37.10.0/24"
+      "cidr": "10.37.10.0/24",
+      "id": "subnet-026f2c6afbe3692e8",
+      "auto_public_ip": false
     },
     {
       "az": "us-east-1b",
       "type": "private",
-      "cidr": "10.37.11.0/24"
+      "cidr": "10.37.11.0/24",
+      "id": "subnet-00fc1e9a647c3530e",
+      "auto_public_ip": false
     }
   ],
   "nat_gateway": "None",
@@ -34,7 +42,16 @@
   "optional_paid_vpc_encryption_control": "None",
   "public_route_intent": "Internet Gateway; verify actual routes after creation",
   "private_route_intent": "No internet default route; deployment and management connectivity still to be designed",
-  "resources_created": false,
-  "checked_at": "2026-11-01T04:28:58+00:00",
-  "existing_network_unchanged": true
+  "resources_created": true,
+  "checked_at": "2026-11-01T05:18:29+00:00",
+  "existing_network_unchanged": true,
+  "vpc_id": "vpc-0836d003a70f93405",
+  "internet_gateway_id": "igw-0a4f8f537ed7f4663",
+  "main_route_table": "rtb-08c89586fc33f4fdf",
+  "public_route_table": "rtb-07b89b18b5054c3a6",
+  "private_route_tables": [
+    "rtb-03e1a36c6b2440ed7",
+    "rtb-02f19dad4efe80bd3"
+  ],
+  "actual_route_table_count": 4
 }
