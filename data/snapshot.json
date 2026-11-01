@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T02:55:09+00:00",
+  "generated_at": "2026-11-01T02:55:56+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -187,6 +187,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6542176705"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T05-6552576828",
+      "task_id": "T05",
+      "request_comment_id": 6552576828,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "requested_at": "2026-11-01T02:55:34Z",
+      "processed_at": "2026-11-01T02:55:53+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T05 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552576828",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552579838"
     }
   ],
   "tasks": [
@@ -440,14 +457,24 @@
         "独立研究和验证 TLS/域名可行性，记录限制，不等待 B 的程序。"
       ],
       "task_id": "T05",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-01T02:55:34Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6552576828
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T05-6552576828",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-01T02:55:53+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552579838"
+      },
       "issue_number": 5,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5",
       "waiting_for": [],
