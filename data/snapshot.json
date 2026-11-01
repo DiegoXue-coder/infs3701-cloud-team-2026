@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T04:19:15+00:00",
+  "generated_at": "2026-11-01T04:28:20+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -22,20 +22,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "receipt_id": "R-T01-6540964597",
-      "task_id": "T01",
-      "legacy": true,
-      "actor": "DiegoXue-coder",
-      "command": "progress",
-      "processed_at": "2026-10-31T08:07:45Z",
-      "outcome": "legacy",
-      "status_before": null,
-      "status_after": null,
-      "summary": "历史回执保留；不补造当时未保存的结构化状态。",
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6540967392",
-      "submission": null
-    },
     {
       "receipt_id": "R-T01-6541195191",
       "task_id": "T01",
@@ -254,6 +240,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553328063"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T06-6553404450",
+      "task_id": "T06",
+      "request_comment_id": 6553404450,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "requested_at": "2026-11-01T04:27:57Z",
+      "processed_at": "2026-11-01T04:28:16+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T06 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553404450",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553407339"
     }
   ],
   "tasks": [
@@ -615,14 +618,24 @@
         "用简单健康检查服务准备可替换的部署脚本；接口约定确认后替换参数。"
       ],
       "task_id": "T06",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-01T04:27:57Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6553404450
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T06-6553404450",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-01T04:28:16+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553407339"
+      },
       "issue_number": 6,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6",
       "waiting_for": [
