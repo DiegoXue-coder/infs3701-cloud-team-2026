@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T05:31:55+00:00",
+  "generated_at": "2026-11-01T06:05:05+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -420,6 +420,99 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553951968"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T05-6554220789",
+      "task_id": "T05",
+      "request_comment_id": 6554220789,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T06:04:09Z",
+      "processed_at": "2026-11-01T06:04:44+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Verified Lab role access on both private hosts, encrypted roots and restricted paths; OpenTunnel denied, alternative boot diagnostics passed. HTTPS/domain unresolved; displayed delayed Lab usage $1.30/$50.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6554220789",
+      "submission": {
+        "path": "deliveries/T05/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "7b95ee2c486c3c931c5aca0209807e1dce6b0599",
+        "run_log": "evidence/T09/2026-11-01-final-readback.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
+        "test_count": 3,
+        "evidence_count": 16,
+        "evidence_preview": [
+          "project/aws-resources.json",
+          "project/handoffs.json",
+          "project/next-deployment.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6554226019"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T06-6554220950",
+      "task_id": "T06",
+      "request_comment_id": 6554220950,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T06:04:10Z",
+      "processed_at": "2026-11-01T06:04:52+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T06 已更新为「进行中」。实际上报（partial，尚未完成）：Created and read back actual two-AZ ALB/private-host/gateway/route/security-group foundation; scoped HTTPS service paths passed from both private hosts; unused SSH paths closed.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6554220950",
+      "submission": {
+        "path": "deliveries/T06/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "7db33ce9bf9195ebf340cf50a6013c947c1485de",
+        "run_log": "evidence/T09/2026-11-01-final-readback.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
+        "test_count": 3,
+        "evidence_count": 16,
+        "evidence_preview": [
+          "project/aws-resources.json",
+          "project/handoffs.json",
+          "project/next-deployment.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6554227245"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6554221129",
+      "task_id": "T09",
+      "request_comment_id": 6554221129,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T06:04:12Z",
+      "processed_at": "2026-11-01T06:05:01+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deployed.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554221129",
+      "submission": {
+        "path": "deliveries/T09/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "97b8f839d028abe5e700df9f1effc0a7d7059ab8",
+        "run_log": "evidence/T09/2026-11-01-maintenance-validation.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
+        "test_count": 3,
+        "evidence_count": 16,
+        "evidence_preview": [
+          "project/aws-resources.json",
+          "project/handoffs.json",
+          "project/next-deployment.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554228452"
     }
   ]
 }

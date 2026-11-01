@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T05:31:55+00:00",
+  "generated_at": "2026-11-01T06:05:05+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,71 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T05-6552576828",
-      "task_id": "T05",
-      "request_comment_id": 6552576828,
-      "actor": "DiegoXue-coder",
-      "command": "claim",
-      "requested_at": "2026-11-01T02:55:34Z",
-      "processed_at": "2026-11-01T02:55:53+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T05 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552576828",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552579838"
-    },
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T05-6552628215",
-      "task_id": "T05",
-      "request_comment_id": 6552628215,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-01T03:01:11Z",
-      "processed_at": "2026-11-01T03:01:33+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Initial actual EC2/S3 inventory: old instance exists but HTTP connection refused; IAM role absent, SSH globally open and EBS unencrypted. Existing bucket and books prefix retained. No corrective changes yet.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552628215",
-      "submission": {
-        "path": "deliveries/T05/2026-11-01-initial-inventory.json",
-        "commit": "76c5164fcaca52a875b626f660ddeff08d9579d7",
-        "manifest_sha": "a0049e198579a40ee7f64165a4970426bc0eb560",
-        "run_log": "evidence/T05/2026-11-01-browser-audit.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-01T03:00:45+00:00",
-        "test_count": 3,
-        "evidence_count": 6,
-        "evidence_preview": [
-          "docs/2026-11-01-aws-inventory.md",
-          "evidence/T05/2026-11-01-browser-audit.log",
-          "evidence/T05/2026-11-01-instance-storage.png"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552631601"
-    },
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T05-6552715455",
-      "task_id": "T05",
-      "request_comment_id": 6552715455,
-      "actor": "DiegoXue-coder",
-      "command": "progress",
-      "requested_at": "2026-11-01T03:10:32Z",
-      "processed_at": "2026-11-01T03:10:51+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T05 已更新为「进行中」。用户本人已完成 LabInstanceProfile 绑定，实例详情和 Security 实际显示 LabRole；证据 evidence/T05/2026-11-01-role-binding-verification.log，commit 03f00c4。SSM 尚未在线，页面旧错误早于角色绑定；正准备浏览器 EC2 Instance Connect 登录。尚未执行服务器命令、修复网页或验证数据库权限。",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552715455",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6552718692"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T05-6553324901",
@@ -283,6 +218,99 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553951968"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T05-6554220789",
+      "task_id": "T05",
+      "request_comment_id": 6554220789,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T06:04:09Z",
+      "processed_at": "2026-11-01T06:04:44+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Verified Lab role access on both private hosts, encrypted roots and restricted paths; OpenTunnel denied, alternative boot diagnostics passed. HTTPS/domain unresolved; displayed delayed Lab usage $1.30/$50.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6554220789",
+      "submission": {
+        "path": "deliveries/T05/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "7b95ee2c486c3c931c5aca0209807e1dce6b0599",
+        "run_log": "evidence/T09/2026-11-01-final-readback.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
+        "test_count": 3,
+        "evidence_count": 16,
+        "evidence_preview": [
+          "project/aws-resources.json",
+          "project/handoffs.json",
+          "project/next-deployment.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6554226019"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T06-6554220950",
+      "task_id": "T06",
+      "request_comment_id": 6554220950,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T06:04:10Z",
+      "processed_at": "2026-11-01T06:04:52+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T06 已更新为「进行中」。实际上报（partial，尚未完成）：Created and read back actual two-AZ ALB/private-host/gateway/route/security-group foundation; scoped HTTPS service paths passed from both private hosts; unused SSH paths closed.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6554220950",
+      "submission": {
+        "path": "deliveries/T06/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "7db33ce9bf9195ebf340cf50a6013c947c1485de",
+        "run_log": "evidence/T09/2026-11-01-final-readback.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
+        "test_count": 3,
+        "evidence_count": 16,
+        "evidence_preview": [
+          "project/aws-resources.json",
+          "project/handoffs.json",
+          "project/next-deployment.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6554227245"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6554221129",
+      "task_id": "T09",
+      "request_comment_id": 6554221129,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T06:04:12Z",
+      "processed_at": "2026-11-01T06:05:01+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deployed.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554221129",
+      "submission": {
+        "path": "deliveries/T09/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "97b8f839d028abe5e700df9f1effc0a7d7059ab8",
+        "run_log": "evidence/T09/2026-11-01-maintenance-validation.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
+        "test_count": 3,
+        "evidence_count": 16,
+        "evidence_preview": [
+          "project/aws-resources.json",
+          "project/handoffs.json",
+          "project/next-deployment.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554228452"
     }
   ],
   "tasks": [
@@ -541,50 +569,68 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-01T05:31:09Z",
-      "last_note": "实际上报（partial，尚未完成）：Verified actual service permissions, new DynamoDB ACTIVE table and old instance role read; HTTPS/domain unresolved.",
+      "last_update": "2026-11-01T06:04:09Z",
+      "last_note": "实际上报（partial，尚未完成）：Verified Lab role access on both private hosts, encrypted roots and restricted paths; OpenTunnel denied, alternative boot diagnostics passed. HTTPS/domain unresolved; displayed delayed Lab usage $1.30/$50.",
       "processed_comments": [
         6552576828,
         6552628215,
         6552715455,
         6553324901,
-        6553946721
+        6553946721,
+        6554220789
       ],
       "last_receipt": {
-        "receipt_id": "R-T05-6553946721",
+        "receipt_id": "R-T05-6554220789",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-01T05:31:37+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553950531"
+        "processed_at": "2026-11-01T06:04:44+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6554226019"
       },
       "last_report": {
-        "path": "deliveries/T05/2026-11-01-foundation-progress.json",
-        "commit": "b31298800bcbe4671dad47162b616ac1cae41941",
-        "manifest_sha": "e7fdfa1feaf658a8a2efe10b5a3a2554d0a3ab92",
+        "path": "deliveries/T05/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "7b95ee2c486c3c931c5aca0209807e1dce6b0599",
         "evidence_shas": {
-          "evidence/T06/2026-11-01-foundation-execution.log": "7c6a031820c2d1798be51c42d4807774af7d6135",
-          "project/aws-resources.json": "281f3c3047b79990413dc33de2b353bb54615fa1",
-          "docs/aws-owner-handoff.md": "e29a38dc3020d937a814479aab9da5fc1f6c9c67",
-          "deployment/create-database.py": "41106464d89439623fdf14ce1532348568b8fa45"
+          "project/aws-resources.json": "cdd40169aecc211fc8953dbb1460f17a6396c226",
+          "project/handoffs.json": "44d51bdbf8976f4bf6c082be6e0d80b00f546d9b",
+          "project/next-deployment.json": "2e2e3be13a207968050969db33ad4346e7efa10c",
+          "docs/2026-11-01-foundation-verification.md": "a8f2a1fd58db9f05b7ca356aeb0cb2f77a111282",
+          "deployment/maintain-foundation.py": "cfc572fee873037dc7dacdccc21adaad69975f8a",
+          "deployment/verify-foundation.py": "4c85d0c7ecd99831c4c0ade457d86bd30eef8076",
+          "deployment/tighten-unused-maintenance.py": "00bf24698f0ec453d548a17f4ab9a5bb6b5814e5",
+          "deployment/configure-monitoring-baseline.py": "fbf3e3303244de9c85129ee67b7f7c87824aca6b",
+          "evidence/T09/2026-11-01-final-readback.log": "773664b9158474d2f22b67279cc32c4c33a34510",
+          "evidence/T09/2026-11-01-maintenance-validation.log": "7f957a12ee423385f525c982e8a9e63b441bb496",
+          "evidence/T09/2026-11-01-live-routing.log": "d96c46469eee9db2ddea30ed2494749c2e07c9f7",
+          "evidence/T09/2026-11-01-cloudwatch-dashboard.png": "df17ed7c1ef79c4703407f1b74af2e320adea663",
+          "evidence/T09/2026-11-01-real-alarm-trigger.png": "acf58a65ee63b400074157af61259bc195274dcb",
+          "evidence/T09/2026-11-01-private-role-check.png": "9dcab7d5bcd0cfdcb6ba2a6bd0847a1d0d93b9ff",
+          "evidence/T09/2026-11-01-foundation-live-page.png": "94a2a5e4f7dd0bf385fe1fa01bec6a1fcfb07eb7",
+          "evidence/T09/2026-11-01-foundation-maintenance-offline-tests.log": "ca2d914801e0bb99558d6d8dcf3ad359e8aff6e3"
         },
-        "summary": "Verified actual service permissions, new DynamoDB ACTIVE table and old instance role read; HTTPS/domain unresolved.",
-        "tested_at": "2026-11-01T05:29:23+00:00",
+        "summary": "Verified Lab role access on both private hosts, encrypted roots and restricted paths; OpenTunnel denied, alternative boot diagnostics passed. HTTPS/domain unresolved; displayed delayed Lab usage $1.30/$50.",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "Authenticated AWS Academy Learner Lab, us-east-1; browser CloudShell actual SDK/API calls; separate offline tests labelled.",
+        "environment": "Actual authorized AWS Academy account, us-east-1; CloudShell SDK and browser UI. New private staged runtime only, not Reading Tracker business deployment.",
         "verification_result": "partial",
-        "run_log": "evidence/T06/2026-11-01-foundation-execution.log",
-        "test_count": 2,
+        "run_log": "evidence/T09/2026-11-01-final-readback.log",
+        "test_count": 3,
         "test_summary": [
           {
-            "action": "Actual AWS creation and read-back verification",
-            "expected": "Record real created resources and permission boundaries",
-            "actual": "Verified actual service permissions, new DynamoDB ACTIVE table and old instance role read; HTTPS/domain unresolved."
+            "action": "Actual SDK readback and per-host boot diagnostics",
+            "expected": "Two private encrypted role-bound hosts; scoped paths and runtime healthy",
+            "actual": "Both BOOT_CHECK_OK, iam-role; DynamoDB ACTIVE/count0; S3 SHA matched; both target healthy; root volumes encrypted8GiB gp3."
           },
           {
-            "action": "Check next-stage readiness without granting access",
-            "expected": "Prepare reviewed deployment plan; do not claim private connectivity or business app deployed",
-            "actual": "Runtime image available/encrypted, builder stopped; EC2 DryRun preflight passed. launch-foundation.py --apply not run."
+            "action": "Low-frequency infrastructure requests and real alarm lifecycle",
+            "expected": "Both instances route; one remaining host responds; true alarm trigger and recovery",
+            "actual": "Initial12 HTTP200, six each; single-host short6 HTTP200 plus continuous25 HTTP200. True ALARM05:56:06Z -> OK06:00:06Z. Short sample summary count bug preserved and explained in verification guide."
+          },
+          {
+            "action": "Separate code checks from AWS acceptance",
+            "expected": "Offline tests pass without implying business release works",
+            "actual": "48 offline tests passed; business writes/TLS and independent final acceptance remain pending."
           }
         ]
       },
@@ -647,52 +693,66 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-01T05:31:10Z",
-      "last_note": "实际上报（partial，尚未完成）：Created and verified two-AZ network routes; scoped private service and management access planned, not yet applied.",
+      "last_update": "2026-11-01T06:04:10Z",
+      "last_note": "实际上报（partial，尚未完成）：Created and read back actual two-AZ ALB/private-host/gateway/route/security-group foundation; scoped HTTPS service paths passed from both private hosts; unused SSH paths closed.",
       "processed_comments": [
         6553404450,
         6553416622,
-        6553946871
+        6553946871,
+        6554220950
       ],
       "last_receipt": {
-        "receipt_id": "R-T06-6553946871",
+        "receipt_id": "R-T06-6554220950",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-01T05:31:43+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553951260"
+        "processed_at": "2026-11-01T06:04:52+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6554227245"
       },
       "last_report": {
-        "path": "deliveries/T06/2026-11-01-foundation-progress.json",
-        "commit": "b31298800bcbe4671dad47162b616ac1cae41941",
-        "manifest_sha": "2ad504254cd3678e261e39214178eb599be9de4a",
+        "path": "deliveries/T06/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "7db33ce9bf9195ebf340cf50a6013c947c1485de",
         "evidence_shas": {
-          "evidence/T06/2026-11-01-foundation-execution.log": "7c6a031820c2d1798be51c42d4807774af7d6135",
-          "project/network-plan.json": "f2b1b44f4d0e7d9ad34c22ce46dcb4bada3e1ad0",
-          "project/aws-resources.json": "281f3c3047b79990413dc33de2b353bb54615fa1",
-          "project/next-deployment.json": "43412a21a9b00fe6838258e98f6047d801f82a66",
-          "deployment/policies/s3-gateway.json": "bbe601a319d7998426d94d0248d135c00813965f",
-          "deployment/policies/dynamodb-gateway.json": "51ab1e0ffa521d0d27f8f88c3da6500284e14deb",
-          "evidence/T06/2026-11-01-vpc-created.png": "71a62e1d03fdc5b7c6a6129c5a979915c74a9ba6",
-          "evidence/T06/2026-11-01-vpc-details.png": "9e939b46b9e2b9ef04d8c9f3480e66eb11f6e9b0"
+          "project/aws-resources.json": "cdd40169aecc211fc8953dbb1460f17a6396c226",
+          "project/handoffs.json": "44d51bdbf8976f4bf6c082be6e0d80b00f546d9b",
+          "project/next-deployment.json": "2e2e3be13a207968050969db33ad4346e7efa10c",
+          "docs/2026-11-01-foundation-verification.md": "a8f2a1fd58db9f05b7ca356aeb0cb2f77a111282",
+          "deployment/maintain-foundation.py": "cfc572fee873037dc7dacdccc21adaad69975f8a",
+          "deployment/verify-foundation.py": "4c85d0c7ecd99831c4c0ade457d86bd30eef8076",
+          "deployment/tighten-unused-maintenance.py": "00bf24698f0ec453d548a17f4ab9a5bb6b5814e5",
+          "deployment/configure-monitoring-baseline.py": "fbf3e3303244de9c85129ee67b7f7c87824aca6b",
+          "evidence/T09/2026-11-01-final-readback.log": "773664b9158474d2f22b67279cc32c4c33a34510",
+          "evidence/T09/2026-11-01-maintenance-validation.log": "7f957a12ee423385f525c982e8a9e63b441bb496",
+          "evidence/T09/2026-11-01-live-routing.log": "d96c46469eee9db2ddea30ed2494749c2e07c9f7",
+          "evidence/T09/2026-11-01-cloudwatch-dashboard.png": "df17ed7c1ef79c4703407f1b74af2e320adea663",
+          "evidence/T09/2026-11-01-real-alarm-trigger.png": "acf58a65ee63b400074157af61259bc195274dcb",
+          "evidence/T09/2026-11-01-private-role-check.png": "9dcab7d5bcd0cfdcb6ba2a6bd0847a1d0d93b9ff",
+          "evidence/T09/2026-11-01-foundation-live-page.png": "94a2a5e4f7dd0bf385fe1fa01bec6a1fcfb07eb7",
+          "evidence/T09/2026-11-01-foundation-maintenance-offline-tests.log": "ca2d914801e0bb99558d6d8dcf3ad359e8aff6e3"
         },
-        "summary": "Created and verified two-AZ network routes; scoped private service and management access planned, not yet applied.",
-        "tested_at": "2026-11-01T05:29:23+00:00",
+        "summary": "Created and read back actual two-AZ ALB/private-host/gateway/route/security-group foundation; scoped HTTPS service paths passed from both private hosts; unused SSH paths closed.",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "Authenticated AWS Academy Learner Lab, us-east-1; browser CloudShell actual SDK/API calls; separate offline tests labelled.",
+        "environment": "Actual authorized AWS Academy account, us-east-1; CloudShell SDK and browser UI. New private staged runtime only, not Reading Tracker business deployment.",
         "verification_result": "partial",
-        "run_log": "evidence/T06/2026-11-01-foundation-execution.log",
-        "test_count": 2,
+        "run_log": "evidence/T09/2026-11-01-final-readback.log",
+        "test_count": 3,
         "test_summary": [
           {
-            "action": "Actual AWS creation and read-back verification",
-            "expected": "Record real created resources and permission boundaries",
-            "actual": "Created and verified two-AZ network routes; scoped private service and management access planned, not yet applied."
+            "action": "Actual SDK readback and per-host boot diagnostics",
+            "expected": "Two private encrypted role-bound hosts; scoped paths and runtime healthy",
+            "actual": "Both BOOT_CHECK_OK, iam-role; DynamoDB ACTIVE/count0; S3 SHA matched; both target healthy; root volumes encrypted8GiB gp3."
           },
           {
-            "action": "Check next-stage readiness without granting access",
-            "expected": "Prepare reviewed deployment plan; do not claim private connectivity or business app deployed",
-            "actual": "Runtime image available/encrypted, builder stopped; EC2 DryRun preflight passed. launch-foundation.py --apply not run."
+            "action": "Low-frequency infrastructure requests and real alarm lifecycle",
+            "expected": "Both instances route; one remaining host responds; true alarm trigger and recovery",
+            "actual": "Initial12 HTTP200, six each; single-host short6 HTTP200 plus continuous25 HTTP200. True ALARM05:56:06Z -> OK06:00:06Z. Short sample summary count bug preserved and explained in verification guide."
+          },
+          {
+            "action": "Separate code checks from AWS acceptance",
+            "expected": "Offline tests pass without implying business release works",
+            "actual": "48 offline tests passed; business writes/TLS and independent final acceptance remain pending."
           }
         ]
       },
@@ -839,52 +899,65 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-01T05:31:12Z",
-      "last_note": "实际上报（partial，尚未完成）：Built clean encrypted Python3.11.18 runtime image, stopped builder, prepared offline-tested launch script; no business/private compute deployment yet.",
+      "last_update": "2026-11-01T06:04:12Z",
+      "last_note": "实际上报（partial，尚未完成）：Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deployed.",
       "processed_comments": [
         6553816674,
-        6553947047
+        6553947047,
+        6554221129
       ],
       "last_receipt": {
-        "receipt_id": "R-T09-6553947047",
+        "receipt_id": "R-T09-6554221129",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-01T05:31:48+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553951968"
+        "processed_at": "2026-11-01T06:05:01+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554228452"
       },
       "last_report": {
-        "path": "deliveries/T09/2026-11-01-foundation-progress.json",
-        "commit": "b31298800bcbe4671dad47162b616ac1cae41941",
-        "manifest_sha": "8c4c6354387ac658cc94fff44d7177f0e9634489",
+        "path": "deliveries/T09/2026-11-01-DiegoXue-coder-foundation-verified.json",
+        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
+        "manifest_sha": "97b8f839d028abe5e700df9f1effc0a7d7059ab8",
         "evidence_shas": {
-          "evidence/T06/2026-11-01-foundation-execution.log": "7c6a031820c2d1798be51c42d4807774af7d6135",
-          "deployment/runtime-builder.sh": "825ee4bb1e2c0d859c241097718abb5643281bc9",
-          "deployment/create-runtime-builder.py": "7d351ce76d5207e655800bc79e2a685447abd6d3",
-          "deployment/create-runtime-image.py": "70e916002573a6ea042ad36a75704e7bbcd2fbd5",
-          "deployment/launch-foundation.py": "73c49084b4484b5fbc63a267110d941ddbacd66c",
-          "deployment/runtime-requirements.lock": "8f8587e5abc7d0c7c066774aa8de09dca44b13e3",
-          "evidence/T09/2026-11-01-runtime-build.png": "43e6bcbb954abdf7eeec9cbc80ed39ce1cc25c1b",
-          "evidence/T09/2026-11-01-foundation-offline-tests.log": "2cba8b459e45c99dd43007029ac7fc61c8506647",
-          "evidence/T09/2026-11-01-foundation-offline-plan.log": "d21153a9a2d61812904b78e9956d2b99758e96a3"
+          "project/aws-resources.json": "cdd40169aecc211fc8953dbb1460f17a6396c226",
+          "project/handoffs.json": "44d51bdbf8976f4bf6c082be6e0d80b00f546d9b",
+          "project/next-deployment.json": "2e2e3be13a207968050969db33ad4346e7efa10c",
+          "docs/2026-11-01-foundation-verification.md": "a8f2a1fd58db9f05b7ca356aeb0cb2f77a111282",
+          "deployment/maintain-foundation.py": "cfc572fee873037dc7dacdccc21adaad69975f8a",
+          "deployment/verify-foundation.py": "4c85d0c7ecd99831c4c0ade457d86bd30eef8076",
+          "deployment/tighten-unused-maintenance.py": "00bf24698f0ec453d548a17f4ab9a5bb6b5814e5",
+          "deployment/configure-monitoring-baseline.py": "fbf3e3303244de9c85129ee67b7f7c87824aca6b",
+          "evidence/T09/2026-11-01-final-readback.log": "773664b9158474d2f22b67279cc32c4c33a34510",
+          "evidence/T09/2026-11-01-maintenance-validation.log": "7f957a12ee423385f525c982e8a9e63b441bb496",
+          "evidence/T09/2026-11-01-live-routing.log": "d96c46469eee9db2ddea30ed2494749c2e07c9f7",
+          "evidence/T09/2026-11-01-cloudwatch-dashboard.png": "df17ed7c1ef79c4703407f1b74af2e320adea663",
+          "evidence/T09/2026-11-01-real-alarm-trigger.png": "acf58a65ee63b400074157af61259bc195274dcb",
+          "evidence/T09/2026-11-01-private-role-check.png": "9dcab7d5bcd0cfdcb6ba2a6bd0847a1d0d93b9ff",
+          "evidence/T09/2026-11-01-foundation-live-page.png": "94a2a5e4f7dd0bf385fe1fa01bec6a1fcfb07eb7",
+          "evidence/T09/2026-11-01-foundation-maintenance-offline-tests.log": "ca2d914801e0bb99558d6d8dcf3ad359e8aff6e3"
         },
-        "summary": "Built clean encrypted Python3.11.18 runtime image, stopped builder, prepared offline-tested launch script; no business/private compute deployment yet.",
-        "tested_at": "2026-11-01T05:29:23+00:00",
+        "summary": "Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deployed.",
+        "tested_at": "2026-11-01T06:01:13.014386+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "Authenticated AWS Academy Learner Lab, us-east-1; browser CloudShell actual SDK/API calls; separate offline tests labelled.",
+        "environment": "Actual authorized AWS Academy account, us-east-1; CloudShell SDK and browser UI. New private staged runtime only, not Reading Tracker business deployment.",
         "verification_result": "partial",
-        "run_log": "evidence/T06/2026-11-01-foundation-execution.log",
-        "test_count": 2,
+        "run_log": "evidence/T09/2026-11-01-maintenance-validation.log",
+        "test_count": 3,
         "test_summary": [
           {
-            "action": "Actual AWS creation and read-back verification",
-            "expected": "Record real created resources and permission boundaries",
-            "actual": "Built clean encrypted Python3.11.18 runtime image, stopped builder, prepared offline-tested launch script; no business/private compute deployment yet."
+            "action": "Actual SDK readback and per-host boot diagnostics",
+            "expected": "Two private encrypted role-bound hosts; scoped paths and runtime healthy",
+            "actual": "Both BOOT_CHECK_OK, iam-role; DynamoDB ACTIVE/count0; S3 SHA matched; both target healthy; root volumes encrypted8GiB gp3."
           },
           {
-            "action": "Check next-stage readiness without granting access",
-            "expected": "Prepare reviewed deployment plan; do not claim private connectivity or business app deployed",
-            "actual": "Runtime image available/encrypted, builder stopped; EC2 DryRun preflight passed. launch-foundation.py --apply not run."
+            "action": "Low-frequency infrastructure requests and real alarm lifecycle",
+            "expected": "Both instances route; one remaining host responds; true alarm trigger and recovery",
+            "actual": "Initial12 HTTP200, six each; single-host short6 HTTP200 plus continuous25 HTTP200. True ALARM05:56:06Z -> OK06:00:06Z. Short sample summary count bug preserved and explained in verification guide."
+          },
+          {
+            "action": "Separate code checks from AWS acceptance",
+            "expected": "Offline tests pass without implying business release works",
+            "actual": "48 offline tests passed; business writes/TLS and independent final acceptance remain pending."
           }
         ]
       },
