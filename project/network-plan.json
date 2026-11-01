@@ -1,0 +1,40 @@
+{
+  "status": "browser_form_prepared_not_created",
+  "region": "us-east-1",
+  "name_prefix": "infs3701-team",
+  "vpc_cidr": "10.37.0.0/16",
+  "subnets": [
+    {
+      "az": "us-east-1a",
+      "type": "public",
+      "cidr": "10.37.0.0/24"
+    },
+    {
+      "az": "us-east-1b",
+      "type": "public",
+      "cidr": "10.37.1.0/24"
+    },
+    {
+      "az": "us-east-1a",
+      "type": "private",
+      "cidr": "10.37.10.0/24"
+    },
+    {
+      "az": "us-east-1b",
+      "type": "private",
+      "cidr": "10.37.11.0/24"
+    }
+  ],
+  "nat_gateway": "None",
+  "vpc_endpoints": "None",
+  "ipv6": "None",
+  "dns_hostnames": true,
+  "dns_resolution": true,
+  "tenancy": "Default",
+  "optional_paid_vpc_encryption_control": "None",
+  "public_route_intent": "Internet Gateway; verify actual routes after creation",
+  "private_route_intent": "No internet default route; deployment and management connectivity still to be designed",
+  "resources_created": false,
+  "checked_at": "2026-11-01T04:28:58+00:00",
+  "existing_network_unchanged": true
+}

@@ -1,0 +1,12 @@
+T06 VPC form preparation
+Recorded UTC: 2026-11-01T04:28:58+00:00
+Actor: DiegoXue-coder; AI filled the browser form at user's request.
+Observed existing default VPC CIDR: 172.31.0.0/16.
+Prepared VPC and more, infs3701-team, 10.37.0.0/16.
+Two AZs us-east-1a and us-east-1b, public 10.37.0.0/24 and 10.37.1.0/24, private 10.37.10.0/24 and 10.37.11.0/24.
+Browser checked NAT None, endpoints None, DNS hostnames/resolution enabled, no IPv6, default tenancy. Optional paid VPC encryption control inspected: None; this is not TLS or EBS encryption verification.
+Preview: 4 subnets, 3 displayed route tables, 1 network connection (Internet Gateway). Actual resources and implicit main route table not yet checked because Create VPC was NOT clicked.
+Local Python ipaddress check: all four subnets inside new CIDR, mutually non-overlapping, and new VPC CIDR non-overlapping with observed old default VPC.
+No VPC, subnet, route, endpoint, gateway or security-group creation submitted; no resources deleted or existing network modified.
+Private-subnet package installation, maintenance, database access and dependency delivery remain design work. No internet/private service reachability test performed. Old Flask SSH terminal left running.
+Screenshot: evidence/T06/2026-11-01-vpc-form.png
