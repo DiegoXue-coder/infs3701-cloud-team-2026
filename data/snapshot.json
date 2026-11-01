@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T04:28:20+00:00",
+  "generated_at": "2026-11-01T04:29:51+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -22,20 +22,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "receipt_id": "R-T01-6541195191",
-      "task_id": "T01",
-      "legacy": true,
-      "actor": "DiegoXue-coder",
-      "command": "status",
-      "processed_at": "2026-10-31T08:33:37Z",
-      "outcome": "legacy",
-      "status_before": null,
-      "status_after": null,
-      "summary": "历史回执保留；不补造当时未保存的结构化状态。",
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541198017",
-      "submission": null
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T01-6541435522",
@@ -257,6 +243,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553404450",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553407339"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T06-6553416622",
+      "task_id": "T06",
+      "request_comment_id": 6553416622,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-01T04:29:27Z",
+      "processed_at": "2026-11-01T04:29:48+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T06 已更新为「进行中」。实际上报（partial，尚未完成）：Prepared independent two-AZ VPC form with four /24 subnets, NAT and endpoints None; DNS enabled.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553416622",
+      "submission": {
+        "path": "deliveries/T06/2026-11-01-vpc-form.json",
+        "commit": "e2410e39e4907e96f6a8d57162c9c2bd66cf985d",
+        "manifest_sha": "73cdbc0d8a280f0227cc011e40eed29ab8e0be0c",
+        "run_log": "evidence/T06/2026-11-01-vpc-form.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-01T04:29:19+00:00",
+        "test_count": 2,
+        "evidence_count": 4,
+        "evidence_preview": [
+          "project/network-plan.json",
+          "docs/network-plan.md",
+          "evidence/T06/2026-11-01-vpc-form.log"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553419423"
     }
   ],
   "tasks": [
@@ -623,18 +640,49 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-01T04:27:57Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-01T04:29:27Z",
+      "last_note": "实际上报（partial，尚未完成）：Prepared independent two-AZ VPC form with four /24 subnets, NAT and endpoints None; DNS enabled.",
       "processed_comments": [
-        6553404450
+        6553404450,
+        6553416622
       ],
       "last_receipt": {
-        "receipt_id": "R-T06-6553404450",
-        "command": "claim",
+        "receipt_id": "R-T06-6553416622",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-01T04:28:16+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553407339"
+        "processed_at": "2026-11-01T04:29:48+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553419423"
+      },
+      "last_report": {
+        "path": "deliveries/T06/2026-11-01-vpc-form.json",
+        "commit": "e2410e39e4907e96f6a8d57162c9c2bd66cf985d",
+        "manifest_sha": "73cdbc0d8a280f0227cc011e40eed29ab8e0be0c",
+        "evidence_shas": {
+          "project/network-plan.json": "f55244abb539bafaf6108f44f9fa899bbc493ee1",
+          "docs/network-plan.md": "529056dbef73261269a1d9addace4c0c20d48a63",
+          "evidence/T06/2026-11-01-vpc-form.log": "f9c92f7cd5e625b6e8032978e382c23675d2c139",
+          "evidence/T06/2026-11-01-vpc-form.png": "c7617187702c3d424026c6c2c9c0e71137fa88e3"
+        },
+        "summary": "Prepared independent two-AZ VPC form with four /24 subnets, NAT and endpoints None; DNS enabled.",
+        "tested_at": "2026-11-01T04:29:19+00:00",
+        "submitted_by": "DiegoXue-coder",
+        "environment": "AWS console form in us-east-1, prepared by AI under user authorization; no creation submitted.",
+        "verification_result": "partial",
+        "run_log": "evidence/T06/2026-11-01-vpc-form.log",
+        "test_count": 2,
+        "test_summary": [
+          {
+            "action": "Inspect final browser form and resource preview",
+            "expected": "Two AZs, two public and two private subnets; no NAT or endpoint selected",
+            "actual": "Matched; preview four subnets, three displayed route tables, one network connection. Create VPC not clicked."
+          },
+          {
+            "action": "Validate CIDRs with Python ipaddress",
+            "expected": "All four inside 10.37.0.0/16, no mutual overlap or overlap with old default VPC",
+            "actual": "Assertions passed."
+          }
+        ]
       },
       "issue_number": 6,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6",
