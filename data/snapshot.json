@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T04:29:51+00:00",
+  "generated_at": "2026-11-01T05:16:20+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -22,37 +22,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T01-6541435522",
-      "task_id": "T01",
-      "request_comment_id": 6541435522,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-10-31T09:00:10Z",
-      "processed_at": "2026-10-31T09:00:32+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T01 已更新为「进行中」。实际上报（partial，尚未完成）：已实现并测试结构化上报、执行记录、编号回执、另一账号复核和回执中断补发；T01 的小组选题、A/C 成员与最终 Lab 尚未确认。",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541435522",
-      "submission": {
-        "path": "deliveries/T01/2026-10-31-collaboration-receipt.json",
-        "commit": "bf60d06fb23854dfd6757bfa14d25d0f5fd17980",
-        "manifest_sha": "478c2c06a7fa610664b64569867f52737db8e7d3",
-        "run_log": "evidence/T01/2026-10-31-receipt-system-tests.log",
-        "verification_result": "partial",
-        "tested_at": "2026-10-31T08:58:48+00:00",
-        "test_count": 2,
-        "evidence_count": 4,
-        "evidence_preview": [
-          "evidence/T01/2026-10-31-receipt-system-tests.log",
-          "docs/reporting.md",
-          "docs/parallel-plan.md"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1#issuecomment-6541438916"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T01-6541686849",
@@ -274,6 +243,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553419423"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6553816674",
+      "task_id": "T09",
+      "request_comment_id": 6553816674,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "requested_at": "2026-11-01T05:15:56Z",
+      "processed_at": "2026-11-01T05:16:16+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553816674",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553819858"
     }
   ],
   "tasks": [
@@ -821,14 +807,24 @@
         "先用简单 /health 服务验证部署路径；最终业务读写留到网络与数据层会合。"
       ],
       "task_id": "T09",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-01T05:15:56Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6553816674
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T09-6553816674",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-01T05:16:16+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553819858"
+      },
       "issue_number": 9,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9",
       "waiting_for": [
