@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-03T08:18:40+00:00",
+  "generated_at": "2026-11-03T08:20:36+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -530,6 +530,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598738390",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598745262"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T04-6598769043",
+      "task_id": "T04",
+      "request_comment_id": 6598769043,
+      "actor": "Alex4325Li",
+      "command": "report",
+      "requested_at": "2026-11-03T08:20:04Z",
+      "processed_at": "2026-11-03T08:20:33+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T04 已更新为「进行中」。实际上报（partial，尚未完成）：完成 B 首次配置、旧 S3 代码核对和首版字段/运行/存储契约；修复 capture_run 在 Python3.9 的 newline 参数兼容性。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598769043",
+      "submission": {
+        "path": "deliveries/T04/2026-11-03-Alex4325Li.json",
+        "commit": "5a8bf70d584b1c5d16eebc8d45d48256a374f4d1",
+        "manifest_sha": "dae94e25b3b90cd97b16150e63b8e91e511a8baf",
+        "run_log": "evidence/T04/2026-11-03-baseline.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-03T08:19:55.618905+00:00",
+        "test_count": 1,
+        "evidence_count": 3,
+        "evidence_preview": [
+          "docs/interfaces.md",
+          "evidence/T04/2026-11-03-baseline.log",
+          "scripts/capture_run.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598777623"
     }
   ]
 }
