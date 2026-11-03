@@ -1,0 +1,25 @@
+{
+  "schema_version": 2,
+  "task_id": "T04",
+  "actor": "Alex4325Li",
+  "tested_at": "2026-11-03T08:19:55.618905+00:00",
+  "environment": "macOS arm64, Python 3.9.6 virtual environment; no AWS access",
+  "summary": "完成 B 首次配置、旧 S3 代码核对和首版字段/运行/存储契约；修复 capture_run 在 Python3.9 的 newline 参数兼容性。",
+  "verification_result": "partial",
+  "tests": [
+    {
+      "action": "离线语法、原统计及空书库基线检查",
+      "expected": "exit 0",
+      "actual": "exit 0；语法与两组统计检查通过"
+    }
+  ],
+  "evidence": [
+    "docs/interfaces.md",
+    "evidence/T04/2026-11-03-baseline.log",
+    "scripts/capture_run.py"
+  ],
+  "run_log": "evidence/T04/2026-11-03-baseline.log",
+  "limitations": "契约待 A/C 确认；本地模式、健康接口和 DynamoDB 尚未实现；Python3.11 发布及云端读写未验证。记录器首次因 Python3.9 不支持 Path.write_text(newline=...) 失败，改为 open 后重跑成功。",
+  "next_step": "A/C 在 T04 复核契约；B 后续按 T07 认领流程实现本地模式和 DynamoDB。",
+  "ai_use": "Codex 在本人授权下配置环境、检查源码、起草契约并运行基线；无人独立复核或批准。"
+}

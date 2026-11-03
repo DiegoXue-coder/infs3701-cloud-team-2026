@@ -32,7 +32,8 @@ def main():
         else:shown.append(value)
     content=f'Task: {args.task}\nGitHub actor: {args.actor}\nExecuted by: local command runner (AI-assisted)\nStarted UTC: {started}\nFinished UTC: {finished}\nExit code: {run.returncode}\nCommand: {shlex.join(shown)}\n\nSTDOUT\n'+run.stdout.decode('utf-8',errors='replace')+'\nSTDERR\n'+run.stderr.decode('utf-8',errors='replace')
     output.parent.mkdir(parents=True,exist_ok=True)
-    output.write_text(redact(content)+'\n',encoding='utf-8',newline='\n')
+    with output.open('w', encoding='utf-8', newline='\n') as handle:
+        handle.write(redact(content)+'\n')
     print(f'Execution record saved: {output}; exit code: {run.returncode}. Review for sensitive data before upload.')
     return run.returncode
 
