@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-03T08:17:54+00:00",
+  "generated_at": "2026-11-03T08:18:40+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,36 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T05-6553324901",
-      "task_id": "T05",
-      "request_comment_id": 6553324901,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-01T04:18:51Z",
-      "processed_at": "2026-11-01T04:19:12+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Recovered legacy Reading Tracker using instance-role credentials; verified main page renders three existing S3 records.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553324901",
-      "submission": {
-        "path": "deliveries/T05/2026-11-01-legacy-recovery.json",
-        "commit": "b410df15e536f80503ca5e548657585baff53047",
-        "manifest_sha": "f1e977baf84fb32495de32730ceb053bcd94805c",
-        "run_log": "evidence/T05/2026-11-01-legacy-recovery.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-01T04:18:39+00:00",
-        "test_count": 3,
-        "evidence_count": 2,
-        "evidence_preview": [
-          "evidence/T05/2026-11-01-legacy-recovery.log",
-          "evidence/T05/2026-11-01-reading-tracker-restored.png"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553328063"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T06-6553404450",
@@ -311,6 +281,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554228452"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T04-6598738390",
+      "task_id": "T04",
+      "request_comment_id": 6598738390,
+      "actor": "Alex4325Li",
+      "command": "claim",
+      "requested_at": "2026-11-03T08:18:14Z",
+      "processed_at": "2026-11-03T08:18:36+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T04 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598738390",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598745262"
     }
   ],
   "tasks": [
@@ -502,14 +489,24 @@
         "先固定本地测试数据格式；不等真实数据库创建才开始开发。"
       ],
       "task_id": "T04",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "Alex4325Li",
+      "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-03T08:18:14Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6598738390
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T04-6598738390",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-03T08:18:36+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598745262"
+      },
       "issue_number": 4,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4",
       "waiting_for": [],
