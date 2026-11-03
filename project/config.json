@@ -5,7 +5,7 @@
   "due_at": "2026-11-17T16:00:00+11:00",
   "members": {
     "A": "DiegoXue-coder",
-    "B": null,
+    "B": "Alex4325Li",
     "C": null
   },
   "maintainers": [
@@ -71,5 +71,12 @@
       "B": "T04",
       "C": "T08"
     }
-  }
+  },
+  "enrollment_history": [
+    {
+      "actor": "Alex4325Li",
+      "role": "B",
+      "at": "2026-11-03T08:16:46+00:00"
+    }
+  ]
 }
