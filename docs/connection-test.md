@@ -24,7 +24,7 @@ python scripts/team.py --user DiegoXue-coder doctor
 
 其他成员换成本人 GitHub 用户名。自检只读取身份、角色、资料、任务卡和工作流状态；不创建同步锁、不发任务评论、不刷新看板、不认领任务。当前应看到：`source_files: 21`、`task_cards: 24`、本人用户及角色、各读取检查为 true。B/C 尚未加入时，不能假装绑定成功。
 
-本机 Git/REST 方式与 Codex GitHub 连接器是两条不同连接。当前连接器读取新仓库仍返回 404；本机已有 Git 授权可以访问。自检输出不会声称同时测过连接器。
+本机 Git/REST 方式与 Codex GitHub 连接器是两条不同连接。2026-11-04 持有人已批准并保存本仓库的连接器访问，DiegoXue-coder 连接器实际读取配置和T08成功；旧的持有人404问题已修复。Marina等成员的本人连接仍须各自重试；不能把本机doctor成功或持有人成功当作自己插件已通过。详见 [本次授权记录与C恢复步骤](2026-11-04-connector-access.md)。
 
 ## 测“能不能同步”
 

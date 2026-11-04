@@ -16,8 +16,8 @@
 
 1. **GitHub Actions 不能启动。** 首次运行回报：`The job was not started because recent account payments have failed or your spending limit needs to be increased.` [原始运行](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/actions/runs/41182740718)。未修改付款信息或限额；工作流保留但暂停，避免反复红灯。当前使用聊天驱动同步。
 2. **没有 GitHub Projects scope。** 当前已有 Git 授权可管理仓库和 Issues，不能创建 Projects v2。因此看板是仓库内自动生成、带任务链接及时间表的 `DASHBOARD.md`，不是原生拖动式 Projects。
-3. **Codex 的现有 GitHub 连接器尚未包含新仓库。** 接口读取返回 404，现有本机 Git 授权可以正常读写。使用本地克隆和同步助手不受该连接器范围影响；未来每位成员需给自己的工具配置访问，不会因为被邀请就自动连接所有 AI。
-4. Marina057 与 Alex4325Li 已接受仓库邀请并有写权限，但尚未自选 B/C；A 已绑定 DiegoXue-coder（AWS 负责人）。起始服务已确定为 Reading Tracker；Lab 持有人为 DiegoXue-coder；若干课程冲突仍待 T03 确认。
+3. **持有人连接器404已于2026-11-04修复。** 经本人明确批准，仅将小组仓库加入现有 ChatGPT Codex Connector 选定范围，保留second-brain，仓库仍私有。连接器实际读取仓库、project/config.json和T08成功。其他成员自己的连接尚需重试验证，详见 [授权记录](2026-11-04-connector-access.md)。
+4. Marina057 与 Alex4325Li 已接受仓库邀请并有写权限。Alex4325Li 已登记B并上传T04交付；Marina经Diego转述已选择C，但尚未在系统登记/认领。她反馈有17项本地测试及草稿，文件尚未上传，不能作为已验收结果。A为DiegoXue-coder；最新状态仍读取Issue/配置。
 5. Week 5 和 Week 7 的 8 个新文件已归档并共享；Week 8/9 正式课件仍待收到，不能宣称全学期资料已齐。
 
 6. 当前 Learner Lab Readme 明确禁止创建用户或组；不能为另两位成员创建独立 IAM 登录账号。已进入 us-east-1 控制台，只读检查，没有更改权限。另行提供的小组访问方式待 tutor 确认，见 `docs/aws-access-audit.md`。

@@ -38,7 +38,7 @@
 
 - 角色绑定在 `project/config.json`。A 绑定 DiegoXue-coder；B/C 待未来成员加入。未登记角色不能认领，仓库管理员可以在记录理由后接替其他角色任务。
 - 使用本人自己的 AI 与 GitHub 连接；本系统不需要在 GitHub 存放 AI API key，也不保证所有聊天工具自动读取本文件。不能自动读取时，使用 `prompts/START.md` 的开场语明确让 AI 读取仓库。
-- 当前 GitHub Actions 受账号付款/额度限制，不能只发评论后假设它自动执行。优先用 `scripts/team.py` 一次完成本人评论与同步；若使用连接器/网页评论，随后运行该助手的 sync。不能运行脚本时说明请求待处理。现有 Codex GitHub 连接尚未获准读取这个新仓库；可用本人现有 Git 授权/本地克隆访问，未来需要时由本人调整连接器仓库范围。
+- 当前 GitHub Actions 受账号付款/额度限制，不能只发评论后假设它自动执行。优先用 `scripts/team.py` 一次完成本人评论与同步；若使用连接器/网页评论，随后运行该助手的 sync。不能运行脚本时说明请求待处理。2026-11-04 已经用户明确批准，仅将本仓库加入 ChatGPT Codex Connector 的选定仓库范围；DiegoXue-coder 连接器实际读取配置和T08成功，仓库仍私有。其他成员须用自己的身份重试，不能把持有人成功当作其他账号已验证；见 docs/2026-11-04-connector-access.md。本人已有 Git 授权/本地克隆仍可使用。
 - 证据只能证明对应环境及测试时刻；单实例停机测试不能直接声称整个 AZ 故障已实测。AI 结构检查不能替代人工/真实系统验收。
 - 官方截止为 2026-11-17 16:00 Australia/Sydney；视频时长、自动扩容 core 冲突、资源保留要求及无域名时的 HTTPS 方式待 tutor 确认。用户已确认 Reading Tracker（Option A），升级入口 app/reading_tracker.py。DynamoDB 表已建，契约见 handoffs.json，不再重新选题或数据库；B/C 角色仍由成员本人认领。最新实际云端交接读 docs/2026-11-01-foundation-verification.md，基础测试页不是业务部署成功。
 - 原课程资料只用于获准的私有课程小组；仓库保持 private，禁止 GitHub Pages 公布课程材料。尚未收到的 W8/W9 资料在索引中标缺，不自行补造课件。
