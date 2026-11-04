@@ -1,0 +1,27 @@
+{
+  "purpose": "Offline baseline comparison only; no cloud mutation performed",
+  "region": "us-east-1",
+  "expected_readback": {
+    "AlarmName": "infs3701-team-healthy-targets-below-two",
+    "Namespace": "AWS/ApplicationELB",
+    "MetricName": "HealthyHostCount",
+    "Dimensions": [
+      {"Name":"LoadBalancer","Value":"app/infs3701-team-alb/cdc408a1dfd1268c"},
+      {"Name":"TargetGroup","Value":"targetgroup/infs3701-team-tg/9597ed4011467b27"}
+    ],
+    "Statistic": "Minimum",
+    "Period": 60,
+    "EvaluationPeriods": 2,
+    "DatapointsToAlarm": 2,
+    "Threshold": 2,
+    "ComparisonOperator": "LessThanThreshold",
+    "TreatMissingData": "notBreaching"
+  },
+  "review_findings": [
+    "Detects lost two-target redundancy, not all-service outage or database correctness.",
+    "Missing data can conceal lack of observations; pair with independent HTTP checks and freshness review.",
+    "No configured notification recipient in handoff; delivery of notifications untested.",
+    "A's historical OK-ALARM-OK evidence is not C's new live experiment."
+  ],
+  "live_readback_verified_by_C": false
+}

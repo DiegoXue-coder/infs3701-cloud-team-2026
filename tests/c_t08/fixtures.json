@@ -1,0 +1,20 @@
+{
+  "synthetic_only": true,
+  "statistics_cases": [
+    {"name":"empty","records":[],"expected":{"total":0,"reading":0,"finished":0,"want":0,"total_pages":0,"avg_rating":null}},
+    {"name":"mixed","records":[{"title":"Synthetic A","status":"reading","pages_read":17,"total_pages":90,"rating":5},{"title":"Synthetic B","status":"finished","pages_read":83,"total_pages":83,"rating":4},{"title":"Synthetic C","status":"want","pages_read":0,"total_pages":200,"rating":null},{"title":"Synthetic D","status":"reading","pages_read":9,"total_pages":0,"rating":1}],"expected":{"total":4,"reading":2,"finished":1,"want":1,"total_pages":109,"avg_rating":3.3}},
+    {"name":"boundaries","records":[{"title":"Synthetic zero","status":"reading","pages_read":0,"total_pages":0,"rating":null},{"title":"Synthetic complete","status":"finished","pages_read":1000000,"total_pages":1000000,"rating":5},{"title":"Synthetic minimum rating","status":"want","pages_read":0,"total_pages":1,"rating":1}],"expected":{"total":3,"reading":1,"finished":1,"want":1,"total_pages":1000000,"avg_rating":3.0}},
+    {"name":"unrated","records":[{"status":"reading","pages_read":7,"rating":null},{"status":"finished","pages_read":11,"rating":""}],"expected":{"total":2,"reading":1,"finished":1,"want":0,"total_pages":18,"avg_rating":null}}
+  ],
+  "future_http_cases": [
+    {"name":"blank title","form":{"title":"   "},"expected_status":400},
+    {"name":"invalid status","form":{"title":"Synthetic","status":"paused"},"expected_status":400},
+    {"name":"negative pages","form":{"title":"Synthetic","pages_read":"-1"},"expected_status":400},
+    {"name":"fractional pages","form":{"title":"Synthetic","pages_read":"1.5"},"expected_status":400},
+    {"name":"excess pages","form":{"title":"Synthetic","pages_read":"11","total_pages":"10"},"expected_status":400},
+    {"name":"rating zero","form":{"title":"Synthetic","rating":"0"},"expected_status":400},
+    {"name":"rating above five","form":{"title":"Synthetic","rating":"6"},"expected_status":400},
+    {"name":"valid unknown total","form":{"title":"Synthetic","pages_read":"10","total_pages":"0","rating":""},"expected_status":302}
+  ],
+  "future_http_status":"Planned against B's 2026-11-03 contract; NOT executed against the old S3 web application."
+}

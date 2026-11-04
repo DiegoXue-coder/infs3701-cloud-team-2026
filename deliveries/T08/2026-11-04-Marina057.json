@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "task_id": "T08",
+  "actor": "Marina057",
+  "tested_at": "2026-11-04T17:09:13+11:00",
+  "environment": "Windows, Python 3.12.14, Chrome-downloaded main snapshot shown at 6a8da48b5fc5d932bc25a56054a1cd0cc605c5b8; isolated original compute_stats and loopback-only HTTP fixture. No AWS SDK imports, credentials, cloud actions or business HTTP acceptance. Target Python3.11 not tested.",
+  "summary": "T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptance matrix, monitoring/recovery plan, cost assumptions, report framework and 60-second storyboard. This is preparation only; no AWS or final business acceptance is claimed. Initial work preceded role enrollment; original timestamps are preserved. Marina057 subsequently completed doctor, join C and confirmed T08 claim receipt R-T08-6624693113.",
+  "verification_result": "pass",
+  "tests": [
+    {
+      "action": "Run tests/c_t08/test_statistics.py against isolated original compute_stats",
+      "expected": "All 10 tests pass with four fixture groups and no AWS imports",
+      "actual": "10 tests passed; source SHA-256 f1f20663612aa3343f5bce9f9acc749da2c8def46eea8e369fdcdc7bfd7e5d10"
+    },
+    {
+      "action": "Run tests/c_t08/test_request_log.py using a real local HTTP fixture",
+      "expected": "Bounded samples log fields; 503 and timeout are failures; missing IDs explicit; evidence not overwritten",
+      "actual": "7 tests passed; persisted BASE_URL CLI run: 4/4 HTTP200 from local-fixture-only; no live ALB or business behavior tested"
+    },
+    {
+      "action": "Run scripts/c_t08_review.py without executing deployment code",
+      "expected": "Alarm parameters and resource dimensions match repository source",
+      "actual": "11 expected fields matched; load balancer and target group matched; no notification recipients in historical inventory; live readback not performed"
+    },
+    {
+      "action": "Review assignment brief/rubric text, interfaces, handoffs and foundation record",
+      "expected": "Draft covers each core requirement, evidence, reviewers, report, costs and video",
+      "actual": "Review record contains reference hashes; drafts prepared; costs are assumptions without prices and video is a storyboard only"
+    }
+  ],
+  "evidence": [
+    "tests/c_t08/fixtures.json",
+    "tests/c_t08/test_statistics.py",
+    "tests/c_t08/test_request_log.py",
+    "scripts/c_request_log.py",
+    "scripts/c_t08_review.py",
+    "deployment/c-t08-alarm-review.json",
+    "docs/c-t08-README.md",
+    "docs/c-t08-test-plan.md",
+    "docs/c-t08-monitoring.md",
+    "docs/c-t08-cost-assumptions.md",
+    "docs/c-t08-report-and-video.md",
+    "evidence/T08/2026-11-04-statistics-run.log",
+    "evidence/T08/2026-11-04-request-logger-run.log",
+    "evidence/T08/2026-11-04-offline-review-run.log",
+    "evidence/T08/2026-11-04-local-fixture-requests.jsonl"
+  ],
+  "limitations": "Pass applies only to T08 preparation scope. No independent peer approval yet. No AWS/final web tests, DynamoDB writes, live load-balancing, AZ outage, live alarm, TLS, Calculator prices or recorded video. Python3.12.14 local execution does not validate target Python3.11. W8/W9 formal course materials and tutor conflict resolutions remain missing. The HTTP fixture does not implement Reading Tracker business logic. Initial local evidence remains unchanged from before registration.",
+  "next_step": "A or B independently reproduces the tests and reviews the plans, then approves or requests changes on T08. After B/A publish the real business release, C performs T12/T13/T14 and completes T18/T20/T21 with real evidence. T08 receipt and review status are authoritative in Issue8; no self-approval.",
+  "ai_use": "Codex generated drafts and tests and executed local commands under the user request. User has not yet independently verified results. Historical AWS work remains credited to A. No peer approval or signature was generated.",
+  "run_log": "evidence/T08/2026-11-04-statistics-run.log"
+}

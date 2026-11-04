@@ -1,0 +1,29 @@
+Task: T08
+GitHub actor: Marina057
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-04T06:05:42+00:00
+Finished UTC: 2026-11-04T06:05:44+00:00
+Exit code: 0
+Command: 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tests/c_t08/test_request_log.py
+
+STDOUT
+BASE_URL CLI EVIDENCE: {"stage": "local-fixture", "requests": 4, "successful_2xx": 4, "failures": 0, "missing_instance": 0, "instances": {"local-fixture-only": 4}, "output": "C:\\Users\\Administrator\\.codex\\.chatgpt-projects\\g-p-6aba65d948a48191988b8abd858404e9\\c-work\\infs3701-cloud-team-2026-main\\evidence\\T08\\2026-11-04-local-fixture-requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 0, "failures": 1, "missing_instance": 0, "instances": {"local-fixture-only": 1}, "output": "D:\\tmp\\tmpkmt0ng9b\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 1, "failures": 0, "missing_instance": 1, "instances": {}, "output": "D:\\tmp\\tmp4qw1hsct\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 3, "successful_2xx": 3, "failures": 0, "missing_instance": 0, "instances": {"local-fixture-only": 3}, "output": "D:\\tmp\\tmp8erf9s83\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 0, "failures": 1, "missing_instance": 1, "instances": {}, "output": "D:\\tmp\\tmpiz8oco1u\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+
+STDERR
+test_base_url_cli_and_persistent_sample (__main__.RequestLoggerTests.test_base_url_cli_and_persistent_sample) ... ok
+test_http_error_retains_status_and_instance (__main__.RequestLoggerTests.test_http_error_retains_status_and_instance) ... ok
+test_invalid_bounds_and_credential_urls_rejected (__main__.RequestLoggerTests.test_invalid_bounds_and_credential_urls_rejected) ... ok
+test_missing_instance_is_explicit (__main__.RequestLoggerTests.test_missing_instance_is_explicit) ... ok
+test_real_success_request_fields_and_bound (__main__.RequestLoggerTests.test_real_success_request_fields_and_bound) ... ok
+test_refuses_overwriting_evidence (__main__.RequestLoggerTests.test_refuses_overwriting_evidence) ... ok
+test_timeout_keeps_record_and_failure (__main__.RequestLoggerTests.test_timeout_keeps_record_and_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.307s
+
+OK
+
