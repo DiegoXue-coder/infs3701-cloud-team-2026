@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T06:57:13+00:00",
+  "generated_at": "2026-11-04T07:02:57+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,23 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T09-6553816674",
-      "task_id": "T09",
-      "request_comment_id": 6553816674,
-      "actor": "DiegoXue-coder",
-      "command": "claim",
-      "requested_at": "2026-11-01T05:15:56Z",
-      "processed_at": "2026-11-01T05:16:16+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T09 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553816674",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553819858"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T05-6553946721",
@@ -298,6 +281,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624693113",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624699434"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T08-6624791560",
+      "task_id": "T08",
+      "request_comment_id": 6624791560,
+      "actor": "Marina057",
+      "command": "submit",
+      "requested_at": "2026-11-04T07:02:28Z",
+      "processed_at": "2026-11-04T07:02:54+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "review",
+      "summary": "T08 已更新为「等检查」。已提交真实文件，等待另一成员检查：T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptance matrix, monitoring/recovery plan, cost assumptions, report framework and 60-second storyboard. This is preparation only; no AWS or final business acceptance is claimed. Initial work preceded role enrollment; original timestamps are preserved. Marina057 subsequently completed doctor, join C and confirmed T08 claim receipt R-T08-6624693113.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624791560",
+      "submission": {
+        "path": "deliveries/T08/2026-11-04-Marina057.json",
+        "commit": "cb07163da0e2beb69797902b433efd8999fd4849",
+        "manifest_sha": "629b8a2751783876f6e18ef3e96a81e8e381135b",
+        "run_log": "evidence/T08/2026-11-04-statistics-run.log",
+        "verification_result": "pass",
+        "tested_at": "2026-11-04T17:09:13+11:00",
+        "test_count": 4,
+        "evidence_count": 15,
+        "evidence_preview": [
+          "tests/c_t08/fixtures.json",
+          "tests/c_t08/test_statistics.py",
+          "tests/c_t08/test_request_log.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624798454"
     }
   ],
   "tasks": [
@@ -854,23 +868,74 @@
         "C 整理 CloudWatch 指标、阈值、告警触发和恢复方案，以及成本计算器的服务/用量假设。"
       ],
       "task_id": "T08",
-      "status": "in_progress",
+      "status": "review",
       "owner": "Marina057",
       "owner_role": "C",
-      "submission": null,
+      "submission": {
+        "path": "deliveries/T08/2026-11-04-Marina057.json",
+        "commit": "cb07163da0e2beb69797902b433efd8999fd4849",
+        "manifest_sha": "629b8a2751783876f6e18ef3e96a81e8e381135b",
+        "evidence_shas": {
+          "tests/c_t08/fixtures.json": "35274da242e6f52d273fc4f32b68ebcdb5aae8fe",
+          "tests/c_t08/test_statistics.py": "a4de081335b9be12b78b16bc36ba709cb3e6e192",
+          "tests/c_t08/test_request_log.py": "6785e701a2e3c8c844bf7b0687c187e63807af05",
+          "scripts/c_request_log.py": "561c4fe8bb263f12dffb380414244807908949a0",
+          "scripts/c_t08_review.py": "f85471b4391854f87d0fb3b02ff7427165741ed0",
+          "deployment/c-t08-alarm-review.json": "84a5b394734db58ce960d0879f126d279f194526",
+          "docs/c-t08-README.md": "664a90128e0eed73119b87e00bee50600d8fb62b",
+          "docs/c-t08-test-plan.md": "8a83275c808e73bbf9bee8f6dfa3db58d288d13e",
+          "docs/c-t08-monitoring.md": "cf21bd7968f9bfdcbd5c9b3dd9057d43a8a91216",
+          "docs/c-t08-cost-assumptions.md": "13c3e672b707be190f43b5b695da0e7b09d34bd1",
+          "docs/c-t08-report-and-video.md": "1558b78c1df0d9f057c2d6f5cc903b2a78bc2e6f",
+          "evidence/T08/2026-11-04-statistics-run.log": "921cf32515e11b78cc886f1889b783fd0b9201b8",
+          "evidence/T08/2026-11-04-request-logger-run.log": "87fbea256572482323a21665301dd733356f3e29",
+          "evidence/T08/2026-11-04-offline-review-run.log": "aeebc598ecc06f4ef74f474a55cb2ade41285b59",
+          "evidence/T08/2026-11-04-local-fixture-requests.jsonl": "7272e0bdb8f3a7a5f414e02abe09e877f7bee8af"
+        },
+        "summary": "T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptance matrix, monitoring/recovery plan, cost assumptions, report framework and 60-second storyboard. This is preparation only; no AWS or final business acceptance is claimed. Initial work preceded role enrollment; original timestamps are preserved. Marina057 subsequently completed doctor, join C and confirmed T08 claim receipt R-T08-6624693113.",
+        "tested_at": "2026-11-04T17:09:13+11:00",
+        "submitted_by": "Marina057",
+        "environment": "Windows, Python 3.12.14, Chrome-downloaded main snapshot shown at 6a8da48b5fc5d932bc25a56054a1cd0cc605c5b8; isolated original compute_stats and loopback-only HTTP fixture. No AWS SDK imports, credentials, cloud actions or business HTTP acceptance. Target Python3.11 not tested.",
+        "verification_result": "pass",
+        "run_log": "evidence/T08/2026-11-04-statistics-run.log",
+        "test_count": 4,
+        "test_summary": [
+          {
+            "action": "Run tests/c_t08/test_statistics.py against isolated original compute_stats",
+            "expected": "All 10 tests pass with four fixture groups and no AWS imports",
+            "actual": "10 tests passed; source SHA-256 f1f20663612aa3343f5bce9f9acc749da2c8def46eea8e369fdcdc7bfd7e5d10"
+          },
+          {
+            "action": "Run tests/c_t08/test_request_log.py using a real local HTTP fixture",
+            "expected": "Bounded samples log fields; 503 and timeout are failures; missing IDs explicit; evidence not overwritten",
+            "actual": "7 tests passed; persisted BASE_URL CLI run: 4/4 HTTP200 from local-fixture-only; no live ALB or business behavior tested"
+          },
+          {
+            "action": "Run scripts/c_t08_review.py without executing deployment code",
+            "expected": "Alarm parameters and resource dimensions match repository source",
+            "actual": "11 expected fields matched; load balancer and target group matched; no notification recipients in historical inventory; live readback not performed"
+          },
+          {
+            "action": "Review assignment brief/rubric text, interfaces, handoffs and foundation record",
+            "expected": "Draft covers each core requirement, evidence, reviewers, report, costs and video",
+            "actual": "Review record contains reference hashes; drafts prepared; costs are assumptions without prices and video is a storyboard only"
+          }
+        ]
+      },
       "reviewer": null,
-      "last_update": "2026-11-04T06:56:50Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-04T07:02:28Z",
+      "last_note": "已提交真实文件，等待另一成员检查：T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptance matrix, monitoring/recovery plan, cost assumptions, report framework and 60-second storyboard. This is preparation only; no AWS or final business acceptance is claimed. Initial work preceded role enrollment; original timestamps are preserved. Marina057 subsequently completed doctor, join C and confirmed T08 claim receipt R-T08-6624693113.",
       "processed_comments": [
-        6624693113
+        6624693113,
+        6624791560
       ],
       "last_receipt": {
-        "receipt_id": "R-T08-6624693113",
-        "command": "claim",
+        "receipt_id": "R-T08-6624791560",
+        "command": "submit",
         "outcome": "accepted",
-        "status_after": "in_progress",
-        "processed_at": "2026-11-04T06:57:09+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624699434"
+        "status_after": "review",
+        "processed_at": "2026-11-04T07:02:54+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624798454"
       },
       "issue_number": 8,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8",

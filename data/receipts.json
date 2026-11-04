@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T06:57:13+00:00",
+  "generated_at": "2026-11-04T07:02:57+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -578,6 +578,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624693113",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624699434"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T08-6624791560",
+      "task_id": "T08",
+      "request_comment_id": 6624791560,
+      "actor": "Marina057",
+      "command": "submit",
+      "requested_at": "2026-11-04T07:02:28Z",
+      "processed_at": "2026-11-04T07:02:54+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "review",
+      "summary": "T08 已更新为「等检查」。已提交真实文件，等待另一成员检查：T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptance matrix, monitoring/recovery plan, cost assumptions, report framework and 60-second storyboard. This is preparation only; no AWS or final business acceptance is claimed. Initial work preceded role enrollment; original timestamps are preserved. Marina057 subsequently completed doctor, join C and confirmed T08 claim receipt R-T08-6624693113.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624791560",
+      "submission": {
+        "path": "deliveries/T08/2026-11-04-Marina057.json",
+        "commit": "cb07163da0e2beb69797902b433efd8999fd4849",
+        "manifest_sha": "629b8a2751783876f6e18ef3e96a81e8e381135b",
+        "run_log": "evidence/T08/2026-11-04-statistics-run.log",
+        "verification_result": "pass",
+        "tested_at": "2026-11-04T17:09:13+11:00",
+        "test_count": 4,
+        "evidence_count": 15,
+        "evidence_preview": [
+          "tests/c_t08/fixtures.json",
+          "tests/c_t08/test_statistics.py",
+          "tests/c_t08/test_request_log.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624798454"
     }
   ]
 }

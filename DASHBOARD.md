@@ -1,8 +1,8 @@
 # 三人项目进度看板
 
-最后同步：**2026-11-04 17:57 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
+最后同步：**2026-11-04 18:02 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
 
-已完成并复核 **0 / 23** 项；等检查 **0** 项；被卡住 **0** 项。
+已完成并复核 **0 / 23** 项；等检查 **1** 项；被卡住 **0** 项。
 
 **当前同步：每次聊天由 AI 运行同步助手；后台 Actions 暂停。** [系统状态](docs/system-status.md)。
 
@@ -24,6 +24,7 @@
 
 | 任务 / 操作 | 操作者 | 处理与状态 | 证据与回执 |
 | --- | --- | --- | --- |
+| T08 / submit | Marina057 | accepted / 等检查 | [pass · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/cb07163da0e2beb69797902b433efd8999fd4849/evidence/T08/2026-11-04-statistics-run.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624798454) |
 | T08 / claim | Marina057 | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624699434) |
 | T04 / report | Alex4325Li | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/5a8bf70d584b1c5d16eebc8d45d48256a374f4d1/evidence/T04/2026-11-03-baseline.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598777623) |
 | T04 / claim | Alex4325Li | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598745262) |
@@ -33,9 +34,8 @@
 | T09 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/b31298800bcbe4671dad47162b616ac1cae41941/evidence/T06/2026-11-01-foundation-execution.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553951968) |
 | T06 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/b31298800bcbe4671dad47162b616ac1cae41941/evidence/T06/2026-11-01-foundation-execution.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553951260) |
 | T05 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/b31298800bcbe4671dad47162b616ac1cae41941/evidence/T06/2026-11-01-foundation-execution.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553950531) |
-| T09 / claim | DiegoXue-coder | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553819858) |
 
-## 进行中 · 6
+## 进行中 · 5
 
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
@@ -43,7 +43,6 @@
 | [T04 确定数据库及对接约定](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4) | Alex4325Li / B | 2026-11-01 | 实际上报（partial，尚未完成）：完成 B 首次配置、旧 S3 代码核对和首版字段/运行/存储契约；修复 capture_run 在 Python3.9 的 newline 参数兼容性。 |
 | [T05 优先核查多人登录权限、Lab 限制与预算](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5) | DiegoXue-coder / A | 2026-11-02 | 实际上报（partial，尚未完成）：Verified Lab role access on both private hosts, encrypted roots and restricted paths; OpenTunnel denied, alternative boot diagnostics passed. HTTPS/domain unresolved; displayed delayed Lab usage $1.30/$50. |
 | [T06 设计并准备双 AZ 网络](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6) | DiegoXue-coder / A | 2026-11-03 | 完成前需 T04,T05；实际上报（partial，尚未完成）：Created and read back actual two-AZ ALB/private-host/gateway/route/security-group foundation; scoped HTTPS service paths passed from both private hosts; unused SSH paths closed. |
-| [T08 写测试清单、报告框架、成本假设](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8) | Marina057 / C | 2026-11-03 | 已认领 |
 | [T09 第一台应用部署与真实读写](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9) | DiegoXue-coder / A | 2026-11-04 | 完成前需 T06,T07；实际上报（partial，尚未完成）：Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deploye |
 
 ## 被卡住 · 0
@@ -52,11 +51,11 @@
 | --- | --- | --- | --- |
 | — | — | — | — |
 
-## 等检查 · 0
+## 等检查 · 1
 
 | 任务 | 负责人 / 角色 | 内部目标日期 | 等待什么 / 最近记录 |
 | --- | --- | --- | --- |
-| — | — | — | — |
+| [T08 写测试清单、报告框架、成本假设](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8) | Marina057 / C | 2026-11-03 | 已提交真实文件，等待另一成员检查：T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptan |
 
 ## 未开始 · 17
 
