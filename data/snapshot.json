@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T06:55:08+00:00",
+  "generated_at": "2026-11-04T06:57:13+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T06-6553416622",
-      "task_id": "T06",
-      "request_comment_id": 6553416622,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-01T04:29:27Z",
-      "processed_at": "2026-11-01T04:29:48+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T06 已更新为「进行中」。实际上报（partial，尚未完成）：Prepared independent two-AZ VPC form with four /24 subnets, NAT and endpoints None; DNS enabled.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553416622",
-      "submission": {
-        "path": "deliveries/T06/2026-11-01-vpc-form.json",
-        "commit": "e2410e39e4907e96f6a8d57162c9c2bd66cf985d",
-        "manifest_sha": "73cdbc0d8a280f0227cc011e40eed29ab8e0be0c",
-        "run_log": "evidence/T06/2026-11-01-vpc-form.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-01T04:29:19+00:00",
-        "test_count": 2,
-        "evidence_count": 4,
-        "evidence_preview": [
-          "project/network-plan.json",
-          "docs/network-plan.md",
-          "evidence/T06/2026-11-01-vpc-form.log"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6553419423"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T09-6553816674",
@@ -312,6 +281,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598777623"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T08-6624693113",
+      "task_id": "T08",
+      "request_comment_id": 6624693113,
+      "actor": "Marina057",
+      "command": "claim",
+      "requested_at": "2026-11-04T06:56:50Z",
+      "processed_at": "2026-11-04T06:57:09+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T08 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624693113",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624699434"
     }
   ],
   "tasks": [
@@ -868,14 +854,24 @@
         "C 整理 CloudWatch 指标、阈值、告警触发和恢复方案，以及成本计算器的服务/用量假设。"
       ],
       "task_id": "T08",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "Marina057",
+      "owner_role": "C",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-04T06:56:50Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6624693113
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T08-6624693113",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-04T06:57:09+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624699434"
+      },
       "issue_number": 8,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8",
       "waiting_for": [],
