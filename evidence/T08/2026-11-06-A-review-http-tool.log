@@ -1,0 +1,29 @@
+Task: T08
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-06T11:05:36+00:00
+Finished UTC: 2026-11-06T11:05:38+00:00
+Exit code: 0
+Command: .venv/Scripts/python.exe tests/c_t08/test_request_log.py
+
+STDOUT
+BASE_URL CLI EVIDENCE: {"stage": "local-fixture", "requests": 4, "successful_2xx": 4, "failures": 0, "missing_instance": 0, "instances": {"local-fixture-only": 4}, "output": "C:\\Users\\xuesh\\AppData\\Local\\Temp\\tmp16cchh7z\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 0, "failures": 1, "missing_instance": 0, "instances": {"local-fixture-only": 1}, "output": "C:\\Users\\xuesh\\AppData\\Local\\Temp\\tmpiwb_dkvi\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 1, "failures": 0, "missing_instance": 1, "instances": {}, "output": "C:\\Users\\xuesh\\AppData\\Local\\Temp\\tmpzdmetwix\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 3, "successful_2xx": 3, "failures": 0, "missing_instance": 0, "instances": {"local-fixture-only": 3}, "output": "C:\\Users\\xuesh\\AppData\\Local\\Temp\\tmpraaaqp5d\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 0, "failures": 1, "missing_instance": 1, "instances": {}, "output": "C:\\Users\\xuesh\\AppData\\Local\\Temp\\tmpp4fpjojn\\requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+
+STDERR
+test_base_url_cli_and_persistent_sample (__main__.RequestLoggerTests.test_base_url_cli_and_persistent_sample) ... ok
+test_http_error_retains_status_and_instance (__main__.RequestLoggerTests.test_http_error_retains_status_and_instance) ... ok
+test_invalid_bounds_and_credential_urls_rejected (__main__.RequestLoggerTests.test_invalid_bounds_and_credential_urls_rejected) ... ok
+test_missing_instance_is_explicit (__main__.RequestLoggerTests.test_missing_instance_is_explicit) ... ok
+test_real_success_request_fields_and_bound (__main__.RequestLoggerTests.test_real_success_request_fields_and_bound) ... ok
+test_refuses_overwriting_evidence (__main__.RequestLoggerTests.test_refuses_overwriting_evidence) ... ok
+test_timeout_keeps_record_and_failure (__main__.RequestLoggerTests.test_timeout_keeps_record_and_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.363s
+
+OK
+

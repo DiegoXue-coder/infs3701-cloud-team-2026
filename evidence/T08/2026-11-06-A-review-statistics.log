@@ -1,0 +1,28 @@
+Task: T08
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-06T11:05:36+00:00
+Finished UTC: 2026-11-06T11:05:36+00:00
+Exit code: 0
+Command: .venv/Scripts/python.exe tests/c_t08/test_statistics.py
+
+STDOUT
+{"source": "app/reading_tracker.py", "sha256": "f50fea5190314216ffcffb4c175d0a0dcf9dd5c57c2c69449e4ef73cb0856947", "scope": "isolated original compute_stats; no AWS; no HTTP acceptance"}
+
+STDERR
+test_fixture_expectations (__main__.StatisticsTests.test_fixture_expectations) ... ok
+test_inputs_are_not_mutated (__main__.StatisticsTests.test_inputs_are_not_mutated) ... ok
+test_invalid_numeric_legacy_value_raises (__main__.StatisticsTests.test_invalid_numeric_legacy_value_raises) ... ok
+test_legacy_numeric_strings (__main__.StatisticsTests.test_legacy_numeric_strings) ... ok
+test_missing_legacy_fields (__main__.StatisticsTests.test_missing_legacy_fields) ... ok
+test_permutation_invariance (__main__.StatisticsTests.test_permutation_invariance) ... ok
+test_read_pages_not_book_lengths (__main__.StatisticsTests.test_read_pages_not_book_lengths) ... ok
+test_repeating_records_scales_counts_and_pages (__main__.StatisticsTests.test_repeating_records_scales_counts_and_pages) ... ok
+test_unknown_legacy_status_is_not_counted_as_known (__main__.StatisticsTests.test_unknown_legacy_status_is_not_counted_as_known) ... ok
+test_unrated_records_do_not_dilute_average (__main__.StatisticsTests.test_unrated_records_do_not_dilute_average) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.009s
+
+OK
+

@@ -1,0 +1,25 @@
+Task: T08
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-06T11:05:36+00:00
+Finished UTC: 2026-11-06T11:05:36+00:00
+Exit code: 0
+Command: .venv/Scripts/python.exe scripts/c_t08_review.py
+
+STDOUT
+{
+  "scope": "OFFLINE repository-source comparison; no AWS accessed",
+  "alarm_expected_fields_matched": 11,
+  "resource_dimension_match": true,
+  "source_sha256": "f6a5d532b0eeb119b84181e9089636fe81709886fe9fdbf5c07378df9be36a85",
+  "historical_notifications": [],
+  "live_readback": false
+}
+{"reviewed_reference": "sources/text/S12-INFS3701_Group_Assignment.md", "bytes": 12562, "sha256": "28eb3441a74c575aa89523ddda7cc651cf3d900bfa250076bef256f0d1403db5"}
+{"reviewed_reference": "sources/text/S13-INFS3701_Group_Assignment_Marking_Scheme.md", "bytes": 5820, "sha256": "d1ec7162860a51fed9c96f2a99de6a59d857957c16938c2253ef341bd3bc01db"}
+{"reviewed_reference": "docs/interfaces.md", "bytes": 4927, "sha256": "93b72af4228e91f236abdae87af29225d4b0fffdb32ebfecbefeac567a07f230"}
+{"reviewed_reference": "project/handoffs.json", "bytes": 5800, "sha256": "a33b50e5b9f7ee9d6ecefe7988f4369d8742e99e26da04d0cc9d0a00d4499cbb"}
+{"reviewed_reference": "docs/2026-11-01-foundation-verification.md", "bytes": 8998, "sha256": "4d70df34cb214ca4101335120ad363655066ce9be387413cb1657a2455d9c408"}
+
+STDERR
+

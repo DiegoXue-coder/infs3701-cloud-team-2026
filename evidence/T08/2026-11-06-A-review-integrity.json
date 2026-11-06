@@ -1,0 +1,145 @@
+{
+  "reviewer_account": "DiegoXue-coder",
+  "author_account": "Marina057",
+  "ai_assisted": true,
+  "authorization": "User explicitly asked this assistant to review T08 and record the result; not a claim of manual human execution.",
+  "checked_at": "2026-11-06T11:07:07.648499+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "submitted_commit": "cb07163da0e2beb69797902b433efd8999fd4849",
+  "reviewed_checkout_commit": "15be350f4fe767905bbec0cff9b892eb1cf7cd37",
+  "manifest_and_evidence_blob_checks": [
+    {
+      "path": "deliveries/T08/2026-11-04-Marina057.json",
+      "pinned_blob": "629b8a2751783876f6e18ef3e96a81e8e381135b",
+      "current_blob": "629b8a2751783876f6e18ef3e96a81e8e381135b",
+      "working_tree_filtered_blob": "629b8a2751783876f6e18ef3e96a81e8e381135b",
+      "match": true
+    },
+    {
+      "path": "tests/c_t08/fixtures.json",
+      "pinned_blob": "35274da242e6f52d273fc4f32b68ebcdb5aae8fe",
+      "current_blob": "35274da242e6f52d273fc4f32b68ebcdb5aae8fe",
+      "working_tree_filtered_blob": "35274da242e6f52d273fc4f32b68ebcdb5aae8fe",
+      "match": true
+    },
+    {
+      "path": "tests/c_t08/test_statistics.py",
+      "pinned_blob": "a4de081335b9be12b78b16bc36ba709cb3e6e192",
+      "current_blob": "a4de081335b9be12b78b16bc36ba709cb3e6e192",
+      "working_tree_filtered_blob": "a4de081335b9be12b78b16bc36ba709cb3e6e192",
+      "match": true
+    },
+    {
+      "path": "tests/c_t08/test_request_log.py",
+      "pinned_blob": "6785e701a2e3c8c844bf7b0687c187e63807af05",
+      "current_blob": "6785e701a2e3c8c844bf7b0687c187e63807af05",
+      "working_tree_filtered_blob": "6785e701a2e3c8c844bf7b0687c187e63807af05",
+      "match": true
+    },
+    {
+      "path": "scripts/c_request_log.py",
+      "pinned_blob": "561c4fe8bb263f12dffb380414244807908949a0",
+      "current_blob": "561c4fe8bb263f12dffb380414244807908949a0",
+      "working_tree_filtered_blob": "561c4fe8bb263f12dffb380414244807908949a0",
+      "match": true
+    },
+    {
+      "path": "scripts/c_t08_review.py",
+      "pinned_blob": "f85471b4391854f87d0fb3b02ff7427165741ed0",
+      "current_blob": "f85471b4391854f87d0fb3b02ff7427165741ed0",
+      "working_tree_filtered_blob": "f85471b4391854f87d0fb3b02ff7427165741ed0",
+      "match": true
+    },
+    {
+      "path": "deployment/c-t08-alarm-review.json",
+      "pinned_blob": "84a5b394734db58ce960d0879f126d279f194526",
+      "current_blob": "84a5b394734db58ce960d0879f126d279f194526",
+      "working_tree_filtered_blob": "84a5b394734db58ce960d0879f126d279f194526",
+      "match": true
+    },
+    {
+      "path": "docs/c-t08-README.md",
+      "pinned_blob": "664a90128e0eed73119b87e00bee50600d8fb62b",
+      "current_blob": "664a90128e0eed73119b87e00bee50600d8fb62b",
+      "working_tree_filtered_blob": "664a90128e0eed73119b87e00bee50600d8fb62b",
+      "match": true
+    },
+    {
+      "path": "docs/c-t08-test-plan.md",
+      "pinned_blob": "8a83275c808e73bbf9bee8f6dfa3db58d288d13e",
+      "current_blob": "8a83275c808e73bbf9bee8f6dfa3db58d288d13e",
+      "working_tree_filtered_blob": "8a83275c808e73bbf9bee8f6dfa3db58d288d13e",
+      "match": true
+    },
+    {
+      "path": "docs/c-t08-monitoring.md",
+      "pinned_blob": "cf21bd7968f9bfdcbd5c9b3dd9057d43a8a91216",
+      "current_blob": "cf21bd7968f9bfdcbd5c9b3dd9057d43a8a91216",
+      "working_tree_filtered_blob": "cf21bd7968f9bfdcbd5c9b3dd9057d43a8a91216",
+      "match": true
+    },
+    {
+      "path": "docs/c-t08-cost-assumptions.md",
+      "pinned_blob": "13c3e672b707be190f43b5b695da0e7b09d34bd1",
+      "current_blob": "13c3e672b707be190f43b5b695da0e7b09d34bd1",
+      "working_tree_filtered_blob": "13c3e672b707be190f43b5b695da0e7b09d34bd1",
+      "match": true
+    },
+    {
+      "path": "docs/c-t08-report-and-video.md",
+      "pinned_blob": "1558b78c1df0d9f057c2d6f5cc903b2a78bc2e6f",
+      "current_blob": "1558b78c1df0d9f057c2d6f5cc903b2a78bc2e6f",
+      "working_tree_filtered_blob": "1558b78c1df0d9f057c2d6f5cc903b2a78bc2e6f",
+      "match": true
+    },
+    {
+      "path": "evidence/T08/2026-11-04-statistics-run.log",
+      "pinned_blob": "921cf32515e11b78cc886f1889b783fd0b9201b8",
+      "current_blob": "921cf32515e11b78cc886f1889b783fd0b9201b8",
+      "working_tree_filtered_blob": "921cf32515e11b78cc886f1889b783fd0b9201b8",
+      "match": true
+    },
+    {
+      "path": "evidence/T08/2026-11-04-request-logger-run.log",
+      "pinned_blob": "87fbea256572482323a21665301dd733356f3e29",
+      "current_blob": "87fbea256572482323a21665301dd733356f3e29",
+      "working_tree_filtered_blob": "87fbea256572482323a21665301dd733356f3e29",
+      "match": true
+    },
+    {
+      "path": "evidence/T08/2026-11-04-offline-review-run.log",
+      "pinned_blob": "aeebc598ecc06f4ef74f474a55cb2ade41285b59",
+      "current_blob": "aeebc598ecc06f4ef74f474a55cb2ade41285b59",
+      "working_tree_filtered_blob": "aeebc598ecc06f4ef74f474a55cb2ade41285b59",
+      "match": true
+    },
+    {
+      "path": "evidence/T08/2026-11-04-local-fixture-requests.jsonl",
+      "pinned_blob": "7272e0bdb8f3a7a5f414e02abe09e877f7bee8af",
+      "current_blob": "7272e0bdb8f3a7a5f414e02abe09e877f7bee8af",
+      "working_tree_filtered_blob": "7272e0bdb8f3a7a5f414e02abe09e877f7bee8af",
+      "match": true
+    }
+  ],
+  "all_16_pinned_blobs_match": true,
+  "original_persistent_samples": {
+    "rows": 4,
+    "stage": "local-fixture",
+    "status": 200,
+    "overwritten": false
+  },
+  "fixtures": {
+    "statistics_groups": 4,
+    "future_http_cases_not_executed": 8
+  },
+  "source_hash_explanation": {
+    "current_raw_sha256": "f50fea5190314216ffcffb4c175d0a0dcf9dd5c57c2c69449e4ef73cb0856947",
+    "current_lf_sha256": "f1f20663612aa3343f5bce9f9acc749da2c8def46eea8e369fdcdc7bfd7e5d10",
+    "Marina_declared_sha256": "f1f20663612aa3343f5bce9f9acc749da2c8def46eea8e369fdcdc7bfd7e5d10",
+    "difference": "CRLF versus LF only; full AST equals original source snapshot"
+  },
+  "cloud_operations": false,
+  "business_acceptance": false,
+  "target_python311_tested": false
+}
