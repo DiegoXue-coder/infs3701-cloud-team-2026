@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T11:05:15+00:00",
+  "generated_at": "2026-11-06T11:09:20+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T05-6553946721",
-      "task_id": "T05",
-      "request_comment_id": 6553946721,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-01T05:31:09Z",
-      "processed_at": "2026-11-01T05:31:37+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Verified actual service permissions, new DynamoDB ACTIVE table and old instance role read; HTTPS/domain unresolved.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553946721",
-      "submission": {
-        "path": "deliveries/T05/2026-11-01-foundation-progress.json",
-        "commit": "b31298800bcbe4671dad47162b616ac1cae41941",
-        "manifest_sha": "e7fdfa1feaf658a8a2efe10b5a3a2554d0a3ab92",
-        "run_log": "evidence/T06/2026-11-01-foundation-execution.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-01T05:29:23+00:00",
-        "test_count": 2,
-        "evidence_count": 4,
-        "evidence_preview": [
-          "evidence/T06/2026-11-01-foundation-execution.log",
-          "project/aws-resources.json",
-          "docs/aws-owner-handoff.md"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6553950531"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T06-6553946871",
@@ -312,6 +281,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624798454"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T08-6683430965",
+      "task_id": "T08",
+      "request_comment_id": 6683430965,
+      "actor": "DiegoXue-coder",
+      "command": "approve",
+      "requested_at": "2026-11-06T11:08:49Z",
+      "processed_at": "2026-11-06T11:09:16+00:00",
+      "outcome": "accepted",
+      "status_before": "review",
+      "status_after": "done",
+      "summary": "T08 已更新为「已完成」。复核通过：T08准备阶段通过。经DiegoXue-coder本人授权，由Codex在A工作区独立复跑：10项统计+7项loopback HTTP工具测试全部通过；告警11字段及资源维度一致；交付和15份证据共16个Git blob与提交回执匹配；原4条样本保留且标为local-fixture。已核对core测试矩阵、监控/恢复方案、成本假设和报告/视频框架，未发现阻止T08批准的缺陷。源码哈希差异已证实为CRLF/LF差异，AST一致。详细复核及日志见 https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/6147774/docs/reviews/T08-2026-11-06-DiegoXue-coder.md 。这是AI协助的A账号复核，不声称真人手工执行；仅批准准备范围，不代表Python3.11、真实AWS业务读写、HTTPS、年度报价或视频已验收。后续按T07/T09及C相关任务继续。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6683430965",
+      "submission": {
+        "path": "deliveries/T08/2026-11-04-Marina057.json",
+        "commit": "cb07163da0e2beb69797902b433efd8999fd4849",
+        "manifest_sha": "629b8a2751783876f6e18ef3e96a81e8e381135b",
+        "run_log": "evidence/T08/2026-11-04-statistics-run.log",
+        "verification_result": "pass",
+        "tested_at": "2026-11-04T17:09:13+11:00",
+        "test_count": 4,
+        "evidence_count": 15,
+        "evidence_preview": [
+          "tests/c_t08/fixtures.json",
+          "tests/c_t08/test_statistics.py",
+          "tests/c_t08/test_request_log.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6683439053"
     }
   ],
   "tasks": [
@@ -868,7 +868,7 @@
         "C 整理 CloudWatch 指标、阈值、告警触发和恢复方案，以及成本计算器的服务/用量假设。"
       ],
       "task_id": "T08",
-      "status": "review",
+      "status": "done",
       "owner": "Marina057",
       "owner_role": "C",
       "submission": {
@@ -922,20 +922,21 @@
           }
         ]
       },
-      "reviewer": null,
-      "last_update": "2026-11-04T07:02:28Z",
-      "last_note": "已提交真实文件，等待另一成员检查：T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptance matrix, monitoring/recovery plan, cost assumptions, report framework and 60-second storyboard. This is preparation only; no AWS or final business acceptance is claimed. Initial work preceded role enrollment; original timestamps are preserved. Marina057 subsequently completed doctor, join C and confirmed T08 claim receipt R-T08-6624693113.",
+      "reviewer": "DiegoXue-coder",
+      "last_update": "2026-11-06T11:08:49Z",
+      "last_note": "复核通过：T08准备阶段通过。经DiegoXue-coder本人授权，由Codex在A工作区独立复跑：10项统计+7项loopback HTTP工具测试全部通过；告警11字段及资源维度一致；交付和15份证据共16个Git blob与提交回执匹配；原4条样本保留且标为local-fixture。已核对core测试矩阵、监控/恢复方案、成本假设和报告/视频框架，未发现阻止T08批准的缺陷。源码哈希差异已证实为CRLF/LF差异，AST一致。详细复核及日志见 https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/6147774/docs/reviews/T08-2026-11-06-DiegoXue-coder.md 。这是AI协助的A账号复核，不声称真人手工执行；仅批准准备范围，不代表Python3.11、真实AWS业务读写、HTTPS、年度报价或视频已验收。后续按T07/T09及C相关任务继续。",
       "processed_comments": [
         6624693113,
-        6624791560
+        6624791560,
+        6683430965
       ],
       "last_receipt": {
-        "receipt_id": "R-T08-6624791560",
-        "command": "submit",
+        "receipt_id": "R-T08-6683430965",
+        "command": "approve",
         "outcome": "accepted",
-        "status_after": "review",
-        "processed_at": "2026-11-04T07:02:54+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624798454"
+        "status_after": "done",
+        "processed_at": "2026-11-06T11:09:16+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6683439053"
       },
       "issue_number": 8,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8",
