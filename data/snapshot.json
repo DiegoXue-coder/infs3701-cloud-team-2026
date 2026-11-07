@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T04:30:07+00:00",
+  "generated_at": "2026-11-07T04:33:32+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T09-6553947047",
-      "task_id": "T09",
-      "request_comment_id": 6553947047,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-01T05:31:12Z",
-      "processed_at": "2026-11-01T05:31:48+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Built clean encrypted Python3.11.18 runtime image, stopped builder, prepared offline-tested launch script; no business/private compute deployment yet.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553947047",
-      "submission": {
-        "path": "deliveries/T09/2026-11-01-foundation-progress.json",
-        "commit": "b31298800bcbe4671dad47162b616ac1cae41941",
-        "manifest_sha": "8c4c6354387ac658cc94fff44d7177f0e9634489",
-        "run_log": "evidence/T06/2026-11-01-foundation-execution.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-01T05:29:23+00:00",
-        "test_count": 2,
-        "evidence_count": 9,
-        "evidence_preview": [
-          "evidence/T06/2026-11-01-foundation-execution.log",
-          "deployment/runtime-builder.sh",
-          "deployment/create-runtime-builder.py"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6553951968"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T05-6554220789",
@@ -298,6 +267,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702261138",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702264513"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T07-6702291820",
+      "task_id": "T07",
+      "request_comment_id": 6702291820,
+      "actor": "Alex4325Li",
+      "command": "report",
+      "requested_at": "2026-11-07T04:33:02Z",
+      "processed_at": "2026-11-07T04:33:28+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T07 已更新为「进行中」。实际上报（partial，尚未完成）：交付 Reading Tracker 首个发布候选版，包含本地模式、DynamoDB 分页读取和条件写入、健康接口、实例标签、部署及回滚步骤。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702291820",
+      "submission": {
+        "path": "deliveries/T07/2026-11-07-Alex4325Li.json",
+        "commit": "06c2292cdf0aca80f050709b8172fac3595b54cc",
+        "manifest_sha": "bed4c74bb29ff0ba698e0e244020e4e7bb1d3b0a",
+        "run_log": "evidence/T07/2026-11-07-http-smoke.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T04:32:22+00:00",
+        "test_count": 4,
+        "evidence_count": 9,
+        "evidence_preview": [
+          "app/reading_tracker.py",
+          "app/README.md",
+          "deployment/runtime-requirements.lock"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702296296"
     }
   ],
   "tasks": [
@@ -818,18 +818,64 @@
       "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-07T04:29:43Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-07T04:33:02Z",
+      "last_note": "实际上报（partial，尚未完成）：交付 Reading Tracker 首个发布候选版，包含本地模式、DynamoDB 分页读取和条件写入、健康接口、实例标签、部署及回滚步骤。",
       "processed_comments": [
-        6702261138
+        6702261138,
+        6702291820
       ],
       "last_receipt": {
-        "receipt_id": "R-T07-6702261138",
-        "command": "claim",
+        "receipt_id": "R-T07-6702291820",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-07T04:30:03+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702264513"
+        "processed_at": "2026-11-07T04:33:28+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702296296"
+      },
+      "last_report": {
+        "path": "deliveries/T07/2026-11-07-Alex4325Li.json",
+        "commit": "06c2292cdf0aca80f050709b8172fac3595b54cc",
+        "manifest_sha": "bed4c74bb29ff0ba698e0e244020e4e7bb1d3b0a",
+        "evidence_shas": {
+          "app/reading_tracker.py": "6885a96062a25b27dfd599470d0ab8d79ccb4760",
+          "app/README.md": "76efded0f1397f3ada70b57a8d994f9dd6efa7b1",
+          "deployment/runtime-requirements.lock": "8f8587e5abc7d0c7c066774aa8de09dca44b13e3",
+          "tests/test_reading_tracker.py": "43f27fd9897550b912902f2a513821022475d8c9",
+          "evidence/T07/2026-11-07-offline-tests.log": "0245e55574fa3e52fa1e496db8fd8a076319ee30",
+          "evidence/T07/2026-11-07-http-smoke.log": "60818a16990b10af1634ca4245dfc488d4a50fb2",
+          "evidence/T07/2026-11-07-c-regression-loopback.log": "0166f4c005ab951bfec953f780b86ac1fd6223de",
+          "evidence/T07/2026-11-07-wsgi-smoke.log": "1653309d822b418a219efc92ce3628c52b3fe0a9",
+          "evidence/T07/2026-11-07-c-regression.log": "067fce8f7ddb93dcba85394f2412856fa5e1411d"
+        },
+        "summary": "交付 Reading Tracker 首个发布候选版，包含本地模式、DynamoDB 分页读取和条件写入、健康接口、实例标签、部署及回滚步骤。",
+        "tested_at": "2026-11-07T04:32:22+00:00",
+        "submitted_by": "Alex4325Li",
+        "environment": "macOS arm64, Python 3.9.6 virtual environment, local HTTP and botocore Stubber",
+        "verification_result": "partial",
+        "run_log": "evidence/T07/2026-11-07-http-smoke.log",
+        "test_count": 4,
+        "test_summary": [
+          {
+            "action": "本地读写、输入约束、DynamoDB Stubber 与错误处理",
+            "expected": "检查通过",
+            "actual": "4 项通过，DynamoDB 请求由 Stubber 拦截"
+          },
+          {
+            "action": "从入口启动应用并通过回环 HTTP 新增及读回",
+            "expected": "检查通过",
+            "actual": "GET /health 200，实例头正确，新增后读回虚构记录及 50% 进度"
+          },
+          {
+            "action": "重跑 C 的原统计和 HTTP 记录测试",
+            "expected": "检查通过",
+            "actual": "授权使用回环端口后 17 项通过，首次受沙箱限制的日志保留"
+          },
+          {
+            "action": "制作两文件归档并导入 app:app",
+            "expected": "检查通过",
+            "actual": "WSGI 入口导入成功，健康接口 200，未初始化 SDK"
+          }
+        ]
       },
       "issue_number": 7,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7",
