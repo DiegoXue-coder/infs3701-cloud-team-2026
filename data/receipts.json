@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T04:55:23+00:00",
+  "generated_at": "2026-11-07T04:57:48+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -705,6 +705,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702485028",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702504356"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T12-6702523570",
+      "task_id": "T12",
+      "request_comment_id": 6702523570,
+      "actor": "Marina057",
+      "command": "report",
+      "requested_at": "2026-11-07T04:57:23Z",
+      "processed_at": "2026-11-07T04:57:45+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T12 已更新为「进行中」。实际上报（partial，尚未完成）：独立复核 T07 候选版与 T04 接口约定，复跑 4 项应用测试及 17 项 T08 回归，并在实际本地 HTTP 服务核对 8 项表单输入、健康接口、业务读回与采样。提交 T12 联调、监控取证和成本假设增补。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702523570",
+      "submission": {
+        "path": "deliveries/T12/2026-11-07-Marina057.json",
+        "commit": "e4ea2026dc8cc627831371e12b9b8a36f919062b",
+        "manifest_sha": "b9055ddc196a6d8b969cfb516d84f088ff7a371c",
+        "run_log": "evidence/T12/2026-11-07-Marina057-local-http.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T15:54:56+11:00",
+        "test_count": 4,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "docs/c-t12-business-validation.md",
+          "tests/smoke_t12_http.py",
+          "evidence/T12/2026-11-07-Marina057-local-http.log"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702526775"
     }
   ]
 }

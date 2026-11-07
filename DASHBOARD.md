@@ -1,6 +1,6 @@
 # 三人项目进度看板
 
-最后同步：**2026-11-07 15:55 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
+最后同步：**2026-11-07 15:57 AEDT** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)
 
 已完成并复核 **1 / 23** 项；等检查 **0** 项；被卡住 **0** 项。
 
@@ -24,6 +24,7 @@
 
 | 任务 / 操作 | 操作者 | 处理与状态 | 证据与回执 |
 | --- | --- | --- | --- |
+| T12 / report | Marina057 | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/e4ea2026dc8cc627831371e12b9b8a36f919062b/evidence/T12/2026-11-07-Marina057-local-http.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702526775) |
 | T12 / claim | Marina057 | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702504356) |
 | T07 / report | Alex4325Li | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/06c2292cdf0aca80f050709b8172fac3595b54cc/evidence/T07/2026-11-07-http-smoke.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702296296) |
 | T07 / claim | Alex4325Li | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702264513) |
@@ -33,7 +34,6 @@
 | T04 / report | Alex4325Li | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/5a8bf70d584b1c5d16eebc8d45d48256a374f4d1/evidence/T04/2026-11-03-baseline.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598777623) |
 | T04 / claim | Alex4325Li | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598745262) |
 | T09 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/bb3be2edc882e79c4147006d2d84b8c0610c7b5e/evidence/T09/2026-11-01-maintenance-validation.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554228452) |
-| T06 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/bb3be2edc882e79c4147006d2d84b8c0610c7b5e/evidence/T09/2026-11-01-final-readback.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6#issuecomment-6554227245) |
 
 ## 进行中 · 7
 
@@ -45,7 +45,7 @@
 | [T06 设计并准备双 AZ 网络](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/6) | DiegoXue-coder / A | 2026-11-03 | 完成前需 T04,T05；实际上报（partial，尚未完成）：Created and read back actual two-AZ ALB/private-host/gateway/route/security-group foundation; scoped HTTPS service paths passed from both private hosts; unused SSH paths closed. |
 | [T07 旧应用接入托管数据库](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7) | Alex4325Li / B | 2026-11-03 | 完成前需 T04；实际上报（partial，尚未完成）：交付 Reading Tracker 首个发布候选版，包含本地模式、DynamoDB 分页读取和条件写入、健康接口、实例标签、部署及回滚步骤。 |
 | [T09 第一台应用部署与真实读写](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9) | DiegoXue-coder / A | 2026-11-04 | 完成前需 T06,T07；实际上报（partial，尚未完成）：Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deploye |
-| [T12 分流测试和监控页面](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12) | Marina057 / C | 2026-11-06 | 完成前需 T10；已认领 |
+| [T12 分流测试和监控页面](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12) | Marina057 / C | 2026-11-06 | 完成前需 T10；实际上报（partial，尚未完成）：独立复核 T07 候选版与 T04 接口约定，复跑 4 项应用测试及 17 项 T08 回归，并在实际本地 HTTP 服务核对 8 项表单输入、健康接口、业务读回与采样。提交 T12 联调、监控取证和成本假设增补。 |
 
 ## 被卡住 · 0
 
