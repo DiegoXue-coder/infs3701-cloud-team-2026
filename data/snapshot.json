@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T04:33:32+00:00",
+  "generated_at": "2026-11-07T04:55:23+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T05-6554220789",
-      "task_id": "T05",
-      "request_comment_id": 6554220789,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-01T06:04:09Z",
-      "processed_at": "2026-11-01T06:04:44+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T05 已更新为「进行中」。实际上报（partial，尚未完成）：Verified Lab role access on both private hosts, encrypted roots and restricted paths; OpenTunnel denied, alternative boot diagnostics passed. HTTPS/domain unresolved; displayed delayed Lab usage $1.30/$50.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6554220789",
-      "submission": {
-        "path": "deliveries/T05/2026-11-01-DiegoXue-coder-foundation-verified.json",
-        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
-        "manifest_sha": "7b95ee2c486c3c931c5aca0209807e1dce6b0599",
-        "run_log": "evidence/T09/2026-11-01-final-readback.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-01T06:01:13.014386+00:00",
-        "test_count": 3,
-        "evidence_count": 16,
-        "evidence_preview": [
-          "project/aws-resources.json",
-          "project/handoffs.json",
-          "project/next-deployment.json"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/5#issuecomment-6554226019"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T06-6554220950",
@@ -298,6 +267,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702296296"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T12-6702485028",
+      "task_id": "T12",
+      "request_comment_id": 6702485028,
+      "actor": "Marina057",
+      "command": "claim",
+      "requested_at": "2026-11-07T04:53:13Z",
+      "processed_at": "2026-11-07T04:53:33+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T12 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702485028",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702504356"
     }
   ],
   "tasks": [
@@ -1240,14 +1226,24 @@
         "C 准备具体监控参数及验证步骤，A 在唯一获准的 Lab 身份下配置；C 负责观察结果、检查及整理真实证据。"
       ],
       "task_id": "T12",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "Marina057",
+      "owner_role": "C",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-07T04:53:13Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6702485028
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T12-6702485028",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-07T04:53:33+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702504356"
+      },
       "issue_number": 12,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12",
       "waiting_for": [
