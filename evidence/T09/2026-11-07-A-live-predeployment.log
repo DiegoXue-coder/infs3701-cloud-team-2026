@@ -1,0 +1,28 @@
+Captured live AWS output; read-only inspection at 2026-11-07T12:01:45Z.
+entry area (settable) CloudShell terminal input, ID: e4f765af-ffb1-4dc8-ae18-519e1da4cc32, Value: ~ $
+> print('"'"'INSPECTION_DONE'"'"')'
+CHECK_TIME "2026-11-07T12:01:45.202437+00:00"
+CHECK_ACCOUNT "214018170594"
+CHECK_HOSTS [{"id":"i-00572a14ca8b71156","state":"running","type":"t3.micro","az":"us-east-1a","private":"10.37.10.88","public":null,"ami":"ami-03616f6b53c85f036","role":"arn:aws:iam::214018170594:instance-profile/LabInstanceProfile","tags":[{"Key":"Project","Value":"infs3701-t
+eam"},{"Key":"Name","Value":"infs3701-team-app-a"}]},{"id":"i-0081259c52a32e051","state":"running","type":"t3.micro","az":"us-east-1b","private":"10.37.11.110","public":null,"ami":"ami-03616f6b53c85f036","role":"arn:aws:iam::214018170594:instance-profile/LabInstanceProfile","ta
+gs":[{"Key":"Project","Value":"infs3701-team"},{"Key":"Name","Value":"infs3701-team-app-b"}]}]
+CHECK_TARGETS [{"Target":{"Id":"i-0081259c52a32e051","Port":8000},"HealthCheckPort":"8000","TargetHealth":{"State":"healthy"},"AdministrativeOverride":{"State":"no_override","Reason":"AdministrativeOverride.NoOverride","Description":"No override is currently active on target"}}
+,{"Target":{"Id":"i-00572a14ca8b71156","Port":8000},"HealthCheckPort":"8000","TargetHealth":{"State":"healthy"},"AdministrativeOverride":{"State":"no_override","Reason":"AdministrativeOverride.NoOverride","Description":"No override is currently active on target"}}]
+CHECK_ALB [{"state":{"Code":"active"},"dns":"infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com","scheme":"internet-facing"}]
+CHECK_TABLE {"KeySchema":[{"AttributeName":"record_id","KeyType":"HASH"}],"TableStatus":"ACTIVE","ItemCount":0,"BillingModeSummary":{"BillingMode":"PAY_PER_REQUEST","LastUpdateToPayPerRequestDateTime":"2026-11-01 05:02:29.124000+00:00"},"OnDemandThroughput":{"MaxReadRequestUnit
+s":10,"MaxWriteRequestUnits":10}}
+CHECK_ALARM [{"name":"infs3701-team-healthy-targets-below-two","state":"OK","reason":"Threshold Crossed: 1 out of the last 2 datapoints [2.0 (01/11/26 05:57:00)] was not less than the threshold (2.0) (minimum 1 datapoint for ALARM -> OK transition).","actions":[]}]
+CHECK_RELEASES [{"key":"releases/infrastructure/2026-11-01/probe.txt","bytes":65}]
+CHECK_ENDPOINTS [{"id":"vpce-0edea5c7a05bc729d","state":"available","service":"com.amazonaws.us-east-1.s3"},{"id":"vpce-028353eb0e050df0a","state":"available","service":"com.amazonaws.us-east-1.dynamodb"}]
+INSPECTION_DONE
+~ $
+entry area (settable) CloudShell terminal input, ID: e4f765af-ffb1-4dc8-ae18-519e1da4cc32, Value: ~ $
+> print('"'"'LIVE_CHECK_DONE'"'"')'
+LIVE {"path": "/health", "status": 200, "instance": "az-b", "body": "{\"instance\":\"az-b\",\"stage\":\"infrastructure-only\",\"status\":\"ok\"}\n"}
+LIVE {"path": "/health", "status": 200, "instance": "az-b", "body": "{\"instance\":\"az-b\",\"stage\":\"infrastructure-only\",\"status\":\"ok\"}\n"}
+LIVE {"path": "/health", "status": 200, "instance": "az-a", "body": "{\"instance\":\"az-a\",\"stage\":\"infrastructure-only\",\"status\":\"ok\"}\n"}
+LIVE {"path": "/health", "status": 200, "instance": "az-a", "body": "{\"instance\":\"az-a\",\"stage\":\"infrastructure-only\",\"status\":\"ok\"}\n"}
+LIVE {"path": "/", "status": 200, "instance": "az-b", "body": "<h1>INFS3701 infrastructure ready</h1><p>Reading Tracker application has not been deployed here yet.</p>"}
+DB_COUNT {"count": 0, "more_pages": false}
+LIVE_CHECK_DONE
+~ $

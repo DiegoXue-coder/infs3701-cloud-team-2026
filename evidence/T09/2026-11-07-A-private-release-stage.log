@@ -1,0 +1,10 @@
+Actual CloudShell output captured on 2026-11-07. No host rollout performed.
+STAGED app.tar.gz 4350 fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd
+STAGED plan.json 798 b30ff4630970dbbdd9bf24d269201d2f8bc4e51756db8b36aef6910742bfea7c
+STAGED business-host.py 6010 39702a2b40e29feb1b64b4d53159a1a54a402b4d48b5434c1e1412ab6f317228
+STAGED release-business.py 6539 d0b83deeec5e03c0e39def7cb6c320f16a5ee5057dece4bab48da6ec0091417b
+PRIVATE_ARCHIVE_VERIFIED=fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd
+LINUX_BOOT_SYNTAX_OK release 7241
+LINUX_BOOT_SYNTAX_OK rollback 7242
+READY: commit 06c2292; private S3 archive verified; no host changed.
+PENDING: public HTTP demo list/add; fictional data only; TLS unresolved.

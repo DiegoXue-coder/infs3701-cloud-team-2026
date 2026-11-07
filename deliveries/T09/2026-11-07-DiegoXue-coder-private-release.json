@@ -1,0 +1,31 @@
+{
+  "schema_version": 2,
+  "task_id": "T09",
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-07T12:16:51+00:00",
+  "environment": "Authenticated Learner Lab account 214018170594/us-east-1 via CloudShell; local Windows/Python3.12 safety tests; CloudShell bash syntax checks. Existing hosts unchanged.",
+  "summary": "Confirmed live two-host foundation and empty DynamoDB; built pinned 06c2292 archive, uploaded privately and verified hash; prepared reviewed per-boot release/rollback tooling. Public writable demo rollout awaits specific scope confirmation.",
+  "tests": [
+    {"action": "Live AWS read-only inventory and ALB GETs", "expected": "Two healthy private targets and known placeholder", "actual": "Both running/healthy; /health200 on az-a and az-b, infrastructure-only; home200 placeholder; real consistent COUNT0, no next page; endpoints available."},
+    {"action": "Build exact Git-object release", "expected": "Only pinned app.py and runtime lock; reproducible archive hash", "actual": "Two-file 4350-byte package, fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd."},
+    {"action": "Three offline safety tests", "expected": "Payload parse/size, health-failure restore/block, tampered archive rejection", "actual": "3 passed; mocked host service/AWS, no live rollback claim."},
+    {"action": "Private S3 upload and readback", "expected": "Existing bucket scoped release key; SHA256 match", "actual": "PRIVATE_ARCHIVE_VERIFIED exact expected SHA; no public ACL or course materials in archive."},
+    {"action": "CloudShell bash syntax check of release and rollback MIME payloads", "expected": "bash -n succeeds; under 16384 bytes", "actual": "release7241 bytes and rollback7242 bytes, both LINUX_BOOT_SYNTAX_OK. This does not execute the host deployment."}
+  ],
+  "evidence": [
+    "docs/business-rollout-2026-11-07.md",
+    "project/business-release-plan.json",
+    "deployment/business-host.py",
+    "deployment/release-business.py",
+    "tests/test_release_business.py",
+    "evidence/T09/2026-11-07-A-live-predeployment.log",
+    "evidence/T09/2026-11-07-A-release-safety-tests.log",
+    "evidence/T09/2026-11-07-A-private-release-stage.log",
+    "evidence/T09/2026-11-07-A-release-ready.png"
+  ],
+  "run_log": "evidence/T09/2026-11-07-A-private-release-stage.log",
+  "verification_result": "partial",
+  "limitations": "No private-host installation, cloud business writes, cross-instance persistence, live rollback or C independent acceptance yet. Public HTTP unauthenticated list/add scope requires action-time confirmation; HTTPS unresolved. Alarm OK reason is old, not a current metric-freshness proof.",
+  "next_step": "After holder confirms concrete public demo scope, deploy A then B with real business GET checks, fictional write/cross-instance read/restart persistence, and hand actual version/URL/tags to C.",
+  "ai_use": "Codex inspected GitHub/live AWS and authored/reviewed operator tooling with real offline and CloudShell checks on behalf of DiegoXue-coder. No other member review or cloud deployment fabricated."
+}
