@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T12:43:05+00:00",
+  "generated_at": "2026-11-07T12:55:55+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T08-6683430965",
-      "task_id": "T08",
-      "request_comment_id": 6683430965,
-      "actor": "DiegoXue-coder",
-      "command": "approve",
-      "requested_at": "2026-11-06T11:08:49Z",
-      "processed_at": "2026-11-06T11:09:16+00:00",
-      "outcome": "accepted",
-      "status_before": "review",
-      "status_after": "done",
-      "summary": "T08 已更新为「已完成」。复核通过：T08准备阶段通过。经DiegoXue-coder本人授权，由Codex在A工作区独立复跑：10项统计+7项loopback HTTP工具测试全部通过；告警11字段及资源维度一致；交付和15份证据共16个Git blob与提交回执匹配；原4条样本保留且标为local-fixture。已核对core测试矩阵、监控/恢复方案、成本假设和报告/视频框架，未发现阻止T08批准的缺陷。源码哈希差异已证实为CRLF/LF差异，AST一致。详细复核及日志见 https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/6147774/docs/reviews/T08-2026-11-06-DiegoXue-coder.md 。这是AI协助的A账号复核，不声称真人手工执行；仅批准准备范围，不代表Python3.11、真实AWS业务读写、HTTPS、年度报价或视频已验收。后续按T07/T09及C相关任务继续。",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6683430965",
-      "submission": {
-        "path": "deliveries/T08/2026-11-04-Marina057.json",
-        "commit": "cb07163da0e2beb69797902b433efd8999fd4849",
-        "manifest_sha": "629b8a2751783876f6e18ef3e96a81e8e381135b",
-        "run_log": "evidence/T08/2026-11-04-statistics-run.log",
-        "verification_result": "pass",
-        "tested_at": "2026-11-04T17:09:13+11:00",
-        "test_count": 4,
-        "evidence_count": 15,
-        "evidence_preview": [
-          "tests/c_t08/fixtures.json",
-          "tests/c_t08/test_statistics.py",
-          "tests/c_t08/test_request_log.py"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6683439053"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T07-6702261138",
@@ -298,6 +267,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706977980"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T12-6707213440",
+      "task_id": "T12",
+      "request_comment_id": 6707213440,
+      "actor": "Marina057",
+      "command": "report",
+      "requested_at": "2026-11-07T12:55:29Z",
+      "processed_at": "2026-11-07T12:55:52+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T12 已更新为「进行中」。实际上报（partial，尚未完成）：独立验证正式业务入口及跨实例读回。唯一虚构记录 POST 302，az-a 和 az-b 均读回。业务首页 30 次均 200，两标签各 15 次。附 AWS Calculator 成本草案、60 秒脚本与 A/C 联合实验交接。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707213440",
+      "submission": {
+        "path": "deliveries/T12/2026-11-07-Marina057-cloud.json",
+        "commit": "e2dcc581991e0b97f593c058c9fa3a3cf013b643",
+        "manifest_sha": "76fb79a42ccb173c72087b19410f63a9d22a6a1b",
+        "run_log": "evidence/T12/2026-11-07-Marina057-cloud-run.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T23:44:05+11:00",
+        "test_count": 4,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "evidence/T12/2026-11-07-Marina057-cloud-run.log",
+          "evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl",
+          "scripts/c_t12_live.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707216949"
     }
   ],
   "tasks": [
@@ -1320,59 +1320,60 @@
       "owner_role": "C",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-07T04:57:23Z",
-      "last_note": "实际上报（partial，尚未完成）：独立复核 T07 候选版与 T04 接口约定，复跑 4 项应用测试及 17 项 T08 回归，并在实际本地 HTTP 服务核对 8 项表单输入、健康接口、业务读回与采样。提交 T12 联调、监控取证和成本假设增补。",
+      "last_update": "2026-11-07T12:55:29Z",
+      "last_note": "实际上报（partial，尚未完成）：独立验证正式业务入口及跨实例读回。唯一虚构记录 POST 302，az-a 和 az-b 均读回。业务首页 30 次均 200，两标签各 15 次。附 AWS Calculator 成本草案、60 秒脚本与 A/C 联合实验交接。",
       "processed_comments": [
         6702485028,
-        6702523570
+        6702523570,
+        6707213440
       ],
       "last_receipt": {
-        "receipt_id": "R-T12-6702523570",
+        "receipt_id": "R-T12-6707213440",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-07T04:57:45+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702526775"
+        "processed_at": "2026-11-07T12:55:52+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707216949"
       },
       "last_report": {
-        "path": "deliveries/T12/2026-11-07-Marina057.json",
-        "commit": "e4ea2026dc8cc627831371e12b9b8a36f919062b",
-        "manifest_sha": "b9055ddc196a6d8b969cfb516d84f088ff7a371c",
+        "path": "deliveries/T12/2026-11-07-Marina057-cloud.json",
+        "commit": "e2dcc581991e0b97f593c058c9fa3a3cf013b643",
+        "manifest_sha": "76fb79a42ccb173c72087b19410f63a9d22a6a1b",
         "evidence_shas": {
-          "docs/c-t12-business-validation.md": "41617b016e5ddd71533d8904b8a5cc3751f7196e",
-          "tests/smoke_t12_http.py": "2f9d5316928322f21c4ccef9545940cc61add02c",
-          "evidence/T12/2026-11-07-Marina057-local-http.log": "c5f7196e40d7eb6f8bec77321aa84ea21153e1c5",
-          "evidence/T12/2026-11-07-Marina057-local-samples.jsonl": "a456938d1bcce10757b35da11cd97cb62e4c91ce",
-          "evidence/T12/2026-11-07-Marina057-t07-regression.log": "40b4834ffa01859cf330fc083f2122535d72c0a6",
-          "evidence/T12/2026-11-07-Marina057-t08-regression.log": "32fdbfc2b435cff145b0f093776c198aadf1477d"
+          "evidence/T12/2026-11-07-Marina057-cloud-run.log": "12df99a30b8c4b4e6e2b104ac7307d47478add2a",
+          "evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl": "86affd35b5e863f49ced4a2e837511b2f7e9fe7c",
+          "scripts/c_t12_live.py": "d1ae2635c1b71aecc7a4ddd9597a3dd7a4715f2d",
+          "docs/c-t12-cloud-validation-2026-11-07.md": "81222b2bab2e65f45355e0017e2d757d4da5364c",
+          "docs/c-t18-calculator-draft-2026-11-07.md": "b939d181812247b9eaf3c6b11e372935f001e935",
+          "docs/c-t20-video-script-2026-11-07.md": "d24ca9a7f4f3e810812068cd94d099d9e9b2e4d8"
         },
-        "summary": "独立复核 T07 候选版与 T04 接口约定，复跑 4 项应用测试及 17 项 T08 回归，并在实际本地 HTTP 服务核对 8 项表单输入、健康接口、业务读回与采样。提交 T12 联调、监控取证和成本假设增补。",
-        "tested_at": "2026-11-07T15:54:56+11:00",
+        "summary": "独立验证正式业务入口及跨实例读回。唯一虚构记录 POST 302，az-a 和 az-b 均读回。业务首页 30 次均 200，两标签各 15 次。附 AWS Calculator 成本草案、60 秒脚本与 A/C 联合实验交接。",
+        "tested_at": "2026-11-07T23:44:05+11:00",
         "submitted_by": "Marina057",
-        "environment": "Windows and Python 3.12.14 with the pinned runtime dependencies. Reading Tracker candidate 06c2292, local loopback HTTP and simulated DynamoDB unit tests.",
+        "environment": "Published Reading Tracker via HTTP ALB in us-east-1, release 06c2292 per the deployment handoff. Independent Windows client, Python 3.12.14, one fictional business write.",
         "verification_result": "partial",
-        "run_log": "evidence/T12/2026-11-07-Marina057-local-http.log",
+        "run_log": "evidence/T12/2026-11-07-Marina057-cloud-run.log",
         "test_count": 4,
         "test_summary": [
           {
-            "action": "复跑 T07 应用及 DynamoDB 模拟测试",
-            "expected": "条件写入、分页读取、存储异常与健康行为符合接口",
-            "actual": "4 项通过"
+            "action": "核对两实例业务健康",
+            "expected": "HTTP 200、reading-tracker 且标签一致",
+            "actual": "az-a 和 az-b 都通过"
           },
           {
-            "action": "复跑 T08 回归",
-            "expected": "原统计及采样器测试继续通过",
-            "actual": "17 项通过"
+            "action": "核对原记录并进行一次虚构写入",
+            "expected": "原记录可从两台读回，新增一次返回 302，状态、页数、评分在两台一致",
+            "actual": "原记录与新增记录均在两台各唯一读回，az-b 写入返回 302"
           },
           {
-            "action": "使用 T08 夹具测试候选版真实本地 HTTP 服务",
-            "expected": "健康接口返回 200 及匹配的标签，7 项非法输入 400，1 项有效输入 302，页面读回对应记录和页数",
-            "actual": "全部符合，读回 1 条虚构记录和 10 页"
+            "action": "低频采样正式业务首页",
+            "expected": "30 次请求返回 200，两台均提供服务，标签完整",
+            "actual": "30/30 HTTP 200，az-a 15、az-b 15，0 失败、0 缺失标签"
           },
           {
-            "action": "使用原采样器访问本地业务页",
-            "expected": "4 条 2xx 且均含预期的本地实例标签",
-            "actual": "4 条成功，缺失标签 0，全部标为 t12-local-candidate"
+            "action": "在 AWS Pricing Calculator 填写 us-east-1 六项估算",
+            "expected": "区域和用量可核对并得到年度基准费用",
+            "actual": "计算器显示 USD 40.44 每月，USD 485.28 每年，详细假设已转录"
           }
         ]
       },

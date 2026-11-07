@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T12:43:05+00:00",
+  "generated_at": "2026-11-07T12:55:55+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -877,6 +877,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706977980"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T12-6707213440",
+      "task_id": "T12",
+      "request_comment_id": 6707213440,
+      "actor": "Marina057",
+      "command": "report",
+      "requested_at": "2026-11-07T12:55:29Z",
+      "processed_at": "2026-11-07T12:55:52+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T12 已更新为「进行中」。实际上报（partial，尚未完成）：独立验证正式业务入口及跨实例读回。唯一虚构记录 POST 302，az-a 和 az-b 均读回。业务首页 30 次均 200，两标签各 15 次。附 AWS Calculator 成本草案、60 秒脚本与 A/C 联合实验交接。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707213440",
+      "submission": {
+        "path": "deliveries/T12/2026-11-07-Marina057-cloud.json",
+        "commit": "e2dcc581991e0b97f593c058c9fa3a3cf013b643",
+        "manifest_sha": "76fb79a42ccb173c72087b19410f63a9d22a6a1b",
+        "run_log": "evidence/T12/2026-11-07-Marina057-cloud-run.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T23:44:05+11:00",
+        "test_count": 4,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "evidence/T12/2026-11-07-Marina057-cloud-run.log",
+          "evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl",
+          "scripts/c_t12_live.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707216949"
     }
   ]
 }
