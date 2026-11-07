@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T12:21:27+00:00",
+  "generated_at": "2026-11-07T12:31:12+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -24,30 +24,13 @@
       "table": "infs3701-team-books",
       "region": "us-east-1",
       "key": "record_id:String",
-      "status": "table_active_application_integration_pending",
+      "status": "business_deployed_A_read_write_restart_verified_independent_review_pending",
       "decision_by": "DiegoXue-coder project operator",
       "rationale": "Independent document records without relational joins; small irregular lab workload; managed resilience and pay-per-request mode. Application must avoid unbounded scans for larger workloads."
     }
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T08-6624693113",
-      "task_id": "T08",
-      "request_comment_id": 6624693113,
-      "actor": "Marina057",
-      "command": "claim",
-      "requested_at": "2026-11-04T06:56:50Z",
-      "processed_at": "2026-11-04T06:57:09+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T08 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624693113",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624699434"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T08-6624791560",
@@ -284,6 +267,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706866365",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706869840"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6706965677",
+      "task_id": "T09",
+      "request_comment_id": 6706965677,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-07T12:30:44Z",
+      "processed_at": "2026-11-07T12:31:10+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706965677",
+      "submission": {
+        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-business-deployed.json",
+        "commit": "9aaa465e3249e32b64ff2f2d3f741681ffa8d86f",
+        "manifest_sha": "f9b753a48f9c58c4cc84308a4a8da5e258231f19",
+        "run_log": "evidence/T09/2026-11-07-A-post-restart-read.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T12:28:05.245310+00:00",
+        "test_count": 5,
+        "evidence_count": 13,
+        "evidence_preview": [
+          "docs/business-handoff-2026-11-07.md",
+          "docs/business-rollout-2026-11-07.md",
+          "project/business-release-plan.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706969866"
     }
   ],
   "tasks": [
@@ -1025,70 +1039,75 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-07T12:20:04Z",
-      "last_note": "实际上报（partial，尚未完成）：Confirmed live two-host foundation and empty DynamoDB; built pinned 06c2292 archive, uploaded privately and verified hash; prepared reviewed per-boot release/rollback tooling. Public writable demo rollout awaits specific scope confirmation.",
+      "last_update": "2026-11-07T12:30:44Z",
+      "last_note": "实际上报（partial，尚未完成）：Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime.",
       "processed_comments": [
         6553816674,
         6553947047,
         6554221129,
         6702918732,
-        6706856439
+        6706856439,
+        6706965677
       ],
       "last_receipt": {
-        "receipt_id": "R-T09-6706856439",
+        "receipt_id": "R-T09-6706965677",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-07T12:20:29+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706860505"
+        "processed_at": "2026-11-07T12:31:10+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706969866"
       },
       "last_report": {
-        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-private-release.json",
-        "commit": "94f7650f5d1a50aa1ced71e026f3ea8e5bf04a58",
-        "manifest_sha": "5098e4d6d02405a0e6e53beb88956de350c8369d",
+        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-business-deployed.json",
+        "commit": "9aaa465e3249e32b64ff2f2d3f741681ffa8d86f",
+        "manifest_sha": "f9b753a48f9c58c4cc84308a4a8da5e258231f19",
         "evidence_shas": {
-          "docs/business-rollout-2026-11-07.md": "3bffac8cc60284240b3d4284e81089f12c6f951f",
+          "docs/business-handoff-2026-11-07.md": "4a5db9abc08be3b8561fd25319c49111466ca256",
+          "docs/business-rollout-2026-11-07.md": "5553936465bc0c348fcb4e6a075be4d468f03cd8",
           "project/business-release-plan.json": "ecdefc91b95621ed6d0447272828bd44c667a50b",
           "deployment/business-host.py": "e5baf8595c56f0825ff8bffa0f22b7d24499b3fb",
           "deployment/release-business.py": "6c41d3503054c41fb2546e1044c5444150aaa141",
-          "tests/test_release_business.py": "683b0c25dcec7e64e22b52eda441f0c63bc85e58",
-          "evidence/T09/2026-11-07-A-live-predeployment.log": "889463d776a357136d6e21fefe53582523137a94",
-          "evidence/T09/2026-11-07-A-release-safety-tests.log": "643532e417a49788bd8978ca381a0335f71dd125",
-          "evidence/T09/2026-11-07-A-private-release-stage.log": "4ae7aff6ef6a2e952875b611a0205a945a1f302f",
-          "evidence/T09/2026-11-07-A-release-ready.png": "9216fd666309d1f3d30e38a85394c47d5fbe629e"
+          "deployment/verify-business.py": "1998bc1d1a02894a45857575779ec650902c2f7b",
+          "evidence/T09/2026-11-07-A-first-host-release.log": "370e5972d66149afb8959b9e014e6d9629d0f9f7",
+          "evidence/T09/2026-11-07-A-second-host-release.log": "96d52387c88fa8a49626112b0240f09eeb8934dd",
+          "evidence/T09/2026-11-07-A-cloud-write-read.log": "6930aad5e36b136fae69f8739eed346ff8d944d6",
+          "evidence/T09/2026-11-07-A-during-writer-stop.log": "eba3b592778ee224bdabc5fff4818a11f0dbf7fb",
+          "evidence/T09/2026-11-07-A-restart-boot.log": "1acfa1213fb4bd8310898f3f7d430e1cb98d4c6c",
+          "evidence/T09/2026-11-07-A-post-restart-read.log": "1f17b4bcbe271dbc0824523f22b9ab2d991442bd",
+          "evidence/T09/2026-11-07-A-reading-tracker-live.png": "6cdb58b16344aa9dc04ed5c58f7a622e1248026c"
         },
-        "summary": "Confirmed live two-host foundation and empty DynamoDB; built pinned 06c2292 archive, uploaded privately and verified hash; prepared reviewed per-boot release/rollback tooling. Public writable demo rollout awaits specific scope confirmation.",
-        "tested_at": "2026-11-07T12:16:51+00:00",
+        "summary": "Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime.",
+        "tested_at": "2026-11-07T12:28:05.245310+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "Authenticated Learner Lab account 214018170594/us-east-1 via CloudShell; local Windows/Python3.12 safety tests; CloudShell bash syntax checks. Existing hosts unchanged.",
+        "environment": "Actual AWS Academy Learner Lab account 214018170594, us-east-1; private Python3.11.18/Gunicorn hosts using instance roles, public ALB HTTP demo, DynamoDB. User explicitly confirmed fictional public list/add scope before rollout.",
         "verification_result": "partial",
-        "run_log": "evidence/T09/2026-11-07-A-private-release-stage.log",
+        "run_log": "evidence/T09/2026-11-07-A-post-restart-read.log",
         "test_count": 5,
         "test_summary": [
           {
-            "action": "Live AWS read-only inventory and ALB GETs",
-            "expected": "Two healthy private targets and known placeholder",
-            "actual": "Both running/healthy; /health200 on az-a and az-b, infrastructure-only; home200 placeholder; real consistent COUNT0, no next page; endpoints available."
+            "action": "Pinned per-host release on production runtime",
+            "expected": "Both same commit/hashes, existing roles, real business GET200 and target healthy",
+            "actual": "Both boot logs report 06c2292, exact source/archive SHA, iam-role, Python3.11.18, health reading-tracker and business GET200; both targets healthy."
           },
           {
-            "action": "Build exact Git-object release",
-            "expected": "Only pinned app.py and runtime lock; reproducible archive hash",
-            "actual": "Two-file 4350-byte package, fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd."
+            "action": "Single genuine fictional POST and two-host readback",
+            "expected": "302 from one writer; both labels show same stored record",
+            "actual": "2026-11-07T12:25:06Z POST302 on az-b; az-a/az-b GET200 and form/record visible; consistent scan found one matching record with correct fields."
           },
           {
-            "action": "Three offline safety tests",
-            "expected": "Payload parse/size, health-failure restore/block, tampered archive rejection",
-            "actual": "3 passed; mocked host service/AWS, no live rollback claim."
+            "action": "Stop actual writer host",
+            "expected": "Writer stopped; other host retains access",
+            "actual": "EC2 az-b stopped; ALB GET200 on az-a with original record visible."
           },
           {
-            "action": "Private S3 upload and readback",
-            "expected": "Existing bucket scoped release key; SHA256 match",
-            "actual": "PRIVATE_ARCHIVE_VERIFIED exact expected SHA; no public ACL or course materials in archive."
+            "action": "Start writer and validate persistence",
+            "expected": "Auto-start same business mode/version; same record_id read from both",
+            "actual": "Both healthy after start; az-b at12:28:04Z and az-a at12:28:05Z show same effa5b9c-f7b6-4534-8cd3-c13ef4bb65dd; consistent scan matches original ID."
           },
           {
-            "action": "CloudShell bash syntax check of release and rollback MIME payloads",
-            "expected": "bash -n succeeds; under 16384 bytes",
-            "actual": "release7241 bytes and rollback7242 bytes, both LINUX_BOOT_SYNTAX_OK. This does not execute the host deployment."
+            "action": "Open real business UI",
+            "expected": "Shared library notice, form and fictional record render",
+            "actual": "Browser Reading Tracker page shows 1 record, reading1, 12 pages and rating4.0/5; saved actual screenshot."
           }
         ]
       },
