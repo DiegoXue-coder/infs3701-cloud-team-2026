@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T12:31:12+00:00",
+  "generated_at": "2026-11-07T12:31:59+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T08-6624791560",
-      "task_id": "T08",
-      "request_comment_id": 6624791560,
-      "actor": "Marina057",
-      "command": "submit",
-      "requested_at": "2026-11-04T07:02:28Z",
-      "processed_at": "2026-11-04T07:02:54+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "review",
-      "summary": "T08 已更新为「等检查」。已提交真实文件，等待另一成员检查：T08 preparation deliverables complete for independent review: four synthetic datasets, 10 original-statistics tests and 7 loopback HTTP-tool tests passed, bounded BASE_URL logger with raw logs, offline alarm comparison, core acceptance matrix, monitoring/recovery plan, cost assumptions, report framework and 60-second storyboard. This is preparation only; no AWS or final business acceptance is claimed. Initial work preceded role enrollment; original timestamps are preserved. Marina057 subsequently completed doctor, join C and confirmed T08 claim receipt R-T08-6624693113.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624791560",
-      "submission": {
-        "path": "deliveries/T08/2026-11-04-Marina057.json",
-        "commit": "cb07163da0e2beb69797902b433efd8999fd4849",
-        "manifest_sha": "629b8a2751783876f6e18ef3e96a81e8e381135b",
-        "run_log": "evidence/T08/2026-11-04-statistics-run.log",
-        "verification_result": "pass",
-        "tested_at": "2026-11-04T17:09:13+11:00",
-        "test_count": 4,
-        "evidence_count": 15,
-        "evidence_preview": [
-          "tests/c_t08/fixtures.json",
-          "tests/c_t08/test_statistics.py",
-          "tests/c_t08/test_request_log.py"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/8#issuecomment-6624798454"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T08-6683430965",
@@ -298,6 +267,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706969866"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T10-6706973424",
+      "task_id": "T10",
+      "request_comment_id": 6706973424,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-07T12:31:29Z",
+      "processed_at": "2026-11-07T12:31:55+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T10 已更新为「进行中」。实际上报（partial，尚未完成）：Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706973424",
+      "submission": {
+        "path": "deliveries/T10/2026-11-07-DiegoXue-coder-business-deployed.json",
+        "commit": "b25a68e7ded1952e37f2e3d71a6a548adb17a99a",
+        "manifest_sha": "bb98ef4b1078d58160aa631336df653336250c6a",
+        "run_log": "evidence/T09/2026-11-07-A-second-host-release.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T12:28:05.245310+00:00",
+        "test_count": 5,
+        "evidence_count": 13,
+        "evidence_preview": [
+          "docs/business-handoff-2026-11-07.md",
+          "docs/business-rollout-2026-11-07.md",
+          "project/business-release-plan.json"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706977980"
     }
   ],
   "tasks": [
@@ -1172,18 +1172,73 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-07T12:21:03Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-07T12:31:29Z",
+      "last_note": "实际上报（partial，尚未完成）：Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime.",
       "processed_comments": [
-        6706866365
+        6706866365,
+        6706973424
       ],
       "last_receipt": {
-        "receipt_id": "R-T10-6706866365",
-        "command": "claim",
+        "receipt_id": "R-T10-6706973424",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-07T12:21:24+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706869840"
+        "processed_at": "2026-11-07T12:31:55+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706977980"
+      },
+      "last_report": {
+        "path": "deliveries/T10/2026-11-07-DiegoXue-coder-business-deployed.json",
+        "commit": "b25a68e7ded1952e37f2e3d71a6a548adb17a99a",
+        "manifest_sha": "bb98ef4b1078d58160aa631336df653336250c6a",
+        "evidence_shas": {
+          "docs/business-handoff-2026-11-07.md": "4a5db9abc08be3b8561fd25319c49111466ca256",
+          "docs/business-rollout-2026-11-07.md": "5553936465bc0c348fcb4e6a075be4d468f03cd8",
+          "project/business-release-plan.json": "ecdefc91b95621ed6d0447272828bd44c667a50b",
+          "deployment/business-host.py": "e5baf8595c56f0825ff8bffa0f22b7d24499b3fb",
+          "deployment/release-business.py": "6c41d3503054c41fb2546e1044c5444150aaa141",
+          "deployment/verify-business.py": "1998bc1d1a02894a45857575779ec650902c2f7b",
+          "evidence/T09/2026-11-07-A-first-host-release.log": "370e5972d66149afb8959b9e014e6d9629d0f9f7",
+          "evidence/T09/2026-11-07-A-second-host-release.log": "96d52387c88fa8a49626112b0240f09eeb8934dd",
+          "evidence/T09/2026-11-07-A-cloud-write-read.log": "6930aad5e36b136fae69f8739eed346ff8d944d6",
+          "evidence/T09/2026-11-07-A-during-writer-stop.log": "eba3b592778ee224bdabc5fff4818a11f0dbf7fb",
+          "evidence/T09/2026-11-07-A-restart-boot.log": "1acfa1213fb4bd8310898f3f7d430e1cb98d4c6c",
+          "evidence/T09/2026-11-07-A-post-restart-read.log": "1f17b4bcbe271dbc0824523f22b9ab2d991442bd",
+          "evidence/T09/2026-11-07-A-reading-tracker-live.png": "6cdb58b16344aa9dc04ed5c58f7a622e1248026c"
+        },
+        "summary": "Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime.",
+        "tested_at": "2026-11-07T12:28:05.245310+00:00",
+        "submitted_by": "DiegoXue-coder",
+        "environment": "Actual AWS Academy Learner Lab account 214018170594, us-east-1; private Python3.11.18/Gunicorn hosts using instance roles, public ALB HTTP demo, DynamoDB. User explicitly confirmed fictional public list/add scope before rollout.",
+        "verification_result": "partial",
+        "run_log": "evidence/T09/2026-11-07-A-second-host-release.log",
+        "test_count": 5,
+        "test_summary": [
+          {
+            "action": "Pinned per-host release on production runtime",
+            "expected": "Both same commit/hashes, existing roles, real business GET200 and target healthy",
+            "actual": "Both boot logs report 06c2292, exact source/archive SHA, iam-role, Python3.11.18, health reading-tracker and business GET200; both targets healthy."
+          },
+          {
+            "action": "Single genuine fictional POST and two-host readback",
+            "expected": "302 from one writer; both labels show same stored record",
+            "actual": "2026-11-07T12:25:06Z POST302 on az-b; az-a/az-b GET200 and form/record visible; consistent scan found one matching record with correct fields."
+          },
+          {
+            "action": "Stop actual writer host",
+            "expected": "Writer stopped; other host retains access",
+            "actual": "EC2 az-b stopped; ALB GET200 on az-a with original record visible."
+          },
+          {
+            "action": "Start writer and validate persistence",
+            "expected": "Auto-start same business mode/version; same record_id read from both",
+            "actual": "Both healthy after start; az-b at12:28:04Z and az-a at12:28:05Z show same effa5b9c-f7b6-4534-8cd3-c13ef4bb65dd; consistent scan matches original ID."
+          },
+          {
+            "action": "Open real business UI",
+            "expected": "Shared library notice, form and fictional record render",
+            "actual": "Browser Reading Tracker page shows 1 record, reading1, 12 pages and rating4.0/5; saved actual screenshot."
+          }
+        ]
       },
       "issue_number": 10,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10",
