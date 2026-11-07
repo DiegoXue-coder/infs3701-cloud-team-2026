@@ -1,52 +1,77 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Reading Tracker - a personal book-progress tracker running on EC2 with S3 storage.
-Data model: each book entry is stored as an S3 object under the 'books/' prefix.
-Server-side work: computing library stats (counts, total pages, avg rating, progress).
-"""
-import io, re, json, os
+"""Reading Tracker with local development and shared DynamoDB storage."""
+import os
 from datetime import datetime, timezone
-from urllib.parse import quote
-import boto3
-from flask import Flask, redirect, render_template_string, request, url_for
+from threading import Lock
+from uuid import uuid4
 
-app = Flask(__name__)
+from flask import Flask, abort, jsonify, redirect, render_template_string, request, url_for
 
-BUCKET = os.environ.get("READING_BUCKET", "")
-PREFIX = "books/"
 
-# --- S3 helpers --------------------------------------------------------------
-def s3():
-    return boto3.client("s3")
+class LocalStore:
+    def __init__(self):
+        self.books = []
+        self.lock = Lock()
 
-def load_books():
-    """Read every book object from S3 and return them newest-first."""
-    books = []
-    paginator = s3().get_paginator("list_objects_v2")
-    for page in paginator.paginate(Bucket=BUCKET, Prefix=PREFIX):
-        for obj in page.get("Contents", []):
-            key = obj["Key"]
-            try:
-                data = s3().get_object(Bucket=BUCKET, Key=key)
-                raw = data["Body"].read().decode("utf-8")
-                entry = json.loads(raw)
-                entry["key"] = key
-                books.append(entry)
-            except Exception:
-                continue  # skip any object that is not a valid book record
-    books.sort(key=lambda b: b.get("created_at", ""), reverse=True)
-    return books
+    def load_books(self):
+        with self.lock:
+            return list(self.books)
 
-def save_book(entry):
-    """Write one book entry to S3 under books/<timestamp>_<slug>.json"""
-    ts = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
-    slug = re.sub(r"[^a-z0-9]+", "-", entry["title"].lower()).strip("-")[:40]
-    key = f"{PREFIX}{ts}_{slug or 'book'}.json"
-    s3().put_object(Bucket=BUCKET, Key=key, Body=json.dumps(entry, ensure_ascii=False).encode("utf-8"))
-    return key
+    def save_book(self, entry):
+        with self.lock:
+            self.books.append(entry)
+        return entry["record_id"]
 
-# --- server-side stats -------------------------------------------------------
+
+class StorageError(Exception):
+    """The configured storage could not complete an operation."""
+
+
+class DynamoStore:
+    def __init__(self, region, table_name):
+        self.region = region
+        self.table_name = table_name
+
+    def table(self):
+        # Keep the AWS SDK and credential discovery out of local mode and /health.
+        import boto3
+        from botocore.config import Config
+
+        session = boto3.session.Session()
+        return session.resource(
+            "dynamodb",
+            region_name=self.region,
+            config=Config(connect_timeout=2, read_timeout=3,
+                          retries={"mode": "standard", "total_max_attempts": 2}),
+        ).Table(self.table_name)
+
+    def load_books(self):
+        from botocore.exceptions import BotoCoreError, ClientError
+
+        books = []
+        try:
+            table = self.table()
+            page = table.scan(ConsistentRead=True)
+            while True:
+                books.extend(page["Items"])
+                cursor = page.get("LastEvaluatedKey")
+                if not cursor:
+                    return books
+                page = table.scan(ConsistentRead=True, ExclusiveStartKey=cursor)
+        except (BotoCoreError, ClientError) as error:
+            raise StorageError("Could not load reading records") from error
+
+    def save_book(self, entry):
+        from botocore.exceptions import BotoCoreError, ClientError
+
+        try:
+            self.table().put_item(
+                Item=entry, ConditionExpression="attribute_not_exists(record_id)"
+            )
+        except (BotoCoreError, ClientError) as error:
+            raise StorageError("Could not save reading record") from error
+        return entry["record_id"]
+
+
 def compute_stats(books):
     total = len(books)
     reading = sum(1 for b in books if b.get("status") == "reading")
@@ -93,7 +118,7 @@ article h2{margin:0 0 4px;color:#17202a}
 </head>
 <body>
 <h1>Reading Tracker</h1>
-<p class="sub">Log what you are reading, how far along you are, and what you thought. Runs on EC2, stored in S3.</p>
+<p class="sub">Log what you are reading, how far along you are, and what you thought. {{ storage_label }}</p>
 
 <div class="cards">
   <div class="card"><div class="num">{{ s.total }}</div><div class="lbl">Books logged</div></div>
@@ -128,7 +153,7 @@ article h2{margin:0 0 4px;color:#17202a}
     <div><label for="total_pages">Total pages</label><input id="total_pages" name="total_pages" type="number" min="0"></div>
   </div>
   <label for="note">Reading note</label>
-  <textarea id="note" name="note" rows="3" maxlength="600"></textarea>
+  <textarea id="note" name="note" rows="3" maxlength="2000"></textarea>
   <button type="submit">Add to tracker</button>
 </form>
 
@@ -151,37 +176,103 @@ article h2{margin:0 0 4px;color:#17202a}
 </body>
 </html>"""
 
-@app.route("/", methods=["GET", "POST"])
-def home():
-    if request.method == "POST":
-        title = request.form.get("title", "").strip()
-        note = request.form.get("note", "").strip()
-        if title:
-            try:
-                pages_read = int(request.form.get("pages_read") or 0)
-            except ValueError:
-                pages_read = 0
-            try:
-                total_pages = int(request.form.get("total_pages") or 0)
-            except ValueError:
-                total_pages = 0
-            rating = request.form.get("rating") or None
-            status = request.form.get("status") if request.form.get("status") in STATUS_LABEL else "reading"
-            if total_pages and total_pages > 0:
-                pct = min(100, round(pages_read / total_pages * 100))
-            else:
-                pct = None
-            entry = {
-                "title": title, "status": status, "rating": rating,
-                "pages_read": pages_read, "total_pages": total_pages, "pct": pct,
-                "note": note,
-                "created_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-            }
-            save_book(entry)
-        return redirect(url_for("home"))
-    books = load_books()
-    stats = compute_stats(books)
-    return render_template_string(PAGE, books=books, s=stats, STATUS_LABEL=STATUS_LABEL)
+
+def parse_entry(form):
+    title = form.get("title", "").strip()
+    note = form.get("note", "").strip()
+    status = form.get("status", "reading")
+    if not 1 <= len(title) <= 120 or len(note) > 2000 or status not in STATUS_LABEL:
+        raise ValueError("Check the title, note length and reading status.")
+
+    try:
+        pages_read = int(form.get("pages_read") or 0)
+        total_pages = int(form.get("total_pages") or 0)
+        rating = int(form["rating"]) if form.get("rating") else None
+    except ValueError as error:
+        raise ValueError("Pages and ratings must be whole numbers.") from error
+
+    # DynamoDB numbers allow up to 38 digits. Keep both modes on the same contract.
+    if not (0 <= pages_read < 10**38 and 0 <= total_pages < 10**38):
+        raise ValueError("Page counts must be non-negative and at most 38 digits.")
+    if total_pages and pages_read > total_pages:
+        raise ValueError("Pages read cannot exceed total pages.")
+    if rating is not None and not 1 <= rating <= 5:
+        raise ValueError("Rating must be between 1 and 5.")
+
+    return {
+        "record_id": str(uuid4()),
+        "title": title,
+        "status": status,
+        "pages_read": pages_read,
+        "total_pages": total_pages,
+        "rating": rating,
+        "note": note,
+        "created_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
+    }
+
+
+def create_app():
+    mode = os.environ.get("READING_DATA_MODE")
+    if mode == "local":
+        store = LocalStore()
+        storage_label = "Local development mode. Records reset when the process stops."
+    elif mode == "dynamodb":
+        region = os.environ.get("AWS_DEFAULT_REGION")
+        table_name = os.environ.get("READING_TABLE")
+        if not region or not table_name:
+            raise RuntimeError("DynamoDB mode requires AWS_DEFAULT_REGION and READING_TABLE.")
+        store = DynamoStore(region, table_name)
+        storage_label = "Records are stored in the shared reading library."
+    else:
+        raise RuntimeError("Set READING_DATA_MODE to local or dynamodb.")
+
+    app = Flask(__name__)
+    app.config["MAX_CONTENT_LENGTH"] = 64 * 1024
+    instance = os.environ.get("APP_INSTANCE") or ("local-dev" if mode == "local" else "unconfigured")
+
+    @app.after_request
+    def identify(response):
+        response.headers["X-App-Instance"] = instance
+        return response
+
+    @app.get("/health")
+    def health():
+        return jsonify(status="ok", instance=instance, stage="reading-tracker")
+
+    @app.route("/", methods=["GET", "POST"])
+    def home():
+        try:
+            if request.method == "POST":
+                try:
+                    entry = parse_entry(request.form)
+                except ValueError as error:
+                    abort(400, description=str(error))
+                store.save_book(entry)
+                return redirect(url_for("home"))
+
+            books = sorted(store.load_books(),
+                           key=lambda book: (book["created_at"], book["record_id"]),
+                           reverse=True)
+        except StorageError:
+            app.logger.exception("Reading Tracker storage operation failed")
+            abort(503, description="Reading records are temporarily unavailable.")
+
+        # DynamoDB returns Decimal for numbers. Convert before calculating progress.
+        display_books = []
+        for book in books:
+            total = int(book["total_pages"])
+            pages = int(book["pages_read"])
+            progress = round(pages / total * 100) if total else None
+            display_books.append(dict(book, pct=progress))
+        return render_template_string(
+            PAGE, books=display_books, s=compute_stats(books),
+            STATUS_LABEL=STATUS_LABEL, storage_label=storage_label,
+        )
+
+    return app
+
+
+app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80)
+    app.run(host="127.0.0.1", port=int(os.environ.get("APP_PORT", "8000")))

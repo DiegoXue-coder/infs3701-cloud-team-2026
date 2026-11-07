@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "task_id": "T07",
+  "actor": "Alex4325Li",
+  "tested_at": "2026-11-07T04:32:22+00:00",
+  "environment": "macOS arm64, Python 3.9.6 virtual environment, local HTTP and botocore Stubber",
+  "summary": "交付 Reading Tracker 首个发布候选版，包含本地模式、DynamoDB 分页读取和条件写入、健康接口、实例标签、部署及回滚步骤。",
+  "tests": [
+    {
+      "action": "本地读写、输入约束、DynamoDB Stubber 与错误处理",
+      "expected": "检查通过",
+      "actual": "4 项通过，DynamoDB 请求由 Stubber 拦截"
+    },
+    {
+      "action": "从入口启动应用并通过回环 HTTP 新增及读回",
+      "expected": "检查通过",
+      "actual": "GET /health 200，实例头正确，新增后读回虚构记录及 50% 进度"
+    },
+    {
+      "action": "重跑 C 的原统计和 HTTP 记录测试",
+      "expected": "检查通过",
+      "actual": "授权使用回环端口后 17 项通过，首次受沙箱限制的日志保留"
+    },
+    {
+      "action": "制作两文件归档并导入 app:app",
+      "expected": "检查通过",
+      "actual": "WSGI 入口导入成功，健康接口 200，未初始化 SDK"
+    }
+  ],
+  "evidence": [
+    "app/reading_tracker.py",
+    "app/README.md",
+    "deployment/runtime-requirements.lock",
+    "tests/test_reading_tracker.py",
+    "evidence/T07/2026-11-07-offline-tests.log",
+    "evidence/T07/2026-11-07-http-smoke.log",
+    "evidence/T07/2026-11-07-c-regression-loopback.log",
+    "evidence/T07/2026-11-07-wsgi-smoke.log",
+    "evidence/T07/2026-11-07-c-regression.log"
+  ],
+  "limitations": "AWS 尚未发布。Python 3.11/Gunicorn 目标环境、真实 DynamoDB 写入、跨实例读回和重启保留待 A/C 联调。T04 仍在进行中。",
+  "next_step": "Diego 按该版本部署到双私有主机，验证真实写入、另一实例读回及重启后持久化。Marina 配合复测 ALB 业务与分流。",
+  "ai_use": "Codex 代为实现、编写并运行本地测试、记录部署交接。等待队友独立复核。",
+  "verification_result": "partial",
+  "run_log": "evidence/T07/2026-11-07-http-smoke.log"
+}

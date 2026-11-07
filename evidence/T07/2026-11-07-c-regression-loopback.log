@@ -1,0 +1,39 @@
+Task: T07
+GitHub actor: Alex4325Li
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-07T04:32:00+00:00
+Finished UTC: 2026-11-07T04:32:01+00:00
+Exit code: 0
+Command: .venv/bin/python -m unittest discover -s tests/c_t08 -v
+
+STDOUT
+BASE_URL CLI EVIDENCE: {"stage": "local-fixture", "requests": 4, "successful_2xx": 4, "failures": 0, "missing_instance": 0, "instances": {"local-fixture-only": 4}, "output": "/var/folders/55/pcpfcf0111q0rkrh61j3d3vh0000gn/T/tmplkf5xtkv/requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 0, "failures": 1, "missing_instance": 0, "instances": {"local-fixture-only": 1}, "output": "/var/folders/55/pcpfcf0111q0rkrh61j3d3vh0000gn/T/tmp8i9xivvu/requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 1, "failures": 0, "missing_instance": 1, "instances": {}, "output": "/var/folders/55/pcpfcf0111q0rkrh61j3d3vh0000gn/T/tmpp1r36q1q/requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 3, "successful_2xx": 3, "failures": 0, "missing_instance": 0, "instances": {"local-fixture-only": 3}, "output": "/var/folders/55/pcpfcf0111q0rkrh61j3d3vh0000gn/T/tmpo43suinc/requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+{"stage": "local-fixture", "requests": 1, "successful_2xx": 0, "failures": 1, "missing_instance": 1, "instances": {}, "output": "/var/folders/55/pcpfcf0111q0rkrh61j3d3vh0000gn/T/tmpzz78ubgg/requests.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+
+STDERR
+test_base_url_cli_and_persistent_sample (test_request_log.RequestLoggerTests) ... ok
+test_http_error_retains_status_and_instance (test_request_log.RequestLoggerTests) ... ok
+test_invalid_bounds_and_credential_urls_rejected (test_request_log.RequestLoggerTests) ... ok
+test_missing_instance_is_explicit (test_request_log.RequestLoggerTests) ... ok
+test_real_success_request_fields_and_bound (test_request_log.RequestLoggerTests) ... ok
+test_refuses_overwriting_evidence (test_request_log.RequestLoggerTests) ... ok
+test_timeout_keeps_record_and_failure (test_request_log.RequestLoggerTests) ... ok
+test_fixture_expectations (test_statistics.StatisticsTests) ... ok
+test_inputs_are_not_mutated (test_statistics.StatisticsTests) ... ok
+test_invalid_numeric_legacy_value_raises (test_statistics.StatisticsTests) ... ok
+test_legacy_numeric_strings (test_statistics.StatisticsTests) ... ok
+test_missing_legacy_fields (test_statistics.StatisticsTests) ... ok
+test_permutation_invariance (test_statistics.StatisticsTests) ... ok
+test_read_pages_not_book_lengths (test_statistics.StatisticsTests) ... ok
+test_repeating_records_scales_counts_and_pages (test_statistics.StatisticsTests) ... ok
+test_unknown_legacy_status_is_not_counted_as_known (test_statistics.StatisticsTests) ... ok
+test_unrated_records_do_not_dilute_average (test_statistics.StatisticsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.142s
+
+OK
+

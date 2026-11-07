@@ -52,3 +52,11 @@ T07 实现后的本地命令草案：`READING_DATA_MODE=local APP_PORT=8000 APP_
 部署使用 Python 3.11，Flask+boto3 及 Gunicorn，发布包 app.py 暴露 app:app；草案命令 `gunicorn --bind 0.0.0.0:8000 app:app`。依赖版本应以实际验证和 deployment/runtime-requirements.lock 对齐后交 A；本次仅在 macOS Python 3.9.6 完成依赖安装和旧统计离线检查，尚未验证 Python3.11 发布包。
 
 数据库沿用 A 已选 DynamoDB：独立文档、无需关联，托管多 AZ，按请求计费适合间歇实验；代价是全表统计 Scan 的成本/延迟及当前吞吐上限。表与区域读 handoffs.json。A/C 请在 T04 核对部署与测试可行性；仍需 T07 实现、本地测试和实际云端验收。
+
+## T07 implementation update (2026-11-07)
+
+The local command, field validation, health endpoint and storage interfaces above
+are implemented in `app/reading_tracker.py`. See [app startup and AWS handoff](../app/README.md).
+Page counts support up to 38 digits in both modes to fit DynamoDB's number type.
+The cloud health JSON identifies the release stage as `reading-tracker`.
+Actual AWS write/read and restart persistence remain deployment acceptance checks.

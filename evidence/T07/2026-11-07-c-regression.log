@@ -1,0 +1,42 @@
+Task: T07
+GitHub actor: Alex4325Li
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-07T04:31:36+00:00
+Finished UTC: 2026-11-07T04:31:36+00:00
+Exit code: 1
+Command: .venv/bin/python -m unittest discover -s tests/c_t08 -v
+
+STDOUT
+
+STDERR
+ERROR
+test_fixture_expectations (test_statistics.StatisticsTests) ... ok
+test_inputs_are_not_mutated (test_statistics.StatisticsTests) ... ok
+test_invalid_numeric_legacy_value_raises (test_statistics.StatisticsTests) ... ok
+test_legacy_numeric_strings (test_statistics.StatisticsTests) ... ok
+test_missing_legacy_fields (test_statistics.StatisticsTests) ... ok
+test_permutation_invariance (test_statistics.StatisticsTests) ... ok
+test_read_pages_not_book_lengths (test_statistics.StatisticsTests) ... ok
+test_repeating_records_scales_counts_and_pages (test_statistics.StatisticsTests) ... ok
+test_unknown_legacy_status_is_not_counted_as_known (test_statistics.StatisticsTests) ... ok
+test_unrated_records_do_not_dilute_average (test_statistics.StatisticsTests) ... ok
+
+======================================================================
+ERROR: setUpClass (test_request_log.RequestLoggerTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/shroky/Documents/Codex/2026-11-03/infs3701-https-github-com-diegoxue-coder/infs3701-cloud-team-2026/tests/c_t08/test_request_log.py", line 36, in setUpClass
+    cls.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 138, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+PermissionError: [Errno 1] Operation not permitted
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.008s
+
+FAILED (errors=1)
+

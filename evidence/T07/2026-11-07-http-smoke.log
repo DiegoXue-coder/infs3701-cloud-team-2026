@@ -1,0 +1,49 @@
+Task: T07
+GitHub actor: Alex4325Li
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-07T04:32:01+00:00
+Finished UTC: 2026-11-07T04:32:01+00:00
+Exit code: 0
+Command: .venv/bin/python -c 'import os, subprocess, sys, time, urllib.request
+from urllib.parse import urlencode
+env = dict(os.environ, READING_DATA_MODE="local", APP_PORT="18007", APP_INSTANCE="t07-smoke")
+server = subprocess.Popen([sys.executable, "app/reading_tracker.py"], env=env)
+url = "http://127.0.0.1:18007"
+try:
+    for attempt in range(25):
+        if server.poll() is not None:
+            raise RuntimeError("Server exited")
+        try:
+            health = urllib.request.urlopen(url + "/health", timeout=1)
+            break
+        except urllib.error.URLError:
+            time.sleep(.1)
+    else:
+        raise RuntimeError("Local server did not start")
+    with health:
+        assert health.status == 200 and health.headers["X-App-Instance"] == "t07-smoke"
+        assert b"reading-tracker" in health.read()
+        print("GET /health: 200, X-App-Instance=t07-smoke, stage=reading-tracker")
+    data = urlencode(dict(title="T07 Fictional Book", pages_read=15, total_pages=30, rating=5)).encode()
+    with urllib.request.urlopen(url + "/", data=data, timeout=3) as response:
+        page = response.read()
+        assert response.status == 200 and b"T07 Fictional Book" in page and b"50% complete" in page
+        print("POST / followed redirect to GET /: fictional record rendered with 50% progress")
+finally:
+    server.terminate()
+    server.wait(timeout=5)'
+
+STDOUT
+ * Serving Flask app 'reading_tracker'
+ * Debug mode: off
+GET /health: 200, X-App-Instance=t07-smoke, stage=reading-tracker
+POST / followed redirect to GET /: fictional record rendered with 50% progress
+
+STDERR
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:18007
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [07/Nov/2026 15:32:01] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [07/Nov/2026 15:32:01] "[32mPOST / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [07/Nov/2026 15:32:01] "GET / HTTP/1.1" 200 -
+

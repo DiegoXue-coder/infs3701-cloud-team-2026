@@ -1,33 +1,71 @@
-# Reading Tracker：已选定的升级起点
+# Reading Tracker
 
-2026-10-31 用户确认：采用本人个人作业 Reading Tracker，走 group assignment Option A。
+The app keeps the original form, reading list and statistics. The upgrade entry is
+`app/reading_tracker.py`. The original archive is `reference/reading_tracker_candidate.py`.
 
-- **后续修改入口：`app/reading_tracker.py`**。
-- 原始基线归档：`reference/reading_tracker_candidate.py`。名称中的 candidate 是建仓时的历史名称，不表示选题仍未确定。
-- 本次先复制已保留的基线，不声称数据库、负载均衡或双 AZ 已经实现。此前固定 bucket 名已改为 READING_BUCKET 环境变量。
+## Run locally
 
-## 可以继续用的功能
+From the repo root, with Python 3.9+:
 
-读书记录表单、书籍状态/进度、统计计算、已有页面结构，以及服务端读写流程。
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r app/requirements.txt
+READING_DATA_MODE=local APP_PORT=8000 APP_INSTANCE=local-dev .venv/bin/python app/reading_tracker.py
+```
 
-## 后续要改的地方
+Open http://127.0.0.1:8000. Add a fictional book, then confirm it appears in the
+list and the statistics update. Local data lives in one process and resets on restart.
+Local mode uses the loopback address and never initializes the AWS SDK.
 
-1. 将当前 S3 记录存取替换/扩展为作业要求的托管数据库；A 已按独立记录需求与 Lab 能力选择 DynamoDB，表名和字段见 project/handoffs.json；应用代码尚待 B 接入。
-2. 增加健康检查及非敏感实例标签，两台实例采用同一代码版本和共享数据层。
-3. 改善记录唯一 ID，避免同秒同标题形成相同 S3 key；增强输入处理和错误说明。
-4. 选择并验证部署启动方式、端口、实例角色和加密；不沿用旧报告中的凭证复制做法。
-5. 在最终环境实际验证读写、分流、故障、监控和告警。
+```sh
+curl -i http://127.0.0.1:8000/health
+.venv/bin/python -m unittest discover -s tests -p test_reading_tracker.py -v
+```
 
-## 当前验证范围
+Expect HTTP 200, `X-App-Instance: local-dev` and JSON with `stage: reading-tracker`.
+Health verifies the process only. A failed storage operation on the book page
+returns 503. Invalid form input returns 400.
 
-`python scripts/check_reading_baseline.py` 可以在不安装 Flask/boto3、不访问 AWS 的情况下检查语法与原统计函数。
+## AWS handoff for Diego
 
-本轮没有启动完整网页或读取旧 S3 数据，没有确认旧 EC2 是否还存在。完整运行需要安装依赖、提供实际配置并验证；不要把离线检查说成云端运行成功。
+Use Python 3.11 and the Flask, boto3 and Gunicorn versions on the existing image
+(`deployment/runtime-requirements.lock`). The app adds no dependencies to that
+image. From the exact commit named in the T07 receipt, copy
+`app/reading_tracker.py` to `app.py` at the root of the release archive. Include the
+runtime lock as `requirements.txt` for reference. Build it from a checkout of the
+receipt's commit:
 
-## 本地网页验证时
+```sh
+stage=$(mktemp -d)
+cp app/reading_tracker.py "$stage/app.py"
+cp deployment/runtime-requirements.lock "$stage/requirements.txt"
+tar -czf "reading-tracker-$(git rev-parse --short HEAD).tar.gz" -C "$stage" app.py requirements.txt
+```
 
-先在本人独立虚拟环境中安装 `app/requirements.txt`，再按真实数据访问方式配置；没有权限时使用明确标为测试替代的数据层。Flask 开发服务器只用于本地开发，最终部署采用经验证的 WSGI 运行方式。
+Use the project's private release
+bucket and approved maintenance path. The existing foundation maintenance script
+is for the placeholder and does not deploy this archive.
 
-源码底部目前保留原端口 80 和启动逻辑，不直接用它当最终部署脚本。确认团队接口后再统一修改，避免 A/B/C 各自猜端口。
+On each private host, stage the archive in a fresh directory. Back up the current
+app and `/etc/infs3701/app.env` before switching. Add
+`READING_DATA_MODE=dynamodb` to the existing environment, and verify
+`READING_TABLE=infs3701-team-books`, `AWS_DEFAULT_REGION=us-east-1`, `APP_PORT=8000`
+and a distinct non-sensitive `APP_INSTANCE` on each host. The DynamoDB table is
+already provisioned with String partition key `record_id` and no sort key. The app
+uses only Scan and PutItem through the instance role. Legacy S3 records require a
+separate migration and remain in the existing bucket.
 
-2026-11-01：新部署目标为 Python3.11（旧实例仍是3.9，不直接复制其运行环境）。网络、数据库与运行环境的最新交接见 docs/aws-owner-handoff.md。
+Use the existing systemd service and its Gunicorn entry point
+`gunicorn --bind 0.0.0.0:8000 --workers 2 app:app`. Switch one host at a time.
+After restarting `infs3701-app`, check its journal, local `/health` and GET `/`.
+Only proceed to the second host after the first returns the business page and the
+expected instance label. If checks fail, restore that host's previous app and
+environment, restart the service, and verify the prior health response and target
+health before continuing. Keep the same DynamoDB table during rollback.
+
+For acceptance, submit one uniquely named fictional book on host A and read it
+on host B, then restart the application and confirm the same record is still
+visible. Record the deployed commit, HTTP codes, instance labels and readback
+before and after restart. Marina can then verify routing through the ALB.
+The app scans all pages for the course-sized library to compute its statistics.
+Scan cost grows with the table. Use a small number of fictional writes for validation.
