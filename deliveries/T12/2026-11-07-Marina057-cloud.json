@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "task_id": "T12",
+  "actor": "Marina057",
+  "tested_at": "2026-11-07T23:44:05+11:00",
+  "verification_result": "partial",
+  "environment": "Published Reading Tracker via HTTP ALB in us-east-1, release 06c2292 per the deployment handoff. Independent Windows client, Python 3.12.14, one fictional business write.",
+  "summary": "独立验证正式业务入口及跨实例读回。唯一虚构记录 POST 302，az-a 和 az-b 均读回。业务首页 30 次均 200，两标签各 15 次。附 AWS Calculator 成本草案、60 秒脚本与 A/C 联合实验交接。",
+  "tests": [
+    {"action": "核对两实例业务健康", "expected": "HTTP 200、reading-tracker 且标签一致", "actual": "az-a 和 az-b 都通过"},
+    {"action": "核对原记录并进行一次虚构写入", "expected": "原记录可从两台读回，新增一次返回 302，状态、页数、评分在两台一致", "actual": "原记录与新增记录均在两台各唯一读回，az-b 写入返回 302"},
+    {"action": "低频采样正式业务首页", "expected": "30 次请求返回 200，两台均提供服务，标签完整", "actual": "30/30 HTTP 200，az-a 15、az-b 15，0 失败、0 缺失标签"},
+    {"action": "在 AWS Pricing Calculator 填写 us-east-1 六项估算", "expected": "区域和用量可核对并得到年度基准费用", "actual": "计算器显示 USD 40.44 每月，USD 485.28 每年，详细假设已转录"}
+  ],
+  "run_log": "evidence/T12/2026-11-07-Marina057-cloud-run.log",
+  "evidence": [
+    "evidence/T12/2026-11-07-Marina057-cloud-run.log",
+    "evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl",
+    "scripts/c_t12_live.py",
+    "docs/c-t12-cloud-validation-2026-11-07.md",
+    "docs/c-t18-calculator-draft-2026-11-07.md",
+    "docs/c-t20-video-script-2026-11-07.md"
+  ],
+  "limitations": "正常运行窗口验证通过。T10、同期 CloudWatch 图表、联合告警/停机/恢复仍待完成。成本为六项草案，等待实际账单参数复核。视频是录制脚本。",
+  "next_step": "请 Diego 提供双方可参加的 20–30 分钟窗口并打开 Lab。A 导出本次 UTC 时间窗的 CloudWatch 证据，确认目标和告警参数并执行停启。C 同时采样和复核恢复。",
+  "ai_use": "Codex 协助 Marina057 执行 HTTP 检查、记录真实输出、操作 AWS Pricing Calculator 和整理材料。AWS 控制面现场操作由 A 执行。"
+}

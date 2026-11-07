@@ -1,0 +1,26 @@
+Task: T12
+GitHub actor: Marina057
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-07T12:42:44+00:00
+Finished UTC: 2026-11-07T12:44:05+00:00
+Exit code: 0
+Command: 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' scripts/c_t12_live.py --url http://infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com/ --samples evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl --reference-title 'Fictional cloud acceptance 95c34a0851c940db8b642eb3317d0a45' --write-one-fictional
+
+STDOUT
+{"utc": "2026-11-07T12:42:44.845203+00:00", "method": "GET", "path": "/health", "status": 200, "instance": "az-b"}
+{"utc": "2026-11-07T12:42:45.261988+00:00", "method": "GET", "path": "/health", "status": 200, "instance": "az-a"}
+{"utc": "2026-11-07T12:42:45.847948+00:00", "method": "GET", "path": "/", "status": 200, "instance": "az-b"}
+{"verified_title": "Fictional cloud acceptance 95c34a0851c940db8b642eb3317d0a45", "instance": "az-b", "matches": 1, "status": "reading", "pages": "12/120", "rating": 4}
+{"utc": "2026-11-07T12:42:46.522091+00:00", "method": "GET", "path": "/", "status": 200, "instance": "az-a"}
+{"verified_title": "Fictional cloud acceptance 95c34a0851c940db8b642eb3317d0a45", "instance": "az-a", "matches": 1, "status": "reading", "pages": "12/120", "rating": 4}
+{"synthetic_write_title": "Fictional Marina T12 4efe5cd92f30", "max_post_attempts": 1}
+{"utc": "2026-11-07T12:42:47.187611+00:00", "method": "POST", "path": "/", "status": 302, "instance": "az-b"}
+{"synthetic_write_accepted": "Fictional Marina T12 4efe5cd92f30", "writer": "az-b"}
+{"utc": "2026-11-07T12:42:47.767661+00:00", "method": "GET", "path": "/", "status": 200, "instance": "az-a"}
+{"verified_title": "Fictional Marina T12 4efe5cd92f30", "instance": "az-a", "matches": 1, "status": "reading", "pages": "7/35", "rating": 3}
+{"utc": "2026-11-07T12:42:48.333657+00:00", "method": "GET", "path": "/", "status": 200, "instance": "az-b"}
+{"verified_title": "Fictional Marina T12 4efe5cd92f30", "instance": "az-b", "matches": 1, "status": "reading", "pages": "7/35", "rating": 3}
+{"stage": "business-release", "requests": 30, "successful_2xx": 30, "failures": 0, "missing_instance": 0, "instances": {"az-a": 15, "az-b": 15}, "output": "evidence\\T12\\2026-11-07-Marina057-cloud-samples.jsonl", "latency_scope": "response headers only; not full page load", "business_acceptance": false}
+
+STDERR
+
