@@ -1,0 +1,4 @@
+{"sequence": 1, "time_utc": "2026-11-07T05:38:46.003+00:00", "stage": "local-fixture", "url": "http://127.0.0.1:52285/", "status": 200, "instance": "t12-local-candidate", "error": null, "elapsed_ms": 4.682, "success": true}
+{"sequence": 2, "time_utc": "2026-11-07T05:38:46.209+00:00", "stage": "local-fixture", "url": "http://127.0.0.1:52285/", "status": 200, "instance": "t12-local-candidate", "error": null, "elapsed_ms": 4.731, "success": true}
+{"sequence": 3, "time_utc": "2026-11-07T05:38:46.414+00:00", "stage": "local-fixture", "url": "http://127.0.0.1:52285/", "status": 200, "instance": "t12-local-candidate", "error": null, "elapsed_ms": 5.481, "success": true}
+{"sequence": 4, "time_utc": "2026-11-07T05:38:46.620+00:00", "stage": "local-fixture", "url": "http://127.0.0.1:52285/", "status": 200, "instance": "t12-local-candidate", "error": null, "elapsed_ms": 5.293, "success": true}
