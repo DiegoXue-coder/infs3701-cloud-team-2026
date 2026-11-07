@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T05:38:11+00:00",
+  "generated_at": "2026-11-07T05:40:28+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -736,6 +736,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702526775"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6702918732",
+      "task_id": "T09",
+      "request_comment_id": 6702918732,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-07T05:40:02Z",
+      "processed_at": "2026-11-07T05:40:25+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Verified exact T07 candidate 06c2292 locally before cloud rollout: 4 app tests, 17 C regression tests and 8 HTTP form cases passed. Business deployment and persistence checks remain pending.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702918732",
+      "submission": {
+        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-candidate-readiness.json",
+        "commit": "09e62ea979bafe1b359984ae9b0d248cd7a12769",
+        "manifest_sha": "a837c71465aede14a7aee962259064499fab2671",
+        "run_log": "evidence/T09/2026-11-07-A-candidate-http.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T05:38:46+00:00",
+        "test_count": 4,
+        "evidence_count": 5,
+        "evidence_preview": [
+          "docs/deployment-readiness-2026-11-07.md",
+          "evidence/T09/2026-11-07-A-candidate-app-tests.log",
+          "evidence/T09/2026-11-07-A-candidate-regression.log"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702922204"
     }
   ]
 }

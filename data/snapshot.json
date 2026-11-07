@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T05:38:11+00:00",
+  "generated_at": "2026-11-07T05:40:28+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T09-6554221129",
-      "task_id": "T09",
-      "request_comment_id": 6554221129,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-01T06:04:12Z",
-      "processed_at": "2026-11-01T06:05:01+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deployed.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554221129",
-      "submission": {
-        "path": "deliveries/T09/2026-11-01-DiegoXue-coder-foundation-verified.json",
-        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
-        "manifest_sha": "97b8f839d028abe5e700df9f1effc0a7d7059ab8",
-        "run_log": "evidence/T09/2026-11-01-maintenance-validation.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-01T06:01:13.014386+00:00",
-        "test_count": 3,
-        "evidence_count": 16,
-        "evidence_preview": [
-          "project/aws-resources.json",
-          "project/handoffs.json",
-          "project/next-deployment.json"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554228452"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T04-6598738390",
@@ -284,6 +253,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702526775"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6702918732",
+      "task_id": "T09",
+      "request_comment_id": 6702918732,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-07T05:40:02Z",
+      "processed_at": "2026-11-07T05:40:25+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Verified exact T07 candidate 06c2292 locally before cloud rollout: 4 app tests, 17 C regression tests and 8 HTTP form cases passed. Business deployment and persistence checks remain pending.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702918732",
+      "submission": {
+        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-candidate-readiness.json",
+        "commit": "09e62ea979bafe1b359984ae9b0d248cd7a12769",
+        "manifest_sha": "a837c71465aede14a7aee962259064499fab2671",
+        "run_log": "evidence/T09/2026-11-07-A-candidate-http.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T05:38:46+00:00",
+        "test_count": 4,
+        "evidence_count": 5,
+        "evidence_preview": [
+          "docs/deployment-readiness-2026-11-07.md",
+          "evidence/T09/2026-11-07-A-candidate-app-tests.log",
+          "evidence/T09/2026-11-07-A-candidate-regression.log"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702922204"
     }
   ],
   "tasks": [
@@ -1025,65 +1025,60 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-01T06:04:12Z",
-      "last_note": "实际上报（partial，尚未完成）：Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deployed.",
+      "last_update": "2026-11-07T05:40:02Z",
+      "last_note": "实际上报（partial，尚未完成）：Verified exact T07 candidate 06c2292 locally before cloud rollout: 4 app tests, 17 C regression tests and 8 HTTP form cases passed. Business deployment and persistence checks remain pending.",
       "processed_comments": [
         6553816674,
         6553947047,
-        6554221129
+        6554221129,
+        6702918732
       ],
       "last_receipt": {
-        "receipt_id": "R-T09-6554221129",
+        "receipt_id": "R-T09-6702918732",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-01T06:05:01+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6554228452"
+        "processed_at": "2026-11-07T05:40:25+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702922204"
       },
       "last_report": {
-        "path": "deliveries/T09/2026-11-01-DiegoXue-coder-foundation-verified.json",
-        "commit": "bb3be2edc882e79c4147006d2d84b8c0610c7b5e",
-        "manifest_sha": "97b8f839d028abe5e700df9f1effc0a7d7059ab8",
+        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-candidate-readiness.json",
+        "commit": "09e62ea979bafe1b359984ae9b0d248cd7a12769",
+        "manifest_sha": "a837c71465aede14a7aee962259064499fab2671",
         "evidence_shas": {
-          "project/aws-resources.json": "cdd40169aecc211fc8953dbb1460f17a6396c226",
-          "project/handoffs.json": "44d51bdbf8976f4bf6c082be6e0d80b00f546d9b",
-          "project/next-deployment.json": "2e2e3be13a207968050969db33ad4346e7efa10c",
-          "docs/2026-11-01-foundation-verification.md": "a8f2a1fd58db9f05b7ca356aeb0cb2f77a111282",
-          "deployment/maintain-foundation.py": "cfc572fee873037dc7dacdccc21adaad69975f8a",
-          "deployment/verify-foundation.py": "4c85d0c7ecd99831c4c0ade457d86bd30eef8076",
-          "deployment/tighten-unused-maintenance.py": "00bf24698f0ec453d548a17f4ab9a5bb6b5814e5",
-          "deployment/configure-monitoring-baseline.py": "fbf3e3303244de9c85129ee67b7f7c87824aca6b",
-          "evidence/T09/2026-11-01-final-readback.log": "773664b9158474d2f22b67279cc32c4c33a34510",
-          "evidence/T09/2026-11-01-maintenance-validation.log": "7f957a12ee423385f525c982e8a9e63b441bb496",
-          "evidence/T09/2026-11-01-live-routing.log": "d96c46469eee9db2ddea30ed2494749c2e07c9f7",
-          "evidence/T09/2026-11-01-cloudwatch-dashboard.png": "df17ed7c1ef79c4703407f1b74af2e320adea663",
-          "evidence/T09/2026-11-01-real-alarm-trigger.png": "acf58a65ee63b400074157af61259bc195274dcb",
-          "evidence/T09/2026-11-01-private-role-check.png": "9dcab7d5bcd0cfdcb6ba2a6bd0847a1d0d93b9ff",
-          "evidence/T09/2026-11-01-foundation-live-page.png": "94a2a5e4f7dd0bf385fe1fa01bec6a1fcfb07eb7",
-          "evidence/T09/2026-11-01-foundation-maintenance-offline-tests.log": "ca2d914801e0bb99558d6d8dcf3ad359e8aff6e3"
+          "docs/deployment-readiness-2026-11-07.md": "89cc6ad56333e88408195d638457b3b52df1c883",
+          "evidence/T09/2026-11-07-A-candidate-app-tests.log": "108e28df25d99be536b78240b1140589996e008e",
+          "evidence/T09/2026-11-07-A-candidate-regression.log": "5f61a42122952d935a4173d8df0aa2e849dd1c63",
+          "evidence/T09/2026-11-07-A-candidate-http.log": "3e4df782c7f616df554adfe3bed82ed494603a88",
+          "evidence/T09/2026-11-07-A-candidate-local-samples.jsonl": "b323da408226e36b72760e526cb63c1ff04ac06e"
         },
-        "summary": "Launched two private systemd/Gunicorn infrastructure placeholders, verified routing and per-host boot/role/data-read/object-hash checks; actual alarm OK->ALARM->OK and both targets healthy. Business app not yet deployed.",
-        "tested_at": "2026-11-01T06:01:13.014386+00:00",
+        "summary": "Verified exact T07 candidate 06c2292 locally before cloud rollout: 4 app tests, 17 C regression tests and 8 HTTP form cases passed. Business deployment and persistence checks remain pending.",
+        "tested_at": "2026-11-07T05:38:46+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "Actual authorized AWS Academy account, us-east-1; CloudShell SDK and browser UI. New private staged runtime only, not Reading Tracker business deployment.",
+        "environment": "Windows, Python3.12.14 local venv; loopback-only HTTP; mocked DynamoDB using botocore Stubber; no AWS deployment or cloud writes.",
         "verification_result": "partial",
-        "run_log": "evidence/T09/2026-11-01-maintenance-validation.log",
-        "test_count": 3,
+        "run_log": "evidence/T09/2026-11-07-A-candidate-http.log",
+        "test_count": 4,
         "test_summary": [
           {
-            "action": "Actual SDK readback and per-host boot diagnostics",
-            "expected": "Two private encrypted role-bound hosts; scoped paths and runtime healthy",
-            "actual": "Both BOOT_CHECK_OK, iam-role; DynamoDB ACTIVE/count0; S3 SHA matched; both target healthy; root volumes encrypted8GiB gp3."
+            "action": "Run application test suite",
+            "expected": "4 tests pass",
+            "actual": "4 passed, including local read/write, health, conditional PutItem and paginated Scan with Stubber, storage errors and configuration."
           },
           {
-            "action": "Low-frequency infrastructure requests and real alarm lifecycle",
-            "expected": "Both instances route; one remaining host responds; true alarm trigger and recovery",
-            "actual": "Initial12 HTTP200, six each; single-host short6 HTTP200 plus continuous25 HTTP200. True ALARM05:56:06Z -> OK06:00:06Z. Short sample summary count bug preserved and explained in verification guide."
+            "action": "Run C regression suite",
+            "expected": "17 tests pass",
+            "actual": "17 passed on candidate."
           },
           {
-            "action": "Separate code checks from AWS acceptance",
-            "expected": "Offline tests pass without implying business release works",
-            "actual": "48 offline tests passed; business writes/TLS and independent final acceptance remain pending."
+            "action": "Run local business HTTP smoke",
+            "expected": "Health200; seven invalid forms400; valid form302; readback and four sample responses succeed",
+            "actual": "All assertions passed; samples explicitly local-fixture."
+          },
+          {
+            "action": "Review deployment handoff and boot environment",
+            "expected": "Identify exact code and required production configuration",
+            "actual": "App and runtime lock unchanged from 06c2292cdf0aca80f050709b8172fac3595b54cc. Existing foundation-only per-boot script overwrites env without READING_DATA_MODE; business rollout must replace/adapt tha"
           }
         ]
       },
