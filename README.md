@@ -2,6 +2,8 @@
 
 **来这里看进度、领任务、交证据，再和你自己的 AI 一起做。** 云服务在 AWS 运行，本仓库负责把三个人的工作接起来。
 
+**最新业务交接（2026-11-07）：** [双实例程序已部署，B/C从这里开始云端独立复核](docs/business-handoff-2026-11-07.md)。包含真实网址、06c2292版本、两台标签、读写/重启证据与各自下一步；HTTPS和小组最终验收尚未完成。
+
 → **[新成员自助开工：两位都用这个入口](docs/self-service.md)**
 
 → [在线任务入口](LIVE_BOARD.md) · [进度看板](DASHBOARD.md) · [全部任务](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) · [每天开始的开场语](prompts/START.md) · [首次加入](docs/onboarding.md)
@@ -66,7 +68,7 @@ GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度�
 
 ## 当前边界
 
-用户已确认升级自己的 Reading Tracker（Option A）。[代码入口](app/reading_tracker.py)与[基线说明](app/README.md)已准备；最终 Lab 与数据库配置仍待确认。建立协作系统不等于已完成课程作业。截止为 **2026-11-17 16:00（悉尼）**，内部节点是建议；Moodle 更新和 tutor 对冲突的答复应记录后再调整。
+用户已确认升级自己的 Reading Tracker（Option A）。[代码入口](app/reading_tracker.py)与[运行说明](app/README.md)可用；现已发布双私有机与共享DynamoDB，并由A验证真实读写、跨实例读回和重启保留；B/C独立云端复核、HTTPS及报告等最终交付仍需完成。截止为 **2026-11-17 16:00（悉尼）**，内部节点是建议；Moodle 更新和 tutor 对冲突的答复应记录后再调整。
 
 仓库必须保持私有；不部署公开 Pages，不上传账号密码、AWS 密钥、私人数据或带签名/学号的个人文件。只邀请有权使用课程材料的实际组员。
 
