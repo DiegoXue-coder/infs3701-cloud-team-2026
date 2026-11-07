@@ -1,0 +1,26 @@
+Actual CloudShell UI output; terminal wrapping preserved.
+~ $ python3 ~/infs3701-release-06c2292/release-business.py prepare --instance b --directory ~/infs3701-release-06c2292
+HOST_STATE={"id": "i-0081259c52a32e051", "state": "running"}
+STOP_REQUESTED=i-0081259c52a32e051
+~ $ python3 ~/infs3701-release-06c2292/release-business.py inspect --instance b --directory ~/infs3701-release-06c2292
+HOST_STATE={"id": "i-0081259c52a32e051", "state": "stopping"}
+TARGETS=[{"Target": {"Id": "i-0081259c52a32e051", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently active on
+ target"}}, {"Target": {"Id": "i-00572a14ca8b71156", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "AdministrativeOverride.NoOverride", "Description": "No override is currently active
+ on target"}}]
+RELEASE_DIAGNOSTICS=["[    7.063918] cloud-init[1934]: INFS3701_RELEASE_BEGIN", "INFS3701_RELEASE_BEGIN", "INFS3701_RELEASE_OK={\"commit\": \"06c2292cdf0aca80f050709b8172fac3595b54cc\", \"archive_sha256\": \"fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd\", \"
+source_sha256\": \"a0eb70b7e8a9505e912c14fead268e9c0798064e35708243404c250def1abfb5\", \"instance\": \"az-b\", \"credential_source\": \"iam-role\", \"health\": {\"instance\": \"az-b\", \"stage\": \"reading-tracker\", \"status\": \"ok\"}, \"business_get\": 200, \"python\": \"3.1
+1.18\"}", "[    9.739327] cloud-init[1934]: INFS3701_RELEASE_OK={\"commit\": \"06c2292cdf0aca80f050709b8172fac3595b54cc\", \"archive_sha256\": \"fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd\", \"source_sha256\": \"a0eb70b7e8a9505e912c14fead268e9c0798064e3570
+8243404c250def1abfb5\", \"instance\": \"az-b\", \"credential_source\": \"iam-role\", \"health\": {\"instance\": \"az-b\", \"stage\": \"reading-tracker\", \"status\": \"ok\"}, \"business_get\": 200, \"python\": \"3.11.18\"}"]
+~ $ python3 ~/infs3701-release-06c2292/release-business.py inspect --instance b --directory ~/infs3701-release-06c2292
+HOST_STATE={"id": "i-0081259c52a32e051", "state": "stopped"}
+TARGETS=[{"Target": {"Id": "i-0081259c52a32e051", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "unused", "Reason": "Target.InvalidState", "Description": "Target is in the stopped state"}, "AdministrativeOverride": {"State": "no_override", "Reason": "Admin
+istrativeOverride.NoOverride", "Description": "No override is currently active on target"}}, {"Target": {"Id": "i-00572a14ca8b71156", "Port": 8000}, "HealthCheckPort": "8000", "TargetHealth": {"State": "healthy"}, "AdministrativeOverride": {"State": "no_override", "Reason": "Ad
+ministrativeOverride.NoOverride", "Description": "No override is currently active on target"}}]
+RELEASE_DIAGNOSTICS=[]
+~ $ python3 -c 'import urllib.request,json,pathlib; s=json.loads((pathlib.Path.home()/'"'"'infs3701-release-06c2292'"'"'/'"'"'acceptance.json'"'"').read_text()); r=urllib.request.urlopen('"'"'http://infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com/'"'"',timeout=10); b=r.
+read().decode(); d={'"'"'status'"'"':r.status,'"'"'instance'"'"':r.headers.get('"'"'X-App-Instance'"'"'),'"'"'record_visible'"'"':s['"'"'title'"'"'] in b,'"'"'writer_host_state'"'"':'"'"'stopped'"'"'}; print('"'"'DURING_WRITER_STOP='"'"'+json.dumps(d)); assert d['"'"'status'"'"
+']==200 and d['"'"'instance'"'"']=='"'"'az-a'"'"' and d['"'"'record_visible'"'"']'
+DURING_WRITER_STOP={"status": 200, "instance": "az-a", "record_visible": true, "writer_host_state": "stopped"}
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.

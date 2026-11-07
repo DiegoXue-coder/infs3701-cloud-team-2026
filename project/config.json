@@ -27,7 +27,7 @@
       "table": "infs3701-team-books",
       "region": "us-east-1",
       "key": "record_id:String",
-      "status": "table_active_application_integration_pending",
+      "status": "business_deployed_A_read_write_restart_verified_independent_review_pending",
       "decision_by": "DiegoXue-coder project operator",
       "rationale": "Independent document records without relational joins; small irregular lab workload; managed resilience and pay-per-request mode. Application must avoid unbounded scans for larger workloads."
     }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-01",
+  "updated_on": "2026-11-07",
   "purpose": "Shared operational defaults and handoff state; not proof of implementation or live AWS health.",
   "operator": "DiegoXue-coder",
   "roles": {
@@ -16,7 +16,7 @@
     }
   },
   "implementation_contract": {
-    "status": "assigned_defaults_not_yet_implemented",
+    "status": "business_deployed_A_verified_BC_independent_acceptance_pending",
     "app_port": 8000,
     "app_port_env": "APP_PORT",
     "health_path": "/health",
@@ -41,18 +41,19 @@
     "database_env": "READING_TABLE",
     "region_env": "AWS_DEFAULT_REGION",
     "wsgi_entry": "app:app in deployment bundle; source may stay app/reading_tracker.py",
-    "runtime_status": "Two private staged hosts launched from Python3.11.18 image; business integration not deployed",
-    "dependency_lock": "deployment/runtime-requirements.lock"
+    "runtime_status": "Both private hosts running pinned business release on Python3.11.18/Gunicorn; actual write/cross-read/restart retention verified by A",
+    "dependency_lock": "deployment/runtime-requirements.lock",
+    "data_mode_env": "READING_DATA_MODE=dynamodb"
   },
   "cloud": {
-    "status": "infrastructure_only_alb_and_private_hosts_verified_business_pending",
+    "status": "business_deployed_A_verified_independent_acceptance_and_TLS_pending",
     "base_url": "http://infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com",
     "database_engine": "DynamoDB",
     "database_region": "us-east-1",
     "database_resource_name": "infs3701-team-books",
-    "deployed_commit": null,
+    "deployed_commit": "06c2292cdf0aca80f050709b8172fac3595b54cc",
     "resource_inventory": "docs/environment.md",
-    "missing_values_action": "Use base_url only for infrastructure/tool checks. Continue B local/database implementation and C executable tests. Business acceptance waits for actual released commit; no AWS credentials shared.",
+    "missing_values_action": "Use actual business URL/version/tags from latest handoff for small fictional-data validation. No AWS credentials needed for browser/HTTP checks. AWS maintenance remains A-only.",
     "audit": "docs/2026-11-01-aws-inventory.md",
     "existing_instance": {
       "id": "i-0bdbde44eb450f334",
@@ -81,7 +82,7 @@
     "tls_status": "unresolved_no_certificate_or_AWS_hosted_zone",
     "runtime_image": "ami-03616f6b53c85f036",
     "runtime_image_state": "available",
-    "base_url_stage": "infrastructure-only; not Reading Tracker; deployed_commit remains null",
+    "base_url_stage": "reading-tracker; both az-a/az-b business health and real data reads verified",
     "maintenance_guide": "docs/2026-11-01-foundation-verification.md",
     "monitoring": {
       "dashboard": "infs3701-team-dashboard",
@@ -95,9 +96,22 @@
       "actor": "DiegoXue-coder",
       "independently_reviewed": false
     },
-    "last_verified_at": "2026-11-01T06:01:13.014386+00:00",
-    "private_read_checks": "Both private hosts passed using iam-role; real business writes/integration still pending",
-    "next_operator_window": "After B supplies reviewed release commit/bundle/dependencies: implement and verify exact business rollout/rollback; then C-led live tests. No unattended AWS executor."
+    "last_verified_at": "2026-11-07T12:28:05.245310+00:00",
+    "private_read_checks": "Both roles verified; genuine POST via az-b then reads on az-a/az-b; writer stopped and restarted; same DynamoDB record_id retained",
+    "next_operator_window": "Coordinate C-led business alarm/metrics/fault tests; resolve course-approved HTTPS; preserve current demo and fictional records.",
+    "business_handoff": "docs/business-handoff-2026-11-07.md",
+    "instance_labels": {
+      "az-a": {
+        "instance_id": "i-00572a14ca8b71156",
+        "az": "us-east-1a"
+      },
+      "az-b": {
+        "instance_id": "i-0081259c52a32e051",
+        "az": "us-east-1b"
+      }
+    },
+    "release_plan": "project/business-release-plan.json",
+    "public_demo_scope": "User confirmed unauthenticated HTTP list/add, fictional data only; no real personal data; TLS unresolved"
   },
   "ready_handoff_rules": {
     "B_to_A": [

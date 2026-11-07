@@ -1,0 +1,6 @@
+Transcript of actual CloudShell output observed in this AI session.
+Command: python3 ~/infs3701-release-06c2292/verify-business.py read --state ~/infs3701-release-06c2292/acceptance.json
+Writer host az-b was stopped, then started with the same pinned release before this read.
+LIVE_READ={"at": "2026-11-07T12:28:04.101056+00:00", "status": 200, "instance": "az-b", "record_visible": true, "business_form": true}
+LIVE_READ={"at": "2026-11-07T12:28:05.245310+00:00", "status": 200, "instance": "az-a", "record_visible": true, "business_form": true}
+LIVE_ACCEPTANCE_OK={"title": "Fictional cloud acceptance 95c34a0851c940db8b642eb3317d0a45", "record_id": "effa5b9c-f7b6-4534-8cd3-c13ef4bb65dd", "writer": "az-b", "read_instances": ["az-a", "az-b"], "health_instances": ["az-a", "az-b"], "same_record_verified": true}

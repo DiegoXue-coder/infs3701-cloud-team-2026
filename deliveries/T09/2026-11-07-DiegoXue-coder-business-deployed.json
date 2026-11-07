@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-07T12:28:05.245310+00:00",
+  "environment": "Actual AWS Academy Learner Lab account 214018170594, us-east-1; private Python3.11.18/Gunicorn hosts using instance roles, public ALB HTTP demo, DynamoDB. User explicitly confirmed fictional public list/add scope before rollout.",
+  "verification_result": "partial",
+  "summary": "Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime.",
+  "tests": [
+    {
+      "action": "Pinned per-host release on production runtime",
+      "expected": "Both same commit/hashes, existing roles, real business GET200 and target healthy",
+      "actual": "Both boot logs report 06c2292, exact source/archive SHA, iam-role, Python3.11.18, health reading-tracker and business GET200; both targets healthy."
+    },
+    {
+      "action": "Single genuine fictional POST and two-host readback",
+      "expected": "302 from one writer; both labels show same stored record",
+      "actual": "2026-11-07T12:25:06Z POST302 on az-b; az-a/az-b GET200 and form/record visible; consistent scan found one matching record with correct fields."
+    },
+    {
+      "action": "Stop actual writer host",
+      "expected": "Writer stopped; other host retains access",
+      "actual": "EC2 az-b stopped; ALB GET200 on az-a with original record visible."
+    },
+    {
+      "action": "Start writer and validate persistence",
+      "expected": "Auto-start same business mode/version; same record_id read from both",
+      "actual": "Both healthy after start; az-b at12:28:04Z and az-a at12:28:05Z show same effa5b9c-f7b6-4534-8cd3-c13ef4bb65dd; consistent scan matches original ID."
+    },
+    {
+      "action": "Open real business UI",
+      "expected": "Shared library notice, form and fictional record render",
+      "actual": "Browser Reading Tracker page shows 1 record, reading1, 12 pages and rating4.0/5; saved actual screenshot."
+    }
+  ],
+  "evidence": [
+    "docs/business-handoff-2026-11-07.md",
+    "docs/business-rollout-2026-11-07.md",
+    "project/business-release-plan.json",
+    "deployment/business-host.py",
+    "deployment/release-business.py",
+    "deployment/verify-business.py",
+    "evidence/T09/2026-11-07-A-first-host-release.log",
+    "evidence/T09/2026-11-07-A-second-host-release.log",
+    "evidence/T09/2026-11-07-A-cloud-write-read.log",
+    "evidence/T09/2026-11-07-A-during-writer-stop.log",
+    "evidence/T09/2026-11-07-A-restart-boot.log",
+    "evidence/T09/2026-11-07-A-post-restart-read.log",
+    "evidence/T09/2026-11-07-A-reading-tracker-live.png"
+  ],
+  "limitations": "A cloud milestone passed, but B/C independent acceptance and final task dependencies remain incomplete. HTTP unauthenticated fictional demo only, TLS unresolved. No whole-AZ outage, business alarm lifecycle or live rollback rehearsal claimed. Existing LabRole broader than ideal; no IAM expansion. Report/diagram/cost/video unfinished.",
+  "next_step": "B independently verifies deployed app/T11 and completes T04/T07; C begins actual T12 business sampling using handed-off URL/version/labels, then schedules A-assisted monitoring/alarm tests.",
+  "ai_use": "Codex assisted authorized A with actual CloudShell deployment, real HTTP/SDK tests and browser evidence. B code authorship preserved; no C review or final sign-off fabricated.",
+  "task_id": "T09",
+  "run_log": "evidence/T09/2026-11-07-A-post-restart-read.log"
+}
