@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T12:13:37+00:00",
+  "generated_at": "2026-11-07T12:20:32+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,23 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T04-6598738390",
-      "task_id": "T04",
-      "request_comment_id": 6598738390,
-      "actor": "Alex4325Li",
-      "command": "claim",
-      "requested_at": "2026-11-03T08:18:14Z",
-      "processed_at": "2026-11-03T08:18:36+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T04 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598738390",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/4#issuecomment-6598745262"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T04-6598769043",
@@ -284,6 +267,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702922204"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6706856439",
+      "task_id": "T09",
+      "request_comment_id": 6706856439,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-07T12:20:04Z",
+      "processed_at": "2026-11-07T12:20:29+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Confirmed live two-host foundation and empty DynamoDB; built pinned 06c2292 archive, uploaded privately and verified hash; prepared reviewed per-boot release/rollback tooling. Public writable demo rollout awaits specific scope confirmation.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706856439",
+      "submission": {
+        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-private-release.json",
+        "commit": "94f7650f5d1a50aa1ced71e026f3ea8e5bf04a58",
+        "manifest_sha": "5098e4d6d02405a0e6e53beb88956de350c8369d",
+        "run_log": "evidence/T09/2026-11-07-A-private-release-stage.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-07T12:16:51+00:00",
+        "test_count": 5,
+        "evidence_count": 9,
+        "evidence_preview": [
+          "docs/business-rollout-2026-11-07.md",
+          "project/business-release-plan.json",
+          "deployment/business-host.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706860505"
     }
   ],
   "tasks": [
@@ -1025,60 +1039,70 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-07T05:40:02Z",
-      "last_note": "实际上报（partial，尚未完成）：Verified exact T07 candidate 06c2292 locally before cloud rollout: 4 app tests, 17 C regression tests and 8 HTTP form cases passed. Business deployment and persistence checks remain pending.",
+      "last_update": "2026-11-07T12:20:04Z",
+      "last_note": "实际上报（partial，尚未完成）：Confirmed live two-host foundation and empty DynamoDB; built pinned 06c2292 archive, uploaded privately and verified hash; prepared reviewed per-boot release/rollback tooling. Public writable demo rollout awaits specific scope confirmation.",
       "processed_comments": [
         6553816674,
         6553947047,
         6554221129,
-        6702918732
+        6702918732,
+        6706856439
       ],
       "last_receipt": {
-        "receipt_id": "R-T09-6702918732",
+        "receipt_id": "R-T09-6706856439",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-07T05:40:25+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702922204"
+        "processed_at": "2026-11-07T12:20:29+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706860505"
       },
       "last_report": {
-        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-candidate-readiness.json",
-        "commit": "09e62ea979bafe1b359984ae9b0d248cd7a12769",
-        "manifest_sha": "a837c71465aede14a7aee962259064499fab2671",
+        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-private-release.json",
+        "commit": "94f7650f5d1a50aa1ced71e026f3ea8e5bf04a58",
+        "manifest_sha": "5098e4d6d02405a0e6e53beb88956de350c8369d",
         "evidence_shas": {
-          "docs/deployment-readiness-2026-11-07.md": "89cc6ad56333e88408195d638457b3b52df1c883",
-          "evidence/T09/2026-11-07-A-candidate-app-tests.log": "108e28df25d99be536b78240b1140589996e008e",
-          "evidence/T09/2026-11-07-A-candidate-regression.log": "5f61a42122952d935a4173d8df0aa2e849dd1c63",
-          "evidence/T09/2026-11-07-A-candidate-http.log": "3e4df782c7f616df554adfe3bed82ed494603a88",
-          "evidence/T09/2026-11-07-A-candidate-local-samples.jsonl": "b323da408226e36b72760e526cb63c1ff04ac06e"
+          "docs/business-rollout-2026-11-07.md": "3bffac8cc60284240b3d4284e81089f12c6f951f",
+          "project/business-release-plan.json": "ecdefc91b95621ed6d0447272828bd44c667a50b",
+          "deployment/business-host.py": "e5baf8595c56f0825ff8bffa0f22b7d24499b3fb",
+          "deployment/release-business.py": "6c41d3503054c41fb2546e1044c5444150aaa141",
+          "tests/test_release_business.py": "683b0c25dcec7e64e22b52eda441f0c63bc85e58",
+          "evidence/T09/2026-11-07-A-live-predeployment.log": "889463d776a357136d6e21fefe53582523137a94",
+          "evidence/T09/2026-11-07-A-release-safety-tests.log": "643532e417a49788bd8978ca381a0335f71dd125",
+          "evidence/T09/2026-11-07-A-private-release-stage.log": "4ae7aff6ef6a2e952875b611a0205a945a1f302f",
+          "evidence/T09/2026-11-07-A-release-ready.png": "9216fd666309d1f3d30e38a85394c47d5fbe629e"
         },
-        "summary": "Verified exact T07 candidate 06c2292 locally before cloud rollout: 4 app tests, 17 C regression tests and 8 HTTP form cases passed. Business deployment and persistence checks remain pending.",
-        "tested_at": "2026-11-07T05:38:46+00:00",
+        "summary": "Confirmed live two-host foundation and empty DynamoDB; built pinned 06c2292 archive, uploaded privately and verified hash; prepared reviewed per-boot release/rollback tooling. Public writable demo rollout awaits specific scope confirmation.",
+        "tested_at": "2026-11-07T12:16:51+00:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "Windows, Python3.12.14 local venv; loopback-only HTTP; mocked DynamoDB using botocore Stubber; no AWS deployment or cloud writes.",
+        "environment": "Authenticated Learner Lab account 214018170594/us-east-1 via CloudShell; local Windows/Python3.12 safety tests; CloudShell bash syntax checks. Existing hosts unchanged.",
         "verification_result": "partial",
-        "run_log": "evidence/T09/2026-11-07-A-candidate-http.log",
-        "test_count": 4,
+        "run_log": "evidence/T09/2026-11-07-A-private-release-stage.log",
+        "test_count": 5,
         "test_summary": [
           {
-            "action": "Run application test suite",
-            "expected": "4 tests pass",
-            "actual": "4 passed, including local read/write, health, conditional PutItem and paginated Scan with Stubber, storage errors and configuration."
+            "action": "Live AWS read-only inventory and ALB GETs",
+            "expected": "Two healthy private targets and known placeholder",
+            "actual": "Both running/healthy; /health200 on az-a and az-b, infrastructure-only; home200 placeholder; real consistent COUNT0, no next page; endpoints available."
           },
           {
-            "action": "Run C regression suite",
-            "expected": "17 tests pass",
-            "actual": "17 passed on candidate."
+            "action": "Build exact Git-object release",
+            "expected": "Only pinned app.py and runtime lock; reproducible archive hash",
+            "actual": "Two-file 4350-byte package, fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd."
           },
           {
-            "action": "Run local business HTTP smoke",
-            "expected": "Health200; seven invalid forms400; valid form302; readback and four sample responses succeed",
-            "actual": "All assertions passed; samples explicitly local-fixture."
+            "action": "Three offline safety tests",
+            "expected": "Payload parse/size, health-failure restore/block, tampered archive rejection",
+            "actual": "3 passed; mocked host service/AWS, no live rollback claim."
           },
           {
-            "action": "Review deployment handoff and boot environment",
-            "expected": "Identify exact code and required production configuration",
-            "actual": "App and runtime lock unchanged from 06c2292cdf0aca80f050709b8172fac3595b54cc. Existing foundation-only per-boot script overwrites env without READING_DATA_MODE; business rollout must replace/adapt tha"
+            "action": "Private S3 upload and readback",
+            "expected": "Existing bucket scoped release key; SHA256 match",
+            "actual": "PRIVATE_ARCHIVE_VERIFIED exact expected SHA; no public ACL or course materials in archive."
+          },
+          {
+            "action": "CloudShell bash syntax check of release and rollback MIME payloads",
+            "expected": "bash -n succeeds; under 16384 bytes",
+            "actual": "release7241 bytes and rollback7242 bytes, both LINUX_BOOT_SYNTAX_OK. This does not execute the host deployment."
           }
         ]
       },
