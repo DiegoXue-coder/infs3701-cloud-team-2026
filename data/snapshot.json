@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T12:55:55+00:00",
+  "generated_at": "2026-11-08T04:34:58+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,23 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T07-6702261138",
-      "task_id": "T07",
-      "request_comment_id": 6702261138,
-      "actor": "Alex4325Li",
-      "command": "claim",
-      "requested_at": "2026-11-07T04:29:43Z",
-      "processed_at": "2026-11-07T04:30:03+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T07 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702261138",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702264513"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T07-6702291820",
@@ -298,6 +281,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707216949"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T11-6717282969",
+      "task_id": "T11",
+      "request_comment_id": 6717282969,
+      "actor": "Alex4325Li",
+      "command": "claim",
+      "requested_at": "2026-11-08T04:34:35Z",
+      "processed_at": "2026-11-08T04:34:54+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T11 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717282969",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717285897"
     }
   ],
   "tasks": [
@@ -1273,14 +1273,24 @@
         "检查代码是否依赖本地文件或内存状态，提前修复；真实双实例验收待入口可用。"
       ],
       "task_id": "T11",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "Alex4325Li",
+      "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-08T04:34:35Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6717282969
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T11-6717282969",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-08T04:34:54+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717285897"
+      },
       "issue_number": 11,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11",
       "waiting_for": [
