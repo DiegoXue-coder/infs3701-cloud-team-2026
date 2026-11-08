@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T12:02:39+00:00",
+  "generated_at": "2026-11-08T12:03:36+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,23 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T12-6702485028",
-      "task_id": "T12",
-      "request_comment_id": 6702485028,
-      "actor": "Marina057",
-      "command": "claim",
-      "requested_at": "2026-11-07T04:53:13Z",
-      "processed_at": "2026-11-07T04:53:33+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T12 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702485028",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702504356"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T12-6702523570",
@@ -299,6 +282,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717301205"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T02-6721240365",
+      "task_id": "T02",
+      "request_comment_id": 6721240365,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "requested_at": "2026-11-08T12:03:11Z",
+      "processed_at": "2026-11-08T12:03:33+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T02 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721240365",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721244047"
     }
   ],
   "tasks": [
@@ -415,14 +415,24 @@
         "准备新成员加入说明和访问测试；得到用户名后再邀请。"
       ],
       "task_id": "T02",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-08T12:03:11Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6721240365
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T02-6721240365",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-08T12:03:33+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721244047"
+      },
       "issue_number": 2,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2",
       "waiting_for": [],
