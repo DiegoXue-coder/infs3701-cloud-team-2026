@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T04:36:47+00:00",
+  "generated_at": "2026-11-08T12:02:39+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
     "A": "DiegoXue-coder",
     "B": "Alex4325Li",
-    "C": "Marina057"
+    "C": "Marina057",
+    "D": "wyend12"
   },
   "service": {
     "status": "selected",
@@ -1750,31 +1751,35 @@
     },
     {
       "id": "T19",
-      "title": "合并报告并复现部署步骤",
-      "role": "B",
-      "reviewer_role": "C",
-      "start": "2026-10-31",
+      "title": "Integrate and verify the English design report",
+      "role": "D",
+      "reviewer_role": "B",
+      "start": "2026-11-08",
       "due": "2026-11-13",
       "depends_on": [
         "T13",
         "T14",
-        "T15"
+        "T15",
+        "T25"
       ],
       "optional": false,
       "steps": [
-        "每人提供自己部分的目标、理由、备选、代价、限制和证据。",
-        "整合为规定字数/页数的设计报告，统一引用并清除模板残留。",
-        "另一人按真实部署步骤复核，补齐区域、资源创建、代码及依赖。"
+        "Integrate A networking/compute/security, B application/data, C testing/monitoring/cost and D objective/design synthesis into one English document.",
+        "Reconcile technical claims with the final release, diagram and evidence. Ask each technical owner to verify their section; use another member to check deploy/run instructions.",
+        "Produce editable source plus a PDF strictly below 4,000 words AND eight body pages, references/appendices excluded, with consistent references and actual contributions/AI-use records."
       ],
       "acceptance": [
-        "各人章节/取舍/限制/引用/AI 证据；另一人按步骤复核"
+        "Complete English report, genuine evidence mapping, justified workload-specific choices and limitations.",
+        "Source and PDF with measured word/page counts; independent technical review and reproducibility check, no fabricated AWS tests."
       ],
-      "guide": "docs/execution-guide.md",
+      "guide": "docs/member-D.md",
       "start_after": [],
       "early_steps": [
-        "立即创建报告结构，各人滚动补自己部分的需求、选择和操作。",
-        "先检查可复现步骤、引用和 AI 记录；最终结论与证据齐后才定稿。"
+        "Read Alex's existing application/data chapter and preserve its authorship. Build the report outline now; do not wait for cloud repairs or final task approval.",
+        "Request A/B/C technical sections in one consolidated checklist; distinguish dated evidence, missing results and proposed design."
       ],
+      "language": "en",
+      "reallocated_from": "B",
       "task_id": "T19",
       "status": "todo",
       "owner": null,
@@ -1789,16 +1794,17 @@
       "waiting_for": [
         "T13",
         "T14",
-        "T15"
+        "T15",
+        "T25"
       ],
       "start_waiting_for": []
     },
     {
       "id": "T20",
-      "title": "联合录真实操作并剪 60 秒视频",
-      "role": "C",
-      "reviewer_role": "A",
-      "start": "2026-11-11",
+      "title": "Produce the live demonstration video and English narration",
+      "role": "D",
+      "reviewer_role": "C",
+      "start": "2026-11-08",
       "due": "2026-11-13",
       "depends_on": [
         "T10",
@@ -1807,19 +1813,22 @@
       ],
       "optional": false,
       "steps": [
-        "在系统真实运行时录浏览器操作，展示写入/读取。",
-        "使用真实分流或故障片段，并说明请求路径和关键选择。",
-        "暂剪成 60 秒以内，听清看清，不使用截图拼接冒充现场操作。"
+        "Record actual browser use of the deployed release: add/read a fictional record, with real load-distribution or availability evidence. A alone performs AWS changes.",
+        "Explain key decisions and the request flow clearly, using actual results; obtain each member's contribution/voice where agreed.",
+        "Edit a professional video to the conservative 60-second target until the tutor resolves the duration conflict. Check audio, readability, exact duration and all evidence claims."
       ],
       "acceptance": [
-        "现场操作、分流/故障证据、请求流、关键决策；可听清看清"
+        "Playable final video plus script/source footage index, measured duration and clear English narration.",
+        "Real live use and routing/availability evidence; no staged screenshots or untested failure claims; C independently checks the final cut."
       ],
-      "guide": "docs/execution-guide.md",
+      "guide": "docs/member-D.md",
       "start_after": [],
       "early_steps": [
-        "先完成 60 秒脚本、分镜与录屏方案，录可复用的真实界面片段。",
-        "最终版本等待实际业务和分流/可用性证据；未测的内容不编造。"
+        "Reuse Marina's existing 60-second script with its authorship credited; adapt the English narration and storyboard.",
+        "Arrange A/B/C real browser and routing/availability recordings while report sections are being written."
       ],
+      "language": "en",
+      "reallocated_from": "C",
       "task_id": "T20",
       "status": "todo",
       "owner": null,
@@ -1849,7 +1858,7 @@
       "optional": false,
       "steps": [
         "每人持续记录实际贡献和 AI 使用及过程证据。",
-        "核对所有成员职责与认可工作份额，按要求分别签认。",
+        "核对 A/B/C/D 四位成员的实际贡献，按要求各自确认份额与签认；C只汇总，不代签。",
         "收齐真实签名封面，不把计划分工当实际贡献。"
       ],
       "acceptance": [
@@ -1891,7 +1900,7 @@
       ],
       "optional": false,
       "steps": [
-        "A 查图与部署，B 查报告/源码/复现，C 查成本/视频/证据。",
+        "A查架构与部署，B查应用/数据与复现，C查实验/成本，D查英文一致性/引用/报告视频格式；轮换检查他人产物。",
         "轮换检查他人产物，逐项核对格式、字数、页数、时长和引用。",
         "把问题写回任务卡，没有通过的项目不得勾成完成。"
       ],
@@ -2009,6 +2018,45 @@
       "start_waiting_for": [
         "T23"
       ]
+    },
+    {
+      "id": "T25",
+      "title": "Define objectives and audit requirements against evidence",
+      "language": "en",
+      "role": "D",
+      "reviewer_role": "A",
+      "start": "2026-11-08",
+      "due": "2026-11-09",
+      "depends_on": [],
+      "optional": false,
+      "start_after": [],
+      "guide": "docs/member-D.md",
+      "early_steps": [
+        "Read the original English assignment brief/rubric, current English application chapter and the dated handoff/evidence. Your AI can translate Chinese notes.",
+        "Draft the user problem, workload and cloud-service objective; create an evidence/gap matrix independently of live AWS availability."
+      ],
+      "steps": [
+        "Write an initial 500–700-word English objective, design synthesis and limitations draft grounded in the actual Reading Tracker.",
+        "Create a requirement/evidence matrix with source requirement, file/commit/time, what is actually proven, missing work, responsible member and review status.",
+        "Raise one consolidated question list to the technical owners, including unresolved TLS, auto-scaling, video-duration and resource-retention requirements. Do not invent tutor answers."
+      ],
+      "acceptance": [
+        "English objective/design draft and a useful evidence/gap matrix, with actual source-review log and concrete questions.",
+        "Current build versus dated evidence and known failures are clearly distinguished; original authors' contributions preserved."
+      ],
+      "task_id": "T25",
+      "status": "todo",
+      "owner": null,
+      "owner_role": null,
+      "submission": null,
+      "reviewer": null,
+      "last_update": null,
+      "last_note": "尚未认领",
+      "processed_comments": [],
+      "issue_number": 25,
+      "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25",
+      "waiting_for": [],
+      "start_waiting_for": []
     }
   ]
 }
