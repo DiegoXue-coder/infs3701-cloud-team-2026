@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T12:03:36+00:00",
+  "generated_at": "2026-11-08T12:04:20+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,37 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T12-6702523570",
-      "task_id": "T12",
-      "request_comment_id": 6702523570,
-      "actor": "Marina057",
-      "command": "report",
-      "requested_at": "2026-11-07T04:57:23Z",
-      "processed_at": "2026-11-07T04:57:45+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T12 已更新为「进行中」。实际上报（partial，尚未完成）：独立复核 T07 候选版与 T04 接口约定，复跑 4 项应用测试及 17 项 T08 回归，并在实际本地 HTTP 服务核对 8 项表单输入、健康接口、业务读回与采样。提交 T12 联调、监控取证和成本假设增补。",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702523570",
-      "submission": {
-        "path": "deliveries/T12/2026-11-07-Marina057.json",
-        "commit": "e4ea2026dc8cc627831371e12b9b8a36f919062b",
-        "manifest_sha": "b9055ddc196a6d8b969cfb516d84f088ff7a371c",
-        "run_log": "evidence/T12/2026-11-07-Marina057-local-http.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-07T15:54:56+11:00",
-        "test_count": 4,
-        "evidence_count": 6,
-        "evidence_preview": [
-          "docs/c-t12-business-validation.md",
-          "tests/smoke_t12_http.py",
-          "evidence/T12/2026-11-07-Marina057-local-http.log"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6702526775"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T09-6702918732",
@@ -299,6 +268,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721240365",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721244047"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T02-6721246927",
+      "task_id": "T02",
+      "request_comment_id": 6721246927,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-08T12:03:50Z",
+      "processed_at": "2026-11-08T12:04:16+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T02 已更新为「进行中」。实际上报（partial，尚未完成）：Expanded coordination to role D reserved for wyend12, English onboarding/cards and bilingual receipt summaries; added independent T25 and redistributed unclaimed T19/T20; 63 tests passed, preserving old roles/authorship/evidence. Member invitation/access/own AI acceptance remains pending.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721246927",
+      "submission": {
+        "path": "deliveries/T02/2026-11-08-DiegoXue-coder-four-person.json",
+        "commit": "10a9e08092eb9ba68be8d21cb9e13b7fa0ddc0ea",
+        "manifest_sha": "66290ad57e8eed40e6ade05004b894525b19a427",
+        "run_log": "evidence/T02/2026-11-08-four-person-compatibility-tests.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-08T12:01:44+00:00",
+        "test_count": 4,
+        "evidence_count": 13,
+        "evidence_preview": [
+          "docs/2026-11-08-four-person-setup.md",
+          "docs/four-person-plan.md",
+          "docs/member-D.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721251275"
     }
   ],
   "tasks": [
@@ -420,18 +420,68 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-08T12:03:11Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-08T12:03:50Z",
+      "last_note": "实际上报（partial，尚未完成）：Expanded coordination to role D reserved for wyend12, English onboarding/cards and bilingual receipt summaries; added independent T25 and redistributed unclaimed T19/T20; 63 tests passed, preserving old roles/authorship/evidence. Member invitation/access/own AI acceptance remains pending.",
       "processed_comments": [
-        6721240365
+        6721240365,
+        6721246927
       ],
       "last_receipt": {
-        "receipt_id": "R-T02-6721240365",
-        "command": "claim",
+        "receipt_id": "R-T02-6721246927",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-08T12:03:33+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721244047"
+        "processed_at": "2026-11-08T12:04:16+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721251275"
+      },
+      "last_report": {
+        "path": "deliveries/T02/2026-11-08-DiegoXue-coder-four-person.json",
+        "commit": "10a9e08092eb9ba68be8d21cb9e13b7fa0ddc0ea",
+        "manifest_sha": "66290ad57e8eed40e6ade05004b894525b19a427",
+        "evidence_shas": {
+          "docs/2026-11-08-four-person-setup.md": "60de339c2598b8f48a8075823113c40d61b14b5e",
+          "docs/four-person-plan.md": "c0a24afb48bfee84c3c426d87cbfb4e97098a39d",
+          "docs/member-D.md": "0fb0c3987db7d08715161e1854a06e7c6e2ee6b1",
+          "AGENTS.en.md": "6401ca4c8322317c2d98d9b454854e1d3eb48ddc",
+          "prompts/START-en.md": "efa2c5c08408de4a0537e8dec89985b7e1c48424",
+          "project/config.json": "be8fae46a947a73b6bc1c62b9dd5d14851cdb397",
+          "project/tasks.json": "fa40d70446772937c64817228632cdb32c52f732",
+          "scripts/team.py": "8114caf890a70a929bc346ca71fdf63b5b8deb5e",
+          "scripts/team_sync.py": "33bf6fb0f1343d1acc03fe57f73b26cecae07c1c",
+          "scripts/setup_member.py": "bc6182963ba545aff602155bbe24d8ba7574f7dc",
+          "tests/test_four_person.py": "775db2964efeba9605d712f128fd0e808c1b3073",
+          "evidence/T02/2026-11-08-four-person-workflow-final-tests.log": "2fede4d2d7666340954fc8e38fa8eada39f964ee",
+          "evidence/T02/2026-11-08-four-person-compatibility-tests.log": "171923f10b211d295c36f5ac3de8b8f8fa77788a"
+        },
+        "summary": "Expanded coordination to role D reserved for wyend12, English onboarding/cards and bilingual receipt summaries; added independent T25 and redistributed unclaimed T19/T20; 63 tests passed, preserving old roles/authorship/evidence. Member invitation/access/own AI acceptance remains pending.",
+        "tested_at": "2026-11-08T12:01:44+00:00",
+        "submitted_by": "DiegoXue-coder",
+        "environment": "Local Windows/Python3.12 venv; isolated fake GitHub coordinator tests and actual GitHub read-only account/access checks. No AWS action or Tenzin authentication.",
+        "verification_result": "partial",
+        "run_log": "evidence/T02/2026-11-08-four-person-compatibility-tests.log",
+        "test_count": 4,
+        "test_summary": [
+          {
+            "action": "Verify public account and repository access",
+            "expected": "Resolve exact GitHub login and distinguish planned role from actual access",
+            "actual": "wyend12 exists; collaborator permission none and no matching pending invitation. No invite or permission change performed."
+          },
+          {
+            "action": "Read live T19/T20 before planned role redistribution",
+            "expected": "Both unclaimed; do not overwrite a real owner",
+            "actual": "Both todo/owner null. Added coordinator guard to stop if a conflicting existing role claim is found."
+          },
+          {
+            "action": "Run full local test suite",
+            "expected": "Existing rules and D flow pass",
+            "actual": "63 passed, including English partial-delivery/receipt flow, identity/approval/dependency rules, guarded new reallocations and preserved legacy administrative owner_role history. Fake GitHub tests only"
+          },
+          {
+            "action": "Run local D setup path without installing",
+            "expected": "Validate plan; no app or AWS dependency",
+            "actual": "Plan validation passed; role guide member-D.md; no dependency installation, AWS access or live web test claimed."
+          }
+        ]
       },
       "issue_number": 2,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2",
