@@ -426,7 +426,9 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
         issues[key]=api.request('GET',api.path(f"/issues/{issue['number']}"))
     states={key:parse_state(issue['body']) for key,issue in issues.items()}
     for key,state in states.items():
-        if state.get('owner') and state.get('owner_role') not in (None,by_id[key]['role']):
+        # Guard only explicitly reallocated cards. Older administrative role
+        # migrations retain their recorded owner_role as historical evidence.
+        if by_id[key].get('reallocated_from') and state.get('owner') and state.get('owner_role') not in (None,by_id[key]['role']):
             raise RuntimeError('Role change would conflict with an existing claim on '+key+'; coordinate the handoff instead of overwriting ownership.')
     events=[];comment_cache={}
     for key,issue in issues.items():

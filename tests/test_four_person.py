@@ -113,5 +113,18 @@ class FourPersonRules(unittest.TestCase):
                 core.synchronize(api,[api.task],api.config,root=Path(folder))
         self.assertEqual(core.parse_state(api.issue['body'])['owner'],'Alex4325Li')
 
+    def test_legacy_administrative_role_migration_keeps_historical_owner_role(self):
+        api=ReceiptAPI()
+        state=core.initial_state(api.task,api.config)
+        state.update(owner='alice',owner_role='B',status='in_progress',last_note='Historical role migration, preserved')
+        api.issue['body']=core.issue_body(api.task,state,api.config)
+        api.rows=[]
+        with tempfile.TemporaryDirectory() as folder:
+            core.synchronize(api,[api.task],api.config,root=Path(folder))
+        final=core.parse_state(api.issue['body'])
+        self.assertEqual(final['owner'],'alice')
+        self.assertEqual(final['owner_role'],'B')
+        self.assertEqual(final['last_note'],state['last_note'])
+
 
 if __name__=='__main__': unittest.main()

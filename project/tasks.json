@@ -653,7 +653,8 @@
       "Read Alex's existing application/data chapter and preserve its authorship. Build the report outline now; do not wait for cloud repairs or final task approval.",
       "Request A/B/C technical sections in one consolidated checklist; distinguish dated evidence, missing results and proposed design."
     ],
-    "language": "en"
+    "language": "en",
+    "reallocated_from": "B"
   },
   {
     "id": "T20",
@@ -683,7 +684,8 @@
       "Reuse Marina's existing 60-second script with its authorship credited; adapt the English narration and storyboard.",
       "Arrange A/B/C real browser and routing/availability recordings while report sections are being written."
     ],
-    "language": "en"
+    "language": "en",
+    "reallocated_from": "C"
   },
   {
     "id": "T21",

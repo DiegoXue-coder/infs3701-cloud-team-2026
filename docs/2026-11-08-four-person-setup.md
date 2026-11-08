@@ -9,3 +9,5 @@ DiegoXue-coder授权将剩余工作扩为四人，并提供Tenzin的GitHub用户
 本机使用setup_member.py --role D（未--install）验证D计划检查入口；没有声称在Tenzin电脑完成安装/授权。任何fake GitHub测试仅为离线单元测试，不能写为wyend12真人已加入。D还需由持有人邀请Write权限、本人接受、本人AI/Git授权、doctor/start和实际首项认领。
 
 下次成员可直接使用[prompts/START-en.md](../prompts/START-en.md)与[docs/member-D.md](member-D.md)。A/B/C/D分工见[four-person-plan.md](four-person-plan.md)。本轮未恢复或改变AWS，B报告的503原因仍未知。
+
+同步时发现T01保留了历史管理员角色迁移字段，通用冲突检查不应拦截该历史记录。检查已限定为本次显式重分配的T19/T20，新增测试证明历史owner_role不被改写。[最终兼容性测试](../evidence/T02/2026-11-08-four-person-compatibility-tests.log)63项通过；前轮60/62项日志按原时间保留。

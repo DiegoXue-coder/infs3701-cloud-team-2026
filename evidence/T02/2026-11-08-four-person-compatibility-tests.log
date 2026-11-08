@@ -1,0 +1,72 @@
+Task: T02
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-08T12:01:42+00:00
+Finished UTC: 2026-11-08T12:01:44+00:00
+Exit code: 0
+Command: .venv/Scripts/python.exe -m unittest discover -s tests -p 'test_*.py'
+
+STDOUT
+{"tasks": 1, "new_commands": 1, "snapshot": "2026-11-08T12:01:43+00:00"}
+{"tasks": 1, "new_commands": 0, "snapshot": "2026-11-08T12:01:43+00:00"}
+{"tasks": 1, "new_commands": 0, "snapshot": "2026-11-08T12:01:43+00:00"}
+{"tasks": 1, "new_commands": 0, "snapshot": "2026-11-08T12:01:43+00:00"}
+{"tasks": 1, "new_commands": 0, "snapshot": "2026-11-08T12:01:43+00:00"}
+{
+  "commit": "06c2292cdf0aca80f050709b8172fac3595b54cc",
+  "bucket": "infs3701-team-artifacts-214018170594",
+  "key": "releases/reading-tracker/06c2292cdf0aca80f050709b8172fac3595b54cc/app.tar.gz",
+  "archive_sha256": "fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd",
+  "files": {
+    "app.py": "a0eb70b7e8a9505e912c14fead268e9c0798064e35708243404c250def1abfb5",
+    "requirements.txt": "0c3bfc3d3602f536f24ba1ff9ea7e6790f82e0c3299e2abd98f3ef5a99e7547e"
+  },
+  "public_scope": "Existing HTTP ALB becomes unauthenticated fictional-demo list/add. No real personal data. TLS unresolved.",
+  "hosts": {
+    "a": "i-00572a14ca8b71156",
+    "b": "i-0081259c52a32e051"
+  },
+  "rollback": "Per-host foundation backup; rollback mode retains database and release files."
+}
+INFS3701_RELEASE_FAILED_RESTORED_PREVIOUS
+INFS3701_ROLLBACK_OK={"stage": "infrastructure-only"}
+{
+  "commit": "06c2292cdf0aca80f050709b8172fac3595b54cc",
+  "bucket": "infs3701-team-artifacts-214018170594",
+  "key": "releases/reading-tracker/06c2292cdf0aca80f050709b8172fac3595b54cc/app.tar.gz",
+  "archive_sha256": "fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd",
+  "files": {
+    "app.py": "a0eb70b7e8a9505e912c14fead268e9c0798064e35708243404c250def1abfb5",
+    "requirements.txt": "0c3bfc3d3602f536f24ba1ff9ea7e6790f82e0c3299e2abd98f3ef5a99e7547e"
+  },
+  "public_scope": "Existing HTTP ALB becomes unauthenticated fictional-demo list/add. No real personal data. TLS unresolved.",
+  "hosts": {
+    "a": "i-00572a14ca8b71156",
+    "b": "i-0081259c52a32e051"
+  },
+  "rollback": "Per-host foundation backup; rollback mode retains database and release files."
+}
+{
+  "commit": "06c2292cdf0aca80f050709b8172fac3595b54cc",
+  "bucket": "infs3701-team-artifacts-214018170594",
+  "key": "releases/reading-tracker/06c2292cdf0aca80f050709b8172fac3595b54cc/app.tar.gz",
+  "archive_sha256": "fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd",
+  "files": {
+    "app.py": "a0eb70b7e8a9505e912c14fead268e9c0798064e35708243404c250def1abfb5",
+    "requirements.txt": "0c3bfc3d3602f536f24ba1ff9ea7e6790f82e0c3299e2abd98f3ef5a99e7547e"
+  },
+  "public_scope": "Existing HTTP ALB becomes unauthenticated fictional-demo list/add. No real personal data. TLS unresolved.",
+  "hosts": {
+    "a": "i-00572a14ca8b71156",
+    "b": "i-0081259c52a32e051"
+  },
+  "rollback": "Per-host foundation backup; rollback mode retains database and release files."
+}
+
+STDERR
+...............................................................
+----------------------------------------------------------------------
+Ran 63 tests in 0.635s
+
+OK
+
