@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T04:34:58+00:00",
+  "generated_at": "2026-11-08T04:36:47+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -31,37 +31,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T07-6702291820",
-      "task_id": "T07",
-      "request_comment_id": 6702291820,
-      "actor": "Alex4325Li",
-      "command": "report",
-      "requested_at": "2026-11-07T04:33:02Z",
-      "processed_at": "2026-11-07T04:33:28+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T07 已更新为「进行中」。实际上报（partial，尚未完成）：交付 Reading Tracker 首个发布候选版，包含本地模式、DynamoDB 分页读取和条件写入、健康接口、实例标签、部署及回滚步骤。",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702291820",
-      "submission": {
-        "path": "deliveries/T07/2026-11-07-Alex4325Li.json",
-        "commit": "06c2292cdf0aca80f050709b8172fac3595b54cc",
-        "manifest_sha": "bed4c74bb29ff0ba698e0e244020e4e7bb1d3b0a",
-        "run_log": "evidence/T07/2026-11-07-http-smoke.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-07T04:32:22+00:00",
-        "test_count": 4,
-        "evidence_count": 9,
-        "evidence_preview": [
-          "app/reading_tracker.py",
-          "app/README.md",
-          "deployment/runtime-requirements.lock"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/7#issuecomment-6702296296"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T12-6702485028",
@@ -298,6 +267,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717282969",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717285897"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T11-6717297675",
+      "task_id": "T11",
+      "request_comment_id": 6717297675,
+      "actor": "Alex4325Li",
+      "command": "report",
+      "requested_at": "2026-11-08T04:36:19Z",
+      "processed_at": "2026-11-08T04:36:44+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T11 已更新为「进行中」。实际上报（partial，尚未完成）：核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717297675",
+      "submission": {
+        "path": "deliveries/T11/2026-11-08-Alex4325Li.json",
+        "commit": "994665a05c5d63ce714a97661745fd1855612181",
+        "manifest_sha": "46fee6636b404a796459dae519c1e6346ca9ff0b",
+        "run_log": "evidence/T11/2026-11-08-B-cloud-http.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-08T04:35:14+00:00",
+        "test_count": 2,
+        "evidence_count": 7,
+        "evidence_preview": [
+          "evidence/T11/2026-11-08-B-cloud-http.log",
+          "evidence/T11/2026-11-08-B-release-check.log",
+          "docs/b-t11-verification.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717301205"
     }
   ],
   "tasks": [
@@ -1278,18 +1278,52 @@
       "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-08T04:34:35Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-08T04:36:19Z",
+      "last_note": "实际上报（partial，尚未完成）：核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
       "processed_comments": [
-        6717282969
+        6717282969,
+        6717297675
       ],
       "last_receipt": {
-        "receipt_id": "R-T11-6717282969",
-        "command": "claim",
+        "receipt_id": "R-T11-6717297675",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-08T04:34:54+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717285897"
+        "processed_at": "2026-11-08T04:36:44+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717301205"
+      },
+      "last_report": {
+        "path": "deliveries/T11/2026-11-08-Alex4325Li.json",
+        "commit": "994665a05c5d63ce714a97661745fd1855612181",
+        "manifest_sha": "46fee6636b404a796459dae519c1e6346ca9ff0b",
+        "evidence_shas": {
+          "evidence/T11/2026-11-08-B-cloud-http.log": "389a28fbc3d22d5d18fbd351d1c1c9f523cdfb66",
+          "evidence/T11/2026-11-08-B-release-check.log": "38ae65bc88192eddc9afec47045d7dec4b758175",
+          "docs/b-t11-verification.md": "229c2d60311dac3c7057be03317d493e5d15089b",
+          "docs/b-design-report-draft.md": "d16a3a359e587a04119c1aad32145ec8157f288a",
+          "app/README.md": "9acd739d9157915e35b48abe165b8e786b18518b",
+          "docs/interfaces.md": "66b1bf0e2739ec3b24ddfb389ff92594765a91f8",
+          "scripts/b_t11_live.py": "b2642837ba5407026822947f086b530c6ab4b6f1"
+        },
+        "summary": "核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
+        "tested_at": "2026-11-08T04:35:14+00:00",
+        "submitted_by": "Alex4325Li",
+        "environment": "macOS Python 3.9.6; public business ALB over HTTP; no AWS console access",
+        "verification_result": "partial",
+        "run_log": "evidence/T11/2026-11-08-B-cloud-http.log",
+        "test_count": 2,
+        "test_summary": [
+          {
+            "action": "核对发布提交的应用 SHA-256",
+            "expected": "与两份启动日志匹配",
+            "actual": "az-a 和 az-b 均匹配 06c2292"
+          },
+          {
+            "action": "GET /health 预检",
+            "expected": "200、业务 stage 和实例标签",
+            "actual": "503、无实例标签；未发送 POST"
+          }
+        ]
       },
       "issue_number": 11,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11",

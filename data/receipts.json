@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T04:34:58+00:00",
+  "generated_at": "2026-11-08T04:36:47+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -925,6 +925,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717282969",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717285897"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T11-6717297675",
+      "task_id": "T11",
+      "request_comment_id": 6717297675,
+      "actor": "Alex4325Li",
+      "command": "report",
+      "requested_at": "2026-11-08T04:36:19Z",
+      "processed_at": "2026-11-08T04:36:44+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T11 已更新为「进行中」。实际上报（partial，尚未完成）：核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717297675",
+      "submission": {
+        "path": "deliveries/T11/2026-11-08-Alex4325Li.json",
+        "commit": "994665a05c5d63ce714a97661745fd1855612181",
+        "manifest_sha": "46fee6636b404a796459dae519c1e6346ca9ff0b",
+        "run_log": "evidence/T11/2026-11-08-B-cloud-http.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-08T04:35:14+00:00",
+        "test_count": 2,
+        "evidence_count": 7,
+        "evidence_preview": [
+          "evidence/T11/2026-11-08-B-cloud-http.log",
+          "evidence/T11/2026-11-08-B-release-check.log",
+          "docs/b-t11-verification.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717301205"
     }
   ]
 }
