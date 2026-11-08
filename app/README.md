@@ -69,3 +69,12 @@ visible. Record the deployed commit, HTTP codes, instance labels and readback
 before and after restart. Marina can then verify routing through the ALB.
 The app scans all pages for the course-sized library to compute its statistics.
 Scan cost grows with the table. Use a small number of fictional writes for validation.
+
+## Published demo and independent verification
+
+The [7 November release handoff](../docs/business-handoff-2026-11-07.md)
+records the deployed commit, both host startup logs and A's write/read/restart
+checks. Check the current endpoint and release in `project/handoffs.json`.
+The AWS demo uses HTTP and fictional records. If health is unavailable, record
+the status and time and ask A to check the Lab and target group. Run no writes
+until both business labels are available. See [B's T11 checks](../docs/b-t11-verification.md).

@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "task_id": "T11",
+  "actor": "Alex4325Li",
+  "tested_at": "2026-11-08T04:35:14+00:00",
+  "environment": "macOS Python 3.9.6; public business ALB over HTTP; no AWS console access",
+  "summary": "核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
+  "tests": [
+    {
+      "action": "核对发布提交的应用 SHA-256",
+      "expected": "与两份启动日志匹配",
+      "actual": "az-a 和 az-b 均匹配 06c2292"
+    },
+    {
+      "action": "GET /health 预检",
+      "expected": "200、业务 stage 和实例标签",
+      "actual": "503、无实例标签；未发送 POST"
+    }
+  ],
+  "evidence": [
+    "evidence/T11/2026-11-08-B-cloud-http.log",
+    "evidence/T11/2026-11-08-B-release-check.log",
+    "docs/b-t11-verification.md",
+    "docs/b-design-report-draft.md",
+    "app/README.md",
+    "docs/interfaces.md",
+    "scripts/b_t11_live.py"
+  ],
+  "limitations": "503 原因未确认。B 尚无独立写入、跨实例读回或重启后的验证结果。T10 为最终验收前置。",
+  "next_step": "Diego 检查 Learner Lab、实例及 ALB 目标健康并确认恢复；B 复跑一次虚构写入与两机读回，协调 A 重启后复验并由 C 核对。",
+  "ai_use": "Codex 协助核对发布证据、发送 HTTP 预检、保存日志并起草章节。",
+  "verification_result": "partial",
+  "run_log": "evidence/T11/2026-11-08-B-cloud-http.log"
+}

@@ -60,3 +60,14 @@ are implemented in `app/reading_tracker.py`. See [app startup and AWS handoff](.
 Page counts support up to 38 digits in both modes to fit DynamoDB's number type.
 The cloud health JSON identifies the release stage as `reading-tracker`.
 Actual AWS write/read and restart persistence remain deployment acceptance checks.
+
+## Published database contract (2026-11-08)
+
+The 7 November release handoff records DynamoDB mode on both hosts for
+`06c2292`. Local mode is development-only. A successful conditional PutItem
+creates one UUID-keyed record, and each subsequent list request scans the same
+table with ConsistentRead on each page. Scan does not offer snapshot isolation
+across pages. A complete write/read check uses the business page and verifies
+the same unique record and values from both labels. Health alone checks only
+the serving process. See [release evidence](business-handoff-2026-11-07.md)
+and [B verification](b-t11-verification.md).

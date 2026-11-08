@@ -1,0 +1,23 @@
+Task: T11
+GitHub actor: Alex4325Li
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-08T04:35:13+00:00
+Finished UTC: 2026-11-08T04:35:14+00:00
+Exit code: 1
+Command: .venv/bin/python scripts/b_t11_live.py --url http://infs3701-team-alb-788523332.us-east-1.elb.amazonaws.com --reference-title 'Fictional cloud acceptance 95c34a0851c940db8b642eb3317d0a45' --write-one-fictional
+
+STDOUT
+{"utc": "2026-11-08T04:35:14.228800+00:00", "method": "GET", "path": "/health", "status": 503, "instance": null}
+
+STDERR
+Traceback (most recent call last):
+  File "/Users/shroky/Documents/Codex/2026-11-03/infs3701-https-github-com-diegoxue-coder/infs3701-cloud-team-2026/scripts/b_t11_live.py", line 89, in <module>
+    main()
+  File "/Users/shroky/Documents/Codex/2026-11-03/infs3701-https-github-com-diegoxue-coder/infs3701-cloud-team-2026/scripts/b_t11_live.py", line 68, in main
+    status, label, _, body = request("/health")
+  File "/Users/shroky/Documents/Codex/2026-11-03/infs3701-https-github-com-diegoxue-coder/infs3701-cloud-team-2026/scripts/b_t11_live.py", line 44, in request
+    require(label in LABELS, f"Unexpected instance label: {label!r}")
+  File "/Users/shroky/Documents/Codex/2026-11-03/infs3701-https-github-com-diegoxue-coder/infs3701-cloud-team-2026/scripts/b_t11_live.py", line 19, in require
+    raise RuntimeError(message)
+RuntimeError: Unexpected instance label: None
+
