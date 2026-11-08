@@ -1,4 +1,16 @@
-# 两位成员自助开工：只需发这一个入口
+# 四人自助入口 / Four-person self-service
+
+**Tenzin / wyend12: use [the complete English setup](member-D.md) and [English start prompt](../prompts/START-en.md).** Accept your own invitation and authorize your own GitHub/AI; no AWS password or AI API key is needed.
+
+当前角色 A=DiegoXue-coder、B=Alex4325Li、C=Marina057、D=wyend12。最新分工见[four-person-plan.md](four-person-plan.md)。D已预留，需本人接受邀请并验证自己的连接；角色分配不等于访问、认领或贡献已完成。
+
+D执行setup_member.py --role D --install仅安装协调器时区依赖，随后用自己的GitHub身份doctor、join --role D、start；首项T25，再T19/T20。认领必须有远程回执，不代替本人认领。参照英文指南中的完整命令与真实交付规则。
+
+新D任务为英文，新回执含双语标签，原始自由文本保留，各人AI可翻译。下方原B/C选岗记录作为历史保留，不能用它覆盖当前四人预留或让Tenzin接管B/C。
+
+---
+
+## 原B/C自助加入流程（历史记录）
 
 仓库负责人已选择 A=DiegoXue-coder 操作 AWS，B 做应用，C 做测试与监控准备。本说明和 `project/handoffs.json` 是统一入口。执行时拉取最新版本，不等待负责人逐条口头回复。
 

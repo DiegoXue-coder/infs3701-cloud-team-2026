@@ -1,4 +1,6 @@
-# 三人在线任务入口
+# 四人在线任务入口 / Four-person tasks
+
+**D / Tenzin / wyend12:** [All D tasks](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues?q=is%3Aissue%20label%3Atask%20label%3A%22role%3AD%22%20sort%3Aupdated-desc) · [English setup](docs/member-D.md) · [English prompt](prompts/START-en.md) · [Four-person plan](docs/four-person-plan.md)
 
 **这里的链接直接查询 GitHub 当前任务。组员登录并有权限即可随时访问，不需要某个人的电脑一直开着。**
 打开或刷新列表可看到已同步的进度；搜索索引可能短暂延迟。若 AI 尚未上传/同步工作，网页不会知道 AWS 刚刚发生的操作。
@@ -28,8 +30,9 @@
 ## 当前成员
 
 - A：DiegoXue-coder，AWS 配置与部署。
-- B：待加入，应用与数据代码。
-- C：待加入。
+- B：Alex4325Li，应用与数据。
+- C：Marina057，测试、监控、成本。
+- D：wyend12 / Tenzin，英文报告、证据核对、视频统筹；访问/本人连接待确认。
 
 成员加入后更新 project/config.json。若浏览器能打开、AI 却返回 404，应检查 AI 的账号和仓库授权；无需把仓库改为公开。
 

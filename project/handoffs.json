@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-07",
+  "updated_on": "2026-11-08",
   "purpose": "Shared operational defaults and handoff state; not proof of implementation or live AWS health.",
   "operator": "DiegoXue-coder",
   "roles": {
@@ -13,6 +13,17 @@
       "guide": "docs/member-C.md",
       "first_task": "T08",
       "next_task": "T12"
+    },
+    "D": {
+      "guide": "docs/member-D.md",
+      "first_task": "T25",
+      "next_tasks": [
+        "T19",
+        "T20"
+      ],
+      "assigned_login": "wyend12",
+      "language": "en",
+      "access_note": "Assignment only; requires invitation acceptance and own GitHub/AI authentication. Do not claim as another member."
     }
   },
   "implementation_contract": {
@@ -111,7 +122,12 @@
       }
     },
     "release_plan": "project/business-release-plan.json",
-    "public_demo_scope": "User confirmed unauthenticated HTTP list/add, fictional data only; no real personal data; TLS unresolved"
+    "public_demo_scope": "User confirmed unauthenticated HTTP list/add, fictional data only; no real personal data; TLS unresolved",
+    "latest_known_observation": {
+      "at": "2026-11-08T04:35:14+00:00",
+      "source": "docs/b-t11-verification.md",
+      "result": "B preflight HTTP503 without instance label, no POST; cause unconfirmed. Last successful A/C cloud evidence is from November7. Do not claim live health."
+    }
   },
   "ready_handoff_rules": {
     "B_to_A": [
@@ -142,5 +158,7 @@
     "Commands run when the member or their AI executes them; no unattended backend is active.",
     "Only authorized operator changes AWS; missing cloud parameters are never guessed.",
     "Human review and genuine evidence remain required."
-  ]
+  ],
+  "four_person_plan": "docs/four-person-plan.md",
+  "english_start": "prompts/START-en.md"
 }

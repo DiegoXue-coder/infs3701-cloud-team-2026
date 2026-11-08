@@ -1,10 +1,12 @@
-# INFS3701 三人云服务协作中心
+# INFS3701 四人云服务协作中心 / Four-person team hub
 
-**来这里看进度、领任务、交证据，再和你自己的 AI 一起做。** 云服务在 AWS 运行，本仓库负责把三个人的工作接起来。
+**来这里看进度、领任务、交证据，再和你自己的 AI 一起做。** 云服务在 AWS 运行，本仓库负责把四个人的工作接起来。
+
+**Tenzin / wyend12: [English setup and your work](docs/member-D.md) · [Copy this English prompt](prompts/START-en.md) · [Four-person responsibilities](docs/four-person-plan.md).** Accept your invitation and authenticate your own GitHub/AI first. Your role assignment is not a task claim or a verified connection.
 
 **最新业务交接（2026-11-07）：** [双实例程序已部署，B/C从这里开始云端独立复核](docs/business-handoff-2026-11-07.md)。包含真实网址、06c2292版本、两台标签、读写/重启证据与各自下一步；HTTPS和小组最终验收尚未完成。
 
-→ **[新成员自助开工：两位都用这个入口](docs/self-service.md)**
+→ **[新成员自助开工 / Self-service entry](docs/self-service.md)**
 
 → [在线任务入口](LIVE_BOARD.md) · [进度看板](DASHBOARD.md) · [全部任务](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) · [每天开始的开场语](prompts/START.md) · [首次加入](docs/onboarding.md)
 
@@ -29,17 +31,18 @@ GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度�
 
 ## 并行方式
 
-[三人并行计划](docs/parallel-plan.md)：A 先做网络/部署准备，B 先做应用/数据层，C 先做测试/监控/成本草稿。所有准备任务都已解除不必要的开始锁；最终部署与验收另有完成条件，不把本地假服务或草稿标为真实系统完成。
+[四人当前分工](docs/four-person-plan.md)：A操作AWS/架构，B应用/数据，C测试/监控/成本，D英文报告/证据核对/视频统筹。准备可并行，最终验收保留必要条件；[原三人计划](docs/parallel-plan.md)保留为历史。
 
-## 三个角色
+## 四个角色
 
 | 角色 | 主要负责 | 当前成员 |
 | --- | --- | --- |
 | A | 网络、服务器、统一入口、部署环境、架构图 | DiegoXue-coder（你） |
-| B | 应用、数据访问代码、部署约定、报告整合 | Zhehao Li |
-| C | 监控、测试、证据、成本、视频整合 | Yu Ma |
+| B | 应用、数据代码、独立验证、应用/数据库章节 | Alex4325Li |
+| C | 监控、测试、故障取证、成本、贡献记录汇总 | Marina057 |
+| D | 英文目标/证据核对、总报告整合、视频统筹 | Tenzin / wyend12（访问与本人开工待验证） |
 
-每个任务有主责、协作者、检查标准和前置任务。你负责 AWS 实际配置，其他两人交付应用和可执行测试，三人各写自己的技术章节。角色可调整，成员加入后更新配置；每人使用自己的 GitHub 身份。
+每个任务有主责、协作者、检查标准和前置任务。A负责AWS实际配置，B/C提供技术内容和实验证据，D整合英文报告与呈现；每人保留原作者归属、各自技术章节和真实贡献，使用本人GitHub身份。
 
 ## 分类方式
 
@@ -48,7 +51,7 @@ GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度�
 | 按周分好的原始课件与示例 | sources/original/course/02_weekly_materials/week_XX/ |
 | 三份小组作业原件 | sources/original/assignment/ |
 | AI 检索文本与文件校验 | sources/text/、sources/manifest.json |
-| 实时任务卡和角色 | GitHub Issues；project/config.json 绑定 A/B/C |
+| 实时任务卡和角色 | GitHub Issues；project/config.json 绑定 A/B/C/D |
 | 真实交付、测试、截图和日志 | deliveries/ 与各任务所引用的证据文件 |
 | AI 工作规则与操作手册 | AGENTS.md、CLAUDE.md、prompts/、docs/ |
 | 在线访问和进度摘要 | LIVE_BOARD.md（筛选入口）、DASHBOARD.md（同步快照） |

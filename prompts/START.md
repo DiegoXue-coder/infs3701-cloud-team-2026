@@ -1,5 +1,7 @@
 # 每天给 AI 的一句话
 
+四人当前分工：[four-person-plan.md](../docs/four-person-plan.md)。Tenzin/wyend12请直接复制 [English prompt](START-en.md)，不要使用旧B/C选岗流程。
+
 ## 首次连接
 
 第一次加入或尚未分工，先使用 [自助开工入口](../docs/self-service.md) 的整段开场语。AI 读取 `project/handoffs.json`、空缺角色和对应 member 指南，协助本人选 B/C 并自助 join，不等待负责人手改配置。

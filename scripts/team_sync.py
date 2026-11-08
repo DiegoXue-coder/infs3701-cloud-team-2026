@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 STATE_RE = re.compile(r'<!-- team-state\s*\n(.*?)\n-->', re.S)
 RECEIPT_RE = re.compile(r'<!-- team-receipt-data\s*\n(.*?)\n-->', re.S)
 STATUS = {'todo':'未开始','in_progress':'进行中','blocked':'被卡住','review':'等检查','done':'已完成','skipped':'未启用（可选）'}
+STATUS_EN = {'todo':'Not started','in_progress':'In progress','blocked':'Blocked','review':'Awaiting review','done':'Done','skipped':'Optional / disabled'}
 COLORS = {'todo':'d9e1e8','in_progress':'0969da','blocked':'cf222e','review':'bf8700','done':'1a7f37','skipped':'8250df'}
 
 def load_config(root=ROOT):
@@ -63,6 +64,8 @@ def text_cell(value):
     return str(value or '—').replace('|','／').replace('\n',' ')[:250]
 
 def issue_body(task, state, config):
+    if task.get('language')=='en':
+        return english_issue_body(task,state,config)
     lines=[f"<!-- team-task:{task['id']} -->",f"# {task['id']} · {task['title']}",'',
         f"主责角色：**{task['role']}**；建议检查角色：{task['reviewer_role']}（必须不同 GitHub 用户）",
         f"内部计划：{task['start']} → {task['due']}（悉尼日期；不是课程新增截止）",
@@ -97,6 +100,39 @@ def issue_body(task, state, config):
         url=f"https://github.com/{config['repository']}/blob/{latest['commit']}/"
         lines += ['- 实际上报结果：'+text_cell(latest.get('verification_result')),
             f"- [交付记录]({url+urllib.parse.quote(latest['path'],safe='/')}) · [执行记录]({url+urllib.parse.quote(latest['run_log'],safe='/')})"]
+    lines += ['', '<!-- team-state',json.dumps(state,ensure_ascii=False,separators=(',',':')),'-->']
+    return '\n'.join(lines)+'\n'
+
+
+def english_issue_body(task,state,config):
+    """English cards share exactly the same state/receipts and completion gates."""
+    lines=[f"<!-- team-task:{task['id']} -->",f"# {task['id']} · {task['title']}",'',
+        f"Responsible role: **{task['role']}**. Suggested reviewer: {task['reviewer_role']} (a different GitHub account).",
+        f"Suggested internal dates: {task['start']} → {task['due']} (Sydney; not a new course deadline).",
+        'To begin preparation: '+(', '.join(start_dependencies(task)) or '**No dependencies; start independently.**'),
+        'Before final submission: '+(', '.join(required_dependencies(task,config)) or 'None'),'',
+        '## Start now','']
+    lines += ['- '+step for step in task.get('early_steps',task['steps'])]
+    lines += ['', '## Work and final validation','']+[f'{i}. {step}' for i,step in enumerate(task['steps'],1)]
+    lines += ['', '## Acceptance criteria','']+['- '+item for item in task['acceptance']]
+    lines += ['', '## Updates and evidence','',
+        f"Claim using `/team claim {task['role']}` through `scripts/team.py command {task['id']} --body-file <file>`. Authenticate as yourself and wait for an accepted receipt.",
+        f"Partial work: `/team report deliveries/{task['id']}/YYYY-MM-DD-username.json`. Full delivery: `/team submit deliveries/{task['id']}/YYYY-MM-DD-username.json`.",
+        'Use delivery schema version 2 with a genuine review/execution log. A document-only review is valid when its actual sources, checks and limitations are recorded. Never invent AWS tests.',
+        'A different member must inspect the result before `/team approve <what was checked>`; never approve your own delivery.',
+        'Use `/team progress <actual progress>` or `/team block <specific obstacle>`. Reports and partial work do not mark a task complete.',
+        f"[English guide](https://github.com/{config['repository']}/blob/main/docs/member-D.md) · [Four-person handoffs](https://github.com/{config['repository']}/blob/main/docs/four-person-plan.md)",
+        '', '## Synchronized state','',
+        f"- Status: **{STATUS_EN[state['status']]}** (`{state['status']}`)",
+        '- Owner: '+text_cell(state.get('owner')),
+        '- Latest note (original language; your AI may translate): '+text_cell(state.get('last_note')),
+        '- Updated: '+text_cell(state.get('last_update')),
+        '- Receipt: '+text_cell((state.get('last_receipt') or {}).get('receipt_id'))]
+    latest=state.get('submission') or state.get('last_report')
+    if latest:
+        url=f"https://github.com/{config['repository']}/blob/{latest['commit']}/"
+        lines += ['- Actual verification result: '+text_cell(latest.get('verification_result')),
+            f"- [Delivery]({url+urllib.parse.quote(latest['path'],safe='/')}) · [Run/review log]({url+urllib.parse.quote(latest['run_log'],safe='/')})"]
     lines += ['', '<!-- team-state',json.dumps(state,ensure_ascii=False,separators=(',',':')),'-->']
     return '\n'.join(lines)+'\n'
 
@@ -299,7 +335,15 @@ def receipt_body(receipt,config):
             f"[完整交付记录]({url+urllib.parse.quote(reference['path'],safe='/')}) · [实际执行记录]({url+urllib.parse.quote(reference['run_log'],safe='/')})",
             '对应版本：`'+reference['commit']+'`']
         lines += [f"- [证据：{path}]({url+urllib.parse.quote(path,safe='/')})" for path in reference['evidence_preview']]
-    lines += ['', '回执确认本次上报和文件版本；它不是 AWS 实时健康证明。', '',
+    lines += ['', '### English receipt summary',
+        f"Task: {receipt['task_id']} · Actor: @{receipt['actor']} · Command: {receipt['command']}",
+        f"Outcome: **{receipt['outcome']}** · {STATUS_EN[receipt['status_before']]} → {STATUS_EN[receipt['status_after']]}",
+        'Processed UTC: '+receipt['processed_at'],
+        'The original-language note above is preserved. Your own AI may translate it; task IDs, status, evidence and verification results must not change.']
+    if reference:
+        lines += [f"Actual result: **{reference['verification_result']}**; checks: {reference['test_count']}; evidence files: {reference['evidence_count']}.",
+            f"[Delivery]({url+urllib.parse.quote(reference['path'],safe='/')}) · [Run/review log]({url+urllib.parse.quote(reference['run_log'],safe='/')}) · Commit: `{reference['commit']}`"]
+    lines += ['', '回执确认本次上报和文件版本；它不是 AWS 实时健康证明。 / This receipt confirms the report and file version, not live AWS health.', '',
         f"<!-- team-receipt:{receipt['request_comment_id']} -->", '<!-- team-receipt-data',
         json.dumps(receipt,ensure_ascii=False,separators=(',',':')), '-->']
     return '\n'.join(lines)
@@ -341,7 +385,7 @@ def bootstrap(api, tasks, config):
     repository=api.request('GET',api.path(''))
     if not repository.get('private'): raise RuntimeError('只允许在 private 仓库初始化课程资料系统。')
     labels={label['name'] for label in api.pages(api.path('/labels'))}
-    definitions={'task':('0366d6','小组任务'),**{f'role:{role}':('7057ff',f'角色 {role}') for role in 'ABC'},
+    definitions={'task':('0366d6','小组任务'),**{f'role:{role}':('7057ff',f'角色 / Role {role}') for role in config['members']},
         **{f'status:{key}':(COLORS[key],value) for key,value in STATUS.items()}}
     for name,(color,description) in definitions.items():
         if name not in labels: api.request('POST',api.path('/labels'),{'name':name,'color':color,'description':description})
@@ -381,6 +425,9 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
     for key,issue in list(issues.items()):
         issues[key]=api.request('GET',api.path(f"/issues/{issue['number']}"))
     states={key:parse_state(issue['body']) for key,issue in issues.items()}
+    for key,state in states.items():
+        if state.get('owner') and state.get('owner_role') not in (None,by_id[key]['role']):
+            raise RuntimeError('Role change would conflict with an existing claim on '+key+'; coordinate the handoff instead of overwriting ownership.')
     events=[];comment_cache={}
     for key,issue in issues.items():
         task=by_id[key];state=states[key]
@@ -427,8 +474,9 @@ def synchronize(api, tasks, config, root=ROOT, issue_seed=None, comment_seed=Non
         state=states[key];body=issue_body(by_id[key],state,config)
         labels={item['name'] for item in issue.get('labels',[])}
         expected={'task',f"role:{by_id[key]['role']}",f"status:{state['status']}"}
-        if body!=issue.get('body') or labels!=expected or issue['state']!=('closed' if state['status']=='done' else 'open'):
-            api.request('PATCH',api.path(f"/issues/{issue['number']}"),{'body':body,'state':'closed' if state['status']=='done' else 'open',
+        title=f"[{key}] {by_id[key]['title']}"
+        if body!=issue.get('body') or labels!=expected or issue['state']!=('closed' if state['status']=='done' else 'open') or issue.get('title')!=title:
+            api.request('PATCH',api.path(f"/issues/{issue['number']}"),{'title':title,'body':body,'state':'closed' if state['status']=='done' else 'open',
                 'labels':sorted(expected),'assignees':[state['owner']] if state.get('owner') else []})
     receipts=sorted([receipt for key,comments in comment_cache.items() for receipt in collect_receipts(key,comments)],key=lambda receipt:receipt.get('processed_at') or '')
     snapshot={'schema_version':1,'generated_at':now(),'repository':config['repository'],'timezone':config['timezone'],
@@ -450,12 +498,12 @@ def render_dashboard(snapshot, root=ROOT):
         local=datetime.fromisoformat(snapshot['generated_at']).astimezone(ZoneInfo('Australia/Sydney')).strftime('%Y-%m-%d %H:%M %Z')
     except ZoneInfoNotFoundError:
         raise RuntimeError('当前 Python 缺少时区数据；Windows 环境先由 AI 安装 tzdata，再重新同步。') from None
-    lines=['# 三人项目进度看板','',f"最后同步：**{local}** · [在线任务入口](LIVE_BOARD.md) · [并行分工](docs/parallel-plan.md) · [系统运行方式](docs/system-status.md)",'',
+    lines=['# 项目进度看板 / Team dashboard','',f"最后同步：**{local}** · [在线任务入口](LIVE_BOARD.md) · [四人分工 / Four-person plan](docs/four-person-plan.md) · [English start](prompts/START-en.md) · [系统运行方式](docs/system-status.md)",'',
         f'已完成并复核 **{len(done)} / {len(active)}** 项；等检查 **{sum(t["status"]=="review" for t in tasks)}** 项；被卡住 **{sum(t["status"]=="blocked" for t in tasks)}** 项。',
         '', '**当前同步：每次聊天由 AI 运行同步助手；后台 Actions 暂停。** [系统状态](docs/system-status.md)。', '', '**这是任务同步快照，不是 AWS 实时监控。** 点击任务读取最新正文和评论；没有同步回执的认领/提交仍在处理中。所有项目任务未完成前，不把协作系统搭建计作云服务完成。',
         '', '**可以先独立准备，最后再联合验收。** 卡片区分开始条件和完成条件；不要等别人整张卡复核完才写代码、配置草稿或测试。',
         '', '## 每个人现在可以做什么','', '| 角色 / 成员 | 当前工作 | 推荐先独立开展（最多三项） |','| --- | --- | --- |']
-    for role in 'ABC':
+    for role in snapshot['members']:
         current=[t for t in tasks if t['role']==role and t['status'] in {'in_progress','blocked','review'}]
         ready=[t for t in tasks if t['role']==role and t['status']=='todo' and not t.get('start_waiting_for',t['waiting_for'])][:3]
         links=lambda items:'；'.join(f"[{t['id']} {t['title']}]({t['issue_url']})" for t in items) or '无'
@@ -478,10 +526,11 @@ def render_dashboard(snapshot, root=ROOT):
             note=('完成前需 '+','.join(task['waiting_for'])+'；' if task['waiting_for'] else '')+task['last_note']
             lines.append(f"| [{task['id']} {text_cell(task['title'])}]({task['issue_url']}) | {task.get('owner') or '未认领'} / {task['role']} | {task['due']} | {text_cell(note)} |")
         if not group: lines.append('| — | — | — | — |')
-    lines += ['', '## 建议时间安排','', '```mermaid','gantt','    title 三人共同推进（内部建议）','    dateFormat YYYY-MM-DD',
+    lines += ['', '## 建议时间安排','', '```mermaid','gantt','    title 四人共同推进（内部建议）','    dateFormat YYYY-MM-DD',
         '    section A 网络部署','    权限与网络 :2026-11-01, 3d','    双实例与入口 :2026-11-04, 3d','    安全与故障配合 :2026-11-07, 4d','    架构图与复核 :2026-11-11, 6d',
         '    section B 应用数据','    约定与数据库 :2026-11-01, 3d','    共享数据验证 :2026-11-04, 3d','    修复与部署步骤 :2026-11-07, 4d','    报告与复核 :2026-11-11, 6d',
-        '    section C 测试证据','    测试与成本假设 :2026-11-01, 3d','    分流与监控 :2026-11-04, 3d','    告警与故障测试 :2026-11-07, 4d','    成本视频与复核 :2026-11-11, 6d','```','',
+        '    section C 测试证据','    测试与成本假设 :2026-11-01, 3d','    分流与监控 :2026-11-04, 3d','    告警与故障测试 :2026-11-07, 4d','    成本与复核 :2026-11-11, 6d',
+        '    section D English report and presentation','    Objectives and evidence audit :2026-11-08, 2d','    Integrated draft :2026-11-10, 2d','    Report and video :2026-11-12, 2d','    Cross-check and freeze :2026-11-14, 3d','```','',
         '日期是计划，任务卡显示实际进度；成员加入后按空闲时间调整。课程正式截止为 2026-11-17 16:00 悉尼时间。',
         '', '## 日常命令','', '`/team claim B` → 认领；`/team progress 实际进度` → 记录；`/team block 问题` → 遇阻；`/team submit deliveries/Txx/文件.json` → 等检查；另一人 `/team approve 检查说明` → 完成。',
         '', '[AI 开场语](prompts/START.md) · [资料索引](sources/INDEX.md) · [协议](docs/team-protocol.md) · [操作手册](docs/execution-guide.md)']

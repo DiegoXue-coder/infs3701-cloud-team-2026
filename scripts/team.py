@@ -74,8 +74,8 @@ def report(snapshot,user):
     role=next((role for role,login in snapshot['members'].items() if login and login.casefold()==user.casefold()),None)
     print(json.dumps({'user':user,'role':role,'synced_at':snapshot['generated_at'],
         'self_service':'docs/self-service.md',
-        'role_guide':f'docs/member-{role}.md' if role in {'B','C'} else 'docs/parallel-plan.md',
-        'available_roles':[key for key in ['B','C'] if not snapshot['members'].get(key)],
+        'role_guide':f'docs/member-{role}.md' if role and role!='A' else 'docs/parallel-plan.md',
+        'available_roles':[key for key,value in snapshot['members'].items() if key!='A' and not value],
         'dashboard':f"https://github.com/{snapshot['repository']}/blob/main/DASHBOARD.md",
         'current':[{'id':t['id'],'title':t['title'],'status':t['status'],'completion_waiting_for':t['waiting_for'],
             'start_waiting_for':t.get('start_waiting_for',t['waiting_for']),'early_steps':t.get('early_steps',[]),'url':t['issue_url']}
@@ -88,11 +88,13 @@ def report(snapshot,user):
 
 def enroll(api, user, role):
     """Called under repository_lock, after authenticated private-repo write checks."""
-    if role not in {'B','C'}:
-        raise ValueError('自助加入仅允许 B（应用）或 C（测试），不能接管 AWS 负责人。')
+    if role not in {'B','C','D'}:
+        raise ValueError('Self-service roles: B (application), C (testing), D (report/presentation). AWS operator A cannot be taken over.')
     source=api.get_file('project/config.json')
     config=decode_json(source)
     members=config['members']
+    if role not in members:
+        raise ValueError('This role is not configured in the repository. Ask the maintainer to prepare the role first.')
     bound=next((key for key,login in members.items() if login and login.casefold()==user.casefold()),None)
     if bound and bound!=role:
         raise ValueError('本人已经绑定其他角色，不能自动换岗；保留原身份与贡献记录。')
@@ -124,7 +126,9 @@ def diagnose(api, user):
     role=next((key for key,login in config['members'].items() if login and login.casefold()==user.casefold()),None)
     return {'checked_at':core.now(),'mode':'read_only_no_progress_changed','repository':config['repository'],
         'authenticated_user':user,'role':role,'readme_readable':readme.get('type')=='file',
-        'available_roles':[key for key in ['B','C'] if not config['members'].get(key)],
+        'available_roles':[key for key,value in config['members'].items() if key!='A' and not value],
+        'preferred_language':config.get('member_languages',{}).get(role,'en' if role=='D' else 'zh'),
+        'role_guide':f'docs/member-{role}.md' if role and role!='A' else 'docs/parallel-plan.md',
         'self_service':'docs/self-service.md',
         'source_index_readable':index.get('type')=='file','online_entry_readable':board.get('type')=='file',
         'source_files':len(manifest),'courses':sorted({'INFS3701' if item['source_origin'].startswith('source_materials/INFS3701/') else 'UNEXPECTED' for item in manifest}),
@@ -137,7 +141,7 @@ def main():
     parser.add_argument('--user',required=True,help='Your own GitHub username')
     sub=parser.add_subparsers(dest='command',required=True)
     sub.add_parser('start');sub.add_parser('sync');sub.add_parser('doctor')
-    join=sub.add_parser('join');join.add_argument('--role',required=True,choices=['B','C'])
+    join=sub.add_parser('join');join.add_argument('--role',required=True,choices=['B','C','D'])
     cmd=sub.add_parser('command');cmd.add_argument('task');cmd.add_argument('--body-file',required=True)
     args=parser.parse_args()
     local=core.load_config()

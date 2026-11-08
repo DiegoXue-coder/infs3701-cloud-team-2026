@@ -1,5 +1,7 @@
 # 第一次加入：做一次，以后直接和 AI 聊
 
+**当前四人入口：** [self-service](self-service.md)、[D English setup](member-D.md)、[English prompt](../prompts/START-en.md)。A/B/C/D已在config预留，Tenzin不使用下方历史B/C空缺选岗流程。角色不等于访问或本人连接已验证。
+
 完整的自助设置、角色选择和可复制 AI 开场语见 [自助入口](self-service.md)。尚未分工时，两位可先加入后各自选 B/C。
 
 ## 项目负责人
