@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T08:24:50+00:00",
+  "generated_at": "2026-11-10T10:31:28+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,37 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T12-6707213440",
-      "task_id": "T12",
-      "request_comment_id": 6707213440,
-      "actor": "Marina057",
-      "command": "report",
-      "requested_at": "2026-11-07T12:55:29Z",
-      "processed_at": "2026-11-07T12:55:52+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T12 已更新为「进行中」。实际上报（partial，尚未完成）：独立验证正式业务入口及跨实例读回。唯一虚构记录 POST 302，az-a 和 az-b 均读回。业务首页 30 次均 200，两标签各 15 次。附 AWS Calculator 成本草案、60 秒脚本与 A/C 联合实验交接。",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707213440",
-      "submission": {
-        "path": "deliveries/T12/2026-11-07-Marina057-cloud.json",
-        "commit": "e2dcc581991e0b97f593c058c9fa3a3cf013b643",
-        "manifest_sha": "76fb79a42ccb173c72087b19410f63a9d22a6a1b",
-        "run_log": "evidence/T12/2026-11-07-Marina057-cloud-run.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-07T23:44:05+11:00",
-        "test_count": 4,
-        "evidence_count": 6,
-        "evidence_preview": [
-          "evidence/T12/2026-11-07-Marina057-cloud-run.log",
-          "evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl",
-          "scripts/c_t12_live.py"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707216949"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T11-6717282969",
@@ -285,6 +254,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6761626119"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T15-6765041396",
+      "task_id": "T15",
+      "request_comment_id": 6765041396,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "requested_at": "2026-11-10T10:31:01Z",
+      "processed_at": "2026-11-10T10:31:24+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T15 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765041396",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765049177"
     }
   ],
   "tasks": [
@@ -1622,14 +1608,24 @@
         "对已完成组件滚动核查，未部署项标待验证，不等所有功能完成才检查。"
       ],
       "task_id": "T15",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-10T10:31:01Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6765041396
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T15-6765041396",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-10T10:31:24+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765049177"
+      },
       "issue_number": 15,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15",
       "waiting_for": [
