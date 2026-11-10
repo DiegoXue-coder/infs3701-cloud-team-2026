@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-11T00:14:47+11:00",
+  "environment": "Offline source/evidence review and PDF authoring on owner workspace,11NovSydney; AWS observations remain dated10Nov. No new cloud operations.",
+  "verification_result": "partial",
+  "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+  "ai_use": "Codex generated and visually inspected two Poppler renders, reviewed source/evidence and prepared documents under A authorization. No independent B/C approval or D contribution inferred.",
+  "limitations": "HTTPS unresolved; no ASG deployed and enhancement deferred by owner. Figure based on10Nov evidence, not new live health. Independent technical review and task dependencies pending. Full report/cost PDFs, video and personal signatures remain outstanding.",
+  "task_id": "T19",
+  "summary": "Updated English working report to link prepared architecture candidate, record owner scaling deferral and distinguish proposed permissions from deployed identity controls.",
+  "tests": [
+    {
+      "action": "Integrated report consistency and approximate body count",
+      "expected": "No missing-diagram claim, invented scaling or IAM deployment; retain author credits",
+      "actual": "Report links candidate PDF; original B/C credit retained, no D attribution;1821 whitespace body words including headings. Full report PDF/page count not yet produced or verified."
+    }
+  ],
+  "evidence": [
+    "docs/design-report-working.md",
+    "docs/architecture-review-2026-11-11.md",
+    "docs/network-security-chapter-2026-11-11.md",
+    "docs/requirements-evidence-matrix-2026-11-10.md",
+    "evidence/T17/2026-11-11-A-artifact-check.log"
+  ],
+  "next_step": "B/C review technical sections; resolve HTTPS and outstanding test/cost material, then render full report and check strict word/page limits and personal contribution statements."
+}

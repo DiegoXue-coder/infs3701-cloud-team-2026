@@ -1,5 +1,7 @@
 # INFS3701 四人云服务协作中心 / Four-person team hub
 
+**11/11可直接复核：** [架构图PDF/预览/可编辑源文件](docs/architecture-review-2026-11-11.md) · [网络与安全章节](docs/network-security-chapter-2026-11-11.md) · [老师问题草稿，未发送](docs/tutor-questions-ready-en.md)。自动扩容已由负责人暂缓；旧准备文件不代表部署授权。图据10Nov实际证据，HTTPS未完成。
+
 **11/10安全准备：** [已验证控制、HTTPS实际限制和2→3台扩容草案](docs/security-next-steps-2026-11-10.md)。仅准备，未新增云资源，T15尚未完成；B/C可并行复核，不必等D。
 
 **11/10收尾入口：** [还差什么与完成顺序](docs/closeout-plan-2026-11-10.md) · [英文报告工作稿](docs/design-report-working.md) · [要求/证据矩阵](docs/requirements-evidence-matrix-2026-11-10.md) · [已找回的业务告警与同期指标](docs/monitoring-reconciliation-2026-11-10.md)。A已临时推进T25/T19，不等待D回复；这不是D的贡献或最终验收通过。

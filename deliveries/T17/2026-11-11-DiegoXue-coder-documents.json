@@ -1,0 +1,35 @@
+{
+  "schema_version": 2,
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-11T00:14:47+11:00",
+  "environment": "Offline source/evidence review and PDF authoring on owner workspace,11NovSydney; AWS observations remain dated10Nov. No new cloud operations.",
+  "verification_result": "partial",
+  "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+  "ai_use": "Codex generated and visually inspected two Poppler renders, reviewed source/evidence and prepared documents under A authorization. No independent B/C approval or D contribution inferred.",
+  "limitations": "HTTPS unresolved; no ASG deployed and enhancement deferred by owner. Figure based on10Nov evidence, not new live health. Independent technical review and task dependencies pending. Full report/cost PDFs, video and personal signatures remain outstanding.",
+  "task_id": "T17",
+  "summary": "Prepared one-page official-AWS-symbol architecture PDF, PNG preview, editable generator, traceability and B/C review checklist.",
+  "tests": [
+    {
+      "action": "PDF text/page/source check",
+      "expected": "One landscape page with required actual resources/protocols",
+      "actual": "Passed20 required text checks,8 icon SHA checks; A3landscape1page; both EC2 IDs/AZs/IPs,4subnetCIDRs,EBS,HTTP80/8000 and HTTPS443 present."
+    },
+    {
+      "action": "Render and visually inspect diagram",
+      "expected": "Readable services, arrows and labels with no clipping/overlap",
+      "actual": "Inspected initial and revised1800px Poppler PNG through image viewer; corrected user-icon contrast and label/line interference; final rendering readable. This is AI-assisted A review, not independent acceptance."
+    }
+  ],
+  "evidence": [
+    "output/pdf/reading-tracker-architecture.pdf",
+    "output/pdf/reading-tracker-architecture.png",
+    "scripts/build_architecture_pdf.py",
+    "scripts/check_architecture_artifacts.py",
+    "assets/aws/manifest.json",
+    "docs/architecture-review-2026-11-11.md",
+    "evidence/T17/2026-11-11-A-diagram-build-final.log",
+    "evidence/T17/2026-11-11-A-artifact-check.log"
+  ],
+  "next_step": "B/C independently compare diagram with dated cloud evidence. A resolve HTTPS then update figure; complete T15 before final T17 submission/freeze."
+}

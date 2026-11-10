@@ -1,6 +1,6 @@
 # Reading Tracker: scalable and highly available cloud service
 
-**Working source,10 November 2026. Not submission-ready.** Integrated by DiegoXue-coder with Codex under the owner's instruction not to wait for Tenzin. Application/data content adapts Alex's original `docs/b-design-report-draft.md`; test, cost and video material credits Marina's existing files. Tenzin has not been credited with this preparation. Technical owners must check their sections before PDF export.
+**Working source, updated11 November 2026 Sydney. Not submission-ready.** Integrated by DiegoXue-coder with Codex under the owner's instruction not to wait for Tenzin. Application/data content adapts Alex's original `docs/b-design-report-draft.md`; test, cost and video material credits Marina's existing files. Tenzin has not been credited with this preparation. Technical owners must check their sections before PDF export.
 
 ## 1. Objective and scope
 
@@ -14,7 +14,7 @@ The audited deployment is in us-east-1, within project VPC 10.37.0.0/16. The App
 
 A browser sends an HTTP request to the ALB, whose current listener is port 80. The target group forwards to port 8000 on the private hosts. Both run pinned release `06c2292cdf0aca80f050709b8172fac3595b54cc` using Python 3.11.18, Flask and two Gunicorn workers. A valid POST causes the receiving application to validate the form and conditionally create a DynamoDB item, then return302 to the library page. A subsequent GET reads the shared table, derives display statistics and renders the response. `X-App-Instance` identifies az-a or az-b for routing evidence. `/health` reports process stage and label, and deliberately does not test database operations.
 
-The final architecture figure must include EC2 root volumes, both AZ/subnet boundaries, the gateway paths, DynamoDB, S3 release storage and monitoring. It must label the currently implemented HTTP paths truthfully. The diagram is still a separate outstanding PDF deliverable.
+A one-page architecture review candidate is now available at `output/pdf/reading-tracker-architecture.pdf`, with an editable generator and PNG preview. It includes EC2 root volumes, both AZ/subnet boundaries, gateway paths, DynamoDB, S3 release storage and monitoring. It labels the implemented HTTP paths truthfully and dates the configuration evidence to10November. Independent technical review and any later HTTPS-related revision are still required before freezing it for submission.
 
 ## 3. Application, compute and data choices
 
@@ -30,6 +30,8 @@ External state permits another correctly configured host to serve the same libra
 
 **Unresolved core/rubric risk:** on 10 November the account had no Auto Scaling Group. The application is structured for horizontal expansion, but demand-driven capacity scaling has not been implemented or tested. The rubric's core checklist and brief's enhancement wording require clarification or an approved implementation. Fixed dual instances must not be presented as proof of automatic scaling.
 
+The owner has deferred automatic scaling while completing core work and deliverables. The prepared surge configuration is an unexecuted proposal, not an implemented enhancement. This choice does not resolve the conflicting assessment wording or guarantee a particular mark.
+
 For availability, A wrote one uniquely labelled fictional record through az-b and read it through both hosts. A then fully stopped the writer; az-a returned200 with the original record. After restarting az-b, both labels returned the same record, and a strongly consistent query verified that its original record_id remained. This supports shared-data retention and sampled service continuity under one host stop. It does not test loss of the entire AZ or measure every failure during transition. CloudWatch history subsequently retrieved on 10 November provides additional genuine evidence of redundancy loss and recovery during that business-stage operation.
 
 ## 5. Networking, security and deployment
@@ -37,6 +39,8 @@ For availability, A wrote one uniquely labelled fictional record through az-b an
 Current security-group readback limits ALB ingress to HTTP 80 and ALB egress to application 8000. Application8000 ingress accepts only the ALB security group; application egress is443 to the managed S3 and DynamoDB prefix lists. SSH is closed. The unused maintenance endpoint security group has no ingress or egress. Instance metadata requires IMDSv2. Application AWS access uses the existing instance profile and dynamically obtained role credentials, rather than session keys stored in the application or a shared credentials file.
 
 The S3 endpoint policy permits GetObject only under the project's releases prefix and the DynamoDB endpoint policy permits the required table operations only on the project table, both conditioned on HTTPS and the existing LabRole. These endpoint restrictions do not turn the broader supplied LabRole into a custom least-privilege identity policy. The Lab limitation and the difference between network-path restrictions and role permissions must be stated.
+
+A proposed application permissions document scopes the required database actions to this table and S3 GetObject to the exact pinned release archive. It has not been attached or tested as effective IAM access. Adding a narrow Allow policy would not remove existing broader permissions; applicable policies must be evaluated together [5]. The separate security chapter explains deployment/verification permissions, release-update trade-offs and the review needed before changing any real identity.
 
 The project roots are encrypted gp3 volumes; the artifact bucket uses AES256 encryption and all four public-access blocks. The current public listener remains HTTP 80, and no ACM certificate was returned by the 10 November audit. HTTPS therefore remains an implementation gap; no trusted-domain/certificate arrangement has been confirmed. The demo has no authentication or CSRF protection, and contains fictional records only. A final report cannot substitute reassuring prose for missing transport protection.
 
@@ -69,5 +73,7 @@ Before submission, resolve HTTPS and the capacity-scaling requirement, obtain in
 [3] Amazon Web Services, “Health checks for Application Load Balancer target groups,” accessed 10 November 2026. https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html
 
 [4] Amazon Web Services, “Using Amazon CloudWatch alarms,” accessed 10 November 2026. https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Alarms.html
+
+[5] Amazon Web Services, “Policy evaluation logic,” accessed 11 November 2026 Sydney. https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html
 
 Internal evidence: `docs/business-handoff-2026-11-07.md`; A's T09 deployment/write/restart logs; `docs/b-design-report-draft.md`; `docs/b-t11-verification.md`; C's T12 cloud-run/sample logs; C's cost/video drafts; the 10 November restoration/security/monitoring exports linked from `docs/requirements-evidence-matrix-2026-11-10.md`. These links support review; final report figure numbers and frozen commit references are not yet finalized.

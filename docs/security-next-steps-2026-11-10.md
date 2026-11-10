@@ -1,5 +1,7 @@
 # Security audit and bounded scaling proposal / 安全核对与扩容准备
 
+**11November owner decision: automatic scaling is DEFERRED. The prepared surge proposal is not authorized for execution. Continue core work/documentation; see [current diagram/security handoff](architecture-review-2026-11-11.md).**
+
 Prepared by A / DiegoXue-coder on 10 November. **Partial; not final security acceptance. No new AWS resources or access were created in this preparation.**
 
 ## What was actually checked

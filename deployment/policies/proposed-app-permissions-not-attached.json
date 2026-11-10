@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadAndCreateProjectBookRecordsOverTLS",
+      "Effect": "Allow",
+      "Action": ["dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:Scan", "dynamodb:DescribeTable"],
+      "Resource": "arn:aws:dynamodb:us-east-1:214018170594:table/infs3701-team-books",
+      "Condition": {"Bool": {"aws:SecureTransport": "true"}}
+    },
+    {
+      "Sid": "DownloadPinnedApplicationArchiveOverTLS",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::infs3701-team-artifacts-214018170594/releases/reading-tracker/06c2292cdf0aca80f050709b8172fac3595b54cc/app.tar.gz",
+      "Condition": {"Bool": {"aws:SecureTransport": "true"}}
+    }
+  ]
+}

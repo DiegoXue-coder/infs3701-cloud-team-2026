@@ -1,0 +1,46 @@
+{
+  "source": "https://aws.amazon.com/architecture/icons/",
+  "release": "07312026",
+  "files": {
+    "ec2": {
+      "png": "ec2.png",
+      "original_path": "Architecture-Service-Icons_07312026/Arch_Compute/64/Arch_Amazon-EC2_64@5x.png",
+      "sha256": "3187eba72879c8c318a9915f156b61b003670ca4065b42733574a008c7dd96b4"
+    },
+    "ebs": {
+      "png": "ebs.png",
+      "original_path": "Architecture-Service-Icons_07312026/Arch_Storage/64/Arch_Amazon-Elastic-Block-Store_64@5x.png",
+      "sha256": "3f921a31635a87f9aab26fe9dce16b88fbda80c87d1a4921d844dbfc58a87f37"
+    },
+    "ddb": {
+      "png": "ddb.png",
+      "original_path": "Architecture-Service-Icons_07312026/Arch_Databases/64/Arch_Amazon-DynamoDB_64@5x.png",
+      "sha256": "b0f1c5a74b4ed81a23183844efdeb6978fa7ea6ee42cf3162b81d340f98e2067"
+    },
+    "s3": {
+      "png": "s3.png",
+      "original_path": "Architecture-Service-Icons_07312026/Arch_Storage/64/Arch_Amazon-Simple-Storage-Service_64@5x.png",
+      "sha256": "2ade2624d7e5893ac82c9fbc01bd9a1cf5cad3eb9d5cf291eb2e07067a510b83"
+    },
+    "cw": {
+      "png": "cw.png",
+      "original_path": "Architecture-Service-Icons_07312026/Arch_Management-Tools/64/Arch_Amazon-CloudWatch_64@5x.png",
+      "sha256": "66981fc0403fb86fa1b79bddb70aa153b1737a80f2ede07294ddfe5ddad3dfb4"
+    },
+    "alb": {
+      "png": "alb.png",
+      "original_path": "Resource-Icons_07312026/Res_Networking-Content-Delivery/Res_Elastic-Load-Balancing_Application-Load-Balancer_48.png",
+      "sha256": "d32cfafcdaffe2b1036d85e4a8e3b36bce387b51f1c637f608aa724f43a6369f"
+    },
+    "igw": {
+      "png": "igw.png",
+      "original_path": "Resource-Icons_07312026/Res_Networking-Content-Delivery/Res_Amazon-VPC_Internet-Gateway_48.png",
+      "sha256": "51b860036aceabc265f6eb8e245777737a43fa325dbbbdea346043dc9c9324db"
+    },
+    "users": {
+      "png": "users.png",
+      "original_path": "Resource-Icons_07312026/Res_General-Icons/Res_48_Light/Res_Users_48_Light.png",
+      "sha256": "f6e70e460129c9e7a7c3c0b6694917be185b2b51da2f4447e86346af1c38dba3"
+    }
+  }
+}

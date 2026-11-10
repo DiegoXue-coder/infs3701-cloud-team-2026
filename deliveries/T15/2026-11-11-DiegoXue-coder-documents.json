@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-11T00:14:47+11:00",
+  "environment": "Offline source/evidence review and PDF authoring on owner workspace,11NovSydney; AWS observations remain dated10Nov. No new cloud operations.",
+  "verification_result": "partial",
+  "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+  "ai_use": "Codex generated and visually inspected two Poppler renders, reviewed source/evidence and prepared documents under A authorization. No independent B/C approval or D contribution inferred.",
+  "limitations": "HTTPS unresolved; no ASG deployed and enhancement deferred by owner. Figure based on10Nov evidence, not new live health. Independent technical review and task dependencies pending. Full report/cost PDFs, video and personal signatures remain outstanding.",
+  "task_id": "T15",
+  "summary": "Prepared network/security explanation and narrowly scoped application-permission proposal; recorded scaling deferral and tutor questions, without IAM attachment or AWS changes.",
+  "tests": [
+    {
+      "action": "Source-to-security chapter review",
+      "expected": "Separate actual controls from unimplemented proposals/gaps",
+      "actual": "Chapter distinguishes restricted endpoint paths from broad LabRole; HTTP gaps and unauthenticated fictional demo preserved; narrow Allow addition not misrepresented as permission removal."
+    },
+    {
+      "action": "Offline policy/configuration checks",
+      "expected": "Parseable specific resource/TLS proposal and no enhancement execution authorization",
+      "actual": "JSON/scoping/TLS fields passed; config remains enhancements_enabled=false with surge authorization false. No IAM simulator, Access Analyzer, live allow/deny tests or policy attachment performed."
+    }
+  ],
+  "evidence": [
+    "docs/network-security-chapter-2026-11-11.md",
+    "deployment/policies/proposed-app-permissions-not-attached.json",
+    "docs/tutor-questions-ready-en.md",
+    "project/config.json",
+    "docs/architecture-review-2026-11-11.md",
+    "evidence/T17/2026-11-11-A-artifact-check.log"
+  ],
+  "next_step": "Owner obtains approved HTTPS/course guidance; B reviews security/protocol claims. Do not deploy historical surge files or attach the draft policy."
+}

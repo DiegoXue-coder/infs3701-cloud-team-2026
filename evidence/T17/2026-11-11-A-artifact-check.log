@@ -1,0 +1,36 @@
+Task: T17
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-10T13:13:42+00:00
+Finished UTC: 2026-11-10T13:13:43+00:00
+Exit code: 0
+Command: C:/Users/xuesh/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe scripts/check_architecture_artifacts.py
+
+STDOUT
+{
+  "at_utc": "2026-11-10T13:13:43+00:00",
+  "pdf_pages": 1,
+  "page_points": [
+    1190.551,
+    841.8898
+  ],
+  "required_text_checks": 20,
+  "icon_hashes_checked": 8,
+  "policy_check": "JSON/scoping/TLS fields only; no IAM simulation or attachment",
+  "report_body_whitespace_words_including_headings": 1821,
+  "report_pages": "not rendered; full design report PDF remains outstanding",
+  "aws_calls": 0,
+  "hashes": {
+    "output/pdf/reading-tracker-architecture.pdf": "b5770978176220de4e296841ecd64748eb279a8d64467a072fd783b2518e210f",
+    "output/pdf/reading-tracker-architecture.png": "bba677d1e714b37049808120a57f5b4cc05af47eb77008f43c13b21dccbff29d",
+    "scripts/build_architecture_pdf.py": "34b84665be6fb6c50531032c707e187b0d26920498f7f9315c3d248ca4b31c64",
+    "docs/architecture-review-2026-11-11.md": "741b59ef2c28d1a6e5a738c8694cb998630de195fb9072ec04bd3edfe445448e",
+    "docs/network-security-chapter-2026-11-11.md": "38dfc9dca9ea6b07e72412ac374ad7b4989462343a63fbb4a8b2c6d4c6d6333f",
+    "docs/tutor-questions-ready-en.md": "41e1e6fa77598f736bdaf4a5eadad77e1d86a3d8f69411997ed1813495562a1b",
+    "deployment/policies/proposed-app-permissions-not-attached.json": "50efd04a63290d375332f239beb482757ea2caeecc9c85000089e8b406708fa6",
+    "docs/design-report-working.md": "f99f84cac74a5018c93f1b945dc8fd0696ea1e39db9724fa657051e08e04df53"
+  }
+}
+
+STDERR
+

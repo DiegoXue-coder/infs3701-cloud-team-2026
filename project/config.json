@@ -34,6 +34,13 @@
     }
   },
   "enhancements_enabled": false,
+  "enhancement_decision": {
+    "status": "deferred_by_owner",
+    "recorded_on_sydney": "2026-11-11",
+    "instruction": "Owner said to defer automatic scaling and finish independently available core work and deliverables first.",
+    "prepared_surge_is_authorized_to_deploy": false,
+    "brief_rubric_conflict": "Still requires genuine tutor clarification; deferral is not a guarantee of no grading impact."
+  },
   "aws_environment_owner": "DiegoXue-coder",
   "questions_to_tutor": [
     "video_one_or_two_minutes",
