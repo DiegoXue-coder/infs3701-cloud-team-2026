@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T13:16:42+00:00",
+  "generated_at": "2026-11-10T13:17:29+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -1227,6 +1227,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768328385"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T15-6768335060",
+      "task_id": "T15",
+      "request_comment_id": 6768335060,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T13:16:58Z",
+      "processed_at": "2026-11-10T13:17:26+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T15 已更新为「进行中」。实际上报（partial，尚未完成）：Prepared network/security explanation and narrowly scoped application-permission proposal; recorded scaling deferral and tutor questions, without IAM attachment or AWS changes.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6768335060",
+      "submission": {
+        "path": "deliveries/T15/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "ecc4cbe7607265a6e0bb74e3eca1f2bd96658e2b",
+        "manifest_sha": "66d26b8483943412e26ce862f1a3f1377f73d61f",
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-11T00:14:47+11:00",
+        "test_count": 2,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "docs/network-security-chapter-2026-11-11.md",
+          "deployment/policies/proposed-app-permissions-not-attached.json",
+          "docs/tutor-questions-ready-en.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6768344722"
     }
   ]
 }

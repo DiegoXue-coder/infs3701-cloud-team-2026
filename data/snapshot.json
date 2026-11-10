@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T13:16:42+00:00",
+  "generated_at": "2026-11-10T13:17:29+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,37 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T02-6721246927",
-      "task_id": "T02",
-      "request_comment_id": 6721246927,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-08T12:03:50Z",
-      "processed_at": "2026-11-08T12:04:16+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T02 已更新为「进行中」。实际上报（partial，尚未完成）：Expanded coordination to role D reserved for wyend12, English onboarding/cards and bilingual receipt summaries; added independent T25 and redistributed unclaimed T19/T20; 63 tests passed, preserving old roles/authorship/evidence. Member invitation/access/own AI acceptance remains pending.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721246927",
-      "submission": {
-        "path": "deliveries/T02/2026-11-08-DiegoXue-coder-four-person.json",
-        "commit": "10a9e08092eb9ba68be8d21cb9e13b7fa0ddc0ea",
-        "manifest_sha": "66290ad57e8eed40e6ade05004b894525b19a427",
-        "run_log": "evidence/T02/2026-11-08-four-person-compatibility-tests.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-08T12:01:44+00:00",
-        "test_count": 4,
-        "evidence_count": 13,
-        "evidence_preview": [
-          "docs/2026-11-08-four-person-setup.md",
-          "docs/four-person-plan.md",
-          "docs/member-D.md"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721251275"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T25-6761181193",
@@ -285,6 +254,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768328385"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T15-6768335060",
+      "task_id": "T15",
+      "request_comment_id": 6768335060,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T13:16:58Z",
+      "processed_at": "2026-11-10T13:17:26+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T15 已更新为「进行中」。实际上报（partial，尚未完成）：Prepared network/security explanation and narrowly scoped application-permission proposal; recorded scaling deferral and tutor questions, without IAM attachment or AWS changes.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6768335060",
+      "submission": {
+        "path": "deliveries/T15/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "ecc4cbe7607265a6e0bb74e3eca1f2bd96658e2b",
+        "manifest_sha": "66d26b8483943412e26ce862f1a3f1377f73d61f",
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-11T00:14:47+11:00",
+        "test_count": 2,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "docs/network-security-chapter-2026-11-11.md",
+          "deployment/policies/proposed-app-permissions-not-attached.json",
+          "docs/tutor-questions-ready-en.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6768344722"
     }
   ],
   "tasks": [
@@ -1627,56 +1627,50 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-10T10:36:31Z",
-      "last_note": "实际上报（partial，尚未完成）：Partial security control audit, confirmed HTTPS/permission gaps, and generated bounded separate surge-group proposal without attaching original hosts.",
+      "last_update": "2026-11-10T13:16:58Z",
+      "last_note": "实际上报（partial，尚未完成）：Prepared network/security explanation and narrowly scoped application-permission proposal; recorded scaling deferral and tutor questions, without IAM attachment or AWS changes.",
       "processed_comments": [
         6765041396,
-        6765149060
+        6765149060,
+        6768335060
       ],
       "last_receipt": {
-        "receipt_id": "R-T15-6765149060",
+        "receipt_id": "R-T15-6768335060",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-10T10:36:58+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765157597"
+        "processed_at": "2026-11-10T13:17:26+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6768344722"
       },
       "last_report": {
-        "path": "deliveries/T15/2026-11-10-DiegoXue-coder-preparation.json",
-        "commit": "e87435c2af251d5255a762175e654a0622abcd92",
-        "manifest_sha": "5b6c4128d4c2c155b5faf309d15b850e8ccdea54",
+        "path": "deliveries/T15/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "ecc4cbe7607265a6e0bb74e3eca1f2bd96658e2b",
+        "manifest_sha": "66d26b8483943412e26ce862f1a3f1377f73d61f",
         "evidence_shas": {
-          "docs/security-next-steps-2026-11-10.md": "7d1b2387d6f373d22f591fa3e3981ef64b99e429",
-          "evidence/T15/2026-11-10-A-next-preflight.log": "7ba609b66fa03e4e58cb9fff3c3f7a047d0f2a66",
-          "evidence/T05/2026-11-10-A-network-security.log": "83f6704b2ac8982f8778cd7aee146532a7046d9d",
-          "evidence/T15/2026-11-10-A-offline-surge-final.log": "5c4fa03a6bd6ae56c4e4d78a00e3ff9bd3c3788e",
-          "evidence/T15/2026-11-10-A-proposal-integrity-final.log": "569d36131f9f5db512c7f3f42ab4cd2b0824432f",
-          "deployment/prepare-surge.py": "8555faf444155f1d2efcaa2361d6af04dc243025",
-          "deployment/surge-user-data.sh": "2a4c6c91493bc147a3f987403d2d4454f0465dff",
-          "project/surge-proposal.json": "7e3185f046c51bac46cb2e2f691b8b95a60335ff"
+          "docs/network-security-chapter-2026-11-11.md": "77557f7a56c2f6da8821f4f3f9e3184f6f315eaf",
+          "deployment/policies/proposed-app-permissions-not-attached.json": "952f09cf9fc4c7370c1a8e81d97fbe466ee657d4",
+          "docs/tutor-questions-ready-en.md": "e914603835f0040d37dacd5efff353ba0cdd100a",
+          "project/config.json": "e9da088387142e7e4c99438bd7dff9b180d0396f",
+          "docs/architecture-review-2026-11-11.md": "e29925829af7c765980d7ca978e5c6c3c3d1faea",
+          "evidence/T17/2026-11-11-A-artifact-check.log": "a7d6368d045055c1770a1d76b74229382d934b33"
         },
-        "summary": "Partial security control audit, confirmed HTTPS/permission gaps, and generated bounded separate surge-group proposal without attaching original hosts.",
-        "tested_at": "2026-11-10T10:35:51+00:00",
+        "summary": "Prepared network/security explanation and narrowly scoped application-permission proposal; recorded scaling deferral and tutor questions, without IAM attachment or AWS changes.",
+        "tested_at": "2026-11-11T00:14:47+11:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "Actual AWS Academy us-east-1 read-only CloudShell preflight plus local offline proposal build; no new AWS mutation/deployment.",
+        "environment": "Offline source/evidence review and PDF authoring on owner workspace,11NovSydney; AWS observations remain dated10Nov. No new cloud operations.",
         "verification_result": "partial",
-        "run_log": "evidence/T15/2026-11-10-A-proposal-integrity-final.log",
-        "test_count": 3,
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "test_count": 2,
         "test_summary": [
           {
-            "action": "Read actual AWS service permissions and resources",
-            "expected": "Identify certificate/role/quota prerequisites",
-            "actual": "ASG/certificates/zones empty; AutoScaling service-linked role missing; CloudFront listing AccessDenied; seven running EC2. Runtime AMI available with encrypted8GiB gp3."
+            "action": "Source-to-security chapter review",
+            "expected": "Separate actual controls from unimplemented proposals/gaps",
+            "actual": "Chapter distinguishes restricted endpoint paths from broad LabRole; HTTP gaps and unauthenticated fictional demo preserved; narrow Allow addition not misrepresented as permission removal."
           },
           {
-            "action": "Review dated SG/routes/storage/identity evidence",
-            "expected": "Match report to actual protocol and access controls",
-            "actual": "Restricted private-host paths/IMDSv2/encrypted roots/private artifact controls documented. HTTP and broad LabRole explicitly remain gaps; no full security acceptance claimed."
-          },
-          {
-            "action": "Build local proposal and compile embedded startup Python",
-            "expected": "Pinned archive, EC2 user-data size bound, unique identity, bootstrap prerequisites and original-host isolation",
-            "actual": "Passed local build/compile/archive SHA check; 7623 bytes<16384; group desired0/max1; original2 outside group; fresh app.env and systemd enable steps present. No cloud boot or scale event tested."
+            "action": "Offline policy/configuration checks",
+            "expected": "Parseable specific resource/TLS proposal and no enhancement execution authorization",
+            "actual": "JSON/scoping/TLS fields passed; config remains enhancements_enabled=false with surge authorization false. No IAM simulator, Access Analyzer, live allow/deny tests or policy attachment performed."
           }
         ]
       },
