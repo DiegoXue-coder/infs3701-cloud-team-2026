@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T13:03:09+00:00",
+  "generated_at": "2026-11-10T13:04:52+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,37 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T11-6717297675",
-      "task_id": "T11",
-      "request_comment_id": 6717297675,
-      "actor": "Alex4325Li",
-      "command": "report",
-      "requested_at": "2026-11-08T04:36:19Z",
-      "processed_at": "2026-11-08T04:36:44+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T11 已更新为「进行中」。实际上报（partial，尚未完成）：核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717297675",
-      "submission": {
-        "path": "deliveries/T11/2026-11-08-Alex4325Li.json",
-        "commit": "994665a05c5d63ce714a97661745fd1855612181",
-        "manifest_sha": "46fee6636b404a796459dae519c1e6346ca9ff0b",
-        "run_log": "evidence/T11/2026-11-08-B-cloud-http.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-08T04:35:14+00:00",
-        "test_count": 2,
-        "evidence_count": 7,
-        "evidence_preview": [
-          "evidence/T11/2026-11-08-B-cloud-http.log",
-          "evidence/T11/2026-11-08-B-release-check.log",
-          "docs/b-t11-verification.md"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717301205"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T02-6721240365",
@@ -285,6 +254,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765157597"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T17-6768067639",
+      "task_id": "T17",
+      "request_comment_id": 6768067639,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "requested_at": "2026-11-10T13:04:22Z",
+      "processed_at": "2026-11-10T13:04:48+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T17 已更新为「进行中」。已认领",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768067639",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768077021"
     }
   ],
   "tasks": [
@@ -1779,14 +1765,24 @@
         "提前准备 AWS 图例和章节；最终对照实际配置定稿。"
       ],
       "task_id": "T17",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-10T13:04:22Z",
+      "last_note": "已认领",
+      "processed_comments": [
+        6768067639
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T17-6768067639",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-10T13:04:48+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768077021"
+      },
       "issue_number": 17,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17",
       "waiting_for": [
