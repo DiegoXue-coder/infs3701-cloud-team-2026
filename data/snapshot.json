@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T07:03:00+00:00",
+  "generated_at": "2026-11-10T07:26:20+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,23 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T10-6706866365",
-      "task_id": "T10",
-      "request_comment_id": 6706866365,
-      "actor": "DiegoXue-coder",
-      "command": "claim",
-      "requested_at": "2026-11-07T12:21:03Z",
-      "processed_at": "2026-11-07T12:21:24+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T10 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706866365",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706869840"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T09-6706965677",
@@ -271,6 +254,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761230869",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761236688"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T25-6761601270",
+      "task_id": "T25",
+      "request_comment_id": 6761601270,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T07:25:53Z",
+      "processed_at": "2026-11-10T07:26:17+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T25 已更新为「进行中」。实际上报（partial，尚未完成）：Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761601270",
+      "submission": {
+        "path": "deliveries/T25/2026-11-10-DiegoXue-coder-continuity.json",
+        "commit": "cd32f3e3bd2123f6410b78b315d5dc694c4e8e49",
+        "manifest_sha": "4d35ce6a622440ac0cd51b9831a868f4fae50c7e",
+        "run_log": "evidence/T25/2026-11-10-A-evidence-review.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-10T07:22:01+00:00",
+        "test_count": 3,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "docs/closeout-plan-2026-11-10.md",
+          "docs/requirements-evidence-matrix-2026-11-10.md",
+          "docs/objective-design-draft-2026-11-10.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761607708"
     }
   ],
   "tasks": [
@@ -2092,18 +2106,56 @@
       "owner_role": "D",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-10T06:59:23Z",
-      "last_note": "已认领（管理员接替未绑定角色）",
+      "last_update": "2026-11-10T07:25:53Z",
+      "last_note": "实际上报（partial，尚未完成）：Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence.",
       "processed_comments": [
-        6761181193
+        6761181193,
+        6761601270
       ],
       "last_receipt": {
-        "receipt_id": "R-T25-6761181193",
-        "command": "claim",
+        "receipt_id": "R-T25-6761601270",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-10T06:59:44+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761186978"
+        "processed_at": "2026-11-10T07:26:17+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761607708"
+      },
+      "last_report": {
+        "path": "deliveries/T25/2026-11-10-DiegoXue-coder-continuity.json",
+        "commit": "cd32f3e3bd2123f6410b78b315d5dc694c4e8e49",
+        "manifest_sha": "4d35ce6a622440ac0cd51b9831a868f4fae50c7e",
+        "evidence_shas": {
+          "docs/closeout-plan-2026-11-10.md": "4de1a77f12fb3de1c0f6ece86d065da5e2e7d250",
+          "docs/requirements-evidence-matrix-2026-11-10.md": "d78f13528dd010fa4101c33b9fde10c669eebbcf",
+          "docs/objective-design-draft-2026-11-10.md": "406f7746e25af8d3a578951b871cbfab13272be8",
+          "docs/design-report-working.md": "7c870f0d6511c884f48449edc2a3ee263ce2339f",
+          "docs/monitoring-reconciliation-2026-11-10.md": "b987dd01eac2467b00b360810147c86e3f14f406",
+          "evidence/T25/2026-11-10-A-evidence-review.log": "27a38ec45d33efdf683b0d2612837483f3a19f2e"
+        },
+        "summary": "Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence.",
+        "tested_at": "2026-11-10T07:22:01+00:00",
+        "submitted_by": "DiegoXue-coder",
+        "environment": "A repository/document review, archived evidence recomputation and actual authenticated AWS Academy readback in us-east-1. Temporary owner-authorized D-task cover by A; no Tenzin contribution.",
+        "verification_result": "partial",
+        "run_log": "evidence/T25/2026-11-10-A-evidence-review.log",
+        "test_count": 3,
+        "test_summary": [
+          {
+            "action": "Review original assignment S12/S13 and existing A/B/C evidence",
+            "expected": "Distinguish proven results, unresolved requirements and remaining deliverables",
+            "actual": "Evidence matrix and closeout plan created; HTTP/TLS and no-ASG gaps explicit; no fabricated independent approval."
+          },
+          {
+            "action": "Recompute C archived request evidence",
+            "expected": "30 HTTP200 with both labels, and full script calls aligned to exported aggregate",
+            "actual": "30/30,15per label,7functional calls,37total; real CloudWatch window total37. This audit made no new client test claims."
+          },
+          {
+            "action": "Review English writing source and authorship",
+            "expected": "Substantive objective draft, integrated report draft, originals preserved",
+            "actual": "Objective prose589 whitespace words; report body1757 whitespace words. Alex chapter and Marina script compared unchanged with pinned commits. No rendered page/PDF check claimed."
+          }
+        ]
       },
       "issue_number": 25,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25",

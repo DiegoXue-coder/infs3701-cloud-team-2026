@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T07:03:00+00:00",
+  "generated_at": "2026-11-10T07:26:20+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -1038,6 +1038,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761230869",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761236688"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T25-6761601270",
+      "task_id": "T25",
+      "request_comment_id": 6761601270,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T07:25:53Z",
+      "processed_at": "2026-11-10T07:26:17+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T25 已更新为「进行中」。实际上报（partial，尚未完成）：Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761601270",
+      "submission": {
+        "path": "deliveries/T25/2026-11-10-DiegoXue-coder-continuity.json",
+        "commit": "cd32f3e3bd2123f6410b78b315d5dc694c4e8e49",
+        "manifest_sha": "4d35ce6a622440ac0cd51b9831a868f4fae50c7e",
+        "run_log": "evidence/T25/2026-11-10-A-evidence-review.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-10T07:22:01+00:00",
+        "test_count": 3,
+        "evidence_count": 6,
+        "evidence_preview": [
+          "docs/closeout-plan-2026-11-10.md",
+          "docs/requirements-evidence-matrix-2026-11-10.md",
+          "docs/objective-design-draft-2026-11-10.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761607708"
     }
   ]
 }
