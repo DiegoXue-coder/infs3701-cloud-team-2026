@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T06:56:34+00:00",
+  "generated_at": "2026-11-10T06:59:48+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,37 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T09-6702918732",
-      "task_id": "T09",
-      "request_comment_id": 6702918732,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-07T05:40:02Z",
-      "processed_at": "2026-11-07T05:40:25+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Verified exact T07 candidate 06c2292 locally before cloud rollout: 4 app tests, 17 C regression tests and 8 HTTP form cases passed. Business deployment and persistence checks remain pending.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702918732",
-      "submission": {
-        "path": "deliveries/T09/2026-11-07-DiegoXue-coder-candidate-readiness.json",
-        "commit": "09e62ea979bafe1b359984ae9b0d248cd7a12769",
-        "manifest_sha": "a837c71465aede14a7aee962259064499fab2671",
-        "run_log": "evidence/T09/2026-11-07-A-candidate-http.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-07T05:38:46+00:00",
-        "test_count": 4,
-        "evidence_count": 5,
-        "evidence_preview": [
-          "docs/deployment-readiness-2026-11-07.md",
-          "evidence/T09/2026-11-07-A-candidate-app-tests.log",
-          "evidence/T09/2026-11-07-A-candidate-regression.log"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6702922204"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T09-6706856439",
@@ -299,6 +268,23 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721251275"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T25-6761181193",
+      "task_id": "T25",
+      "request_comment_id": 6761181193,
+      "actor": "DiegoXue-coder",
+      "command": "claim",
+      "requested_at": "2026-11-10T06:59:23Z",
+      "processed_at": "2026-11-10T06:59:44+00:00",
+      "outcome": "accepted",
+      "status_before": "todo",
+      "status_after": "in_progress",
+      "summary": "T25 已更新为「进行中」。已认领（管理员接替未绑定角色）",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761181193",
+      "submission": null,
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761186978"
     }
   ],
   "tasks": [
@@ -2105,14 +2091,24 @@
         "Current build versus dated evidence and known failures are clearly distinguished; original authors' contributions preserved."
       ],
       "task_id": "T25",
-      "status": "todo",
-      "owner": null,
-      "owner_role": null,
+      "status": "in_progress",
+      "owner": "DiegoXue-coder",
+      "owner_role": "D",
       "submission": null,
       "reviewer": null,
-      "last_update": null,
-      "last_note": "尚未认领",
-      "processed_comments": [],
+      "last_update": "2026-11-10T06:59:23Z",
+      "last_note": "已认领（管理员接替未绑定角色）",
+      "processed_comments": [
+        6761181193
+      ],
+      "last_receipt": {
+        "receipt_id": "R-T25-6761181193",
+        "command": "claim",
+        "outcome": "accepted",
+        "status_after": "in_progress",
+        "processed_at": "2026-11-10T06:59:44+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761186978"
+      },
       "issue_number": 25,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25",
       "waiting_for": [],
