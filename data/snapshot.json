@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T13:04:52+00:00",
+  "generated_at": "2026-11-10T13:16:42+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,23 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T02-6721240365",
-      "task_id": "T02",
-      "request_comment_id": 6721240365,
-      "actor": "DiegoXue-coder",
-      "command": "claim",
-      "requested_at": "2026-11-08T12:03:11Z",
-      "processed_at": "2026-11-08T12:03:33+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T02 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721240365",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/2#issuecomment-6721244047"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T02-6721246927",
@@ -271,6 +254,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768067639",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768077021"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T17-6768318575",
+      "task_id": "T17",
+      "request_comment_id": 6768318575,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T13:16:11Z",
+      "processed_at": "2026-11-10T13:16:39+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T17 已更新为「进行中」。实际上报（partial，尚未完成）：Prepared one-page official-AWS-symbol architecture PDF, PNG preview, editable generator, traceability and B/C review checklist.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768318575",
+      "submission": {
+        "path": "deliveries/T17/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "746d3e5a07f1216a7e0d604cece4c257d987ddad",
+        "manifest_sha": "61c703f47b56432aa82a944323437802ad9555eb",
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-11T00:14:47+11:00",
+        "test_count": 2,
+        "evidence_count": 8,
+        "evidence_preview": [
+          "output/pdf/reading-tracker-architecture.pdf",
+          "output/pdf/reading-tracker-architecture.png",
+          "scripts/build_architecture_pdf.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768328385"
     }
   ],
   "tasks": [
@@ -1770,18 +1784,53 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-10T13:04:22Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-10T13:16:11Z",
+      "last_note": "实际上报（partial，尚未完成）：Prepared one-page official-AWS-symbol architecture PDF, PNG preview, editable generator, traceability and B/C review checklist.",
       "processed_comments": [
-        6768067639
+        6768067639,
+        6768318575
       ],
       "last_receipt": {
-        "receipt_id": "R-T17-6768067639",
-        "command": "claim",
+        "receipt_id": "R-T17-6768318575",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-10T13:04:48+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768077021"
+        "processed_at": "2026-11-10T13:16:39+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768328385"
+      },
+      "last_report": {
+        "path": "deliveries/T17/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "746d3e5a07f1216a7e0d604cece4c257d987ddad",
+        "manifest_sha": "61c703f47b56432aa82a944323437802ad9555eb",
+        "evidence_shas": {
+          "output/pdf/reading-tracker-architecture.pdf": "cae8a95f5ba763d0956fb858503f9450b0e89587",
+          "output/pdf/reading-tracker-architecture.png": "1a4a6528d1062b40dbf67a477b910cb3a2b1a4d8",
+          "scripts/build_architecture_pdf.py": "9ca6e8fa7fa5faea3d916a752761cc821dd1696f",
+          "scripts/check_architecture_artifacts.py": "f098d6131a7ee9d31fd4fe7eed5faaa2afc679f7",
+          "assets/aws/manifest.json": "db8c953eaadb4c4c8c166928f207302d857b06eb",
+          "docs/architecture-review-2026-11-11.md": "e29925829af7c765980d7ca978e5c6c3c3d1faea",
+          "evidence/T17/2026-11-11-A-diagram-build-final.log": "32131769a0374194f3927e525800f4c47f9794ba",
+          "evidence/T17/2026-11-11-A-artifact-check.log": "a7d6368d045055c1770a1d76b74229382d934b33"
+        },
+        "summary": "Prepared one-page official-AWS-symbol architecture PDF, PNG preview, editable generator, traceability and B/C review checklist.",
+        "tested_at": "2026-11-11T00:14:47+11:00",
+        "submitted_by": "DiegoXue-coder",
+        "environment": "Offline source/evidence review and PDF authoring on owner workspace,11NovSydney; AWS observations remain dated10Nov. No new cloud operations.",
+        "verification_result": "partial",
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "test_count": 2,
+        "test_summary": [
+          {
+            "action": "PDF text/page/source check",
+            "expected": "One landscape page with required actual resources/protocols",
+            "actual": "Passed20 required text checks,8 icon SHA checks; A3landscape1page; both EC2 IDs/AZs/IPs,4subnetCIDRs,EBS,HTTP80/8000 and HTTPS443 present."
+          },
+          {
+            "action": "Render and visually inspect diagram",
+            "expected": "Readable services, arrows and labels with no clipping/overlap",
+            "actual": "Inspected initial and revised1800px Poppler PNG through image viewer; corrected user-icon contrast and label/line interference; final rendering readable. This is AI-assisted A review, not independent "
+          }
+        ]
       },
       "issue_number": 17,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17",

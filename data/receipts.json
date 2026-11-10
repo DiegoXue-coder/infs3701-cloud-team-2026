@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T13:04:52+00:00",
+  "generated_at": "2026-11-10T13:16:42+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -1196,6 +1196,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768067639",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768077021"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T17-6768318575",
+      "task_id": "T17",
+      "request_comment_id": 6768318575,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T13:16:11Z",
+      "processed_at": "2026-11-10T13:16:39+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T17 已更新为「进行中」。实际上报（partial，尚未完成）：Prepared one-page official-AWS-symbol architecture PDF, PNG preview, editable generator, traceability and B/C review checklist.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768318575",
+      "submission": {
+        "path": "deliveries/T17/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "746d3e5a07f1216a7e0d604cece4c257d987ddad",
+        "manifest_sha": "61c703f47b56432aa82a944323437802ad9555eb",
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-11T00:14:47+11:00",
+        "test_count": 2,
+        "evidence_count": 8,
+        "evidence_preview": [
+          "output/pdf/reading-tracker-architecture.pdf",
+          "output/pdf/reading-tracker-architecture.png",
+          "scripts/build_architecture_pdf.py"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6768328385"
     }
   ]
 }
