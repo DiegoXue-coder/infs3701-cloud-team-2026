@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T10:31:28+00:00",
+  "generated_at": "2026-11-10T10:37:01+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -1148,6 +1148,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765041396",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765049177"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T15-6765149060",
+      "task_id": "T15",
+      "request_comment_id": 6765149060,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T10:36:31Z",
+      "processed_at": "2026-11-10T10:36:58+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T15 已更新为「进行中」。实际上报（partial，尚未完成）：Partial security control audit, confirmed HTTPS/permission gaps, and generated bounded separate surge-group proposal without attaching original hosts.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765149060",
+      "submission": {
+        "path": "deliveries/T15/2026-11-10-DiegoXue-coder-preparation.json",
+        "commit": "e87435c2af251d5255a762175e654a0622abcd92",
+        "manifest_sha": "5b6c4128d4c2c155b5faf309d15b850e8ccdea54",
+        "run_log": "evidence/T15/2026-11-10-A-proposal-integrity-final.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-10T10:35:51+00:00",
+        "test_count": 3,
+        "evidence_count": 8,
+        "evidence_preview": [
+          "docs/security-next-steps-2026-11-10.md",
+          "evidence/T15/2026-11-10-A-next-preflight.log",
+          "evidence/T05/2026-11-10-A-network-security.log"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765157597"
     }
   ]
 }

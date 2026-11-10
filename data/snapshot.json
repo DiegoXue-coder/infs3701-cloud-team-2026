@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T10:31:28+00:00",
+  "generated_at": "2026-11-10T10:37:01+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,23 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T11-6717282969",
-      "task_id": "T11",
-      "request_comment_id": 6717282969,
-      "actor": "Alex4325Li",
-      "command": "claim",
-      "requested_at": "2026-11-08T04:34:35Z",
-      "processed_at": "2026-11-08T04:34:54+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T11 已更新为「进行中」。已认领",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717282969",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717285897"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T11-6717297675",
@@ -271,6 +254,37 @@
       "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765041396",
       "submission": null,
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765049177"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T15-6765149060",
+      "task_id": "T15",
+      "request_comment_id": 6765149060,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T10:36:31Z",
+      "processed_at": "2026-11-10T10:36:58+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T15 已更新为「进行中」。实际上报（partial，尚未完成）：Partial security control audit, confirmed HTTPS/permission gaps, and generated bounded separate surge-group proposal without attaching original hosts.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765149060",
+      "submission": {
+        "path": "deliveries/T15/2026-11-10-DiegoXue-coder-preparation.json",
+        "commit": "e87435c2af251d5255a762175e654a0622abcd92",
+        "manifest_sha": "5b6c4128d4c2c155b5faf309d15b850e8ccdea54",
+        "run_log": "evidence/T15/2026-11-10-A-proposal-integrity-final.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-10T10:35:51+00:00",
+        "test_count": 3,
+        "evidence_count": 8,
+        "evidence_preview": [
+          "docs/security-next-steps-2026-11-10.md",
+          "evidence/T15/2026-11-10-A-next-preflight.log",
+          "evidence/T05/2026-11-10-A-network-security.log"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765157597"
     }
   ],
   "tasks": [
@@ -1613,18 +1627,58 @@
       "owner_role": "A",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-10T10:31:01Z",
-      "last_note": "已认领",
+      "last_update": "2026-11-10T10:36:31Z",
+      "last_note": "实际上报（partial，尚未完成）：Partial security control audit, confirmed HTTPS/permission gaps, and generated bounded separate surge-group proposal without attaching original hosts.",
       "processed_comments": [
-        6765041396
+        6765041396,
+        6765149060
       ],
       "last_receipt": {
-        "receipt_id": "R-T15-6765041396",
-        "command": "claim",
+        "receipt_id": "R-T15-6765149060",
+        "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-10T10:31:24+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765049177"
+        "processed_at": "2026-11-10T10:36:58+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6765157597"
+      },
+      "last_report": {
+        "path": "deliveries/T15/2026-11-10-DiegoXue-coder-preparation.json",
+        "commit": "e87435c2af251d5255a762175e654a0622abcd92",
+        "manifest_sha": "5b6c4128d4c2c155b5faf309d15b850e8ccdea54",
+        "evidence_shas": {
+          "docs/security-next-steps-2026-11-10.md": "7d1b2387d6f373d22f591fa3e3981ef64b99e429",
+          "evidence/T15/2026-11-10-A-next-preflight.log": "7ba609b66fa03e4e58cb9fff3c3f7a047d0f2a66",
+          "evidence/T05/2026-11-10-A-network-security.log": "83f6704b2ac8982f8778cd7aee146532a7046d9d",
+          "evidence/T15/2026-11-10-A-offline-surge-final.log": "5c4fa03a6bd6ae56c4e4d78a00e3ff9bd3c3788e",
+          "evidence/T15/2026-11-10-A-proposal-integrity-final.log": "569d36131f9f5db512c7f3f42ab4cd2b0824432f",
+          "deployment/prepare-surge.py": "8555faf444155f1d2efcaa2361d6af04dc243025",
+          "deployment/surge-user-data.sh": "2a4c6c91493bc147a3f987403d2d4454f0465dff",
+          "project/surge-proposal.json": "7e3185f046c51bac46cb2e2f691b8b95a60335ff"
+        },
+        "summary": "Partial security control audit, confirmed HTTPS/permission gaps, and generated bounded separate surge-group proposal without attaching original hosts.",
+        "tested_at": "2026-11-10T10:35:51+00:00",
+        "submitted_by": "DiegoXue-coder",
+        "environment": "Actual AWS Academy us-east-1 read-only CloudShell preflight plus local offline proposal build; no new AWS mutation/deployment.",
+        "verification_result": "partial",
+        "run_log": "evidence/T15/2026-11-10-A-proposal-integrity-final.log",
+        "test_count": 3,
+        "test_summary": [
+          {
+            "action": "Read actual AWS service permissions and resources",
+            "expected": "Identify certificate/role/quota prerequisites",
+            "actual": "ASG/certificates/zones empty; AutoScaling service-linked role missing; CloudFront listing AccessDenied; seven running EC2. Runtime AMI available with encrypted8GiB gp3."
+          },
+          {
+            "action": "Review dated SG/routes/storage/identity evidence",
+            "expected": "Match report to actual protocol and access controls",
+            "actual": "Restricted private-host paths/IMDSv2/encrypted roots/private artifact controls documented. HTTP and broad LabRole explicitly remain gaps; no full security acceptance claimed."
+          },
+          {
+            "action": "Build local proposal and compile embedded startup Python",
+            "expected": "Pinned archive, EC2 user-data size bound, unique identity, bootstrap prerequisites and original-host isolation",
+            "actual": "Passed local build/compile/archive SHA check; 7623 bytes<16384; group desired0/max1; original2 outside group; fresh app.env and systemd enable steps present. No cloud boot or scale event tested."
+          }
+        ]
       },
       "issue_number": 15,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15",
