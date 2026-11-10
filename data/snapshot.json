@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T13:17:29+00:00",
+  "generated_at": "2026-11-10T13:18:21+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,23 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T25-6761181193",
-      "task_id": "T25",
-      "request_comment_id": 6761181193,
-      "actor": "DiegoXue-coder",
-      "command": "claim",
-      "requested_at": "2026-11-10T06:59:23Z",
-      "processed_at": "2026-11-10T06:59:44+00:00",
-      "outcome": "accepted",
-      "status_before": "todo",
-      "status_after": "in_progress",
-      "summary": "T25 已更新为「进行中」。已认领（管理员接替未绑定角色）",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761181193",
-      "submission": null,
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761186978"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T19-6761230869",
@@ -285,6 +268,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/15#issuecomment-6768344722"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T19-6768353616",
+      "task_id": "T19",
+      "request_comment_id": 6768353616,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T13:17:50Z",
+      "processed_at": "2026-11-10T13:18:18+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T19 已更新为「进行中」。实际上报（partial，尚未完成）：Updated English working report to link prepared architecture candidate, record owner scaling deferral and distinguish proposed permissions from deployed identity controls.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6768353616",
+      "submission": {
+        "path": "deliveries/T19/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "628615fcbe2656a039b03d771b9dbc675946bbb9",
+        "manifest_sha": "cdf53feada8b630747749d551e5932421e67fa8d",
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-11T00:14:47+11:00",
+        "test_count": 1,
+        "evidence_count": 5,
+        "evidence_preview": [
+          "docs/design-report-working.md",
+          "docs/architecture-review-2026-11-11.md",
+          "docs/network-security-chapter-2026-11-11.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6768362925"
     }
   ],
   "tasks": [
@@ -1911,54 +1925,44 @@
       "owner_role": "D",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-10T07:26:28Z",
-      "last_note": "实际上报（partial，尚未完成）：Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence.",
+      "last_update": "2026-11-10T13:17:50Z",
+      "last_note": "实际上报（partial，尚未完成）：Updated English working report to link prepared architecture candidate, record owner scaling deferral and distinguish proposed permissions from deployed identity controls.",
       "processed_comments": [
         6761230869,
-        6761610523
+        6761610523,
+        6768353616
       ],
       "last_receipt": {
-        "receipt_id": "R-T19-6761610523",
+        "receipt_id": "R-T19-6768353616",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-10T07:26:52+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761616811"
+        "processed_at": "2026-11-10T13:18:18+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6768362925"
       },
       "last_report": {
-        "path": "deliveries/T19/2026-11-10-DiegoXue-coder-continuity.json",
-        "commit": "2fb43467531846b5fd09677ef3abc21a54a146c2",
-        "manifest_sha": "2c615dc76bc4815c209756faf7fbf76bdc9c343a",
+        "path": "deliveries/T19/2026-11-11-DiegoXue-coder-documents.json",
+        "commit": "628615fcbe2656a039b03d771b9dbc675946bbb9",
+        "manifest_sha": "cdf53feada8b630747749d551e5932421e67fa8d",
         "evidence_shas": {
-          "docs/closeout-plan-2026-11-10.md": "4de1a77f12fb3de1c0f6ece86d065da5e2e7d250",
-          "docs/requirements-evidence-matrix-2026-11-10.md": "d78f13528dd010fa4101c33b9fde10c669eebbcf",
-          "docs/objective-design-draft-2026-11-10.md": "406f7746e25af8d3a578951b871cbfab13272be8",
-          "docs/design-report-working.md": "7c870f0d6511c884f48449edc2a3ee263ce2339f",
-          "docs/monitoring-reconciliation-2026-11-10.md": "b987dd01eac2467b00b360810147c86e3f14f406",
-          "evidence/T25/2026-11-10-A-evidence-review.log": "27a38ec45d33efdf683b0d2612837483f3a19f2e"
+          "docs/design-report-working.md": "20bcebcd222409180da4d2e3adeaeb23fd4e4e56",
+          "docs/architecture-review-2026-11-11.md": "e29925829af7c765980d7ca978e5c6c3c3d1faea",
+          "docs/network-security-chapter-2026-11-11.md": "77557f7a56c2f6da8821f4f3f9e3184f6f315eaf",
+          "docs/requirements-evidence-matrix-2026-11-10.md": "a9884c5fc856ad853bd02352d7aead8b60c36fbd",
+          "evidence/T17/2026-11-11-A-artifact-check.log": "a7d6368d045055c1770a1d76b74229382d934b33"
         },
-        "summary": "Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence.",
-        "tested_at": "2026-11-10T07:22:01+00:00",
+        "summary": "Updated English working report to link prepared architecture candidate, record owner scaling deferral and distinguish proposed permissions from deployed identity controls.",
+        "tested_at": "2026-11-11T00:14:47+11:00",
         "submitted_by": "DiegoXue-coder",
-        "environment": "A repository/document review, archived evidence recomputation and actual authenticated AWS Academy readback in us-east-1. Temporary owner-authorized D-task cover by A; no Tenzin contribution.",
+        "environment": "Offline source/evidence review and PDF authoring on owner workspace,11NovSydney; AWS observations remain dated10Nov. No new cloud operations.",
         "verification_result": "partial",
-        "run_log": "evidence/T25/2026-11-10-A-evidence-review.log",
-        "test_count": 3,
+        "run_log": "evidence/T17/2026-11-11-A-artifact-check.log",
+        "test_count": 1,
         "test_summary": [
           {
-            "action": "Review original assignment S12/S13 and existing A/B/C evidence",
-            "expected": "Distinguish proven results, unresolved requirements and remaining deliverables",
-            "actual": "Evidence matrix and closeout plan created; HTTP/TLS and no-ASG gaps explicit; no fabricated independent approval."
-          },
-          {
-            "action": "Recompute C archived request evidence",
-            "expected": "30 HTTP200 with both labels, and full script calls aligned to exported aggregate",
-            "actual": "30/30,15per label,7functional calls,37total; real CloudWatch window total37. This audit made no new client test claims."
-          },
-          {
-            "action": "Review English writing source and authorship",
-            "expected": "Substantive objective draft, integrated report draft, originals preserved",
-            "actual": "Objective prose589 whitespace words; report body1757 whitespace words. Alex chapter and Marina script compared unchanged with pinned commits. No rendered page/PDF check claimed."
+            "action": "Integrated report consistency and approximate body count",
+            "expected": "No missing-diagram claim, invented scaling or IAM deployment; retain author credits",
+            "actual": "Report links candidate PDF; original B/C credit retained, no D attribution;1821 whitespace body words including headings. Full report PDF/page count not yet produced or verified."
           }
         ]
       },
