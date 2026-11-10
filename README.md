@@ -1,5 +1,7 @@
 # INFS3701 四人云服务协作中心 / Four-person team hub
 
+**11/10收尾入口：** [还差什么与完成顺序](docs/closeout-plan-2026-11-10.md) · [英文报告工作稿](docs/design-report-working.md) · [要求/证据矩阵](docs/requirements-evidence-matrix-2026-11-10.md) · [已找回的业务告警与同期指标](docs/monitoring-reconciliation-2026-11-10.md)。A已临时推进T25/T19，不等待D回复；这不是D的贡献或最终验收通过。
+
 **来这里看进度、领任务、交证据，再和你自己的 AI 一起做。** 云服务在 AWS 运行，本仓库负责把四个人的工作接起来。
 
 **Tenzin / wyend12: [English setup and your work](docs/member-D.md) · [Copy this English prompt](prompts/START-en.md) · [Four-person responsibilities](docs/four-person-plan.md).** Accept your invitation and authenticate your own GitHub/AI first. Your role assignment is not a task claim or a verified connection.

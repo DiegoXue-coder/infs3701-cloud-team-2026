@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-10T07:22:01+00:00",
+  "environment": "Actual AWS Academy account214018170594/us-east-1 through CloudShell UI; Lab restarted by A after user login.",
+  "summary": "Restored existing Lab service and verified both business targets/readback; stopped unused builder, retrieved actual historical business alarm/C-window metrics and corrected dashboard banner/error series.",
+  "tests": [
+    {
+      "action": "Start existing Lab and read current project health/data",
+      "expected": "Two existing private targets and retained records available",
+      "actual": "Both running/healthy; role/startup markers match06c2292; business GET200 on both; original two records visible, consistent count2."
+    },
+    {
+      "action": "Read current security/configuration and budget",
+      "expected": "Document actual controls and gaps without altering access",
+      "actual": "Encrypted roots8GiB each, restricted SG/endpoint routes, IMDSv2, S3 public blocks/AES256 verified. HTTP80 only, certificates[] and ASGs[]. Lab display$32.10/$50."
+    },
+    {
+      "action": "Retrieve business alarm history and matching C metrics",
+      "expected": "Genuine state/datapoint dates, no forced alarm",
+      "actual": "Nov7 business cycle12:29:53.285ALARM→12:30:53.284OK; C window healthy2, RequestCount37,5xxarrays empty; no fabricated zeros or C review."
+    },
+    {
+      "action": "Stop completed-purpose builder and correct existing dashboard",
+      "expected": "Retain disks, no app/network permission changes; show actual release and ALB5xx",
+      "actual": "Known roleless runtime-builder verified stopped; other practice resources unchanged. Six-widget dashboard banner and native ELB5xxseries updated, API readback matched, unobstructed screenshot captured."
+    }
+  ],
+  "evidence": [
+    "evidence/T09/2026-11-10-A-operation-summary.log",
+    "evidence/T09/2026-11-10-A-current-restoration.log",
+    "evidence/T05/2026-11-10-A-network-security.log",
+    "evidence/T13/2026-11-10-A-retrieved-business-history.log",
+    "evidence/T12/2026-11-10-A-dashboard-current.png",
+    "docs/monitoring-reconciliation-2026-11-10.md",
+    "docs/closeout-plan-2026-11-10.md"
+  ],
+  "run_log": "evidence/T09/2026-11-10-A-operation-summary.log",
+  "verification_result": "partial",
+  "limitations": "Working drafts only: no final report PDF/page-count approval, architecture/cost PDFs or video. TLS and demand scaling unresolved; B retry and C review of newly exported history pending. Cannot attribute A temporary work to D or sign another member's contribution.",
+  "next_step": "B/C independently review their technical parts/new monitoring evidence while A resolves technical gaps and final architecture; finalize PDFs/video and personal statements, then cross-check and submit before17Nov16:00Sydney.",
+  "ai_use": "Codex assisted authorized A with genuine source/evidence review and prose integration; original B/C authorship and all testing limitations retained.",
+  "task_id": "T09"
+}

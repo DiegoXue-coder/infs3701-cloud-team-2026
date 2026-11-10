@@ -1,5 +1,7 @@
 # 报告取材入口：要求、图片、日志与回执
 
+**11/10增补：** [收尾清单](closeout-plan-2026-11-10.md)、[英文总报告工作稿](design-report-working.md)、[要求/证据矩阵](requirements-evidence-matrix-2026-11-10.md)、[真实业务告警与C同期监控核对](monitoring-reconciliation-2026-11-10.md)。最新网络/业务读回及看板截图由矩阵链接，旧证据按原日期保留。不是所有最终交付已完成。
+
 更新：2026-11-01。本轮证据基线 commit：`b6c091c`。本页是取材索引，不是已完成的报告或最终验收。
 
 **2026-11-07业务证据增补**：优先读取 [业务发布与B/C交接](business-handoff-2026-11-07.md)、[真实页面截图](../evidence/T09/2026-11-07-A-reading-tracker-live.png)、[真实写入和跨实例读回](../evidence/T09/2026-11-07-A-cloud-write-read.log)、[停止写入实例期间服务继续](../evidence/T09/2026-11-07-A-during-writer-stop.log)、[重启后同一record_id保留](../evidence/T09/2026-11-07-A-post-restart-read.log)、[发布/回退步骤](business-rollout-2026-11-07.md)。这些是A的真实云端操作证据；C尚未独立验收、HTTPS尚未完成。下表11月1日的“业务尚未验证”保留为历史，不代表11月7日的当前进度。

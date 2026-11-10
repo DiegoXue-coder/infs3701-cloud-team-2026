@@ -1,0 +1,26 @@
+Task: T25
+GitHub actor: DiegoXue-coder
+Executed by: local command runner (AI-assisted)
+Started UTC: 2026-11-10T07:22:01+00:00
+Finished UTC: 2026-11-10T07:22:01+00:00
+Exit code: 0
+Command: .venv/Scripts/python.exe tmp/audit-closeout-2026-11-10.py
+
+STDOUT
+REVIEWED_FILE docs/closeout-plan-2026-11-10.md 5285 69e16ea23f14dc3556c5df0ea45fccb5b1e14cdffad8685f492ba3d2b8ab8807
+REVIEWED_FILE docs/requirements-evidence-matrix-2026-11-10.md 5894 ed2efbbd01405eeed8c10fc31f2acf64b12dde9889b7933fb66932484b00cda0
+REVIEWED_FILE docs/objective-design-draft-2026-11-10.md 4468 99602eedc9e3a98d0ab5be95d89c4439e829209f2aa2305d243e819f71ce54ce
+REVIEWED_FILE docs/design-report-working.md 13813 1c2202cc474a4570e17e4c2389e8504612d9416b5b9ca3972763bb0190ba2dd4
+REVIEWED_FILE docs/monitoring-reconciliation-2026-11-10.md 3454 70f7d95ed5285cf4e5003d63deb27eb577182fe217177b7d3e646fb2af983b41
+REVIEWED_FILE evidence/T09/2026-11-10-A-current-restoration.log 4560 9cdd95b0a507b98c7dd1eaeb462b051724e6835faf5439f84364ce2d40f4418d
+REVIEWED_FILE evidence/T05/2026-11-10-A-network-security.log 4054 f8c6871fdebc52809eddddb98c53a1c5998dd3907377e3669a3a81d34b147f18
+REVIEWED_FILE evidence/T13/2026-11-10-A-retrieved-business-history.log 9776 7db1685c246cdea918ac8d4e22fc09e0250f56159800f86b31888102f6e5dbd1
+REVIEWED_FILE evidence/T12/2026-11-10-A-dashboard-current.png 46522 ebd8715a3685f11326aa56a01afea8babb30c50e60c9c6622d6afcbfaae90151
+ARCHIVE_RECOMPUTED {"date": "2026-11-07", "sample_count": 30, "statuses": {"200": 30}, "labels": {"az-a": 15, "az-b": 15}, "functional_calls": 7, "total_calls": 37, "new_cloud_requests_made_by_this_audit": 0}
+DRAFT_COUNTS {"report_body_whitespace_words": 1757, "objective_prose_whitespace_words": 589, "rendered_page_count_checked": false, "final_PDF_created": false}
+ORIGINAL_AUTHOR_FILE_PRESERVED docs/b-design-report-draft.md 07b4be7
+ORIGINAL_AUTHOR_FILE_PRESERVED docs/c-t20-video-script-2026-11-07.md e2dcc581991e0b97f593c058c9fa3a3cf013b643
+REVIEW_LIMITATIONS: TLS and automatic scaling unresolved; new C alarm-history review and B live retry pending; no whole-AZ or zero-downtime claim; contributions/signatures and final PDFs/video still required.
+
+STDERR
+

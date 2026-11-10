@@ -2,6 +2,8 @@
 
 Your assigned role is **D: English report, objectives/evidence audit and final presentation**. A/B/C remain DiegoXue-coder, Alex4325Li and Marina057. Role assignment is not repository permission, proof of joining, a task claim or a contribution record.
 
+**10November continuity update:** the owner instructed the team not to wait for a reply. Diego has temporarily claimed T25/T19 under his own identity and is preparing the objective/evidence audit and integrated report. Check live ownership before claiming. Do not overwrite his claim; coordinate a handoff, independently review his preparation, or begin an unclaimed D task such as T20. His work is not attributed to you. Current source: `docs/design-report-working.md` and `docs/closeout-plan-2026-11-10.md`.
+
 ## One-time setup
 
 1. Accept Diego's invitation to the **private** repository at https://github.com/DiegoXue-coder/infs3701-cloud-team-2026 using **wyend12**. If you see404, check the signed-in account and invitation first. Do not make the repository public.

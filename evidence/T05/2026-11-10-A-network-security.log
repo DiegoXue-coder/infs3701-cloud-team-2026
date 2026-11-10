@@ -1,0 +1,20 @@
+NOV10_HOST_SECURITY [{"id":"i-00572a14ca8b71156","vpc":"vpc-0836d003a70f93405","subnet":"subnet-026f2c6afbe3692e8","role":"arn:aws:iam::214018170594:instance-profile/LabInstanceProfile","imds":"required","groups":[{"GroupId":"sg-0a3ae03837c952009","GroupName":"infs3701-team-app
+-sg"}]},{"id":"i-0081259c52a32e051","vpc":"vpc-0836d003a70f93405","subnet":"subnet-00fc1e9a647c3530e","role":"arn:aws:iam::214018170594:instance-profile/LabInstanceProfile","imds":"required","groups":[{"GroupId":"sg-0a3ae03837c952009","GroupName":"infs3701-team-app-sg"}]}]
+NOV10_VOLUMES [{"VolumeId":"vol-0befb64658670f366","Encrypted":true,"Size":8,"VolumeType":"gp3"},{"VolumeId":"vol-0627d63a4f014f2b4","Encrypted":true,"Size":8,"VolumeType":"gp3"}]
+NOV10_SGS [{"id":"sg-00ebc11a2282074f6","in":[{"IpProtocol":"tcp","FromPort":80,"ToPort":80,"UserIdGroupPairs":[],"IpRanges":[{"CidrIp":"0.0.0.0/0"}],"Ipv6Ranges":[],"PrefixListIds":[]}],"out":[{"IpProtocol":"tcp","FromPort":8000,"ToPort":8000,"UserIdGroupPairs":[{"UserId":"214
+018170594","GroupId":"sg-0a3ae03837c952009"}],"IpRanges":[],"Ipv6Ranges":[],"PrefixListIds":[]}]},{"id":"sg-02f5195143dca6ea5","in":[],"out":[]},{"id":"sg-0a3ae03837c952009","in":[{"IpProtocol":"tcp","FromPort":8000,"ToPort":8000,"UserIdGroupPairs":[{"UserId":"214018170594","Gr
+oupId":"sg-00ebc11a2282074f6"}],"IpRanges":[],"Ipv6Ranges":[],"PrefixListIds":[]}],"out":[{"IpProtocol":"tcp","FromPort":443,"ToPort":443,"UserIdGroupPairs":[],"IpRanges":[],"Ipv6Ranges":[],"PrefixListIds":[{"PrefixListId":"pl-63a5400a"},{"PrefixListId":"pl-02cd2c6b"}]}]}]
+NOV10_ROUTES [{"id":"rtb-08c89586fc33f4fdf","routes":[{"DestinationCidrBlock":"10.37.0.0/16","GatewayId":"local","Origin":"CreateRouteTable","State":"active"}]},{"id":"rtb-03e1a36c6b2440ed7","routes":[{"DestinationCidrBlock":"10.37.0.0/16","GatewayId":"local","Origin":"CreateRo
+uteTable","State":"active"},{"DestinationPrefixListId":"pl-02cd2c6b","GatewayId":"vpce-028353eb0e050df0a","Origin":"CreateRoute","State":"active"},{"DestinationPrefixListId":"pl-63a5400a","GatewayId":"vpce-0edea5c7a05bc729d","Origin":"CreateRoute","State":"active"}]},{"id":"rtb
+-07b89b18b5054c3a6","routes":[{"DestinationCidrBlock":"10.37.0.0/16","GatewayId":"local","Origin":"CreateRouteTable","State":"active"},{"DestinationCidrBlock":"0.0.0.0/0","GatewayId":"igw-0a4f8f537ed7f4663","Origin":"CreateRoute","State":"active"}]},{"id":"rtb-02f19dad4efe80bd3
+","routes":[{"DestinationCidrBlock":"10.37.0.0/16","GatewayId":"local","Origin":"CreateRouteTable","State":"active"},{"DestinationPrefixListId":"pl-02cd2c6b","GatewayId":"vpce-028353eb0e050df0a","Origin":"CreateRoute","State":"active"},{"DestinationPrefixListId":"pl-63a5400a","
+GatewayId":"vpce-0edea5c7a05bc729d","Origin":"CreateRoute","State":"active"}]}]
+NOV10_ENDPOINTS [{"id":"vpce-0edea5c7a05bc729d","state":"available","service":"com.amazonaws.us-east-1.s3","policy":{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":"*","Action":"s3:GetObject","Resource":"arn:aws:s3:::infs3701-team-artifacts-214018170594/relea
+ses/*","Condition":{"Bool":{"aws:SecureTransport":"true"},"ArnEquals":{"aws:PrincipalArn":"arn:aws:iam::214018170594:role/LabRole"}}}]}},{"id":"vpce-028353eb0e050df0a","state":"available","service":"com.amazonaws.us-east-1.dynamodb","policy":{"Version":"2012-10-17","Statement":
+[{"Effect":"Allow","Principal":"*","Action":["dynamodb:GetItem","dynamodb:PutItem","dynamodb:Scan","dynamodb:DescribeTable"],"Resource":"arn:aws:dynamodb:us-east-1:214018170594:table/infs3701-team-books","Condition":{"Bool":{"aws:SecureTransport":"true"},"ArnEquals":{"aws:Princ
+ipalArn":"arn:aws:iam::214018170594:role/LabRole"}}}]}}]
+NOV10_LISTENERS [{"port":80,"protocol":"HTTP"}]
+NOV10_S3_PUBLIC_BLOCK {"BlockPublicAcls":true,"IgnorePublicAcls":true,"BlockPublicPolicy":true,"RestrictPublicBuckets":true}
+NOV10_S3_ENCRYPTION {"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"},"BucketKeyEnabled":false,"BlockedEncryptionTypes":{"EncryptionType":["SSE-C"]}}]}
+NOV10_BUILDER_STATE "stopped"
+NOV10_SECURITY_DONE

@@ -1,0 +1,27 @@
+NOV10_TIME "2026-11-10T07:02:23.737653+00:00"
+NOV10_ACCOUNT "214018170594"
+NOV10_HOSTS [{"id":"i-0bdbde44eb450f334","state":"running","type":"t3.micro","az":"us-east-1a","public":"34.228.42.213","name":"INFS3701-Week2-EC2"},{"id":"i-030acdefe159caa87","state":"running","type":"t3.micro","az":"us-east-1a","public":"98.84.180.38","name":"infs3701-team-r
+untime-builder"},{"id":"i-00572a14ca8b71156","state":"running","type":"t3.micro","az":"us-east-1a","public":null,"name":"infs3701-team-app-a"},{"id":"i-05252540f0557d7f7","state":"running","type":"t3.micro","az":"us-east-1a","public":null,"name":"cafe-app-a"},{"id":"i-0b2fd3c1e
+0267e100","state":"running","type":"t3.micro","az":"us-east-1a","public":"3.87.174.153","name":"cafe-web-a"},{"id":"i-0081259c52a32e051","state":"running","type":"t3.micro","az":"us-east-1b","public":null,"name":"infs3701-team-app-b"},{"id":"i-03f7026d2ad37bf97","state":"runnin
+g","type":"t3.micro","az":"us-east-1b","public":null,"name":"cafe-app-b"},{"id":"i-0023975cd55903b8a","state":"running","type":"t3.micro","az":"us-east-1b","public":"3.81.225.136","name":"cafe-web-b"}]
+NOV10_TARGETS [{"id":"i-0081259c52a32e051","state":{"State":"healthy"}},{"id":"i-00572a14ca8b71156","state":{"State":"healthy"}}]
+NOV10_TABLE {"TableStatus":"ACTIVE","ItemCount":2,"BillingModeSummary":{"BillingMode":"PAY_PER_REQUEST","LastUpdateToPayPerRequestDateTime":"2026-11-01 05:02:29.124000+00:00"}}
+NOV10_COUNT 2
+NOV10_ALARM [{"AlarmName":"infs3701-team-healthy-targets-below-two","StateValue":"OK","StateUpdatedTimestamp":"2026-11-07 12:30:53.284000+00:00","Period":60,"EvaluationPeriods":2,"Threshold":2.0,"TreatMissingData":"notBreaching","AlarmActions":[]}]
+NOV10_CERTIFICATES []
+NOV10_AUTO_SCALING []
+NOV10_BOOT_i-00572a14ca8b71156 ["INFS3701_RELEASE_OK={\"commit\": \"06c2292cdf0aca80f050709b8172fac3595b54cc\", \"archive_sha256\": \"fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd\", \"source_sha256\": \"a0eb70b7e8a9505e912c14fead268e9c0798064e35708243404c250
+def1abfb5\", \"instance\": \"az-a\", \"credential_source\": \"iam-role\", \"health\": {\"instance\": \"az-a\", \"stage\": \"reading-tracker\", \"status\": \"ok\"}, \"business_get\": 200, \"python\": \"3.11.18\"}","[    9.640178] cloud-init[1930]: INFS3701_RELEASE_OK={\"commit\"
+: \"06c2292cdf0aca80f050709b8172fac3595b54cc\", \"archive_sha256\": \"fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd\", \"source_sha256\": \"a0eb70b7e8a9505e912c14fead268e9c0798064e35708243404c250def1abfb5\", \"instance\": \"az-a\", \"credential_source\": \"ia
+m-role\", \"health\": {\"instance\": \"az-a\", \"stage\": \"reading-tracker\", \"status\": \"ok\"}, \"business_get\": 200, \"python\": \"3.11.18\"}"]
+NOV10_BOOT_i-0081259c52a32e051 ["ip-10-37-11-110 login: INFS3701_RELEASE_OK={\"commit\": \"06c2292cdf0aca80f050709b8172fac3595b54cc\", \"archive_sha256\": \"fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd\", \"source_sha256\": \"a0eb70b7e8a9505e912c14fead268e9c
+0798064e35708243404c250def1abfb5\", \"instance\": \"az-b\", \"credential_source\": \"iam-role\", \"health\": {\"instance\": \"az-b\", \"stage\": \"reading-tracker\", \"status\": \"ok\"}, \"business_get\": 200, \"python\": \"3.11.18\"}","[   13.667131] cloud-init[1933]: INFS3701
+_RELEASE_OK={\"commit\": \"06c2292cdf0aca80f050709b8172fac3595b54cc\", \"archive_sha256\": \"fc40e1969c6b90f154b120979aaddf45f554d6e5fdd0fa6b0b2d17fd2ac980cd\", \"source_sha256\": \"a0eb70b7e8a9505e912c14fead268e9c0798064e35708243404c250def1abfb5\", \"instance\": \"az-b\", \"cr
+edential_source\": \"iam-role\", \"health\": {\"instance\": \"az-b\", \"stage\": \"reading-tracker\", \"status\": \"ok\"}, \"business_get\": 200, \"python\": \"3.11.18\"}"]
+NOV10_HTTP {"path":"/health","status":200,"instance":"az-a","result":{"instance":"az-a","stage":"reading-tracker","status":"ok"}}
+NOV10_HTTP {"path":"/health","status":200,"instance":"az-a","result":{"instance":"az-a","stage":"reading-tracker","status":"ok"}}
+NOV10_HTTP {"path":"/","status":200,"instance":"az-b","result":{"business_form":true,"reference_visible":true,"marina_record_visible":true}}
+NOV10_HTTP {"path":"/","status":200,"instance":"az-b","result":{"business_form":true,"reference_visible":true,"marina_record_visible":true}}
+NOV10_HTTP {"path":"/health","status":200,"instance":"az-a","result":{"instance":"az-a","stage":"reading-tracker","status":"ok"}}
+NOV10_HTTP {"path":"/","status":200,"instance":"az-a","result":{"business_form":true,"reference_visible":true,"marina_record_visible":true}}
+NOV10_INSPECTION_DONE

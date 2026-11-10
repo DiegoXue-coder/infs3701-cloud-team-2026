@@ -1,0 +1,16 @@
+Actual operation/review record, 10 November 2026, authenticated AWS Academy account 214018170594 / us-east-1.
+Operator: DiegoXue-coder, assisted by this Codex session. No Tenzin or C operation/review is invented.
+
+1. AWS Academy initially showed the Canvas login page. The user completed their own login. Learner Lab then visibly reported Terminated and Used $32.1 of $50. A selected Start Lab and observed Ready before opening the console.
+2. CloudShell read-only boto3 checks at 2026-11-10T07:02:23.737653Z confirmed both project instances running/healthy, DynamoDB ACTIVE, a consistent count of 2, both release startup markers and real HTTP200 business readback. Both previously stored fictional titles were still visible. See current-restoration.log for actual returned fields.
+3. The account inventory also showed old-course/cafe instances and the runtime-builder running. Only the known completed-purpose runtime-builder i-030acdefe159caa87 was stopped after checking its exact name and absence of an instance profile. Actual output:
+NOV10_BUILDER_BEFORE {"id": "i-030acdefe159caa87", "name": "infs3701-team-runtime-builder", "state": "running", "role": null}
+NOV10_BUILDER_STOP_REQUEST [{"InstanceId": "i-030acdefe159caa87", "CurrentState": {"Code": 64, "Name": "stopping"}, "PreviousState": {"Code": 16, "Name": "running"}}]
+Subsequent DescribeInstances returned NOV10_BUILDER_STATE "stopped" in the network/security log. Disks and AMI retained. Other practice instances were not changed. No project business host was stopped in this session.
+4. Read back project SGs, route tables, endpoint policies, encrypted root volumes, IMDSv2, S3 encryption/public-blocks and ALB listener. No SG/IAM/network change was made. ACM certificates and Auto Scaling Groups were both empty; only HTTP80 listener exists.
+5. Queried actual CloudWatch alarm StateUpdate history for 2026-11-07T12:15Z–12:40Z and 60-second ALB metrics for C's 12:42Z–12:45Z window. Retrieved genuine business-phase OK→ALARM→OK records and 37 aggregate requests. No new fault experiment, SetAlarmState, notification test or cloud write was performed for these queries.
+6. Saved original dashboard JSON at /home/cloudshell-user/infs3701-dashboard-2026-11-10-before.json. Updated only the obsolete infrastructure-only banner and added native HTTPCode_ELB_5XX_Count to its existing request/error chart. Readback equality check passed. Actual output:
+NOV10_DASHBOARD_UPDATED {"at": "2026-11-10T07:15:08.222997+00:00", "widget_count": 6, "elb5xx_added": true, "alarms_changed": false, "backup": "/home/cloudshell-user/infs3701-dashboard-2026-11-10-before.json"}
+7. Opened the actual dashboard and saved an unobstructed screenshot showing the business release title and charts. An initial capture was obstructed by the CloudShell panel; that unpublished capture was replaced with the actual unobstructed dashboard screenshot. No synthetic image was used.
+
+Limitations: no conclusive retrospective root-cause evidence for B's November8 HTTP503; no new independent B/C acceptance; HTTPS/automatic scaling unresolved; no new POST, whole-AZ test, zero-downtime claim, new permission or permanent resource deletion. Budget is the Lab's delayed account-wide display, not an annual estimate or project-only bill.

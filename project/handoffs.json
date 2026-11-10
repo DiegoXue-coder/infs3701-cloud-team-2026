@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_on": "2026-11-08",
+  "updated_on": "2026-11-10",
   "purpose": "Shared operational defaults and handoff state; not proof of implementation or live AWS health.",
   "operator": "DiegoXue-coder",
   "roles": {
@@ -23,7 +23,18 @@
       ],
       "assigned_login": "wyend12",
       "language": "en",
-      "access_note": "Assignment only; requires invitation acceptance and own GitHub/AI authentication. Do not claim as another member."
+      "access_note": "Assignment only; requires invitation acceptance and own GitHub/AI authentication. Do not claim as another member.",
+      "temporary_cover": {
+        "actor": "DiegoXue-coder",
+        "on": "2026-11-10",
+        "tasks": [
+          "T25",
+          "T19"
+        ],
+        "authorization": "Owner said continue without waiting for Tenzin reply",
+        "attribution": "A-assisted preparation, not Tenzin contribution",
+        "action_for_D": "Read latest ownership; coordinate handoff/review or begin an unclaimed D task such as T20."
+      }
     }
   },
   "implementation_contract": {
@@ -107,7 +118,7 @@
       "actor": "DiegoXue-coder",
       "independently_reviewed": false
     },
-    "last_verified_at": "2026-11-07T12:28:05.245310+00:00",
+    "last_verified_at": "2026-11-10T07:02:23.737653+00:00",
     "private_read_checks": "Both roles verified; genuine POST via az-b then reads on az-a/az-b; writer stopped and restarted; same DynamoDB record_id retained",
     "next_operator_window": "Coordinate C-led business alarm/metrics/fault tests; resolve course-approved HTTPS; preserve current demo and fictional records.",
     "business_handoff": "docs/business-handoff-2026-11-07.md",
@@ -124,10 +135,26 @@
     "release_plan": "project/business-release-plan.json",
     "public_demo_scope": "User confirmed unauthenticated HTTP list/add, fictional data only; no real personal data; TLS unresolved",
     "latest_known_observation": {
-      "at": "2026-11-08T04:35:14+00:00",
-      "source": "docs/b-t11-verification.md",
-      "result": "B preflight HTTP503 without instance label, no POST; cause unconfirmed. Last successful A/C cloud evidence is from November7. Do not claim live health."
-    }
+      "at": "2026-11-10T07:02:23.737653+00:00",
+      "result": "After starting terminated Lab: both targets healthy, business GET200 on az-a/az-b, original two records visible and consistent count2; HTTP80 only, no ACM certificate or ASG. This does not retrospectively diagnose November8 error.",
+      "source": "evidence/T09/2026-11-10-A-current-restoration.log"
+    },
+    "previous_observations": [
+      {
+        "at": "2026-11-08T04:35:14+00:00",
+        "source": "docs/b-t11-verification.md",
+        "result": "B preflight HTTP503 without instance label, no POST; cause unconfirmed. Last successful A/C cloud evidence is from November7. Do not claim live health."
+      }
+    ],
+    "current_monitoring_review": "docs/monitoring-reconciliation-2026-11-10.md",
+    "closeout_plan": "docs/closeout-plan-2026-11-10.md",
+    "displayed_lab_budget": {
+      "used_usd": 32.1,
+      "total_usd": 50,
+      "on": "2026-11-10",
+      "scope": "delayed account-wide display"
+    },
+    "runtime_builder_state": "stopped; verified10Nov after Lab restart"
   },
   "ready_handoff_rules": {
     "B_to_A": [
@@ -160,5 +187,7 @@
     "Human review and genuine evidence remain required."
   ],
   "four_person_plan": "docs/four-person-plan.md",
-  "english_start": "prompts/START-en.md"
+  "english_start": "prompts/START-en.md",
+  "working_report": "docs/design-report-working.md",
+  "requirements_audit": "docs/requirements-evidence-matrix-2026-11-10.md"
 }

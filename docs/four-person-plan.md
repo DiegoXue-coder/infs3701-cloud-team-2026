@@ -1,5 +1,7 @@
 # Four-person plan / 四人协作（2026-11-08）
 
+**10November update:** D has not replied. The owner authorized A to continue T25/T19 preparation under DiegoXue-coder, without inventing D's contribution or removing his membership. Live claims are authoritative. D can later coordinate a handoff/review or take unclaimed video preparation. See [current closeout sequence](closeout-plan-2026-11-10.md).
+
 User-approved redistribution of remaining responsibilities. It does not rewrite past contributions or mean that Tenzin has accepted the invitation/claimed tasks. D is reserved for `wyend12`; account existence was verified, repository permission was `none` during setup.
 
 | Role / member | Remaining responsibility | Output and handoff |
