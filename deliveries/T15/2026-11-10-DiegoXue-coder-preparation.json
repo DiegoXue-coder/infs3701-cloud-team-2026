@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "task_id": "T15",
+  "actor": "DiegoXue-coder",
+  "tested_at": "2026-11-10T10:35:51+00:00",
+  "environment": "Actual AWS Academy us-east-1 read-only CloudShell preflight plus local offline proposal build; no new AWS mutation/deployment.",
+  "summary": "Partial security control audit, confirmed HTTPS/permission gaps, and generated bounded separate surge-group proposal without attaching original hosts.",
+  "tests": [
+    {
+      "action": "Read actual AWS service permissions and resources",
+      "expected": "Identify certificate/role/quota prerequisites",
+      "actual": "ASG/certificates/zones empty; AutoScaling service-linked role missing; CloudFront listing AccessDenied; seven running EC2. Runtime AMI available with encrypted8GiB gp3."
+    },
+    {
+      "action": "Review dated SG/routes/storage/identity evidence",
+      "expected": "Match report to actual protocol and access controls",
+      "actual": "Restricted private-host paths/IMDSv2/encrypted roots/private artifact controls documented. HTTP and broad LabRole explicitly remain gaps; no full security acceptance claimed."
+    },
+    {
+      "action": "Build local proposal and compile embedded startup Python",
+      "expected": "Pinned archive, EC2 user-data size bound, unique identity, bootstrap prerequisites and original-host isolation",
+      "actual": "Passed local build/compile/archive SHA check; 7623 bytes<16384; group desired0/max1; original2 outside group; fresh app.env and systemd enable steps present. No cloud boot or scale event tested."
+    }
+  ],
+  "evidence": [
+    "docs/security-next-steps-2026-11-10.md",
+    "evidence/T15/2026-11-10-A-next-preflight.log",
+    "evidence/T05/2026-11-10-A-network-security.log",
+    "evidence/T15/2026-11-10-A-offline-surge-final.log",
+    "evidence/T15/2026-11-10-A-proposal-integrity-final.log",
+    "deployment/prepare-surge.py",
+    "deployment/surge-user-data.sh",
+    "project/surge-proposal.json"
+  ],
+  "run_log": "evidence/T15/2026-11-10-A-proposal-integrity-final.log",
+  "verification_result": "partial",
+  "limitations": "No HTTPS certificate/domain established. IAM service-linked-role creation, PassRole and ASG mutation permissions unverified. No new resources, live bootstrap, automatic scale-out/in or tutor answer. T16 enhancements remain disabled pending decision. Existing2 are not auto-replaced by proposed separate surge group.",
+  "next_step": "Review proposed access/termination boundary and obtain approval before execution; stop on permission denial. B/C may independently review current business/security/monitoring evidence and finalize costs while HTTPS is resolved.",
+  "ai_use": "Codex assisted actual A read-only checks and local configuration/code drafting; no D contribution or independent B/C approval inferred."
+}

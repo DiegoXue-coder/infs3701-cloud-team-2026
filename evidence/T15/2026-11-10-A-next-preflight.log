@@ -1,0 +1,33 @@
+Read-only CloudShell AX terminal transcription; student email redacted; terminal soft wraps retained.
+[Alt+S]
+United States (N. Virginia)
+Account ID: 2140-1817-0594
+voclabs/user5469329=[student-email-redacted]
+CloudShell
+Actions
+CloudShell terminal input
+entry area (settable) CloudShell terminal input, ID: 75ab5902-e90b-4694-9906-d35dcc4fc665, Value: ~ $
+~ $ python3 -c 'exec("import boto3,json,datetime\ns=boto3.Session(region_name='"'"'us-east-1'"'"')\ndef out(k,v): print('"'"'NEXT_PREFLIGHT_'"'"'+k,json.dumps(v,default=str),flush=True)\nout('"'"'AT'"'"',datetime.datetime.now(datetime.timezone.utc).isoformat())\nchecks=[('"'"'A
+SG'"'"',lambda:s.client('"'"'autoscaling'"'"').describe_auto_scaling_groups()['"'"'AutoScalingGroups'"'"']),('"'"'ROLE'"'"',lambda:{k:v for k,v in s.client('"'"'iam'"'"').get_role(RoleName='"'"'AWSServiceRoleForAutoScaling'"'"')['"'"'Role'"'"'].items() if k in ['"'"'RoleName'"'
+"','"'"'Arn'"'"','"'"'Path'"'"']}),('"'"'CLOUDFRONT'"'"',lambda:s.client('"'"'cloudfront'"'"').list_distributions(MaxItems='"'"'10'"'"')['"'"'DistributionList'"'"'].get('"'"'Quantity'"'"')),('"'"'CERTS'"'"',lambda:s.client('"'"'acm'"'"').list_certificates()['"'"'CertificateSumm
+aryList'"'"']),('"'"'ZONES'"'"',lambda:[{'"'"'Name'"'"':z['"'"'Name'"'"'],'"'"'Private'"'"':z['"'"'Config'"'"']['"'"'PrivateZone'"'"']} for z in s.client('"'"'route53'"'"').list_hosted_zones()['"'"'HostedZones'"'"']]),('"'"'RUNNING'"'"',lambda:[{'"'"'Id'"'"':i['"'"'InstanceId'"
+'"'],'"'"'Type'"'"':i['"'"'InstanceType'"'"'],'"'"'Name'"'"':next((t['"'"'Value'"'"'] for t in i.get('"'"'Tags'"'"',[]) if t['"'"'Key'"'"']=='"'"'Name'"'"'),'"'"''"'"')} for r in s.client('"'"'ec2'"'"').describe_instances(Filters=[{'"'"'Name'"'"':'"'"'instance-state-name'"'"','
+"'"'Values'"'"':['"'"'running'"'"','"'"'pending'"'"']}])['"'"'Reservations'"'"'] for i in r['"'"'Instances'"'"']])]\nfor k,f in checks:\n try:out(k,f())\n except Exception as e:out(k,{'"'"'error'"'"':str(e)})\nprint('"'"'NEXT_PREFLIGHT_DONE'"'"')")'
+NEXT_PREFLIGHT_AT "2026-11-10T10:29:56.906403+00:00"
+NEXT_PREFLIGHT_ASG []
+NEXT_PREFLIGHT_ROLE {"error": "An error occurred (NoSuchEntity) when calling the GetRole operation: The role with name AWSServiceRoleForAutoScaling cannot be found."}
+NEXT_PREFLIGHT_CLOUDFRONT {"error": "An error occurred (AccessDenied) when calling the ListDistributions operation: User: arn:aws:sts::214018170594:assumed-role/voclabs/user5469329=[student-email-redacted] is not authorized to perform: cloudfront:ListDistributions becaus
+e no identity-based policy allows the cloudfront:ListDistributions action"}
+NEXT_PREFLIGHT_CERTS []
+NEXT_PREFLIGHT_ZONES []
+NEXT_PREFLIGHT_RUNNING [{"Id": "i-0bdbde44eb450f334", "Type": "t3.micro", "Name": "INFS3701-Week2-EC2"}, {"Id": "i-00572a14ca8b71156", "Type": "t3.micro", "Name": "infs3701-team-app-a"}, {"Id": "i-05252540f0557d7f7", "Type": "t3.micro", "Name": "cafe-app-a"}, {"Id": "i-0b2fd3c1
+e0267e100", "Type": "t3.micro", "Name": "cafe-web-a"}, {"Id": "i-0081259c52a32e051", "Type": "t3.micro", "Name": "infs3701-team-app-b"}, {"Id": "i-03f7026d2ad37bf97", "Type": "t3.micro", "Name": "cafe-app-b"}, {"Id": "i-0023975cd55903b8a", "Type": "t3.micro", "Name": "cafe-web-
+b"}]
+NEXT_PREFLIGHT_DONE
+~ $ python3 -c 'import boto3,json; c=boto3.client('"'"'ec2'"'"',region_name='"'"'us-east-1'"'"');i=c.describe_images(ImageIds=['"'"'ami-03616f6b53c85f036'"'"'])['"'"'Images'"'"'][0];print('"'"'NEXT_IMAGE'"'"',json.dumps({k:i.get(k) for k in ['"'"'ImageId'"'"','"'"'State'"'"','"
+'"'RootDeviceName'"'"','"'"'Architecture'"'"','"'"'BlockDeviceMappings'"'"']},default=str))'
+NEXT_IMAGE {"ImageId": "ami-03616f6b53c85f036", "State": "available", "RootDeviceName": "/dev/xvda", "Architecture": "x86_64", "BlockDeviceMappings": [{"Ebs": {"DeleteOnTermination": true, "Iops": 3000, "SnapshotId": "snap-0da1dc1db4a15e196", "VolumeSize": 8, "VolumeType": "gp3
+", "Throughput": 125, "Encrypted": true}, "DeviceName": "/dev/xvda"}]}
+~ $
+Feedback
+©  2026 ,  Amazon Web Services, Inc. or its affiliates.

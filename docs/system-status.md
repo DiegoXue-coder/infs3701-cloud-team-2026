@@ -1,5 +1,7 @@
 # 当前系统状态
 
+> 11/10后续只读预检：CloudFront ListDistributions被拒；ACM证书/Route53托管区/ASG均空，AutoScaling服务关联角色不存在（创建权限尚未验证）。已完成T15部分安全核对及本地扩容草案构建，未新增AWS资源。见[实际检查、HTTPS卡点与扩容边界](security-next-steps-2026-11-10.md)。现有两台不加入拟议扩容组；方案未部署，不计作增强完成。
+
 > 2026-11-10实际更新：Lab原为Terminated，启动后两台业务目标healthy、HTTP200并读回原两条记录；当前仍仅HTTP80、ACM无证书、无ASG。已导出11/7业务停机时真实OK→ALARM→OK历史和C采样同期CloudWatch数据，待C独立核对。临时构建机已恢复stopped；Lab延迟预算显示$32.10/$50。报告由A先推进，见[收尾清单](closeout-plan-2026-11-10.md)。B的11/8错误原因未被追溯证明，不把本次恢复冒充当时根因结论。
 
 > 2026-11-08协作更新：D分工已预留给Tenzin/wyend12，英文入口见[member-D.md](member-D.md)。GitHub访问、本人AI连接和任务认领仍须分别确认。B在11/8 15:35悉尼报告HTTP503且未写入，原因未知；不要把下方11/7成功记录称为当前在线健康。
