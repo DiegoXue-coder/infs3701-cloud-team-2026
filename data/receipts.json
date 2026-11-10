@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10T07:26:54+00:00",
+  "generated_at": "2026-11-10T07:27:29+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -1100,6 +1100,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761616811"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T09-6761619641",
+      "task_id": "T09",
+      "request_comment_id": 6761619641,
+      "actor": "DiegoXue-coder",
+      "command": "report",
+      "requested_at": "2026-11-10T07:27:02Z",
+      "processed_at": "2026-11-10T07:27:27+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T09 已更新为「进行中」。实际上报（partial，尚未完成）：Restored existing Lab service and verified both business targets/readback; stopped unused builder, retrieved actual historical business alarm/C-window metrics and corrected dashboard banner/error series.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6761619641",
+      "submission": {
+        "path": "deliveries/T09/2026-11-10-DiegoXue-coder-restoration.json",
+        "commit": "75ff708319554c436a59cf60fc3780d1c8a1baaa",
+        "manifest_sha": "0c8d16f5a9955a11b96e76d502bfc172ce5aa2a9",
+        "run_log": "evidence/T09/2026-11-10-A-operation-summary.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-10T07:22:01+00:00",
+        "test_count": 4,
+        "evidence_count": 7,
+        "evidence_preview": [
+          "evidence/T09/2026-11-10-A-operation-summary.log",
+          "evidence/T09/2026-11-10-A-current-restoration.log",
+          "evidence/T05/2026-11-10-A-network-security.log"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6761626119"
     }
   ]
 }
