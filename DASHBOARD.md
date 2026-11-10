@@ -25,6 +25,7 @@
 
 | 任务 / 操作 | 操作者 | 处理与状态 | 证据与回执 |
 | --- | --- | --- | --- |
+| T19 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/2fb43467531846b5fd09677ef3abc21a54a146c2/evidence/T25/2026-11-10-A-evidence-review.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761616811) |
 | T25 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/cd32f3e3bd2123f6410b78b315d5dc694c4e8e49/evidence/T25/2026-11-10-A-evidence-review.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761607708) |
 | T19 / claim | DiegoXue-coder | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6761236688) |
 | T25 / claim | DiegoXue-coder | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761186978) |
@@ -34,7 +35,6 @@
 | T11 / claim | Alex4325Li | accepted / 进行中 | — · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717285897) |
 | T12 / report | Marina057 | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/e2dcc581991e0b97f593c058c9fa3a3cf013b643/evidence/T12/2026-11-07-Marina057-cloud-run.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12#issuecomment-6707216949) |
 | T10 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/b25a68e7ded1952e37f2e3d71a6a548adb17a99a/evidence/T09/2026-11-07-A-second-host-release.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10#issuecomment-6706977980) |
-| T09 / report | DiegoXue-coder | accepted / 进行中 | [partial · 执行记录](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/blob/9aaa465e3249e32b64ff2f2d3f741681ffa8d86f/evidence/T09/2026-11-07-A-post-restart-read.log) · [回执](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/9#issuecomment-6706969866) |
 
 ## 进行中 · 12
 
@@ -50,7 +50,7 @@
 | [T10 加第二台及统一访问入口](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/10) | DiegoXue-coder / A | 2026-11-05 | 完成前需 T09；实际上报（partial，尚未完成）：Deployed exact 06c2292 to both private AZ hosts; actual fictional POST and shared DynamoDB readback passed; writer host stop/start preserved the exact record and the other host served during downtime. |
 | [T11 验证共享数据与无状态](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11) | Alex4325Li / B | 2026-11-06 | 完成前需 T10；实际上报（partial，尚未完成）：核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。 |
 | [T12 分流测试和监控页面](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/12) | Marina057 / C | 2026-11-06 | 完成前需 T10；实际上报（partial，尚未完成）：独立验证正式业务入口及跨实例读回。唯一虚构记录 POST 302，az-a 和 az-b 均读回。业务首页 30 次均 200，两标签各 15 次。附 AWS Calculator 成本草案、60 秒脚本与 A/C 联合实验交接。 |
-| [T19 Integrate and verify the English design report](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19) | DiegoXue-coder / D | 2026-11-13 | 完成前需 T13,T14,T15,T25；已认领（管理员接替未绑定角色） |
+| [T19 Integrate and verify the English design report](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19) | DiegoXue-coder / D | 2026-11-13 | 完成前需 T13,T14,T15,T25；实际上报（partial，尚未完成）：Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window eviden |
 | [T25 Define objectives and audit requirements against evidence](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25) | DiegoXue-coder / D | 2026-11-09 | 实际上报（partial，尚未完成）：Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence. |
 
 ## 被卡住 · 0
