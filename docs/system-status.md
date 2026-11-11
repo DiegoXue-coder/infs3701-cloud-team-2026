@@ -1,5 +1,7 @@
 # 当前系统状态
 
+> 2026-11-12 英文设计报告已生成[审阅版 PDF](../output/pdf/reading-tracker-design-review.pdf)。正文 4 页约 1,965 词，另有 1 页参考文献。组员复核和后续工作见[报告取材入口](report-evidence-index.md)。本轮依据仓库已有证据整理。
+
 > 2026-11-11 HTTPS 方案已定为两段 TLS。现有 ALB 使用公开可信证书，两台 EC2 使用仅对 ALB 开放的内网 TLS。配置顺序、验证和回退见[HTTPS 实施方案](https-rollout.md)。入口仍待确认可管理 DNS 的子域名或已有可用证书，方案尚未部署。
 
 > 2026-11-11悉尼文档进展：负责人明确暂缓自动扩容，10Nov准备的surge文件没有执行授权，config保持enhancements_enabled=false。已生成[1页架构图PDF及复核入口](architecture-review-2026-11-11.md)、[网络/安全章节](network-security-chapter-2026-11-11.md)和[给老师的问题草稿](tutor-questions-ready-en.md)。图据10Nov证据绘制，非11Nov在线检查；HTTPS仍未解决，T15/T17仍待独立核对，老师消息未发送。

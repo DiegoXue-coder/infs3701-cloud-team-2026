@@ -1,5 +1,16 @@
 # 报告取材入口：要求、图片、日志与回执
 
+**12 November review:** The [design report PDF](../output/pdf/reading-tracker-design-review.pdf) has four body pages and a separate references page. Edit the [English source](design-report-working.md) and regenerate with `python scripts/build_design_report_pdf.py` using ReportLab. Review this PDF before freezing the submission.
+
+| Reviewer | Next review action |
+| --- | --- |
+| Diego | Check the security and deployment claims against the latest AWS evidence. Update the report and diagram after any verified HTTPS change. |
+| Alex | Check application and DynamoDB details against the pinned release. Record the independent retest result when the live endpoint is available. |
+| Marina | Check the alarm and routing evidence and finish the separate 12-month cost PDF. Confirm whether the historical estimate in the report needs updating. |
+| Tenzi | Redraw the existing architecture in Draw.io and hand over the editable source and one-page PDF for Diego to verify. [Reference and checks](architecture-review-2026-11-11.md) |
+
+T20 video still needs a lead. Prepare the shot list from Marina's script, then arrange one live recording window for the browser demonstration and evidence. Each member should confirm their own contribution and AI-use record before signing.
+
 **11/10增补：** [收尾清单](closeout-plan-2026-11-10.md)、[英文总报告工作稿](design-report-working.md)、[要求/证据矩阵](requirements-evidence-matrix-2026-11-10.md)、[真实业务告警与C同期监控核对](monitoring-reconciliation-2026-11-10.md)。最新网络/业务读回及看板截图由矩阵链接，旧证据按原日期保留。不是所有最终交付已完成。
 
 更新：2026-11-01。本轮证据基线 commit：`b6c091c`。本页是取材索引，不是已完成的报告或最终验收。
