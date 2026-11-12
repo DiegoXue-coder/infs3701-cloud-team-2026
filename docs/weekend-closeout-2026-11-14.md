@@ -1,14 +1,16 @@
 # Reading Tracker weekend handoff
 
-Proposed team milestones for 14–15 November 2026, Sydney time. The official deadline in the brief is 17 November at 16:00 Sydney. Each member should reply with availability for a shared lab session and confirm their deliverable.
+Diego confirmed the work split below for 14–15 November 2026, Sydney time. The targets are suggested and the shared lab session time is pending. The official deadline in the brief is 17 November at 16:00 Sydney.
 
 | Person | Deliverable | Suggested target |
 | --- | --- | --- |
-| Diego | Coordinate the AWS session and video. Check Learner Lab, both EC2 instances and ALB target health. Confirm both targets and the business page before recording. Review the final diagram and integrate the reviewed report sections. | Confirm a Saturday session and assemble a draft video by Sunday evening. |
-| Alex | Review the application and DynamoDB section of the report. During the lab session, repeat the independent test, add one fictional record and read it from both instance labels. Save the execution log and record the browser demonstration. | Return report comments and the test log or exact blocker by Saturday evening. |
+| Diego | Restore the AWS demo, lead the shared test and record the 60-second video. Check Learner Lab, both EC2 instances and ALB target health. Review the final diagram and integrate the reviewed report sections. | Confirm a Saturday session and assemble a draft video by Sunday evening. |
+| Alex | Review the application and DynamoDB section of the report. During the lab session, repeat the independent test, add one fictional record and read it from both instance labels. Save the execution log and help Diego capture the browser demonstration. | Return report comments and the test log or exact blocker by Saturday evening. |
 | Marina | Complete the one-page 12-month cost PDF based on the Pricing Calculator draft. Record the assumptions and verify the total against the architecture. Review the existing CloudWatch business alarm and routing evidence, and prepare the matching video clip or screenshot. | Return the cost PDF and evidence review by Sunday evening. |
 | Tenzi | Redraw the architecture with AWS icons and English labels, using the evidence and existing reference. Return the editable Draw.io source and a readable one-page PDF for Diego to check. | Share a first pass by Saturday evening and the reviewed version by Sunday evening. |
-| Everyone | Confirm actual contributions and AI use, and prepare the signed individual statement and group cover sheet as the course requires. | Have the statements ready for Monday's final check. |
+| Everyone | Use GitHub activity and evidence to draft the contribution table. Each member confirms their actual work and AI use, agrees the share with the group, and signs their own statement. | Have the statements and group cover sheet ready for Monday's final check. |
+
+Tenzi prepares the drawing under T17 and Diego reviews it as the task owner. Alex continues T11. Marina can record her own claim on T18 when starting the cost PDF. The assigned work here records Diego's decision. Individual acknowledgements and GitHub task claims are tracked separately.
 
 ## Live session and recording
 
