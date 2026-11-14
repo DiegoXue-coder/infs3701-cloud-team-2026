@@ -1,6 +1,6 @@
 # Reading Tracker recovery in Tenzi’s Learner Lab
 
-Tenzi (`wyend12`) operates his own AWS Academy session. Diego prepares and reviews the deployment, takes over final Figure 1 integration, and coordinates the recording. Alex verifies the live application independently. Marina monitors cost and collects CloudWatch evidence. Diego’s former endpoint and its November test logs are historical. Report the replacement environment only after actual checks.
+Tenzi (`wyend12`) deploys through his own AWS Academy session and leads the live recording and English narration. Diego reviews the deployment and integrates Figure 1. Alex verifies the live application independently. Marina monitors cost and collects CloudWatch evidence. See the [current work split](weekend-closeout-2026-11-14.md) for what to prepare in parallel. Diego’s former endpoint and its November test logs are historical. Report the replacement environment only after actual checks.
 
 ## 1. Check your Lab and prepare the files
 

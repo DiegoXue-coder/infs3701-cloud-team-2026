@@ -662,15 +662,13 @@
     "role": "D",
     "reviewer_role": "C",
     "start": "2026-11-08",
-    "due": "2026-11-13",
+    "due": "2026-11-16",
     "depends_on": [
-      "T10",
-      "T11",
-      "T12"
+      "T26"
     ],
     "optional": false,
     "steps": [
-      "Record actual browser use of the deployed release: add/read a fictional record, with real load-distribution or availability evidence. A alone performs AWS changes.",
+      "Tenzi records and narrates the live browser demo as soon as the T26 endpoint works and both targets are healthy. Alex verifies real readback and routing while Marina captures monitoring evidence.",
       "Explain key decisions and the request flow clearly, using actual results; obtain each member's contribution/voice where agreed.",
       "Edit a professional video to the conservative 60-second target until the tutor resolves the duration conflict. Check audio, readability, exact duration and all evidence claims."
     ],
@@ -682,7 +680,7 @@
     "start_after": [],
     "early_steps": [
       "Reuse Marina's existing 60-second script with its authorship credited; adapt the English narration and storyboard.",
-      "Arrange A/B/C real browser and routing/availability recordings while report sections are being written."
+      "Rehearse the narration and recording locally, prepare the diagram and evidence cuts, and verify the microphone before the Lab session."
     ],
     "language": "en",
     "reallocated_from": "C"
@@ -844,7 +842,7 @@
     ],
     "acceptance": [
       "Dated deployment and two-target verification logs with URL, operator, release and stack outputs.",
-      "Fictional browser write and independent readback through both targets, plus monitoring evidence and playable video location."
+      "Fictional browser write and independent readback through both targets, dated monitoring evidence and a raw live recording for T20."
     ]
   }
 ]

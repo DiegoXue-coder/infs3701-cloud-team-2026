@@ -1,6 +1,15 @@
 # Reading Tracker weekend handoff
 
-**Recovery update, 14 November.** Tenzi runs the replacement deployment under T26 in his own Lab after preflight and budget checks. Diego integrates Figure 1 and coordinates the video. Alex verifies the new endpoint. Marina checks cost and captures monitoring evidence. Use the [replacement Lab guide](tenzi-lab-redeployment.md) for the live session. The dated plan below records the original division of work.
+**Recovery update, 14 November.** Tenzi deploys in his Lab under [T26](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/26) and leads the English recording under [T20](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/20). If he has started the Draw.io diagram, he can finish that draft and share it in [T17](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17). Otherwise Diego finishes the drawing. Diego checks and integrates Figure 1 in either case.
+
+| Person | Start before deployment | Once the new endpoint works and both targets are healthy |
+| --- | --- | --- |
+| Tenzi | Confirm the diagram status in T17, run the T26 preflight, rehearse Marina’s script and test screen/audio recording. | Record and narrate the live demo in English. Capture a fictional write and readback, then show real routing or availability evidence. |
+| Diego | Review the change set and draft report updates against the template. Prepare the final package checklist, cover sheet and contribution evidence. Prepare Figure 1 for integration using the existing draft. | Confirm the diagram, URL and protocol against the deployed environment, then integrate the verified results and export the final report. |
+| Alex | Review report §3 and rehearse the test with the local application. Prepare the exact command and fictional record values. | Independently verify the write, readback and both instance labels while Tenzi records. Save the log under T11. |
+| Marina | Finish the cost PDF against the template assumptions, check existing Lab spend with Tenzi, and prepare dated CloudWatch evidence and the video shot list. | Capture current CloudWatch/target evidence and check the final video. Update costs only if the deployed configuration differs. |
+
+Use the [replacement Lab guide](tenzi-lab-redeployment.md) for the live session. Begin recording when the service is healthy and the first read/write works. Alex’s independent check and Marina’s evidence capture can run during the recording window. T26 records the deployment and raw footage. T20 records the final cut. The original plan follows below.
 
 Diego confirmed the work split below for 14–15 November 2026, Sydney time. The targets are suggested and the shared lab session time is pending. The official deadline in the brief is 17 November at 16:00 Sydney.
 
