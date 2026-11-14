@@ -12,6 +12,11 @@ ami_parameter=/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86
 templates=deployment/learner-lab
 
 aws_lab() { aws --region us-east-1 "$@"; }
+inventory() {
+  if ! aws_lab "$@"; then
+    printf 'Inventory unavailable for %s %s. Review this service in the console.\n' "$1" "$2" >&2
+  fi
+}
 stack_status() {
   aws_lab cloudformation describe-stacks --stack-name "$1" --query 'Stacks[0].StackStatus' --output text
 }
@@ -53,13 +58,13 @@ fi
 aws_lab cloudformation list-stacks --stack-status-filter CREATE_IN_PROGRESS CREATE_COMPLETE REVIEW_IN_PROGRESS UPDATE_COMPLETE ROLLBACK_COMPLETE \
   --query "StackSummaries[?starts_with(StackName, 'reading-tracker-recovery')].[StackName,StackStatus]" --output table
 printf '\nCurrent EC2 and load balancers for the budget check\n'
-aws_lab ec2 describe-instances --filters Name=instance-state-name,Values=pending,running,stopping,stopped \
+inventory ec2 describe-instances --filters Name=instance-state-name,Values=pending,running,stopping,stopped \
   --query 'Reservations[].Instances[].[InstanceId,State.Name,InstanceType,Tags[?Key==`Name`]|[0].Value]' --output table
-aws_lab elbv2 describe-load-balancers --query 'LoadBalancers[].[LoadBalancerName,State.Code,Type]' --output table
-aws_lab dynamodb list-tables --output table
-aws_lab ec2 describe-nat-gateways --filter Name=state,Values=pending,available \
+inventory elbv2 describe-load-balancers --query 'LoadBalancers[].[LoadBalancerName,State.Code,Type]' --output table
+inventory dynamodb list-tables --output table
+inventory ec2 describe-nat-gateways --filter Name=state,Values=pending,available \
   --query 'NatGateways[].[NatGatewayId,State]' --output table
-aws_lab rds describe-db-instances --query 'DBInstances[].[DBInstanceIdentifier,DBInstanceStatus,DBInstanceClass]' --output table
+inventory rds describe-db-instances --query 'DBInstances[].[DBInstanceIdentifier,DBInstanceStatus,DBInstanceClass]' --output table
 profile=$(aws_lab iam get-instance-profile --instance-profile-name LabInstanceProfile --query 'InstanceProfile.Roles[0].RoleName' --output text)
 [[ "$profile" == LabRole ]] || { echo "Expected the course LabInstanceProfile / LabRole."; exit 1; }
 image=$(aws_lab ssm get-parameter --name "$ami_parameter" --query Parameter.Value --output text)
