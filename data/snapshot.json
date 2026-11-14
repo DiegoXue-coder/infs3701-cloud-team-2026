@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T14:31:51+00:00",
+  "generated_at": "2026-11-14T06:05:25+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -2294,6 +2294,45 @@
       },
       "issue_number": 25,
       "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25",
+      "waiting_for": [],
+      "start_waiting_for": []
+    },
+    {
+      "id": "T26",
+      "title": "Redeploy and record Reading Tracker in Tenzi’s Learner Lab",
+      "language": "en",
+      "role": "D",
+      "reviewer_role": "A",
+      "start": "2026-11-14",
+      "due": "2026-11-16",
+      "depends_on": [],
+      "start_after": [],
+      "optional": false,
+      "guide": "docs/tenzi-lab-redeployment.md",
+      "early_steps": [
+        "Tenzi confirms the balance and available recording window and runs the read-only preflight.",
+        "Diego integrates Figure 1 and reviews the change set. Alex prepares independent checks. Marina checks cost and prepares monitoring evidence."
+      ],
+      "steps": [
+        "Review and run the deployment from Tenzi’s session using the English Lab guide.",
+        "Post the new URL, pinned release and two healthy targets. Capture browser use, independent reads through both labels and dated monitoring evidence.",
+        "Save evidence and the recording before course-directed cleanup."
+      ],
+      "acceptance": [
+        "Dated deployment and two-target verification logs with URL, operator, release and stack outputs.",
+        "Fictional browser write and independent readback through both targets, plus monitoring evidence and playable video location."
+      ],
+      "task_id": "T26",
+      "status": "todo",
+      "owner": null,
+      "owner_role": null,
+      "submission": null,
+      "reviewer": null,
+      "last_update": null,
+      "last_note": "尚未认领",
+      "processed_comments": [],
+      "issue_number": 26,
+      "issue_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/26",
       "waiting_for": [],
       "start_waiting_for": []
     }
