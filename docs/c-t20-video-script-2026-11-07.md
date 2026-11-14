@@ -1,5 +1,19 @@
 # Reading Tracker · 60 秒录制脚本
 
+## Current solo version for Tenzi
+
+Record the live site in your own session once the new URL works and both targets are healthy. You can narrate while recording or add the voice-over afterwards. Edit and export the final cut yourself. Diego will provide the diagram PDF. The original storyboard below was prepared by Marina.
+
+| Time | Show | Suggested English narration |
+| --- | --- | --- |
+| 0–15 s | Open the live homepage, add a uniquely named fictional book and show it in the list. | “Reading Tracker saves books and tracks reading progress. I’ll add a fictional book and save it. It now appears in the reading list.” |
+| 15–40 s | Show dated live requests with both instance labels and the same fictional record. | “The load balancer routes requests to two private EC2 instances in different Availability Zones. Both use the same DynamoDB table, so the record is available through either instance. Here are successful requests from both targets.” |
+| 40–60 s | Show the architecture and verified CloudWatch evidence if captured. | “The load balancer is the public entry point. The application servers stay in private subnets, and DynamoDB keeps the data separate from those servers. CloudWatch tracks healthy targets so we can see when redundancy drops.” |
+
+Use the actual observed results. Save the raw recording, final cut and evidence links. If the final diagram PDF arrives later, record the live browser footage first and add the diagram during editing.
+
+## 原联合录制草稿（历史记录）
+
 候选录制版本 `06c2292`。每人负责自己的解说。录屏使用实际业务与当次日志，建议录制窗口统一 UTC，按以下剪辑时码压缩等待。时长按组内暂定 60 秒准备。
 
 | 时码 | 出镜与画面 | 英文解说草稿 |

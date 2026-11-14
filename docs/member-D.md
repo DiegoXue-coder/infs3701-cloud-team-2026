@@ -1,6 +1,6 @@
 # Tenzin / wyend12 — self-service English setup and work
 
-**Current priorities are T26 and T20.** Tenzi operates the replacement demo in his own Learner Lab and leads the live recording and English narration. Start with the [English deployment guide](tenzi-lab-redeployment.md). In T17 say whether the Draw.io diagram has started. If it has, finish and share that draft. Otherwise Diego finishes the drawing. Diego integrates Figure 1.
+**Current priorities are T26 and T20.** Tenzi operates the replacement demo in his own Learner Lab and records, narrates, edits and finalises the video alone. Start with the [English deployment guide](tenzi-lab-redeployment.md) and [solo narration](c-t20-video-script-2026-11-07.md). Diego exports and integrates the Draw.io source already delivered in T17.
 
 Your assigned role is **D: English report, objectives/evidence audit and final presentation**. A/B/C remain DiegoXue-coder, Alex4325Li and Marina057. Role assignment is not repository permission, proof of joining, a task claim or a contribution record.
 

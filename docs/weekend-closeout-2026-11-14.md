@@ -1,15 +1,15 @@
 # Reading Tracker weekend handoff
 
-**Recovery update, 14 November.** Tenzi deploys in his Lab under [T26](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/26) and leads the English recording under [T20](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/20). If he has started the Draw.io diagram, he can finish that draft and share it in [T17](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17). Otherwise Diego finishes the drawing. Diego checks and integrates Figure 1 in either case.
+**Current handoff, 14 November.** Tenzi deploys in his Lab under [T26](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/26) and completes the video alone under [T20](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/20). Diego exports the [Draw.io source Tenzi delivered](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/17#issuecomment-6872968721) to a readable one-page PDF and integrates Figure 1.
 
 | Person | Start before deployment | Once the new endpoint works and both targets are healthy |
 | --- | --- | --- |
-| Tenzi | Confirm the diagram status in T17, run the T26 preflight, rehearse Marina’s script and test screen/audio recording. | Record and narrate the live demo in English. Capture a fictional write and readback, then show real routing or availability evidence. |
-| Diego | Review the change set and draft report updates against the template. Prepare the final package checklist, cover sheet and contribution evidence. Prepare Figure 1 for integration using the existing draft. | Confirm the diagram, URL and protocol against the deployed environment, then integrate the verified results and export the final report. |
-| Alex | Review report §3 and rehearse the test with the local application. Prepare the exact command and fictional record values. | Independently verify the write, readback and both instance labels while Tenzi records. Save the log under T11. |
-| Marina | Finish the cost PDF against the template assumptions, check existing Lab spend with Tenzi, and prepare dated CloudWatch evidence and the video shot list. | Capture current CloudWatch/target evidence and check the final video. Update costs only if the deployed configuration differs. |
+| Tenzi | Run the T26 preflight and rehearse the solo section of [Marina’s script](c-t20-video-script-2026-11-07.md). | Record the live fictional write, readback and request distribution. Narrate live or record the voice-over later. Edit and deliver the final video yourself. Save the CloudWatch and target evidence for Marina. |
+| Diego | Review the deployment plan, export Figure 1, prepare references and collect everyone’s AI-use notes. | Check the figure and report against the actual deployment, assemble sections and finalise the submission package. |
+| Alex | Complete the application and DynamoDB section and prepare the independent test. | Verify the write, readback and both labels when the endpoint is available, save the log under T11, and finish the report results and evidence links. Help Diego check the package. |
+| Marina | Finalise the cost PDF and draft the cost and monitoring report sections. | Use Tenzi’s timestamped AWS captures and Alex’s logs to complete the report. Check the video claims and help Diego check the package asynchronously. |
 
-Use the [replacement Lab guide](tenzi-lab-redeployment.md) for the live session. Begin recording when the service is healthy and the first read/write works. Alex’s independent check and Marina’s evidence capture can run during the recording window. T26 records the deployment and raw footage. T20 records the final cut. The original plan follows below.
+Use the [replacement Lab guide](tenzi-lab-redeployment.md). Tenzi chooses his own recording time once the application works and both targets are healthy. Post the new URL, fictional record title and expected endpoint availability in T26 so Alex can test independently. Save the recording and evidence before course-directed cleanup. The original plan follows below.
 
 Diego confirmed the work split below for 14–15 November 2026, Sydney time. The targets are suggested and the shared lab session time is pending. The official deadline in the brief is 17 November at 16:00 Sydney.
 
