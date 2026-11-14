@@ -1,5 +1,7 @@
 # Tenzin / wyend12 — self-service English setup and work
 
+**Current priority is T26.** Tenzi operates the replacement demo in his own Learner Lab. Start with the [English deployment guide](tenzi-lab-redeployment.md). Diego integrates Figure 1 while Tenzi prepares the Lab.
+
 Your assigned role is **D: English report, objectives/evidence audit and final presentation**. A/B/C remain DiegoXue-coder, Alex4325Li and Marina057. Role assignment is not repository permission, proof of joining, a task claim or a contribution record.
 
 **10November continuity update:** the owner instructed the team not to wait for a reply. Diego has temporarily claimed T25/T19 under his own identity and is preparing the objective/evidence audit and integrated report. Check live ownership before claiming. Do not overwrite his claim; coordinate a handoff, independently review his preparation, or begin an unclaimed D task such as T20. His work is not attributed to you. Current source: `docs/design-report-working.md` and `docs/closeout-plan-2026-11-10.md`.
@@ -30,7 +32,7 @@ PY scripts/team.py --user wyend12 start
 
 `doctor` must report authenticated user `wyend12`, role D and readable files/tasks. An existing D binding makes join idempotent; it does not grant GitHub access. Missing rights or an identity mismatch must be resolved using your own account, not by impersonating Diego. If a connector fails but authenticated Git works, use Git and the helper; keep the repository private. No one else has verified your device's connection yet.
 
-## First task: T25
+## Earlier report and evidence work (T25)
 
 Read `AGENTS.md`, `AGENTS.en.md`, `project/config.json`, `project/handoffs.json`, `docs/four-person-plan.md`, the authoritative English assignment brief/rubric and the latest T25 Issue. Let your AI translate older Chinese material without changing its meaning.
 

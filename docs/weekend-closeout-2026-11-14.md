@@ -1,5 +1,7 @@
 # Reading Tracker weekend handoff
 
+**Recovery update, 14 November.** Tenzi runs the replacement deployment under T26 in his own Lab after preflight and budget checks. Diego integrates Figure 1 and coordinates the video. Alex verifies the new endpoint. Marina checks cost and captures monitoring evidence. Use the [replacement Lab guide](tenzi-lab-redeployment.md) for the live session. The dated plan below records the original division of work.
+
 Diego confirmed the work split below for 14–15 November 2026, Sydney time. The targets are suggested and the shared lab session time is pending. The official deadline in the brief is 17 November at 16:00 Sydney.
 
 | Person | Deliverable | Suggested target |

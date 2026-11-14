@@ -1,5 +1,7 @@
 # 四人在线任务入口 / Four-person tasks
 
+**Current deployment / 当前部署** · Tenzi starts with T26 in [D’s live tasks](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues?q=is%3Aissue+label%3A%22role%3AD%22+T26) and the [English Lab guide](docs/tenzi-lab-redeployment.md). Diego integrates Figure 1, Alex verifies the new endpoint, and Marina checks costs and captures monitoring evidence.
+
 **D / Tenzin / wyend12:** [All D tasks](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues?q=is%3Aissue%20label%3Atask%20label%3A%22role%3AD%22%20sort%3Aupdated-desc) · [English setup](docs/member-D.md) · [English prompt](prompts/START-en.md) · [Four-person plan](docs/four-person-plan.md)
 
 **这里的链接直接查询 GitHub 当前任务。组员登录并有权限即可随时访问，不需要某个人的电脑一直开着。**

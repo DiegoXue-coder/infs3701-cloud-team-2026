@@ -820,5 +820,31 @@
       "English objective/design draft and a useful evidence/gap matrix, with actual source-review log and concrete questions.",
       "Current build versus dated evidence and known failures are clearly distinguished; original authors' contributions preserved."
     ]
+  },
+  {
+    "id": "T26",
+    "title": "Redeploy and record Reading Tracker in Tenzi’s Learner Lab",
+    "language": "en",
+    "role": "D",
+    "reviewer_role": "A",
+    "start": "2026-11-14",
+    "due": "2026-11-16",
+    "depends_on": [],
+    "start_after": [],
+    "optional": false,
+    "guide": "docs/tenzi-lab-redeployment.md",
+    "early_steps": [
+      "Tenzi confirms the balance and available recording window and runs the read-only preflight.",
+      "Diego integrates Figure 1 and reviews the change set. Alex prepares independent checks. Marina checks cost and prepares monitoring evidence."
+    ],
+    "steps": [
+      "Review and run the deployment from Tenzi’s session using the English Lab guide.",
+      "Post the new URL, pinned release and two healthy targets. Capture browser use, independent reads through both labels and dated monitoring evidence.",
+      "Save evidence and the recording before course-directed cleanup."
+    ],
+    "acceptance": [
+      "Dated deployment and two-target verification logs with URL, operator, release and stack outputs.",
+      "Fictional browser write and independent readback through both targets, plus monitoring evidence and playable video location."
+    ]
   }
 ]

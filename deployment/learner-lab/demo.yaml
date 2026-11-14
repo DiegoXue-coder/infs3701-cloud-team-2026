@@ -1,0 +1,337 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: INFS3701 Reading Tracker with two private hosts, an ALB, DynamoDB and monitoring
+Parameters:
+  ArtifactBucket:
+    Type: String
+    AllowedPattern: '[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]'
+  ArtifactDigest:
+    Type: String
+    AllowedPattern: '[a-f0-9]{64}'
+  S3Prefix:
+    Type: String
+    AllowedPattern: 'pl-[a-f0-9]+'
+  DynamoPrefix:
+    Type: String
+    AllowedPattern: 'pl-[a-f0-9]+'
+  Image:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64
+Resources:
+  Vpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.37.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+  InternetAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref Vpc
+      InternetGatewayId: !Ref InternetGateway
+  PublicA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      AvailabilityZone: !Select [0, !GetAZs '']
+      CidrBlock: 10.37.0.0/24
+  PublicB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      AvailabilityZone: !Select [1, !GetAZs '']
+      CidrBlock: 10.37.1.0/24
+  PrivateA:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      AvailabilityZone: !GetAtt PublicA.AvailabilityZone
+      CidrBlock: 10.37.10.0/24
+  PrivateB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      AvailabilityZone: !GetAtt PublicB.AvailabilityZone
+      CidrBlock: 10.37.11.0/24
+  PublicRoutes:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref Vpc
+  PublicDefault:
+    Type: AWS::EC2::Route
+    DependsOn: InternetAttachment
+    Properties:
+      RouteTableId: !Ref PublicRoutes
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+  PublicRoutesA:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRoutes
+      SubnetId: !Ref PublicA
+  PublicRoutesB:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRoutes
+      SubnetId: !Ref PublicB
+  PrivateRoutes:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref Vpc
+  PrivateRoutesA:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateRoutes
+      SubnetId: !Ref PrivateA
+  PrivateRoutesB:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateRoutes
+      SubnetId: !Ref PrivateB
+  Books:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      OnDemandThroughput:
+        MaxReadRequestUnits: 10
+        MaxWriteRequestUnits: 10
+      AttributeDefinitions:
+        - AttributeName: record_id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: record_id
+          KeyType: HASH
+  S3Endpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      VpcId: !Ref Vpc
+      VpcEndpointType: Gateway
+      ServiceName: !Sub 'com.amazonaws.${AWS::Region}.s3'
+      RouteTableIds: [!Ref PrivateRoutes]
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Sub 'arn:${AWS::Partition}:s3:::al2023-repos-${AWS::Region}-de612dc2/*'
+            Condition:
+              Bool:
+                aws:SecureTransport: 'true'
+          - Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Sub 'arn:${AWS::Partition}:s3:::${ArtifactBucket}/releases/${ArtifactDigest}.tar.gz'
+            Condition:
+              ArnEquals:
+                aws:PrincipalArn: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:role/LabRole'
+              Bool:
+                aws:SecureTransport: 'true'
+  DynamoEndpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      VpcId: !Ref Vpc
+      VpcEndpointType: Gateway
+      ServiceName: !Sub 'com.amazonaws.${AWS::Region}.dynamodb'
+      RouteTableIds: [!Ref PrivateRoutes]
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: '*'
+            Action: [dynamodb:Scan, dynamodb:PutItem]
+            Resource: !GetAtt Books.Arn
+            Condition:
+              ArnEquals:
+                aws:PrincipalArn: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:role/LabRole'
+              Bool:
+                aws:SecureTransport: 'true'
+  AlbSecurity:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Public HTTP entry for fictional demonstration records
+      VpcId: !Ref Vpc
+      SecurityGroupIngress:
+        - {IpProtocol: tcp, FromPort: 80, ToPort: 80, CidrIp: 0.0.0.0/0}
+      SecurityGroupEgress:
+        - {IpProtocol: tcp, FromPort: 8000, ToPort: 8000, CidrIp: 10.37.10.0/24}
+        - {IpProtocol: tcp, FromPort: 8000, ToPort: 8000, CidrIp: 10.37.11.0/24}
+  AppSecurity:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: ALB ingress and AWS service HTTPS egress
+      VpcId: !Ref Vpc
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 8000
+          ToPort: 8000
+          SourceSecurityGroupId: !Ref AlbSecurity
+      SecurityGroupEgress:
+        - {IpProtocol: tcp, FromPort: 443, ToPort: 443, DestinationPrefixListId: !Ref S3Prefix}
+        - {IpProtocol: tcp, FromPort: 443, ToPort: 443, DestinationPrefixListId: !Ref DynamoPrefix}
+  Runtime:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateData:
+        ImageId: !Ref Image
+        InstanceType: t3.micro
+        IamInstanceProfile:
+          Name: LabInstanceProfile
+        CreditSpecification:
+          CpuCredits: standard
+        MetadataOptions:
+          HttpEndpoint: enabled
+          HttpTokens: required
+        BlockDeviceMappings:
+          - DeviceName: /dev/xvda
+            Ebs:
+              DeleteOnTermination: true
+              Encrypted: true
+              VolumeSize: 8
+              VolumeType: gp3
+        UserData:
+          Fn::Base64: !Sub |
+            #!/bin/bash
+            set -euo pipefail
+            exec > >(tee /var/log/reading-tracker-bootstrap.log /dev/console) 2>&1
+            export AWS_DEFAULT_REGION='${AWS::Region}'
+            export AWS_RETRY_MODE=standard AWS_MAX_ATTEMPTS=5
+            install -d /opt/reading-tracker
+            cd /opt/reading-tracker
+            aws s3 cp 's3://${ArtifactBucket}/releases/${ArtifactDigest}.tar.gz' release.tar.gz --only-show-errors
+            echo '${ArtifactDigest}  release.tar.gz' | sha256sum --check
+            tar -xzf release.tar.gz
+            for attempt in 1 2 3; do
+              dnf install -y python3.11 python3.11-pip && break
+              [ "$attempt" -lt 3 ] || exit 1
+              sleep 10
+            done
+            python3.11 -m venv venv
+            venv/bin/python -m pip install --no-index --only-binary=:all: --find-links wheels -r requirements.lock
+            token=$(curl -fsS --retry 4 -X PUT -H 'X-aws-ec2-metadata-token-ttl-seconds: 60' http://169.254.169.254/latest/api/token)
+            az=$(curl -fsS -H "X-aws-ec2-metadata-token: $token" http://169.254.169.254/latest/meta-data/placement/availability-zone)
+            case "$az" in
+              '${PublicA.AvailabilityZone}') label=az-a ;;
+              '${PublicB.AvailabilityZone}') label=az-b ;;
+              *) echo "Unexpected availability zone $az"; exit 1 ;;
+            esac
+            cat > /etc/systemd/system/reading-tracker.service <<UNIT
+            [Unit]
+            Description=INFS3701 Reading Tracker
+            After=network-online.target
+            Wants=network-online.target
+            [Service]
+            User=ec2-user
+            WorkingDirectory=/opt/reading-tracker
+            Environment=READING_DATA_MODE=dynamodb AWS_DEFAULT_REGION=${AWS::Region}
+            Environment=READING_TABLE=${Books} APP_INSTANCE=$label
+            ExecStart=/opt/reading-tracker/venv/bin/gunicorn --bind 0.0.0.0:8000 --workers 2 app:app
+            Restart=on-failure
+            RestartSec=3
+            [Install]
+            WantedBy=multi-user.target
+            UNIT
+            systemctl daemon-reload
+            systemctl enable --now reading-tracker
+            curl -fsS --retry 10 --retry-delay 2 --retry-connrefused http://127.0.0.1:8000/health
+            curl -fsS -o /dev/null http://127.0.0.1:8000/
+            echo "READING_TRACKER_READY $label $(cat RELEASE)"
+  AppA:
+    Type: AWS::EC2::Instance
+    DependsOn: [S3Endpoint, DynamoEndpoint, PrivateRoutesA]
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateId: !Ref Runtime
+        Version: !GetAtt Runtime.LatestVersionNumber
+      NetworkInterfaces:
+        - DeviceIndex: '0'
+          AssociatePublicIpAddress: false
+          GroupSet: [!Ref AppSecurity]
+          SubnetId: !Ref PrivateA
+      Tags:
+        - {Key: Name, Value: reading-tracker-az-a}
+  AppB:
+    Type: AWS::EC2::Instance
+    DependsOn: [S3Endpoint, DynamoEndpoint, PrivateRoutesB]
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateId: !Ref Runtime
+        Version: !GetAtt Runtime.LatestVersionNumber
+      NetworkInterfaces:
+        - DeviceIndex: '0'
+          AssociatePublicIpAddress: false
+          GroupSet: [!Ref AppSecurity]
+          SubnetId: !Ref PrivateB
+      Tags:
+        - {Key: Name, Value: reading-tracker-az-b}
+  Alb:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    DependsOn: [PublicDefault, PublicRoutesA, PublicRoutesB]
+    Properties:
+      Type: application
+      Scheme: internet-facing
+      SecurityGroups: [!Ref AlbSecurity]
+      Subnets: [!Ref PublicA, !Ref PublicB]
+  Targets:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      VpcId: !Ref Vpc
+      TargetType: instance
+      Protocol: HTTP
+      Port: 8000
+      HealthCheckPath: /health
+      HealthCheckIntervalSeconds: 15
+      HealthyThresholdCount: 2
+      UnhealthyThresholdCount: 2
+      Targets:
+        - Id: !Ref AppA
+        - Id: !Ref AppB
+  Listener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref Alb
+      Protocol: HTTP
+      Port: 80
+      DefaultActions:
+        - {Type: forward, TargetGroupArn: !Ref Targets}
+  RedundancyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: Fewer than two healthy Reading Tracker application targets
+      Namespace: AWS/ApplicationELB
+      MetricName: HealthyHostCount
+      Dimensions:
+        - {Name: LoadBalancer, Value: !GetAtt Alb.LoadBalancerFullName}
+        - {Name: TargetGroup, Value: !GetAtt Targets.TargetGroupFullName}
+      Statistic: Minimum
+      Period: 60
+      EvaluationPeriods: 2
+      Threshold: 2
+      ComparisonOperator: LessThanThreshold
+      TreatMissingData: notBreaching
+  Dashboard:
+    Type: AWS::CloudWatch::Dashboard
+    Properties:
+      DashboardBody: !Sub |
+        {"widgets":[
+          {"type":"metric","x":0,"y":0,"width":12,"height":6,"properties":{"title":"Healthy targets","region":"${AWS::Region}","period":300,"stat":"Minimum","metrics":[["AWS/ApplicationELB","HealthyHostCount","LoadBalancer","${Alb.LoadBalancerFullName}","TargetGroup","${Targets.TargetGroupFullName}"]]}},
+          {"type":"metric","x":12,"y":0,"width":12,"height":6,"properties":{"title":"Requests and target errors","region":"${AWS::Region}","period":300,"stat":"Sum","metrics":[["AWS/ApplicationELB","RequestCount","LoadBalancer","${Alb.LoadBalancerFullName}"],["AWS/ApplicationELB","HTTPCode_Target_5XX_Count","LoadBalancer","${Alb.LoadBalancerFullName}"]]}},
+          {"type":"metric","x":0,"y":6,"width":12,"height":6,"properties":{"title":"Target response time","region":"${AWS::Region}","period":300,"stat":"p95","metrics":[["AWS/ApplicationELB","TargetResponseTime","LoadBalancer","${Alb.LoadBalancerFullName}"]]}},
+          {"type":"metric","x":12,"y":6,"width":12,"height":6,"properties":{"title":"DynamoDB usage","region":"${AWS::Region}","period":300,"stat":"Sum","metrics":[["AWS/DynamoDB","ConsumedReadCapacityUnits","TableName","${Books}"],["AWS/DynamoDB","ConsumedWriteCapacityUnits","TableName","${Books}"]]}}
+        ]}
+Outputs:
+  DemoUrl:
+    Value: !Sub 'http://${Alb.DNSName}'
+  TargetGroup:
+    Value: !Ref Targets
+  InstanceA:
+    Value: !Ref AppA
+  InstanceB:
+    Value: !Ref AppB
+  Table:
+    Value: !Ref Books
+  Alarm:
+    Value: !Ref RedundancyAlarm
+  Dashboard:
+    Value: !Ref Dashboard
