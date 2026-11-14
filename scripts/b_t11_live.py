@@ -22,9 +22,11 @@ def require(condition, message):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--url", required=True)
-    parser.add_argument("--reference-title", required=True)
+    parser.add_argument("--reference-title", help="Exact title of the operator’s 12/120-page, four-star record")
     parser.add_argument("--write-one-fictional", action="store_true")
     args = parser.parse_args()
+    if not args.reference_title and not args.write_one_fictional:
+        parser.error("provide --reference-title or --write-one-fictional")
     base = args.url.rstrip("/")
     opener = build_opener(NoRedirect())
 
@@ -72,7 +74,19 @@ def main():
         if seen_health == LABELS:
             break
     require(seen_health == LABELS, f"Health reached only {sorted(seen_health)}")
-    records_on_both(args.reference_title, "12/120", 4)
+    if args.reference_title:
+        records_on_both(args.reference_title, "12/120", 4)
+    else:
+        # Verify that both business pages can read the configured store before writing.
+        seen_home = set()
+        for _ in range(8):
+            status, label, _, body = request("/")
+            require(status == 200 and "Records are stored in the shared reading library." in body,
+                    "Business home or shared-store label did not match")
+            seen_home.add(label)
+            if seen_home == LABELS:
+                break
+        require(seen_home == LABELS, f"Business home reached only {sorted(seen_home)}")
 
     if args.write_one_fictional:
         title = f"Fictional Alex T11 {uuid4().hex[:12]}"

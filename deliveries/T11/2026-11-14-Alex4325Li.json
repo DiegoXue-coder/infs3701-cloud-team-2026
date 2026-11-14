@@ -1,0 +1,31 @@
+{
+  "schema_version": 2,
+  "task_id": "T11",
+  "actor": "Alex4325Li",
+  "tested_at": "2026-11-14T20:43:54+11:00",
+  "environment": "Tenzi Learner Lab public ALB over HTTP, Sydney time, release 06c2292 per T26",
+  "summary": "Independently verified a fictional write and matching readback from both labels. Reviewed report section 3 against source and replacement deployment template and added measured results to section 6.",
+  "tests": [
+    {
+      "action": "Check both health and business routes",
+      "expected": "Both instance labels return HTTP 200",
+      "actual": "az-a and az-b both returned 200 on both routes"
+    },
+    {
+      "action": "Write one fictional record and read through both instances",
+      "expected": "302 then one match per label",
+      "actual": "az-b returned 302, both labels returned 200 with Fictional Alex T11 603d49ddabcb, Reading, 9/45 pages, rating 5"
+    }
+  ],
+  "evidence": [
+    "evidence/T11/2026-11-14-B-tenzi-cloud.log",
+    "docs/design-report-working.md",
+    "docs/b-t11-verification.md",
+    "scripts/b_t11_live.py"
+  ],
+  "limitations": "Replacement Lab restart persistence is pending. Release identifier is reported by Tenzi. Operator reference title was a placeholder.",
+  "next_step": "Tenzi coordinates restart if needed. Alex verifies the same record after restart and Marina reviews the evidence.",
+  "ai_use": "Codex reviewed source and template, adapted the existing test, ran the HTTP check and compared the logged results with the report.",
+  "verification_result": "partial",
+  "run_log": "evidence/T11/2026-11-14-B-tenzi-cloud.log"
+}
