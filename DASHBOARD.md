@@ -1,6 +1,6 @@
 # 项目进度看板 / Team dashboard
 
-最后同步：**2026-11-14 17:05 AEDT** · [在线任务入口](LIVE_BOARD.md) · [四人分工 / Four-person plan](docs/four-person-plan.md) · [English start](prompts/START-en.md) · [系统运行方式](docs/system-status.md)
+最后同步：**2026-11-14 17:12 AEDT** · [在线任务入口](LIVE_BOARD.md) · [四人分工 / Four-person plan](docs/four-person-plan.md) · [English start](prompts/START-en.md) · [系统运行方式](docs/system-status.md)
 
 已完成并复核 **1 / 25** 项；等检查 **0** 项；被卡住 **0** 项。
 
@@ -75,7 +75,7 @@
 | [T13 创建并实测告警](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/13) | 未认领 / C | 2026-11-08 | 完成前需 T12；尚未认领 |
 | [T14 联合进行实例故障测试](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/14) | 未认领 / C | 2026-11-09 | 完成前需 T11,T12；尚未认领 |
 | [T18 12 个月成本估算定稿](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/18) | 未认领 / C | 2026-11-12 | 完成前需 T10；尚未认领 |
-| [T20 Produce the live demonstration video and English narration](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/20) | 未认领 / D | 2026-11-13 | 完成前需 T10,T11,T12；尚未认领 |
+| [T20 Produce the live demonstration video and English narration](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/20) | 未认领 / D | 2026-11-16 | 完成前需 T26；尚未认领 |
 | [T21 个人贡献、AI 记录与签名](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/21) | 未认领 / C | 2026-11-14 | 尚未认领 |
 | [T22 五项交付交叉检查](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/22) | 未认领 / A | 2026-11-15 | 完成前需 T17,T18,T19,T20,T21；尚未认领 |
 | [T23 修复、冻结版本、准备上传](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/23) | 未认领 / A | 2026-11-16 | 完成前需 T22；尚未认领 |
