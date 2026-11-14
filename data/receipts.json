@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T06:36:09+00:00",
+  "generated_at": "2026-11-14T09:45:17+00:00",
   "receipts": [
     {
       "receipt_id": "R-T01-6540933788",
@@ -1320,6 +1320,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6798581828"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T11-6875412714",
+      "task_id": "T11",
+      "request_comment_id": 6875412714,
+      "actor": "Alex4325Li",
+      "command": "report",
+      "requested_at": "2026-11-14T09:44:40Z",
+      "processed_at": "2026-11-14T09:45:14+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T11 已更新为「进行中」。实际上报（partial，尚未完成）：Independently verified a fictional write and matching readback from both labels. Reviewed report section 3 against source and replacement deployment template and added measured results to section 6.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6875412714",
+      "submission": {
+        "path": "deliveries/T11/2026-11-14-Alex4325Li.json",
+        "commit": "85eee166843d9608049eb2f20dd06ab0046f1937",
+        "manifest_sha": "c79b7bfde6d7152251cb82e9a2d3baa9f292c4ed",
+        "run_log": "evidence/T11/2026-11-14-B-tenzi-cloud.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-14T20:43:54+11:00",
+        "test_count": 2,
+        "evidence_count": 4,
+        "evidence_preview": [
+          "evidence/T11/2026-11-14-B-tenzi-cloud.log",
+          "docs/design-report-working.md",
+          "docs/b-t11-verification.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6875419251"
     }
   ]
 }

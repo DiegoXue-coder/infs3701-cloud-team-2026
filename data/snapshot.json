@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T06:36:09+00:00",
+  "generated_at": "2026-11-14T09:45:17+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -32,37 +32,6 @@
   },
   "aws_state": "Not polled; evidence is time/environment-specific.",
   "recent_receipts": [
-    {
-      "schema_version": 1,
-      "receipt_id": "R-T25-6761601270",
-      "task_id": "T25",
-      "request_comment_id": 6761601270,
-      "actor": "DiegoXue-coder",
-      "command": "report",
-      "requested_at": "2026-11-10T07:25:53Z",
-      "processed_at": "2026-11-10T07:26:17+00:00",
-      "outcome": "accepted",
-      "status_before": "in_progress",
-      "status_after": "in_progress",
-      "summary": "T25 已更新为「进行中」。实际上报（partial，尚未完成）：Continued without waiting for D: prepared objective/evidence audit, integrated English report source and closeout sequence; recovered current Lab business reads and retrieved real business-alarm/C-window evidence.",
-      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761601270",
-      "submission": {
-        "path": "deliveries/T25/2026-11-10-DiegoXue-coder-continuity.json",
-        "commit": "cd32f3e3bd2123f6410b78b315d5dc694c4e8e49",
-        "manifest_sha": "4d35ce6a622440ac0cd51b9831a868f4fae50c7e",
-        "run_log": "evidence/T25/2026-11-10-A-evidence-review.log",
-        "verification_result": "partial",
-        "tested_at": "2026-11-10T07:22:01+00:00",
-        "test_count": 3,
-        "evidence_count": 6,
-        "evidence_preview": [
-          "docs/closeout-plan-2026-11-10.md",
-          "docs/requirements-evidence-matrix-2026-11-10.md",
-          "docs/objective-design-draft-2026-11-10.md"
-        ]
-      },
-      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/25#issuecomment-6761607708"
-    },
     {
       "schema_version": 1,
       "receipt_id": "R-T19-6761610523",
@@ -313,6 +282,37 @@
         ]
       },
       "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/19#issuecomment-6798581828"
+    },
+    {
+      "schema_version": 1,
+      "receipt_id": "R-T11-6875412714",
+      "task_id": "T11",
+      "request_comment_id": 6875412714,
+      "actor": "Alex4325Li",
+      "command": "report",
+      "requested_at": "2026-11-14T09:44:40Z",
+      "processed_at": "2026-11-14T09:45:14+00:00",
+      "outcome": "accepted",
+      "status_before": "in_progress",
+      "status_after": "in_progress",
+      "summary": "T11 已更新为「进行中」。实际上报（partial，尚未完成）：Independently verified a fictional write and matching readback from both labels. Reviewed report section 3 against source and replacement deployment template and added measured results to section 6.",
+      "request_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6875412714",
+      "submission": {
+        "path": "deliveries/T11/2026-11-14-Alex4325Li.json",
+        "commit": "85eee166843d9608049eb2f20dd06ab0046f1937",
+        "manifest_sha": "c79b7bfde6d7152251cb82e9a2d3baa9f292c4ed",
+        "run_log": "evidence/T11/2026-11-14-B-tenzi-cloud.log",
+        "verification_result": "partial",
+        "tested_at": "2026-11-14T20:43:54+11:00",
+        "test_count": 2,
+        "evidence_count": 4,
+        "evidence_preview": [
+          "evidence/T11/2026-11-14-B-tenzi-cloud.log",
+          "docs/design-report-working.md",
+          "docs/b-t11-verification.md"
+        ]
+      },
+      "receipt_url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6875419251"
     }
   ],
   "tasks": [
@@ -1343,50 +1343,48 @@
       "owner_role": "B",
       "submission": null,
       "reviewer": null,
-      "last_update": "2026-11-08T04:36:19Z",
-      "last_note": "实际上报（partial，尚未完成）：核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
+      "last_update": "2026-11-14T09:44:40Z",
+      "last_note": "实际上报（partial，尚未完成）：Independently verified a fictional write and matching readback from both labels. Reviewed report section 3 against source and replacement deployment template and added measured results to section 6.",
       "processed_comments": [
         6717282969,
-        6717297675
+        6717297675,
+        6875412714
       ],
       "last_receipt": {
-        "receipt_id": "R-T11-6717297675",
+        "receipt_id": "R-T11-6875412714",
         "command": "report",
         "outcome": "accepted",
         "status_after": "in_progress",
-        "processed_at": "2026-11-08T04:36:44+00:00",
-        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6717301205"
+        "processed_at": "2026-11-14T09:45:14+00:00",
+        "url": "https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/11#issuecomment-6875419251"
       },
       "last_report": {
-        "path": "deliveries/T11/2026-11-08-Alex4325Li.json",
-        "commit": "994665a05c5d63ce714a97661745fd1855612181",
-        "manifest_sha": "46fee6636b404a796459dae519c1e6346ca9ff0b",
+        "path": "deliveries/T11/2026-11-14-Alex4325Li.json",
+        "commit": "85eee166843d9608049eb2f20dd06ab0046f1937",
+        "manifest_sha": "c79b7bfde6d7152251cb82e9a2d3baa9f292c4ed",
         "evidence_shas": {
-          "evidence/T11/2026-11-08-B-cloud-http.log": "389a28fbc3d22d5d18fbd351d1c1c9f523cdfb66",
-          "evidence/T11/2026-11-08-B-release-check.log": "38ae65bc88192eddc9afec47045d7dec4b758175",
-          "docs/b-t11-verification.md": "229c2d60311dac3c7057be03317d493e5d15089b",
-          "docs/b-design-report-draft.md": "d16a3a359e587a04119c1aad32145ec8157f288a",
-          "app/README.md": "9acd739d9157915e35b48abe165b8e786b18518b",
-          "docs/interfaces.md": "66b1bf0e2739ec3b24ddfb389ff92594765a91f8",
-          "scripts/b_t11_live.py": "b2642837ba5407026822947f086b530c6ab4b6f1"
+          "evidence/T11/2026-11-14-B-tenzi-cloud.log": "6d9b69b1c90c60041b7e0cca52b3f145bb0daf2c",
+          "docs/design-report-working.md": "155eabaa092770ec6ba9f4fe90ac58f3b1bdb25b",
+          "docs/b-t11-verification.md": "f89fa6e067efbbc8aad47c06e0be7c1c7aeccffa",
+          "scripts/b_t11_live.py": "daeea874521e37386606e5391d3e34a3ce909d81"
         },
-        "summary": "核对双机发布源码哈希与无本地状态路径；独立业务预检因 503 停止；补充应用/数据库报告初稿、运行约定和复测步骤。",
-        "tested_at": "2026-11-08T04:35:14+00:00",
+        "summary": "Independently verified a fictional write and matching readback from both labels. Reviewed report section 3 against source and replacement deployment template and added measured results to section 6.",
+        "tested_at": "2026-11-14T20:43:54+11:00",
         "submitted_by": "Alex4325Li",
-        "environment": "macOS Python 3.9.6; public business ALB over HTTP; no AWS console access",
+        "environment": "Tenzi Learner Lab public ALB over HTTP, Sydney time, release 06c2292 per T26",
         "verification_result": "partial",
-        "run_log": "evidence/T11/2026-11-08-B-cloud-http.log",
+        "run_log": "evidence/T11/2026-11-14-B-tenzi-cloud.log",
         "test_count": 2,
         "test_summary": [
           {
-            "action": "核对发布提交的应用 SHA-256",
-            "expected": "与两份启动日志匹配",
-            "actual": "az-a 和 az-b 均匹配 06c2292"
+            "action": "Check both health and business routes",
+            "expected": "Both instance labels return HTTP 200",
+            "actual": "az-a and az-b both returned 200 on both routes"
           },
           {
-            "action": "GET /health 预检",
-            "expected": "200、业务 stage 和实例标签",
-            "actual": "503、无实例标签；未发送 POST"
+            "action": "Write one fictional record and read through both instances",
+            "expected": "302 then one match per label",
+            "actual": "az-b returned 302, both labels returned 200 with Fictional Alex T11 603d49ddabcb, Reading, 9/45 pages, rating 5"
           }
         ]
       },
