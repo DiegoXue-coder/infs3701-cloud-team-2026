@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-14T06:12:52+00:00",
+  "generated_at": "2026-11-14T06:36:09+00:00",
   "repository": "DiegoXue-coder/infs3701-cloud-team-2026",
   "timezone": "Australia/Sydney",
   "members": {
@@ -1767,7 +1767,7 @@
       "steps": [
         "从最终资源清单反推 AWS 架构图。",
         "核对 AZ、子网、实例/EBS、数据层、协议、请求和监控流向。",
-        "制作保守 1 页 PDF，另一位成员逐项对照配置检查。"
+        "Diego 使用 Tenzi 在 T17 提交的 Draw.io 源文件导出 1 页 PDF，整合到设计报告。Alex 对照新环境逐项检查。"
       ],
       "acceptance": [
         "真实资源对应的图、AWS 符号、AZ/子网/卷/协议/请求流完整"
@@ -2002,15 +2002,15 @@
       ],
       "optional": false,
       "steps": [
-        "Tenzi records and narrates the live browser demo as soon as the T26 endpoint works and both targets are healthy. Alex verifies real readback and routing while Marina captures monitoring evidence.",
-        "Explain key decisions and the request flow clearly, using actual results; obtain each member's contribution/voice where agreed.",
+        "Tenzi records the live browser demo on his own after the T26 endpoint works and both targets are healthy. Show fictional write/read and actual routing or availability evidence.",
+        "Tenzi explains key decisions and the request flow in English, using live narration or a separate voice-over, then edits and finalises the video himself.",
         "Edit a professional video to the conservative 60-second target until the tutor resolves the duration conflict. Check audio, readability, exact duration and all evidence claims."
       ],
       "acceptance": [
         "Playable final video plus script/source footage index, measured duration and clear English narration.",
         "Real live use and routing/availability evidence; no staged screenshots or untested failure claims; C independently checks the final cut."
       ],
-      "guide": "docs/member-D.md",
+      "guide": "docs/c-t20-video-script-2026-11-07.md",
       "start_after": [],
       "early_steps": [
         "Reuse Marina's existing 60-second script with its authorship credited; adapt the English narration and storyboard.",
@@ -2311,7 +2311,7 @@
       ],
       "steps": [
         "Review and run the deployment from Tenzi’s session using the English Lab guide.",
-        "Post the new URL, pinned release and two healthy targets. Capture browser use, independent reads through both labels and dated monitoring evidence.",
+        "Post the new URL, pinned release and two healthy targets. Tenzi records solo and captures dated monitoring evidence for Marina. Alex verifies readback asynchronously while the endpoint is available.",
         "Save evidence and the recording before course-directed cleanup."
       ],
       "acceptance": [
