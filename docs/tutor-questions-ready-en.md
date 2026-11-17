@@ -15,4 +15,4 @@ Thank you.
 
 ---
 
-中文：这段可以一次性发给老师，优先问第1、2项。只有收到真实答复后才能更新要求；第3项未回复前仍按60秒，第4项未回复前不擅自删除系统。此文件没有自动发送。
+Note: this passage can be sent to the teacher in one message, asking items 1 and 2 first. Requirements can be updated only after a real answer is received; until item 3 is answered keep to 60 seconds, and until item 4 is answered do not delete the system without approval. This file was not sent automatically.

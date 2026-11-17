@@ -1,29 +1,29 @@
-# T编号：本次真实交付
+# T<number>: this session's real delivery
 
-- 操作者 / GitHub 用户：
-- 指导或协作者：
-- 测试时间（含时区）：
-- 环境 / 区域（无密钥）：
-- 对应代码 commit（如适用）：
-- 本次完成：
+- Operator / GitHub user:
+- Guide or collaborator:
+- Test time (with time zone):
+- Environment / region (no keys):
+- Corresponding code commit (if applicable):
+- Completed this time:
 
-## 操作与设计理由
+## Operations and design reasons
 
-做了哪些操作，为什么这样选，备选与代价是什么。
+What operations were done, why this choice was made, and what the alternatives and trade-offs are.
 
-## 实际测试
+## Actual tests
 
-| 步骤 | 期望 | 实际 | 原始证据路径 |
+| Step | Expected | Actual | Original evidence path |
 | --- | --- | --- | --- |
 
-## 交付文件
+## Delivery files
 
-列出真实文件、截图和日志的仓库相对路径。不要写不存在的文件或本地私有路径。不写密码、密钥或 token。
+List the repository-relative paths of the real files, screenshots and logs. Do not write files that do not exist or local private paths. Do not write passwords, keys or tokens.
 
-## 未完成、限制和下一步
+## Unfinished items, limitations and next step
 
-注明这次测试能证明什么、不能证明什么；下一位成员需要做什么。
+State what this test can and cannot prove, and what the next member needs to do.
 
-## AI 使用
+## AI use
 
-实际工具、用途、本人验证/修改及过程证据位置。不要补造历史证据。
+The actual tool, purpose, the member's own verification/changes and where the process evidence is. Do not fabricate historical evidence.

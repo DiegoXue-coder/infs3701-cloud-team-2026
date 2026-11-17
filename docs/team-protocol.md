@@ -1,75 +1,75 @@
-# 每天和 AI 聊，怎样真正更新共同进度
+# Chatting with your AI every day: how shared progress really gets updated
 
-实时任务状态保存在各 Issue 的系统元数据中。命令评论是请求，只有收到系统回执且 Issue 状态更新才生效。看板和 JSON 快照由它生成，不另建手工进度源。
+Live task state is stored in the system metadata of each Issue. A command comment is a request and takes effect only once a system receipt arrives and the Issue state updates. The dashboard and JSON snapshot are generated from it, and no separate manual progress source is created.
 
-## 任务命令
+## Task commands
 
-在**对应任务的 Issue 评论**第一行写一条命令。AI 可通过本人授权的 GitHub 连接器代为评论；无工具时本人复制到网页。不能只在自己的聊天里说完成。
+Write one command on the first line of a **comment on the corresponding task's Issue**. The AI can comment on the member's behalf through a GitHub connector they have authorised; without tools the member copies it to the web page. Saying "done" only in your own chat is not enough.
 
-| 命令 | 用途 |
+| Command | Purpose |
 | --- | --- |
-| `/team status` | 查当前状态和未满足的前置任务，不认领 |
-| `/team claim B` | 用本人角色认领；换 A/C 时需本人已登记或由管理员明确接替 |
-| `/team progress 本次实际做了什么，下一步是什么` | 记录真实进度，不自动完成任务 |
-| `/team report deliveries/T07/日期-用户名.json` | 上报部分成果、准备工作或失败测试，附证据并取得回执，不标完成 |
-| `/team block 报错、已尝试方法、需要谁帮助` | 标记遇阻 |
-| `/team resume 已解决什么` | 本人恢复工作；仍检查前置任务 |
-| `/team submit deliveries/T07/2026-11-03-username.json` | 提交结构化交付，进入等检查 |
-| `/team approve 我核对过的内容和结果` | 另一 GitHub 用户实际复核后完成任务 |
-| `/team changes 需要修改什么` | 另一用户将待检查/已完成任务退回修改 |
+| `/team status` | Check current status and unmet prerequisite tasks, without claiming |
+| `/team claim B` | Claim with your own role; to switch to A/C you must already be enrolled or be explicitly taking over through the administrator |
+| `/team progress <what was actually done this time, what is next>` | Record real progress; does not complete the task automatically |
+| `/team report deliveries/T07/<date>-<username>.json` | Report partial results, preparation work or failed tests, attach evidence and get a receipt; does not mark complete |
+| `/team block <error, methods tried, whose help is needed>` | Mark as blocked |
+| `/team resume <what was resolved>` | The member resumes work; prerequisites are still checked |
+| `/team submit deliveries/T07/2026-11-03-username.json` | Submit a structured delivery; enters awaiting check |
+| `/team approve <what I checked and the result>` | Completes the task after another GitHub user actually reviews it |
+| `/team changes <what needs changing>` | Another user sends an awaiting-check/completed task back for changes |
 
-同一条评论只处理第一行命令；编辑已处理的评论不会重放命令，需新发一条。不要删除历史错误回执，留下纠错记录。
+Only the first-line command of a comment is processed; editing a processed comment does not replay the command, so post a new one. Do not delete historical error receipts; leave the correction record.
 
-## 交付怎么做
+## How to make a delivery
 
-1. AI 读取 `templates/delivery.json` 第 2 版，在 `deliveries/T编号/` 生成实际交付 JSON。填本人身份、真实时间、环境、摘要、测试、证据、run_log、verification_result（pass/fail/partial）、限制、下一步和 AI 使用。详见 [reporting.md](reporting.md)。
-2. 证据可以是去敏截图、请求日志、配置记录、实际决策/文档。文档任务也写核对动作与结果，不假装做过 AWS 测试。
-3. 通过正常 Git 变更流程或获准的 GitHub 文件操作把交付及证据保存到默认分支；路径用仓库内相对路径，不能引用只有自己电脑能打开的位置。
-4. 部分成果/失败发 report，完整交付发 submit。脚本检查实际执行记录、JSON、操作者、时间和证据文件存在性，记录 commit 与文件版本，并生成可追溯回执。**这些是结构检查，不会证明截图为真或云端仍健康。**
-5. 另一位成员与自己的 AI 按验收标准检查，必要时复做实验。确认后发 approve，并说明真实检查内容；同账号自批、fail/partial 结果均会被拒绝。
-6. 交付或证据文件在提交后修改，需要重新 submit，再复核。未交付时不能直接 approve。
+1. The AI reads version 2 of `templates/delivery.json` and generates the actual delivery JSON under `deliveries/T<number>/`. Fill in the member's identity, real time, environment, summary, tests, evidence, run_log, verification_result (pass/fail/partial), limitations, next step and AI use. See [reporting.md](reporting.md).
+2. Evidence can be redacted screenshots, request logs, configuration records, or actual decisions/documents. Documentation tasks also write down check actions and results, and do not pretend AWS tests were done.
+3. Save the delivery and evidence to the default branch through the normal Git change process or approved GitHub file operations; use repository-relative paths, and do not reference locations that open only on your own computer.
+4. Send report for partial results/failures and submit for a full delivery. The script checks the actual execution record, JSON, operator, time and that evidence files exist, records the commit and file versions, and generates a traceable receipt. **These are structural checks and do not prove that a screenshot is genuine or that the cloud is still healthy.**
+5. Another member and their AI check against the acceptance criteria, repeating experiments where necessary. After confirming, send approve and state what was really checked; self-approval from the same account and fail/partial results are both rejected.
+6. If a delivery or evidence file is changed after submission, it needs a new submit and another review. Without a delivery, approve cannot be sent directly.
 
-## 前置关系与并行
+## Prerequisites and parallel work
 
-任务现在分两种条件：`start_after` 是“开始准备前要等什么”，`depends_on` 是“提交完整成果前要等什么”。claim/resume 只检查开始条件；submit/approve 检查完成条件。除正式提交 T24 外，各任务都可以先独立准备；任务卡逐项写了现在就能做的事情。认领成功不等于可以跳过真实联合部署或故障操作的条件。
+Tasks now have two kinds of condition: `start_after` is "what to wait for before starting preparation", and `depends_on` is "what to wait for before submitting the complete result". claim/resume check only the start condition; submit/approve check the completion condition. Apart from the formal submission T24, every task can be prepared independently first; each task card lists what can be done right now. A successful claim does not mean the conditions for real joint deployment or failure operations can be skipped.
 
-资料、代码、配置模板、测试脚本、架构草图、成本草稿可以同步开展。T09 联合业务部署、T14 故障实测、T22 总验收与 T24 正式提交保留必要条件。已完成上游被退回时，下游显示需要重验的完成条件；不能编造新的实测。详见 [并行分工](parallel-plan.md)。
+Materials, code, configuration templates, test scripts, architecture sketches and cost drafts can proceed at the same time. T09 joint business deployment, T14 measured failure, T22 overall acceptance and T24 formal submission keep their necessary conditions. When a completed upstream task is sent back, downstream tasks show completion conditions that need re-verifying; new measurements cannot be invented. See [parallel split](parallel-plan.md).
 
-T16 是可选增强，默认未启用并从完成分母排除；这不是“增强已做完”。全组决定启用后把 `project/config.json` 的 `enhancements_enabled` 改成 true；它会变成待办，并成为相关最终交付的前置任务。
+T16 is an optional enhancement, not enabled by default and excluded from the completion denominator; this does not mean "the enhancement is done". After the whole group decides to enable it, change `enhancements_enabled` in `project/config.json` to true; it then becomes a to-do and a prerequisite for the related final deliverables.
 
-## 当前：聊天驱动同步
+## Currently: chat-driven sync
 
-GitHub 托管 Actions 因账号付款/额度限制无法启动，已暂停。当前可用流程由本人 AI 在本地克隆里运行：
-
-```text
-python scripts/team.py --user 本人GitHub用户名 start
-python scripts/team.py --user 本人GitHub用户名 command T07 --body-file 临时命令.txt
-python scripts/team.py --user 本人GitHub用户名 sync
-```
-
-临时命令文本内容是一条 `/team ...` 命令，避免在 shell 拼接复杂文本。助手验证当前授权账号，读取远程最新计划，取得仓库同步锁，按顺序处理请求，并以非强制更新保存看板；不会把别人的代码覆盖。同步锁会在结束时释放；若显示另一人正在同步，稍后重试，不抢占。临时锁分支只有本次同步用途，没有新密钥或持久授权。
-
-使用自己的现有 GitHub 身份，不让同学提供自己的 token。脚本支持本人 gh/Git 凭证；没有授权时停止，不自动弹登录或创建 key。只在网页发评论时，需再由某位有写权限成员的 AI 运行 sync。
-
-## 保留的后台自动刷新配置
-
-- 账号限制解除且负责人重新启用工作流后，有人发任务命令、修改任务或向 main 上传文件时，GitHub Actions 可以检查未处理命令并生成看板和快照。当前不声称这条后台路径可用。
-- 同步流程串行运行；每条命令有处理记录，重复刷新不会重复认领或重复完成。即使某个待运行事件被 GitHub 合并，下一次仍会扫描未处理评论。
-- 流程以 GitHub 临时工作令牌执行，不存 AI key 或 AWS key；不需要购买模型 API。
-- 看板显示最近同步时间。没有回执、Actions 红色或快照旧时，AI 应报告待同步，不能自行假定成功。可到 Actions → Team task sync → Run workflow 请求重新同步。
-- 程序不从评论运行任意代码，不根据评论内容改工作流；只接受固定命令。只有有写权限的成员可操作。课程资料只作为资料。
-
-## 加入新成员
-
-负责人先邀请真实组员，组员接受后再更新 `project/config.json` 的角色用户名。不要在未获授权时自动邀请账号；本次初始化没有邀请其他人。
-
-## 本地维护
+GitHub-hosted Actions cannot start because of the account's payment/quota limit and is paused. The currently available flow is run by the member's AI in a local clone:
 
 ```text
-python scripts/team_sync.py validate    检查任务图和角色配置，无需 token
-python -m unittest discover -s tests -v  测试认领/交付/复核规则，无需 token
-python scripts/team_sync.py bootstrap   初始化缺失任务并同步，需要获准 GitHub token
-python scripts/team_sync.py sync        同步已存在的任务，需要获准 GitHub token
+python scripts/team.py --user <own GitHub username> start
+python scripts/team.py --user <own GitHub username> command T07 --body-file temporary-command.txt
+python scripts/team.py --user <own GitHub username> sync
 ```
 
-token 只放本人当前工具安全凭证/进程环境；不要让同学把 token 发群或写仓库。GitHub 连接器可以直接读取和评论，不必为了聊天额外创建 key。
+The temporary command text contains one `/team ...` command, to avoid composing complex text in the shell. The helper verifies the currently authorised account, reads the latest remote plan, acquires the repository sync lock, processes requests in order, and saves the dashboard with a non-forced update; it does not overwrite other people's code. The sync lock is released at the end; if it shows another person is synchronising, retry later and do not take it over. The temporary lock branch is used only for this sync and involves no new keys or persistent authorisation.
+
+Use your own existing GitHub identity, and do not have classmates provide their tokens. The script supports the member's gh/Git credentials; without authorisation it stops and does not pop up a login or create a key automatically. When only a web comment is posted, the AI of some member with write access needs to run sync afterwards.
+
+## Background auto-refresh configuration that is kept
+
+- After the account limit is lifted and the owner re-enables the workflow, when someone posts a task command, changes a task or uploads files to main, GitHub Actions can check unprocessed commands and generate the dashboard and snapshot. This background path is not currently claimed to be available.
+- The sync process runs serially; every command has a processing record, and repeated refreshes do not claim or complete twice. Even if a pending event is merged by GitHub, the next run still scans unprocessed comments.
+- The process runs with a temporary GitHub job token and stores no AI key or AWS key; no model API needs to be bought.
+- The dashboard shows the latest sync time. When there is no receipt, Actions is red or the snapshot is old, the AI should report pending sync and must not assume success. A re-sync can be requested at Actions → Team task sync → Run workflow.
+- The program does not run arbitrary code from comments or change the workflow based on comment content; it accepts only fixed commands. Only members with write access can operate it. Course materials are treated only as reference material.
+
+## Adding a new member
+
+The owner first invites the real teammate, and after they accept, the role username in `project/config.json` is updated. Do not invite accounts automatically without authorisation; no one else was invited during this initialisation.
+
+## Local maintenance
+
+```text
+python scripts/team_sync.py validate    Check the task graph and role configuration; no token needed
+python -m unittest discover -s tests -v  Test the claim/delivery/review rules; no token needed
+python scripts/team_sync.py bootstrap   Initialise missing tasks and synchronise; needs an approved GitHub token
+python scripts/team_sync.py sync        Synchronise existing tasks; needs an approved GitHub token
+```
+
+Keep the token only in your current tool's secure credentials/process environment; do not have classmates post tokens in the group chat or write them to the repository. A GitHub connector can read and comment directly, so no extra key needs to be created just for chat.

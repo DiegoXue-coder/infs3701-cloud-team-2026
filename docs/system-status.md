@@ -1,51 +1,51 @@
-# 当前系统状态
+# Current system status
 
-> 2026-11-12 英文设计报告已生成[审阅版 PDF](../output/pdf/reading-tracker-design-review.pdf)。正文 4 页约 1,965 词，另有 1 页参考文献。组员复核和后续工作见[报告取材入口](report-evidence-index.md)。本轮依据仓库已有证据整理。
+> 2026-11-12: the English design report has been generated as a [review PDF](../output/pdf/reading-tracker-design-review.pdf). The body is 4 pages and about 1,965 words, plus 1 page of references. Teammate review and follow-up work are in the [report source-material entry](report-evidence-index.md). This round was organised from evidence already in the repository.
 
-> 2026-11-11 HTTPS 方案已定为两段 TLS。现有 ALB 使用公开可信证书，两台 EC2 使用仅对 ALB 开放的内网 TLS。配置顺序、验证和回退见[HTTPS 实施方案](https-rollout.md)。入口仍待确认可管理 DNS 的子域名或已有可用证书，方案尚未部署。
+> 2026-11-11: the HTTPS approach is settled as two-leg TLS. The existing ALB uses a publicly trusted certificate, and the two EC2 hosts use internal TLS open only to the ALB. The configuration order, verification and rollback are in the [HTTPS implementation plan](https-rollout.md). The entry point still awaits confirmation of a subdomain with manageable DNS or an existing usable certificate, and the plan is not yet deployed.
 
-> 2026-11-11悉尼文档进展：负责人明确暂缓自动扩容，10Nov准备的surge文件没有执行授权，config保持enhancements_enabled=false。已生成[1页架构图PDF及复核入口](architecture-review-2026-11-11.md)、[网络/安全章节](network-security-chapter-2026-11-11.md)和[给老师的问题草稿](tutor-questions-ready-en.md)。图据10Nov证据绘制，非11Nov在线检查；HTTPS仍未解决，T15/T17仍待独立核对，老师消息未发送。
+> 2026-11-11 Sydney documentation progress: the project owner explicitly deferred auto scaling; the surge files prepared on 10 Nov have no execution authorisation, and config keeps enhancements_enabled=false. A [1-page architecture PDF and review entry](architecture-review-2026-11-11.md), a [network/security chapter](network-security-chapter-2026-11-11.md) and a [draft of questions for the teacher](tutor-questions-ready-en.md) have been produced. The diagram is drawn from 10 Nov evidence, not an online check on 11 Nov; HTTPS is still unresolved, T15/T17 still await independent checking, and the message to the teacher has not been sent.
 
-> 11/10后续只读预检：CloudFront ListDistributions被拒；ACM证书/Route53托管区/ASG均空，AutoScaling服务关联角色不存在（创建权限尚未验证）。已完成T15部分安全核对及本地扩容草案构建，未新增AWS资源。见[实际检查、HTTPS卡点与扩容边界](security-next-steps-2026-11-10.md)。现有两台不加入拟议扩容组；方案未部署，不计作增强完成。
+> Follow-up read-only pre-check on 10 Nov: CloudFront ListDistributions was denied; ACM certificates/Route53 hosted zones/ASGs are all empty, and the AutoScaling service-linked role does not exist (creation permission not yet verified). The T15 partial security audit and a local build of the scaling draft are complete, with no new AWS resources. See [actual checks, HTTPS blockers and scaling limits](security-next-steps-2026-11-10.md). The existing two hosts do not join the proposed scaling group; the plan is not deployed and does not count as a completed enhancement.
 
-> 2026-11-10实际更新：Lab原为Terminated，启动后两台业务目标healthy、HTTP200并读回原两条记录；当前仍仅HTTP80、ACM无证书、无ASG。已导出11/7业务停机时真实OK→ALARM→OK历史和C采样同期CloudWatch数据，待C独立核对。临时构建机已恢复stopped；Lab延迟预算显示$32.10/$50。报告由A先推进，见[收尾清单](closeout-plan-2026-11-10.md)。B的11/8错误原因未被追溯证明，不把本次恢复冒充当时根因结论。
+> 2026-11-10 actual update: the Lab was Terminated; after starting, both business targets were healthy, HTTP 200, and read back the original two records; currently still HTTP 80 only, no ACM certificate, no ASG. The real OK→ALARM→OK history from the 7 Nov business stop and CloudWatch data from the same period as C's sampling have been exported, awaiting C's independent check. The temporary build host is back to stopped; the Lab's delayed budget shows $32.10/$50. The report is being advanced by A first, see the [closeout checklist](closeout-plan-2026-11-10.md). The cause of B's 8 Nov error has not been proven retrospectively, and this recovery is not passed off as a root-cause conclusion for that time.
 
-> 2026-11-08协作更新：D分工已预留给Tenzin/wyend12，英文入口见[member-D.md](member-D.md)。GitHub访问、本人AI连接和任务认领仍须分别确认。B在11/8 15:35悉尼报告HTTP503且未写入，原因未知；不要把下方11/7成功记录称为当前在线健康。
+> 2026-11-08 collaboration update: role D is reserved for Tenzin/wyend12, with the English entry at [member-D.md](member-D.md). GitHub access, the member's own AI connection and task claims still need to be confirmed separately. B reported HTTP 503 at 15:35 Sydney on 8 Nov and did not write, cause unknown; do not call the 7 Nov success records below current online health.
 
-> 最新实际进展（2026-11-07 12:28 UTC）：双私有机已发布 Reading Tracker 06c2292；真实数据库写入、两实例读回、停止写入实例期间另一台继续读取、重启后同一记录保留均通过。B/C独立云端复测与HTTPS尚待完成。优先读 [最新业务交接](business-handoff-2026-11-07.md)。以下按原日期保留历史，不以旧描述覆盖最新实测。
+> Latest actual progress (2026-11-07 12:28 UTC): Reading Tracker 06c2292 is released on the two private hosts; real database write, readback from both instances, the other host continuing to read while the writing instance was stopped, and the same record persisting after restart all passed. B/C independent cloud retests and HTTPS are still to be completed. Read the [latest business handoff](business-handoff-2026-11-07.md) first. History below is kept at its original dates, and old descriptions do not override the latest measurements.
 
 
-建立于 2026-10-31，Australia/Sydney。
+Established 2026-10-31, Australia/Sydney.
 
-## 已可使用
+## Ready to use
 
-- 私有仓库、21 份原始资料及文本索引、24 张任务卡、角色和依赖计划。
-- 固定命令的认领、进度、阻塞、JSON 交付与另一账号复核规则。
-- `scripts/team.py`：由每个人自己的 AI 使用已有 GitHub 授权，在聊天时读取并刷新任务与看板。无需模型 API key 或新付费服务。
-- `AGENTS.md`、`CLAUDE.md`、通用开场语和加入说明。
+- Private repository, 21 original materials with a text index, 24 task cards, roles and a dependency plan.
+- Fixed-command rules for claiming, progress, blocking, JSON delivery and review by another account.
+- `scripts/team.py`: each person's own AI uses existing GitHub authorisation to read and refresh tasks and the dashboard during chat. No model API key or new paid service is needed.
+- `AGENTS.md`, `CLAUDE.md`, a general opening prompt and joining notes.
 
-## 已发现的限制
+## Limitations found
 
-1. **GitHub Actions 不能启动。** 首次运行回报：`The job was not started because recent account payments have failed or your spending limit needs to be increased.` [原始运行](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/actions/runs/41182740718)。未修改付款信息或限额；工作流保留但暂停，避免反复红灯。当前使用聊天驱动同步。
-2. **没有 GitHub Projects scope。** 当前已有 Git 授权可管理仓库和 Issues，不能创建 Projects v2。因此看板是仓库内自动生成、带任务链接及时间表的 `DASHBOARD.md`，不是原生拖动式 Projects。
-3. **持有人连接器404已于2026-11-04修复。** 经本人明确批准，仅将小组仓库加入现有 ChatGPT Codex Connector 选定范围，保留second-brain，仓库仍私有。连接器实际读取仓库、project/config.json和T08成功。其他成员自己的连接尚需重试验证，详见 [授权记录](2026-11-04-connector-access.md)。
-4. Marina057 与 Alex4325Li 已接受仓库邀请并有写权限。Alex4325Li 已登记B并上传T04交付；Marina经Diego转述已选择C，但尚未在系统登记/认领。她反馈有17项本地测试及草稿，文件尚未上传，不能作为已验收结果。A为DiegoXue-coder；最新状态仍读取Issue/配置。
-5. Week 5 和 Week 7 的 8 个新文件已归档并共享；Week 8/9 正式课件仍待收到，不能宣称全学期资料已齐。
+1. **GitHub Actions cannot start.** The first run reported: `The job was not started because recent account payments have failed or your spending limit needs to be increased.` [Original run](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/actions/runs/41182740718). Payment information and limits were not changed; the workflow is kept but paused, to avoid repeated red failures. Chat-driven sync is used for now.
+2. **No GitHub Projects scope.** The existing Git authorisation can manage the repository and Issues but cannot create Projects v2. The dashboard is therefore `DASHBOARD.md`, generated automatically in the repository with task links and a timetable, not a native drag-and-drop Projects board.
+3. **The holder's connector 404 was fixed on 2026-11-04.** With the user's explicit approval, only the team repository was added to the selected scope of the existing ChatGPT Codex Connector, second-brain was kept, and the repository is still private. The connector actually read the repository, project/config.json and T08 successfully. Other members' own connections still need retrying and verifying, see the [authorisation record](2026-11-04-connector-access.md).
+4. Marina057 and Alex4325Li have accepted the repository invitation and have write access. Alex4325Li is enrolled as B and has uploaded the T04 delivery; Marina, as relayed by Diego, has chosen C but has not yet enrolled/claimed in the system. She reports 17 local tests and drafts, whose files are not yet uploaded and cannot be treated as accepted results. A is DiegoXue-coder; for the latest state still read the Issues/configuration.
+5. The 8 new files for Week 5 and Week 7 are archived and shared; the formal Week 8/9 slides are still to be received, and it cannot be claimed that the whole term's materials are complete.
 
-6. 当前 Learner Lab Readme 明确禁止创建用户或组；不能为另两位成员创建独立 IAM 登录账号。已进入 us-east-1 控制台，只读检查，没有更改权限。另行提供的小组访问方式待 tutor 确认，见 `docs/aws-access-audit.md`。
+6. The current Learner Lab Readme explicitly prohibits creating users or groups; separate IAM login accounts cannot be created for the other two members. The us-east-1 console was entered for a read-only check, and no permissions were changed. A separately provided group access method awaits tutor confirmation, see `docs/aws-access-audit.md`.
 
-## 恢复后台模式时
+## When restoring background mode
 
-由账号持有人自行处理 GitHub 账单/额度问题后，负责人可重新启用 `.github/workflows/team-sync.yml` 并手动运行验证；成功前仍使用聊天同步。GitHub Projects 和 AI 连接器授权若需要扩大，另由本人处理，不在初始化中擅自扩大权限。
+After the account holder resolves the GitHub billing/quota problem themselves, the owner can re-enable `.github/workflows/team-sync.yml` and run it manually to verify; until it succeeds, chat sync is still used. If GitHub Projects and AI connector authorisation need widening, the user handles that separately, and permissions are not widened without approval during initialisation.
 
-## 完成的含义
+## What "complete" means
 
-协作系统可用不等于作业已完成。真实 AWS 配置、运行测试、报告、成本和视频仍要按任务卡逐项实施并复核。没有第二位成员时，不能演示或伪造独立复核成功。
+A working collaboration system does not mean the assignment is done. Real AWS configuration, running tests, the report, cost and video still have to be carried out and reviewed item by item from the task cards. Without a second member, independent review cannot be demonstrated or faked as successful.
 
-## 自助开工入口（2026-10-31）
+## Self-service start entry (2026-10-31)
 
-已提供 docs/self-service.md、B/C 角色指南、project/handoffs.json、setup_member.py 及 team.py join。44 项测试通过，本机隔离依赖安装和离线基线检查通过；尚未有另两位真实账号验收。需先邀请并由本人接受 private 仓库访问，两人可各自选择空缺角色，不必预先分工；角色绑定不是新增 AWS 授权。
+docs/self-service.md, the B/C role guides, project/handoffs.json, setup_member.py and team.py join are provided. 44 tests pass, and local isolated dependency installation and the offline baseline check pass; no two other real accounts have accepted yet. Private repository access must first be invited and accepted by each person; the two can each choose a vacant role without splitting in advance; role binding is not new AWS authorisation.
 
-## 2026-11-01 实际开工
+## 2026-11-01 actual start
 
-T05 已由 DiegoXue-coder 认领。今日 Lab 已启动并只读盘点旧 EC2/S3，尚无新的可用云服务。详见 docs/2026-11-01-aws-inventory.md；实际缺陷与未测项均保留，不能报为已修复。
+T05 has been claimed by DiegoXue-coder. Today's Lab was started and the old EC2/S3 inventoried read-only; there is no new usable cloud service yet. See docs/2026-11-01-aws-inventory.md; actual defects and untested items are all kept and cannot be reported as fixed.

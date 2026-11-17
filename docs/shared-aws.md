@@ -1,52 +1,52 @@
-# 三个人怎样共同开发一套 AWS 服务
+# How three people jointly develop one AWS service
 
-当前权限检查：2026-10-31 已确认本 Lab Readme 禁止创建用户或组，不能新建两位组员 IAM 账号。课程另行提供的入口待 tutor 回复。详见 [检查记录](aws-access-audit.md)。暂按下文由获准环境持有人执行的流程协作。
+Current permission check: on 2026-10-31 it was confirmed that this Lab's Readme prohibits creating users or groups, so IAM accounts cannot be created for the two teammates. An entry point provided separately by the course awaits the tutor's reply. See the [check record](aws-access-audit.md). For now collaborate by the process below, executed by the approved environment holder.
 
-## 已经确定与尚未确定
+## Settled and not yet settled
 
-- 已确定应用：升级成员本人个人作业 Reading Tracker（Option A）。代码入口为 `app/reading_tracker.py`。
-- 已选择你自己的 Lab，由你负责实际配置；数据库方案和完整部署参数待确认，余额需每次重新读取。当前 Lab 禁止新建用户/组，教师另行共享入口待确认。
-- 选择旧应用不要求继续使用旧 EC2；可以保留应用功能，在选定 Lab 新建或升级符合要求的网络、计算和数据层。是否保留旧资源应先盘点，不执行 Reset 或删除来“重新开始”。
+- Settled application: upgrade the member's own individual assignment Reading Tracker (Option A). The code entry point is `app/reading_tracker.py`.
+- Your own Lab has been chosen and you are responsible for the actual configuration; the database approach and full deployment parameters are to be confirmed, and the balance needs re-reading each time. The current Lab prohibits creating users/groups, and a separately shared entry from teaching staff awaits confirmation.
+- Choosing the old application does not require continuing to use the old EC2; the application's features can be kept while building or upgrading compliant networking, compute and data tiers in the chosen Lab. Whether to keep old resources should be decided after an inventory, without a Reset or deletion to "start over".
 
-## 共同开发与共同操作是两层
+## Joint development and joint operation are two layers
 
-GitHub 中共享应用、网络配置/脚本、测试、资源记录和回执；最终 AWS 环境中运行同一版本的服务。三个个人 Lab 可用于各自获准的试验，但最终演示统一在选定环境集成，不能假设不同账号下同名资源就是同一份资源。
+GitHub shares the application, network configuration/scripts, tests, resource records and receipts; the final AWS environment runs one version of the service. The three individual Labs can be used for each person's permitted experiments, but the final demo is integrated in the chosen environment, and resources with the same name under different accounts cannot be assumed to be the same resource.
 
-## 先向课程确认允许的访问方式
+## First confirm with the course which access method is allowed
 
-### 如果课程提供多人各自身份访问同一环境
+### If the course provides access to the same environment with several individual identities
 
-每人使用自己的获准身份，按职责操作。共同维护一份资源清单，并约定部署窗口，避免同时修改相同网络、数据库或实例。应用访问 AWS 使用允许的角色与临时身份机制。
+Each person uses their own approved identity and operates according to their responsibilities. Maintain one shared resource list and agree deployment windows, to avoid changing the same network, database or instance at the same time. The application accesses AWS using the permitted role and temporary identity mechanism.
 
-### 如果个人 Learner Lab 不允许这样授权
+### If the individual Learner Lab does not allow such authorisation
 
-不要假设自己能新建三个 IAM 用户或跨账号角色。按课程允许方式由最终环境持有人执行配置；其他两人提供代码/配置/测试并共享屏幕联合操作、解释和核验。
+Do not assume you can create three IAM users or cross-account roles. Configuration is executed by the final environment holder in the way the course allows; the other two provide code/configuration/tests and jointly operate, explain and verify on a shared screen.
 
-这仍然是三人共同开发：A 写可审阅的网络/部署配置，B 写应用/数据代码，C 写监控/测试配置；环境持有人执行已经复核的版本，而不是临时替所有人设计和手工完成任务。不能复制个人密码、访问密钥或会话 token 给其他成员。
+This is still joint development by three people: A writes reviewable network/deployment configuration, B writes application/data code, C writes monitoring/test configuration; the environment holder executes the reviewed version, and does not design and hand-complete everyone's tasks on the spot. Personal passwords, access keys or session tokens must not be copied to other members.
 
-## 三个人可以同时交付什么
+## What the three can deliver at the same time
 
-| 人员 | 独立工作 | 如何进入最终环境 |
+| Person | Independent work | How it enters the final environment |
 | --- | --- | --- |
-| A | VPC/子网/安全组/负载均衡配置、部署脚本和架构图 | 通过复核的脚本/配置，由获准操作者在约定窗口应用 |
-| B | Reading Tracker、数据层、配置变量、健康接口、依赖和启动说明 | A/环境持有人部署同一个 commit 的程序 |
-| C | 请求与故障测试脚本、监控/告警配置、成本假设、证据规则 | 资源可用后填实际 ID/URL 并执行真实验证 |
+| A | VPC/subnet/security group/load balancer configuration, deployment scripts and architecture diagram | Reviewed scripts/configuration, applied by the approved operator in an agreed window |
+| B | Reading Tracker, data layer, configuration variables, health endpoint, dependencies and start-up notes | A/the environment holder deploys the application at one commit |
+| C | Request and failure test scripts, monitoring/alarm configuration, cost assumptions, evidence rules | After resources are available, fill in actual IDs/URLs and run real verification |
 
-在最终 Lab 还没选定时，A 可准备可替换参数的模板，B 在本地开发，C 用本地假服务写测试。真实 AWS 配置或实验未发生时不标完成。
+While the final Lab is not yet chosen, A can prepare templates with replaceable parameters, B develops locally, and C writes tests against a local fake service. Nothing is marked complete while the real AWS configuration or experiment has not happened.
 
-## 每次改 AWS 的固定流程
+## Fixed process for every AWS change
 
-1. 在 GitHub 交代本次改哪部分、参数、执行方式和预期影响；另一位成员检查。
-2. 在 `docs/environment.md` 记录环境持有人、区域、当前 commit 和资源清单。只写非敏感信息。
-3. 获准操作者在约定窗口执行；其余人不同时修改同一资源。用脚本/模板保留配置，减少大量重复手工点击。
-4. 记录实际步骤、结果、截图/日志；功能或数据变更由 B/C 共同验证。
-5. 通过 `/team report` 或 `/team submit` 上报并取得回执。记录实际操作者，不能因 GitHub 提交人不同而改写贡献。
-6. 出问题按本次变更记录定位并恢复上个可用版本。涉及数据库数据时单独准备备份/兼容方案，不能只说“回滚代码”。
+1. State on GitHub which part is being changed, the parameters, the execution method and the expected impact; another member checks.
+2. Record in `docs/environment.md` the environment holder, region, current commit and resource list. Write only non-sensitive information.
+3. The approved operator executes in the agreed window; the others do not change the same resource at the same time. Keep configuration in scripts/templates to reduce large amounts of repeated manual clicking.
+4. Record the actual steps, results and screenshots/logs; feature or data changes are verified jointly by B/C.
+5. Report through `/team report` or `/team submit` and obtain a receipt. Record the actual operator; contribution cannot be rewritten because the GitHub committer differs.
+6. When something goes wrong, locate it from this change record and restore the last working version. Where database data is involved, prepare a separate backup/compatibility plan; saying "roll back the code" is not enough.
 
-## 现在先做三件事
+## Three things to do now
 
-1. B 用已找到的代码做第一次完整本地运行检查，记录需要的配置与改造点。
-2. A 检查候选 Lab 的权限、余额和现存资源；给出可运行的部署方案，不先删除旧环境。
-3. C 继续准备与统一接口相适配的测试和证据，不等 A/B 全部完成。
+1. B does a first full local run check with the code already found, recording the configuration needed and the points to change.
+2. A checks the candidate Lab's permissions, balance and existing resources, and proposes a workable deployment plan, without deleting the old environment first.
+3. C continues preparing tests and evidence that fit the common interface, without waiting for A/B to finish everything.
 
-课程 Lab 的具体共享权限需 tutor/实验说明确认。普通 AWS 的独立身份/角色原则可参考 [AWS IAM 官方最佳实践](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)，不能据此推断 Learner Lab 允许任意创建身份。
+The specific sharing permissions of the course Lab need confirmation from the tutor/lab instructions. For ordinary AWS, the principles of separate identities/roles can be found in the [AWS IAM official best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html), from which it cannot be inferred that the Learner Lab allows creating identities freely.

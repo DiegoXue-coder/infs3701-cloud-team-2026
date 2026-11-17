@@ -1,4 +1,4 @@
-# Security audit and bounded scaling proposal / 安全核对与扩容准备
+# Security audit and bounded scaling proposal
 
 **11November owner decision: automatic scaling is DEFERRED. The prepared surge proposal is not authorized for execution. Continue core work/documentation; see [current diagram/security handoff](architecture-review-2026-11-11.md).**
 

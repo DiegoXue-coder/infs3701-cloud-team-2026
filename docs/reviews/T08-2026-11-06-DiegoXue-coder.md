@@ -6,34 +6,34 @@ Date: 2026-11-06 (Australia/Sydney). Reviewing account: DiegoXue-coder (A); subm
 
 **T08 "test checklist, report outline, cost assumptions" passes preparation-stage acceptance, with no defects blocking approval.** This is not acceptance of the final business, AWS deployment, HTTPS, cost quote or video.
 
-审核的提交回执：R-T08-6624791560；提交版本：`cb07163da0e2beb69797902b433efd8999fd4849`；交付文件：`deliveries/T08/2026-11-04-Marina057.json`。已将当前交付及15个证据文件的Git blob与提交回执逐一比较，16项全部匹配，也检查了工作区过滤后的blob；未修改Marina的提交、原日志或样本。
+Submission receipt reviewed: R-T08-6624791560; submitted version: `cb07163da0e2beb69797902b433efd8999fd4849`; delivery file: `deliveries/T08/2026-11-04-Marina057.json`. The Git blobs of the current delivery and 15 evidence files were compared one by one with the submission receipt, and all 16 match; the blobs after working-tree filtering were also checked; Marina's commit, original logs and samples were not modified.
 
-复跑环境：Windows 11，Python3.12.14，仓库隔离虚拟环境。原始执行时间与完整环境见下列日志；没有AWS操作，仅HTTP工具测试使用127.0.0.1临时服务。
+Rerun environment: Windows 11, Python3.12.14, an isolated virtual environment for the repository. The original execution times and full environment are in the logs below; there were no AWS operations, and only the HTTP tool tests used a temporary 127.0.0.1 service.
 
-## 实际检查
+## Actual checks
 
-| 项目 | 复核动作与结果 | 证据 |
+| Item | Review action and result | Evidence |
 | --- | --- | --- |
-| 统计与样本 | 独立核算四组虚构样本的记录数、状态数、页数与评分预期；复跑10项统计测试全部通过，包括旧格式、异常、顺序、输入不变性 | [统计复跑日志](../../evidence/T08/2026-11-06-A-review-statistics.log) |
-| HTTP记录工具 | 阅读脚本和测试，复跑7项loopback测试全部通过；覆盖BASE_URL、成功、503、超时、缺少实例头、参数边界、防覆盖 | [HTTP工具复跑日志](../../evidence/T08/2026-11-06-A-review-http-tool.log) |
-| 监控基线 | 只解析AST和配置，不执行部署代码；11个期望字段及ALB/TG维度匹配 | [告警源码核对日志](../../evidence/T08/2026-11-06-A-review-alarm-source.log) |
-| 版本与历史证据 | 16个已提交blob全部匹配；原4条JSONL确为local-fixture-only、HTTP200、序号1–4；保留原文件 | [完整性结果](../../evidence/T08/2026-11-06-A-review-integrity.json)、[执行日志](../../evidence/T08/2026-11-06-A-review-integrity.log) |
-| core测试计划 | 已覆盖真实界面/输入验证、数据库共享状态、分流、单机故障、AZ设计边界、监控、网络权限、加密和扩容；列出操作、预期、证据及角色 | [测试计划](../c-t08-test-plan.md) |
-| 监控与故障准备 | 指标维度、统计周期、阈值理由、缺失点限制、无通知收件人、停机前/中/后样本和恢复步骤均明确；禁止人工伪造告警状态 | [监控计划](../c-t08-monitoring.md) |
-| 成本准备 | us-east-1、12个月、8760小时场景，包含EC2/EBS/ALB/数据库/S3/快照/监控/传输/公网IPv4/网络端点；把工作量假设、价格待填和历史Lab余额区分清楚 | [成本假设](../c-t08-cost-assumptions.md) |
-| 报告与视频准备 | 八部分报告框架覆盖brief要求；视频60秒镜头安排要求真实业务操作、分流/可用性和决策解释；草稿、真实贡献及AI使用边界已标注 | [报告与视频草稿](../c-t08-report-and-video.md) |
+| Statistics and samples | Independently calculated the expected record count, status counts, pages and ratings for the four fictional samples; reran the 10 statistics tests, all passed, including old format, exceptions, order and input immutability | [Statistics rerun log](../../evidence/T08/2026-11-06-A-review-statistics.log) |
+| HTTP logging tool | Read the script and tests and reran the 7 loopback tests, all passed; covering BASE_URL, success, 503, timeout, missing instance header, parameter boundaries and overwrite protection | [HTTP tool rerun log](../../evidence/T08/2026-11-06-A-review-http-tool.log) |
+| Monitoring baseline | Parsed only the AST and configuration without executing deployment code; the 11 expected fields and ALB/TG dimensions match | [Alarm source check log](../../evidence/T08/2026-11-06-A-review-alarm-source.log) |
+| Versions and historical evidence | All 16 committed blobs match; the original 4 JSONL lines are indeed local-fixture-only, HTTP 200, sequence 1–4; original files kept | [Integrity result](../../evidence/T08/2026-11-06-A-review-integrity.json), [execution log](../../evidence/T08/2026-11-06-A-review-integrity.log) |
+| Core test plan | Covers real interface/input validation, shared database state, routing, single-host failure, the limits of the AZ design, monitoring, network permissions, encryption and scaling; lists actions, expectations, evidence and roles | [Test plan](../c-t08-test-plan.md) |
+| Monitoring and failure preparation | Metric dimensions, statistical period, threshold reasoning, missing-data limitation, no notification recipient, before/during/after-stop samples and recovery steps are all explicit; faking alarm state by hand is prohibited | [Monitoring plan](../c-t08-monitoring.md) |
+| Cost preparation | us-east-1, 12 months, 8760-hour scenario, including EC2/EBS/ALB/database/S3/snapshots/monitoring/transfer/public IPv4/network endpoints; clearly separates workload assumptions, prices still to be filled in and the historical Lab balance | [Cost assumptions](../c-t08-cost-assumptions.md) |
+| Report and video preparation | The eight-part report outline covers the brief's requirements; the 60-second video shot plan requires real business operation, routing/availability and explanation of decisions; drafts, real contribution and the limits of AI use are labelled | [Report and video draft](../c-t08-report-and-video.md) |
 
-本轮核对了原始brief/rubric提取文本及T08任务卡。T08要求的是可执行准备、逐项验收安排、报告框架和估算假设，不要求在尚无业务发布时完成T12/T13/T14/T18/T20全部结果。
+This round checked the extracted text of the original brief/rubric and the T08 task card. T08 requires executable preparation, an item-by-item acceptance plan, a report outline and estimate assumptions, and does not require all T12/T13/T14/T18/T20 results while there is no business release yet.
 
-## 哈希差异的处理
+## Handling of the hash difference
 
-复跑时原源码raw SHA-256为`f50fea5190314216ffcffb4c175d0a0dcf9dd5c57c2c69449e4ef73cb0856947`，Marina日志为`f1f20663612aa3343f5bce9f9acc749da2c8def46eea8e369fdcdc7bfd7e5d10`。核实本机工作区是CRLF，Git索引与Marina副本为LF；规范为LF后SHA完全相同，整文件AST也与原快照一致。因此这是换行差异，不是不同业务代码，不要求重写历史日志。
+On rerun the raw SHA-256 of the original source was `f50fea5190314216ffcffb4c175d0a0dcf9dd5c57c2c69449e4ef73cb0856947`, while Marina's log has `f1f20663612aa3343f5bce9f9acc749da2c8def46eea8e369fdcdc7bfd7e5d10`. It was verified that the local working tree is CRLF while the Git index and Marina's copy are LF; after normalising to LF the SHA is identical, and the whole-file AST also matches the original snapshot. This is therefore a line-ending difference, not different business code, and the historical log does not need rewriting.
 
-## 后续提醒（不阻止T08准备验收）
+## Follow-up reminders (do not block T08 preparation acceptance)
 
-- Python3.11目标环境、新业务HTTP、DynamoDB真实写入、共享数据和云端故障测试仍待T07/T09之后执行；现在17项通过不能用于声称这些已完成。
-- 当前统计测试隔离旧函数，后续要跟随B的实际版本更新调用/测试，不把旧函数接受负值等行为当成合格输入校验。
-- 请求工具只记录响应头阶段的耗时，人工stage标签不自动证明部署；最终故障实验必须覆盖停机前后、保存实际时间和失败样本。
-- 实时监控读回、通知和缺失数据策略、HTTPS、Calculator价格/PDF、正式报告/视频，以及课程冲突回复仍在后续任务处理。
+- The Python3.11 target environment, new business HTTP, real DynamoDB writes, shared data and cloud failure tests are still to be run after T07/T09; the current 17 passes cannot be used to claim these are done.
+- The current statistics tests isolate the old function; later the calls/tests must be updated to follow B's actual version, and behaviour such as the old function accepting negative values is not treated as adequate input validation.
+- The request tool records time only to the response-header stage, and the manual stage label does not automatically prove deployment; the final failure experiment must cover before and after the stop and save actual times and failed samples.
+- Live monitoring readback, notification and missing-data policy, HTTPS, Calculator prices/PDF, the formal report/video and the replies on course conflicts are still handled in later tasks.
 
-本复核只将T08准备任务按上述范围批准；其他任务状态、其他成员贡献和个人签名由各自实际工作决定。GitHub评论与同步回执是状态生效依据。
+This review approves only the T08 preparation task within the scope above; other task statuses, other members' contributions and personal signatures are determined by each person's actual work. The GitHub comment and sync receipt are the basis for the status taking effect.

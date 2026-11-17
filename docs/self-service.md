@@ -1,60 +1,60 @@
-# 四人自助入口 / Four-person self-service
+# Four-person self-service entry
 
 **Tenzin / wyend12: use [the complete English setup](member-D.md) and [English start prompt](../prompts/START-en.md).** Accept your own invitation and authorize your own GitHub/AI; no AWS password or AI API key is needed.
 
-当前角色 A=DiegoXue-coder、B=Alex4325Li、C=Marina057、D=wyend12。最新分工见[four-person-plan.md](four-person-plan.md)。D已预留，需本人接受邀请并验证自己的连接；角色分配不等于访问、认领或贡献已完成。
+Current roles A=DiegoXue-coder, B=Alex4325Li, C=Marina057, D=wyend12. The latest split is in [four-person-plan.md](four-person-plan.md). D is reserved and needs the member to accept the invitation and verify his own connection; role assignment does not mean access, claiming or contribution is complete.
 
-D执行setup_member.py --role D --install仅安装协调器时区依赖，随后用自己的GitHub身份doctor、join --role D、start；首项T25，再T19/T20。认领必须有远程回执，不代替本人认领。参照英文指南中的完整命令与真实交付规则。
+D runs setup_member.py --role D --install, which installs only the coordinator's time-zone dependency, then uses his own GitHub identity for doctor, join --role D and start; the first item is T25, then T19/T20. A claim must have a remote receipt and cannot be made on his behalf. Follow the full commands and real delivery rules in the English guide.
 
-新D任务为英文，新回执含双语标签，原始自由文本保留，各人AI可翻译。下方原B/C选岗记录作为历史保留，不能用它覆盖当前四人预留或让Tenzin接管B/C。
+New D tasks are in English, new receipts include bilingual labels, the original free text is kept, and each person's AI can translate. The original B/C role-selection record below is kept as history and cannot be used to overwrite the current four-person reservations or to have Tenzin take over B/C.
 
 ---
 
-## 原B/C自助加入流程（历史记录）
+## Original B/C self-service joining process (historical record)
 
-仓库负责人已选择 A=DiegoXue-coder 操作 AWS，B 做应用，C 做测试与监控准备。本说明和 `project/handoffs.json` 是统一入口。执行时拉取最新版本，不等待负责人逐条口头回复。
+The repository owner has chosen A=DiegoXue-coder to operate AWS, B to do the application, and C to prepare testing and monitoring. This note and `project/handoffs.json` are the single entry point. Pull the latest version when acting, and do not wait for the owner's verbal reply item by item.
 
-## 一次性前提
+## One-time prerequisites
 
-负责人需要取得两位真实组员用户名并邀请进入此私有仓库，或让已获授权的本人接受现有邀请。这一步目前尚未完成；没有访问权限时，任何开场语都不能让 AI 读取私有代码。角色是工作分工，不是 AWS 权限。
+The owner needs to obtain the two real teammates' usernames and invite them to this private repository, or have the authorised person accept an existing invitation. This step is not yet done; without access, no opening prompt can make an AI read private code. A role is a division of work, not an AWS permission.
 
-每位组员本人接受邀请，在自己的电脑安装/登录 GitHub 工具，使用有本地终端、文件与 GitHub 能力的 AI。自己的账号、验证和授权由本人完成；不需要找负责人索取 AWS 密钥、AI API key 或个人密码。普通无工具聊天不能自动执行。
+Each teammate accepts the invitation personally, installs/signs in to GitHub tools on their own computer, and uses an AI with local terminal, file and GitHub capability. Their own account, verification and authorisation are done by them; there is no need to ask the owner for AWS keys, an AI API key or personal passwords. Ordinary chat without tools cannot execute automatically.
 
-## 两人尚未分工时
+## When the two have not yet split roles
 
-两人接受邀请后使用同一个本页入口，自己的 AI 先 doctor 查看 B/C 空缺，由成员本人选择。先认领成功的人占用角色，另一位选择剩余角色，不需要负责人手改配置。不能覆盖已登记成员。
+After accepting the invitation both use this same page; each person's AI first runs doctor to see the B/C vacancies, and the member chooses. Whoever claims successfully first takes the role and the other chooses the remaining one, with no need for the owner to edit the configuration by hand. An enrolled member cannot be overwritten.
 
-## 已选应用 B 时
+## When application role B is chosen
 
-> 你负责 Reading Tracker 应用和数据代码。接受本仓库邀请后，用自己的 GitHub 登录，让有终端能力的 AI 克隆仓库，并把下面整段交给它。仓库：https://github.com/DiegoXue-coder/infs3701-cloud-team-2026 。请按 docs/member-B.md 自助配置并开工，不等待我单独解释。
+> You are responsible for the Reading Tracker application and data code. After accepting this repository's invitation, sign in with your own GitHub, have an AI with terminal capability clone the repository, and give it the whole paragraph below. Repository: https://github.com/DiegoXue-coder/infs3701-cloud-team-2026 . Please set up and start work by yourself following docs/member-B.md, without waiting for me to explain separately.
 
-## 已选测试 C 时
+## When testing role C is chosen
 
-> 你负责测试工具、监控方案、成本与证据。接受本仓库邀请后，用自己的 GitHub 登录，让有终端能力的 AI 克隆仓库，并把下面整段交给它。仓库：https://github.com/DiegoXue-coder/infs3701-cloud-team-2026 。请按 docs/member-C.md 自助配置并开工，不等待我单独解释。
+> You are responsible for the test tools, monitoring plan, cost and evidence. After accepting this repository's invitation, sign in with your own GitHub, have an AI with terminal capability clone the repository, and give it the whole paragraph below. Repository: https://github.com/DiegoXue-coder/infs3701-cloud-team-2026 . Please set up and start work by yourself following docs/member-C.md, without waiting for me to explain separately.
 
-## 两位成员复制给 AI 的开场语
+## Opening prompt for the two members to copy to their AI
 
-> 我是本组成员，我的 GitHub 用户名是【填本人用户名】，分工尚未确定。请先运行 doctor 查看空缺角色，向我说明 B 应用和 C 测试的区别，让我选择；已登记则继续本人角色。请直接执行本仓库 AGENTS.md 和 docs/self-service.md：核对本人身份与私有仓库权限，读取对应 member 文档，建立本地环境、运行基线检查、完成 doctor；若角色未登记，运行 join --role 绑定我的空缺角色，再同步并认领首项任务。使用 project/handoffs.json 的既定开发参数，不要求负责人再发代码或口头参数。协助我完成第一个可验证成果，保存真实记录并上报拿到回执。缺云端值时继续独立本地工作，将精确请求记录到任务卡；不猜 AWS 结果、不替我审批、不索取共享凭证。授权不足、安装失败或角色冲突时说明真实阻碍，先排查我这台电脑可以解决的问题。
+> I am a member of this group, my GitHub username is [fill in own username], and the split is not yet settled. Please first run doctor to see the vacant roles, explain to me the difference between B (application) and C (testing), and let me choose; if already enrolled, continue with my role. Please carry out this repository's AGENTS.md and docs/self-service.md directly: check my identity and private-repository permission, read the matching member document, set up the local environment, run the baseline check and complete doctor; if the role is not enrolled, run join --role to bind me to my vacant role, then synchronise and claim the first task. Use the settled development parameters in project/handoffs.json and do not ask the owner to send code or verbal parameters again. Help me complete a first verifiable result, save real records, report and get a receipt. When cloud values are missing, continue independent local work and record precise requests on the task card; do not guess AWS results, approve on my behalf or ask for shared credentials. When authorisation is insufficient, installation fails or roles conflict, explain the real obstacle and first troubleshoot what can be solved on my computer.
 
-## AI 执行顺序
+## Order of AI execution
 
-1. 用本人已有 GitHub 授权克隆仓库或拉取默认分支；先读取 AGENTS、当前角色指南、handoffs 和最新 Issue。
-2. 检查 Git 与 Python 3.9+；缺运行环境由该成员本人/工具处理，不要求负责人远程替他安装。
-3. 运行 `python scripts/setup_member.py --role B --install`（C 换 C）。创建独立 .venv，安装 app 依赖与 tzdata，并运行离线旧代码检查。后续命令使用该虚拟环境 Python：Windows 为 `.venv/Scripts/python.exe`，macOS/Linux 为 `.venv/bin/python`。
-4. 运行 `python scripts/team.py --user 本人用户名 doctor`。不能读取仓库时先检查本人账号、邀请接受情况与授权范围；不要把私有仓库改公开。
-5. 运行 `python scripts/team.py --user 本人用户名 join --role B`（C 换 C）。只允许已有仓库写权限的本人加入空缺 B/C；不能覆盖其他人、兼任两岗或接管 A。重复加入同一角色不重复改配置。记录由服务端锁与文件 SHA 避免同一空位被正常并发流程覆盖。
-6. join 会更新角色与看板；随后拉取最新代码，再读取最新任务。B 首项 T04，C 首项 T08；已完成则按角色指南继续，已认领则续做，不能抢已被别人认领的任务。
-7. 通过现有 command 命令发送 `/team claim B` 或 C，看到远程回执再做。AI 生成临时命令文件，无需成员手填 JSON；见 docs/team-protocol.md。
-8. 完成当前最小成果后生成真实交付、执行记录与 AI 说明，合入默认分支，再 report/submit，确认回执。下一位通过 GitHub 获取成果和具体下一步。
+1. Clone the repository or pull the default branch with the member's existing GitHub authorisation; first read AGENTS, the current role guide, handoffs and the latest Issue.
+2. Check Git and Python 3.9+; a missing runtime is handled by the member/tool, without asking the owner to install it remotely.
+3. Run `python scripts/setup_member.py --role B --install` (use C for C). It creates a separate .venv, installs the app dependencies and tzdata, and runs the offline old-code check. Later commands use that virtual environment's Python: `.venv/Scripts/python.exe` on Windows, `.venv/bin/python` on macOS/Linux.
+4. Run `python scripts/team.py --user <own username> doctor`. If the repository cannot be read, first check the member's account, invitation acceptance and authorisation scope; do not make the private repository public.
+5. Run `python scripts/team.py --user <own username> join --role B` (use C for C). Only the member with existing repository write access may join a vacant B/C; it cannot overwrite others, hold two roles or take over A. Joining the same role again does not change the configuration again. The record uses a server-side lock and file SHA to stop the same vacancy being overwritten by normal concurrent flows.
+6. join updates the role and dashboard; then pull the latest code and read the latest tasks. B's first item is T04 and C's is T08; if completed, continue by the role guide, if claimed, carry on, and do not take a task already claimed by someone else.
+7. Send `/team claim B` or C through the existing command function and act only after seeing the remote receipt. The AI generates the temporary command file, and members need not fill in JSON by hand; see docs/team-protocol.md.
+8. After completing the current smallest result, generate the real delivery, execution record and AI note, merge into the default branch, then report/submit and confirm the receipt. The next person gets the result and specific next step through GitHub.
 
-## 不用口头回复怎样交接
+## How to hand over without verbal replies
 
-参数以 handoffs.json 和环境记录为准，最新任务评论说明临时限制。需要改变开发约定时提交文件变更并写明影响，不能各自猜。
+Parameters are as in handoffs.json and the environment record, and the latest task comment explains temporary limitations. To change a development convention, submit a file change and state its impact; do not each guess.
 
-B 首轮交本地版本、数据格式与启动说明；C 同时对旧代码写测试和请求日志工具。云端空字段不是第一天开工的阻碍；托管数据库、真实双实例、告警与故障的最终验证必须等待 A 提供真实资源。
+In the first round B delivers the local version, data format and start-up notes; at the same time C writes tests and the request-logging tool against the old code. Empty cloud fields do not block starting on day one; final verification of the managed database, real two instances, alarm and failure must wait for A to provide real resources.
 
-需要 A 操作时，写进相关任务 Issue：任务、配置/脚本路径、版本、资源、参数、预期、检查与恢复方法。A 下一次与 AI 开工时读取处理。没有常驻后台或 AWS 执行器，不会在 A 离线时自动部署，也不要求 A 逐条私聊答复。
+When A's action is needed, write in the relevant task Issue: task, configuration/script path, version, resource, parameters, expectation, check and restore method. A reads and handles it the next time he starts work with his AI. There is no resident background process or AWS executor, nothing deploys automatically while A is offline, and A is not required to answer each item in private chat.
 
-## 目前验证范围
+## Current scope of verification
 
-自助登记有自动化测试，设置脚本有本机离线检查；尚无另外两位真实账号完成首次加入，不能声称已全员验收。安装依赖、本人 GitHub 连接与本机环境仍可能需要该成员自己处理。截图/日志必须是真实操作，最终由另一人检查。
+Self-service enrolment has automated tests and the setup script has local offline checks; no two other real accounts have yet completed a first join, so it cannot be claimed that everyone has accepted. Installing dependencies, the member's own GitHub connection and the local environment may still need to be handled by that member. Screenshots/logs must be from real operations and are finally checked by another person.
