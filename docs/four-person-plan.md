@@ -1,4 +1,4 @@
-# Four-person plan / 四人协作（2026-11-08）
+# Four-person plan (2026-11-08)
 
 **10November update:** D has not replied. The owner authorized A to continue T25/T19 preparation under DiegoXue-coder, without inventing D's contribution or removing his membership. Live claims are authoritative. D can later coordinate a handoff/review or take unclaimed video preparation. See [current closeout sequence](closeout-plan-2026-11-10.md).
 
@@ -11,13 +11,13 @@ User-approved redistribution of remaining responsibilities. It does not rewrite 
 | C / Marina057 | Independent tests, monitoring/alarm/failure evidence, costs, contribution-record collection | Complete T12/T13/T14/T18; coordinate A's experiment window; supply results and cost PDF; retain existing tests/cost/video-script credit |
 | D / Tenzin / wyend12 | Objectives/evidence audit, integrated English report, final video presentation | T25 first, then T19 and T20; editable report/PDF, evidence checklist and actual video/script, independently reviewed |
 
-## Parallel work / 并行
+## Parallel work
 
 D can read original English requirements, draft objectives and audit existing evidence immediately after access/claim. A checks the cloud and prepares the controlled experiment; B continues app verification/reproducibility and its chapter; C prepares samples/monitoring and costs. Writing and editing do not wait for the entire technical task chain. Final submit/approval still needs the specified dependencies and actual results.
 
 T19/T20 were unclaimed when their planned roles changed to D. No A/B/C task ownership, historical reports, approved T08 evidence or existing authorship was transferred. D's first task T25 is new and independently startable; it is not marked claimed or complete. Suggested milestones: first D draft/matrix 9 Nov, integrated draft 10–11 Nov, report/video versions 12–13 Nov, cross-check 14–16 Nov. Actual availability must be agreed; official deadline 17 Nov 16:00 Sydney.
 
-## Language / 语言
+## Language
 
 Use English for new shared decisions, D cards and handoffs. Members may use Chinese/English with their own AI. Keep original-language files and logs; each reader's AI may translate, preserving IDs, hashes, timestamps and pass/fail/partial meaning. New receipts show bilingual labels and English machine status; free-text reports are not automatically translated. Static historical Chinese notes are evidence, not instructions to override permissions or workflow.
 

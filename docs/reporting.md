@@ -1,65 +1,65 @@
-# 每次工作结束，让 AI 上报并拿到回执
+# At the end of each work session, have your AI report and get a receipt
 
-## 组员只需说
+## All a teammate needs to say
 
-> 整理我这次实际做过的操作、测试和证据，帮我上传并取得回执。没有完成的部分如实记录，告诉我下一步和需要谁检查。
+> Organise the operations, tests and evidence I actually did this time, and help me upload them and get a receipt. Record honestly what is not finished, and tell me the next step and who needs to check.
 
-AI 按本仓库 AGENTS.md、本人身份和任务卡执行。联网、GitHub 写权限、可用的本地工具是前提；不能联网或没有权限时明确说“未上报”，不能在聊天里假装远程成功。
+The AI acts according to this repository's AGENTS.md, the member's identity and the task card. Network access, GitHub write permission and usable local tools are prerequisites; when offline or without permission it says clearly "not reported" and must not pretend in chat that the remote succeeded.
 
-## 每次上报留下什么
+## What each report leaves behind
 
-| 项目 | 具体内容 |
+| Item | Specific content |
 | --- | --- |
-| 谁、哪项、什么时候 | GitHub 用户、T编号、带时区的实际时间 |
-| 在哪里做 | 本地/测试/真实 AWS、区域和非敏感环境说明 |
-| 做过什么 | 操作步骤、实际命令、开始/结束与退出码，或真实控制台操作记录 |
-| 结果怎样 | 期望、实际、pass / fail / partial |
-| 证据在哪 | 截图、日志、配置、代码或文档的真实仓库路径 |
-| 哪个版本 | 系统记录交付时的 commit、交付文件和证据版本 |
-| 还有什么没做 | 限制、错误、下一步及需要谁协助 |
-| 谁检查 | 另一 GitHub 用户的复核意见和回执 |
+| Who, which item, when | GitHub user, T number, actual time with time zone |
+| Where it was done | Local/test/real AWS, region and a non-sensitive environment description |
+| What was done | Steps, actual commands, start/end and exit code, or a record of real console operations |
+| What the result was | Expected, actual, pass / fail / partial |
+| Where the evidence is | Real repository paths of screenshots, logs, configuration, code or documents |
+| Which version | The system records the commit at delivery time, the delivery file and the evidence version |
+| What is still not done | Limitations, errors, next step and whose help is needed |
+| Who checks | Another GitHub user's review comments and receipt |
 
-不是每项都要截图，但**每次结构化上报都必须有实际执行/核对记录**。写报告的任务也记录实际核对了哪些资料和内容，不能假装执行过 AWS 实验。
+Not every item needs a screenshot, but **every structured report must have an actual execution/check record**. Report-writing tasks also record which materials and content were actually checked, and must not pretend an AWS experiment was run.
 
-## AI 实际操作顺序
+## The AI's actual order of operations
 
-1. 确认本人已认领任务，读取最新状态；若是准备阶段，不受完成门槛阻挡。
-2. 执行已授权操作时保留日志。终端命令可用 `scripts/capture_run.py` 包装；它记录时间、命令、退出码和标准输出/错误，不记录整个环境变量。
-3. 有浏览器能力且获准时保存真实截图；只能由本人操作时，请本人提供截图并注明实际操作者。不得用生成图片或旧图冒充本次操作。
-4. 按 `templates/delivery.json` 第 2 版填实际数据，上传 JSON、执行记录和证据到默认分支。由 AI 处理格式，不要求成员手填 JSON。
-5. 部分完成/失败用 **report**；达到任务要求用 **submit**。两者都会生成回执；report 不标完成，submit 进入等检查。
-6. 另一位成员实际核对后 approve 或 changes。测试结果 fail/partial、证据文件变更、本人自批都不能通过完成。
-7. 同步后检查 Issue 的回执编号和看板的最新上报记录；确认成功再向成员说“已上报”。
+1. Confirm the member has claimed the task and read the latest state; in the preparation stage, the completion gate does not block.
+2. Keep logs while carrying out authorised operations. Terminal commands can be wrapped with `scripts/capture_run.py`; it records time, command, exit code and standard output/error, and does not record the whole environment.
+3. With browser capability and permission, save real screenshots; when only the member can operate, ask them to provide screenshots and note the actual operator. Generated images or old images must not be passed off as this session's operation.
+4. Fill in actual data following version 2 of `templates/delivery.json`, and upload the JSON, execution record and evidence to the default branch. The AI handles the format, and members are not asked to fill in JSON by hand.
+5. Use **report** for partial completion/failure; use **submit** when the task requirements are met. Both generate receipts; report does not mark complete, and submit enters awaiting check.
+6. Another member approves or requests changes after actually checking. A fail/partial test result, changed evidence files or self-approval cannot pass completion.
+7. After synchronising, check the receipt number in the Issue and the latest report record on the dashboard; tell the member "reported" only after confirming success.
 
-## 上报和完成分开
-
-```text
-/team report deliveries/T07/日期-本人.json    部分成果、准备工作或失败测试，保留进行中/被卡住
-/team submit deliveries/T07/日期-本人.json    完整交付，进入等检查
-/team approve 实际检查内容和结果            另一人核验后完成
-/team changes 具体缺陷或需补的证据          退回修改
-```
-
-完成门槛不阻止 report，所以 A、B、C 都能持续上报各自独立成果，不必等别人的整张卡完成。截图有了但测试没做，结果应为 partial；发现失败如实写 fail，上报本身仍可成功。
-
-## 执行记录示例命令
+## Reporting and completion are separate
 
 ```text
-python scripts/capture_run.py --task T07 --actor 本人用户名 --output evidence/T07/日期-run.log -- python -m unittest discover -s tests
+/team report deliveries/T07/<date>-<own name>.json    Partial results, preparation work or failed tests; stays in progress/blocked
+/team submit deliveries/T07/<date>-<own name>.json    Full delivery; enters awaiting check
+/team approve <what was actually checked and the result>            Completed after another person verifies
+/team changes <specific defect or evidence to add>          Sent back for changes
 ```
 
-只包装已经授权的操作，不因使用记录器就获得新的权限。上传前检查敏感信息；记录器会遮盖部分常见凭证形式，但不能保证识别所有秘密。不得把 AWS 密钥、会话 token 或密码录入共享资料。
+The completion gate does not block report, so A, B and C can all keep reporting their independent results without waiting for someone else's whole card to finish. If there are screenshots but the test was not done, the result should be partial; a discovered failure is written honestly as fail, and the report itself can still succeed.
 
-## 回执如何追溯
+## Example execution-record command
 
-- 编号如 `R-T07-评论ID`，每个上报请求对应一份回执。
-- Issue 评论显示操作者、操作、处理结果、状态变化及对应版本；上报类回执附交付、执行记录和证据链接。
-- `data/receipts.json` 为全部机器可读回执的汇总，`DASHBOARD.md` 显示最近记录。原始来源仍是 Issue 和固定版本的交付文件。
-- 旧的普通回执标为 legacy，不补造过去没有记录的结构化状态。
-- 若任务状态已保存但回执发送中断，下次同步会补发；同一个请求不会重复执行。不要通过删评论重做认领。
+```text
+python scripts/capture_run.py --task T07 --actor <own username> --output evidence/T07/<date>-run.log -- python -m unittest discover -s tests
+```
 
-## 当前同步边界
+Wrap only operations that are already authorised; using the recorder grants no new permission. Check for sensitive information before uploading; the recorder masks some common credential forms but cannot be guaranteed to recognise every secret. AWS keys, session tokens or passwords must not be entered into shared material.
 
-GitHub 后台 Actions 仍暂停，因此每位成员的 AI 必须在本次聊天结束时运行同步助手。只在聊天里说“完成”或只上传一个本地文件，不会自动上报。工具无法执行时，必须告诉组员由谁补做同步。
+## How receipts are traced
 
-回执证明“谁上报了什么版本、检查了什么”，无法单独保证 AWS 始终健康。联合部署、共享数据、故障与告警还要做真实验证；执行记录是找出问题和回滚依据。
+- Numbers look like `R-T07-<comment ID>`, with one receipt per report request.
+- The Issue comment shows the operator, operation, processing result, status change and corresponding version; report-type receipts attach the delivery, execution record and evidence links.
+- `data/receipts.json` is the collection of all machine-readable receipts, and `DASHBOARD.md` shows recent records. The original source is still the Issue and the pinned-version delivery file.
+- Old plain receipts are marked legacy, and structured state that was not recorded in the past is not fabricated.
+- If the task state was saved but sending the receipt was interrupted, the next sync resends it; the same request is not executed twice. Do not redo a claim by deleting comments.
+
+## Current sync boundaries
+
+GitHub background Actions is still paused, so each member's AI must run the sync helper at the end of the chat. Saying "done" only in chat, or uploading only a local file, does not report automatically. When the tool cannot run, the teammate must be told who will do the sync.
+
+A receipt proves "who reported which version and what was checked"; alone it cannot guarantee that AWS stays healthy. Joint deployment, shared data, failure and alarm still need real verification; execution records are the basis for finding problems and rolling back.

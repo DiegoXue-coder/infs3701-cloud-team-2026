@@ -1,10 +1,10 @@
-# T08 复核：准备阶段通过
+# T08 review: preparation stage passed
 
-日期：2026-11-06（Australia/Sydney）。复核账号：DiegoXue-coder（A）；提交账号：Marina057（C）。用户在本聊天明确授权助手执行复核并记录结论。命令、代码检查与文档检查由Codex在A的工作区执行；不声称Diego本人手工执行、Marina自批或另一名真人另行签认。
+Date: 2026-11-06 (Australia/Sydney). Reviewing account: DiegoXue-coder (A); submitting account: Marina057 (C). The user explicitly authorised the assistant in this chat to carry out the review and record the conclusion. Commands, code checks and document checks were run by Codex in A's workspace; it is not claimed that Diego ran them by hand, that Marina self-approved or that another real person separately signed off.
 
-## 结论与版本
+## Conclusion and versions
 
-**通过 T08「测试清单、报告框架、成本假设」准备阶段验收，无阻止批准的缺陷。**这不是最终业务、AWS部署、HTTPS、成本报价或视频验收。
+**T08 "test checklist, report outline, cost assumptions" passes preparation-stage acceptance, with no defects blocking approval.** This is not acceptance of the final business, AWS deployment, HTTPS, cost quote or video.
 
 审核的提交回执：R-T08-6624791560；提交版本：`cb07163da0e2beb69797902b433efd8999fd4849`；交付文件：`deliveries/T08/2026-11-04-Marina057.json`。已将当前交付及15个证据文件的Git blob与提交回执逐一比较，16项全部匹配，也检查了工作区过滤后的blob；未修改Marina的提交、原日志或样本。
 

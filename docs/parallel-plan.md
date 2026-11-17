@@ -1,76 +1,76 @@
-# 三人工作计划：你操作 AWS，三条工作线同时推进
+# Three-person work plan: you operate AWS, three workstreams advance together
 
-**2026-11-08更新：本页原三人时间线保留为历史；当前采用[四人分工](four-person-plan.md)。D=wyend12负责T25、T19、T20，B/C原成果和作者记录不变。**
+**2026-11-08 update: this page's original three-person timeline is kept as history; the [four-person split](four-person-plan.md) is now used. D=wyend12 is responsible for T25, T19 and T20, and B/C's original work and authorship records are unchanged.**
 
-2026-10-31 更新；日期均为悉尼时间，均为内部建议节点，尚未约定具体会议时刻。正式截止为 11/17 16:00。计划不是完成记录。
+Updated 2026-10-31; all dates are Sydney time and are suggested internal milestones, with no specific meeting times agreed yet. The formal deadline is 17 Nov 16:00. A plan is not a record of completion.
 
-## 人与责任
+## People and responsibilities
 
-| 人员 | GitHub 角色 | 负责 | 不必等待谁就能开始 |
+| Person | GitHub role | Responsible for | Can start without waiting for anyone |
 | --- | --- | --- | --- |
-| 你 DiegoXue-coder | A | 唯一获准的 AWS 实际操作者；网络、实例、入口、数据库资源、监控配置、安全、部署与架构图 | 先盘点和核查环境；使用简单测试页面准备部署路径 |
-| 成员二，待加入 | B | 应用、数据访问代码、本地启动、数据库字段、应用章节与报告整合 | 已有旧源码，先提供无需 AWS 凭证的本地开发模式 |
-| 成员三，待加入 | C | 可执行测试、监控参数与验证方法、成本、证据、视频整合 | 用现有代码和虚构数据写测试、请求日志工具及预期结果 |
+| You, DiegoXue-coder | A | The only approved actual AWS operator; network, instances, entry point, database resources, monitoring configuration, security, deployment and architecture diagram | Inventory and check the environment first; prepare the deployment path with a simple test page |
+| Member two, yet to join | B | Application, data-access code, local start-up, database fields, application chapter and report integration | The old source exists; first provide a local development mode that needs no AWS credentials |
+| Member three, yet to join | C | Executable tests, monitoring parameters and verification method, cost, evidence, video integration | Write tests, a request-logging tool and expected results from the existing code and fictional data |
 
-A/B/C 是任务标签，不表示工作先后。原 B 用户绑定已迁为 A，历史回执与过去实际贡献不改写。两位成员用户名尚缺，未邀请或冒充他们认领。先在 GitHub 接受邀请并打开源码，再开展正式协作。
+A/B/C are task labels and do not indicate work order. The original binding of the user as B was migrated to A, and historical receipts and past actual contributions are not rewritten. The two members' usernames are still missing, and they have not been invited or impersonated in a claim. Accept the invitation on GitHub and open the source first, then begin formal collaboration.
 
-## 大纲对协作说了什么
+## What the outline says about collaboration
 
-作业说明第 3 页 Working as a Team：每个人必须贡献，建议按 networking、compute/data tier、security、monitoring、written deliverables 分工；独立贡献声明须签认，明显不均可调整个人分数。第 4 页只说明用学生账号进入 Learner Lab 的步骤。大纲和评分表没有明确说明如何让三人同时登录同一 Lab、共享账号或创建组员身份，也没要求每个人都必须直接点击控制台。
+Page 3 of the assignment brief, Working as a Team: everyone must contribute, with a suggested split by networking, compute/data tier, security, monitoring and written deliverables; the independent contribution statement must be signed off, and individual marks may be adjusted for clearly uneven contribution. Page 4 only explains the steps for entering the Learner Lab with a student account. The outline and marking sheet do not clearly say how three people can sign in to the same Lab at once, share an account or create teammate identities, nor do they require everyone to click in the console directly.
 
-当前 Lab Readme 禁止创建用户/组，见 [权限检查](aws-access-audit.md)。课程若另有小组访问入口，需 tutor 确认。分工符合其建议方向，不等于已获课程对具体身份访问方式的额外批准。
+The current Lab Readme prohibits creating users/groups, see [permission check](aws-access-audit.md). If the course has a separate group access entry, the tutor needs to confirm it. The split follows the suggested direction, which does not mean the course has additionally approved a specific way of identity access.
 
-## 今晚先完成的四件事（建议 30 分钟）
+## Four things to finish tonight (suggested 30 minutes)
 
-1. 提供另外两人的 GitHub 用户名，由你邀请，二人接受；各自确认能打开 `app/reading_tracker.py` 和任务卡，不能只凭你能打开就说全员已接通。
-2. 固定小范围：保留读书记录与统计，先完成双 AZ、双实例/负载均衡、共享托管数据库、监控与加密，不新增复杂业务功能。
-3. A/B/C 用 10 分钟确认 `docs/interfaces.md` 的端口、启动、数据格式、健康路径、实例识别；草稿值仍须明确确认。
-4. 每人认领第一项任务，并约 11/2 的首次接入窗口，具体时刻按课表定。B 先交最小可运行版，不等所有改造完成。
+1. Provide the other two people's GitHub usernames; you invite them and they accept; each confirms they can open `app/reading_tracker.py` and the task cards; do not say everyone is connected just because you can open them.
+2. Fix a small scope: keep reading records and statistics, first complete two AZs, two instances/load balancing, a shared managed database, monitoring and encryption, and add no complex business features.
+3. A/B/C take 10 minutes to confirm the port, start-up, data format, health path and instance identification in `docs/interfaces.md`; draft values still need explicit confirmation.
+4. Each person claims a first task and agrees the first integration window on 2 Nov, with the exact time set from timetables. B delivers a minimal runnable version first, without waiting for all the changes.
 
-## 分阶段日程：三个人每阶段都交实际成果
+## Phased schedule: all three deliver real results in every phase
 
-| 建议时间 | 你 A：AWS | B：应用 | C：测试、监控、成本 | 本阶段检查点 |
+| Suggested time | You, A: AWS | B: application | C: testing, monitoring, cost | Checkpoint for the phase |
 | --- | --- | --- | --- | --- |
-| 10/31–11/1 | 盘点旧资源与余额；核查数据库、网络及 HTTPS 可行性；画初稿；准备最小部署环境 | 拉代码，整理依赖；增加明确标为开发用的本地数据模式；交启动命令、示例数据和第一版对接说明 | 根据旧代码交三组数据及预期统计；写可执行统计测试和可配置请求日志脚本；实际跑本地检查 | 三份可查看成果，不以空白文档当交付；记录失败也算实际进度 |
-| 11/2–11/3 | 创建选定的数据库和第一台应用；部署 B 的明确 commit；检查角色和访问路径 | 编写托管数据库读写代码；根据 A 的非敏感参数修正配置；交迁移/建表要求和验证步骤 | 提前写增/查/重启等用例；本地验证脚本；接到 URL 后马上跑第一轮并报问题 | 统一版本能真实写入并读回云端数据库；不通过就先修核心 |
-| 11/4–11/6 | 第二个 AZ、第二台实例和负载均衡；按 C 已给参数配置 CloudWatch | 确保两台同版本、共享数据库；补健康与实例标签；修复 C 发现的问题 | 执行双实例读写与分流检查；核对监控指标；准备告警触发/恢复步骤；更新成本假设 | 两台健康、同一份数据、可以识别请求去向 |
-| 11/7–11/10 | 按商定窗口执行故障、告警与恢复；修网络/安全；保存资源参数 | 修程序/数据问题；写应用选择理由与复现说明 | 持续请求并统计失败数/恢复时间；保存告警与恢复证据；检查加密与权限；正式成本估算 | 核心要求有实际证据；停实例测试不冒称完整 AZ 故障 |
-| 11/11–11/13 | 定稿架构图和 AWS 配置章节；配合演示 | 整合三人各自章节；让他人检查运行说明 | 整合测试、成本、视频；先按 60 秒制作，时长冲突仍问 tutor | 五项交付第一版齐全，均对应真实版本 |
-| 11/14–11/16 | 核对云端与图，执行最终必要修正 | 修正文字、引用、代码和步骤 | 交叉检查证据、视频和文件；各人独立贡献签认 | 11/16 内部定稿，留一天缓冲 |
-| 11/17 16:00 前 | 由指定提交人上传并保存回执；按课程确认的安排处理资源 | 核对上传文件与版本 | 检查提交可打开及完整性 | 正式提交成功，不将点击上传等同成功 |
+| 31 Oct–1 Nov | Inventory old resources and balance; check database, network and HTTPS feasibility; draw a first draft; prepare a minimal deployment environment | Pull the code, tidy dependencies; add a local data mode clearly labelled for development; deliver the start command, sample data and a first interface note | From the old code deliver three data sets with expected statistics; write executable statistics tests and a configurable request-logging script; actually run local checks | Three viewable results, with no blank documents counted as deliveries; recorded failures also count as real progress |
+| 2–3 Nov | Create the chosen database and the first application host; deploy B's specific commit; check the role and access path | Write the managed-database read/write code; adjust configuration to A's non-sensitive parameters; deliver migration/table-creation requirements and verification steps | Write insert/query/restart cases in advance; verify scripts locally; run the first round and report problems as soon as the URL arrives | One version can really write to and read back from the cloud database; if it fails, fix core first |
+| 4–6 Nov | Second AZ, second instance and load balancing; configure CloudWatch from the parameters C already gave | Ensure both hosts run the same version and share the database; add health and instance labels; fix problems C finds | Run two-instance read/write and routing checks; check monitoring metrics; prepare alarm trigger/recovery steps; update cost assumptions | Both healthy, one set of data, and requests can be traced to a host |
+| 7–10 Nov | Run failure, alarm and recovery in the agreed window; fix network/security; save resource parameters | Fix application/data problems; write the reasons for application choices and reproduction notes | Send continuous requests and count failures/recovery time; save alarm and recovery evidence; check encryption and permissions; formal cost estimate | Core requirements have real evidence; a stop-instance test is not passed off as a full AZ failure |
+| 11–13 Nov | Finalise the architecture diagram and AWS configuration chapter; help with the demo | Integrate each of the three people's chapters; have others check the run instructions | Integrate tests, cost and video; produce at 60 seconds first, with the length conflict still to ask the tutor | First versions of all five deliverables complete, each matching a real version |
+| 14–16 Nov | Check the cloud against the diagram and make final necessary fixes | Fix text, references, code and steps | Cross-check evidence, video and files; each person's independent contribution sign-off | Internal final version on 16 Nov, leaving one day of buffer |
+| Before 17 Nov 16:00 | The designated submitter uploads and saves the receipt; handle resources as the course confirms | Check the uploaded files and versions | Check the submission opens and is complete | Formal submission succeeds; clicking upload is not treated as success |
 
-以上窗口不要求整天在线。建议 11/2、11/6、11/10、11/13 各留 30–45 分钟联合检查，按三人实际课表调整。多人实验前才按需启动资源；取证、录制和资源保留安排按课程答复执行，不能为等待留整套资源长期开机。
+These windows do not require being online all day. Joint checks of 30–45 minutes are suggested on 2, 6, 10 and 13 Nov, adjusted to the three people's actual timetables. Start resources on demand only before multi-person experiments; evidence, recording and resource-retention arrangements follow the course's answer, and a full set of resources cannot be left running long-term just to wait.
 
-## 每人第一份交付：部署前就能完成
+## Each person's first delivery: can be finished before deployment
 
-- **A（T05/T06）**：环境盘点、预算读数及时间、双 AZ 网络草图、限制和部署步骤。可先用简单测试页面检查环境，不等业务代码全改完。
-- **B（T04/T07）**：从 `app/reading_tracker.py` 起步；交依赖、可复现启动方式、本地数据模式、字段约定。源码现在已存在，但旧 S3 依赖意味着还不能承诺无凭证直接运行；该开发模式尚待 B 实现。本地数据只供开发，不满足云端数据库验收。
-- **C（T08）**：三组虚构读书数据及预期总数/页数/评分；可执行统计测试；读取 BASE_URL 的访问记录脚本及本地运行记录；具体监控参数草案。不能只交清单或等截图。
+- **A (T05/T06)**: environment inventory, budget reading and time, two-AZ network sketch, limitations and deployment steps. A simple test page can be used to check the environment first, without waiting for all the business code changes.
+- **B (T04/T07)**: start from `app/reading_tracker.py`; deliver dependencies, a reproducible start method, a local data mode and field conventions. The source exists now, but the old S3 dependency means running without credentials cannot yet be promised; that development mode is still to be implemented by B. Local data is for development only and does not satisfy cloud database acceptance.
+- **C (T08)**: three fictional reading data sets with expected totals/pages/ratings; executable statistics tests; a request-recording script that reads BASE_URL with local run records; a draft of specific monitoring parameters. A checklist alone or waiting for screenshots is not enough.
 
-C 可以直接读取旧代码先写统计测试，无需等 B 的完整网页。网页功能测试和真实故障测试的最后验收仍需要可用应用及 AWS 环境，不能称完全没有依赖。
+C can read the old code directly and write statistics tests first, without waiting for B's full web page. Final acceptance of web feature tests and real failure tests still needs a working application and AWS environment, so it cannot be called completely free of dependencies.
 
-## 每次交接只交一小份，不等整项全做完
+## Hand over a small piece each time, without waiting for the whole item
 
-B 给 A：代码 commit、依赖、启动命令、环境变量名、端口、健康路径、数据库建表要求。不给会话密钥。
+B to A: code commit, dependencies, start command, environment variable names, port, health path, database table-creation requirements. No session keys.
 
-A 给 B/C：部署 commit、非敏感 URL、数据库资源名称/区域、端口、当前限制。没有真实地址时先用变量，不填编造 URL。
+A to B/C: deployed commit, non-sensitive URL, database resource name/region, port, current limitations. Without a real address use a variable first and do not fill in an invented URL.
 
-C 给 A：明确监控指标、维度、统计周期、阈值理由、触发/恢复步骤，以及待执行的验证脚本；A 应是应用已复核配置，不必从头设计 C 的工作。
+C to A: specific monitoring metrics, dimensions, statistical period, threshold reasoning, trigger/recovery steps, and the verification script to be run; A should be applying a reviewed configuration and need not design C's work from scratch.
 
-C 给 B：输入、预期结果、实际结果、重现步骤和日志。环境问题分给 A，程序问题分给 B，C 复测。
+C to B: input, expected result, actual result, reproduction steps and logs. Environment problems go to A, application problems to B, and C retests.
 
-配置更动记 `interfaces.md` 和任务卡；三人各写自己负责部分的设计理由、代价、步骤和局限，B 只做报告整合，不替别人写全部内容。
+Configuration changes are recorded in `interfaces.md` and the task card; each of the three writes the design reasons, trade-offs, steps and limitations for their own part, and B only integrates the report without writing everyone else's content.
 
-## 你是唯一 AWS 操作者时，怎样避免排队
+## How to avoid queueing when you are the only AWS operator
 
-1. 需要云端操作的人先在卡片列明具体资源、参数、命令/点击步骤、预期影响、验证及恢复方式，由另一人检查。
-2. 你每天按可用时间集中处理一个 20–30 分钟操作窗口，尽量批量完成相容改动。无需随时在线响应零碎请求；长实验另约窗口。
-3. 等窗口时，B 继续本地代码与单元验证；C 继续脚本、成本和证据检查。遇阻只暂停被阻的子项，不暂停整条工作线。
-4. 同一资源由你操作；指导、设计、验证分别记实际贡献。监控配置和数据库资源创建都算你的实际操作，方案/代码贡献仍归 B/C。
-5. 请求超出窗口时，优先解决影响后续接入的最小参数/资源；核心未通过前不追加增强和新功能。
+1. Whoever needs a cloud operation first lists on the card the specific resource, parameters, command/click steps, expected impact, verification and restore method, checked by another person.
+2. Each day, as your time allows, handle one batched 20–30 minute operation window, completing compatible changes together where possible. There is no need to be online at all times for small requests; long experiments get a separate window.
+3. While waiting for a window, B continues local code and unit verification; C continues scripts, cost and evidence checks. When blocked, pause only the blocked sub-item, not the whole workstream.
+4. You operate the shared resource; guidance, design and verification are each recorded as actual contributions. Monitoring configuration and database resource creation both count as your actual operation, while the plan/code contribution still belongs to B/C.
+5. When requests exceed the window, first resolve the smallest parameters/resources that affect later integration; add no enhancements or new features before core passes.
 
-## GitHub 日常规则
+## Daily GitHub rules
 
-读取最新任务 → 认领本人角色 → 保留当前可用产物与真实执行记录 → 合入默认分支 → 部分结果用 `/team report`、完整结果用 `/team submit` → 另一账号复核。
+Read the latest task → claim your own role → keep the current usable artefacts and real execution records → merge into the default branch → `/team report` for partial results, `/team submit` for complete results → review by another account.
 
-每次记录“做了什么、文件在哪、怎么验证、还缺什么、下一步谁做”。开始条件 `start_after` 与完成条件 `depends_on` 继续分开，最后验收依赖不可跳过。GitHub 聊天同步不是 AWS 自动监控，CloudWatch 才负责运行指标；没有配置就不能说实时监控已上线。
+Each time record "what was done, where the files are, how it was verified, what is still missing, who does the next step". The start condition `start_after` and the completion condition `depends_on` remain separate, and final acceptance dependencies cannot be skipped. GitHub chat sync is not automatic AWS monitoring; CloudWatch is what handles runtime metrics; without configuration, real-time monitoring cannot be said to be live.

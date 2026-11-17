@@ -1,29 +1,29 @@
-# 成员三：测试与监控准备，不等部署即可开工
+# Member three: test and monitoring preparation, ready to start without waiting for deployment
 
-> 最新入口与实际限制：[本轮验证与三人交接](2026-11-01-foundation-verification.md)。新 ALB 已可做基础检查，业务应用尚未发布；不要把下面较早的“入口未创建”记录当最新状态。
+> Latest entry point and actual limitations: [this round's verification and three-person handoff](2026-11-01-foundation-verification.md). The new ALB can already be used for foundation checks, and the business application is not yet released; do not treat the earlier "entry point not created" records below as the latest state.
 
 
-先按 [自助入口](self-service.md) 配好本人环境，join C。读取旧代码 `app/reading_tracker.py`、评分要求和 `project/handoffs.json`。首项 T08，随后 T12/T13 等卡的准备工作；真实最终测试条件仍遵守任务卡。
+First set up your own environment through the [self-service entry](self-service.md) and join C. Read the old code `app/reading_tracker.py`, the marking requirements and `project/handoffs.json`. The first item is T08, followed by preparation for cards such as T12/T13; the real final test conditions still follow the task cards.
 
-2026-11-01 交接更新：读取本轮验证与三人交接及 project/aws-resources.json。新 ALB 已有明确标记的基础测试页，可验证访问工具；Reading Tracker 业务尚未发布。继续本地数据/功能测试，并独立复核已有监控基线，等业务发布后再最终验收。
+2026-11-01 handoff update: read this round's verification and three-person handoff and project/aws-resources.json. The new ALB has a clearly labelled foundation test page that can be used to verify the request tool; the Reading Tracker business is not yet released. Continue local data/feature testing and independently review the existing monitoring baseline, with final acceptance after the business release.
 
-## 第一轮要交能运行的东西
+## The first round must deliver things that run
 
-1. 建立虚构读书记录数据：空记录集、正常混合状态记录集、边界输入集；各自写明确预期数量/页数/评分。不要用私人数据。
-2. 用旧代码的 compute_stats 编写独立测试。没有完整网页和 AWS 也可以做；`scripts/check_reading_baseline.py` 展示如何隔离原函数，测试应覆盖新增风险而非复制现有断言。
-3. 编写 `BASE_URL` 可配置的持续访问日志工具，记录时间、HTTP 状态、耗时及实例标识；设置超时和最大请求数，不无限高频请求。
-4. 在本地测试目标实际运行，保存真实结果。B 网页还未交付时可用明确标为测试替代的本地 HTTP 服务验证工具，不能把它写成业务功能通过。
-5. 准备 CloudWatch 设置文件/步骤：观察哪个信号、资源维度、统计周期、阈值理由、触发条件、恢复操作、预期截图位置。交 A 实施，自己负责核对和解释。
-6. 成本先整理服务清单和用量假设；没有最终资源时标估算草稿，不虚构余额或价格。
+1. Build fictional reading-record data: an empty set, a normal mixed-status set and a boundary-input set; write explicit expected counts/pages/ratings for each. Do not use private data.
+2. Write independent tests using compute_stats from the old code. This can be done without the full web page or AWS; `scripts/check_reading_baseline.py` shows how to isolate the original function, and the tests should cover new risks, not copy existing assertions.
+3. Write a continuous request-logging tool with a configurable `BASE_URL` that records time, HTTP status, duration and instance identifier; set a timeout and a maximum request count, with no unlimited high-frequency requests.
+4. Actually run it against a local test target and save the real results. Before B's web page is delivered, a local HTTP service clearly labelled as a test substitute can be used to verify the tool, and it cannot be written up as business functionality passing.
+5. Prepare the CloudWatch settings file/steps: which signal to observe, resource dimensions, statistical period, threshold reasoning, trigger condition, recovery action and expected screenshot locations. Hand them to A to implement, and take responsibility for checking and explaining.
+6. For cost, first organise the service list and usage assumptions; without final resources mark it as an estimate draft and do not invent balances or prices.
 
-第一轮不是只交测试清单，至少包含数据文件、可执行脚本和实际本地执行记录。通过 T08 的 report 上报部分成果，不等待所有云端测试完成。
+The first round is not just a test checklist; it includes at least data files, executable scripts and actual local execution records. Report partial results through T08's report, without waiting for all cloud tests to finish.
 
-## 联合测试时
+## During joint testing
 
-从 handoffs.json / docs/environment.md 获取真实地址与版本。按功能、共享数据、分流、故障、告警和安全逐项验证。资源创建/停机/恢复由 A 操作；自己记录输入、预期、实际、耗时、失败数和证据。
+Get the real address and version from handoffs.json / docs/environment.md. Verify item by item for features, shared data, routing, failure, alarm and security. Resource creation/stop/recovery is done by A; you record inputs, expected, actual, duration, failure count and evidence.
 
-问题卡写清：访问地址/版本、重现步骤、预期与实际、日志、建议归 A（环境）或 B（程序）。不知道原因就标待定位，不能随意判定。修复后自己复测并给回执。
+Problem cards state clearly: address/version accessed, reproduction steps, expected and actual, logs, and whether it likely belongs to A (environment) or B (application). If the cause is unknown mark it as to be located and do not assign it arbitrarily. After a fix, retest yourself and give a receipt.
 
-## 等云端参数期间
+## While waiting for cloud parameters
 
-继续测试脚本、样例数据、监控配置、成本假设、视频脚本、证据核对；已拿到 B 的交付时独立尝试复现并复核。不得用一条“等部署”暂停整项工作。只有真实云端最终结论需要等 A，不用私聊负责人重复索取源码或开发端口。
+Continue with test scripts, sample data, monitoring configuration, cost assumptions, the video script and evidence checks; once B's delivery is in, independently try to reproduce and review it. Do not pause the whole job with a single "waiting for deployment". Only the real final cloud conclusions need to wait for A, and there is no need to message the project owner privately to ask again for source code or the development port.

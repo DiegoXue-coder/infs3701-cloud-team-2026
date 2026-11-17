@@ -1,57 +1,57 @@
-# 共同开发约定
+# Shared development conventions
 
-2026-10-31 由项目负责人授权建立自助工作流程后，指定以下开发默认要求，机器可读入口为 `project/handoffs.json`。这是实施要求，不代表已实现、部署或全员签认。
+On 2026-10-31, after the project owner authorised setting up the self-service workflow, the following development defaults were specified; the machine-readable entry is `project/handoffs.json`. These are implementation requirements and do not mean they are implemented, deployed or signed off by everyone.
 
-| 项目 | 开发默认要求 | 由谁实现/提供 |
+| Item | Development default | Implemented/provided by |
 | --- | --- | --- |
-| 端口 | APP_PORT，默认 8000 | B 实现，A 部署配置 |
-| 本地地址 | http://127.0.0.1:8000，仅开发 | B；C 测试使用 |
-| 进程健康 | GET /health；不等同数据库读写成功 | B |
-| 实例识别 | 响应头 X-App-Instance，由 APP_INSTANCE 配置 | B 实现，A 给两实例不同非敏感标签 |
-| 测试地址 | BASE_URL，不把某台地址写死 | C |
-| 数据字段 | record_id、title、status、pages_read、total_pages、rating、note、created_at | B 补类型/约束，C 写预期 |
-| 本地数据 | 明确开发模式，无 AWS 凭证且不发起 AWS 请求 | B |
-| 云端数据库 | DynamoDB，us-east-1，表 infs3701-team-books，record_id:String；READING_TABLE/AWS_DEFAULT_REGION；代码尚待接入 | A/B 核查后写入 handoffs |
-| 启动方式 | B 交依赖和可复现命令；旧文件 port 80 不是新默认 | B |
-| 部署版本 | 两实例同一 commit，配置另记 | A |
+| Port | APP_PORT, default 8000 | B implements, A configures deployment |
+| Local address | http://127.0.0.1:8000, development only | B; used by C for testing |
+| Process health | GET /health; not the same as successful database read/write | B |
+| Instance identification | Response header X-App-Instance, configured by APP_INSTANCE | B implements, A gives the two instances different non-sensitive labels |
+| Test address | BASE_URL, with no single host's address hard-coded | C |
+| Data fields | record_id, title, status, pages_read, total_pages, rating, note, created_at | B adds types/constraints, C writes expectations |
+| Local data | Explicit development mode, with no AWS credentials and no AWS requests | B |
+| Cloud database | DynamoDB, us-east-1, table infs3701-team-books, record_id:String; READING_TABLE/AWS_DEFAULT_REGION; code still to be connected | Written to handoffs after A/B check |
+| Start method | B delivers dependencies and a reproducible command; port 80 in the old file is not the new default | B |
+| Deployed version | Both instances on the same commit, configuration recorded separately | A |
 
-旧代码尚未实现上述新增接口；当前基线验证只检查语法与统计函数。实际云端 URL、数据库和部署版本仍为空，不编造值。参数变动通过 GitHub 文件与任务记录交接，不能只在私聊里通知。
+The old code does not yet implement the new interfaces above; the current baseline verification only checks syntax and the statistics function. The actual cloud URL, database and deployed version are still empty, and no values are invented. Parameter changes are handed over through GitHub files and task records, not announced only in private chat.
 
-目标云端运行环境：Python3.11，Gunicorn WSGI 入口 app:app；发布包与额外依赖规则见 docs/aws-owner-handoff.md。
+Target cloud runtime: Python3.11, Gunicorn WSGI entry app:app; the release-package and extra-dependency rules are in docs/aws-owner-handoff.md.
 
-## B 首轮数据契约（2026-11-03，待 A/C 复核）
+## B's first-round data contract (2026-11-03, awaiting A/C review)
 
-以下为 T04 设计约定，T07 实现前不得视为现有行为。
+The following are T04 design conventions and must not be regarded as existing behaviour before T07 is implemented.
 
-| 字段 | 类型与约束 |
+| Field | Type and constraints |
 | --- | --- |
-| record_id | 服务端生成 UUID 字符串，DynamoDB 分区键；同标题同秒新增也不得覆盖 |
-| title | 去首尾空白后 1–120 字符，必填 |
-| status | want / reading / finished，默认 reading；明确传入其他值返回 400 |
-| pages_read | 非负整数，默认 0 |
-| total_pages | 非负整数，默认 0 表示未知；已知时 pages_read 不得超过 total_pages |
-| rating | null 或整数 1–5；空表单转 null |
-| note | 字符串，默认空，最多 2000 字符 |
-| created_at | 服务端 UTC ISO 8601 字符串，含时区；调用者不得覆盖 |
+| record_id | Server-generated UUID string, DynamoDB partition key; inserts with the same title in the same second must not overwrite either |
+| title | 1–120 characters after trimming leading/trailing whitespace, required |
+| status | want / reading / finished, default reading; any other explicitly supplied value returns 400 |
+| pages_read | Non-negative integer, default 0 |
+| total_pages | Non-negative integer, default 0 meaning unknown; when known, pages_read must not exceed total_pages |
+| rating | null or an integer 1–5; an empty form value becomes null |
+| note | String, default empty, at most 2000 characters |
+| created_at | Server-side UTC ISO 8601 string with time zone; callers must not overwrite it |
 
-统计保留旧含义：total 为记录数，各状态分别计数，total_pages 统计键实际表示累计 pages_read（不是书籍总页数），avg_rating 只对非空评分取平均并保留一位小数，无评分为 null。进度 pct 为展示派生值，已知总页数时 round(pages_read / total_pages * 100)，未知为 null；不作为数据库必填字段。列表按 created_at 降序，同时间以 record_id 排序稳定化。
+Statistics keep the old meaning: total is the record count, each status is counted separately, the total_pages statistics key actually represents cumulative pages_read (not the books' total pages), avg_rating averages only non-empty ratings to one decimal place, and is null when there are no ratings. Progress pct is a derived display value, round(pages_read / total_pages * 100) when total pages are known and null when unknown; it is not a required database field. The list is in descending created_at order, stabilised by record_id for equal times.
 
-### 数据层与 HTTP 契约
+### Data-layer and HTTP contract
 
-- load_books() -> list[dict]：返回规范记录；读取失败须显式报错，不把失败显示为空书库。DynamoDB Scan 必须处理 LastEvaluatedKey；仅限小规模课程数据，全量统计不适合大规模场景。
-- save_book(entry) -> str：验证后新增，返回 record_id；DynamoDB 用条件写避免覆盖，失败不得返回成功重定向。不提供编辑/删除接口。
-- GET /：HTML 列表及统计；POST /：表单新增，成功 302 返回 /；输入无效 400，存储失败 503，页面不暴露内部异常或凭证。
-- GET /health：200 JSON，表示进程可响应，不读数据库；不能当作云端写入验证。所有响应含 X-App-Instance，值来自 APP_INSTANCE，默认 local-dev，不使用机器私有地址。
+- load_books() -> list[dict]: returns normalised records; a read failure must raise explicitly and must not be shown as an empty library. DynamoDB Scan must handle LastEvaluatedKey; for small course data only, full-table statistics do not suit large scale.
+- save_book(entry) -> str: inserts after validation and returns record_id; DynamoDB uses a conditional write to avoid overwriting, and a failure must not return a success redirect. No edit/delete interface is provided.
+- GET /: HTML list and statistics; POST /: form insert, 302 back to / on success; 400 on invalid input, 503 on storage failure, and the page does not expose internal exceptions or credentials.
+- GET /health: 200 JSON, meaning the process can respond, without reading the database; it cannot serve as verification of cloud writes. All responses include X-App-Instance, with the value from APP_INSTANCE, default local-dev, and the machine's private address is not used.
 
-### 配置和启动草案
+### Draft configuration and start-up
 
-READING_DATA_MODE 必须显式选择 local 或 dynamodb。local 仅作开发，用内存记录，重启清空，不导入/调用 boto3、不查找凭证、不发 AWS 请求，开发服务器仅绑定 127.0.0.1。dynamodb 使用 READING_TABLE 与 AWS_DEFAULT_REGION，缺配置则拒绝启动；云端使用实例角色，禁止复制凭证文件。旧 S3 数据不自动迁移、不删除。
+READING_DATA_MODE must explicitly select local or dynamodb. local is for development only, uses in-memory records cleared on restart, does not import/call boto3, look for credentials or send AWS requests, and the development server binds only to 127.0.0.1. dynamodb uses READING_TABLE and AWS_DEFAULT_REGION and refuses to start if configuration is missing; the cloud uses the instance role, and copying credential files is prohibited. Old S3 data is not automatically migrated or deleted.
 
-T07 实现后的本地命令草案：`READING_DATA_MODE=local APP_PORT=8000 APP_INSTANCE=local-dev .venv/bin/python app/reading_tracker.py`。当前旧代码尚未支持，暂勿当作已验证启动命令。
+Draft local command after T07 is implemented: `READING_DATA_MODE=local APP_PORT=8000 APP_INSTANCE=local-dev .venv/bin/python app/reading_tracker.py`. The current old code does not support it yet, so do not treat it as a verified start command.
 
-部署使用 Python 3.11，Flask+boto3 及 Gunicorn，发布包 app.py 暴露 app:app；草案命令 `gunicorn --bind 0.0.0.0:8000 app:app`。依赖版本应以实际验证和 deployment/runtime-requirements.lock 对齐后交 A；本次仅在 macOS Python 3.9.6 完成依赖安装和旧统计离线检查，尚未验证 Python3.11 发布包。
+Deployment uses Python 3.11, Flask+boto3 and Gunicorn, with the release package's app.py exposing app:app; draft command `gunicorn --bind 0.0.0.0:8000 app:app`. Dependency versions should be handed to A after actual verification and alignment with deployment/runtime-requirements.lock; this time only dependency installation and the offline check of the old statistics were completed on macOS Python 3.9.6, and the Python3.11 release package is not yet verified.
 
-数据库沿用 A 已选 DynamoDB：独立文档、无需关联，托管多 AZ，按请求计费适合间歇实验；代价是全表统计 Scan 的成本/延迟及当前吞吐上限。表与区域读 handoffs.json。A/C 请在 T04 核对部署与测试可行性；仍需 T07 实现、本地测试和实际云端验收。
+The database stays with the DynamoDB A already chose: independent documents with no joins needed, managed multi-AZ, and on-demand billing that suits intermittent experiments; the trade-offs are the cost/latency of full-table statistics Scans and the current throughput cap. Read the table and region from handoffs.json. A/C, please check deployment and test feasibility in T04; T07 implementation, local testing and actual cloud acceptance are still needed.
 
 ## T07 implementation update (2026-11-07)
 

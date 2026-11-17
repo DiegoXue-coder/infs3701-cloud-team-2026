@@ -1,4 +1,4 @@
-# Network and security section / 网络与安全说明
+# Network and security section
 
 11 November2026 Sydney. A / DiegoXue-coder, AI-assisted drafting from dated10Nov evidence. No new AWS configuration or policy attachment performed. See [architecture PDF](../output/pdf/reading-tracker-architecture.pdf) and [review checklist](architecture-review-2026-11-11.md).
 
@@ -28,12 +28,12 @@ The proposal does not allow DeleteItem, table administration, S3 uploads/listing
 
 Before any real attachment elsewhere, an authorized administrator must review the effective policy set and validate actual allowed and denied operations. No IAM Policy Simulator/Access Analyzer or AWS deny-operation test was run for this draft. Local JSON/static checks are not an effective-permission test. Do not count this proposal as a tested enhancement or as resolution of the broader LabRole limitation.
 
-## 中文速读
+## Quick summary
 
-- 外面只能访问负载均衡器；两台应用机不直接暴露公网。
-- 两台应用机使用同一个数据库，S3只负责保存部署包。
-- 应用访问AWS数据服务时用HTTPS，但用户访问网站、负载均衡到应用目前还是HTTP，需要继续解决。
-- 已写好“正常情况下应用真正需要哪些权限”的草案，但没有修改课程LabRole，也没有冒充已经实现最小权限。
-- 不增加资源、不部署自动扩容；组员可以直接用现有资料审阅这一章。
+- Only the load balancer can be reached from outside; the two application hosts are not exposed directly to the internet.
+- The two application hosts use the same database, and S3 only stores the deployment package.
+- The application uses HTTPS when accessing AWS data services, but users reaching the website, and the load balancer reaching the application, are currently still HTTP, which still needs to be resolved.
+- A draft of "which permissions the application really needs in normal operation" has been written, but the course LabRole was not modified and least privilege is not passed off as implemented.
+- No resources are added and auto scaling is not deployed; teammates can review this chapter directly from the existing material.
 
 References: [1] [AWS IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html); [2] [DynamoDB IAM integration](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/security_iam_service-with-iam.html); [3] [IAM policy evaluation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html), accessed11November2026Sydney. Actual project controls are supported by `evidence/T05/2026-11-10-A-network-security.log` and `evidence/T15/2026-11-10-A-next-preflight.log`.
