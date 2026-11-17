@@ -1,13 +1,13 @@
-关联任务：
+Related task:
 
-## 实际做了什么、为什么
+## What was actually done, and why
 
-## 怎样测试、实际结果和证据
+## How it was tested, actual results and evidence
 
-## 影响与限制
+## Impact and limitations
 
-配置/数据是否变化、如何恢复、下一位成员需要什么：
+Whether configuration/data changed, how to restore it, and what the next member needs:
 
-- [ ] 没有密钥、密码、会话 token、个人签名或隐私文件
-- [ ] 说明、测试和证据已更新
-- [ ] 由另一位成员检查；不使用 closes/fixes 自动关闭任务卡，任务通过 /team approve 完成
+- [ ] No keys, passwords, session tokens, personal signatures or private files
+- [ ] Notes, tests and evidence are updated
+- [ ] Checked by another member; do not use closes/fixes to auto-close task cards, tasks are completed through /team approve

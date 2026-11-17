@@ -1,35 +1,35 @@
-# 作业要求：AI 与组员都先读
+# Assignment requirements: AI and teammates read this first
 
-INFS3701 云架构与 AWS 实践，Term 3, 2026。原始三份文件已于 2026-10-31 归位至学习库 `source_materials/INFS3701/03_assessments/group_assessment/`。此前误放在 INFS3822 目录，现已纠正；本仓库的原件副本始终按 INFS3701 分类，未混入 INFS3822 课件。
+INFS3701 cloud architecture and AWS practice, Term 3, 2026. The three original files were filed on 2026-10-31 in the study library under `source_materials/INFS3701/03_assessments/group_assessment/`. They had earlier been misplaced in the INFS3822 directory, which is now corrected; this repository's copies of the originals have always been classified under INFS3701 and are not mixed with INFS3822 slides.
 
-## 必须实现
+## Must be implemented
 
-- 至少两实例由负载均衡分配请求，或合适的 serverless 等效方案。
-- 至少两个 AZ，具备应对实例/单个 AZ 丢失的设计。
-- 应用无状态，可以增加实例，不把重要状态留在某台服务器。
-- 合理 VPC、公有/私有子网，只有必要入口公开。
-- 有韧性的托管数据库：跨 AZ 关系数据库或托管 NoSQL；只有 S3 不满足要求。
-- Dashboard，以及至少一个有业务意义且实际触发过的 alarm。
-- 最小权限、严格安全组、传输及静态加密；限制要验证、咨询并如实说明。
-- 浏览器可实际使用的后端服务，不能只有静态页面。
+- At least two instances with requests distributed by a load balancer, or a suitable serverless equivalent.
+- At least two AZs, with a design that copes with the loss of an instance or a single AZ.
+- A stateless application to which instances can be added, with no important state left on any one server.
+- A sensible VPC with public/private subnets, exposing only the necessary entry point.
+- A resilient managed database: a multi-AZ relational database or managed NoSQL; S3 alone does not meet the requirement.
+- A dashboard, and at least one alarm that is meaningful for the business and has actually been triggered.
+- Least privilege, strict security groups, encryption in transit and at rest; limitations must be verified, raised with staff and stated honestly.
+- A back-end service that can actually be used in a browser, not just a static page.
 
-## 五项各 5 分
+## Five items, 5 marks each
 
-部署系统、设计报告、架构图、12 个月成本估算、视频。设计报告正文严格少于 4,000 词且少于 8 页，参考文献及附录除外。图和成本文件按 brief 的 under 2 pages 保守各做 1 页 PDF。成本使用 AWS Pricing Calculator，us-east-1，12 个月，注明假设。视频暂按 60 秒内真实操作与架构说明准备。
+Deployed system, design report, architecture diagram, 12-month cost estimate, video. The body of the design report must be strictly under 4,000 words and under 8 pages, excluding references and appendices. Following the brief's "under 2 pages", the diagram and cost files are conservatively made as 1-page PDFs each. Cost uses the AWS Pricing Calculator, us-east-1, 12 months, with assumptions stated. The video is for now prepared as real operation and architecture explanation within 60 seconds.
 
-另有每人独立签认的贡献声明、真实签名封面、代码和过程/AI 记录。官方 brief 截止 2026-11-17 16:00 Australia/Sydney，一人代表上传，提交内容和最新公告复核 Moodle。
+In addition: a contribution statement signed off individually by each person, a genuinely signed cover sheet, code and process/AI records. The official brief deadline is 2026-11-17 16:00 Australia/Sydney; one person uploads on behalf of the group, and the submission contents and latest announcements are to be checked against Moodle.
 
-## 待确认，不能由 AI 擅自消除
+## Awaiting confirmation; the AI must not resolve these on its own
 
-1. 视频 brief 为 1 分钟，rubric 为最多 2 分钟；先按 60 秒制作。
-2. brief 把自动扩容列为增强，rubric checklist 像 core；需 tutor 确认。
-3. brief 要求取证后拆除省预算，也要求部署服务；确认最终资源保留/验收方式。
-4. Lab 的多人访问和角色权限按课程实际允许方式执行。
+1. The brief says the video is 1 minute, the rubric says up to 2 minutes; produce it at 60 seconds for now.
+2. The brief lists auto scaling as an enhancement, while the rubric checklist reads like core; needs tutor confirmation.
+3. The brief requires teardown after collecting evidence to save budget, and also requires a deployed service; confirm the final resource-retention/acceptance approach.
+4. Multi-person access and role permissions in the Lab follow whatever the course actually allows.
 
-基础监控这次是 core，不能用作额外增强。增强采用自动扩容，或按 brief 选择并验证三个 core 以外的 W5–9 主题；T16 暂不启用，待全组决定。
+Basic monitoring is core this time and cannot be used as an extra enhancement. The enhancement is either auto scaling, or choosing and verifying three W5–9 topics beyond core as the brief allows; T16 is not enabled for now, pending a whole-group decision.
 
-## 上次反馈对应的本次规则
+## Rules for this assignment that respond to the previous feedback
 
-开关截图不等于测试成功；服务选择需要具体理由和代价；图、协议和实际部署必须一致；步骤包含区域、资源创建、身份、依赖与代码；成本区分实验用量与 12 个月估算；视频必须实际操作，不能只拼截图；无 AI/贡献/签名记录或残留模板须在提交前修正。
+A screenshot of a switch is not a successful test; service choices need specific reasons and trade-offs; the diagram, protocols and actual deployment must agree; steps include region, resource creation, identity, dependencies and code; cost separates lab usage from the 12-month estimate; the video must show real operation and cannot just stitch screenshots together; missing AI/contribution/signature records or leftover template text must be fixed before submission.
 
-本文件是对原文件的工作摘要。发生冲突时查 `sources/original/assignment/` 原文件和最新 Moodle/tutor 答复，不根据常识编造课程要求。
+This file is a working summary of the original files. In case of conflict, check the originals in `sources/original/assignment/` and the latest Moodle/tutor answers; do not invent course requirements from general knowledge.

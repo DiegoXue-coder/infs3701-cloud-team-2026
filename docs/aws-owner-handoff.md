@@ -1,67 +1,67 @@
-# 你先完成 AWS 基础，组员怎样接手
+# You finish the AWS foundation first; how teammates take over
 
-> 最新实际进展（2026-11-01）：新双机 ALB 基础已创建，业务程序与 HTTPS 尚未完成；以下旧记录按日期保留。优先读 [本轮验证与三人交接](2026-11-01-foundation-verification.md) 和 project/aws-resources.json。
+> Latest actual progress (2026-11-01): the new two-host ALB foundation has been created; the business application and HTTPS are not yet complete; the older records below are kept by date. Read [this round's verification and three-person handoff](2026-11-01-foundation-verification.md) and project/aws-resources.json first.
 
 
-2026-11-01，A=DiegoXue-coder。实时资源清单见 project/aws-resources.json；下一批尚未执行的部署方案见 project/next-deployment.json。下面严格区分已创建和计划，不能把占位健康页面当 Reading Tracker。
+2026-11-01, A=DiegoXue-coder. The live resource inventory is in project/aws-resources.json; the next batch of deployment plans not yet executed is in project/next-deployment.json. What follows strictly separates what was created from what is planned; the placeholder health page must not be treated as Reading Tracker.
 
-## 已经实际完成
+## Actually completed
 
-- VPC vpc-0836d003a70f93405，10.37.0.0/16，四子网跨 us-east-1a/b。实际 API 核对了两个公有子网共享 IGW 默认路由、两个私有子网各自没有公网默认路由，另有自动主路由表；总共四张路由表。
-- DynamoDB 表 infs3701-team-books 为 ACTIVE，主键 record_id（String），按请求计费，读写吞吐上限分别为 10。现有实例的 LabRole 已通过真实 SSM 命令证明可 DescribeTable 和 Scan，表当时为空；没有写入或迁移旧书籍。
-- 新的部署包桶 infs3701-team-artifacts-214018170594 已创建，四项公共访问阻止开启，AES256 加密，策略拒绝非 HTTPS 请求；旧读书记录桶完全不动。
-- 临时构建实例 i-030acdefe159caa87：t3.micro，8 GiB 加密 gp3，无 IAM 角色、无入站规则；安装 Python3.11、Flask、boto3、Gunicorn，控制台日志出现成功标记。创建运行镜像 ami-03616f6b53c85f036，已核实 available、加密；构建实例已停止，磁盘/镜像仍保留。
-- 旧实例/旧网站保留；没有复制它的凭证文件或用户数据到镜像。新镜像只含运行环境和明确写着 infrastructure-only 的健康占位程序，服务由 systemd/Gunicorn 管理的方式已准备，尚未在新私有实例验证。
+- VPC vpc-0836d003a70f93405, 10.37.0.0/16, four subnets across us-east-1a/b. Actual API checks confirmed that the two public subnets share the IGW default route and that neither private subnet has a public default route, plus the automatic main route table; four route tables in total.
+- DynamoDB table infs3701-team-books is ACTIVE, primary key record_id (String), on-demand billing, with read and write throughput caps of 10 each. The existing instance's LabRole was shown by a real SSM command to be able to DescribeTable and Scan, and the table was empty at the time; no old books were written or migrated.
+- The new deployment-package bucket infs3701-team-artifacts-214018170594 was created, with all four public-access blocks on, AES256 encryption and a policy denying non-HTTPS requests; the old reading-records bucket was left completely untouched.
+- Temporary build instance i-030acdefe159caa87: t3.micro, 8 GiB encrypted gp3, no IAM role, no inbound rules; Python3.11, Flask, boto3 and Gunicorn installed, with the success marker appearing in the console log. Runtime image ami-03616f6b53c85f036 was created and verified as available and encrypted; the build instance is stopped, and the disk/image are still kept.
+- The old instance/old website are kept; its credential files and user data were not copied into the image. The new image contains only the runtime environment and a health placeholder application clearly labelled infrastructure-only; running the service under systemd/Gunicorn is prepared but not yet verified on the new private instances.
 
-## 数据库为什么这样选
+## Why the database was chosen this way
 
-读书记录是相互独立的文档，不需要多表关联或跨表事务；当前小规模演示可以用 record_id 定位、应用侧统计。DynamoDB 的托管多 AZ 韧性符合 brief 明确允许的托管 NoSQL 路线；不需要自行维护数据库实例。按请求计费适合不连续的课程测试，不把“RDS 太贵”当作无依据的结论。
+Reading records are independent documents that need no multi-table joins or cross-table transactions; the current small-scale demo can locate items by record_id and compute statistics in the application. DynamoDB's managed multi-AZ resilience matches the managed-NoSQL route the brief explicitly allows; no database instance has to be maintained. On-demand billing suits intermittent course testing; "RDS is too expensive" is not used as an unsupported conclusion.
 
-代价：复杂关联/SQL 查询不方便；Scan 随数据增长成本和延迟会上升，B 要分页并控制数据量；10/10 上限是预算保护，也会限制压力测试，C 应先以小于 1 请求/秒的功能/故障测试取证，提升上限前先复核预算。数据库内置扩展不是应用自动扩容已实现，也不自动获得额外增强分。
+Trade-offs: complex joins/SQL queries are inconvenient; Scan cost and latency rise as data grows, so B must paginate and control data volume; the 10/10 cap protects the budget but also limits load testing, so C should first collect evidence with functional/failure tests below 1 request per second and review the budget before raising the cap. The database's built-in scaling is not implemented application auto scaling and does not automatically earn extra enhancement marks.
 
-依据：[DynamoDB 官方说明](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)、[计费模式](https://aws.amazon.com/dynamodb/pricing/)。
+References: [DynamoDB official documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html), [billing modes](https://aws.amazon.com/dynamodb/pricing/).
 
-## 下一批：已准备，尚未执行
+## Next batch: prepared, not yet executed
 
-- 两台私有 t3.micro，各 8 GiB 加密 gp3，分别放入两个私有子网，不分配公网 IP；需要绑定课程预置 LabInstanceProfile/LabRole。
-- 一个公网 ALB，初期仅 HTTP80，后端8000只接受 ALB 安全组；HTTPS 尚待证书方案。
-- 一个 EC2 Instance Connect Endpoint：SSH22 只接受该维护端点的安全组，不把 SSH 向公网开放。
-- S3/DynamoDB Gateway endpoints，只有两个私有路由表使用；策略限制 LabRole 通过 HTTPS 访问本项目发布包前缀/数据库表。私有实例出站443只允许两项 AWS 服务的前缀列表。
-- 无 NAT，不自动增加持续收费的 NAT 或多个接口终端节点。依赖提前装入干净镜像，发布包经私有 S3 网关路径取得；运维走 EC2 Instance Connect Endpoint，而不是假设私有实例能直接联网 pip install。
+- Two private t3.micro hosts, each with 8 GiB encrypted gp3, placed in the two private subnets with no public IP; they need the course-provisioned LabInstanceProfile/LabRole attached.
+- One public ALB, initially HTTP 80 only, with back-end port 8000 accepting only the ALB security group; HTTPS awaits a certificate approach.
+- One EC2 Instance Connect Endpoint: SSH 22 accepts only that maintenance endpoint's security group, and SSH is not opened to the internet.
+- S3/DynamoDB gateway endpoints, used only by the two private route tables; policies restrict LabRole to accessing this project's release-package prefix/database table over HTTPS. Private-instance outbound 443 is allowed only to the prefix lists of the two AWS services.
+- No NAT; do not automatically add a continuously charged NAT or multiple interface endpoints. Dependencies are installed into a clean image in advance and the release package is fetched over the private S3 gateway path; operations go through the EC2 Instance Connect Endpoint, without assuming private instances can pip install directly from the internet.
 
-网关端点路径依据：[AWS DynamoDB Gateway endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-ddb.html)。维护安全组设计依据：[EC2 Instance Connect Endpoint 安全组](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eice-security-groups.html)。这些是设计依据，不是新私有实例的实测结果。
+Basis for the gateway endpoint path: [AWS DynamoDB Gateway endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-ddb.html). Basis for the maintenance security-group design: [EC2 Instance Connect Endpoint security groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eice-security-groups.html). These are design references, not measured results on the new private instances.
 
-为新实例授予 LabRole 和开放公网入口属于新的访问配置，需要执行时确认。LabRole 比应用实际所需权限宽，Lab 不允许我们新建更窄角色/策略；deployment/policies/recommended-app-role-NOT-ATTACHED.json 只是推荐策略，不声称已附加。Gateway policies 也尚未应用。
+Granting LabRole to new instances and opening a public entry point are new access configuration and need confirmation at execution time. LabRole is broader than the application actually needs, and the Lab does not let us create a narrower role/policy; deployment/policies/recommended-app-role-NOT-ATTACHED.json is only a recommended policy and is not claimed to be attached. The gateway policies have not been applied yet either.
 
-## B 现在可直接做
+## What B can do right now
 
-从 T04/T07 继续。数据库资源已经由 A 建好，不需要 B 获得 AWS 凭证、另建数据库或等待重新选型。配置契约为 READING_TABLE=infs3701-team-books，AWS_DEFAULT_REGION=us-east-1，record_id 为 UUID 字符串。
+Continue from T04/T07. The database resource has already been created by A; B does not need AWS credentials, another database or to wait for a new selection. The configuration contract is READING_TABLE=infs3701-team-books, AWS_DEFAULT_REGION=us-east-1, and record_id is a UUID string.
 
-后续部署包包含 app.py（WSGI app:app）、requirements.txt、所需模块/模板；源码可继续 app/reading_tracker.py，app.py 可作为导入入口。APP_PORT=8000，/health 与 X-App-Instance 约定保留，实例标识从 APP_INSTANCE 取。目标运行环境 Python3.11。默认继续 Flask+boto3；新增依赖先在 requirements 和交付中说明，让 A 准备镜像或离线依赖，不在私有主机临时联网安装。
+The later deployment package contains app.py (WSGI app:app), requirements.txt and the required modules/templates; the source can stay in app/reading_tracker.py with app.py as the import entry point. APP_PORT=8000, the /health and X-App-Instance conventions are kept, and the instance identifier is taken from APP_INSTANCE. Target runtime is Python3.11. Continue with Flask+boto3 by default; state new dependencies in requirements and the delivery first so that A can prepare the image or offline dependencies, and do not install over the network ad hoc on private hosts.
 
-B 交本地模式、DynamoDB 适配、输入约束、分页/统计逻辑、示例请求、实际测试和明晰的发布包。A 之后应用确切 commit 并验证真实云端身份；B 在个人 AI 没有 AWS 权限时不能声称云端读写通过。
+B delivers the local mode, DynamoDB adapter, input constraints, pagination/statistics logic, sample requests, actual tests and a clear release package. A then applies the exact commit and verifies the real cloud identity; when B's personal AI has no AWS permission, B cannot claim cloud read/write passed.
 
-## C 现在可直接做
+## What C can do right now
 
-先做 T08 的可执行测试和虚构数据集，复核 B 的本地版本。设计共享数据、分流、故障、告警、安全的检查步骤。新的 ALB/实例未创建或仅有占位页面时，不报告业务通过。
+First do T08's executable tests and fictional data set, and review B's local version. Design the check steps for shared data, routing, failure, alarm and security. When the new ALB/instances are not created or only show the placeholder page, do not report the business as passing.
 
-监控优先使用 ELB/EC2 原生指标，先交 dashboard/告警配置草稿、指标维度、阈值理由和触发/恢复步骤，不要求 A 临时设计。可考虑“健康目标少于两台”的可用性告警，但实际阈值和周期要解释并验证；不靠未部署的日志代理或自定义指标证明成功。成本需包含实际新资源、镜像/磁盘/ALB及运行时长，不只列 EC2。
+For monitoring, prefer native ELB/EC2 metrics; first deliver a draft dashboard/alarm configuration, metric dimensions, threshold reasoning and trigger/recovery steps, without requiring A to design them on the spot. An availability alarm for "fewer than two healthy targets" can be considered, but the actual threshold and period must be explained and verified; do not rely on undeployed log agents or custom metrics to prove success. Cost must include the actual new resources, image/disks/ALB and running hours, not only EC2.
 
-## 你以后仍需配合什么
+## What you will still need to cooperate on later
 
-| 时点 | 你实际操作 | 组员要提前准备 |
+| When | What you actually do | What teammates prepare in advance |
 | --- | --- | --- |
-| B 第一版可运行 | 从指定版本部署两台，填真实参数 | B 的发布包、依赖、启动、配置与已知问题 |
-| C 监控方案完成 | 应用 dashboard/告警配置 | C 的具体参数/脚本与测试方法 |
-| 联合故障测试 | 按约定停/启指定新实例并恢复 | C 持续请求记录，B 检查应用和数据 |
-| 录制/交付 | 展示实际架构，核对你的章节和贡献 | 三人各写各的理由/步骤，交叉复核 |
+| B's first runnable version | Deploy both hosts from the specified version and fill in real parameters | B's release package, dependencies, startup, configuration and known issues |
+| C's monitoring plan complete | Apply the dashboard/alarm configuration | C's specific parameters/scripts and test method |
+| Joint failure test | Stop/start the specified new instance as agreed and recover | C keeps a continuous request record, B checks the application and data |
+| Recording/delivery | Show the actual architecture, check your chapter and contribution | Each of the three writes their own reasons/steps, with cross-review |
 
-所以你可以先把基础设施做完，但不会在 B/C 尚未交付时就完全退出。把零碎操作合成短部署窗口，组员先写精确请求，减少你反复口头回复。
+So you can finish the infrastructure first, but you will not step away completely while B/C have yet to deliver. Combine small operations into short deployment windows and have teammates write precise requests first, to reduce repeated verbal replies from you.
 
-## HTTPS 待确认
+## HTTPS awaiting confirmation
 
-brief 第2页要求 encryption in transit and at rest，但没有发放域名或要求购买域名。实际检查当前 us-east-1 ACM 证书列表与 Route53 hosted zones 都为空；用户不确定有无自有域名。没有购买/注册域名，也没有通过自签证书绕过浏览器安全提示。向 tutor 的待发问题：个人 Learner Lab 无已知可管理域名时，课程是否提供域名/证书，或认可哪一种 HTTPS 方式？此问题尚未实际发给 tutor，也无答复。
+Page 2 of the brief requires encryption in transit and at rest, but issues no domain and does not require buying one. An actual check showed the current us-east-1 ACM certificate list and Route53 hosted zones are both empty; the user is unsure whether they own a domain. No domain was bought/registered, and no self-signed certificate was used to get around browser security warnings. Question to send to the tutor: when an individual Learner Lab has no known manageable domain, does the course provide a domain/certificate, or which HTTPS approach does it accept? This question has not actually been sent to the tutor and there is no answer.
 
-## 执行前核验补充
+## Additional pre-execution checks
 
-三项 EC2 DryRun 返回 DryRunOperation：携带 LabInstanceProfile 启动私有实例、DynamoDB gateway endpoint、EC2 Instance Connect Endpoint。这是权限/请求预检，不是实际部署或最终网络/端点策略测试。下一批脚本 deployment/launch-foundation.py 默认只输出离线计划，不连接 AWS，只有 --apply 才执行；尚未执行 --apply。运行镜像内实测 Python3.11.18，版本记录在 deployment/runtime-requirements.lock。
+Three EC2 DryRun calls returned DryRunOperation: launching a private instance with LabInstanceProfile, the DynamoDB gateway endpoint, and the EC2 Instance Connect Endpoint. These are permission/request pre-checks, not an actual deployment or a final test of network/endpoint policies. The next-batch script deployment/launch-foundation.py by default only prints an offline plan and does not connect to AWS; only --apply executes; --apply has not been run. Python3.11.18 was measured inside the runtime image, with versions recorded in deployment/runtime-requirements.lock.

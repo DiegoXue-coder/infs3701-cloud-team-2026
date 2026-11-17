@@ -1,13 +1,13 @@
-# 四人配置实际记录 / Four-person setup record
+# Actual record of the four-person setup / Four-person setup record
 
-DiegoXue-coder授权将剩余工作扩为四人，并提供Tenzin的GitHub用户名wyend12。2026-11-08实际查询GitHub公开用户API确认login=wyend12，profile=https://github.com/wyend12；仓库权限查询返回none，pending invitations查询中无该用户。未发送邀请、未授予访问或AWS权限，未用他的身份登录或认领。
+DiegoXue-coder authorised expanding the remaining work to four people and provided Tenzin's GitHub username wyend12. On 2026-11-08 an actual query of GitHub's public user API confirmed login=wyend12, profile=https://github.com/wyend12; the repository permission query returned none, and the pending invitations query did not include this user. No invitation was sent, no access or AWS permission was granted, and his identity was not used to sign in or claim.
 
-实际代码/文件变更：协调器与本机设置增加D；角色预留到wyend12；T19/T20从原计划B/C改为D（实际远程查询均todo且owner=null）；新增英文T25独立准备目标/证据矩阵；英文工作规则、角色指南、开工提示词；静态入口与动态看板包含D；新回执增加英文摘要，原文与结构化字段保留。历史中文回执不重写，不承诺动态自由文本自动翻译。
+Actual code/file changes: the coordinator and local setup add D; the role is reserved for wyend12; T19/T20 changed from B/C in the original plan to D (actual remote queries showed both todo with owner=null); a new English T25 for independently preparing the objectives/evidence matrix; English working rules, role guide and start prompt; the static entry and dynamic dashboard include D; new receipts add an English summary while the original text and structured fields are kept. Historical Chinese receipts are not rewritten, and automatic translation of dynamic free text is not promised.
 
-实际测试：[最终执行日志](../evidence/T02/2026-11-08-four-person-workflow-final-tests.log)，62项通过。包含D绑定幂等、不覆盖他人角色、本人英文认领/partial交付验证与回执、重试不重复回执、最终依赖与自批限制、并发同步锁和原三角色规则。早一轮60项日志保留；新增防止已有认领被重新分配覆盖的检查后，以62项结果为最终版本。
+Actual tests: [final execution log](../evidence/T02/2026-11-08-four-person-workflow-final-tests.log), 62 passed. They cover idempotent D binding, not overwriting other people's roles, the member's own English claim/partial delivery validation and receipts, no duplicate receipts on retry, final dependency and self-approval limits, the concurrent sync lock and the original three-role rules. The earlier 60-test log is kept; after adding a check that prevents an existing claim from being overwritten by reassignment, the 62-test result is the final version.
 
-本机使用setup_member.py --role D（未--install）验证D计划检查入口；没有声称在Tenzin电脑完成安装/授权。任何fake GitHub测试仅为离线单元测试，不能写为wyend12真人已加入。D还需由持有人邀请Write权限、本人接受、本人AI/Git授权、doctor/start和实际首项认领。
+On this machine setup_member.py --role D (without --install) was used to verify D's plan-check entry; no claim is made that installation/authorisation was completed on Tenzin's computer. Any fake GitHub tests are offline unit tests only and cannot be written up as the real wyend12 having joined. D still needs the holder's invitation with Write permission, his own acceptance, his own AI/Git authorisation, doctor/start and an actual first claim.
 
-下次成员可直接使用[prompts/START-en.md](../prompts/START-en.md)与[docs/member-D.md](member-D.md)。A/B/C/D分工见[four-person-plan.md](four-person-plan.md)。本轮未恢复或改变AWS，B报告的503原因仍未知。
+Next time the member can use [prompts/START-en.md](../prompts/START-en.md) and [docs/member-D.md](member-D.md) directly. The A/B/C/D split is in [four-person-plan.md](four-person-plan.md). AWS was not restored or changed this round, and the cause of the 503 reported by B is still unknown.
 
-同步时发现T01保留了历史管理员角色迁移字段，通用冲突检查不应拦截该历史记录。检查已限定为本次显式重分配的T19/T20，新增测试证明历史owner_role不被改写。[最终兼容性测试](../evidence/T02/2026-11-08-four-person-compatibility-tests.log)63项通过；前轮60/62项日志按原时间保留。
+During synchronisation it was found that T01 keeps a historical administrator role-migration field, which the general conflict check should not block. The check is now limited to T19/T20, which were explicitly reassigned this time, and a new test shows the historical owner_role is not rewritten. [Final compatibility tests](../evidence/T02/2026-11-08-four-person-compatibility-tests.log): 63 passed; the earlier 60/62-test logs are kept at their original times.

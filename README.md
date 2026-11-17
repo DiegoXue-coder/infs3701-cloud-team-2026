@@ -1,86 +1,86 @@
-# INFS3701 四人云服务协作中心 / Four-person team hub
+# INFS3701 four-person cloud service collaboration hub / Four-person team hub
 
-**11/11可直接复核：** [架构图PDF/预览/可编辑源文件](docs/architecture-review-2026-11-11.md) · [网络与安全章节](docs/network-security-chapter-2026-11-11.md) · [老师问题草稿，未发送](docs/tutor-questions-ready-en.md)。自动扩容已由负责人暂缓；旧准备文件不代表部署授权。图据10Nov实际证据，HTTPS未完成。
+**11 Nov, ready for direct review:** [architecture diagram PDF/preview/editable source](docs/architecture-review-2026-11-11.md) · [network and security chapter](docs/network-security-chapter-2026-11-11.md) · [draft questions for the tutor, not sent](docs/tutor-questions-ready-en.md). Auto scaling has been deferred by the project owner; old preparation files do not represent deployment authorisation. The diagram is based on actual 10 Nov evidence; HTTPS is not complete.
 
-**11/10安全准备：** [已验证控制、HTTPS实际限制和2→3台扩容草案](docs/security-next-steps-2026-11-10.md)。仅准备，未新增云资源，T15尚未完成；B/C可并行复核，不必等D。
+**10 Nov security preparation:** [verified controls, actual HTTPS limitations and a draft 2→3 instance scale-out plan](docs/security-next-steps-2026-11-10.md). Preparation only, no new cloud resources, T15 not yet complete; B/C can review in parallel without waiting for D.
 
-**11/10收尾入口：** [还差什么与完成顺序](docs/closeout-plan-2026-11-10.md) · [英文报告工作稿](docs/design-report-working.md) · [要求/证据矩阵](docs/requirements-evidence-matrix-2026-11-10.md) · [已找回的业务告警与同期指标](docs/monitoring-reconciliation-2026-11-10.md)。A已临时推进T25/T19，不等待D回复；这不是D的贡献或最终验收通过。
+**10 Nov closeout entry point:** [what is still missing and the completion order](docs/closeout-plan-2026-11-10.md) · [English report working draft](docs/design-report-working.md) · [requirements/evidence matrix](docs/requirements-evidence-matrix-2026-11-10.md) · [recovered business alarm and metrics from the same period](docs/monitoring-reconciliation-2026-11-10.md). A has temporarily advanced T25/T19 without waiting for D's reply; this is not D's contribution or final acceptance.
 
-**来这里看进度、领任务、交证据，再和你自己的 AI 一起做。** 云服务在 AWS 运行，本仓库负责把四个人的工作接起来。
+**Come here to see progress, claim tasks and hand in evidence, then work with your own AI.** The cloud service runs on AWS; this repository connects the four members' work.
 
 **Tenzin / wyend12: [English setup and your work](docs/member-D.md) · [Copy this English prompt](prompts/START-en.md) · [Four-person responsibilities](docs/four-person-plan.md).** Accept your invitation and authenticate your own GitHub/AI first. Your role assignment is not a task claim or a verified connection.
 
-**最新业务交接（2026-11-07）：** [双实例程序已部署，B/C从这里开始云端独立复核](docs/business-handoff-2026-11-07.md)。包含真实网址、06c2292版本、两台标签、读写/重启证据与各自下一步；HTTPS和小组最终验收尚未完成。
+**Latest business handoff (2026-11-07):** [the two-instance application is deployed; B/C start independent cloud review from here](docs/business-handoff-2026-11-07.md). It includes the real URL, version 06c2292, the two instance labels, read/write/restart evidence and each person's next step; HTTPS and the group's final acceptance are not yet complete.
 
-→ **[新成员自助开工 / Self-service entry](docs/self-service.md)**
+→ **[Self-service start for new members / Self-service entry](docs/self-service.md)**
 
-→ [在线任务入口](LIVE_BOARD.md) · [进度看板](DASHBOARD.md) · [全部任务](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) · [每天开始的开场语](prompts/START.md) · [首次加入](docs/onboarding.md)
+→ [Online task entry](LIVE_BOARD.md) · [progress dashboard](DASHBOARD.md) · [all tasks](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) · [daily opening prompt](prompts/START.md) · [first-time joining](docs/onboarding.md)
 
-## 每天只需对 AI 说
+## All you need to say to your AI each day
 
-> 我是 GitHub 用户名 ___。请先读取这个仓库的 AGENTS.md，确认我的角色和 GitHub 最新任务，告诉我项目进度、我今天先做什么，再带我一步步完成。结束时整理真实交付并更新任务，等同步确认。
+> I am GitHub user ___. Please first read this repository's AGENTS.md, confirm my role and my latest GitHub task, tell me the project progress and what I should do first today, then take me through it step by step. At the end, organise the real delivery and update the task, and wait for synchronisation to be confirmed.
 
-第一次需让 AI 工具获得你自己的 GitHub 访问权限，或打开本仓库的本地副本。仅给普通聊天一个 private 链接不会自动授予读取权限。之后可继续用简短的“开始今天的任务”。
+The first time, you need to give the AI tool your own GitHub access, or open a local copy of this repository. Giving an ordinary chat a private link does not automatically grant read access. After that you can simply say "start today's task".
 
-## 协作怎样运转
+## How collaboration works
 
-1. AI 读取最新 Issue，按前置任务和本人角色推荐工作。
-2. 在任务卡评论 `/team claim B`，等待系统确认认领。
-3. 配置 AWS、编写代码或制作材料，保留真实证据。
-4. 提交带执行记录的交付到默认分支；部分成果用 `/team report 文件路径`，完整交付用 `/team submit 文件路径` 进入“等检查”。两者都有编号回执。
-5. 另一位成员检查后评论 `/team approve 检查说明`，才进入“已完成”。
-6. AI 运行仓库同步助手，刷新 [看板](DASHBOARD.md) 和 AI 可读的 [状态快照](data/snapshot.json)。
+1. The AI reads the latest Issue and recommends work based on prerequisite tasks and the member's role.
+2. Comment `/team claim B` on the task card and wait for the system to confirm the claim.
+3. Configure AWS, write code or produce materials, and keep real evidence.
+4. Submit the delivery with its execution record to the default branch; use `/team report <file path>` for partial results and `/team submit <file path>` for a full delivery, which enters "awaiting check". Both produce numbered receipts.
+5. After another member checks it and comments `/team approve <check notes>`, it becomes "completed".
+6. The AI runs the repository sync helper to refresh the [dashboard](DASHBOARD.md) and the AI-readable [state snapshot](data/snapshot.json).
 
-当前采用**聊天时同步**：每次开始时 AI 运行 `python scripts/team.py --user 本人用户名 start`；更新任务时运行同一助手的 command 功能。它读取本人已有的 GitHub 授权，不调用收费 AI API、不控制 AWS。读任务、计划和检查由每个人自己的 AI 协助。
+The current mode is **synchronise while chatting**: at each start the AI runs `python scripts/team.py --user <own username> start`; when updating a task it runs the same helper's command function. It reads the member's existing GitHub authorisation, calls no paid AI API and does not control AWS. Reading tasks, planning and checking are assisted by each person's own AI.
 
-GitHub Actions 的后台刷新配置已保留，但账号当前因付款/额度限制无法启动运行，已暂停以免反复失败；没有修改账单或提高限额。此时仅在网页发评论不会自动刷新，需要任一有写权限成员的 AI 运行同步助手。详情见 [当前系统状态](docs/system-status.md)。
+The GitHub Actions background-refresh configuration is kept, but the account currently cannot start runs because of payment/quota limits, so it is paused to avoid repeated failures; billing was not changed and limits were not raised. In this state a comment posted on the web page alone does not refresh automatically; the AI of any member with write access needs to run the sync helper. See [current system status](docs/system-status.md) for details.
 
-## 并行方式
+## Working in parallel
 
-[四人当前分工](docs/four-person-plan.md)：A操作AWS/架构，B应用/数据，C测试/监控/成本，D英文报告/证据核对/视频统筹。准备可并行，最终验收保留必要条件；[原三人计划](docs/parallel-plan.md)保留为历史。
+[Current four-person split](docs/four-person-plan.md): A operates AWS/architecture, B application/data, C testing/monitoring/cost, D English report/evidence audit/video coordination. Preparation can run in parallel, while final acceptance keeps its necessary conditions; the [original three-person plan](docs/parallel-plan.md) is kept as history.
 
-## 四个角色
+## The four roles
 
-| 角色 | 主要负责 | 当前成员 |
+| Role | Main responsibility | Current member |
 | --- | --- | --- |
-| A | 网络、服务器、统一入口、部署环境、架构图 | DiegoXue-coder（你） |
-| B | 应用、数据代码、独立验证、应用/数据库章节 | Alex4325Li |
-| C | 监控、测试、故障取证、成本、贡献记录汇总 | Marina057 |
-| D | 英文目标/证据核对、总报告整合、视频统筹 | Tenzin / wyend12（访问与本人开工待验证） |
+| A | Network, servers, single entry point, deployment environment, architecture diagram | DiegoXue-coder (you) |
+| B | Application, data code, independent verification, application/database chapter | Alex4325Li |
+| C | Monitoring, testing, failure evidence, cost, collation of contribution records | Marina057 |
+| D | English objectives/evidence audit, overall report integration, video coordination | Tenzin / wyend12 (access and own start pending verification) |
 
-每个任务有主责、协作者、检查标准和前置任务。A负责AWS实际配置，B/C提供技术内容和实验证据，D整合英文报告与呈现；每人保留原作者归属、各自技术章节和真实贡献，使用本人GitHub身份。
+Each task has an owner, collaborators, check criteria and prerequisite tasks. A is responsible for the actual AWS configuration, B/C provide technical content and experimental evidence, and D integrates the English report and presentation; each person keeps original authorship, their own technical chapter and real contribution, using their own GitHub identity.
 
-## 分类方式
+## How things are organised
 
-| 内容 | 在哪里 |
+| Content | Where |
 | --- | --- |
-| 按周分好的原始课件与示例 | sources/original/course/02_weekly_materials/week_XX/ |
-| 三份小组作业原件 | sources/original/assignment/ |
-| AI 检索文本与文件校验 | sources/text/、sources/manifest.json |
-| 实时任务卡和角色 | GitHub Issues；project/config.json 绑定 A/B/C/D |
-| 真实交付、测试、截图和日志 | deliveries/ 与各任务所引用的证据文件 |
-| AI 工作规则与操作手册 | AGENTS.md、CLAUDE.md、prompts/、docs/ |
-| 在线访问和进度摘要 | LIVE_BOARD.md（筛选入口）、DASHBOARD.md（同步快照） |
+| Original slides and examples, sorted by week | sources/original/course/02_weekly_materials/week_XX/ |
+| The three original group-assignment files | sources/original/assignment/ |
+| AI-searchable text and file checksums | sources/text/, sources/manifest.json |
+| Live task cards and roles | GitHub Issues; project/config.json binds A/B/C/D |
+| Real deliveries, tests, screenshots and logs | deliveries/ and the evidence files each task references |
+| AI working rules and operating manuals | AGENTS.md, CLAUDE.md, prompts/, docs/ |
+| Online access and progress summary | LIVE_BOARD.md (filtered entry), DASHBOARD.md (synchronised snapshot) |
 
-[如何做连接测试](docs/connection-test.md) · [在线与自动刷新的区别](docs/online-board.md)
+[How to run a connection test](docs/connection-test.md) · [the difference between online and auto-refresh](docs/online-board.md)
 
-## 资料与记录
+## Materials and records
 
-- [报告取材入口](docs/report-evidence-index.md)：按章节查找实际截图、日志、配置与回执，以及图片下载/嵌入报告的方法。
-- [资料索引](sources/INDEX.md)：原始作业文件、现有相关课件、AI 可检索文本、缺失清单及校验值。
-- [作业要求与冲突](docs/assignment-requirements.md)：不能遗漏的核心要求、交付和待确认问题。
-- [三人操作手册](docs/execution-guide.md)：做什么、怎么做、先后顺序和联合检查节点。
-- [任务定义](project/tasks.json)：计划和验收；实时状态在对应 Issue，不手改快照。
-- [交付模板](templates/delivery.json)、[会议决定](docs/decisions.md)、[环境记录](docs/environment.md)。
-- [工作结束怎样上报](docs/reporting.md)：实际截图/日志、测试结果、回执、复核；看板显示最近记录，完整回执在 data/receipts.json。
-- [协议](docs/team-protocol.md)：认领、进度、阻塞、提交、复核及恢复。
+- [Report source-material entry](docs/report-evidence-index.md): find actual screenshots, logs, configuration and receipts by chapter, and how to download images or embed them in the report.
+- [Material index](sources/INDEX.md): original assignment files, existing related slides, AI-searchable text, the list of missing items and checksums.
+- [Assignment requirements and conflicts](docs/assignment-requirements.md): core requirements that must not be missed, deliverables and questions awaiting confirmation.
+- [Three-person operating manual](docs/execution-guide.md): what to do, how, in what order, and the joint checkpoints.
+- [Task definitions](project/tasks.json): plan and acceptance; live state is in the corresponding Issue, do not hand-edit the snapshot.
+- [Delivery template](templates/delivery.json), [meeting decisions](docs/decisions.md), [environment record](docs/environment.md).
+- [How to report at the end of work](docs/reporting.md): actual screenshots/logs, test results, receipts, review; the dashboard shows recent records and full receipts are in data/receipts.json.
+- [Protocol](docs/team-protocol.md): claiming, progress, blocking, submission, review and recovery.
 
-## 当前边界
+## Current boundaries
 
-用户已确认升级自己的 Reading Tracker（Option A）。[代码入口](app/reading_tracker.py)与[运行说明](app/README.md)可用；现已发布双私有机与共享DynamoDB，并由A验证真实读写、跨实例读回和重启保留；B/C独立云端复核、HTTPS及报告等最终交付仍需完成。截止为 **2026-11-17 16:00（悉尼）**，内部节点是建议；Moodle 更新和 tutor 对冲突的答复应记录后再调整。
+The user has confirmed upgrading their own Reading Tracker (Option A). The [code entry point](app/reading_tracker.py) and [run notes](app/README.md) are available; two private hosts with shared DynamoDB are now released, and A has verified real read/write, cross-instance readback and persistence after restart; B/C independent cloud review, HTTPS and final deliverables such as the report still need to be completed. The deadline is **2026-11-17 16:00 (Sydney)**; internal milestones are suggestions; Moodle updates and tutor answers on conflicts should be recorded before adjusting.
 
-仓库必须保持私有；不部署公开 Pages，不上传账号密码、AWS 密钥、私人数据或带签名/学号的个人文件。只邀请有权使用课程材料的实际组员。
+The repository must stay private; do not deploy public Pages, and do not upload account passwords, AWS keys, private data or personal files with signatures/student IDs. Invite only actual teammates who are entitled to use the course materials.
 
-## 当前应用与 AWS 协作
+## Current application and AWS collaboration
 
-已选择 [Reading Tracker 代码](app/reading_tracker.py)，按 [三人共同管理 AWS](docs/shared-aws.md) 统一集成。保留应用功能，升级网络/计算/数据库与监控；不因重建环境就丢掉现有应用。
+[Reading Tracker code](app/reading_tracker.py) has been selected and is integrated as described in [three people jointly managing AWS](docs/shared-aws.md). Keep the application's features and upgrade networking/compute/database and monitoring; do not lose the existing application just because the environment is rebuilt.

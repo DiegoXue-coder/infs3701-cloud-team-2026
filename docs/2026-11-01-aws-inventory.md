@@ -1,28 +1,28 @@
-# 2026-11-01：你今天的 AWS 环境盘点
+# 2026-11-01: today's inventory of your AWS environment
 
-状态：T05 进行中，真实浏览器只读盘点已完成一轮；不是部署成功或最终验收。已启动今日 Lab，会恢复已有实例，未新建资源。
+Status: T05 in progress; one round of real, read-only browser inventory is complete; this is not a successful deployment or final acceptance. Today's Lab was started, which restores existing instances; no new resources were created.
 
-| 项目 | 实际结果 |
+| Item | Actual result |
 | --- | --- |
-| 区域与余额 | us-east-1；显示已用 $1.30/$50，约余 $48.70，存在更新延迟 |
-| 旧 EC2 | INFS3701-Week2-EC2 / i-0bdbde44eb450f334 / t3.micro / us-east-1a；运行中 |
-| 原网络 | VPC vpc-0524ecd6aeeb47b61；subnet-08fdfb8bd68d62433；路由尚未盘点 |
-| 实例角色 | IAM role 显示空（—），尚未绑定；IMDSv2 Required |
-| 安全组 | INFS3701-Week2-web-sg / sg-0a2612289ccca5dce；22 和 80 向 0.0.0.0/0 开放，出站 All |
-| 系统盘 | vol-0b3fe0452d4345c18；8 GiB EBS，未加密 |
-| 扩展组件 | EC2 仪表板显示负载均衡 0、Auto Scaling Groups 0；不是最终架构 |
-| 旧网页 | 当次 HTTP 访问连接被拒绝；还未定位程序/监听/启动配置原因 |
-| S3 | infs3701-reading-notes-inbox，us-east-1；books/、notes/、version-test.txt 仍在，未读取内容 |
-| 可用区 | 控制台列出 us-east-1a 至 us-east-1f；第二 AZ 的实际部署权限/容量尚未验证 |
+| Region and balance | us-east-1; shows $1.30/$50 used, about $48.70 left, with an update delay |
+| Old EC2 | INFS3701-Week2-EC2 / i-0bdbde44eb450f334 / t3.micro / us-east-1a; running |
+| Original network | VPC vpc-0524ecd6aeeb47b61; subnet-08fdfb8bd68d62433; routes not yet inventoried |
+| Instance role | IAM role shows empty (—), not yet attached; IMDSv2 Required |
+| Security group | INFS3701-Week2-web-sg / sg-0a2612289ccca5dce; 22 and 80 open to 0.0.0.0/0, outbound All |
+| System disk | vol-0b3fe0452d4345c18; 8 GiB EBS, not encrypted |
+| Scaling components | EC2 dashboard shows 0 load balancers and 0 Auto Scaling Groups; not the final architecture |
+| Old web page | HTTP access at the time was refused; the application/listener/startup-configuration cause is not yet located |
+| S3 | infs3701-reading-notes-inbox, us-east-1; books/, notes/ and version-test.txt are still there, contents not read |
+| Availability Zones | The console lists us-east-1a to us-east-1f; actual deployment permission/capacity in a second AZ is not yet verified |
 
-## 给组员的直接交接
+## Direct handoff to teammates
 
-- B：继续从仓库 app/reading_tracker.py 开发，本地模式不需要此 Lab 凭证。旧实例未配置角色且网页未恢复，不把它当现成可用后端。数据库读写代码与资源要求在 T04/T07 交接，不复制旧会话密钥。
-- C：当前没有可以声称业务可用的云端 BASE_URL。先运行本地测试与请求工具；把以上角色、SSH 暴露、磁盘加密列入安全核验项，不能把发现问题写成已经修好。
-- A（你）：下一步盘点角色/网络路径及数据库与 TLS 可行性，再准备最小部署配置。先保留旧桶与旧实例，不 Reset、不删除数据。修正设置时逐项记录，不让架构图先写成 HTTPS。
+- B: continue developing from app/reading_tracker.py in the repository; local mode does not need this Lab's credentials. The old instance has no role configured and the web page is not restored, so do not treat it as a ready back end. Database read/write code and resource requirements are handed over in T04/T07; do not copy old session keys.
+- C: there is currently no cloud BASE_URL that can be claimed as business-ready. Run the local tests and request tool first; add the role, SSH exposure and disk encryption items above to the security checks, and do not write a discovered problem up as already fixed.
+- A (you): next, inventory the role/network path and the feasibility of the database and TLS, then prepare a minimal deployment configuration. Keep the old bucket and old instance for now; no Reset, no data deletion. Record each setting as it is corrected, and do not let the architecture diagram say HTTPS first.
 
-## 尚待完成
+## Still to do
 
-数据库实际资源与权限、LabRole/实例配置文件、网络路由、证书/域名验证、部署预算。今天没有新建数据库/网络/实例或改安全组，不把 T05 标完成。
+Actual database resources and permissions, LabRole/instance profile, network routes, certificate/domain verification, deployment budget. No database/network/instance was created and no security group was changed today; T05 is not marked complete.
 
-真实操作记录：[browser-audit.log](../evidence/T05/2026-11-01-browser-audit.log)。截图位于 evidence/T05/2026-11-01-*.png。旧公网地址会随实例启动变化，不把它写成正式服务入口。
+Real operation record: [browser-audit.log](../evidence/T05/2026-11-01-browser-audit.log). Screenshots are at evidence/T05/2026-11-01-*.png. The old public address changes each time the instance starts; do not record it as the official service entry point.

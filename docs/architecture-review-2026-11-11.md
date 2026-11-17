@@ -1,15 +1,15 @@
-# Architecture review / 架构图交接
+# Architecture review and diagram handoff
 
 Prepared 11 November 2026, Sydney, by A / DiegoXue-coder with Codex. Based on **10 November AWS evidence**, not a new live AWS inspection. T17 partial preparation; T15 and independent technical review are not complete.
 
-## Files / 文件
+## Files
 
 - [One-page architecture PDF](../output/pdf/reading-tracker-architecture.pdf): A3 landscape, English labels, official AWS symbols; submission candidate pending HTTPS resolution and independent review.
 - [PNG preview](../output/pdf/reading-tracker-architecture.png): viewable in GitHub and usable as a report/video figure; use the PDF for the diagram deliverable.
 - [Editable generator](../scripts/build_architecture_pdf.py) and [icon provenance](../assets/aws/manifest.json): future AI can edit labels/layout and regenerate. No paid design account required. Run from repository root with Python/reportlab, then render using Poppler. Do not change labels without checking deployment evidence.
 - [Security/network explanation and unimplemented permission proposal](network-security-chapter-2026-11-11.md).
 
-## How to read it / 怎么看
+## How to read it
 
 1. Browser -> internet gateway -> one logical ALB enabled in the two public subnets, on **HTTP80**.
 2. ALB -> either private EC2/Gunicorn host on **HTTP8000**. Each EC2 has its own encrypted8GiB gp3 EBS root volume.
@@ -18,7 +18,7 @@ Prepared 11 November 2026, Sydney, by A / DiegoXue-coder with Codex. Based on **
 
 DynamoDB and S3 are regional managed services outside the VPC drawing, not additional EC2 servers or databases installed in a subnet. The two gateway endpoint paths are route-table integrations, not endpoint instances. AWS's internal replicas are not drawn as group-owned servers.
 
-## Trace the drawing to real evidence / 对照依据
+## Trace the drawing to real evidence
 
 | Figure element | Evidence / exact mapping |
 | --- | --- |
@@ -33,7 +33,7 @@ DynamoDB and S3 are regional managed services outside the VPC drawing, not addit
 
 The unused maintenance endpoint, stopped runtime builder/AMI pipeline and unrelated cafe/old individual resources are off the operational request path. They remain inventoried separately. Diagram omission is not proof of deletion; retained project disks/snapshots remain relevant to costs.
 
-## B/C independent review checklist / 给组员复核
+## B/C independent review checklist
 
 - Compare AZ, subnet CIDR, instance IDs, EBS and exact ports with evidence, rather than only checking appearance.
 - Confirm S3 is described as artifacts and DynamoDB as shared business data; do not claim old S3 record migration.

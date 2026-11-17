@@ -1,31 +1,31 @@
-# 12个月成本估算输入草稿
+# Draft inputs for the 12-month cost estimate
 
-T08 / Marina057 / 2026-11-04。区域 us-east-1，币种USD。这里只整理服务和假设，没有生成AWS Pricing Calculator估算、报价或成本PDF。Lab余额为历史观测，不作本次费用或年度价格依据。
+T08 / Marina057 / 2026-11-04. Region us-east-1, currency USD. This only organises services and assumptions; no AWS Pricing Calculator estimate, quote or cost PDF was produced. The Lab balance is a historical observation and is not a basis for this cost or annual pricing.
 
-## 稳定小流量场景（供T18填计算器）
+## Steady low-traffic scenario (for T18 to enter into the calculator)
 
-| 服务 | 假设输入 | 需确认的计费项 |
+| Service | Assumed input | Billing items to confirm |
 | --- | --- | --- |
-| EC2 | 2台t3.micro，Linux，按需，共8760小时/台/年；月平均730小时/台 | 机型/系统/区域、CPU surplus credit策略；不承诺节省计划 |
-| EBS | 两块8GiB gp3，共16GiB，全年；不额外预置IOPS/吞吐 | calculator包含的基准IOPS/吞吐；重启/停止后的磁盘保留费用 |
-| ALB | 1台全年8760小时；示例100000请求/月，平均响应20KiB、请求2KiB | 活跃/新连接、规则、处理字节四类LCU；示例不是测量；公网IPv4按实际地址小时单列以免漏算 |
-| DynamoDB | on-demand，示例10000次写/月、100000次最终一致读/月、每条约1KiB、存储1GiB | 按读写计费单位及Scan分页放大重算；备份/PITR若未启用不假定已包含 |
-| S3发布桶 | Standard约1GiB；1000 PUT、10000 GET/月 | 请求、存储、日志是否启用；旧个人S3桶不自动纳入最终业务 |
-| AMI/EBS快照 | 示例8GiB有效快照存储，须用实际快照账单量修订 | AMI不是免费磁盘副本；增量快照不按逻辑容量盲算 |
-| CloudWatch | 现有1个dashboard、1个标准alarm；原生指标，未启用详细EC2监控 | 免费额度不保证适用；自定义指标/日志摄入和留存若新增另计 |
-| 数据传输 | 示例2GiB互联网出站/月，跨AZ流量单独估计 | ALB处理量与互联网出站不是同一计费项；避免重复或遗漏 |
-| 公网IPv4 | ALB两AZ，先假设2个地址全年；最终读回实际分配情况 | EC2两私有机无公网地址；旧EC2及构建资源若保留需另列 |
-| 网络端点 | 已有S3/DynamoDB gateway；无NAT/收费interface endpoint | 不给未部署的NAT或接口端点捏造数量；将来改架构须重算 |
+| EC2 | 2 t3.micro, Linux, on-demand, 8760 hours per instance per year; monthly average 730 hours per instance | Instance type/OS/region, CPU surplus-credit policy; no savings plan promised |
+| EBS | Two 8 GiB gp3 volumes, 16 GiB total, all year; no extra provisioned IOPS/throughput | Baseline IOPS/throughput included by the calculator; disk retention cost after restart/stop |
+| ALB | 1 for the full 8760 hours; example 100000 requests/month, average response 20 KiB, request 2 KiB | The four LCU dimensions: active/new connections, rules, processed bytes; the example is not a measurement; public IPv4 listed separately by actual address-hours to avoid omission |
+| DynamoDB | on-demand, example 10000 writes/month, 100000 eventually consistent reads/month, about 1 KiB per item, 1 GiB storage | Recalculate by read/write request units and Scan pagination amplification; backup/PITR not assumed included if not enabled |
+| S3 release bucket | Standard, about 1 GiB; 1000 PUT, 10000 GET/month | Requests, storage, whether logging is enabled; the old personal S3 bucket is not automatically included in the final business |
+| AMI/EBS snapshot | Example 8 GiB of effective snapshot storage, to be revised with the actual snapshot billed size | An AMI is not a free disk copy; incremental snapshots are not blindly costed at logical capacity |
+| CloudWatch | Existing 1 dashboard, 1 standard alarm; native metrics, detailed EC2 monitoring not enabled | Free tier not guaranteed to apply; custom metrics/log ingestion and retention costed separately if added |
+| Data transfer | Example 2 GiB internet egress/month, cross-AZ traffic estimated separately | ALB processed volume and internet egress are different billing items; avoid double counting or omission |
+| Public IPv4 | ALB in two AZs, first assume 2 addresses all year; read back the actual allocation at the end | The two private EC2 hosts have no public address; the old EC2 and build resources are listed separately if kept |
+| Network endpoints | Existing S3/DynamoDB gateways; no NAT or charged interface endpoints | Do not invent quantities for undeployed NAT or interface endpoints; recalculate if the architecture changes |
 
-月请求量是工作负载假设，不是实测流量。8760小时为365天年度场景；若计算器按730小时/月则12个月也为8760。区域、公网IP、税费、免费额度、传输方向和计费单位须在最终Calculator中逐项核对。
+Monthly request volume is a workload assumption, not measured traffic. 8760 hours is a 365-day annual scenario; if the calculator uses 730 hours/month, 12 months is also 8760. Region, public IPs, taxes, free tier, transfer direction and billing units must be checked item by item in the final Calculator.
 
-## T18完成步骤
+## Steps to complete T18
 
-1. A提供最终资源清单、实例运行策略、保留磁盘/快照、实际监控和加密配置；B提供读写模式与每次页面读取的Scan开销。
-2. 使用 [AWS Pricing Calculator](https://calculator.aws/#/estimate)，创建上述us-east-1场景；保留价格日期、输入截图、可分享估算链接/导出记录和适用折扣说明。计算器不要求创建实际AWS资源。
-3. 基础年度成本为月度稳定费用×12，加一次性费用；把实验期运行小时和全年服务场景分开。请求量分别用基础的0.1倍/10倍作敏感性比较，别把所有固定费用一起乘10。
-4. 输出严格少于2页的PDF（保守1页），含服务小计、12个月合计、关键假设、未计项目和成本与韧性的取舍。当前没有价格与合计，因此不是最终估算。
+1. A provides the final resource list, instance running policy, retained disks/snapshots, actual monitoring and encryption configuration; B provides the read/write pattern and the Scan cost of each page load.
+2. Use the [AWS Pricing Calculator](https://calculator.aws/#/estimate) to create the us-east-1 scenario above; keep the price date, input screenshots, a shareable estimate link/export record and a note on applicable discounts. The calculator does not require creating actual AWS resources.
+3. Base annual cost is steady monthly cost × 12 plus one-off costs; separate lab-period running hours from the full-year service scenario. Compare sensitivity with request volumes at 0.1× and 10× the base, without multiplying all fixed costs by 10.
+4. Output a PDF strictly under 2 pages (conservatively 1 page) with service subtotals, the 12-month total, key assumptions, items not costed and the trade-off between cost and resilience. There are currently no prices or total, so this is not the final estimate.
 
-实验预算策略：与A约定短时联合取证窗口，检查结束后按课程资源保留要求处理。停止EC2不等于停止ALB、EBS或快照费用；不在未确认要求时自动删除资源。
+Lab budget strategy: agree a short joint evidence window with A and, after checks end, handle resources according to the course's retention requirements. Stopping EC2 does not stop ALB, EBS or snapshot charges; do not automatically delete resources while the requirement is unconfirmed.
 
-依据：[AWS Pricing Calculator入门](https://docs.aws.amazon.com/pricing-calculator/latest/userguide/getting-started.html)。以上容量/流量均为项目草稿假设。
+Reference: [Getting started with AWS Pricing Calculator](https://docs.aws.amazon.com/pricing-calculator/latest/userguide/getting-started.html). All capacities/traffic above are draft project assumptions.

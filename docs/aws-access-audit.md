@@ -1,31 +1,31 @@
-# 三个人能否分别登录同一课程 Lab：检查结果
+# Can three people each sign in to the same course Lab: findings
 
-检查日期：2026-10-31，Australia/Sydney。本人登录后，由 AI 只读查看该 Lab 实际说明，并通过其 AWS 按钮进入控制台。
+Check date: 2026-10-31, Australia/Sydney. After the user signed in, the AI viewed the Lab's actual instructions read-only and entered the console through its AWS button.
 
-**结论：这份 Learner Lab 明确禁止创建用户或组，不能采用“新建两位组员的 IAM 用户及密码”方案。未创建账号、密码或更改权限。**
+**Conclusion: this Learner Lab explicitly prohibits creating users or groups, so the approach of "creating IAM users and passwords for the two teammates" cannot be used. No accounts or passwords were created and no permissions were changed.**
 
-## 实际依据
+## Actual basis
 
-- 来源：[已登录课程的 Launch Lab](https://awsacademy.instructure.com/courses/188838/modules/items/18668931)，Vocareum Readme，ZH-CN，说明更新时间 2025-06-24。
-- “AWS Identity and Access Management (AWS IAM)”段落原文：“受到极度限制的访问。不能创建用户或组。您可以创建服务相关的角色，但除此之外的角色，您均不能创建。”
-- 同段说明已预置 LabRole；EC2 可通过 LabInstanceProfile 使用它。这是服务访问 AWS 的机制，不能当作组员登录账号。
-- Lab 显示 Ready；通过 AWS 按钮成功进入 Console Home，区域 us-east-1。
-- 检查时显示 Used $1.2 of $50，界面剩余约 $48.80。该数字有延迟，不代表本次架构的实测成本。
+- Source: [Launch Lab of the signed-in course](https://awsacademy.instructure.com/courses/188838/modules/items/18668931), Vocareum Readme, ZH-CN, instructions last updated 2025-06-24.
+- The "AWS Identity and Access Management (AWS IAM)" paragraph says (translated from the Chinese Readme): "Extremely limited access. You cannot create users or groups. You can create service-linked roles, but you cannot create any other roles."
+- The same paragraph says LabRole is pre-provisioned; EC2 can use it through LabInstanceProfile. This is the mechanism for services to access AWS and cannot be treated as a teammate login account.
+- The Lab showed Ready; entering Console Home through the AWS button succeeded, region us-east-1.
+- At the time of the check it showed Used $1.2 of $50, about $48.80 remaining on screen. The figure is delayed and does not represent the measured cost of this architecture.
 
-## 结论的边界
+## Limits of the conclusion
 
-依据是当前 Lab 自身的限制说明；未调用 CreateUser 作失败实验，没有声称取得实际 API 拒绝日志。不通过创建用户或其他身份路线试探或绕过明确限制。
+The basis is the current Lab's own statement of restrictions; CreateUser was not called as a failure experiment, and no actual API denial log is claimed. Do not probe or work around the explicit restriction by creating users or by other identity routes.
 
-课程是否另有教师配置的小组环境或独立访问入口，仍需 tutor 确认。结论仅针对当前个人 Learner Lab。
+Whether the course also has a staff-configured group environment or a separate access entry point still needs tutor confirmation. The conclusion applies only to the current individual Learner Lab.
 
-未盘点旧 EC2/S3/数据，未验证应用、两个 AZ、HTTPS、资源级权限和架构预算，T05 仍未完成。没有读取 AWS Details、提取临时凭证、Reset、End Lab、删除资源或启动部署。
+The old EC2/S3/data were not inventoried, and the application, two AZs, HTTPS, resource-level permissions and architecture budget were not verified; T05 is still not complete. AWS Details was not read, temporary credentials were not extracted, and there was no Reset, End Lab, resource deletion or deployment.
 
-## 当前协作方式
+## Current way of collaborating
 
-1. 这份 Lab 可作为集成候选环境；用户已选择自己作为持有人与部署负责人（DiegoXue-coder）。
-2. A 准备网络和部署配置，B 准备应用和数据代码，C 准备测试、监控和证据，三人并行提交 GitHub。
-3. 另一人检查改动后，由获准的环境持有人执行；共享屏幕时区分实际操作者、指导者和检查者。
-4. 记录 commit、步骤、日志/截图、测试结果，再上报任务回执。
-5. 由真人询问 tutor：是否提供三人各自身份访问同一环境的课程方案？收到真实答复再更新计划。暂不交换个人密码、密钥或会话 token。
+1. This Lab can serve as the candidate integration environment; the user has chosen to be the holder and deployment owner (DiegoXue-coder).
+2. A prepares the network and deployment configuration, B prepares the application and data code, C prepares tests, monitoring and evidence, and all three submit to GitHub in parallel.
+3. After another person checks a change, the approved environment holder executes it; when sharing a screen, distinguish the actual operator, the guide and the checker.
+4. Record the commit, steps, logs/screenshots and test results, then report the task receipt.
+5. A real person asks the tutor: does the course provide a way for three people to access the same environment with their own identities? Update the plan after a real answer arrives. For now, do not exchange personal passwords, keys or session tokens.
 
-操作流程见 [shared-aws.md](shared-aws.md)。
+For the operating process see [shared-aws.md](shared-aws.md).

@@ -1,18 +1,18 @@
-# C 监控复核与联合实验步骤
+# C's monitoring review and joint experiment steps
 
-2026-11-04；本次仅离线检查已有配置/记录，未登录AWS或执行云端实验。
+2026-11-04; this time only an offline check of existing configuration/records, with no AWS login or cloud experiment.
 
-## 已有基线的独立文件检查
+## Independent file check of the existing baseline
 
-核对 `deployment/configure-monitoring-baseline.py`、`project/aws-resources.json`、`project/handoffs.json` 和 `docs/2026-11-01-foundation-verification.md`，现有健康目标告警定义一致：AWS/ApplicationELB、HealthyHostCount、Minimum、ALB+TG维度、60秒、连续2点低于2、缺失notBreaching。此检查只证明仓库文件相符，不证明当前控制台配置或健康。
+Checking `deployment/configure-monitoring-baseline.py`, `project/aws-resources.json`, `project/handoffs.json` and `docs/2026-11-01-foundation-verification.md`, the existing healthy-targets alarm definition is consistent: AWS/ApplicationELB, HealthyHostCount, Minimum, ALB+TG dimensions, 60 seconds, 2 consecutive points below 2, missing data notBreaching. This check only shows the repository files agree; it does not prove the current console configuration or health.
 
-该阈值检测双机冗余下降：1台健康仍可能持续提供服务。它不是业务交易、数据库写入或整站中断告警。notBreaching可能使全无数据看起来未触发，应结合独立HTTP可用性样本和人工核查数据新鲜度。没有通知收件人，不能声称已发送邮件。
+The threshold detects a drop in two-host redundancy: with 1 healthy host the service may still keep running. It is not an alarm for business transactions, database writes or a whole-site outage. notBreaching can make a total absence of data look untriggered, so it should be combined with independent HTTP availability samples and a manual check of data freshness. There is no notification recipient, so it cannot be claimed that an email was sent.
 
-`deployment/c-t08-alarm-review.json` 为精确的基线期望读回值，不是部署脚本。A应先读回实际配置，与此文件比较；若要改阈值或缺失策略，先在任务卡说明并保存变更前配置。无需为了C的贡献重复创建同名告警。
+`deployment/c-t08-alarm-review.json` holds the exact expected baseline readback values and is not a deployment script. A should first read back the actual configuration and compare it with this file; to change the threshold or missing-data policy, first explain it on the task card and save the configuration from before the change. There is no need to recreate an alarm with the same name for the sake of C's contribution.
 
-## dashboard核对表
+## Dashboard checklist
 
-| 信号 | 维度/统计/周期 | 用途与限制 |
+| Signal | Dimensions/statistic/period | Purpose and limitations |
 | --- | --- | --- |
 | HealthyHostCount / UnHealthyHostCount | LoadBalancer+TargetGroup；Minimum/Maximum；60s | 冗余/异常目标；同时读target health确认真实实例 |
 | RequestCount / HTTPCode_Target_5XX_Count | LoadBalancer；Sum；60s | 流量与后端5xx；另看HTTPCode_ELB_5XX_Count区分LB错误；低流量时不要只看百分比 |
