@@ -1,19 +1,19 @@
-# Reading Tracker · 12 个月 AWS 成本草案
+# Reading Tracker · 12-month AWS cost draft
 
-**USD 40.44／月，USD 485.28／12 个月，预付 USD 0.00。** 2026-11-07 在 AWS Pricing Calculator 中按 `us-east-1` 配置六项。计算场景为全年运行的双实例演示，按月 730 小时、全年 8,760 小时。以下是计算器摘要转录，金额未含税。 [AWS Pricing Calculator](https://calculator.aws/#/estimate)
+**USD 40.44 per month, USD 485.28 for 12 months, upfront USD 0.00.** Six items were configured in the AWS Pricing Calculator for `us-east-1` on 2026-11-07. The scenario is a two-instance demo running all year, at 730 hours per month and 8,760 hours per year. The following is a transcription of the calculator summary; amounts exclude tax. [AWS Pricing Calculator](https://calculator.aws/#/estimate)
 
-| 计费项 | 输入假设 | USD／月 |
+| Billing item | Input assumptions | USD per month |
 | --- | --- | ---: |
-| EC2 与 gp3 | Linux 按需 2 × t3.micro，100% 运行率，各 8 GB gp3 | 16.46 |
-| Application Load Balancer | 1 台全年。约 100,000 请求/月，处理量约 0.003 GB/小时，新连接约 0.04/秒、持续 1 秒。使用简单路由，规则额外负荷留空 | 16.45 |
-| 公网 IPv4 | 2 个 ALB 使用中的地址，全年。实例位于私有子网 | 7.30 |
-| DynamoDB Standard | 按需，项目平均 1 KB，存储 0.001 GB，月 0.8 百万次强一致读取单位等效输入，月 2 次标准写入 | 0.10 |
-| CloudWatch | 1 dashboard、1 标准告警指标，计算器当前假设下的显示费用 | 0.10 |
-| S3 Standard | 发布包 1 GB，月 1,000 次 PUT 类请求、10,000 次 GET 类请求 | 0.03 |
-| **合计** | **六项基础场景** | **40.44** |
+| EC2 and gp3 | Linux on-demand 2 × t3.micro, 100% utilisation, 8 GB gp3 each | 16.46 |
+| Application Load Balancer | 1 for the full year. About 100,000 requests/month, about 0.003 GB/hour processed, about 0.04 new connections/second lasting 1 second. Simple routing, extra rule load left blank | 16.45 |
+| Public IPv4 | 2 addresses in use by the ALB, all year. Instances are in private subnets | 7.30 |
+| DynamoDB Standard | On-demand, average item 1 KB, storage 0.001 GB, input equivalent to 0.8 million strongly consistent read units per month, 2 standard writes per month | 0.10 |
+| CloudWatch | 1 dashboard, 1 standard alarm metric; the charge shown under the calculator's current assumptions | 0.10 |
+| S3 Standard | 1 GB release package, 1,000 PUT-class and 10,000 GET-class requests per month | 0.03 |
+| **Total** | **Six-item base scenario** | **40.44** |
 
-**读取假设。** 示例从 20 条虚构记录起步，每月净增 2 条，全年平均约 32 条。每项约 1 KiB 时，一个全表 Scan 近似读取 32 KiB，以 4 KiB 单位估约 8 个强一致读单位。每月 100,000 次业务首页读取对应约 800,000 个单位。`/health` 无数据库读，新增后的页面重定向读计入首页请求。表增长、分区、分页、项目大小和吞吐上限会改变开销与可用性，待用实际容量数据校准。 [AWS DynamoDB Scan](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html)
+**Read assumption.** The example starts from 20 fictional records and adds a net 2 per month, averaging about 32 over the year. At about 1 KiB per item, one full-table Scan reads roughly 32 KiB, estimated at about 8 strongly consistent read units in 4 KiB units. 100,000 business home-page reads per month correspond to about 800,000 units. `/health` makes no database read, and the page redirect read after an insert is counted in home-page requests. Table growth, partitions, pagination, item size and throughput caps change the cost and availability, to be calibrated with actual capacity data. [AWS DynamoDB Scan](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html)
 
-**定稿前复核。** A 核对账单中的公网 IPv4 实际数量、AMI/快照使用量、保留卷、账户 CloudWatch 免费额度和出站用量。当前六项合计未单列快照、额外日志、突发 CPU 额度、额外传输或未部署的 HTTPS 相关服务。约 2 GB/月互联网出站可按账户剩余额度复核。示例若另保留 8 GB 标准快照且适用 USD 0.05/GB-month，增加约 USD 4.80/年。实验 Lab 的实际运行时长和额度另行记录。 [AWS EBS 计价](https://aws.amazon.com/ebs/pricing/) · [AWS 数据传输计价](https://aws.amazon.com/ec2/pricing/on-demand/)
+**Review before finalising.** A checks the actual number of public IPv4 addresses on the bill, AMI/snapshot usage, retained volumes, the account's CloudWatch free tier and egress usage. The current six-item total does not separately list snapshots, extra logs, burst CPU credits, extra transfer or undeployed HTTPS-related services. About 2 GB/month of internet egress can be reviewed against the account's remaining allowance. As an example, keeping an additional 8 GB standard snapshot at USD 0.05/GB-month would add about USD 4.80 per year. The Lab's actual running hours and credit are recorded separately. [AWS EBS pricing](https://aws.amazon.com/ebs/pricing/) · [AWS data transfer pricing](https://aws.amazon.com/ec2/pricing/on-demand/)
 
-估算输入和结果保留在小组私有仓库供复核。计算器导出会生成可公开访问的共享地址，本次留档采用摘要转录。
+The estimate's inputs and results are kept in the group's private repository for review. A calculator export generates a publicly accessible share address, so a summary transcription is used for the record this time.

@@ -1,16 +1,16 @@
-# 从代码到可用系统的真实步骤
+# Real steps from code to a usable system
 
-由 A/B 实际操作后填写；另一人照着复核。当前仅为模板，没有声称已可复现。
+Filled in by A/B after actually operating; another person follows it to review. Currently only a template, with no claim that it is reproducible yet.
 
-1. 前提：区域、允许角色、余额、软件/依赖版本。
-2. 创建网络：VPC、AZ、子网、路由、出口或 endpoint、安全组。
-3. 创建数据层：表/数据库、结构、加密、身份/凭证管理、应用访问路径。
-4. 创建实例：镜像、规格、EBS、角色、访问与维护方式。
-5. 部署代码：仓库与 commit、依赖安装、环境变量名（不含秘密）、真实启动命令、重启策略。
-6. 接入入口：目标组、端口、健康检查、监听器、TLS。
-7. 监控：dashboard、alarm、测试与恢复。
-8. 验证：真实浏览器操作、共享数据、分流、故障。
-9. 更新：怎样部署相同版本到两台机器，怎样恢复上版，数据变化如何处理。
-10. 取证和清理：备份、录制、验收保留条件、逐项删除确认。
+1. Prerequisites: region, permitted role, balance, software/dependency versions.
+2. Create the network: VPC, AZs, subnets, routes, egress or endpoints, security groups.
+3. Create the data tier: table/database, schema, encryption, identity/credential management, application access path.
+4. Create instances: image, size, EBS, role, access and maintenance method.
+5. Deploy code: repository and commit, dependency installation, environment variable names (no secrets), real start command, restart policy.
+6. Connect the entry point: target group, port, health check, listener, TLS.
+7. Monitoring: dashboard, alarm, test and recovery.
+8. Verification: real browser operation, shared data, routing, failure.
+9. Updates: how to deploy the same version to both machines, how to restore the previous version, how data changes are handled.
+10. Evidence and cleanup: backup, recording, conditions for keeping resources for acceptance, item-by-item deletion confirmation.
 
-每步填写：操作者、真实命令或控制台操作、实际参数、成功判断、证据链接、遇到的问题。不要填入密钥。
+For each step fill in: operator, real command or console action, actual parameters, success criterion, evidence link, problems encountered. Do not enter keys.

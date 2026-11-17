@@ -1,39 +1,39 @@
-# 环境与资源记录（不含秘密）
+# Environment and resource record (no secrets)
 
-> 最新实际进展（2026-11-01）：新双机 ALB 基础已创建，业务程序与 HTTPS 尚未完成；以下旧记录按日期保留。优先读 [本轮验证与三人交接](2026-11-01-foundation-verification.md) 和 project/aws-resources.json。
+> Latest actual progress (2026-11-01): the new two-host ALB foundation has been created; the business application and HTTPS are not yet complete; the older records below are kept by date. Read [this round's verification and three-person handoff](2026-11-01-foundation-verification.md) and project/aws-resources.json first.
 
 
-区域：2026-10-31 控制台为 us-east-1；最终部署区域待确认，正式成本需 us-east-1
-Lab 持有人：DiegoXue-coder（用户已指定自己负责 AWS）。当前 Lab 禁止创建用户/组，由获准持有人执行；教师额外多人入口待确认。
-统一入口：待部署
-当前部署的代码 commit：待部署
-应用端口/启动方式/健康路径：待确认
-HTTPS/证书方案及验证：待确认
-应用数据层与访问路径：待确认
-允许使用的实例角色：Readme 预置 LabRole / LabInstanceProfile；具体实例是否已绑定尚未检查。
+Region: console showed us-east-1 on 2026-10-31; final deployment region to be confirmed, the formal cost requires us-east-1
+Lab holder: DiegoXue-coder (the user has designated himself responsible for AWS). The current Lab prohibits creating users/groups, so the approved holder executes; a separate multi-user entry from teaching staff awaits confirmation.
+Single entry point: to be deployed
+Currently deployed code commit: to be deployed
+Application port/start method/health path: to be confirmed
+HTTPS/certificate approach and verification: to be confirmed
+Application data tier and access path: to be confirmed
+Instance role permitted for use: the Readme pre-provisions LabRole / LabInstanceProfile; whether specific instances have it attached has not been checked.
 
-| 资源 | 用途 | AZ/子网 | 非敏感标识 | 负责人 | 创建/变更时间 | 删除/保留安排 |
+| Resource | Purpose | AZ/subnet | Non-sensitive identifier | Owner | Created/changed | Delete/keep arrangement |
 | --- | --- | --- | --- | --- | --- | --- |
 
-| 日期 | 实验前余额 | 实验后余额 | 运行时长 | 运行资源与说明 | 记录人 |
+| Date | Balance before experiment | Balance after experiment | Running time | Running resources and notes | Recorded by |
 | --- | --- | --- | --- | --- | --- |
 
-不要记录访问密钥、会话 token、密码或凭证文件内容。
+Do not record access keys, session tokens, passwords or the contents of credential files.
 
-2026-10-31 只读检查时预算界面：已用 $1.20 / $50，显示剩余约 $48.80（存在更新延迟，非部署成本测量）。
+Budget screen during the read-only check on 2026-10-31: $1.20 / $50 used, showing about $48.80 remaining (with an update delay; not a measurement of deployment cost).
 
-## 2026-11-01 盘点更新
+## 2026-11-01 inventory update
 
-详见 [本次盘点](2026-11-01-aws-inventory.md)。旧实例运行，但网页连接被拒绝；未绑定角色、SSH 全网开放、8 GiB 系统盘未加密，均未修改。旧 S3 books/ 仍在，未读取内容。Lab 显示已用 $1.30/$50。正式服务入口/数据库/部署版本仍未确认。
+See [this inventory](2026-11-01-aws-inventory.md). The old instance is running but the web connection is refused; no role attached, SSH open to the whole internet and the 8 GiB system disk unencrypted, none of which was changed. The old S3 books/ is still there, contents not read. The Lab shows $1.30/$50 used. The official service entry point/database/deployed version are still unconfirmed.
 
-### 角色绑定进展
+### Role-binding progress
 
-2026-11-01 用户本人完成 LabInstanceProfile 绑定，AI 在实例详情实际核对 IAM role=LabRole，并保存 role-bound 截图。仅证明绑定完成，不证明数据库可访问。Session Manager 暂显示 Not connected；显示的凭证错误时间早于本次绑定，不能据此认定绑定失败。已准备 EC2 Instance Connect 浏览器连接页，尚未验证登录、运行命令或修复旧网页。
+On 2026-11-01 the user himself completed the LabInstanceProfile binding; the AI actually checked IAM role=LabRole in the instance details and saved the role-bound screenshot. This only proves the binding is done, not that the database is accessible. Session Manager shows Not connected for now; the credential error shown is timed before this binding and cannot be used to conclude that the binding failed. The EC2 Instance Connect browser connection page is prepared; login, running commands and fixing the old web page have not yet been verified.
 
-### 旧网站恢复成功（后续状态）
+### Old website restored successfully (later status)
 
-2026-11-01 用户在 EC2 Instance Connect 中验证角色凭证来源 iam-role，并以排除静态凭证文件/变量的方式手动启动旧 app.py。AI 独立访问旧公网 HTTP 地址，页面显示已有 3 条记录；终端 GET / 返回 200。原先“连接被拒绝”已被本次成功访问更新，历史盘点保留。当前只是前台 Flask+S3 单实例基线，未验证写入、重启保活或最终架构，不能当成小组最终服务。证据：evidence/T05/2026-11-01-legacy-recovery.log。
+On 2026-11-01 the user verified in EC2 Instance Connect that the role credential source is iam-role, and manually started the old app.py in a way that excludes static credential files/variables. The AI independently visited the old public HTTP address and the page showed 3 existing records; a terminal GET / returned 200. The earlier "connection refused" is superseded by this successful access, and the historical inventory is kept. This is currently only a foreground Flask+S3 single-instance baseline, with writes, keep-alive across restart and the final architecture unverified, and cannot be treated as the group's final service. Evidence: evidence/T05/2026-11-01-legacy-recovery.log.
 
-## 新基础资源已创建
+## New foundation resources created
 
-2026-11-01 新 VPC 与四子网、DynamoDB ACTIVE 表、私有加密部署桶已实际建立；精确资源与验证边界见 project/aws-resources.json 和 docs/aws-owner-handoff.md。新私有实例/负载均衡尚未创建；正式 BASE_URL 仍未提供。旧实例 SSM 现已 Online，其 LabRole 读取新表测试通过，不能把它写成新私有子网连接已通过。
+On 2026-11-01 the new VPC with four subnets, the ACTIVE DynamoDB table and the private encrypted deployment bucket were actually created; exact resources and verification limits are in project/aws-resources.json and docs/aws-owner-handoff.md. The new private instances/load balancer are not yet created; the official BASE_URL is still not provided. The old instance's SSM is now Online and its LabRole test read of the new table passed, which cannot be written up as connectivity from the new private subnets having passed.

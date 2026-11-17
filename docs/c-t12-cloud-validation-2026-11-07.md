@@ -1,23 +1,23 @@
-# T12 业务读写与双实例分流
+# T12 business read/write and two-instance routing
 
-Marina057 在 2026-11-07 23:42–23:44 AEDT 从本机访问正式演示入口。发布版本 `06c2292cdf0aca80f050709b8172fac3595b54cc` 来自 A 的主机发布记录。此次采集使用公网业务 HTTP。 [部署交接](business-handoff-2026-11-07.md)
+Marina057 accessed the official demo entry point from her own machine on 2026-11-07 23:42–23:44 AEDT. The released version `06c2292cdf0aca80f050709b8172fac3595b54cc` comes from A's host release record. This collection used public business HTTP. [Deployment handoff](business-handoff-2026-11-07.md)
 
-| 核对 | 实际结果 |
+| Check | Actual result |
 | --- | --- |
-| `/health` | `az-a`、`az-b` 均为 HTTP 200，`stage=reading-tracker`，JSON 实例名与 `X-App-Instance` 一致 |
-| 原记录 | A 保留的虚构记录在两台实例均出现一次，状态 reading、12/120 页、评分 4 |
-| 独立业务新增与读回 | 一次 POST 返回 HTTP 302，由 `az-b` 写入 `Fictional Marina T12 4efe5cd92f30`。两台均读回唯一记录，状态 reading、7/35 页、评分 3 |
-| 业务首页分流 | 2026-11-07 12:42:48.354–12:44:04.734 UTC，连续 30 次 GET，HTTP 200 共 30 次，`az-a` 15、`az-b` 15，错误和缺失实例标签均为 0 |
+| `/health` | `az-a` and `az-b` both HTTP 200, `stage=reading-tracker`, JSON instance name matches `X-App-Instance` |
+| Original record | The fictional record kept by A appeared once on each instance, status reading, 12/120 pages, rating 4 |
+| Independent business insert and readback | One POST returned HTTP 302 and `az-b` wrote `Fictional Marina T12 4efe5cd92f30`. Both hosts read back a single record, status reading, 7/35 pages, rating 3 |
+| Business home-page routing | 2026-11-07 12:42:48.354–12:44:04.734 UTC, 30 consecutive GETs, HTTP 200 for all 30, `az-a` 15, `az-b` 15, with 0 errors and 0 missing instance labels |
 
-采样器在每次请求结束后等待 2 秒。客户端收到响应头的耗时中位数为 572 ms，P95 为 688 ms（nearest rank，30 个样本）。此窗口只反映一次正常双机测试。 [执行日志](../evidence/T12/2026-11-07-Marina057-cloud-run.log) · [原始请求 JSONL](../evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl)
+The sampler waits 2 seconds after each request finishes. Median client time to response headers was 572 ms and P95 was 688 ms (nearest rank, 30 samples). This window reflects only one normal two-host test. [Execution log](../evidence/T12/2026-11-07-Marina057-cloud-run.log) · [original request JSONL](../evidence/T12/2026-11-07-Marina057-cloud-samples.jsonl)
 
-## A/C 联合窗口交接
+## A/C joint-window handoff
 
-请 Diego 提供一个双方可参加的 20–30 分钟窗口，建议安排在 11 月 8–9 日悉尼时间，并打开 Lab。C 会使用已有虚构记录复核，避免在停机或超时期间新增。
+Diego, please provide a 20–30 minute window both can attend, suggested for 8–9 November Sydney time, and open the Lab. C will review using the existing fictional records, to avoid inserting during a stop or timeout.
 
-1. A 确认两台仍运行 `06c2292`，两目标健康。打开 `infs3701-team-dashboard`，确认 ALB 和目标组维度及 UTC 时间范围。C 给出本轮 12:42–12:44 UTC 时间窗，A 导出对应的健康目标、请求、目标及 ALB 5xx、响应时间图。若旧窗口不可用，在联合实验前留一段新基线。
-2. A 检查 `infs3701-team-healthy-targets-below-two` 的当前参数和历史，核对 60 秒、两次评估、健康目标最小值低于 2，以及缺失数据策略。双方先记录 UTC 起始时间、健康数和告警状态。C 以每 2 秒一次启动连续业务 GET，将停机前、期间和恢复后的日志保存在同一新文件。
-3. 在 T11/T12 联合前置满足后，A 只停指定实例并记录 API 确认时间。C 核对幸存实例 HTTP 响应、保留记录和目标健康。A 保存实际 ALARM 状态及触发时间。C 报告失败数与采样覆盖，记录切换到幸存标签的时间窗。
-4. A 启动原实例并确认两目标恢复 healthy，保存 OK 状态和 UTC 时间。C 核对两标签再次出现及同一记录读回。若另一目标异常，A 立即恢复已停实例，C 保存实际异常，不再追加故障动作。
+1. A confirms both hosts still run `06c2292` and both targets are healthy. Open `infs3701-team-dashboard` and confirm the ALB and target-group dimensions and the UTC time range. C provides this round's 12:42–12:44 UTC window, and A exports the matching healthy-targets, requests, target and ALB 5xx, and response-time graphs. If the old window is unavailable, leave a new baseline period before the joint experiment.
+2. A checks the current parameters and history of `infs3701-team-healthy-targets-below-two`, verifying 60 seconds, two evaluations, minimum healthy targets below 2 and the missing-data policy. Both first record the UTC start time, healthy count and alarm state. C starts continuous business GETs every 2 seconds and saves the logs from before, during and after the stop in the same new file.
+3. After the T11/T12 joint prerequisites are met, A stops only the specified instance and records the API confirmation time. C checks the surviving instance's HTTP responses, the retained records and target health. A saves the actual ALARM state and trigger time. C reports the failure count and sampling coverage, and records the time window of the switch to the surviving label.
+4. A starts the original instance and confirms both targets are healthy again, saving the OK state and UTC time. C checks that both labels appear again and the same record is read back. If the other target becomes abnormal, A immediately restores the stopped instance, and C saves the actual anomaly without adding further failure actions.
 
-当前上报为部分成果。T12 正式验收等待 T10 和同期 CloudWatch 证据。业务告警触发及恢复和单实例故障分别归 T13/T14。 [既有监控方案](c-t08-monitoring.md)
+The current report is a partial result. Formal T12 acceptance awaits T10 and CloudWatch evidence from the same period. Business-alarm trigger and recovery, and single-instance failure, belong to T13/T14 respectively. [Existing monitoring plan](c-t08-monitoring.md)

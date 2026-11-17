@@ -1,83 +1,83 @@
-# 三个人共同完成云服务：执行手册
+# Three people completing a cloud service together: execution manual
 
-INFS3701 云架构与 AWS 实践 | 制定于 2026-10-31 | 所有日期均为悉尼时间
+INFS3701 cloud architecture and AWS practice | Drawn up 2026-10-31 | All dates are Sydney time
 
-最新版日程、交接和单人 AWS 操作安排见 [parallel-plan.md](parallel-plan.md)，发生差异以该计划与最新任务卡为准。这份是可以拿到今晚会议上分工的执行草案。现已确认升级用户自己的 Reading Tracker；人员姓名、数据库和权限仍要在首次会议确认。AWS 项目尚未实际部署；GitHub 私有协作中心和任务卡已建立，当前运行方式见 README 与 docs/system-status.md。代码入口为 app/reading_tracker.py，采用 Option A。
+For the latest schedule, handoffs and single-person AWS operation arrangements see [parallel-plan.md](parallel-plan.md); where they differ, that plan and the latest task cards prevail. This is an execution draft that can be taken to tonight's meeting to divide the work. Upgrading the user's own Reading Tracker is now confirmed; member names, the database and permissions still need confirming at the first meeting. The AWS project is not yet actually deployed; the private GitHub collaboration hub and task cards are set up, and the current way of operating is in the README and docs/system-status.md. The code entry point is app/reading_tracker.py, using Option A.
 
-正式 brief 截止为 **2026-11-17 16:00**；以下 11/3、11/6 等日期都是建议内部节点。目标是 11/16 完成可提交版本。官方证据为 `source_materials/INFS3701/03_assessments/group_assessment/` 中的 INFS3701 作业说明和评分表；此前会议提纲已逐项梳理。
+The formal brief deadline is **2026-11-17 16:00**; dates below such as 3 Nov and 6 Nov are suggested internal milestones. The goal is a submittable version by 16 Nov. The official evidence is the INFS3701 assignment brief and marking sheet in `source_materials/INFS3701/03_assessments/group_assessment/`; the earlier meeting outline has been worked through item by item.
 
-## 1. 我们最终做出什么
+## 1. What we finally build
 
-保留一个小而能用的读书记录网页：添加记录、查看记录、显示统计。把背后的系统升级成：
+Keep a small, usable reading-record web page: add records, view records, show statistics. Upgrade the system behind it to:
 
-`用户浏览器 → 总入口（负载均衡器） → 两个不同可用区的应用服务器 → 同一份托管数据库`
+`User's browser → single entry point (load balancer) → two application servers in different Availability Zones → one shared managed database`
 
-再加上观察运行情况的监控页面和能真正触发的告警。可用区可以理解为同一地区中分开的机房区域；无状态表示重要数据不能只放在某台应用服务器的内存或本地文件里。
+Plus a monitoring page to observe how it is running and an alarm that can really be triggered. An Availability Zone can be understood as a separate data-centre area within the same region; stateless means important data cannot live only in one application server's memory or local files.
 
-先把“坏一台仍可用、两台读写同一份数据、有告警证据”做好。新账号系统、推荐算法、复杂界面等先不加入范围。是否有真实用户、真实流量必须如实说；可把测试并发量作为设计假设，不能编造用户规模。
+First get "still available when one fails, two servers read and write the same data, with alarm evidence" right. A new account system, recommendation algorithms, complex interfaces and the like are left out of scope for now. Whether there are real users and real traffic must be stated honestly; test concurrency can be used as a design assumption, but user scale must not be invented.
 
-**选型草案：**延续 Flask + 两台 EC2 + Application Load Balancer；数据库先比较 DynamoDB 和 Multi-AZ RDS。若只是小型独立书籍记录，可先验证 DynamoDB 路线；若课程实验、查询需求或权限更适合关系数据库，则选 Multi-AZ RDS。选择不是价格结论，最终以需求、可运行性、权限和计算器估算为依据。
+**Draft selection:** continue with Flask + two EC2 + Application Load Balancer; for the database first compare DynamoDB and Multi-AZ RDS. If it is only small independent book records, the DynamoDB route can be verified first; if course labs, query needs or permissions suit a relational database better, choose Multi-AZ RDS. The choice is not a price conclusion; it finally rests on requirements, operability, permissions and the calculator estimate.
 
-## 2. 三个人的责任
+## 2. The three people's responsibilities
 
-| 代号 | 建议人员 | 主要负责 | 必须交给其他人的东西 |
+| Code | Suggested person | Main responsibility | What must be handed to the others |
 | --- | --- | --- | --- |
-| A | 你（DiegoXue-coder） | 网络、服务器、总入口、部署环境 | 能访问的地址、资源配置、部署步骤、架构图 |
-| B | 成员二 | 网页后端、数据库读写、两台服务器使用同一版本 | 可运行代码、数据字段、启动方式、功能演示 |
-| C | 成员三 | 监控、测试、证据、成本估算、视频整合 | 测试结果、告警证据、估算、视频草稿 |
+| A | You (DiegoXue-coder) | Network, servers, single entry point, deployment environment | A reachable address, resource configuration, deployment steps, architecture diagram |
+| B | Member two | Web back end, database read/write, both servers running the same version | Runnable code, data fields, start method, feature demo |
+| C | Member three | Monitoring, testing, evidence, cost estimate, video integration | Test results, alarm evidence, estimate, video draft |
 
-谁负责不等于谁独自做完：A 部署需要 B 的代码；C 测试需要 A/B 配合。每个人都写自己的设计理由、步骤和限制，不把整个报告丢给 C。A 最终整合架构，B 整合报告，C 整合视频与证据；三人交叉检查。
+Being responsible does not mean doing it all alone: A's deployment needs B's code; C's testing needs A/B's cooperation. Everyone writes their own design reasons, steps and limitations, and the whole report is not dumped on C. A finally integrates the architecture, B the report, and C the video and evidence; the three cross-check.
 
-先用以上代号分工，今晚把名字写到任务板。看空闲时间调整，不预设三人实际贡献相等。
+Divide the work by the codes above first and write the names on the task board tonight. Adjust for free time, and do not presume the three people's actual contributions are equal.
 
-## 3. 时间怎么走，什么可以同时做
+## 3. How the time runs and what can be done at the same time
 
-| 时间 | A 同时做 | B 同时做 | C 同时做 | 阶段结束要拿到什么 |
+| Time | A at the same time | B at the same time | C at the same time | What to have at the end of the stage |
 | --- | --- | --- | --- | --- |
-| 10/31 | 共同定题、确认权限/余额 | 共同确认旧代码是否可复现 | 共同建任务板、记录待问事项 | 项目、负责人、协作位置、第一次集成时间已定 |
-| 11/1–11/3 | 验证网络/服务器、HTTPS 和实验室权限 | 确定数据库，改好单实例应用 | 测试清单、报告骨架、成本假设 | 第一版应用能把新记录写入托管数据库 |
-| 11/4–11/6 | 接上总入口和第二台服务器 | 让两台运行同一版代码，共享数据 | 检查两台读写，制作监控页面 | 统一入口可用，两台都健康，数据互通 |
-| 11/7–11/10 | 配合故障测试、安全核对及选定增强 | 修复测试问题，整理复现步骤 | 实测告警、记录故障与分流、计算正式成本 | 核心要求都有证据，决定是否完成增强 |
-| 11/11–11/13 | 定稿架构图和网络章节 | 整合报告，别人按步骤复现 | 联合录制、剪视频、定稿成本 | 五项交付初稿齐全 |
-| 11/14–11/16 | 核对部署与图 | 核对文字、代码、引用 | 核对视频、证据、文件完整性 | 全员签认的可提交版本 |
-| 11/17 16:00 前 | 已指定提交人上传 | 核对内容及可打开性 | 保存提交回执 | 正式提交完成 |
+| 31 Oct | Jointly settle the topic, confirm permissions/balance | Jointly confirm whether the old code can be reproduced | Jointly set up the task board, record questions to ask | Project, owners, collaboration location and first integration time settled |
+| 1–3 Nov | Verify network/servers, HTTPS and lab permissions | Settle the database, get the single-instance application working | Test checklist, report skeleton, cost assumptions | First version of the application can write new records to the managed database |
+| 4–6 Nov | Connect the single entry point and the second server | Get both running the same code version, sharing data | Check read/write on both, build the monitoring page | Single entry point usable, both healthy, data shared |
+| 7–10 Nov | Help with failure testing, security checks and the chosen enhancement | Fix test problems, organise reproduction steps | Measure the alarm, record failure and routing, calculate the formal cost | Every core requirement has evidence; decide whether to complete the enhancement |
+| 11–13 Nov | Finalise the architecture diagram and network chapter | Integrate the report, others reproduce by the steps | Joint recording, edit the video, finalise the cost | First drafts of all five deliverables complete |
+| 14–16 Nov | Check the deployment against the diagram | Check text, code, references | Check the video, evidence, file completeness | A submittable version signed off by everyone |
+| Before 17 Nov 16:00 | Designated submitter uploads | Check content and that files open | Save the submission receipt | Formal submission complete |
 
-日期只是可用窗口，不代表每天都要全员整天在线。各自安排独立工作，建议预留 11/3、11/6、11/10、11/13 四次约 30–45 分钟共同检查；今晚按三人课表确定实际时刻。
+Dates are only available windows and do not mean everyone is online all day every day. Each person schedules independent work; four joint checks of about 30–45 minutes are suggested on 3, 6, 10 and 13 Nov; set the actual times tonight from the three timetables.
 
-### 联合完成的先后关系（独立准备可以提前）
+### Order of joint completion (independent preparation can start early)
 
-2026-10-31 已将实际任务卡改成“开始准备”和“完成验收”两种门槛，具体以 [parallel-plan.md](parallel-plan.md) 和最新 Issue 为准。以下顺序描述真实集成结果，不表示下一位成员要等上一位全部完成才能开始。
+On 2026-10-31 the actual task cards were changed to two gates, "start preparation" and "complete acceptance"; the details are in [parallel-plan.md](parallel-plan.md) and the latest Issues. The order below describes real integration results and does not mean the next member must wait for the previous one to finish everything before starting.
 
-1. 定服务与数据库方向 → 写清数据字段和启动约定。
-2. 应用能用数据库 → 两台应用运行同一版本。
-3. 网络和两台应用都准备好 → 接总入口并联合测试。
-4. 联合系统可用 → 实测分流、停一台、告警。
-5. 测试通过并保存证据 → 录真实操作视频、定稿文档。
-6. 三人核对、签名 → 提交 → 按确认的验收安排清理资源。
+1. Settle the service and database direction → write down the data fields and start convention.
+2. The application works with the database → both application hosts run the same version.
+3. The network and both application hosts are ready → connect the single entry point and test jointly.
+4. The joint system works → measure routing, stopping one host, and the alarm.
+5. Tests pass and evidence is saved → record the real-operation video and finalise documents.
+6. All three check and sign → submit → clean up resources according to the confirmed acceptance arrangement.
 
-**可以提前做：**报告框架、架构初稿、测试脚本、成本假设、视频脚本、部署文档，从第一天开始。**必须等真实结果才能做完：**实际故障结论、最终成本、最终架构图、真实演示视频。停一台服务器的实验不能写成已经完整实测一个 AZ 故障。
+**Can be done early:** report outline, first architecture draft, test scripts, cost assumptions, video script and deployment document, from day one. **Can only be finished with real results:** the actual failure conclusion, final cost, final architecture diagram and real demo video. An experiment that stops one server cannot be written up as a fully measured AZ failure.
 
-## 4. 每一步具体怎么做
+## 4. How to do each step
 
-任务编号、实时负责人及验收详见 [GitHub 任务卡](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) 和根目录 `DASHBOARD.md`。以下操作顺序是团队作业流程，不假设实验室具备所有 AWS 权限。
+Task numbers, live owners and acceptance are detailed in the [GitHub task cards](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues) and `DASHBOARD.md` in the root. The operating order below is the team's workflow and does not assume the lab has every AWS permission.
 
-### 第一步：今晚把共同约定写下来（T01–T03）
+### Step 1: write down the joint agreements tonight (T01–T03)
 
-起始服务已确认使用 Reading Tracker，不再重新选题。用一句话写清“谁用它、完成什么、为什么希望不停机”。确认用哪个 Learner Lab 做最终演示，记剩余额度。由 C 整理并询问 tutor：视频时长、自动扩容是否必做、取证后能否拆除、多成员应怎样获得允许的实验访问。
+The starting service is confirmed as Reading Tracker, with no reselection of topic. Write in one sentence "who uses it, what it does, and why it should not go down". Confirm which Learner Lab is used for the final demo and note the remaining credit. C organises and asks the tutor: video length, whether auto scaling is mandatory, whether teardown is allowed after evidence collection, and how several members should obtain permitted lab access.
 
-A 建私有代码仓库并按课程规则邀请其他两人；C 建任务板，添加负责人、开始日期、目标日期和前置任务；B 上传清理后的应用代码与依赖清单。不要把整份学习资料目录上传到仓库。
+A creates the private code repository and invites the other two under course rules; C sets up the task board with owners, start dates, target dates and prerequisite tasks; B uploads the cleaned-up application code and dependency list. Do not upload the whole study-materials directory to the repository.
 
-**交接：**C 把会议结论记在 `collaboration_starter/docs/decisions.md`；三人确认，后续修改也记在这里。
+**Handoff:** C records the meeting conclusions in `collaboration_starter/docs/decisions.md`; the three confirm, and later changes are recorded here too.
 
-### 第二步：先约定代码怎样对接（T04）
+### Step 2: first agree how the code connects (T04)
 
-B 写一份短约定，A/C 审阅后开始并行：
+B writes a short agreement; after A/C review it, work proceeds in parallel:
 
-- 页面保留哪些功能，测试添加记录应出现什么结果。
-- 数据字段，例如 `record_id`、`title`、`status`、`pages_read`、`total_pages`、`rating`、`created_at`；主键用不会因同时提交而轻易重复的 ID。
-- 配置放环境变量，例如区域、表名、服务器标签；不能在代码里写访问密钥。
-- 提供 `/health` 给负载均衡器判断应用是否启动，返回 200 表示进程可响应；数据层读写另设功能测试。不要把“进程活着”当成“数据库一定可用”。
-- 例如统一应用端口为 `8000`，统一启动入口；具体命令在依赖和文件名确定后补入 `docs/deploy.md`。两台机器必须一致，Flask 开发服务器不作为最终部署方式。
+- Which features the page keeps, and what result a test insert should produce.
+- Data fields, for example `record_id`, `title`, `status`, `pages_read`, `total_pages`, `rating`, `created_at`; the primary key uses an ID that will not easily collide on simultaneous submissions.
+- Configuration goes in environment variables, such as region, table name and server label; access keys must not be written in the code.
+- Provide `/health` for the load balancer to judge whether the application has started, returning 200 when the process can respond; data-tier read/write gets a separate functional test. Do not treat "the process is alive" as "the database is definitely available".
+- For example, standardise the application port as `8000` and a single start entry point; add the exact command to `docs/deploy.md` once dependencies and file names are settled. The two machines must be identical, and the Flask development server is not used as the final deployment method.
 - 页面或日志显示简短的 `APP_INSTANCE_LABEL` 和代码版本标识，便于演示请求来自不同实例；不要在界面暴露密钥、完整配置或敏感内部信息。
 
 **为什么现在约定：**A 不必等全部功能完成才搭服务器，C 不必等系统上线才写测试。

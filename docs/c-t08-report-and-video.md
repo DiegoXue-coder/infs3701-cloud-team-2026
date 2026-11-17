@@ -1,19 +1,19 @@
-# C报告章节与视频草稿
+# C's report chapter and video draft
 
-2026-11-04。供小组整合，未替任何成员签字，未代表真人复核。最终报告正文严格少于4000词且少于8页；原始brief和rubric的冲突由T03向tutor确认。
+2026-11-04. For the group to integrate; not signed on behalf of any member and not representing a human review. The body of the final report is strictly under 4000 words and under 8 pages; conflicts between the original brief and rubric are to be confirmed with the tutor under T03.
 
-## 整组报告框架及分工
+## Whole-group report outline and split
 
-1. Objective and route（B整合）：Reading Tracker / Option A，原作者DiegoXue-coder，明确升级目标。
-2. Architecture and services（A）：双AZ网络、ALB、私有EC2、DynamoDB，引用与实际一致的架构图。
-3. Scalability and availability（A/B/C）：无状态与共享数据设计，C提供分流/故障的真实样本及限制。
-4. Networking, security and data（A/B）：入口和角色、数据模型、加密与尚未解决的HTTPS限制。
-5. Monitoring and validation（C）：指标、阈值理由、实验方法、输入/期望/实测、失败及修复。
-6. Cost and trade-offs（C）：12个月Calculator输入及最终估算，实验预算和资源取舍。
-7. Enhancements if attempted（对应操作者）：仅描述已实现且有证据的增强；基础monitoring为core。
-8. Contributions, AI use and references（每人）：个人独立确认，统一引用格式。
+1. Objective and route (B integrates): Reading Tracker / Option A, original author DiegoXue-coder, with clear upgrade objectives.
+2. Architecture and services (A): two-AZ network, ALB, private EC2, DynamoDB, citing an architecture diagram that matches reality.
+3. Scalability and availability (A/B/C): stateless and shared-data design; C provides real routing/failure samples and limitations.
+4. Networking, security and data (A/B): entry point and role, data model, encryption and the unresolved HTTPS limitation.
+5. Monitoring and validation (C): metrics, threshold reasoning, experiment method, inputs/expected/actual, failures and fixes.
+6. Cost and trade-offs (C): 12-month Calculator inputs and final estimate, lab budget and resource trade-offs.
+7. Enhancements if attempted (the relevant operator): describe only enhancements that are implemented and evidenced; basic monitoring is core.
+8. Contributions, AI use and references (each person): confirmed individually, with one consistent referencing style.
 
-## 可直接整合的本轮英文段落
+## English paragraphs from this round, ready to integrate
 
 **Validation method and current scope.** Member C prepared four synthetic datasets and independent tests of the original Reading Tracker statistics function. Ten tests passed on Windows with Python 3.12.14. The tests execute the original function in isolation, covering aggregate semantics, missing ratings, boundary values, legacy numeric strings, order invariance and input preservation. They do not import the web application or access AWS. Seven additional tests passed against a real loopback HTTP fixture, validating bounded request sampling, status and instance-header capture, timeout handling and protection against overwriting evidence. Four persisted HTTP samples returned 200 from the explicitly labelled local fixture. These results validate the statistics baseline and the sampling tool; they do not establish that the final application or managed database is deployed.
 
@@ -21,20 +21,20 @@
 
 **Availability evidence to collect.** The planned joint experiment will first establish two healthy instances, sample steady traffic, stop one instance under A's control, record observed failures, and restore the original instance. Both instance identity and shared-data persistence will be checked. The report will distinguish client sampling resolution, load-balancer health-check behavior and alarm evaluation delay. A single-instance experiment will not be presented as proof of a complete Availability Zone outage.
 
-上述段落只描述本轮事实/计划，最终应更新为实际发布版本及联合实验结果。A既有云端证据须注明其日期与操作者，不能算作C本轮实测。
+The paragraphs above describe only this round's facts/plans and should finally be updated to the actual release version and joint-experiment results. A's existing cloud evidence must state its date and operator and cannot be counted as C's measurement this round.
 
-## 60秒视频镜头脚本（尚未录制）
+## 60-second video shot script (not yet recorded)
 
-| 时间 | 画面与真实动作 | 解说要点 |
+| Time | Screen and real action | Narration points |
 | --- | --- | --- |
-| 0–8s | 实际业务URL打开Reading Tracker；展示已部署版本 | Reading Tracker，升级单机服务为双AZ共享数据架构 |
-| 8–22s | 新增虚构记录，返回列表并展示统计 | 后端实际处理记录，DynamoDB保存共享状态 |
-| 22–35s | 显示同一窗口真实请求日志，至少两个实例标签 | ALB分流，两台实例使用同一应用版本 |
-| 35–49s | 对齐A的实际单机停机时间、连续请求及真实告警状态 | 服务在测试范围内继续响应；如有失败如实显示 |
-| 49–60s | 恢复健康/数据仍在，短暂展示架构图 | 私有应用层、共享数据层、监控与取舍 |
+| 0–8s | Open Reading Tracker at the actual business URL; show the deployed version | Reading Tracker, a single-server service upgraded to a two-AZ shared-data architecture |
+| 8–22s | Add a fictional record, return to the list and show the statistics | The back end actually processes the record and DynamoDB keeps the shared state |
+| 22–35s | Show the real request log from the same window, with at least two instance labels | ALB routing; both instances run the same application version |
+| 35–49s | Align A's actual single-host stop time, the continuous requests and the real alarm state | The service kept responding within the tested scope; show any failures honestly |
+| 49–60s | Recovered health/data still present, brief view of the architecture diagram | Private application tier, shared data tier, monitoring and trade-offs |
 
-只录运行中的业务服务；不能用基础测试页、模拟实例标签或仅控制台截图代替。正式视频需真实录屏和本人解说，本次未生成视频、配音或云端截图。
+Record only the running business service; the foundation test page, simulated instance labels or console screenshots alone cannot be substituted. The formal video needs a real screen recording and the member's own narration; no video, voice-over or cloud screenshots were produced this time.
 
-## 贡献与AI记录草稿
+## Draft contribution and AI record
 
-Marina057（C）：在本人授权下由Codex协助阅读仓库、生成四组虚构数据、编写统计测试和HTTP取样工具、运行本地测试、整理监控/成本/报告与视频草稿。实际命令由本机AI工具执行；用户尚未逐项人工验证，另一账号尚未复核。AWS资源由A既有工作创建，本次C未操作AWS。2026-11-04以本人GitHub身份完成join C和T08 claim，认领回执R-T08-6624693113。测试原日志仍保留登记前时间；本交付仅提交T08准备工作，工作比例和独立复核须真人确认。
+Marina057 (C): with her authorisation, Codex assisted in reading the repository, generating four fictional data sets, writing statistics tests and the HTTP sampling tool, running local tests, and organising the monitoring/cost/report and video drafts. The actual commands were run by the AI tool on her machine; the user has not yet manually verified each item, and another account has not yet reviewed. AWS resources were created by A's existing work, and C did not operate AWS this time. On 2026-11-04 join C and the T08 claim were completed under her own GitHub identity, claim receipt R-T08-6624693113. The original test logs keep their pre-enrolment times; this delivery submits only the T08 preparation work, and the work share and independent review must be confirmed by a real person.

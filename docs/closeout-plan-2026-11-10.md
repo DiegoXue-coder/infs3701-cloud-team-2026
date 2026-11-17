@@ -1,40 +1,40 @@
-# 提交前收尾：不等待新成员回复
+# Pre-submission closeout: not waiting for the new member's reply
 
-**11/11更新：** 负责人明确暂不做自动扩容；保留brief/rubric冲突待老师确认，不把暂缓说成老师已同意。1页架构图PDF、网络安全章节和复核入口已准备，见[架构交接](architecture-review-2026-11-11.md)。下表是11/10盘点，现已不再等待“从零制作架构图”，而是交叉核对并在HTTPS方案确定后修订/冻结。
+**11 Nov update:** the project owner has explicitly deferred auto scaling for now; the brief/rubric conflict is kept for the teacher to confirm, and the deferral is not described as agreed by the teacher. The 1-page architecture PDF, network-security chapter and review entry point are prepared, see [architecture handoff](architecture-review-2026-11-11.md). The table below is the 10 Nov stocktake; the task is no longer "produce the architecture diagram from scratch" but to cross-check it and revise/freeze it once the HTTPS approach is settled.
 
-2026-11-10，悉尼时间。用户明确要求继续推进，不因Tenzin尚未回复而停工。A以本人DiegoXue-coder身份临时认领T25/T19准备目标、证据矩阵及总报告；不是Tenzin的贡献，不取消他的成员资格，也不改变B/C既有成果归属。D到位后可接手协调后的写作、审阅或未认领的视频准备，不能覆盖已有认领。
+2026-11-10, Sydney time. The user explicitly asked to keep going and not to stop work because Tenzin has not yet replied. A, under his own DiegoXue-coder identity, temporarily claims T25/T19 to prepare the objectives, evidence matrix and overall report; this is not Tenzin's contribution, does not cancel his membership and does not change the attribution of B/C's existing work. When D arrives he can take over the coordinated writing, review or unclaimed video preparation, and cannot overwrite existing claims.
 
-## 当前实测与剩余项
+## Current measured state and remaining items
 
-| 项目 | 已有真实成果 | 还要交付/解决 | 主责与可并行工作 |
+| Item | Real results so far | Still to deliver/resolve | Owner and work that can run in parallel |
 | --- | --- | --- | --- |
-| 系统运行 | 11/10启动Lab后双目标healthy、业务GET200、两条旧记录读回；源码06c2292 | B补本人失败预检后的独立复测；最后录制/验收前重新确认在线 | A保持操作窗口，B复测；不等文档 |
-| 监控/故障证据 | A停机/重启读回日志；C独立30次请求全部200、两台各15；11/10调取11/7真实业务告警历史及同期指标 | C独立核对新增CloudWatch证据，决定是否补完整持续采样；当前A短样本不能宣称无缝切换或整个AZ故障 | A提供AWS原始记录，C审阅；有不足再约20–30分钟窗口 |
-| HTTPS/安全 | 私有双机、限制安全组/端点、加密磁盘、角色访问已核对 | 当前listener仍HTTP80、ACM无证书；确定课程认可的域名/证书方案并真实验证；保留LabRole较宽等限制 | A；这是技术缺口，不能只用报告解释代替实现 |
-| 随需求扩容 | 已有双机分流、共享数据、无状态应用 | 11/10实际无Auto Scaling Group。rubric把按需扩容列core，brief表述有冲突，需尽快确认或按获准方案实施并测试；两台固定实例不是自动扩容证据 | A准备方案、核对Lab限制；不能等到最后一天才处理 |
-| 设计报告PDF | Alex应用/数据初稿、C实验/成本草稿、A本轮目标与整合稿 | 技术负责人核对章节，补最终结果与限制、统一引用，测词数/页数并导出PDF | A临时统筹，B/C各写核对本人部分，D回复后可审阅/接手 |
-| 架构图PDF | 真实资源、子网、SG、EBS、数据库和协议已核对 | 用AWS符号制作最终图，含双AZ、ALB、EC2/EBS、DynamoDB、端点、监控和真实协议；保守1页 | A，B/C交叉核对；可现在做 |
-| 成本PDF | C的12个月计算器输入/金额草案 | 保存可核验的计算器输入/结果，复核公网IPv4、快照/保留卷、日志/传输与实际架构，注明免费额度/全年运行假设；保守1页PDF | C；与Lab账户实际用量分开 |
-| 视频 | C已有60秒脚本 | 真实浏览器新增/读取、双机分流或可用性画面、关键选择解说，剪辑成可播放成品并测时长 | A暂统筹素材，B演示应用，C提供请求/监控画面；D不回复也继续 |
-| 签认/最终提交 | 原件/模板、源码与过程证据已归档 | 四人按实际贡献各自声明、本人签认封面、AI使用记录；检查全部文件与Moodle要求，一人上传、另一人核对回执 | C汇总，人人本人确认；A指定上传/复核 |
+| System running | After starting the Lab on 10 Nov both targets healthy, business GET 200, two old records read back; source 06c2292 | B to add his own independent retest after the failed pre-check; reconfirm it is online before the final recording/acceptance | A keeps the operation window, B retests; do not wait for documents |
+| Monitoring/failure evidence | A's stop/restart readback logs; C's 30 independent requests all 200, 15 per host; on 10 Nov the real 7 Nov business-alarm history and same-period metrics were retrieved | C independently checks the new CloudWatch evidence and decides whether to add full continuous sampling; A's current short sample cannot claim seamless failover or a whole-AZ failure | A provides the original AWS records, C reviews; if insufficient, arrange another 20–30 minute window |
+| HTTPS/security | Private two-host setup, restricted security groups/endpoints, encrypted disks and role access checked | The listener is still HTTP 80 and ACM has no certificate; settle a course-accepted domain/certificate approach and verify it for real; keep limitations such as the broad LabRole | A; this is a technical gap and cannot be replaced by explanation in the report alone |
+| Scaling with demand | Two-host routing, shared data and a stateless application exist | On 10 Nov there was actually no Auto Scaling Group. The rubric lists scaling on demand as core while the brief's wording conflicts; confirm soon or implement and test an approved approach; two fixed instances are not evidence of auto scaling | A prepares the plan and checks Lab limits; this cannot be left to the last day |
+| Design report PDF | Alex's application/data first draft, C's experiment/cost drafts, A's objectives and integration draft from this round | Technical owners check their chapters, add final results and limitations, unify references, measure word/page count and export the PDF | A coordinates temporarily, B/C each write and check their own parts, D can review/take over after replying |
+| Architecture diagram PDF | Real resources, subnets, SGs, EBS, database and protocols checked | Produce the final diagram with AWS symbols, including two AZs, ALB, EC2/EBS, DynamoDB, endpoints, monitoring and real protocols; conservatively 1 page | A, with B/C cross-checking; can be done now |
+| Cost PDF | C's 12-month calculator input/amount draft | Save verifiable calculator inputs/results, review public IPv4, snapshots/retained volumes, logs/transfer against the actual architecture, and state the free-tier/full-year assumptions; conservatively a 1-page PDF | C; kept separate from the Lab account's actual usage |
+| Video | C has a 60-second script | Real browser insert/read, two-host routing or availability footage, narration of key choices, edited into a playable final cut with measured length | A coordinates footage for now, B demonstrates the application, C provides request/monitoring footage; continue even if D does not reply |
+| Sign-off/final submission | Originals/templates, source code and process evidence are archived | Each of the four declares their actual contribution, signs the cover sheet personally and records AI use; check all files against Moodle requirements, one person uploads and another checks the receipt | C collates, everyone confirms personally; A designates the uploader/checker |
 
-## 最短完成顺序
+## Shortest completion order
 
-1. **11/10–11/11建议**：先恢复/核对当前服务；B复测、C核对新增监控证据；A处理HTTPS与扩容要求；报告/图/成本草稿同时推进。
-2. **11/12–11/13建议**：完成需要补的技术实验，形成报告、架构图、成本PDF和视频第一版；未经验证的结果不写成成功。
-3. **11/14–11/16建议**：交叉复核、修正、测格式/词数/页数/时长、检查代码与引用、完成个人签认、冻结版本并备份。
-4. **11/17 16:00悉尼前**：按Moodle当前提交页完成上传，独立打开文件核对并保存回执；按课程确认的要求处理资源保留/拆除。
+1. **Suggested for 10–11 Nov**: first restore/check the current service; B retests, C checks the new monitoring evidence; A handles the HTTPS and scaling requirements; report/diagram/cost drafts progress at the same time.
+2. **Suggested for 12–13 Nov**: complete the technical experiments that still need doing, and produce first versions of the report, architecture diagram, cost PDF and video; unverified results are not written up as successes.
+3. **Suggested for 14–16 Nov**: cross-review, fix, measure format/word count/page count/duration, check code and references, complete individual sign-off, freeze the version and back up.
+4. **Before 17 Nov 16:00 Sydney**: upload following the current Moodle submission page, independently open the files to check them and save the receipt; handle resource retention/teardown according to the course-confirmed requirements.
 
-日期是本次建议，不代表其他成员已承诺在线时段。正式截止为2026-11-17 16:00 Australia/Sydney。视频brief1分钟/rubric2分钟的冲突暂按60秒保守制作；报告正文严格少于4000词且少于8页，引用/附录除外。
+The dates are this round's suggestions and do not mean other members have committed to being online at those times. The formal deadline is 2026-11-17 16:00 Australia/Sydney. The conflict between the brief's 1-minute video and the rubric's 2 minutes is handled conservatively at 60 seconds for now; the report body is strictly under 4000 words and under 8 pages, excluding references/appendices.
 
-## 本轮预算与操作边界
+## This round's budget and operating boundaries
 
-Lab显示已用$32.10/$50，为延迟账户读数，不是本项目单次消耗或正式年度成本。启动后看到额外旧作业/课程cafe实例也在运行，它们不属于本组最终架构成本；本轮没有改动这些练习。已将完成用途的无角色runtime-builder恢复为stopped并保留磁盘。完成必要取证后集中安排资源使用，不新增无关功能。
+The Lab shows $32.10/$50 used, a delayed account reading, not this project's single-session spend or the formal annual cost. After starting, extra old-assignment/course cafe instances were also seen running; they are not part of this group's final architecture cost, and these exercises were not changed this round. The role-less runtime-builder, having served its purpose, was returned to stopped with its disk kept. After the necessary evidence is collected, resource use is scheduled in batches and no unrelated features are added.
 
-## 给tutor集中确认的内容（由真人发出）
+## Items to confirm with the tutor in one message (to be sent by a real person)
 
 “Our Learner Lab solution currently uses two private EC2 instances behind an ALB and DynamoDB. Could you confirm whether automatic capacity scaling is required for the core criteria, given the brief/rubric wording? What HTTPS/domain/certificate approach is accepted when the Lab provides no domain? Should the video be one or up to two minutes, and what resources must remain available for marking after evidence is captured?”
 
-本文件不是已发送的老师消息，不代替课程答复。以上问题不阻碍现在整理证据、写作和准备视频。
+This file is not a message already sent to the teacher and does not replace a course answer. The questions above do not block organising evidence, writing and preparing the video now.
 
-Tenzin未回复不阻碍技术和文档推进。若临近提交仍缺本人贡献确认或签认，按课程规则向tutor说明真实参与和联系情况；不能代签或编造贡献，也不能自行断言课程免除了该要求。
+Tenzin not replying does not block technical and documentation progress. If, close to submission, his own contribution confirmation or sign-off is still missing, explain the real participation and contact situation to the tutor under course rules; do not sign on his behalf or invent contributions, and do not assert that the course has waived the requirement.

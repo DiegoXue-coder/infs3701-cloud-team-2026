@@ -1,44 +1,44 @@
-# 怎么测试 GitHub 是否连接成功
+# How to test whether the GitHub connection works
 
-## 先测本人能不能打开
+## First test whether you can open it yourself
 
-如果三个链接都返回 404，先按 [access-404.md](access-404.md) 在同一浏览器登录 DiegoXue-coder；Git 工具的登录状态不等于浏览器登录状态。
+If all three links return 404, first sign in as DiegoXue-coder in the same browser as described in [access-404.md](access-404.md); a Git tool's sign-in state is not the browser's sign-in state.
 
-用本人 GitHub 账号登录，打开 [仓库首页](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026)、[资料索引](../sources/INDEX.md)、[在线任务入口](../LIVE_BOARD.md) 和 [T01](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1)。能打开说明网页读取正常；其他组员需先接受仓库邀请。
+Sign in with your own GitHub account and open the [repository home page](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026), [material index](../sources/INDEX.md), [online task entry](../LIVE_BOARD.md) and [T01](https://github.com/DiegoXue-coder/infs3701-cloud-team-2026/issues/1). If they open, web reading works; other teammates must accept the repository invitation first.
 
-## 再测自己的 AI
+## Then test your own AI
 
-把下面一段交给 AI：
+Give the AI the following paragraph:
 
-> 请做只读连接测试，不认领、不完成任务、不改 AWS。读取本仓库 README、sources/INDEX.md、project/config.json，以及 GitHub 上 T01 的最新正文。告诉我你实际读到的仓库名、资料数量、我的角色和 T01 当前状态；如果没有访问权限，明确报告错误，不凭聊天历史回答。
+> Please run a read-only connection test: do not claim, do not complete tasks, do not change AWS. Read this repository's README, sources/INDEX.md and project/config.json, and the latest body of T01 on GitHub. Tell me the repository name, number of materials, my role and T01's current status that you actually read; if you have no access, report the error clearly and do not answer from chat history.
 
-能读文件不等于能写进度；网页能读也不等于 AI 连接器已获准访问。若网页能开而 AI 返回 404，先检查 AI 使用的账号和仓库授权范围，不需要把仓库改为公开。
+Being able to read files does not mean being able to write progress; a readable web page does not mean the AI connector has been granted access. If the web page opens but the AI returns 404, first check the account the AI uses and the repository authorisation scope; there is no need to make the repository public.
 
-## 有终端能力的 AI 可运行只读自检
+## An AI with terminal capability can run a read-only self-check
 
-在本仓库本地克隆目录里，以本人用户名运行：
+In the local clone directory of this repository, run with your own username:
 
 ```text
 python scripts/team.py --user DiegoXue-coder doctor
 ```
 
-其他成员换成本人 GitHub 用户名。自检只读取身份、角色、资料、任务卡和工作流状态；不创建同步锁、不发任务评论、不刷新看板、不认领任务。四人配置更新并建立T25后应看到：`source_files: 21`、`task_cards: 25`、本人用户及角色、各读取检查为 true。角色预留不代表本人连接通过。D参照[英文设置](member-D.md)，必须用wyend12本人身份。
+Other members substitute their own GitHub username. The self-check only reads identity, role, materials, task cards and workflow state; it creates no sync lock, posts no task comment, does not refresh the dashboard and claims no task. After the four-person configuration update and the creation of T25 you should see: `source_files: 21`, `task_cards: 25`, your user and role, and each read check as true. A role reservation does not mean the member's connection has passed. D follows the [English setup](member-D.md) and must use wyend12's own identity.
 
-本机 Git/REST 方式与 Codex GitHub 连接器是两条不同连接。2026-11-04 持有人已批准并保存本仓库的连接器访问，DiegoXue-coder 连接器实际读取配置和T08成功；旧的持有人404问题已修复。Marina等成员的本人连接仍须各自重试；不能把本机doctor成功或持有人成功当作自己插件已通过。详见 [本次授权记录与C恢复步骤](2026-11-04-connector-access.md)。
+The local Git/REST route and the Codex GitHub connector are two different connections. On 2026-11-04 the holder approved and saved connector access for this repository, and the DiegoXue-coder connector actually read the configuration and T08 successfully; the holder's old 404 problem is fixed. Marina and other members still need to retry their own connections; a successful local doctor or the holder's success cannot be treated as your own plugin having passed. See [this authorisation record and C's resume steps](2026-11-04-connector-access.md).
 
-## 测“能不能同步”
+## Testing "can it synchronise"
 
-首次只读测试通过后，可以让 AI 在 T01 发 `/team status`，通过同步助手处理，并检查 Issue 中新增的“任务同步回执”和看板时间。这个命令查询状态，不把课程任务标完成。
+After the first read-only test passes, you can have the AI send `/team status` on T01, processed through the sync helper, and check the new "task sync receipt" in the Issue and the dashboard time. This command queries status and does not mark course tasks complete.
 
 ```text
-python scripts/team.py --user DiegoXue-coder command T01 --body-file 临时命令.txt
+python scripts/team.py --user DiegoXue-coder command T01 --body-file temporary-command.txt
 ```
 
-临时命令.txt 内容为一行 `/team status`。不要把密码或 token 写进去。上传文件测试只用普通测试记录，不用课程真实成果冒充完成。
+temporary-command.txt contains the single line `/team status`. Do not write passwords or tokens in it. For upload tests use only ordinary test records, not real course work passed off as complete.
 
-## 什么才是成功
+## What counts as success
 
-1. AI 报告的信息确实来自本次远程读取。
-2. 同步命令收到回执，而不是仅在本地聊天里说“更新了”。
-3. 另一位有权限组员打开同一个任务，能看到同样的状态和评论。
-4. 截图/配置/报告原件能从资料或交付链接打开。
+1. The information the AI reports really comes from this remote read.
+2. The sync command receives a receipt, instead of only saying "updated" in the local chat.
+3. Another teammate with permission opens the same task and sees the same status and comments.
+4. Screenshot/configuration/report originals can be opened from the material or delivery links.

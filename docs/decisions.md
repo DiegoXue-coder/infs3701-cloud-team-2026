@@ -1,20 +1,20 @@
-# 决定记录
+# Decision record
 
-| 日期 | 问题 | 考虑过的方案 | 选择与理由 | 代价/限制 | 决定人 | 后续验证 |
+| Date | Question | Options considered | Choice and reason | Cost/limitation | Decided by | Follow-up verification |
 | --- | --- | --- | --- | --- | --- | --- |
 
-首次会议必须确认：项目与 Option A/B、A/B/C 姓名、数据库方向、最终 Lab、协作权限、TLS 可行性、增强路线、共同检查时间、上传人。
+The first meeting must confirm: project and Option A/B, names for A/B/C, database direction, final Lab, collaboration permissions, TLS feasibility, enhancement route, joint check times, and the uploader.
 
-Tutor 问题：视频 1/2 分钟；自动扩容是否 core；取证后资源怎样保留/清理；允许的多人 Lab 协作方式。记录真实询问日期、原回复及对计划的影响。
+Tutor questions: video 1 or 2 minutes; whether auto scaling is core; how resources are kept/cleaned up after evidence collection; the permitted way for several people to collaborate in the Lab. Record the real date asked, the original reply and its effect on the plan.
 
-## 2026-10-31：应用起点已确认
+## 2026-10-31: application starting point confirmed
 
-来源为用户在本聊天中的明确决定，不推断全员开会或他人贡献。采用本人个人作业 Reading Tracker，走 Option A；保留页面与业务逻辑，在 app/reading_tracker.py 开展升级。原基线归档在 reference。
+The source is the user's explicit decision in this chat; no whole-group meeting or other people's contribution is inferred. Use the user's individual assignment Reading Tracker, taking Option A; keep the pages and business logic and carry out the upgrade in app/reading_tracker.py. The original baseline is archived in reference.
 
-最终 Lab 持有人、权限、数据库方案和余额仍待核对。没有改变 AWS 资源，没有迁移或删除旧数据，也没有邀请新账号。实施方式见 shared-aws.md。
+The final Lab holder, permissions, database approach and balance still need checking. No AWS resources were changed, no old data was migrated or deleted, and no new accounts were invited. For the implementation approach see shared-aws.md.
 
-## 2026-10-31：单人 AWS 操作与三人并行分工
+## 2026-10-31: single-person AWS operation and three-person parallel split
 
-用户选择由自己配置 AWS，其他两位做应用和测试。A 绑定 DiegoXue-coder（原绑定为 B），B/C 待真实组员加入；历史回执及已发生贡献保持原样。T01/T22/T23/T24 归 A 组织。计划以 docs/parallel-plan.md 为准；建议会议时段未宣称已由全组接受。
+The user chose to configure AWS himself, with the other two doing the application and testing. A is bound to DiegoXue-coder (originally bound as B), and B/C await real teammates joining; historical receipts and contributions already made stay as they are. T01/T22/T23/T24 are organised by A. The plan is as in docs/parallel-plan.md; the suggested meeting times are not claimed to have been accepted by the whole group.
 
-已核对大纲第 3 页 Working as a Team 和第 4 页 AWS Platform：建议按技术职责分工、各自签认贡献，但没有说明三人同时访问同一 Lab 的授权/账号机制。当前 Lab 禁止新建用户/组；教师另行多人入口待确认。
+Page 3 (Working as a Team) and page 4 (AWS Platform) of the outline were checked: they suggest splitting by technical responsibility and individual contribution sign-off, but do not explain an authorisation/account mechanism for three people to access the same Lab at once. The current Lab prohibits creating users/groups; a separate multi-user entry from teaching staff awaits confirmation.

@@ -1,15 +1,15 @@
-# 实际贡献和 AI 使用记录
+# Record of actual contributions and AI use
 
-持续填写，个人签认声明依课程要求另行制作。不得把计划分工冒充已完成贡献。
+Fill in continuously; the individually signed statement is produced separately as the course requires. Do not pass off the planned split as completed contribution.
 
-| 日期 | 成员 | 实际任务 | commit/文档/证据链接 | 合作或检查人 |
+| Date | Member | Actual task | Commit/document/evidence link | Collaborator or checker |
 | --- | --- | --- | --- | --- |
 
-| 日期 | 成员 | AI 工具与用途 | 实际提示/过程截图位置 | 使用了什么 | 人工验证/修改 | 需引用位置 |
+| Date | Member | AI tool and purpose | Location of actual prompts/process screenshots | What was used | Human verification/changes | Where it needs citing |
 | --- | --- | --- | --- | --- | --- | --- |
-| 2026-11-14 | Diego | Codex 协助核对重建模板和原架构图、调整图中标签并导出单页 PDF、准备封面 | 本次 Codex 会话和仓库中的导出文件。实际使用截图由 Diego 从会话保留 | 在 Tenzi 已交付的 Draw.io 图上按重建模板更新路由和安全说明，制作 PDF 和报告用 PNG | Codex 已对照 CloudFormation 源文件并检查单页渲染。Diego 需确认本条说明，组员需在 T26 后用实际输出核对部署 | 设计报告 AI 声明与 Figure 1 |
+| 2026-11-14 | Diego | Codex assisted in checking the rebuild template against the original architecture diagram, adjusting labels in the diagram, exporting a single-page PDF and preparing the cover sheet | This Codex session and the exported files in the repository. Screenshots of actual use are kept by Diego from the session | Updated the routing and security notes on the Draw.io diagram Tenzi delivered to match the rebuild template, and produced the PDF and a PNG for the report | Codex compared against the CloudFormation source and checked the single-page render. Diego needs to confirm this entry, and teammates need to check the deployment against actual outputs after T26 | Design report AI statement and Figure 1 |
 
-最终每人独立写真实贡献、所有成员职责及认可的工作占比，按课程要求签认。没有历史截图就如实说明，不补造。
+Finally, each person independently writes their real contribution, all members' responsibilities and the agreed work share, and signs off as the course requires. If there are no historical screenshots, say so honestly and do not fabricate them.
 
 ## Copy into your own signed contribution statement
 

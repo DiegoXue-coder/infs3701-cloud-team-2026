@@ -1,10 +1,10 @@
-# 测试与证据
+# Tests and evidence
 
-| 任务/要求 | 负责人 | 测试日期及环境/commit | 操作步骤 | 期望 | 实际结果 | 截图/日志路径 | 检查人 |
+| Task/requirement | Owner | Test date and environment/commit | Steps | Expected | Actual result | Screenshot/log path | Checker |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
-至少覆盖：真实界面操作、数据库写/读、跨实例共享数据、分流、单实例故障、dashboard、告警触发与恢复、安全和加密核对、所选增强。
+Cover at least: real interface operation, database write/read, shared data across instances, routing, single-instance failure, dashboard, alarm trigger and recovery, security and encryption checks, and the chosen enhancement.
 
-故障测试另记：持续请求时段、目标健康检查设置、停止实例时刻、失败数/总数、恢复时刻、恢复环境操作。不要把单实例测试描述为完整 AZ 故障实测。
+For failure tests also record: the continuous-request period, target health-check settings, the moment the instance was stopped, failures/total, the recovery moment, and the actions to restore the environment. Do not describe a single-instance test as a full measured AZ failure.
 
-命名建议：`T14_2026-11-08_failover_requests.log`。截图和日志去掉密钥、token、私人数据；留下足够的时间及配置上下文。
+Suggested naming: `T14_2026-11-08_failover_requests.log`. Remove keys, tokens and private data from screenshots and logs; leave enough time and configuration context.
